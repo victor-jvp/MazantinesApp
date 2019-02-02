@@ -97,6 +97,7 @@
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.empleadosToolStripMenuItem.Text = "&Empleados";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
             // datosToolStripMenuItem
             // 
@@ -121,18 +122,21 @@
             this.casasToolStripMenuItem.Name = "casasToolStripMenuItem";
             this.casasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.casasToolStripMenuItem.Text = "&Casas";
+            this.casasToolStripMenuItem.Click += new System.EventHandler(this.casasToolStripMenuItem_Click);
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
             this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empresaToolStripMenuItem.Text = "&Empresa";
+            this.empresaToolStripMenuItem.Text = "&Empresas";
+            this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
             // empleoToolStripMenuItem
             // 
             this.empleoToolStripMenuItem.Name = "empleoToolStripMenuItem";
             this.empleoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empleoToolStripMenuItem.Text = "E&mpleo";
+            this.empleoToolStripMenuItem.Text = "E&mpleos";
+            this.empleoToolStripMenuItem.Click += new System.EventHandler(this.empleoToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -166,6 +170,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenuPrincipal";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

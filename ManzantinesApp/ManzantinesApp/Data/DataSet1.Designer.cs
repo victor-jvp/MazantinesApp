@@ -34,6 +34,16 @@ namespace ManzantinesApp.Data {
         
         private TrabajadoresDataTable tableTrabajadores;
         
+        private global::System.Data.DataRelation relationFincas_Trabajadores;
+        
+        private global::System.Data.DataRelation relationCasas_Trabajadores;
+        
+        private global::System.Data.DataRelation relationEmpresas_Trabajadores;
+        
+        private global::System.Data.DataRelation relationEmpleos_Trabajadores_encargado;
+        
+        private global::System.Data.DataRelation relationEmpleos_Trabajadores_empleo;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -290,6 +300,11 @@ namespace ManzantinesApp.Data {
                     this.tableTrabajadores.InitVars();
                 }
             }
+            this.relationFincas_Trabajadores = this.Relations["Fincas_Trabajadores"];
+            this.relationCasas_Trabajadores = this.Relations["Casas_Trabajadores"];
+            this.relationEmpresas_Trabajadores = this.Relations["Empresas_Trabajadores"];
+            this.relationEmpleos_Trabajadores_encargado = this.Relations["Empleos_Trabajadores_encargado"];
+            this.relationEmpleos_Trabajadores_empleo = this.Relations["Empleos_Trabajadores_empleo"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +325,26 @@ namespace ManzantinesApp.Data {
             base.Tables.Add(this.tableEmpresas);
             this.tableTrabajadores = new TrabajadoresDataTable();
             base.Tables.Add(this.tableTrabajadores);
+            this.relationFincas_Trabajadores = new global::System.Data.DataRelation("Fincas_Trabajadores", new global::System.Data.DataColumn[] {
+                        this.tableFincas.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTrabajadores.id_fincaColumn}, false);
+            this.Relations.Add(this.relationFincas_Trabajadores);
+            this.relationCasas_Trabajadores = new global::System.Data.DataRelation("Casas_Trabajadores", new global::System.Data.DataColumn[] {
+                        this.tableCasas.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTrabajadores.id_casaColumn}, false);
+            this.Relations.Add(this.relationCasas_Trabajadores);
+            this.relationEmpresas_Trabajadores = new global::System.Data.DataRelation("Empresas_Trabajadores", new global::System.Data.DataColumn[] {
+                        this.tableEmpresas.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTrabajadores.id_empresaColumn}, false);
+            this.Relations.Add(this.relationEmpresas_Trabajadores);
+            this.relationEmpleos_Trabajadores_encargado = new global::System.Data.DataRelation("Empleos_Trabajadores_encargado", new global::System.Data.DataColumn[] {
+                        this.tableEmpleos.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTrabajadores.id_encargadoColumn}, false);
+            this.Relations.Add(this.relationEmpleos_Trabajadores_encargado);
+            this.relationEmpleos_Trabajadores_empleo = new global::System.Data.DataRelation("Empleos_Trabajadores_empleo", new global::System.Data.DataColumn[] {
+                        this.tableEmpleos.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTrabajadores.id_empleoColumn}, false);
+            this.Relations.Add(this.relationEmpleos_Trabajadores_empleo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1691,7 +1726,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TrabajadoresRow AddTrabajadoresRow(int Id, int Nro_empleado, string Nombre, string Apellidos, string Telefono, int id_empresa, int id_empleo, int id_finca, int id_encargado, int id_casa, string foto) {
+            public TrabajadoresRow AddTrabajadoresRow(int Id, int Nro_empleado, string Nombre, string Apellidos, string Telefono, EmpresasRow parentEmpresasRowByEmpresas_Trabajadores, EmpleosRow parentEmpleosRowByEmpleos_Trabajadores_empleo, FincasRow parentFincasRowByFincas_Trabajadores, EmpleosRow parentEmpleosRowByEmpleos_Trabajadores_encargado, CasasRow parentCasasRowByCasas_Trabajadores, string foto) {
                 TrabajadoresRow rowTrabajadoresRow = ((TrabajadoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -1699,12 +1734,27 @@ namespace ManzantinesApp.Data {
                         Nombre,
                         Apellidos,
                         Telefono,
-                        id_empresa,
-                        id_empleo,
-                        id_finca,
-                        id_encargado,
-                        id_casa,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
                         foto};
+                if ((parentEmpresasRowByEmpresas_Trabajadores != null)) {
+                    columnValuesArray[5] = parentEmpresasRowByEmpresas_Trabajadores[0];
+                }
+                if ((parentEmpleosRowByEmpleos_Trabajadores_empleo != null)) {
+                    columnValuesArray[6] = parentEmpleosRowByEmpleos_Trabajadores_empleo[0];
+                }
+                if ((parentFincasRowByFincas_Trabajadores != null)) {
+                    columnValuesArray[7] = parentFincasRowByFincas_Trabajadores[0];
+                }
+                if ((parentEmpleosRowByEmpleos_Trabajadores_encargado != null)) {
+                    columnValuesArray[8] = parentEmpleosRowByEmpleos_Trabajadores_encargado[0];
+                }
+                if ((parentCasasRowByCasas_Trabajadores != null)) {
+                    columnValuesArray[9] = parentCasasRowByCasas_Trabajadores[0];
+                }
                 rowTrabajadoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTrabajadoresRow);
                 return rowTrabajadoresRow;
@@ -1958,6 +2008,17 @@ namespace ManzantinesApp.Data {
             public void SetFincaNull() {
                 this[this.tableFincas.FincaColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TrabajadoresRow[] GetTrabajadoresRows() {
+                if ((this.Table.ChildRelations["Fincas_Trabajadores"] == null)) {
+                    return new TrabajadoresRow[0];
+                }
+                else {
+                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Fincas_Trabajadores"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2011,6 +2072,17 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCasaNull() {
                 this[this.tableCasas.CasaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TrabajadoresRow[] GetTrabajadoresRows() {
+                if ((this.Table.ChildRelations["Casas_Trabajadores"] == null)) {
+                    return new TrabajadoresRow[0];
+                }
+                else {
+                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Casas_Trabajadores"])));
+                }
             }
         }
         
@@ -2066,6 +2138,28 @@ namespace ManzantinesApp.Data {
             public void SetEmpleoNull() {
                 this[this.tableEmpleos.EmpleoColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TrabajadoresRow[] GetTrabajadoresRowsByEmpleos_Trabajadores_encargado() {
+                if ((this.Table.ChildRelations["Empleos_Trabajadores_encargado"] == null)) {
+                    return new TrabajadoresRow[0];
+                }
+                else {
+                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Empleos_Trabajadores_encargado"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TrabajadoresRow[] GetTrabajadoresRowsByEmpleos_Trabajadores_empleo() {
+                if ((this.Table.ChildRelations["Empleos_Trabajadores_empleo"] == null)) {
+                    return new TrabajadoresRow[0];
+                }
+                else {
+                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Empleos_Trabajadores_empleo"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2119,6 +2213,17 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetEmpresaNull() {
                 this[this.tableEmpresas.EmpresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TrabajadoresRow[] GetTrabajadoresRows() {
+                if ((this.Table.ChildRelations["Empresas_Trabajadores"] == null)) {
+                    return new TrabajadoresRow[0];
+                }
+                else {
+                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Empresas_Trabajadores"])));
+                }
             }
         }
         
@@ -2304,6 +2409,61 @@ namespace ManzantinesApp.Data {
                 }
                 set {
                     this[this.tableTrabajadores.fotoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public FincasRow FincasRow {
+                get {
+                    return ((FincasRow)(this.GetParentRow(this.Table.ParentRelations["Fincas_Trabajadores"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Fincas_Trabajadores"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CasasRow CasasRow {
+                get {
+                    return ((CasasRow)(this.GetParentRow(this.Table.ParentRelations["Casas_Trabajadores"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Casas_Trabajadores"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmpresasRow EmpresasRow {
+                get {
+                    return ((EmpresasRow)(this.GetParentRow(this.Table.ParentRelations["Empresas_Trabajadores"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Empresas_Trabajadores"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmpleosRow EmpleosRowByEmpleos_Trabajadores_encargado {
+                get {
+                    return ((EmpleosRow)(this.GetParentRow(this.Table.ParentRelations["Empleos_Trabajadores_encargado"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Empleos_Trabajadores_encargado"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmpleosRow EmpleosRowByEmpleos_Trabajadores_empleo {
+                get {
+                    return ((EmpleosRow)(this.GetParentRow(this.Table.ParentRelations["Empleos_Trabajadores_empleo"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Empleos_Trabajadores_empleo"]);
                 }
             }
             

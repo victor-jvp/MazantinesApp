@@ -25,15 +25,46 @@ namespace ManzantinesApp
 
         private void Button11_Click(object sender, EventArgs e)
         {
-            FrmCasa miCasa = new FrmCasa();
-            miCasa.NroCasa = 11;
-            miCasa.Show(this);
+            FrmCasas frmCasas = new FrmCasas();
+            frmCasas.Show(this);
         }
 
         private void fincasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmFincas frmFincas = new FrmFincas();
             frmFincas.Show(this);
+        }
+
+        private void empleoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEmpleos frmEmpleos = new FrmEmpleos();
+            frmEmpleos.Show(this);
+        }
+
+        private void casasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCasas frmCasas = new FrmCasas();
+            frmCasas.Show(this);
+        }
+
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEmpresas frmEmpresas = new FrmEmpresas();
+            frmEmpresas.Show(this);
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEmpleados frmEmpleados = new FrmEmpleados();
+            frmEmpleados.Show(this);
+        }
+
+        private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Confirme salir del sistema.", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

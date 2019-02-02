@@ -7,29 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ManzantinesApp.Data;
 
 namespace ManzantinesApp
 {
-    public partial class FrmFincas : Form
+    public partial class FrmCasas : Form
     {
-        public FrmFincas()
+        public FrmCasas()
         {
             InitializeComponent();
         }
 
-        private void FrmFincas_Load(object sender, EventArgs e)
+        private void FrmCasas_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.Fincas' Puede moverla o quitarla según sea necesario.
-            this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
+            // TODO: esta línea de código carga datos en la tabla 'dataSet1.Casas' Puede moverla o quitarla según sea necesario.
+            this.casasTableAdapter.Fill(this.dataSet1.Casas);
+
         }
 
-        private void fincasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void casasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
                 this.Validate();
-                this.fincasBindingSource.EndEdit();
+                this.casasBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
             }
             catch (Exception ex)

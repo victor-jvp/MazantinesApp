@@ -1,6 +1,6 @@
 ﻿namespace ManzantinesApp
 {
-    partial class FrmFincas
+    partial class FrmEmpleos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFincas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.fincasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.fincasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleos));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.empleosDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
+            this.empleosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -45,28 +49,76 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.fincasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.fincasDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fincasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.FincasTableAdapter();
+            this.empleosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.empleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpleosTableAdapter();
             this.tableAdapterManager = new ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingNavigator)).BeginInit();
-            this.fincasBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fincasDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empleosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingNavigator)).BeginInit();
+            this.empleosBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fincasBindingNavigator
+            // groupBox1
             // 
-            this.fincasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.fincasBindingNavigator.BindingSource = this.fincasBindingSource;
-            this.fincasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.fincasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.fincasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.groupBox1.Anchor = global::ManzantinesApp.Properties.Settings.Default.FullAnchor;
+            this.groupBox1.Controls.Add(this.empleosDataGridView);
+            this.groupBox1.Location = new System.Drawing.Point(0, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(484, 321);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lista de Empleos";
+            // 
+            // empleosDataGridView
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.empleosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.empleosDataGridView.AutoGenerateColumns = false;
+            this.empleosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.empleosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.empleosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.empleosDataGridView.DataSource = this.empleosBindingSource;
+            this.empleosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.empleosDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.empleosDataGridView.Name = "empleosDataGridView";
+            this.empleosDataGridView.Size = new System.Drawing.Size(478, 302);
+            this.empleosDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 41;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Empleo";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Empleo";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 67;
+            // 
+            // empleosBindingSource
+            // 
+            this.empleosBindingSource.DataMember = "Empleos";
+            this.empleosBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empleosBindingNavigator
+            // 
+            this.empleosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.empleosBindingNavigator.BindingSource = this.empleosBindingSource;
+            this.empleosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.empleosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.empleosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -78,17 +130,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.fincasBindingNavigatorSaveItem});
-            this.fincasBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.fincasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.fincasBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.fincasBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.fincasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.fincasBindingNavigator.Name = "fincasBindingNavigator";
-            this.fincasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.fincasBindingNavigator.Size = new System.Drawing.Size(490, 25);
-            this.fincasBindingNavigator.TabIndex = 0;
-            this.fincasBindingNavigator.Text = "bindingNavigator1";
+            this.empleosBindingNavigatorSaveItem});
+            this.empleosBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.empleosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.empleosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.empleosBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.empleosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.empleosBindingNavigator.Name = "empleosBindingNavigator";
+            this.empleosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.empleosBindingNavigator.Size = new System.Drawing.Size(484, 25);
+            this.empleosBindingNavigator.TabIndex = 1;
+            this.empleosBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -98,16 +150,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // fincasBindingSource
-            // 
-            this.fincasBindingSource.DataMember = "Fincas";
-            this.fincasBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -185,89 +227,47 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // fincasBindingNavigatorSaveItem
+            // empleosBindingNavigatorSaveItem
             // 
-            this.fincasBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.fincasBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("fincasBindingNavigatorSaveItem.Image")));
-            this.fincasBindingNavigatorSaveItem.Name = "fincasBindingNavigatorSaveItem";
-            this.fincasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.fincasBindingNavigatorSaveItem.Text = "Guardar datos";
-            this.fincasBindingNavigatorSaveItem.Click += new System.EventHandler(this.fincasBindingNavigatorSaveItem_Click);
+            this.empleosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.empleosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("empleosBindingNavigatorSaveItem.Image")));
+            this.empleosBindingNavigatorSaveItem.Name = "empleosBindingNavigatorSaveItem";
+            this.empleosBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.empleosBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.empleosBindingNavigatorSaveItem.Click += new System.EventHandler(this.empleosBindingNavigatorSaveItem_Click);
             // 
-            // fincasDataGridView
+            // empleosTableAdapter
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.fincasDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.fincasDataGridView.AutoGenerateColumns = false;
-            this.fincasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.fincasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.fincasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.fincasDataGridView.DataSource = this.fincasBindingSource;
-            this.fincasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fincasDataGridView.Location = new System.Drawing.Point(3, 16);
-            this.fincasDataGridView.Name = "fincasDataGridView";
-            this.fincasDataGridView.Size = new System.Drawing.Size(484, 302);
-            this.fincasDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 41;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Finca";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Finca";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 58;
-            // 
-            // fincasTableAdapter
-            // 
-            this.fincasTableAdapter.ClearBeforeFill = true;
+            this.empleosTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = null;
-            this.tableAdapterManager.EmpleosTableAdapter = null;
+            this.tableAdapterManager.EmpleosTableAdapter = this.empleosTableAdapter;
             this.tableAdapterManager.EmpresasTableAdapter = null;
-            this.tableAdapterManager.FincasTableAdapter = this.fincasTableAdapter;
+            this.tableAdapterManager.FincasTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = global::ManzantinesApp.Properties.Settings.Default.FullAnchor;
-            this.groupBox1.Controls.Add(this.fincasDataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(0, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 321);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Listado de Fincas";
-            // 
-            // FrmFincas
+            // FrmEmpleos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 361);
+            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.empleosBindingNavigator);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.fincasBindingNavigator);
             this.MinimumSize = global::ManzantinesApp.Properties.Settings.Default.sizeMinimo;
-            this.Name = "FrmFincas";
-            this.Text = "Fincas";
-            this.Load += new System.EventHandler(this.FrmFincas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingNavigator)).EndInit();
-            this.fincasBindingNavigator.ResumeLayout(false);
-            this.fincasBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fincasDataGridView)).EndInit();
+            this.Name = "FrmEmpleos";
+            this.Text = "Empleos";
+            this.Load += new System.EventHandler(this.FrmEmpleos_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.empleosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingNavigator)).EndInit();
+            this.empleosBindingNavigator.ResumeLayout(false);
+            this.empleosBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,11 +275,12 @@
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox1;
         private Data.DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource fincasBindingSource;
-        private Data.DataSet1TableAdapters.FincasTableAdapter fincasTableAdapter;
+        private System.Windows.Forms.BindingSource empleosBindingSource;
+        private Data.DataSet1TableAdapters.EmpleosTableAdapter empleosTableAdapter;
         private Data.DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator fincasBindingNavigator;
+        private System.Windows.Forms.BindingNavigator empleosBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -291,10 +292,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton fincasBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView fincasDataGridView;
+        private System.Windows.Forms.ToolStripButton empleosBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView empleosDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

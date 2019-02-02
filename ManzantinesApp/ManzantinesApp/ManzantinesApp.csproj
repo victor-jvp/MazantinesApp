@@ -72,11 +72,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmCasa.cs">
+    <Compile Include="FrmCasas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCasa.Designer.cs">
-      <DependentUpon>FrmCasa.cs</DependentUpon>
+    <Compile Include="FrmCasas.Designer.cs">
+      <DependentUpon>FrmCasas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmpleados.Designer.cs">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEmpleos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmpleos.Designer.cs">
+      <DependentUpon>FrmEmpleos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmpresas.Designer.cs">
+      <DependentUpon>FrmEmpresas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmFincas.cs">
       <SubType>Form</SubType>
@@ -92,8 +110,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmCasa.resx">
-      <DependentUpon>FrmCasa.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCasas.resx">
+      <DependentUpon>FrmCasas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmpleados.resx">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmpleos.resx">
+      <DependentUpon>FrmEmpleos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmpresas.resx">
+      <DependentUpon>FrmEmpresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFincas.resx">
       <DependentUpon>FrmFincas.cs</DependentUpon>

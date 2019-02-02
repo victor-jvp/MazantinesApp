@@ -33,5 +33,23 @@ namespace ManzantinesApp.Properties {
                 return ((string)(this["Database1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500, 400")]
+        public global::System.Drawing.Size sizeMinimo {
+            get {
+                return ((global::System.Drawing.Size)(this["sizeMinimo"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Top, Bottom, Left, Right")]
+        public global::System.Windows.Forms.AnchorStyles FullAnchor {
+            get {
+                return ((global::System.Windows.Forms.AnchorStyles)(this["FullAnchor"]));
+            }
+        }
     }
 }

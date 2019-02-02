@@ -10,5 +10,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data\Database1.mdf;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="sizeMinimo" Type="System.Drawing.Size" Scope="Application">
+      <Value Profile="(Default)">500, 400</Value>
+    </Setting>
+    <Setting Name="FullAnchor" Type="System.Windows.Forms.AnchorStyles" Scope="Application">
+      <Value Profile="(Default)">Top, Bottom, Left, Right</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
