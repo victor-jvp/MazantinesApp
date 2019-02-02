@@ -8,6 +8,8 @@ namespace ManzantinesApp
 {
     static class Program
     {
+        public static FrmMenuPrincipal frmMenuPrincipal;
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -16,7 +18,8 @@ namespace ManzantinesApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            frmMenuPrincipal = new FrmMenuPrincipal();
+            Application.Run(frmMenuPrincipal);
         }
     }
 }

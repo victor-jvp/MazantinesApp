@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ManzantinesApp
 {
-    public partial class Form1 : Form
+    public partial class FrmCasa : Form
     {
-        public Form1()
+        public int NroCasa { get; set; }
+
+        public FrmCasa()
         {
             InitializeComponent();
+        }
+
+        private void FrmCasa_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
