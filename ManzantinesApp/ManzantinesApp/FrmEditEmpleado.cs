@@ -22,13 +22,13 @@
         private void FrmEditEmpleado_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Casas' Puede moverla o quitarla según sea necesario.
-            this.casasTableAdapter.Fill(this.dataSet1.Casas);
+            this.casasTableAdapter.FillTrim(this.dataSet1.Casas);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Empleos' Puede moverla o quitarla según sea necesario.
-            this.empleosTableAdapter.Fill(this.dataSet1.Empleos);
+            this.empleosTableAdapter.FillTrim(this.dataSet1.Empleos);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Fincas' Puede moverla o quitarla según sea necesario.
-            this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
+            this.fincasTableAdapter.FillTrim(this.dataSet1.Fincas);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Empresas' Puede moverla o quitarla según sea necesario.
-            this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
+            this.empresasTableAdapter.FillTrim(this.dataSet1.Empresas);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
             this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
 

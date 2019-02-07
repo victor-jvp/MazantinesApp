@@ -93,7 +93,7 @@
             nro_empleadoLabel.Location = new System.Drawing.Point(16, 34);
             nro_empleadoLabel.Name = "nro_empleadoLabel";
             nro_empleadoLabel.Size = new System.Drawing.Size(76, 13);
-            nro_empleadoLabel.TabIndex = 1;
+            nro_empleadoLabel.TabIndex = 0;
             nro_empleadoLabel.Text = "Nro empleado:";
             // 
             // nombreLabel
@@ -102,7 +102,7 @@
             nombreLabel.Location = new System.Drawing.Point(45, 72);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 3;
+            nombreLabel.TabIndex = 2;
             nombreLabel.Text = "Nombre:";
             // 
             // apellidosLabel
@@ -111,7 +111,7 @@
             apellidosLabel.Location = new System.Drawing.Point(40, 98);
             apellidosLabel.Name = "apellidosLabel";
             apellidosLabel.Size = new System.Drawing.Size(52, 13);
-            apellidosLabel.TabIndex = 5;
+            apellidosLabel.TabIndex = 4;
             apellidosLabel.Text = "Apellidos:";
             // 
             // telefonoLabel
@@ -120,7 +120,7 @@
             telefonoLabel.Location = new System.Drawing.Point(40, 124);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 7;
+            telefonoLabel.TabIndex = 6;
             telefonoLabel.Text = "Telefono:";
             // 
             // label1
@@ -129,7 +129,7 @@
             label1.Location = new System.Drawing.Point(323, 31);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(31, 13);
-            label1.TabIndex = 10;
+            label1.TabIndex = 18;
             label1.Text = "Foto:";
             // 
             // id_empresaLabel
@@ -138,7 +138,7 @@
             id_empresaLabel.Location = new System.Drawing.Point(41, 170);
             id_empresaLabel.Name = "id_empresaLabel";
             id_empresaLabel.Size = new System.Drawing.Size(51, 13);
-            id_empresaLabel.TabIndex = 11;
+            id_empresaLabel.TabIndex = 8;
             id_empresaLabel.Text = "Empresa:";
             // 
             // id_empleoLabel
@@ -147,7 +147,7 @@
             id_empleoLabel.Location = new System.Drawing.Point(270, 170);
             id_empleoLabel.Name = "id_empleoLabel";
             id_empleoLabel.Size = new System.Drawing.Size(45, 13);
-            id_empleoLabel.TabIndex = 13;
+            id_empleoLabel.TabIndex = 14;
             id_empleoLabel.Text = "Empleo:";
             // 
             // id_fincaLabel
@@ -156,7 +156,7 @@
             id_fincaLabel.Location = new System.Drawing.Point(56, 197);
             id_fincaLabel.Name = "id_fincaLabel";
             id_fincaLabel.Size = new System.Drawing.Size(36, 13);
-            id_fincaLabel.TabIndex = 15;
+            id_fincaLabel.TabIndex = 10;
             id_fincaLabel.Text = "Finca:";
             // 
             // id_encargadoLabel
@@ -165,7 +165,7 @@
             id_encargadoLabel.Location = new System.Drawing.Point(253, 197);
             id_encargadoLabel.Name = "id_encargadoLabel";
             id_encargadoLabel.Size = new System.Drawing.Size(62, 13);
-            id_encargadoLabel.TabIndex = 17;
+            id_encargadoLabel.TabIndex = 16;
             id_encargadoLabel.Text = "Encargado:";
             // 
             // id_casaLabel
@@ -174,7 +174,7 @@
             id_casaLabel.Location = new System.Drawing.Point(58, 224);
             id_casaLabel.Name = "id_casaLabel";
             id_casaLabel.Size = new System.Drawing.Size(34, 13);
-            id_casaLabel.TabIndex = 19;
+            id_casaLabel.TabIndex = 12;
             id_casaLabel.Text = "Casa:";
             // 
             // dataSet1
@@ -207,7 +207,7 @@
             this.nro_empleadoTextBox.Location = new System.Drawing.Point(98, 31);
             this.nro_empleadoTextBox.Name = "nro_empleadoTextBox";
             this.nro_empleadoTextBox.Size = new System.Drawing.Size(68, 20);
-            this.nro_empleadoTextBox.TabIndex = 2;
+            this.nro_empleadoTextBox.TabIndex = 1;
             // 
             // nombreTextBox
             // 
@@ -215,7 +215,7 @@
             this.nombreTextBox.Location = new System.Drawing.Point(98, 69);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(236, 20);
-            this.nombreTextBox.TabIndex = 4;
+            this.nombreTextBox.TabIndex = 3;
             // 
             // apellidosTextBox
             // 
@@ -223,7 +223,7 @@
             this.apellidosTextBox.Location = new System.Drawing.Point(98, 95);
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(236, 20);
-            this.apellidosTextBox.TabIndex = 6;
+            this.apellidosTextBox.TabIndex = 5;
             // 
             // telefonoTextBox
             // 
@@ -231,7 +231,7 @@
             this.telefonoTextBox.Location = new System.Drawing.Point(98, 121);
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(121, 20);
-            this.telefonoTextBox.TabIndex = 8;
+            this.telefonoTextBox.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -248,7 +248,6 @@
             // 
             this.id_empresaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.id_empresaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_empresaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "id_empresa", true));
             this.id_empresaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_empresa", true));
             this.id_empresaComboBox.DataSource = this.empresasBindingSource;
             this.id_empresaComboBox.DisplayMember = "Empresa";
@@ -256,7 +255,7 @@
             this.id_empresaComboBox.Location = new System.Drawing.Point(98, 167);
             this.id_empresaComboBox.Name = "id_empresaComboBox";
             this.id_empresaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_empresaComboBox.TabIndex = 12;
+            this.id_empresaComboBox.TabIndex = 9;
             this.id_empresaComboBox.ValueMember = "Id";
             // 
             // empresasBindingSource
@@ -268,16 +267,15 @@
             // 
             this.id_empleoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.id_empleoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_empleoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "id_empleo", true));
             this.id_empleoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_empleo", true));
             this.id_empleoComboBox.DataSource = this.empleosBindingSource;
-            this.id_empleoComboBox.DisplayMember = "Id";
+            this.id_empleoComboBox.DisplayMember = "Empleo";
             this.id_empleoComboBox.FormattingEnabled = true;
             this.id_empleoComboBox.Location = new System.Drawing.Point(321, 167);
             this.id_empleoComboBox.Name = "id_empleoComboBox";
             this.id_empleoComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_empleoComboBox.TabIndex = 14;
-            this.id_empleoComboBox.ValueMember = "Empleo";
+            this.id_empleoComboBox.TabIndex = 15;
+            this.id_empleoComboBox.ValueMember = "Id";
             // 
             // empleosBindingSource
             // 
@@ -288,16 +286,15 @@
             // 
             this.id_fincaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.id_fincaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_fincaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "id_finca", true));
             this.id_fincaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_finca", true));
             this.id_fincaComboBox.DataSource = this.fincasBindingSource;
-            this.id_fincaComboBox.DisplayMember = "Id";
+            this.id_fincaComboBox.DisplayMember = "Finca";
             this.id_fincaComboBox.FormattingEnabled = true;
             this.id_fincaComboBox.Location = new System.Drawing.Point(98, 194);
             this.id_fincaComboBox.Name = "id_fincaComboBox";
             this.id_fincaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_fincaComboBox.TabIndex = 16;
-            this.id_fincaComboBox.ValueMember = "Finca";
+            this.id_fincaComboBox.TabIndex = 11;
+            this.id_fincaComboBox.ValueMember = "Id";
             // 
             // fincasBindingSource
             // 
@@ -308,16 +305,15 @@
             // 
             this.id_encargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.id_encargadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_encargadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "id_encargado", true));
             this.id_encargadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_encargado", true));
             this.id_encargadoComboBox.DataSource = this.empleosBindingSource1;
-            this.id_encargadoComboBox.DisplayMember = "Id";
+            this.id_encargadoComboBox.DisplayMember = "Empleo";
             this.id_encargadoComboBox.FormattingEnabled = true;
             this.id_encargadoComboBox.Location = new System.Drawing.Point(321, 194);
             this.id_encargadoComboBox.Name = "id_encargadoComboBox";
             this.id_encargadoComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_encargadoComboBox.TabIndex = 18;
-            this.id_encargadoComboBox.ValueMember = "Empleo";
+            this.id_encargadoComboBox.TabIndex = 17;
+            this.id_encargadoComboBox.ValueMember = "Id";
             // 
             // empleosBindingSource1
             // 
@@ -328,16 +324,15 @@
             // 
             this.id_casaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.id_casaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_casaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "id_casa", true));
             this.id_casaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_casa", true));
             this.id_casaComboBox.DataSource = this.casasBindingSource;
-            this.id_casaComboBox.DisplayMember = "Id";
+            this.id_casaComboBox.DisplayMember = "Casa";
             this.id_casaComboBox.FormattingEnabled = true;
             this.id_casaComboBox.Location = new System.Drawing.Point(98, 221);
             this.id_casaComboBox.Name = "id_casaComboBox";
             this.id_casaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_casaComboBox.TabIndex = 20;
-            this.id_casaComboBox.ValueMember = "Casa";
+            this.id_casaComboBox.TabIndex = 13;
+            this.id_casaComboBox.ValueMember = "Id";
             // 
             // casasBindingSource
             // 
@@ -371,7 +366,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(484, 25);
-            this.toolStrip1.TabIndex = 21;
+            this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1

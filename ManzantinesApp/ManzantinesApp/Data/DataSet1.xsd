@@ -55,7 +55,16 @@ SELECT Id, Finca FROM Fincas WHERE (Id = @Id)</CommandText>
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="Finca" DataSetColumn="Finca" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="dbo.Fincas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillTrim" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataTrim" GeneratorSourceName="FillTrim" GetMethodModifier="Public" GetMethodName="GetDataTrim" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataTrim" UserSourceName="FillTrim">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, RTRIM(Finca) AS Finca FROM dbo.Fincas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CasasTableAdapter" GeneratorDataComponentClassName="CasasTableAdapter" Name="Casas" UserDataComponentName="CasasTableAdapter">
             <MainSource>
@@ -105,7 +114,16 @@ SELECT Id, Casa FROM Casas WHERE (Id = @Id)</CommandText>
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="Casa" DataSetColumn="Casa" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="dbo.Casas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillTrim" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataTrim" GeneratorSourceName="FillTrim" GetMethodModifier="Public" GetMethodName="GetDataTrim" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataTrim" UserSourceName="FillTrim">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, RTRIM(Casa) as Casa FROM dbo.Casas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpleosTableAdapter" GeneratorDataComponentClassName="EmpleosTableAdapter" Name="Empleos" UserDataComponentName="EmpleosTableAdapter">
             <MainSource>
@@ -155,7 +173,16 @@ SELECT Id, Empleo FROM Empleos WHERE (Id = @Id)</CommandText>
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="Empleo" DataSetColumn="Empleo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="dbo.Empleos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillTrim" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataTrim" GeneratorSourceName="FillTrim" GetMethodModifier="Public" GetMethodName="GetDataTrim" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataTrim" UserSourceName="FillTrim">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, RTRIM(Empleo) AS Empleo FROM dbo.Empleos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpresasTableAdapter" GeneratorDataComponentClassName="EmpresasTableAdapter" Name="Empresas" UserDataComponentName="EmpresasTableAdapter">
             <MainSource>
@@ -205,7 +232,16 @@ SELECT Id, Empresa FROM Empresas WHERE (Id = @Id)</CommandText>
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="dbo.Empresas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillTrim" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataTrim" GeneratorSourceName="FillTrim" GetMethodModifier="Public" GetMethodName="GetDataTrim" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataTrim" UserSourceName="FillTrim">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, RTRIM(Empresa) AS Empresa FROM dbo.Empresas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TrabajadoresTableAdapter" GeneratorDataComponentClassName="TrabajadoresTableAdapter" Name="Trabajadores" UserDataComponentName="TrabajadoresTableAdapter">
             <MainSource>
@@ -323,7 +359,7 @@ SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finc
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Fincas" msprop:Generator_TableClassName="FincasDataTable" msprop:Generator_TableVarName="tableFincas" msprop:Generator_TablePropName="Fincas" msprop:Generator_RowDeletingName="FincasRowDeleting" msprop:Generator_RowChangingName="FincasRowChanging" msprop:Generator_RowEvHandlerName="FincasRowChangeEventHandler" msprop:Generator_RowDeletedName="FincasRowDeleted" msprop:Generator_UserTableName="Fincas" msprop:Generator_RowChangedName="FincasRowChanged" msprop:Generator_RowEvArgName="FincasRowChangeEvent" msprop:Generator_RowClassName="FincasRow">
+        <xs:element name="Fincas" msprop:Generator_TableClassName="FincasDataTable" msprop:Generator_TableVarName="tableFincas" msprop:Generator_RowChangedName="FincasRowChanged" msprop:Generator_TablePropName="Fincas" msprop:Generator_RowDeletingName="FincasRowDeleting" msprop:Generator_RowChangingName="FincasRowChanging" msprop:Generator_RowEvHandlerName="FincasRowChangeEventHandler" msprop:Generator_RowDeletedName="FincasRowDeleted" msprop:Generator_RowClassName="FincasRow" msprop:Generator_UserTableName="Fincas" msprop:Generator_RowEvArgName="FincasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -337,7 +373,7 @@ SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Casas" msprop:Generator_TableClassName="CasasDataTable" msprop:Generator_TableVarName="tableCasas" msprop:Generator_RowChangedName="CasasRowChanged" msprop:Generator_TablePropName="Casas" msprop:Generator_RowDeletingName="CasasRowDeleting" msprop:Generator_RowChangingName="CasasRowChanging" msprop:Generator_RowEvHandlerName="CasasRowChangeEventHandler" msprop:Generator_RowDeletedName="CasasRowDeleted" msprop:Generator_RowClassName="CasasRow" msprop:Generator_UserTableName="Casas" msprop:Generator_RowEvArgName="CasasRowChangeEvent">
+        <xs:element name="Casas" msprop:Generator_TableClassName="CasasDataTable" msprop:Generator_TableVarName="tableCasas" msprop:Generator_TablePropName="Casas" msprop:Generator_RowDeletingName="CasasRowDeleting" msprop:Generator_RowChangingName="CasasRowChanging" msprop:Generator_RowEvHandlerName="CasasRowChangeEventHandler" msprop:Generator_RowDeletedName="CasasRowDeleted" msprop:Generator_UserTableName="Casas" msprop:Generator_RowChangedName="CasasRowChanged" msprop:Generator_RowEvArgName="CasasRowChangeEvent" msprop:Generator_RowClassName="CasasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -351,7 +387,7 @@ SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Empleos" msprop:Generator_TableClassName="EmpleosDataTable" msprop:Generator_TableVarName="tableEmpleos" msprop:Generator_RowChangedName="EmpleosRowChanged" msprop:Generator_TablePropName="Empleos" msprop:Generator_RowDeletingName="EmpleosRowDeleting" msprop:Generator_RowChangingName="EmpleosRowChanging" msprop:Generator_RowEvHandlerName="EmpleosRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpleosRowDeleted" msprop:Generator_RowClassName="EmpleosRow" msprop:Generator_UserTableName="Empleos" msprop:Generator_RowEvArgName="EmpleosRowChangeEvent">
+        <xs:element name="Empleos" msprop:Generator_TableClassName="EmpleosDataTable" msprop:Generator_TableVarName="tableEmpleos" msprop:Generator_TablePropName="Empleos" msprop:Generator_RowDeletingName="EmpleosRowDeleting" msprop:Generator_RowChangingName="EmpleosRowChanging" msprop:Generator_RowEvHandlerName="EmpleosRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpleosRowDeleted" msprop:Generator_UserTableName="Empleos" msprop:Generator_RowChangedName="EmpleosRowChanged" msprop:Generator_RowEvArgName="EmpleosRowChangeEvent" msprop:Generator_RowClassName="EmpleosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -365,7 +401,7 @@ SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Empresas" msprop:Generator_TableClassName="EmpresasDataTable" msprop:Generator_TableVarName="tableEmpresas" msprop:Generator_RowChangedName="EmpresasRowChanged" msprop:Generator_TablePropName="Empresas" msprop:Generator_RowDeletingName="EmpresasRowDeleting" msprop:Generator_RowChangingName="EmpresasRowChanging" msprop:Generator_RowEvHandlerName="EmpresasRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpresasRowDeleted" msprop:Generator_RowClassName="EmpresasRow" msprop:Generator_UserTableName="Empresas" msprop:Generator_RowEvArgName="EmpresasRowChangeEvent">
+        <xs:element name="Empresas" msprop:Generator_TableClassName="EmpresasDataTable" msprop:Generator_TableVarName="tableEmpresas" msprop:Generator_TablePropName="Empresas" msprop:Generator_RowDeletingName="EmpresasRowDeleting" msprop:Generator_RowChangingName="EmpresasRowChanging" msprop:Generator_RowEvHandlerName="EmpresasRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpresasRowDeleted" msprop:Generator_UserTableName="Empresas" msprop:Generator_RowChangedName="EmpresasRowChanged" msprop:Generator_RowEvArgName="EmpresasRowChangeEvent" msprop:Generator_RowClassName="EmpresasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -379,7 +415,7 @@ SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finc
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Trabajadores" msprop:Generator_TableClassName="TrabajadoresDataTable" msprop:Generator_TableVarName="tableTrabajadores" msprop:Generator_RowChangedName="TrabajadoresRowChanged" msprop:Generator_TablePropName="Trabajadores" msprop:Generator_RowDeletingName="TrabajadoresRowDeleting" msprop:Generator_RowChangingName="TrabajadoresRowChanging" msprop:Generator_RowEvHandlerName="TrabajadoresRowChangeEventHandler" msprop:Generator_RowDeletedName="TrabajadoresRowDeleted" msprop:Generator_RowClassName="TrabajadoresRow" msprop:Generator_UserTableName="Trabajadores" msprop:Generator_RowEvArgName="TrabajadoresRowChangeEvent">
+        <xs:element name="Trabajadores" msprop:Generator_TableClassName="TrabajadoresDataTable" msprop:Generator_TableVarName="tableTrabajadores" msprop:Generator_TablePropName="Trabajadores" msprop:Generator_RowDeletingName="TrabajadoresRowDeleting" msprop:Generator_RowChangingName="TrabajadoresRowChanging" msprop:Generator_RowEvHandlerName="TrabajadoresRowChangeEventHandler" msprop:Generator_RowDeletedName="TrabajadoresRowDeleted" msprop:Generator_UserTableName="Trabajadores" msprop:Generator_RowChangedName="TrabajadoresRowChanged" msprop:Generator_RowEvArgName="TrabajadoresRowChangeEvent" msprop:Generator_RowClassName="TrabajadoresRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -445,11 +481,11 @@ SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finc
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Empleos_Trabajadores_empleo" msdata:parent="Empleos" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_empleo" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRowsByEmpleos_Trabajadores_empleo" msprop:Generator_UserRelationName="Empleos_Trabajadores_empleo" msprop:Generator_ParentPropName="EmpleosRowByEmpleos_Trabajadores_empleo" msprop:Generator_RelationVarName="relationEmpleos_Trabajadores_empleo" msprop:Generator_UserParentTable="Empleos" />
-      <msdata:Relationship name="Empleos_Trabajadores_encargado" msdata:parent="Empleos" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_encargado" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRowsByEmpleos_Trabajadores_encargado" msprop:Generator_UserRelationName="Empleos_Trabajadores_encargado" msprop:Generator_ParentPropName="EmpleosRowByEmpleos_Trabajadores_encargado" msprop:Generator_RelationVarName="relationEmpleos_Trabajadores_encargado" msprop:Generator_UserParentTable="Empleos" />
-      <msdata:Relationship name="Empresas_Trabajadores" msdata:parent="Empresas" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_empresa" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRows" msprop:Generator_UserRelationName="Empresas_Trabajadores" msprop:Generator_RelationVarName="relationEmpresas_Trabajadores" msprop:Generator_UserParentTable="Empresas" msprop:Generator_ParentPropName="EmpresasRow" />
-      <msdata:Relationship name="Casas_Trabajadores" msdata:parent="Casas" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_casa" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRows" msprop:Generator_UserRelationName="Casas_Trabajadores" msprop:Generator_RelationVarName="relationCasas_Trabajadores" msprop:Generator_UserParentTable="Casas" msprop:Generator_ParentPropName="CasasRow" />
-      <msdata:Relationship name="Fincas_Trabajadores" msdata:parent="Fincas" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_finca" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRows" msprop:Generator_UserRelationName="Fincas_Trabajadores" msprop:Generator_RelationVarName="relationFincas_Trabajadores" msprop:Generator_UserParentTable="Fincas" msprop:Generator_ParentPropName="FincasRow" />
+      <msdata:Relationship name="Empleos_Trabajadores_empleo" msdata:parent="Empleos" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_empleo" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRowsByEmpleos_Trabajadores_empleo" msprop:Generator_UserRelationName="Empleos_Trabajadores_empleo" msprop:Generator_RelationVarName="relationEmpleos_Trabajadores_empleo" msprop:Generator_UserParentTable="Empleos" msprop:Generator_ParentPropName="EmpleosRowByEmpleos_Trabajadores_empleo" />
+      <msdata:Relationship name="Empleos_Trabajadores_encargado" msdata:parent="Empleos" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_encargado" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRowsByEmpleos_Trabajadores_encargado" msprop:Generator_UserRelationName="Empleos_Trabajadores_encargado" msprop:Generator_RelationVarName="relationEmpleos_Trabajadores_encargado" msprop:Generator_UserParentTable="Empleos" msprop:Generator_ParentPropName="EmpleosRowByEmpleos_Trabajadores_encargado" />
+      <msdata:Relationship name="Empresas_Trabajadores" msdata:parent="Empresas" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_empresa" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRows" msprop:Generator_UserRelationName="Empresas_Trabajadores" msprop:Generator_ParentPropName="EmpresasRow" msprop:Generator_RelationVarName="relationEmpresas_Trabajadores" msprop:Generator_UserParentTable="Empresas" />
+      <msdata:Relationship name="Casas_Trabajadores" msdata:parent="Casas" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_casa" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRows" msprop:Generator_UserRelationName="Casas_Trabajadores" msprop:Generator_ParentPropName="CasasRow" msprop:Generator_RelationVarName="relationCasas_Trabajadores" msprop:Generator_UserParentTable="Casas" />
+      <msdata:Relationship name="Fincas_Trabajadores" msdata:parent="Fincas" msdata:child="Trabajadores" msdata:parentkey="Id" msdata:childkey="id_finca" msprop:Generator_UserChildTable="Trabajadores" msprop:Generator_ChildPropName="GetTrabajadoresRows" msprop:Generator_UserRelationName="Fincas_Trabajadores" msprop:Generator_ParentPropName="FincasRow" msprop:Generator_RelationVarName="relationFincas_Trabajadores" msprop:Generator_UserParentTable="Fincas" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
