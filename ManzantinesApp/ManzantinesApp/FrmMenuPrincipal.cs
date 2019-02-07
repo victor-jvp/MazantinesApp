@@ -25,38 +25,50 @@ namespace ManzantinesApp
 
         private void Button11_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             FrmCasas frmCasas = new FrmCasas();
             frmCasas.Show(this);
+            this.Enabled = true;
         }
 
         private void fincasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             FrmFincas frmFincas = new FrmFincas();
             frmFincas.Show(this);
+            this.Enabled = true;
         }
 
         private void empleoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             FrmEmpleos frmEmpleos = new FrmEmpleos();
             frmEmpleos.Show(this);
+            this.Enabled = true;
         }
 
         private void casasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             FrmCasas frmCasas = new FrmCasas();
             frmCasas.Show(this);
+            this.Enabled = true;
         }
 
         private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             FrmEmpresas frmEmpresas = new FrmEmpresas();
             frmEmpresas.Show(this);
+            this.Enabled = true;
         }
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             FrmEmpleados frmEmpleados = new FrmEmpleados();
             frmEmpleados.Show(this);
+            this.Enabled = true;
         }
 
         private void FrmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)

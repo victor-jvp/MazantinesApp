@@ -113,28 +113,28 @@
             // fincasToolStripMenuItem
             // 
             this.fincasToolStripMenuItem.Name = "fincasToolStripMenuItem";
-            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.fincasToolStripMenuItem.Text = "&Fincas";
             this.fincasToolStripMenuItem.Click += new System.EventHandler(this.fincasToolStripMenuItem_Click);
             // 
             // casasToolStripMenuItem
             // 
             this.casasToolStripMenuItem.Name = "casasToolStripMenuItem";
-            this.casasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.casasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.casasToolStripMenuItem.Text = "&Casas";
             this.casasToolStripMenuItem.Click += new System.EventHandler(this.casasToolStripMenuItem_Click);
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.empresaToolStripMenuItem.Text = "&Empresas";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
             // empleoToolStripMenuItem
             // 
             this.empleoToolStripMenuItem.Name = "empleoToolStripMenuItem";
-            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.empleoToolStripMenuItem.Text = "E&mpleos";
             this.empleoToolStripMenuItem.Click += new System.EventHandler(this.empleoToolStripMenuItem_Click);
             // 
@@ -166,10 +166,11 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FrmMenuPrincipal";
-            this.Text = "Form1";
+            this.Text = "Menú Principal - Mazantines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
