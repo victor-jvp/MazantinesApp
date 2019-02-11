@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-
-namespace ManzantinesApp
+﻿namespace ManzantinesApp
 {
+    using System;
+    using System.Windows.Forms;
+
     public partial class FrmMenuPrincipal : Form
     {
         public FrmMenuPrincipal()
@@ -23,11 +15,12 @@ namespace ManzantinesApp
 
         }
 
-        private void Button11_Click(object sender, EventArgs e)
+        private void Casa01Button_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            FrmCasas frmCasas = new FrmCasas();
-            frmCasas.Show(this);
+            FrmEmpleadoCasa miForm = new FrmEmpleadoCasa();
+            miForm.NroCasa = 1;
+            miForm.Show(this);
             this.Enabled = true;
         }
 

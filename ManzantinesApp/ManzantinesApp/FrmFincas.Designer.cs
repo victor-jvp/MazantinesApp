@@ -98,6 +98,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Visible = false;
             // 
             // fincasBindingSource
             // 
@@ -112,8 +113,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorDeleteItem
@@ -124,6 +125,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Visible = false;
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -192,10 +194,13 @@
             this.fincasBindingNavigatorSaveItem.Name = "fincasBindingNavigatorSaveItem";
             this.fincasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.fincasBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.fincasBindingNavigatorSaveItem.Visible = false;
             this.fincasBindingNavigatorSaveItem.Click += new System.EventHandler(this.fincasBindingNavigatorSaveItem_Click);
             // 
             // fincasDataGridView
             // 
+            this.fincasDataGridView.AllowUserToAddRows = false;
+            this.fincasDataGridView.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.fincasDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.fincasDataGridView.AutoGenerateColumns = false;
@@ -208,6 +213,7 @@
             this.fincasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fincasDataGridView.Location = new System.Drawing.Point(3, 16);
             this.fincasDataGridView.Name = "fincasDataGridView";
+            this.fincasDataGridView.ReadOnly = true;
             this.fincasDataGridView.Size = new System.Drawing.Size(484, 302);
             this.fincasDataGridView.TabIndex = 1;
             // 
@@ -216,6 +222,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 41;
             // 
             // dataGridViewTextBoxColumn2
@@ -223,6 +230,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Finca";
             this.dataGridViewTextBoxColumn2.HeaderText = "Finca";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 58;
             // 
             // fincasTableAdapter

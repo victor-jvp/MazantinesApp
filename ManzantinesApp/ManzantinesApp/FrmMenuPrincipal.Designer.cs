@@ -41,7 +41,7 @@
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Button11 = new System.Windows.Forms.Button();
+            this.Casa01Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -140,7 +140,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.Button11);
+            this.panel1.Controls.Add(this.Casa01Button);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
@@ -148,15 +148,15 @@
             this.panel1.Size = new System.Drawing.Size(784, 515);
             this.panel1.TabIndex = 3;
             // 
-            // Button11
+            // Casa01Button
             // 
-            this.Button11.Image = ((System.Drawing.Image)(resources.GetObject("Button11.Image")));
-            this.Button11.Location = new System.Drawing.Point(95, 262);
-            this.Button11.Name = "Button11";
-            this.Button11.Size = new System.Drawing.Size(30, 28);
-            this.Button11.TabIndex = 1;
-            this.Button11.UseVisualStyleBackColor = true;
-            this.Button11.Click += new System.EventHandler(this.Button11_Click);
+            this.Casa01Button.Image = ((System.Drawing.Image)(resources.GetObject("Casa01Button.Image")));
+            this.Casa01Button.Location = new System.Drawing.Point(95, 262);
+            this.Casa01Button.Name = "Casa01Button";
+            this.Casa01Button.Size = new System.Drawing.Size(30, 28);
+            this.Casa01Button.TabIndex = 1;
+            this.Casa01Button.UseVisualStyleBackColor = true;
+            this.Casa01Button.Click += new System.EventHandler(this.Casa01Button_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -191,7 +191,7 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datosToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Button11;
+        private System.Windows.Forms.Button Casa01Button;
         private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fincasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem casasToolStripMenuItem;

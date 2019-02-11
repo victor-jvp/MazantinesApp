@@ -2,7 +2,9 @@
 {
     using System;
     using System.Windows.Forms;
+    using CrystalDecisions.Shared;
     using Data;
+    using Reports;
 
     public partial class FrmEmpleados : Form
     {
@@ -89,6 +91,91 @@
                 // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
                 this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
             }
+        }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            try
+            {
+                ExportOptions exportOptions;
+                DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Pdf|*.pdf";
+
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    diskFileDestinationOptions.DiskFileName = saveFileDialog.FileName;
+                    exportOptions = frmPreviewCrystal.ReporteCrystal.ExportOptions;
+                    {
+                        exportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        exportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        exportOptions.ExportDestinationOptions = diskFileDestinationOptions;
+                        exportOptions.ExportFormatOptions = new PdfFormatOptions();
+                    }
+                    frmPreviewCrystal.ReporteCrystal.Export();
+                }                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            try
+            {
+                ExportOptions exportOptions;
+                DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel|*.xlsx";
+
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    diskFileDestinationOptions.DiskFileName = saveFileDialog.FileName;
+                    exportOptions = frmPreviewCrystal.ReporteCrystal.ExportOptions;
+                    {
+                        exportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        exportOptions.ExportFormatType = ExportFormatType.ExcelWorkbook;
+                        exportOptions.ExportDestinationOptions = diskFileDestinationOptions;
+                        exportOptions.ExportFormatOptions = new ExcelFormatOptions();
+                    }
+                    frmPreviewCrystal.ReporteCrystal.Export();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
+        }
+
+        private void vistaPreliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            try
+            {
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+                frmPreviewCrystal.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
         }
     }
 }
