@@ -51,8 +51,6 @@
             this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trabajadoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -74,6 +72,15 @@
             this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             this.empleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpleosTableAdapter();
             this.casasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.CasasTableAdapter();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.EncargadoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.CasaToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.EmpresaToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).BeginInit();
@@ -83,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingNavigator)).BeginInit();
             this.trabajadoresBindingNavigator.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,9 +99,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.trabajadoresDataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(0, 28);
+            this.groupBox1.Location = new System.Drawing.Point(0, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(829, 451);
+            this.groupBox1.Size = new System.Drawing.Size(829, 426);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Empleados";
@@ -124,7 +132,7 @@
             this.trabajadoresDataGridView.Location = new System.Drawing.Point(3, 16);
             this.trabajadoresDataGridView.Name = "trabajadoresDataGridView";
             this.trabajadoresDataGridView.ReadOnly = true;
-            this.trabajadoresDataGridView.Size = new System.Drawing.Size(823, 432);
+            this.trabajadoresDataGridView.Size = new System.Drawing.Size(823, 407);
             this.trabajadoresDataGridView.TabIndex = 0;
             // 
             // Id
@@ -268,8 +276,6 @@
             this.trabajadoresBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.trabajadoresBindingNavigator.DeleteItem = null;
             this.trabajadoresBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripTextBox1,
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -301,18 +307,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
-            this.toolStripLabel1.Text = "Buscar:";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -420,7 +414,7 @@
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Text = "Exportar";
             // 
             // pDFToolStripMenuItem
             // 
@@ -472,11 +466,76 @@
             // 
             this.casasTableAdapter.ClearBeforeFill = true;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.CasaToolStripTextBox,
+            this.toolStripSeparator2,
+            this.toolStripLabel2,
+            this.EncargadoToolStripTextBox,
+            this.toolStripSeparator3,
+            this.toolStripLabel3,
+            this.EmpresaToolStripTextBox});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(829, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel1.Text = "Casa:";
+            // 
+            // EncargadoToolStripTextBox
+            // 
+            this.EncargadoToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EncargadoToolStripTextBox.Name = "EncargadoToolStripTextBox";
+            this.EncargadoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // CasaToolStripTextBox
+            // 
+            this.CasaToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CasaToolStripTextBox.Name = "CasaToolStripTextBox";
+            this.CasaToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.CasaToolStripTextBox.TextChanged += new System.EventHandler(this.CasaToolStripTextBox_TextChanged);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(66, 22);
+            this.toolStripLabel2.Text = "Encargado:";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(55, 22);
+            this.toolStripLabel3.Text = "Empresa:";
+            // 
+            // EmpresaToolStripTextBox
+            // 
+            this.EmpresaToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmpresaToolStripTextBox.Name = "EmpresaToolStripTextBox";
+            this.EmpresaToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 491);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.trabajadoresBindingNavigator);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmEmpleados";
@@ -492,6 +551,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingNavigator)).EndInit();
             this.trabajadoresBindingNavigator.ResumeLayout(false);
             this.trabajadoresBindingNavigator.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,8 +582,6 @@
         private Data.DataSet1TableAdapters.EmpleosTableAdapter empleosTableAdapter;
         private System.Windows.Forms.BindingSource casasBindingSource;
         private Data.DataSet1TableAdapters.CasasTableAdapter casasTableAdapter;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripButton editarToolStripButton1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -542,5 +601,14 @@
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox CasaToolStripTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripTextBox EncargadoToolStripTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripTextBox EmpresaToolStripTextBox;
     }
 }

@@ -5,6 +5,18 @@
 
     public partial class FrmMenuPrincipal : Form
     {
+
+        #region Methods
+        private void loadCasa(int nroCasa)
+        {
+            this.Enabled = false;
+            FrmEmpleadoCasa miForm = new FrmEmpleadoCasa();
+            miForm.NroCasa = nroCasa;
+            miForm.Show(this);
+            this.Enabled = true;
+        }
+        #endregion
+
         public FrmMenuPrincipal()
         {
             InitializeComponent();
@@ -17,11 +29,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Enabled = false;
-            FrmEmpleadoCasa miForm = new FrmEmpleadoCasa();
-            miForm.NroCasa = 1;
-            miForm.Show(this);
-            this.Enabled = true;
+            loadCasa(1);
         }
 
         private void fincasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +78,11 @@
             {
                 e.Cancel = true;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            loadCasa(2);
         }
     }
 }

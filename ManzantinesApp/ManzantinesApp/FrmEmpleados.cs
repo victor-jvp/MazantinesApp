@@ -177,5 +177,43 @@
             }
             this.Enabled = true;
         }
+
+        private void CasaToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterTable();
+        }
+
+        private void FilterTable()
+        {
+            var casa = CasaToolStripTextBox.Text.Trim();
+            if (!string.IsNullOrEmpty(casa))
+            {
+                casasBindingSource.Filter = $"Casa LIKE '%{casa}%'";
+            }
+            else
+            {
+                casasBindingSource.RemoveFilter();
+            }
+
+            var encargado = EncargadoToolStripTextBox.Text.Trim();
+            if(!string.IsNullOrEmpty(encargado))
+            {
+                empleosBindingSource.Filter = $"Empleo LIKE '%{encargado}%'";
+            }
+            else
+            {
+                empleosBindingSource.RemoveFilter();
+            }
+
+            var empresa = EmpresaToolStripTextBox.Text.Trim();
+            if (!string.IsNullOrEmpty(empresa =))
+            {
+                empresasBindingSource.Filter = $"Empleo LIKE '%{empresa =}%'";
+            }
+            else
+            {
+                empresasBindingSource.RemoveFilter();
+            }
+        }
     }
 }
