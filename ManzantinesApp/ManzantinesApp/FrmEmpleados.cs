@@ -36,11 +36,74 @@
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Empresas' Puede moverla o quitarla según sea necesario.
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
-            this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
-
+            this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+                    
+        }
+
+        private void editarToolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (trabajadoresDataGridView.CurrentRow == null) return;
+
+            this.Enabled = false;
+            FrmEditEmpleado frmEditEmpleado = new FrmEditEmpleado();
+            frmEditEmpleado.miTrabajador = dataSet1.Trabajadores.FindById(
+                (int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value);
+            frmEditEmpleado.ShowDialog(this);
+            this.Enabled = true;
+
+            if (frmEditEmpleado.UpdateList)
+            {
+                // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
+                this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
+            }
+        }
+
+        private void FilterTable()
+        {
+            var casa = CasaToolStripTextBox.Text.Trim();
+            var encargado = EncargadoToolStripTextBox.Text.Trim();
+            var empresa = EmpresaToolStripTextBox.Text.Trim();
+
+            if(string.IsNullOrEmpty(casa) && string.IsNullOrEmpty(encargado) && string.IsNullOrEmpty(empresa))
+            {
+                vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
+            }
+            else
+            {
+                vv_trabajadoresTableTableAdapter.FillByCasaAndEmpresaAndEncargado(
+                   this.dataSet1.vv_trabajadoresTable,
+                   casa,
+                   empresa,
+                   encargado);
+            }
+            
+        }
+
+        private void EncargadoToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterTable();
+        }
+
+        private void CasaToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterTable();
+        }
+
+        private void EmpresaToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterTable();
+        }
+
+        private void bindingNavigatorAddNewItem_Click_1(object sender, EventArgs e)
         {
             this.Enabled = false;
             FrmEditEmpleado frmEditEmpleado = new FrmEditEmpleado();
@@ -50,11 +113,12 @@
             if (frmEditEmpleado.UpdateList)
             {
                 // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
-                this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+                this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
             }
+
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        private void bindingNavigatorDeleteItem_Click_1(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show(
                 "Confirme eliminar el registro",
@@ -72,28 +136,10 @@
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
-        }
-
-        private void editarToolStripButton1_Click(object sender, EventArgs e)
-        {
-            if (trabajadoresDataGridView.CurrentRow == null) return;
-
-            this.Enabled = false;
-            FrmEditEmpleado frmEditEmpleado = new FrmEditEmpleado();
-            frmEditEmpleado.miTrabajador = dataSet1.Trabajadores.FindById(
-                (int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value);
-            frmEditEmpleado.ShowDialog(this);
-            this.Enabled = true;
-
-            if (frmEditEmpleado.UpdateList)
-            {
-                // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
-                this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
             }
         }
 
-        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pDFToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Enabled = false;
             try
@@ -118,7 +164,7 @@
                         exportOptions.ExportFormatOptions = new PdfFormatOptions();
                     }
                     frmPreviewCrystal.ReporteCrystal.Export();
-                }                
+                }
             }
             catch (Exception ex)
             {
@@ -127,7 +173,7 @@
             this.Enabled = true;
         }
 
-        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        private void excelToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Enabled = false;
             try
@@ -161,7 +207,7 @@
             this.Enabled = true;
         }
 
-        private void vistaPreliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void vistaPreliminarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Enabled = false;
             try
@@ -176,44 +222,6 @@
                 MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Enabled = true;
-        }
-
-        private void CasaToolStripTextBox_TextChanged(object sender, EventArgs e)
-        {
-            FilterTable();
-        }
-
-        private void FilterTable()
-        {
-            var casa = CasaToolStripTextBox.Text.Trim();
-            if (!string.IsNullOrEmpty(casa))
-            {
-                casasBindingSource.Filter = $"Casa LIKE '%{casa}%'";
-            }
-            else
-            {
-                casasBindingSource.RemoveFilter();
-            }
-
-            var encargado = EncargadoToolStripTextBox.Text.Trim();
-            if(!string.IsNullOrEmpty(encargado))
-            {
-                empleosBindingSource.Filter = $"Empleo LIKE '%{encargado}%'";
-            }
-            else
-            {
-                empleosBindingSource.RemoveFilter();
-            }
-
-            var empresa = EmpresaToolStripTextBox.Text.Trim();
-            if (!string.IsNullOrEmpty(empresa =))
-            {
-                empresasBindingSource.Filter = $"Empleo LIKE '%{empresa =}%'";
-            }
-            else
-            {
-                empresasBindingSource.RemoveFilter();
-            }
         }
     }
 }

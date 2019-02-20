@@ -51,5 +51,16 @@ namespace ManzantinesApp.Properties {
                 return ((string)(this["Database1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Mazantines;Persist Security Info=True;User ID=mazan" +
+            "tines;Password=mazantines123")]
+        public string MazantinesConnectionString {
+            get {
+                return ((string)(this["MazantinesConnectionString"]));
+            }
+        }
     }
 }
