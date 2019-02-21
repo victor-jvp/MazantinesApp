@@ -39,34 +39,6 @@
             this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-                    
-        }
-
-        private void editarToolStripButton1_Click(object sender, EventArgs e)
-        {
-            if (trabajadoresDataGridView.CurrentRow == null) return;
-
-            this.Enabled = false;
-            FrmEditEmpleado frmEditEmpleado = new FrmEditEmpleado();
-            frmEditEmpleado.miTrabajador = dataSet1.Trabajadores.FindById(
-                (int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value);
-            frmEditEmpleado.ShowDialog(this);
-            this.Enabled = true;
-
-            if (frmEditEmpleado.UpdateList)
-            {
-                // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
-                this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
-            }
-        }
-
         private void FilterTable()
         {
             var casa = CasaToolStripTextBox.Text.Trim();
@@ -222,6 +194,33 @@
                 MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Enabled = true;
+        }
+
+        private void EditToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (trabajadoresDataGridView.CurrentRow == null) return;
+
+            this.Enabled = false;
+            FrmEditEmpleado frmEditEmpleado = new FrmEditEmpleado();
+            frmEditEmpleado.miTrabajador = dataSet1.vv_trabajadoresTable.FindById((int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value);
+            if (frmEditEmpleado.miTrabajador == null)
+            {
+                MessageBox.Show(
+                    "El trabajador no pudo ser cargado, por favor intente de nuevo.", 
+                    "Aviso", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            frmEditEmpleado.ShowDialog(this);
+            this.Enabled = true;
+
+            if (frmEditEmpleado.UpdateList)
+            {
+                // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
+                this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
+            }
         }
     }
 }

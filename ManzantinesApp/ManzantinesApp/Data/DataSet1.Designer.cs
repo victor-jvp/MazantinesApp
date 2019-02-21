@@ -38,15 +38,13 @@ namespace ManzantinesApp.Data {
         
         private vv_trabajadoresTableDataTable tablevv_trabajadoresTable;
         
-        private global::System.Data.DataRelation relationEmpleos_Trabajadores_empleo;
-        
-        private global::System.Data.DataRelation relationEmpleos_Trabajadores_encargado;
-        
         private global::System.Data.DataRelation relationEmpresas_Trabajadores;
         
         private global::System.Data.DataRelation relationCasas_Trabajadores;
         
         private global::System.Data.DataRelation relationFincas_Trabajadores;
+        
+        private global::System.Data.DataRelation relationEmpleos_Trabajadores;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -348,11 +346,10 @@ namespace ManzantinesApp.Data {
                     this.tablevv_trabajadoresTable.InitVars();
                 }
             }
-            this.relationEmpleos_Trabajadores_empleo = this.Relations["Empleos_Trabajadores_empleo"];
-            this.relationEmpleos_Trabajadores_encargado = this.Relations["Empleos_Trabajadores_encargado"];
             this.relationEmpresas_Trabajadores = this.Relations["Empresas_Trabajadores"];
             this.relationCasas_Trabajadores = this.Relations["Casas_Trabajadores"];
             this.relationFincas_Trabajadores = this.Relations["Fincas_Trabajadores"];
+            this.relationEmpleos_Trabajadores = this.Relations["Empleos_Trabajadores"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -377,14 +374,6 @@ namespace ManzantinesApp.Data {
             base.Tables.Add(this.tablevv_EmpleadosCasas);
             this.tablevv_trabajadoresTable = new vv_trabajadoresTableDataTable();
             base.Tables.Add(this.tablevv_trabajadoresTable);
-            this.relationEmpleos_Trabajadores_empleo = new global::System.Data.DataRelation("Empleos_Trabajadores_empleo", new global::System.Data.DataColumn[] {
-                        this.tableEmpleos.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTrabajadores.id_empleoColumn}, false);
-            this.Relations.Add(this.relationEmpleos_Trabajadores_empleo);
-            this.relationEmpleos_Trabajadores_encargado = new global::System.Data.DataRelation("Empleos_Trabajadores_encargado", new global::System.Data.DataColumn[] {
-                        this.tableEmpleos.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTrabajadores.id_encargadoColumn}, false);
-            this.Relations.Add(this.relationEmpleos_Trabajadores_encargado);
             this.relationEmpresas_Trabajadores = new global::System.Data.DataRelation("Empresas_Trabajadores", new global::System.Data.DataColumn[] {
                         this.tableEmpresas.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableTrabajadores.id_empresaColumn}, false);
@@ -397,6 +386,10 @@ namespace ManzantinesApp.Data {
                         this.tableFincas.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableTrabajadores.id_fincaColumn}, false);
             this.Relations.Add(this.relationFincas_Trabajadores);
+            this.relationEmpleos_Trabajadores = new global::System.Data.DataRelation("Empleos_Trabajadores", new global::System.Data.DataColumn[] {
+                        this.tableEmpleos.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTrabajadores.id_empleoColumn}, false);
+            this.Relations.Add(this.relationEmpleos_Trabajadores);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1811,7 +1804,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TrabajadoresRow AddTrabajadoresRow(int Nro_empleado, string Nombre, string Apellidos, string Telefono, EmpresasRow parentEmpresasRowByEmpresas_Trabajadores, EmpleosRow parentEmpleosRowByEmpleos_Trabajadores_empleo, FincasRow parentFincasRowByFincas_Trabajadores, EmpleosRow parentEmpleosRowByEmpleos_Trabajadores_encargado, CasasRow parentCasasRowByCasas_Trabajadores, string foto) {
+            public TrabajadoresRow AddTrabajadoresRow(int Nro_empleado, string Nombre, string Apellidos, string Telefono, EmpresasRow parentEmpresasRowByEmpresas_Trabajadores, EmpleosRow parentEmpleosRowByEmpleos_Trabajadores, FincasRow parentFincasRowByFincas_Trabajadores, int id_encargado, CasasRow parentCasasRowByCasas_Trabajadores, string foto) {
                 TrabajadoresRow rowTrabajadoresRow = ((TrabajadoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1822,20 +1815,17 @@ namespace ManzantinesApp.Data {
                         null,
                         null,
                         null,
-                        null,
+                        id_encargado,
                         null,
                         foto};
                 if ((parentEmpresasRowByEmpresas_Trabajadores != null)) {
                     columnValuesArray[5] = parentEmpresasRowByEmpresas_Trabajadores[0];
                 }
-                if ((parentEmpleosRowByEmpleos_Trabajadores_empleo != null)) {
-                    columnValuesArray[6] = parentEmpleosRowByEmpleos_Trabajadores_empleo[0];
+                if ((parentEmpleosRowByEmpleos_Trabajadores != null)) {
+                    columnValuesArray[6] = parentEmpleosRowByEmpleos_Trabajadores[0];
                 }
                 if ((parentFincasRowByFincas_Trabajadores != null)) {
                     columnValuesArray[7] = parentFincasRowByFincas_Trabajadores[0];
-                }
-                if ((parentEmpleosRowByEmpleos_Trabajadores_encargado != null)) {
-                    columnValuesArray[8] = parentEmpleosRowByEmpleos_Trabajadores_encargado[0];
                 }
                 if ((parentCasasRowByCasas_Trabajadores != null)) {
                     columnValuesArray[9] = parentCasasRowByCasas_Trabajadores[0];
@@ -3037,23 +3027,12 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TrabajadoresRow[] GetTrabajadoresRowsByEmpleos_Trabajadores_empleo() {
-                if ((this.Table.ChildRelations["Empleos_Trabajadores_empleo"] == null)) {
+            public TrabajadoresRow[] GetTrabajadoresRows() {
+                if ((this.Table.ChildRelations["Empleos_Trabajadores"] == null)) {
                     return new TrabajadoresRow[0];
                 }
                 else {
-                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Empleos_Trabajadores_empleo"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TrabajadoresRow[] GetTrabajadoresRowsByEmpleos_Trabajadores_encargado() {
-                if ((this.Table.ChildRelations["Empleos_Trabajadores_encargado"] == null)) {
-                    return new TrabajadoresRow[0];
-                }
-                else {
-                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Empleos_Trabajadores_encargado"])));
+                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["Empleos_Trabajadores"])));
                 }
             }
         }
@@ -3310,28 +3289,6 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpleosRow EmpleosRowByEmpleos_Trabajadores_empleo {
-                get {
-                    return ((EmpleosRow)(this.GetParentRow(this.Table.ParentRelations["Empleos_Trabajadores_empleo"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Empleos_Trabajadores_empleo"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpleosRow EmpleosRowByEmpleos_Trabajadores_encargado {
-                get {
-                    return ((EmpleosRow)(this.GetParentRow(this.Table.ParentRelations["Empleos_Trabajadores_encargado"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Empleos_Trabajadores_encargado"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public EmpresasRow EmpresasRow {
                 get {
                     return ((EmpresasRow)(this.GetParentRow(this.Table.ParentRelations["Empresas_Trabajadores"])));
@@ -3360,6 +3317,17 @@ namespace ManzantinesApp.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Fincas_Trabajadores"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmpleosRow EmpleosRow {
+                get {
+                    return ((EmpleosRow)(this.GetParentRow(this.Table.ParentRelations["Empleos_Trabajadores"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Empleos_Trabajadores"]);
                 }
             }
             
@@ -5918,7 +5886,7 @@ SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finc
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finca" +
@@ -5951,6 +5919,12 @@ WHERE
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Casa", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Casa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Empresa", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Encargado", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finca" +
+                ", id_encargado, id_casa, foto, Id FROM Trabajadores WHERE Id = @Id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6032,6 +6006,32 @@ WHERE
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Encargado));
             }
+            DataSet1.TrabajadoresDataTable dataTable = new DataSet1.TrabajadoresDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FindById(DataSet1.TrabajadoresDataTable dataTable, int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TrabajadoresDataTable GetDataById(int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             DataSet1.TrabajadoresDataTable dataTable = new DataSet1.TrabajadoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6800,7 +6800,7 @@ WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finca" +
@@ -6814,6 +6814,13 @@ WHERE
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Casa", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Casa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Empresa", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Encargado", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Encargado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Nro_empleado, Nombre, Apellidos, Telefono, id_empresa, id_empleo, id_finca" +
+                ", id_encargado, id_casa, foto, Id, Casa, Empresa, Encargado FROM dbo.vv_trabajad" +
+                "oresTable WHERE Id = @ID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6895,6 +6902,32 @@ WHERE
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Encargado));
             }
+            DataSet1.vv_trabajadoresTableDataTable dataTable = new DataSet1.vv_trabajadoresTableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FindById(DataSet1.vv_trabajadoresTableDataTable dataTable, int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.vv_trabajadoresTableDataTable GetDataById(int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             DataSet1.vv_trabajadoresTableDataTable dataTable = new DataSet1.vv_trabajadoresTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

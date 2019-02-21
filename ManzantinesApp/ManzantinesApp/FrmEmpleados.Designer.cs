@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleados));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.trabajadoresDataGridView = new System.Windows.Forms.DataGridView();
@@ -80,6 +80,7 @@
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).BeginInit();
@@ -110,8 +111,8 @@
             // 
             this.trabajadoresDataGridView.AllowUserToAddRows = false;
             this.trabajadoresDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.trabajadoresDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.trabajadoresDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.trabajadoresDataGridView.AutoGenerateColumns = false;
             this.trabajadoresDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.trabajadoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -383,6 +384,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
+            this.EditToolStripButton,
             this.bindingNavigatorDeleteItem,
             this.toolStripButton1});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
@@ -500,7 +502,7 @@
             // 
             this.pDFToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pDFToolStripMenuItem.Image")));
             this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.pDFToolStripMenuItem.Text = "PDF";
             this.pDFToolStripMenuItem.Click += new System.EventHandler(this.pDFToolStripMenuItem_Click_1);
             // 
@@ -508,7 +510,7 @@
             // 
             this.excelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("excelToolStripMenuItem.Image")));
             this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.excelToolStripMenuItem.Text = "Excel";
             this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click_1);
             // 
@@ -516,9 +518,19 @@
             // 
             this.vistaPreliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreliminarToolStripMenuItem.Image")));
             this.vistaPreliminarToolStripMenuItem.Name = "vistaPreliminarToolStripMenuItem";
-            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.vistaPreliminarToolStripMenuItem.Text = "Vista Preliminar";
             this.vistaPreliminarToolStripMenuItem.Click += new System.EventHandler(this.vistaPreliminarToolStripMenuItem_Click_1);
+            // 
+            // EditToolStripButton
+            // 
+            this.EditToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.EditToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("EditToolStripButton.Image")));
+            this.EditToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditToolStripButton.Name = "EditToolStripButton";
+            this.EditToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.EditToolStripButton.Text = "Modificar";
+            this.EditToolStripButton.Click += new System.EventHandler(this.EditToolStripButton_Click);
             // 
             // FrmEmpleados
             // 
@@ -600,5 +612,6 @@
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton EditToolStripButton;
     }
 }

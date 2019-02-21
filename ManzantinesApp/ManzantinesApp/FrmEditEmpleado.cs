@@ -7,7 +7,7 @@
     public partial class FrmEditEmpleado : Form
     {
         #region Properties
-        public DataSet1.TrabajadoresRow miTrabajador { get; set; } = null;
+        public DataSet1.vv_trabajadoresTableRow miTrabajador { get; set; } = null;
         public bool UpdateList { get; set; } = false;
         #endregion
 
