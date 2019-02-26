@@ -23,23 +23,35 @@
 
         private void FrmEditEmpleado_Load(object sender, EventArgs e)
         {
-            this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
-            this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+            // TODO: This line of code loads data into the 'dataSet1.Trabajadores_Empleos' table. You can move, or remove it, as needed.
             this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
             this.encargadosTableAdapter.Fill(this.dataSet1.Encargados);
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
-            this.empleosTableAdapter.Fill(this.dataSet1.Empleos);            
+            this.empleosTableAdapter.Fill(this.dataSet1.Empleos);
+            this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
+            this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);                   
 
             if(miTrabajador == null)
             {
-                trabajadoresBindingSource.AddNew();
+                this.fincaComboBox.SelectedIndex = -1;
+                trabajadoresBindingSource.AddNew();                
             }
             else
             {
                 this.trabajadoresBindingSource.Position = trabajadoresBindingSource.Find("Id", miTrabajador.Id);
-            }
-
-            this.fincaComboBox.SelectedIndex = -1;
+                if(miTrabajador.id_casa == 0)
+                {
+                    this.fincaComboBox.SelectedIndex = -1;
+                }
+                else
+                {
+                    DataSet1.CasasDataTable miCasa = this.casasTableAdapter.GetDataById(miTrabajador.id_casa);
+                    DataSet1.CasasRow miRow = miCasa[0];
+                    fincaComboBox.SelectedValue = miRow.id_finca;
+                    fincaComboBox_SelectedIndexChanged(sender, e);
+                    nroCasaComboBox.SelectedValue = miTrabajador.id_casa;
+                }                              
+            }            
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -47,8 +59,7 @@
             try
             {
                 this.Validate();
-                this.trabajadoresBindingSource.EndEdit();      
-                
+                this.trabajadoresBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
                 this.UpdateList = true;
                 this.Close();

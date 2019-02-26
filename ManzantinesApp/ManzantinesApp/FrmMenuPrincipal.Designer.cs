@@ -36,10 +36,11 @@
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fincasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.encargadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fincasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
@@ -50,42 +51,41 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.MochilaLosCaballoslinkLabel1 = new System.Windows.Forms.LinkLabel();
             this.CarloslinkLabel = new System.Windows.Forms.LinkLabel();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.encargadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CasaButton17 = new System.Windows.Forms.Button();
+            this.CasaButton18 = new System.Windows.Forms.Button();
+            this.CasaButton12 = new System.Windows.Forms.Button();
+            this.CasaButton21 = new System.Windows.Forms.Button();
+            this.CasaButton20 = new System.Windows.Forms.Button();
+            this.CasaButton19 = new System.Windows.Forms.Button();
+            this.CasaButton24 = new System.Windows.Forms.Button();
+            this.CasaButton23 = new System.Windows.Forms.Button();
+            this.CasaButton22 = new System.Windows.Forms.Button();
+            this.CasaButton27 = new System.Windows.Forms.Button();
+            this.CasaButton26 = new System.Windows.Forms.Button();
+            this.CasaButton30 = new System.Windows.Forms.Button();
+            this.CasaButton29 = new System.Windows.Forms.Button();
+            this.CasaButton32 = new System.Windows.Forms.Button();
+            this.CasaButton33 = new System.Windows.Forms.Button();
+            this.CasaButton34 = new System.Windows.Forms.Button();
+            this.CasaButton28 = new System.Windows.Forms.Button();
+            this.CasaButton25 = new System.Windows.Forms.Button();
+            this.CasaButton16 = new System.Windows.Forms.Button();
+            this.CasaButton15 = new System.Windows.Forms.Button();
+            this.CasaButton14 = new System.Windows.Forms.Button();
+            this.CasaButton13 = new System.Windows.Forms.Button();
+            this.CasaButton10 = new System.Windows.Forms.Button();
+            this.CasaButton11 = new System.Windows.Forms.Button();
+            this.CasaButton09 = new System.Windows.Forms.Button();
+            this.CasaButton08 = new System.Windows.Forms.Button();
+            this.CasaButton07 = new System.Windows.Forms.Button();
+            this.CasaButton06 = new System.Windows.Forms.Button();
+            this.CasaButton35 = new System.Windows.Forms.Button();
+            this.CasaButton03 = new System.Windows.Forms.Button();
+            this.CasaButton05 = new System.Windows.Forms.Button();
+            this.CasaButton31 = new System.Windows.Forms.Button();
+            this.CasaButton04 = new System.Windows.Forms.Button();
+            this.CasaButton02 = new System.Windows.Forms.Button();
+            this.CasaButton01 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -155,33 +155,40 @@
             this.datosToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.datosToolStripMenuItem.Text = "&Datos";
             // 
-            // fincasToolStripMenuItem
-            // 
-            this.fincasToolStripMenuItem.Name = "fincasToolStripMenuItem";
-            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fincasToolStripMenuItem.Text = "&Fincas";
-            this.fincasToolStripMenuItem.Click += new System.EventHandler(this.fincasToolStripMenuItem_Click);
-            // 
             // casasToolStripMenuItem
             // 
             this.casasToolStripMenuItem.Name = "casasToolStripMenuItem";
-            this.casasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.casasToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.casasToolStripMenuItem.Text = "&Casas";
             this.casasToolStripMenuItem.Click += new System.EventHandler(this.casasToolStripMenuItem_Click);
             // 
-            // empresaToolStripMenuItem
+            // encargadosToolStripMenuItem
             // 
-            this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empresaToolStripMenuItem.Text = "Em&presas";
-            this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
+            this.encargadosToolStripMenuItem.Name = "encargadosToolStripMenuItem";
+            this.encargadosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.encargadosToolStripMenuItem.Text = "&Encargados";
+            this.encargadosToolStripMenuItem.Click += new System.EventHandler(this.encargadosToolStripMenuItem_Click);
             // 
             // empleoToolStripMenuItem
             // 
             this.empleoToolStripMenuItem.Name = "empleoToolStripMenuItem";
-            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.empleoToolStripMenuItem.Text = "E&mpleos";
             this.empleoToolStripMenuItem.Click += new System.EventHandler(this.empleoToolStripMenuItem_Click);
+            // 
+            // empresaToolStripMenuItem
+            // 
+            this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.empresaToolStripMenuItem.Text = "Em&presas";
+            this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
+            // 
+            // fincasToolStripMenuItem
+            // 
+            this.fincasToolStripMenuItem.Name = "fincasToolStripMenuItem";
+            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.fincasToolStripMenuItem.Text = "&Fincas";
+            this.fincasToolStripMenuItem.Click += new System.EventHandler(this.fincasToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -194,41 +201,41 @@
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.MochilaLosCaballoslinkLabel1);
             this.panel1.Controls.Add(this.CarloslinkLabel);
-            this.panel1.Controls.Add(this.button35);
-            this.panel1.Controls.Add(this.button34);
-            this.panel1.Controls.Add(this.button33);
-            this.panel1.Controls.Add(this.button32);
-            this.panel1.Controls.Add(this.button31);
-            this.panel1.Controls.Add(this.button30);
-            this.panel1.Controls.Add(this.button29);
-            this.panel1.Controls.Add(this.button28);
-            this.panel1.Controls.Add(this.button27);
-            this.panel1.Controls.Add(this.button26);
-            this.panel1.Controls.Add(this.button25);
-            this.panel1.Controls.Add(this.button24);
-            this.panel1.Controls.Add(this.button23);
-            this.panel1.Controls.Add(this.button22);
-            this.panel1.Controls.Add(this.button21);
-            this.panel1.Controls.Add(this.button20);
-            this.panel1.Controls.Add(this.button19);
-            this.panel1.Controls.Add(this.button18);
-            this.panel1.Controls.Add(this.button17);
-            this.panel1.Controls.Add(this.button16);
-            this.panel1.Controls.Add(this.button15);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.CasaButton17);
+            this.panel1.Controls.Add(this.CasaButton18);
+            this.panel1.Controls.Add(this.CasaButton12);
+            this.panel1.Controls.Add(this.CasaButton21);
+            this.panel1.Controls.Add(this.CasaButton20);
+            this.panel1.Controls.Add(this.CasaButton19);
+            this.panel1.Controls.Add(this.CasaButton24);
+            this.panel1.Controls.Add(this.CasaButton23);
+            this.panel1.Controls.Add(this.CasaButton22);
+            this.panel1.Controls.Add(this.CasaButton27);
+            this.panel1.Controls.Add(this.CasaButton26);
+            this.panel1.Controls.Add(this.CasaButton30);
+            this.panel1.Controls.Add(this.CasaButton29);
+            this.panel1.Controls.Add(this.CasaButton32);
+            this.panel1.Controls.Add(this.CasaButton33);
+            this.panel1.Controls.Add(this.CasaButton34);
+            this.panel1.Controls.Add(this.CasaButton28);
+            this.panel1.Controls.Add(this.CasaButton25);
+            this.panel1.Controls.Add(this.CasaButton16);
+            this.panel1.Controls.Add(this.CasaButton15);
+            this.panel1.Controls.Add(this.CasaButton14);
+            this.panel1.Controls.Add(this.CasaButton13);
+            this.panel1.Controls.Add(this.CasaButton10);
+            this.panel1.Controls.Add(this.CasaButton11);
+            this.panel1.Controls.Add(this.CasaButton09);
+            this.panel1.Controls.Add(this.CasaButton08);
+            this.panel1.Controls.Add(this.CasaButton07);
+            this.panel1.Controls.Add(this.CasaButton06);
+            this.panel1.Controls.Add(this.CasaButton35);
+            this.panel1.Controls.Add(this.CasaButton03);
+            this.panel1.Controls.Add(this.CasaButton05);
+            this.panel1.Controls.Add(this.CasaButton31);
+            this.panel1.Controls.Add(this.CasaButton04);
+            this.panel1.Controls.Add(this.CasaButton02);
+            this.panel1.Controls.Add(this.CasaButton01);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
@@ -344,364 +351,390 @@
             this.CarloslinkLabel.TabStop = true;
             this.CarloslinkLabel.Text = "CARLOS";
             // 
-            // button35
-            // 
-            this.button35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button35.Location = new System.Drawing.Point(575, 63);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(30, 28);
-            this.button35.TabIndex = 35;
-            this.button35.Text = "18";
-            this.button35.UseVisualStyleBackColor = true;
-            // 
-            // button34
-            // 
-            this.button34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button34.Location = new System.Drawing.Point(589, 92);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(30, 28);
-            this.button34.TabIndex = 34;
-            this.button34.Text = "18";
-            this.button34.UseVisualStyleBackColor = true;
-            // 
-            // button33
-            // 
-            this.button33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button33.Location = new System.Drawing.Point(563, 34);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(30, 28);
-            this.button33.TabIndex = 33;
-            this.button33.Text = "18";
-            this.button33.UseVisualStyleBackColor = true;
-            // 
-            // button32
-            // 
-            this.button32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button32.Location = new System.Drawing.Point(722, 127);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(30, 28);
-            this.button32.TabIndex = 32;
-            this.button32.Text = "8";
-            this.button32.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button31.Location = new System.Drawing.Point(689, 127);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(30, 28);
-            this.button31.TabIndex = 31;
-            this.button31.Text = "12";
-            this.button31.UseVisualStyleBackColor = true;
-            // 
-            // button30
-            // 
-            this.button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button30.Location = new System.Drawing.Point(657, 127);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(30, 28);
-            this.button30.TabIndex = 30;
-            this.button30.Text = "12";
-            this.button30.UseVisualStyleBackColor = true;
-            // 
-            // button29
-            // 
-            this.button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.Location = new System.Drawing.Point(605, 261);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(30, 28);
-            this.button29.TabIndex = 29;
-            this.button29.Text = "12";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // button28
-            // 
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(572, 261);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(30, 28);
-            this.button28.TabIndex = 28;
-            this.button28.Text = "12";
-            this.button28.UseVisualStyleBackColor = true;
-            // 
-            // button27
-            // 
-            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Location = new System.Drawing.Point(538, 261);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(30, 28);
-            this.button27.TabIndex = 27;
-            this.button27.Text = "12";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // button26
-            // 
-            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.Location = new System.Drawing.Point(437, 317);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(30, 28);
-            this.button26.TabIndex = 26;
-            this.button26.Text = "12";
-            this.button26.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.Location = new System.Drawing.Point(404, 317);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(30, 28);
-            this.button25.TabIndex = 25;
-            this.button25.Text = "12";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
-            // button24
-            // 
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(348, 430);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(30, 28);
-            this.button24.TabIndex = 24;
-            this.button24.Text = "12";
-            this.button24.UseVisualStyleBackColor = true;
-            // 
-            // button23
-            // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(316, 430);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(30, 28);
-            this.button23.TabIndex = 23;
-            this.button23.Text = "12";
-            this.button23.UseVisualStyleBackColor = true;
-            // 
-            // button22
-            // 
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.Location = new System.Drawing.Point(432, 450);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(30, 28);
-            this.button22.TabIndex = 22;
-            this.button22.Text = "8";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(463, 450);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(30, 28);
-            this.button21.TabIndex = 21;
-            this.button21.Text = "8";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(496, 450);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(30, 28);
-            this.button20.TabIndex = 20;
-            this.button20.Text = "8";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(282, 430);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(30, 28);
-            this.button19.TabIndex = 19;
-            this.button19.Text = "8";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(370, 317);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(30, 28);
-            this.button18.TabIndex = 18;
-            this.button18.Text = "8";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(538, 91);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(30, 28);
-            this.button17.TabIndex = 17;
-            this.button17.Text = "8";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(506, 91);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(30, 28);
-            this.button16.TabIndex = 16;
-            this.button16.Text = "8";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(474, 91);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(30, 28);
-            this.button15.TabIndex = 15;
-            this.button15.Text = "8";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(439, 91);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 28);
-            this.button14.TabIndex = 14;
-            this.button14.Text = "8";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(451, 35);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(30, 28);
-            this.button13.TabIndex = 13;
-            this.button13.Text = "12";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(482, 35);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(30, 28);
-            this.button12.TabIndex = 12;
-            this.button12.Text = "12";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(419, 35);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(30, 28);
-            this.button11.TabIndex = 11;
-            this.button11.Text = "12";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(387, 35);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(30, 28);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "12";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(348, 76);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(30, 28);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "5";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(347, 46);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 28);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "5";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(528, 450);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(30, 28);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "6";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(309, 108);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(30, 28);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(298, 71);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(30, 28);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "6";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(401, 450);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 28);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "16";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(384, 117);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 28);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "16";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(138, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "16";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(102, 261);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 28);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "16";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // encargadosToolStripMenuItem
-            // 
-            this.encargadosToolStripMenuItem.Name = "encargadosToolStripMenuItem";
-            this.encargadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.encargadosToolStripMenuItem.Text = "&Encargados";
-            this.encargadosToolStripMenuItem.Click += new System.EventHandler(this.encargadosToolStripMenuItem_Click);
+            // CasaButton17
+            // 
+            this.CasaButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton17.Location = new System.Drawing.Point(575, 63);
+            this.CasaButton17.Name = "CasaButton17";
+            this.CasaButton17.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton17.TabIndex = 35;
+            this.CasaButton17.Text = "17";
+            this.CasaButton17.UseVisualStyleBackColor = true;
+            this.CasaButton17.Click += new System.EventHandler(this.CasaButton17_Click);
+            // 
+            // CasaButton18
+            // 
+            this.CasaButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton18.Location = new System.Drawing.Point(589, 92);
+            this.CasaButton18.Name = "CasaButton18";
+            this.CasaButton18.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton18.TabIndex = 34;
+            this.CasaButton18.Text = "18";
+            this.CasaButton18.UseVisualStyleBackColor = true;
+            this.CasaButton18.Click += new System.EventHandler(this.CasaButton18_Click);
+            // 
+            // CasaButton12
+            // 
+            this.CasaButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton12.Location = new System.Drawing.Point(563, 34);
+            this.CasaButton12.Name = "CasaButton12";
+            this.CasaButton12.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton12.TabIndex = 33;
+            this.CasaButton12.Text = "12";
+            this.CasaButton12.UseVisualStyleBackColor = true;
+            this.CasaButton12.Click += new System.EventHandler(this.CasaButton12_Click);
+            // 
+            // CasaButton21
+            // 
+            this.CasaButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton21.Location = new System.Drawing.Point(722, 127);
+            this.CasaButton21.Name = "CasaButton21";
+            this.CasaButton21.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton21.TabIndex = 32;
+            this.CasaButton21.Text = "21";
+            this.CasaButton21.UseVisualStyleBackColor = true;
+            this.CasaButton21.Click += new System.EventHandler(this.CasaButton21_Click);
+            // 
+            // CasaButton20
+            // 
+            this.CasaButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton20.Location = new System.Drawing.Point(689, 127);
+            this.CasaButton20.Name = "CasaButton20";
+            this.CasaButton20.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton20.TabIndex = 31;
+            this.CasaButton20.Text = "20";
+            this.CasaButton20.UseVisualStyleBackColor = true;
+            this.CasaButton20.Click += new System.EventHandler(this.CasaButton20_Click);
+            // 
+            // CasaButton19
+            // 
+            this.CasaButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton19.Location = new System.Drawing.Point(657, 127);
+            this.CasaButton19.Name = "CasaButton19";
+            this.CasaButton19.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton19.TabIndex = 30;
+            this.CasaButton19.Text = "19";
+            this.CasaButton19.UseVisualStyleBackColor = true;
+            this.CasaButton19.Click += new System.EventHandler(this.CasaButton19_Click);
+            // 
+            // CasaButton24
+            // 
+            this.CasaButton24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton24.Location = new System.Drawing.Point(605, 261);
+            this.CasaButton24.Name = "CasaButton24";
+            this.CasaButton24.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton24.TabIndex = 29;
+            this.CasaButton24.Text = "24";
+            this.CasaButton24.UseVisualStyleBackColor = true;
+            this.CasaButton24.Click += new System.EventHandler(this.CasaButton24_Click);
+            // 
+            // CasaButton23
+            // 
+            this.CasaButton23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton23.Location = new System.Drawing.Point(572, 261);
+            this.CasaButton23.Name = "CasaButton23";
+            this.CasaButton23.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton23.TabIndex = 28;
+            this.CasaButton23.Text = "23";
+            this.CasaButton23.UseVisualStyleBackColor = true;
+            this.CasaButton23.Click += new System.EventHandler(this.CasaButton23_Click);
+            // 
+            // CasaButton22
+            // 
+            this.CasaButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton22.Location = new System.Drawing.Point(538, 261);
+            this.CasaButton22.Name = "CasaButton22";
+            this.CasaButton22.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton22.TabIndex = 27;
+            this.CasaButton22.Text = "22";
+            this.CasaButton22.UseVisualStyleBackColor = true;
+            this.CasaButton22.Click += new System.EventHandler(this.CasaButton22_Click);
+            // 
+            // CasaButton27
+            // 
+            this.CasaButton27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton27.Location = new System.Drawing.Point(437, 317);
+            this.CasaButton27.Name = "CasaButton27";
+            this.CasaButton27.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton27.TabIndex = 26;
+            this.CasaButton27.Text = "27";
+            this.CasaButton27.UseVisualStyleBackColor = true;
+            this.CasaButton27.Click += new System.EventHandler(this.CasaButton27_Click);
+            // 
+            // CasaButton26
+            // 
+            this.CasaButton26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton26.Location = new System.Drawing.Point(404, 317);
+            this.CasaButton26.Name = "CasaButton26";
+            this.CasaButton26.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton26.TabIndex = 25;
+            this.CasaButton26.Text = "26";
+            this.CasaButton26.UseVisualStyleBackColor = true;
+            this.CasaButton26.Click += new System.EventHandler(this.CasaButton26_Click);
+            // 
+            // CasaButton30
+            // 
+            this.CasaButton30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton30.Location = new System.Drawing.Point(348, 430);
+            this.CasaButton30.Name = "CasaButton30";
+            this.CasaButton30.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton30.TabIndex = 24;
+            this.CasaButton30.Text = "30";
+            this.CasaButton30.UseVisualStyleBackColor = true;
+            this.CasaButton30.Click += new System.EventHandler(this.CasaButton30_Click);
+            // 
+            // CasaButton29
+            // 
+            this.CasaButton29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton29.Location = new System.Drawing.Point(316, 430);
+            this.CasaButton29.Name = "CasaButton29";
+            this.CasaButton29.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton29.TabIndex = 23;
+            this.CasaButton29.Text = "29";
+            this.CasaButton29.UseVisualStyleBackColor = true;
+            this.CasaButton29.Click += new System.EventHandler(this.CasaButton29_Click);
+            // 
+            // CasaButton32
+            // 
+            this.CasaButton32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton32.Location = new System.Drawing.Point(432, 450);
+            this.CasaButton32.Name = "CasaButton32";
+            this.CasaButton32.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton32.TabIndex = 22;
+            this.CasaButton32.Text = "32";
+            this.CasaButton32.UseVisualStyleBackColor = true;
+            this.CasaButton32.Click += new System.EventHandler(this.CasaButton32_Click);
+            // 
+            // CasaButton33
+            // 
+            this.CasaButton33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton33.Location = new System.Drawing.Point(463, 450);
+            this.CasaButton33.Name = "CasaButton33";
+            this.CasaButton33.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton33.TabIndex = 21;
+            this.CasaButton33.Text = "33";
+            this.CasaButton33.UseVisualStyleBackColor = true;
+            this.CasaButton33.Click += new System.EventHandler(this.CasaButton33_Click);
+            // 
+            // CasaButton34
+            // 
+            this.CasaButton34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton34.Location = new System.Drawing.Point(496, 450);
+            this.CasaButton34.Name = "CasaButton34";
+            this.CasaButton34.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton34.TabIndex = 20;
+            this.CasaButton34.Text = "34";
+            this.CasaButton34.UseVisualStyleBackColor = true;
+            this.CasaButton34.Click += new System.EventHandler(this.CasaButton34_Click);
+            // 
+            // CasaButton28
+            // 
+            this.CasaButton28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton28.Location = new System.Drawing.Point(282, 430);
+            this.CasaButton28.Name = "CasaButton28";
+            this.CasaButton28.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton28.TabIndex = 19;
+            this.CasaButton28.Text = "28";
+            this.CasaButton28.UseVisualStyleBackColor = true;
+            this.CasaButton28.Click += new System.EventHandler(this.CasaButton28_Click);
+            // 
+            // CasaButton25
+            // 
+            this.CasaButton25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton25.Location = new System.Drawing.Point(370, 317);
+            this.CasaButton25.Name = "CasaButton25";
+            this.CasaButton25.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton25.TabIndex = 18;
+            this.CasaButton25.Text = "25";
+            this.CasaButton25.UseVisualStyleBackColor = true;
+            this.CasaButton25.Click += new System.EventHandler(this.CasaButton25_Click);
+            // 
+            // CasaButton16
+            // 
+            this.CasaButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton16.Location = new System.Drawing.Point(538, 91);
+            this.CasaButton16.Name = "CasaButton16";
+            this.CasaButton16.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton16.TabIndex = 17;
+            this.CasaButton16.Text = "16";
+            this.CasaButton16.UseVisualStyleBackColor = true;
+            this.CasaButton16.Click += new System.EventHandler(this.CasaButton16_Click);
+            // 
+            // CasaButton15
+            // 
+            this.CasaButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton15.Location = new System.Drawing.Point(506, 91);
+            this.CasaButton15.Name = "CasaButton15";
+            this.CasaButton15.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton15.TabIndex = 16;
+            this.CasaButton15.Text = "15";
+            this.CasaButton15.UseVisualStyleBackColor = true;
+            this.CasaButton15.Click += new System.EventHandler(this.CasaButton15_Click);
+            // 
+            // CasaButton14
+            // 
+            this.CasaButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton14.Location = new System.Drawing.Point(474, 91);
+            this.CasaButton14.Name = "CasaButton14";
+            this.CasaButton14.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton14.TabIndex = 15;
+            this.CasaButton14.Text = "14";
+            this.CasaButton14.UseVisualStyleBackColor = true;
+            this.CasaButton14.Click += new System.EventHandler(this.CasaButton14_Click);
+            // 
+            // CasaButton13
+            // 
+            this.CasaButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton13.Location = new System.Drawing.Point(439, 91);
+            this.CasaButton13.Name = "CasaButton13";
+            this.CasaButton13.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton13.TabIndex = 14;
+            this.CasaButton13.Text = "13";
+            this.CasaButton13.UseVisualStyleBackColor = true;
+            this.CasaButton13.Click += new System.EventHandler(this.CasaButton13_Click);
+            // 
+            // CasaButton10
+            // 
+            this.CasaButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton10.Location = new System.Drawing.Point(451, 35);
+            this.CasaButton10.Name = "CasaButton10";
+            this.CasaButton10.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton10.TabIndex = 13;
+            this.CasaButton10.Text = "10";
+            this.CasaButton10.UseVisualStyleBackColor = true;
+            this.CasaButton10.Click += new System.EventHandler(this.CasaButton10_Click);
+            // 
+            // CasaButton11
+            // 
+            this.CasaButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton11.Location = new System.Drawing.Point(482, 35);
+            this.CasaButton11.Name = "CasaButton11";
+            this.CasaButton11.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton11.TabIndex = 12;
+            this.CasaButton11.Text = "11";
+            this.CasaButton11.UseVisualStyleBackColor = true;
+            this.CasaButton11.Click += new System.EventHandler(this.CasaButton11_Click);
+            // 
+            // CasaButton09
+            // 
+            this.CasaButton09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton09.Location = new System.Drawing.Point(419, 35);
+            this.CasaButton09.Name = "CasaButton09";
+            this.CasaButton09.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton09.TabIndex = 11;
+            this.CasaButton09.Text = "9";
+            this.CasaButton09.UseVisualStyleBackColor = true;
+            this.CasaButton09.Click += new System.EventHandler(this.CasaButton9_Click);
+            // 
+            // CasaButton08
+            // 
+            this.CasaButton08.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton08.Location = new System.Drawing.Point(387, 35);
+            this.CasaButton08.Name = "CasaButton08";
+            this.CasaButton08.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton08.TabIndex = 10;
+            this.CasaButton08.Text = "8";
+            this.CasaButton08.UseVisualStyleBackColor = true;
+            this.CasaButton08.Click += new System.EventHandler(this.CasaButton8_Click);
+            // 
+            // CasaButton07
+            // 
+            this.CasaButton07.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton07.Location = new System.Drawing.Point(348, 76);
+            this.CasaButton07.Name = "CasaButton07";
+            this.CasaButton07.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton07.TabIndex = 9;
+            this.CasaButton07.Text = "7";
+            this.CasaButton07.UseVisualStyleBackColor = true;
+            this.CasaButton07.Click += new System.EventHandler(this.CasaButton7_Click);
+            // 
+            // CasaButton06
+            // 
+            this.CasaButton06.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton06.Location = new System.Drawing.Point(347, 46);
+            this.CasaButton06.Name = "CasaButton06";
+            this.CasaButton06.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton06.TabIndex = 8;
+            this.CasaButton06.Text = "6";
+            this.CasaButton06.UseVisualStyleBackColor = true;
+            this.CasaButton06.Click += new System.EventHandler(this.CasaButton6_Click);
+            // 
+            // CasaButton35
+            // 
+            this.CasaButton35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton35.Location = new System.Drawing.Point(528, 450);
+            this.CasaButton35.Name = "CasaButton35";
+            this.CasaButton35.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton35.TabIndex = 7;
+            this.CasaButton35.Text = "35";
+            this.CasaButton35.UseVisualStyleBackColor = true;
+            this.CasaButton35.Click += new System.EventHandler(this.CasaButton35_Click);
+            // 
+            // CasaButton03
+            // 
+            this.CasaButton03.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton03.Location = new System.Drawing.Point(309, 108);
+            this.CasaButton03.Name = "CasaButton03";
+            this.CasaButton03.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton03.TabIndex = 6;
+            this.CasaButton03.Text = "3";
+            this.CasaButton03.UseVisualStyleBackColor = true;
+            this.CasaButton03.Click += new System.EventHandler(this.CasaButton3_Click);
+            // 
+            // CasaButton05
+            // 
+            this.CasaButton05.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton05.Location = new System.Drawing.Point(298, 71);
+            this.CasaButton05.Name = "CasaButton05";
+            this.CasaButton05.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton05.TabIndex = 5;
+            this.CasaButton05.Text = "5";
+            this.CasaButton05.UseVisualStyleBackColor = true;
+            this.CasaButton05.Click += new System.EventHandler(this.CasaButton5_Click);
+            // 
+            // CasaButton31
+            // 
+            this.CasaButton31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton31.Location = new System.Drawing.Point(401, 450);
+            this.CasaButton31.Name = "CasaButton31";
+            this.CasaButton31.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton31.TabIndex = 4;
+            this.CasaButton31.Text = "31";
+            this.CasaButton31.UseVisualStyleBackColor = true;
+            this.CasaButton31.Click += new System.EventHandler(this.CasaButton31_Click);
+            // 
+            // CasaButton04
+            // 
+            this.CasaButton04.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton04.Location = new System.Drawing.Point(384, 117);
+            this.CasaButton04.Name = "CasaButton04";
+            this.CasaButton04.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton04.TabIndex = 3;
+            this.CasaButton04.Text = "4";
+            this.CasaButton04.UseVisualStyleBackColor = true;
+            this.CasaButton04.Click += new System.EventHandler(this.CasaButton4_Click);
+            // 
+            // CasaButton02
+            // 
+            this.CasaButton02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton02.Location = new System.Drawing.Point(138, 261);
+            this.CasaButton02.Name = "CasaButton02";
+            this.CasaButton02.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton02.TabIndex = 2;
+            this.CasaButton02.Text = "2";
+            this.CasaButton02.UseVisualStyleBackColor = true;
+            this.CasaButton02.Click += new System.EventHandler(this.CasaButton2_Click);
+            // 
+            // CasaButton01
+            // 
+            this.CasaButton01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton01.Location = new System.Drawing.Point(102, 261);
+            this.CasaButton01.Name = "CasaButton01";
+            this.CasaButton01.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton01.TabIndex = 1;
+            this.CasaButton01.Text = "1";
+            this.CasaButton01.UseVisualStyleBackColor = true;
+            this.CasaButton01.Click += new System.EventHandler(this.CasaButton1_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -737,46 +770,46 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datosToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CasaButton01;
         private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fincasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem casasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empresaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleoToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button34;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button CasaButton02;
+        private System.Windows.Forms.Button CasaButton31;
+        private System.Windows.Forms.Button CasaButton04;
+        private System.Windows.Forms.Button CasaButton10;
+        private System.Windows.Forms.Button CasaButton11;
+        private System.Windows.Forms.Button CasaButton09;
+        private System.Windows.Forms.Button CasaButton08;
+        private System.Windows.Forms.Button CasaButton07;
+        private System.Windows.Forms.Button CasaButton06;
+        private System.Windows.Forms.Button CasaButton35;
+        private System.Windows.Forms.Button CasaButton03;
+        private System.Windows.Forms.Button CasaButton05;
+        private System.Windows.Forms.Button CasaButton32;
+        private System.Windows.Forms.Button CasaButton33;
+        private System.Windows.Forms.Button CasaButton34;
+        private System.Windows.Forms.Button CasaButton28;
+        private System.Windows.Forms.Button CasaButton25;
+        private System.Windows.Forms.Button CasaButton16;
+        private System.Windows.Forms.Button CasaButton15;
+        private System.Windows.Forms.Button CasaButton14;
+        private System.Windows.Forms.Button CasaButton13;
+        private System.Windows.Forms.Button CasaButton17;
+        private System.Windows.Forms.Button CasaButton18;
+        private System.Windows.Forms.Button CasaButton12;
+        private System.Windows.Forms.Button CasaButton21;
+        private System.Windows.Forms.Button CasaButton20;
+        private System.Windows.Forms.Button CasaButton19;
+        private System.Windows.Forms.Button CasaButton24;
+        private System.Windows.Forms.Button CasaButton23;
+        private System.Windows.Forms.Button CasaButton22;
+        private System.Windows.Forms.Button CasaButton27;
+        private System.Windows.Forms.Button CasaButton26;
+        private System.Windows.Forms.Button CasaButton30;
+        private System.Windows.Forms.Button CasaButton29;
         private System.Windows.Forms.LinkLabel CarloslinkLabel;
         private System.Windows.Forms.LinkLabel MochilaLosCaballoslinkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel7;

@@ -7,12 +7,23 @@
     {
 
         #region Methods
-        private void loadCasa(int nroCasa)
+        private void loadCasa(Button boton)
         {
-            this.Enabled = false;
-            FrmEmpleadoCasa miForm = new FrmEmpleadoCasa();
-            miForm.NroCasa = nroCasa;
-            miForm.Show(this);
+            try
+            {
+                int nroCasa = 0;
+                string nombre = boton.Name;
+                nroCasa = Convert.ToInt32(nombre.Substring(nombre.Length - 2, 2));
+                this.Enabled = false;
+                FrmEmpleadoCasa miForm = new FrmEmpleadoCasa();
+                miForm.NroCasa = nroCasa;
+                miForm.Show(this);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
             this.Enabled = true;
         }
         #endregion
@@ -24,12 +35,6 @@
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            loadCasa(1);
         }
 
         private void fincasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,17 +85,187 @@
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            loadCasa(2);
-        }
-
         private void encargadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
             FrmEncargados frmEncargados = new FrmEncargados();
             frmEncargados.Show(this);
             this.Enabled = true;
+        }
+
+        private void CasaButton1_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);            
+        }
+
+        private void CasaButton2_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton3_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton4_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton5_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton6_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton7_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton8_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton9_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton10_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton11_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton12_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton13_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton14_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton15_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton16_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton17_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton18_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton19_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton20_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton21_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton22_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton23_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton24_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton25_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton26_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton27_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton28_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton29_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton30_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton31_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton32_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton33_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton34_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton35_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
         }
     }
 }
