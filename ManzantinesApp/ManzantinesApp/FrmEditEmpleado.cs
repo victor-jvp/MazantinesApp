@@ -47,7 +47,8 @@
             try
             {
                 this.Validate();
-                this.trabajadoresBindingSource.EndEdit();                
+                this.trabajadoresBindingSource.EndEdit();      
+                
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
                 this.UpdateList = true;
                 this.Close();
@@ -83,16 +84,12 @@
             }
         }
 
-        private byte[] ConvertImageToBinary(Image img)
+        private void QuitarFototoolStripButton_Click(object sender, EventArgs e)
         {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
-            }
+            foto2PictureBox.Image = null;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void foto2PictureBox_Click(object sender, EventArgs e)
         {
             PictureOpenFileDialog.Filter = "jpg|*.jpg|png|*.png";
             PictureOpenFileDialog.ValidateNames = true;
@@ -100,17 +97,8 @@
 
             if (PictureOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
-                fotoTextBox.Text = PictureOpenFileDialog.SafeFileName;
-                pictureBox1.Image = Image.FromFile(PictureOpenFileDialog.FileName);
-
-                
+                foto2PictureBox.Image = Image.FromFile(PictureOpenFileDialog.FileName);
             }
-        }
-
-        private void QuitarFototoolStripButton_Click(object sender, EventArgs e)
-        {
-            fotoTextBox.Text = string.Empty;
-            pictureBox1.ImageLocation = string.Empty;
         }
     }
 }

@@ -10,11 +10,11 @@
     <Shape ID="DesignTable:vv_trabajadoresTable" ZOrder="8" X="1274" Y="100" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:Trabajadores_Empleos" ZOrder="7" X="1060" Y="495" Height="134" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Encargados" ZOrder="14" X="449" Y="56" Height="115" Width="211" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Empresas" ZOrder="5" X="767" Y="508" Height="115" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Trabajadores" ZOrder="6" X="951" Y="238" Height="229" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:Casas" ZOrder="4" X="981" Y="55" Height="134" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Empleos" ZOrder="3" X="1086" Y="660" Height="115" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Fincas" ZOrder="2" X="704" Y="47" Height="134" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:Empresas" ZOrder="6" X="767" Y="508" Height="115" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Trabajadores" ZOrder="1" X="951" Y="238" Height="248" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
+    <Shape ID="DesignTable:Casas" ZOrder="5" X="981" Y="55" Height="134" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:Empleos" ZOrder="4" X="1086" Y="660" Height="115" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:Fincas" ZOrder="3" X="704" Y="47" Height="134" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:id_empresa" ZOrder="13" LineWidth="11">
@@ -25,7 +25,7 @@
         </Point>
         <Point>
           <X>958</X>
-          <Y>467</Y>
+          <Y>486</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -77,11 +77,11 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:id_trabajador" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:id_trabajador" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1168</X>
-          <Y>467</Y>
+          <Y>486</Y>
         </Point>
         <Point>
           <X>1168</X>

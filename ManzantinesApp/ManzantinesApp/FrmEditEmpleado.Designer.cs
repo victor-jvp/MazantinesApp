@@ -46,7 +46,6 @@
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
             this.telefonoTextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.id_empresaComboBox = new System.Windows.Forms.ComboBox();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PictureOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -69,9 +68,9 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fotoTextBox = new System.Windows.Forms.TextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.QuitarFototoolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.foto2PictureBox = new System.Windows.Forms.PictureBox();
             nro_empleadoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -82,7 +81,6 @@
             nroCasaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.encargadosBindingSource)).BeginInit();
@@ -92,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fincasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto2PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nro_empleadoLabel
@@ -224,19 +223,6 @@
             this.telefonoTextBox.Size = new System.Drawing.Size(121, 20);
             this.telefonoTextBox.TabIndex = 7;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(360, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 109);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // id_empresaComboBox
             // 
             this.id_empresaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -271,7 +257,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(497, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(484, 25);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -403,15 +389,6 @@
             this.dataGridViewTextBoxColumn3.ValueMember = "Id";
             this.dataGridViewTextBoxColumn3.Width = 150;
             // 
-            // fotoTextBox
-            // 
-            this.fotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "foto", true));
-            this.fotoTextBox.Location = new System.Drawing.Point(360, 143);
-            this.fotoTextBox.Name = "fotoTextBox";
-            this.fotoTextBox.ReadOnly = true;
-            this.fotoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.fotoTextBox.TabIndex = 23;
-            // 
             // toolStrip2
             // 
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
@@ -419,7 +396,7 @@
             this.QuitarFototoolStripButton});
             this.toolStrip2.Location = new System.Drawing.Point(358, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(130, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(99, 25);
             this.toolStrip2.TabIndex = 24;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -432,13 +409,27 @@
             this.QuitarFototoolStripButton.Text = "Quitar Foto";
             this.QuitarFototoolStripButton.Click += new System.EventHandler(this.QuitarFototoolStripButton_Click);
             // 
+            // foto2PictureBox
+            // 
+            this.foto2PictureBox.BackColor = System.Drawing.Color.White;
+            this.foto2PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.foto2PictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.foto2PictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.trabajadoresBindingSource, "foto2", true));
+            this.foto2PictureBox.Location = new System.Drawing.Point(360, 28);
+            this.foto2PictureBox.Name = "foto2PictureBox";
+            this.foto2PictureBox.Size = new System.Drawing.Size(100, 123);
+            this.foto2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.foto2PictureBox.TabIndex = 25;
+            this.foto2PictureBox.TabStop = false;
+            this.foto2PictureBox.Click += new System.EventHandler(this.foto2PictureBox_Click);
+            // 
             // FrmEditEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 299);
+            this.ClientSize = new System.Drawing.Size(484, 295);
+            this.Controls.Add(this.foto2PictureBox);
             this.Controls.Add(this.toolStrip2);
-            this.Controls.Add(this.fotoTextBox);
             this.Controls.Add(nroCasaLabel);
             this.Controls.Add(this.nroCasaComboBox);
             this.Controls.Add(fincaLabel);
@@ -448,7 +439,6 @@
             this.Controls.Add(id_empresaLabel);
             this.Controls.Add(this.id_empresaComboBox);
             this.Controls.Add(label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(telefonoLabel);
             this.Controls.Add(this.telefonoTextBox);
             this.Controls.Add(apellidosLabel);
@@ -466,7 +456,6 @@
             this.Load += new System.EventHandler(this.FrmEditEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -478,6 +467,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto2PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,7 +483,6 @@
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.TextBox apellidosTextBox;
         private System.Windows.Forms.TextBox telefonoTextBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox id_empresaComboBox;
         private System.Windows.Forms.OpenFileDialog PictureOpenFileDialog;
         private System.Windows.Forms.BindingSource empresasBindingSource;
@@ -516,8 +505,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_trabajador;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.TextBox fotoTextBox;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton QuitarFototoolStripButton;
+        private System.Windows.Forms.PictureBox foto2PictureBox;
     }
 }
