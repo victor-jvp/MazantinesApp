@@ -57,6 +57,7 @@
         {
             try
             {
+                if (!ValidarCampos()) return;
                 this.Validate();
                 this.trabajadoresBindingSource.EndEdit();
                 this.tableAdapterManager.TrabajadoresTableAdapter.Update(this.dataSet1);
@@ -69,6 +70,19 @@
             {
                 MessageBox.Show(ex.Message, "Error al guardar datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool ValidarCampos()
+        {
+            ErrorProvider error = new ErrorProvider();
+            if(nroCasaComboBox.SelectedIndex == -1)
+            {
+                error.SetError(nroCasaComboBox, "Este campo es requerido");
+                nroCasaComboBox.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void fincaComboBox_SelectedIndexChanged(object sender, EventArgs e)
