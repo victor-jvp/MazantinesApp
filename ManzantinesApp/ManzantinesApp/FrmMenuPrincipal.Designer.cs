@@ -41,6 +41,15 @@
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.MochilaLosCaballoslinkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.CarloslinkLabel = new System.Windows.Forms.LinkLabel();
             this.button35 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
@@ -76,15 +85,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.CarloslinkLabel = new System.Windows.Forms.LinkLabel();
-            this.MochilaLosCaballoslinkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.encargadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -145,10 +146,11 @@
             // datosToolStripMenuItem
             // 
             this.datosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fincasToolStripMenuItem,
             this.casasToolStripMenuItem,
+            this.encargadosToolStripMenuItem,
+            this.empleoToolStripMenuItem,
             this.empresaToolStripMenuItem,
-            this.empleoToolStripMenuItem});
+            this.fincasToolStripMenuItem});
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
             this.datosToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.datosToolStripMenuItem.Text = "&Datos";
@@ -171,7 +173,7 @@
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
             this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empresaToolStripMenuItem.Text = "&Empresas";
+            this.empresaToolStripMenuItem.Text = "Em&presas";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
             // empleoToolStripMenuItem
@@ -233,6 +235,114 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 515);
             this.panel1.TabIndex = 3;
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel7.Location = new System.Drawing.Point(416, 388);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(110, 59);
+            this.linkLabel7.TabIndex = 44;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "LOLO GRANDE";
+            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel6.Location = new System.Drawing.Point(279, 396);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(91, 31);
+            this.linkLabel6.TabIndex = 43;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "JOAQUIN";
+            this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel5.Location = new System.Drawing.Point(237, 281);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(91, 32);
+            this.linkLabel5.TabIndex = 42;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "LOLO PARCELAS CHICAS";
+            this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.Location = new System.Drawing.Point(388, 291);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(62, 22);
+            this.linkLabel4.TabIndex = 41;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "JOTE";
+            this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.Location = new System.Drawing.Point(524, 236);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(126, 22);
+            this.linkLabel3.TabIndex = 40;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "FINCA VIEJA";
+            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(653, 66);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(78, 53);
+            this.linkLabel2.TabIndex = 39;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "FINCA NUEVA";
+            this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(382, 64);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(188, 25);
+            this.linkLabel1.TabIndex = 38;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "MOCHILA ANTONIA";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MochilaLosCaballoslinkLabel1
+            // 
+            this.MochilaLosCaballoslinkLabel1.BackColor = System.Drawing.SystemColors.Control;
+            this.MochilaLosCaballoslinkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MochilaLosCaballoslinkLabel1.Location = new System.Drawing.Point(396, 147);
+            this.MochilaLosCaballoslinkLabel1.Name = "MochilaLosCaballoslinkLabel1";
+            this.MochilaLosCaballoslinkLabel1.Size = new System.Drawing.Size(139, 43);
+            this.MochilaLosCaballoslinkLabel1.TabIndex = 37;
+            this.MochilaLosCaballoslinkLabel1.TabStop = true;
+            this.MochilaLosCaballoslinkLabel1.Text = "MOCHILA LOS CABALLOS";
+            this.MochilaLosCaballoslinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CarloslinkLabel
+            // 
+            this.CarloslinkLabel.AutoSize = true;
+            this.CarloslinkLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.CarloslinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CarloslinkLabel.Location = new System.Drawing.Point(104, 236);
+            this.CarloslinkLabel.Name = "CarloslinkLabel";
+            this.CarloslinkLabel.Size = new System.Drawing.Size(75, 20);
+            this.CarloslinkLabel.TabIndex = 36;
+            this.CarloslinkLabel.TabStop = true;
+            this.CarloslinkLabel.Text = "CARLOS";
             // 
             // button35
             // 
@@ -586,113 +696,12 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button1_Click);
             // 
-            // CarloslinkLabel
+            // encargadosToolStripMenuItem
             // 
-            this.CarloslinkLabel.AutoSize = true;
-            this.CarloslinkLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.CarloslinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CarloslinkLabel.Location = new System.Drawing.Point(104, 236);
-            this.CarloslinkLabel.Name = "CarloslinkLabel";
-            this.CarloslinkLabel.Size = new System.Drawing.Size(75, 20);
-            this.CarloslinkLabel.TabIndex = 36;
-            this.CarloslinkLabel.TabStop = true;
-            this.CarloslinkLabel.Text = "CARLOS";
-            // 
-            // MochilaLosCaballoslinkLabel1
-            // 
-            this.MochilaLosCaballoslinkLabel1.BackColor = System.Drawing.SystemColors.Control;
-            this.MochilaLosCaballoslinkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MochilaLosCaballoslinkLabel1.Location = new System.Drawing.Point(396, 147);
-            this.MochilaLosCaballoslinkLabel1.Name = "MochilaLosCaballoslinkLabel1";
-            this.MochilaLosCaballoslinkLabel1.Size = new System.Drawing.Size(139, 43);
-            this.MochilaLosCaballoslinkLabel1.TabIndex = 37;
-            this.MochilaLosCaballoslinkLabel1.TabStop = true;
-            this.MochilaLosCaballoslinkLabel1.Text = "MOCHILA LOS CABALLOS";
-            this.MochilaLosCaballoslinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(382, 64);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(188, 25);
-            this.linkLabel1.TabIndex = 38;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "MOCHILA ANTONIA";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(653, 66);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(78, 53);
-            this.linkLabel2.TabIndex = 39;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "FINCA NUEVA";
-            this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(524, 236);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(126, 22);
-            this.linkLabel3.TabIndex = 40;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "FINCA VIEJA";
-            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(388, 291);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(62, 22);
-            this.linkLabel4.TabIndex = 41;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "JOTE";
-            this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.Location = new System.Drawing.Point(237, 281);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(91, 32);
-            this.linkLabel5.TabIndex = 42;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "LOLO PARCELAS CHICAS";
-            this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel6.Location = new System.Drawing.Point(279, 396);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(91, 31);
-            this.linkLabel6.TabIndex = 43;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "JOAQUIN";
-            this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.BackColor = System.Drawing.SystemColors.Control;
-            this.linkLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel7.Location = new System.Drawing.Point(416, 388);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(110, 59);
-            this.linkLabel7.TabIndex = 44;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "LOLO GRANDE";
-            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.encargadosToolStripMenuItem.Name = "encargadosToolStripMenuItem";
+            this.encargadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.encargadosToolStripMenuItem.Text = "&Encargados";
+            this.encargadosToolStripMenuItem.Click += new System.EventHandler(this.encargadosToolStripMenuItem_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -777,6 +786,7 @@
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ToolStripMenuItem encargadosToolStripMenuItem;
     }
 }
 

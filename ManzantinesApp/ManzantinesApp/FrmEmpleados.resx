@@ -123,38 +123,35 @@
   <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="empleosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <metadata name="empresasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>486, 17</value>
-  </metadata>
-  <metadata name="vvtrabajadoresTableBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 95</value>
-  </metadata>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>678, 56</value>
   </metadata>
   <metadata name="trabajadoresBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>
   </metadata>
+  <metadata name="empleosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>678, 56</value>
+  </metadata>
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>315, 17</value>
-  </metadata>
-  <metadata name="empresasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>668, 17</value>
-  </metadata>
-  <metadata name="empleosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>194, 56</value>
   </metadata>
   <metadata name="casasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>524, 56</value>
   </metadata>
-  <metadata name="vv_trabajadoresTableTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="empleosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>194, 56</value>
+  </metadata>
+  <metadata name="empresasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>668, 17</value>
+  </metadata>
+  <metadata name="trabajadoresTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>
   </metadata>
   <metadata name="bindingNavigator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>496, 95</value>
+    <value>783, 56</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -212,17 +209,17 @@
   <data name="EditToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

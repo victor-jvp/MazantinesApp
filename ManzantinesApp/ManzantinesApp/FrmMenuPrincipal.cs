@@ -84,5 +84,13 @@
         {
             loadCasa(2);
         }
+
+        private void encargadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            FrmEncargados frmEncargados = new FrmEncargados();
+            frmEncargados.Show(this);
+            this.Enabled = true;
+        }
     }
 }

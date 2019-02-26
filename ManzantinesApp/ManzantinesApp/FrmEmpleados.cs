@@ -35,8 +35,8 @@
             this.empleosTableAdapter.Fill(this.dataSet1.Empleos);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Empresas' Puede moverla o quitarla según sea necesario.
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
-            this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
+
+            this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
         }
 
         private void FilterTable()
@@ -47,15 +47,15 @@
 
             if(string.IsNullOrEmpty(casa) && string.IsNullOrEmpty(encargado) && string.IsNullOrEmpty(empresa))
             {
-                vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
+                this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
             }
             else
             {
-                vv_trabajadoresTableTableAdapter.FillByCasaAndEmpresaAndEncargado(
-                   this.dataSet1.vv_trabajadoresTable,
-                   casa,
-                   empresa,
-                   encargado);
+                //vv_trabajadoresTableTableAdapter.FillByCasaAndEmpresaAndEncargado(
+                //   this.dataSet1.vv_trabajadoresTable,
+                //   casa,
+                //   empresa,
+                //   encargado);
             }
             
         }
@@ -85,7 +85,7 @@
             if (frmEditEmpleado.UpdateList)
             {
                 // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
-                this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
+                this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
             }
 
         }
@@ -202,7 +202,7 @@
 
             this.Enabled = false;
             FrmEditEmpleado frmEditEmpleado = new FrmEditEmpleado();
-            frmEditEmpleado.miTrabajador = dataSet1.vv_trabajadoresTable.FindById((int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value);
+            frmEditEmpleado.miTrabajador = dataSet1.Trabajadores.FindById((int)trabajadoresDataGridView.CurrentRow.Cells[0].Value);
             if (frmEditEmpleado.miTrabajador == null)
             {
                 MessageBox.Show(
@@ -219,7 +219,7 @@
             if (frmEditEmpleado.UpdateList)
             {
                 // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
-                this.vv_trabajadoresTableTableAdapter.Fill(this.dataSet1.vv_trabajadoresTable);
+                this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
             }
         }
     }

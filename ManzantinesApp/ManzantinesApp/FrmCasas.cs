@@ -19,6 +19,8 @@ namespace ManzantinesApp
 
         private void FrmCasas_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Fincas' table. You can move, or remove it, as needed.
+            this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Casas' Puede moverla o quitarla según sea necesario.
             this.casasTableAdapter.Fill(this.dataSet1.Casas);
 

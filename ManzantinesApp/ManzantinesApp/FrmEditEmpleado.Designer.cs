@@ -35,10 +35,8 @@
             System.Windows.Forms.Label telefonoLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label id_empresaLabel;
-            System.Windows.Forms.Label id_empleoLabel;
-            System.Windows.Forms.Label id_fincaLabel;
-            System.Windows.Forms.Label id_encargadoLabel;
-            System.Windows.Forms.Label id_casaLabel;
+            System.Windows.Forms.Label fincaLabel;
+            System.Windows.Forms.Label nroCasaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditEmpleado));
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,40 +49,49 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.id_empresaComboBox = new System.Windows.Forms.ComboBox();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.id_empleoComboBox = new System.Windows.Forms.ComboBox();
-            this.empleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.id_fincaComboBox = new System.Windows.Forms.ComboBox();
-            this.fincasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.id_encargadoComboBox = new System.Windows.Forms.ComboBox();
-            this.empleosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.id_casaComboBox = new System.Windows.Forms.ComboBox();
-            this.casasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.PictureOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
-            this.fincasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.FincasTableAdapter();
-            this.empleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpleosTableAdapter();
-            this.casasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.CasasTableAdapter();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.encargadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.encargadosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EncargadosTableAdapter();
+            this.trabajadores_EmpleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
+            this.empleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpleosTableAdapter();
+            this.trabajadores_EmpleosDataGridView = new System.Windows.Forms.DataGridView();
+            this.fincasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fincasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.FincasTableAdapter();
+            this.fincaComboBox = new System.Windows.Forms.ComboBox();
+            this.casasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.casasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.CasasTableAdapter();
+            this.nroCasaComboBox = new System.Windows.Forms.ComboBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fotoTextBox = new System.Windows.Forms.TextBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.QuitarFototoolStripButton = new System.Windows.Forms.ToolStripButton();
             nro_empleadoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
             telefonoLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             id_empresaLabel = new System.Windows.Forms.Label();
-            id_empleoLabel = new System.Windows.Forms.Label();
-            id_fincaLabel = new System.Windows.Forms.Label();
-            id_encargadoLabel = new System.Windows.Forms.Label();
-            id_casaLabel = new System.Windows.Forms.Label();
+            fincaLabel = new System.Windows.Forms.Label();
+            nroCasaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.encargadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // nro_empleadoLabel
@@ -135,47 +142,29 @@
             // id_empresaLabel
             // 
             id_empresaLabel.AutoSize = true;
-            id_empresaLabel.Location = new System.Drawing.Point(41, 170);
+            id_empresaLabel.Location = new System.Drawing.Point(264, 197);
             id_empresaLabel.Name = "id_empresaLabel";
             id_empresaLabel.Size = new System.Drawing.Size(51, 13);
             id_empresaLabel.TabIndex = 8;
             id_empresaLabel.Text = "Empresa:";
             // 
-            // id_empleoLabel
+            // fincaLabel
             // 
-            id_empleoLabel.AutoSize = true;
-            id_empleoLabel.Location = new System.Drawing.Point(270, 170);
-            id_empleoLabel.Name = "id_empleoLabel";
-            id_empleoLabel.Size = new System.Drawing.Size(45, 13);
-            id_empleoLabel.TabIndex = 14;
-            id_empleoLabel.Text = "Empleo:";
+            fincaLabel.AutoSize = true;
+            fincaLabel.Location = new System.Drawing.Point(279, 224);
+            fincaLabel.Name = "fincaLabel";
+            fincaLabel.Size = new System.Drawing.Size(36, 13);
+            fincaLabel.TabIndex = 20;
+            fincaLabel.Text = "Finca:";
             // 
-            // id_fincaLabel
+            // nroCasaLabel
             // 
-            id_fincaLabel.AutoSize = true;
-            id_fincaLabel.Location = new System.Drawing.Point(56, 197);
-            id_fincaLabel.Name = "id_fincaLabel";
-            id_fincaLabel.Size = new System.Drawing.Size(36, 13);
-            id_fincaLabel.TabIndex = 10;
-            id_fincaLabel.Text = "Finca:";
-            // 
-            // id_encargadoLabel
-            // 
-            id_encargadoLabel.AutoSize = true;
-            id_encargadoLabel.Location = new System.Drawing.Point(253, 197);
-            id_encargadoLabel.Name = "id_encargadoLabel";
-            id_encargadoLabel.Size = new System.Drawing.Size(62, 13);
-            id_encargadoLabel.TabIndex = 16;
-            id_encargadoLabel.Text = "Encargado:";
-            // 
-            // id_casaLabel
-            // 
-            id_casaLabel.AutoSize = true;
-            id_casaLabel.Location = new System.Drawing.Point(58, 224);
-            id_casaLabel.Name = "id_casaLabel";
-            id_casaLabel.Size = new System.Drawing.Size(34, 13);
-            id_casaLabel.TabIndex = 12;
-            id_casaLabel.Text = "Casa:";
+            nroCasaLabel.AutoSize = true;
+            nroCasaLabel.Location = new System.Drawing.Point(261, 251);
+            nroCasaLabel.Name = "nroCasaLabel";
+            nroCasaLabel.Size = new System.Drawing.Size(54, 13);
+            nroCasaLabel.TabIndex = 21;
+            nroCasaLabel.Text = "Nro Casa:";
             // 
             // dataSet1
             // 
@@ -197,7 +186,9 @@
             this.tableAdapterManager.CasasTableAdapter = null;
             this.tableAdapterManager.EmpleosTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
+            this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
+            this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = this.trabajadores_EmpleosTableAdapter;
             this.tableAdapterManager.TrabajadoresTableAdapter = this.trabajadoresTableAdapter;
             this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
@@ -237,12 +228,14 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Location = new System.Drawing.Point(360, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 113);
+            this.pictureBox1.Size = new System.Drawing.Size(101, 109);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // id_empresaComboBox
             // 
@@ -252,7 +245,7 @@
             this.id_empresaComboBox.DataSource = this.empresasBindingSource;
             this.id_empresaComboBox.DisplayMember = "Empresa";
             this.id_empresaComboBox.FormattingEnabled = true;
-            this.id_empresaComboBox.Location = new System.Drawing.Point(98, 167);
+            this.id_empresaComboBox.Location = new System.Drawing.Point(321, 194);
             this.id_empresaComboBox.Name = "id_empresaComboBox";
             this.id_empresaComboBox.Size = new System.Drawing.Size(140, 21);
             this.id_empresaComboBox.TabIndex = 9;
@@ -260,104 +253,17 @@
             // 
             // empresasBindingSource
             // 
+            this.empresasBindingSource.AllowNew = false;
             this.empresasBindingSource.DataMember = "Empresas";
             this.empresasBindingSource.DataSource = this.dataSet1;
             // 
-            // id_empleoComboBox
+            // PictureOpenFileDialog
             // 
-            this.id_empleoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.id_empleoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_empleoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_empleo", true));
-            this.id_empleoComboBox.DataSource = this.empleosBindingSource;
-            this.id_empleoComboBox.DisplayMember = "Empleo";
-            this.id_empleoComboBox.FormattingEnabled = true;
-            this.id_empleoComboBox.Location = new System.Drawing.Point(321, 167);
-            this.id_empleoComboBox.Name = "id_empleoComboBox";
-            this.id_empleoComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_empleoComboBox.TabIndex = 15;
-            this.id_empleoComboBox.ValueMember = "Id";
-            // 
-            // empleosBindingSource
-            // 
-            this.empleosBindingSource.DataMember = "Empleos";
-            this.empleosBindingSource.DataSource = this.dataSet1;
-            // 
-            // id_fincaComboBox
-            // 
-            this.id_fincaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.id_fincaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_fincaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_finca", true));
-            this.id_fincaComboBox.DataSource = this.fincasBindingSource;
-            this.id_fincaComboBox.DisplayMember = "Finca";
-            this.id_fincaComboBox.FormattingEnabled = true;
-            this.id_fincaComboBox.Location = new System.Drawing.Point(98, 194);
-            this.id_fincaComboBox.Name = "id_fincaComboBox";
-            this.id_fincaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_fincaComboBox.TabIndex = 11;
-            this.id_fincaComboBox.ValueMember = "Id";
-            // 
-            // fincasBindingSource
-            // 
-            this.fincasBindingSource.DataMember = "Fincas";
-            this.fincasBindingSource.DataSource = this.dataSet1;
-            // 
-            // id_encargadoComboBox
-            // 
-            this.id_encargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.id_encargadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_encargadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_encargado", true));
-            this.id_encargadoComboBox.DataSource = this.empleosBindingSource1;
-            this.id_encargadoComboBox.DisplayMember = "Empleo";
-            this.id_encargadoComboBox.FormattingEnabled = true;
-            this.id_encargadoComboBox.Location = new System.Drawing.Point(321, 194);
-            this.id_encargadoComboBox.Name = "id_encargadoComboBox";
-            this.id_encargadoComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_encargadoComboBox.TabIndex = 17;
-            this.id_encargadoComboBox.ValueMember = "Id";
-            // 
-            // empleosBindingSource1
-            // 
-            this.empleosBindingSource1.DataMember = "Empleos";
-            this.empleosBindingSource1.DataSource = this.dataSet1;
-            // 
-            // id_casaComboBox
-            // 
-            this.id_casaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.id_casaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.id_casaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_casa", true));
-            this.id_casaComboBox.DataSource = this.casasBindingSource;
-            this.id_casaComboBox.DisplayMember = "Casa";
-            this.id_casaComboBox.FormattingEnabled = true;
-            this.id_casaComboBox.Location = new System.Drawing.Point(98, 221);
-            this.id_casaComboBox.Name = "id_casaComboBox";
-            this.id_casaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_casaComboBox.TabIndex = 13;
-            this.id_casaComboBox.ValueMember = "Id";
-            // 
-            // casasBindingSource
-            // 
-            this.casasBindingSource.DataMember = "Casas";
-            this.casasBindingSource.DataSource = this.dataSet1;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.PictureOpenFileDialog.FileName = "openFileDialog1";
             // 
             // empresasTableAdapter
             // 
             this.empresasTableAdapter.ClearBeforeFill = true;
-            // 
-            // fincasTableAdapter
-            // 
-            this.fincasTableAdapter.ClearBeforeFill = true;
-            // 
-            // empleosTableAdapter
-            // 
-            this.empleosTableAdapter.ClearBeforeFill = true;
-            // 
-            // casasTableAdapter
-            // 
-            this.casasTableAdapter.ClearBeforeFill = true;
             // 
             // toolStrip1
             // 
@@ -365,7 +271,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(484, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(497, 25);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -378,20 +284,167 @@
             this.toolStripButton1.Text = "&Guardar";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // encargadosBindingSource
+            // 
+            this.encargadosBindingSource.AllowNew = false;
+            this.encargadosBindingSource.DataMember = "Encargados";
+            this.encargadosBindingSource.DataSource = this.dataSet1;
+            // 
+            // encargadosTableAdapter
+            // 
+            this.encargadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // trabajadores_EmpleosBindingSource
+            // 
+            this.trabajadores_EmpleosBindingSource.AllowNew = true;
+            this.trabajadores_EmpleosBindingSource.DataMember = "id_trabajador";
+            this.trabajadores_EmpleosBindingSource.DataSource = this.trabajadoresBindingSource;
+            // 
+            // trabajadores_EmpleosTableAdapter
+            // 
+            this.trabajadores_EmpleosTableAdapter.ClearBeforeFill = true;
+            // 
+            // empleosBindingSource
+            // 
+            this.empleosBindingSource.DataMember = "Empleos";
+            this.empleosBindingSource.DataSource = this.dataSet1;
+            // 
+            // empleosTableAdapter
+            // 
+            this.empleosTableAdapter.ClearBeforeFill = true;
+            // 
+            // trabajadores_EmpleosDataGridView
+            // 
+            this.trabajadores_EmpleosDataGridView.AutoGenerateColumns = false;
+            this.trabajadores_EmpleosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.trabajadores_EmpleosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.id_trabajador,
+            this.dataGridViewTextBoxColumn3});
+            this.trabajadores_EmpleosDataGridView.DataSource = this.trabajadores_EmpleosBindingSource;
+            this.trabajadores_EmpleosDataGridView.Location = new System.Drawing.Point(19, 158);
+            this.trabajadores_EmpleosDataGridView.Name = "trabajadores_EmpleosDataGridView";
+            this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(215, 121);
+            this.trabajadores_EmpleosDataGridView.TabIndex = 20;
+            // 
+            // fincasBindingSource
+            // 
+            this.fincasBindingSource.AllowNew = false;
+            this.fincasBindingSource.DataMember = "Fincas";
+            this.fincasBindingSource.DataSource = this.dataSet1;
+            // 
+            // fincasTableAdapter
+            // 
+            this.fincasTableAdapter.ClearBeforeFill = true;
+            // 
+            // fincaComboBox
+            // 
+            this.fincaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.fincaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.fincaComboBox.DataSource = this.fincasBindingSource;
+            this.fincaComboBox.DisplayMember = "Finca";
+            this.fincaComboBox.FormattingEnabled = true;
+            this.fincaComboBox.Location = new System.Drawing.Point(321, 221);
+            this.fincaComboBox.Name = "fincaComboBox";
+            this.fincaComboBox.Size = new System.Drawing.Size(140, 21);
+            this.fincaComboBox.TabIndex = 21;
+            this.fincaComboBox.ValueMember = "Id";
+            this.fincaComboBox.SelectedIndexChanged += new System.EventHandler(this.fincaComboBox_SelectedIndexChanged);
+            // 
+            // casasBindingSource
+            // 
+            this.casasBindingSource.DataMember = "id_finca";
+            this.casasBindingSource.DataSource = this.fincasBindingSource;
+            // 
+            // casasTableAdapter
+            // 
+            this.casasTableAdapter.ClearBeforeFill = true;
+            // 
+            // nroCasaComboBox
+            // 
+            this.nroCasaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.nroCasaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.nroCasaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_casa", true));
+            this.nroCasaComboBox.DataSource = this.casasBindingSource;
+            this.nroCasaComboBox.DisplayMember = "NroCasa";
+            this.nroCasaComboBox.FormattingEnabled = true;
+            this.nroCasaComboBox.Location = new System.Drawing.Point(321, 248);
+            this.nroCasaComboBox.Name = "nroCasaComboBox";
+            this.nroCasaComboBox.Size = new System.Drawing.Size(140, 21);
+            this.nroCasaComboBox.TabIndex = 22;
+            this.nroCasaComboBox.ValueMember = "Id";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // id_trabajador
+            // 
+            this.id_trabajador.DataPropertyName = "id_trabajador";
+            this.id_trabajador.HeaderText = "id_trabajador";
+            this.id_trabajador.Name = "id_trabajador";
+            this.id_trabajador.ReadOnly = true;
+            this.id_trabajador.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_empleo";
+            this.dataGridViewTextBoxColumn3.DataSource = this.empleosBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "Empleo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Empleo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "Id";
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // fotoTextBox
+            // 
+            this.fotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "foto", true));
+            this.fotoTextBox.Location = new System.Drawing.Point(360, 143);
+            this.fotoTextBox.Name = "fotoTextBox";
+            this.fotoTextBox.ReadOnly = true;
+            this.fotoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.fotoTextBox.TabIndex = 23;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.QuitarFototoolStripButton});
+            this.toolStrip2.Location = new System.Drawing.Point(358, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(130, 25);
+            this.toolStrip2.TabIndex = 24;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // QuitarFototoolStripButton
+            // 
+            this.QuitarFototoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitarFototoolStripButton.Image")));
+            this.QuitarFototoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.QuitarFototoolStripButton.Name = "QuitarFototoolStripButton";
+            this.QuitarFototoolStripButton.Size = new System.Drawing.Size(87, 22);
+            this.QuitarFototoolStripButton.Text = "Quitar Foto";
+            this.QuitarFototoolStripButton.Click += new System.EventHandler(this.QuitarFototoolStripButton_Click);
+            // 
             // FrmEditEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 261);
+            this.ClientSize = new System.Drawing.Size(497, 299);
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.fotoTextBox);
+            this.Controls.Add(nroCasaLabel);
+            this.Controls.Add(this.nroCasaComboBox);
+            this.Controls.Add(fincaLabel);
+            this.Controls.Add(this.fincaComboBox);
+            this.Controls.Add(this.trabajadores_EmpleosDataGridView);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(id_casaLabel);
-            this.Controls.Add(this.id_casaComboBox);
-            this.Controls.Add(id_encargadoLabel);
-            this.Controls.Add(this.id_encargadoComboBox);
-            this.Controls.Add(id_fincaLabel);
-            this.Controls.Add(this.id_fincaComboBox);
-            this.Controls.Add(id_empleoLabel);
-            this.Controls.Add(this.id_empleoComboBox);
             this.Controls.Add(id_empresaLabel);
             this.Controls.Add(this.id_empresaComboBox);
             this.Controls.Add(label1);
@@ -415,12 +468,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.encargadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fincasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.casasBindingSource)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,21 +495,29 @@
         private System.Windows.Forms.TextBox telefonoTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox id_empresaComboBox;
-        private System.Windows.Forms.ComboBox id_empleoComboBox;
-        private System.Windows.Forms.ComboBox id_fincaComboBox;
-        private System.Windows.Forms.ComboBox id_encargadoComboBox;
-        private System.Windows.Forms.ComboBox id_casaComboBox;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog PictureOpenFileDialog;
         private System.Windows.Forms.BindingSource empresasBindingSource;
         private Data.DataSet1TableAdapters.EmpresasTableAdapter empresasTableAdapter;
-        private System.Windows.Forms.BindingSource fincasBindingSource;
-        private Data.DataSet1TableAdapters.FincasTableAdapter fincasTableAdapter;
-        private System.Windows.Forms.BindingSource empleosBindingSource;
-        private Data.DataSet1TableAdapters.EmpleosTableAdapter empleosTableAdapter;
-        private System.Windows.Forms.BindingSource casasBindingSource;
-        private Data.DataSet1TableAdapters.CasasTableAdapter casasTableAdapter;
-        private System.Windows.Forms.BindingSource empleosBindingSource1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.BindingSource encargadosBindingSource;
+        private Data.DataSet1TableAdapters.EncargadosTableAdapter encargadosTableAdapter;
+        private System.Windows.Forms.BindingSource trabajadores_EmpleosBindingSource;
+        private Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter trabajadores_EmpleosTableAdapter;
+        private System.Windows.Forms.BindingSource empleosBindingSource;
+        private Data.DataSet1TableAdapters.EmpleosTableAdapter empleosTableAdapter;
+        private System.Windows.Forms.DataGridView trabajadores_EmpleosDataGridView;
+        private System.Windows.Forms.BindingSource fincasBindingSource;
+        private Data.DataSet1TableAdapters.FincasTableAdapter fincasTableAdapter;
+        private System.Windows.Forms.ComboBox fincaComboBox;
+        private System.Windows.Forms.BindingSource casasBindingSource;
+        private Data.DataSet1TableAdapters.CasasTableAdapter casasTableAdapter;
+        private System.Windows.Forms.ComboBox nroCasaComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_trabajador;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.TextBox fotoTextBox;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton QuitarFototoolStripButton;
     }
 }
