@@ -23,15 +23,14 @@
 
         private void FrmEditEmpleado_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.Trabajadores_Empleos' table. You can move, or remove it, as needed.
-            this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
             this.encargadosTableAdapter.Fill(this.dataSet1.Encargados);
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
             this.empleosTableAdapter.Fill(this.dataSet1.Empleos);
             this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
-            this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);                   
+            this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+            this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
 
-            if(miTrabajador == null)
+            if (miTrabajador == null)
             {
                 this.fincaComboBox.SelectedIndex = -1;
                 trabajadoresBindingSource.AddNew();                
@@ -60,7 +59,9 @@
             {
                 this.Validate();
                 this.trabajadoresBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.dataSet1);
+                this.tableAdapterManager.TrabajadoresTableAdapter.Update(this.dataSet1);
+                this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.Update(this.dataSet1);
+                //this.tableAdapterManager.UpdateAll(this.dataSet1);
                 this.UpdateList = true;
                 this.Close();
             }

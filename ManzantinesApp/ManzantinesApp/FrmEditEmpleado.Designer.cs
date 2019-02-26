@@ -42,12 +42,12 @@
             this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trabajadoresTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.TrabajadoresTableAdapter();
             this.tableAdapterManager = new ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager();
+            this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
             this.casasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.CasasTableAdapter();
             this.empleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpleosTableAdapter();
             this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             this.encargadosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EncargadosTableAdapter();
             this.fincasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.FincasTableAdapter();
-            this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
             this.nro_empleadoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
@@ -191,6 +191,10 @@
             this.tableAdapterManager.TrabajadoresTableAdapter = this.trabajadoresTableAdapter;
             this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // trabajadores_EmpleosTableAdapter
+            // 
+            this.trabajadores_EmpleosTableAdapter.ClearBeforeFill = true;
+            // 
             // casasTableAdapter
             // 
             this.casasTableAdapter.ClearBeforeFill = true;
@@ -210,10 +214,6 @@
             // fincasTableAdapter
             // 
             this.fincasTableAdapter.ClearBeforeFill = true;
-            // 
-            // trabajadores_EmpleosTableAdapter
-            // 
-            this.trabajadores_EmpleosTableAdapter.ClearBeforeFill = true;
             // 
             // nro_empleadoTextBox
             // 
@@ -390,9 +390,9 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.trabajadores_EmpleosDataGridView.DataSource = this.trabajadores_EmpleosBindingSource;
-            this.trabajadores_EmpleosDataGridView.Location = new System.Drawing.Point(12, 249);
+            this.trabajadores_EmpleosDataGridView.Location = new System.Drawing.Point(12, 147);
             this.trabajadores_EmpleosDataGridView.Name = "trabajadores_EmpleosDataGridView";
-            this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(445, 122);
+            this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(242, 122);
             this.trabajadores_EmpleosDataGridView.TabIndex = 25;
             // 
             // dataGridViewTextBoxColumn1
@@ -401,12 +401,14 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "id_trabajador";
             this.dataGridViewTextBoxColumn2.HeaderText = "id_trabajador";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -418,12 +420,13 @@
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "Id";
+            this.dataGridViewTextBoxColumn3.Width = 140;
             // 
             // FrmEditEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 386);
+            this.ClientSize = new System.Drawing.Size(484, 292);
             this.Controls.Add(this.trabajadores_EmpleosDataGridView);
             this.Controls.Add(this.foto2PictureBox);
             this.Controls.Add(this.toolStrip2);
