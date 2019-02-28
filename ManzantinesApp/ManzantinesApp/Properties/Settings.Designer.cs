@@ -44,8 +44,8 @@ namespace ManzantinesApp.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Mazantines;Persist Security Info=True;Integrated Se" +
-            "curity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESARROLLOJG\\SQLEXPRESS;Initial Catalog=Mazantines;Persist Security I" +
+            "nfo=True;Integrated Security=True")]
         public string Database1ConnectionString {
             get {
                 return ((string)(this["Database1ConnectionString"]));
