@@ -1,9 +1,11 @@
 ﻿namespace ManzantinesApp
 {
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
     using System.IO;
     using System.Windows.Forms;
+    using System.Linq;
     using Data;
 
     public partial class FrmEditEmpleado : Form
@@ -28,7 +30,6 @@
             this.empleosTableAdapter.Fill(this.dataSet1.Empleos);
             this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
             this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
-            this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
 
             if (miTrabajador == null)
             {
@@ -38,7 +39,8 @@
             else
             {
                 this.trabajadoresBindingSource.Position = trabajadoresBindingSource.Find("Id", miTrabajador.Id);
-                if(miTrabajador.id_casa == 0)
+                this.trabajadores_EmpleosTableAdapter.FillByIdTrabajador(this.dataSet1.Trabajadores_Empleos, (int)miTrabajador.Id);
+                if (miTrabajador.id_casa == 0)
                 {
                     this.fincaComboBox.SelectedIndex = -1;
                 }
@@ -53,6 +55,15 @@
             }            
         }
 
+        private byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             try
@@ -60,11 +71,26 @@
                 if (!ValidarCampos()) return;
                 this.Validate();
                 this.trabajadoresBindingSource.EndEdit();
-                this.tableAdapterManager.TrabajadoresTableAdapter.Update(this.dataSet1);
-                this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.Update(this.dataSet1);
-                //this.tableAdapterManager.UpdateAll(this.dataSet1);
+
+                this.trabajadoresTableAdapter.Update(dataSet1.Trabajadores);
+                int cury_id_trabajador = 0;
+                if(miTrabajador == null)
+                {
+                    cury_id_trabajador = this.dataSet1.Trabajadores.AsEnumerable().Select(f => f.Id).Max();
+                }
+                else
+                {
+                    cury_id_trabajador = miTrabajador.Id;
+                    this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.DeleteById_trabajador(cury_id_trabajador);
+                }
+                    
+                foreach (DataSet1.Trabajadores_EmpleosRow item in dataSet1.Trabajadores_Empleos.Rows)
+                {
+                    this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.Insert(Convert.ToInt32(cury_id_trabajador), item.id_empleo);
+                }
+                
                 this.UpdateList = true;
-                this.Close();
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -125,6 +151,37 @@
             {
                 foto2PictureBox.Image = Image.FromFile(PictureOpenFileDialog.FileName);
             }
+        }
+
+        private void trabajadores_EmpleosDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            /*try
+            {
+                var empleo = e.FormattedValue.ToString();
+                if (string.IsNullOrEmpty(empleo))
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
+                var empleos = this.dataSet1.Empleos;
+                var id_empleo = empleos.Where(x => x.Empleo == empleo).Select(x => x.Id).FirstOrDefault();
+                var t_empleos = this.dataSet1.Trabajadores_Empleos;                
+                
+                int found = t_empleos.AsEnumerable().Where(f => f.id_empleo == id_empleo).Count();
+
+                if (found > 0)
+                {
+                    MessageBox.Show("El empleo ya esta cargado en la lista", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //this.trabajadores_EmpleosDataGridView.Rows.Remove(trabajadores_EmpleosDataGridView.CurrentRow);
+                    e.Cancel = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en validar duplicidad de empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }*/
         }
     }
 }

@@ -68,9 +68,9 @@
             this.foto2PictureBox = new System.Windows.Forms.PictureBox();
             this.trabajadores_EmpleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trabajadores_EmpleosDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Id_empleo_trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_empleo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             nro_empleadoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -378,7 +378,7 @@
             // trabajadores_EmpleosBindingSource
             // 
             this.trabajadores_EmpleosBindingSource.AllowNew = true;
-            this.trabajadores_EmpleosBindingSource.DataMember = "id_trabajador";
+            this.trabajadores_EmpleosBindingSource.DataMember = "fk_id_trabajador";
             this.trabajadores_EmpleosBindingSource.DataSource = this.trabajadoresBindingSource;
             // 
             // trabajadores_EmpleosDataGridView
@@ -386,41 +386,43 @@
             this.trabajadores_EmpleosDataGridView.AutoGenerateColumns = false;
             this.trabajadores_EmpleosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.trabajadores_EmpleosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.Id_empleo_trabajador,
+            this.id_trabajador,
+            this.id_empleo});
             this.trabajadores_EmpleosDataGridView.DataSource = this.trabajadores_EmpleosBindingSource;
             this.trabajadores_EmpleosDataGridView.Location = new System.Drawing.Point(12, 147);
             this.trabajadores_EmpleosDataGridView.Name = "trabajadores_EmpleosDataGridView";
             this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(242, 122);
             this.trabajadores_EmpleosDataGridView.TabIndex = 25;
+            this.trabajadores_EmpleosDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.trabajadores_EmpleosDataGridView_CellValidating);
             // 
-            // dataGridViewTextBoxColumn1
+            // Id_empleo_trabajador
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.Id_empleo_trabajador.DataPropertyName = "Id";
+            this.Id_empleo_trabajador.HeaderText = "Id";
+            this.Id_empleo_trabajador.Name = "Id_empleo_trabajador";
+            this.Id_empleo_trabajador.ReadOnly = true;
+            this.Id_empleo_trabajador.Visible = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // id_trabajador
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_trabajador";
-            this.dataGridViewTextBoxColumn2.HeaderText = "id_trabajador";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.id_trabajador.DataPropertyName = "id_trabajador";
+            this.id_trabajador.HeaderText = "id_trabajador";
+            this.id_trabajador.Name = "id_trabajador";
+            this.id_trabajador.Visible = false;
             // 
-            // dataGridViewTextBoxColumn3
+            // id_empleo
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_empleo";
-            this.dataGridViewTextBoxColumn3.DataSource = this.empleosBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "Empleo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Empleo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "Id";
-            this.dataGridViewTextBoxColumn3.Width = 140;
+            this.id_empleo.DataPropertyName = "id_empleo";
+            this.id_empleo.DataSource = this.empleosBindingSource;
+            this.id_empleo.DisplayMember = "Empleo";
+            this.id_empleo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.id_empleo.HeaderText = "Empleo";
+            this.id_empleo.Name = "id_empleo";
+            this.id_empleo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_empleo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_empleo.ValueMember = "Id";
+            this.id_empleo.Width = 175;
             // 
             // FrmEditEmpleado
             // 
@@ -504,8 +506,10 @@
         private System.Windows.Forms.BindingSource trabajadores_EmpleosBindingSource;
         private Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter trabajadores_EmpleosTableAdapter;
         private System.Windows.Forms.DataGridView trabajadores_EmpleosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_empleo_trabajador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_trabajador;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id_empleo;
     }
 }

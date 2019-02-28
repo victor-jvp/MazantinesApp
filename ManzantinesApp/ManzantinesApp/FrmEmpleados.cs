@@ -5,6 +5,7 @@
     using CrystalDecisions.Shared;
     using Data;
     using Reports;
+    using System.Linq;
 
     public partial class FrmEmpleados : Form
     {
@@ -35,6 +36,8 @@
             this.empleosTableAdapter.Fill(this.dataSet1.Empleos);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.Empresas' Puede moverla o quitarla según sea necesario.
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
+
+            this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
 
             this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
         }
@@ -87,7 +90,6 @@
                 // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
                 this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
             }
-
         }
 
         private void bindingNavigatorDeleteItem_Click_1(object sender, EventArgs e)
@@ -102,12 +104,21 @@
 
             try
             {
+                var id_trabajador = (int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value;
+                var query = this.dataSet1.Trabajadores_Empleos.Where(t => t.id_trabajador == id_trabajador);
+
+                foreach (var row in query)
+                {
+                    row.Delete();
+                }
+                this.trabajadores_EmpleosTableAdapter.Update(this.dataSet1.Trabajadores_Empleos);
                 trabajadoresBindingSource.RemoveCurrent();
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.trabajadoresBindingSource.CancelEdit();
             }
         }
 
