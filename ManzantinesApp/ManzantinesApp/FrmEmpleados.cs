@@ -6,6 +6,7 @@
     using Data;
     using Reports;
     using System.Linq;
+    using System.Data;
 
     public partial class FrmEmpleados : Form
     {
@@ -40,32 +41,27 @@
             this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
 
             this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+
+            this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
         }
 
         private void FilterTable()
         {
             var casa = CasaToolStripTextBox.Text.Trim();
-            var encargado = EncargadoToolStripTextBox.Text.Trim();
+            var empleado = EmpleadoToolStripTextBox.Text.Trim();
             var empresa = EmpresaToolStripTextBox.Text.Trim();
 
-            if(string.IsNullOrEmpty(casa) && string.IsNullOrEmpty(encargado) && string.IsNullOrEmpty(empresa))
+            if(string.IsNullOrEmpty(casa) && string.IsNullOrEmpty(empleado) && string.IsNullOrEmpty(empresa))
             {
-                this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+                this.vv_empleadosBindingSource.RemoveFilter();
             }
             else
             {
-                //vv_trabajadoresTableTableAdapter.FillByCasaAndEmpresaAndEncargado(
-                //   this.dataSet1.vv_trabajadoresTable,
-                //   casa,
-                //   empresa,
-                //   encargado);
+                if(!string.IsNullOrEmpty(casa)) this.vv_empleadosBindingSource.Filter = $"NroCasa LIKE '%{casa}%'";
+                if(!string.IsNullOrEmpty(empleado)) this.vv_empleadosBindingSource.Filter = $"Nombre LIKE '%{empleado}%' OR Apellidos LIKE '%{empleado}%'";
+                if (!string.IsNullOrEmpty(empresa)) this.vv_empleadosBindingSource.Filter = $"Empresa LIKE '${empresa}$'";
             }
             
-        }
-
-        private void EncargadoToolStripTextBox_TextChanged(object sender, EventArgs e)
-        {
-            FilterTable();
         }
 
         private void CasaToolStripTextBox_TextChanged(object sender, EventArgs e)
@@ -87,7 +83,7 @@
 
             if (frmEditEmpleado.UpdateList)
             {
-                // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
+                this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
                 this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
             }
         }
@@ -112,8 +108,13 @@
                     row.Delete();
                 }
                 this.trabajadores_EmpleosTableAdapter.Update(this.dataSet1.Trabajadores_Empleos);
-                trabajadoresBindingSource.RemoveCurrent();
+
+                var trabajador = this.dataSet1.Trabajadores.Where(t => t.Id == id_trabajador).FirstOrDefault();
+                if(trabajador != null) trabajador.Delete();
+
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
+
+                this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
             }
             catch (Exception ex)
             {
@@ -134,7 +135,14 @@
 
                 FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
                 frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.vv_empleadosBindingSource.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "vv_empleados";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -168,7 +176,14 @@
 
                 FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
                 frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.vv_empleadosBindingSource.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "vv_empleados";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -197,7 +212,14 @@
             {
                 FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
                 frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.vv_empleadosBindingSource.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "vv_empleados";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
                 frmPreviewCrystal.ShowDialog(this);
             }
             catch (Exception ex)
@@ -229,8 +251,33 @@
 
             if (frmEditEmpleado.UpdateList)
             {
-                // TODO: esta línea de código carga datos en la tabla 'dataSet1.Trabajadores' Puede moverla o quitarla según sea necesario.
+                this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
                 this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+            }
+        }
+
+        private void EmpleadoToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterTable();
+        }
+
+        private void BuscarToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var buscar = BuscarToolStripTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(buscar))
+            {
+                this.vv_empleadosBindingSource.RemoveFilter();
+            }
+            else
+            {
+                this.vv_empleadosBindingSource.Filter = $"NroCasa LIKE '%{buscar}%' " +
+                    $"OR Nro_empleado LIKE '%{buscar}%' " +
+                    $"OR Nombre LIKE '%{buscar}%' " +
+                    $"OR Apellidos LIKE '%{buscar}%' " +
+                    $"OR Telefono LIKE '%{buscar}%' " +
+                    $"OR Empresa LIKE '%{buscar}%' " +
+                    $"OR Empleos LIKE '%{buscar}%'";
             }
         }
     }

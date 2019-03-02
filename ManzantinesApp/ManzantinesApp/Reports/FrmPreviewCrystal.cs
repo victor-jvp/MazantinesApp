@@ -32,7 +32,7 @@
         private void conexion()
         {
             // Parametros de la conexion
-            string conString = ConfigurationManager.ConnectionStrings["ManzantinesApp.Properties.Settings.Database1ConnectionString"].ToString();
+            string conString = ConfigurationManager.ConnectionStrings["ManzantinesApp.Properties.Settings.MazantinesConnectionString"].ToString();
             var array1 = conString.Split('=');
             var SERVER = array1[1].Split(';');
             var DB = array1[2].Split(';');

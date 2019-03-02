@@ -506,8 +506,8 @@
         private System.Windows.Forms.BindingSource trabajadores_EmpleosBindingSource;
         private Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter trabajadores_EmpleosTableAdapter;
         private System.Windows.Forms.DataGridView trabajadores_EmpleosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        //private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_empleo_trabajador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_trabajador;
         private System.Windows.Forms.DataGridViewComboBoxColumn id_empleo;
