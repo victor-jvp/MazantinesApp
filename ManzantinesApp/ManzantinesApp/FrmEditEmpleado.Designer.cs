@@ -71,6 +71,8 @@
             this.Id_empleo_trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_empleo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.QuitarEmpleoToolStripButton = new System.Windows.Forms.ToolStripButton();
             nro_empleadoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -91,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.foto2PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosDataGridView)).BeginInit();
+            this.toolStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // nro_empleadoLabel
@@ -141,7 +144,7 @@
             // id_empresaLabel
             // 
             id_empresaLabel.AutoSize = true;
-            id_empresaLabel.Location = new System.Drawing.Point(263, 160);
+            id_empresaLabel.Location = new System.Drawing.Point(275, 170);
             id_empresaLabel.Name = "id_empresaLabel";
             id_empresaLabel.Size = new System.Drawing.Size(51, 13);
             id_empresaLabel.TabIndex = 8;
@@ -150,7 +153,7 @@
             // fincaLabel
             // 
             fincaLabel.AutoSize = true;
-            fincaLabel.Location = new System.Drawing.Point(278, 187);
+            fincaLabel.Location = new System.Drawing.Point(290, 197);
             fincaLabel.Name = "fincaLabel";
             fincaLabel.Size = new System.Drawing.Size(36, 13);
             fincaLabel.TabIndex = 20;
@@ -159,7 +162,7 @@
             // nroCasaLabel
             // 
             nroCasaLabel.AutoSize = true;
-            nroCasaLabel.Location = new System.Drawing.Point(260, 214);
+            nroCasaLabel.Location = new System.Drawing.Point(272, 224);
             nroCasaLabel.Name = "nroCasaLabel";
             nroCasaLabel.Size = new System.Drawing.Size(54, 13);
             nroCasaLabel.TabIndex = 21;
@@ -255,7 +258,7 @@
             this.id_empresaComboBox.DataSource = this.empresasBindingSource;
             this.id_empresaComboBox.DisplayMember = "Empresa";
             this.id_empresaComboBox.FormattingEnabled = true;
-            this.id_empresaComboBox.Location = new System.Drawing.Point(320, 157);
+            this.id_empresaComboBox.Location = new System.Drawing.Point(332, 167);
             this.id_empresaComboBox.Name = "id_empresaComboBox";
             this.id_empresaComboBox.Size = new System.Drawing.Size(140, 21);
             this.id_empresaComboBox.TabIndex = 9;
@@ -315,7 +318,7 @@
             this.fincaComboBox.DataSource = this.fincasBindingSource;
             this.fincaComboBox.DisplayMember = "Finca";
             this.fincaComboBox.FormattingEnabled = true;
-            this.fincaComboBox.Location = new System.Drawing.Point(320, 184);
+            this.fincaComboBox.Location = new System.Drawing.Point(332, 194);
             this.fincaComboBox.Name = "fincaComboBox";
             this.fincaComboBox.Size = new System.Drawing.Size(140, 21);
             this.fincaComboBox.TabIndex = 21;
@@ -335,7 +338,7 @@
             this.nroCasaComboBox.DataSource = this.casasBindingSource;
             this.nroCasaComboBox.DisplayMember = "NroCasa";
             this.nroCasaComboBox.FormattingEnabled = true;
-            this.nroCasaComboBox.Location = new System.Drawing.Point(320, 211);
+            this.nroCasaComboBox.Location = new System.Drawing.Point(332, 221);
             this.nroCasaComboBox.Name = "nroCasaComboBox";
             this.nroCasaComboBox.Size = new System.Drawing.Size(140, 21);
             this.nroCasaComboBox.TabIndex = 22;
@@ -346,7 +349,7 @@
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QuitarFototoolStripButton});
-            this.toolStrip2.Location = new System.Drawing.Point(358, 0);
+            this.toolStrip2.Location = new System.Drawing.Point(372, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(99, 25);
             this.toolStrip2.TabIndex = 24;
@@ -367,7 +370,7 @@
             this.foto2PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.foto2PictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.foto2PictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.trabajadoresBindingSource, "foto2", true));
-            this.foto2PictureBox.Location = new System.Drawing.Point(360, 28);
+            this.foto2PictureBox.Location = new System.Drawing.Point(372, 31);
             this.foto2PictureBox.Name = "foto2PictureBox";
             this.foto2PictureBox.Size = new System.Drawing.Size(100, 123);
             this.foto2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -392,7 +395,8 @@
             this.trabajadores_EmpleosDataGridView.DataSource = this.trabajadores_EmpleosBindingSource;
             this.trabajadores_EmpleosDataGridView.Location = new System.Drawing.Point(12, 147);
             this.trabajadores_EmpleosDataGridView.Name = "trabajadores_EmpleosDataGridView";
-            this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(242, 122);
+            this.trabajadores_EmpleosDataGridView.RowHeadersWidth = 31;
+            this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(238, 135);
             this.trabajadores_EmpleosDataGridView.TabIndex = 25;
             this.trabajadores_EmpleosDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.trabajadores_EmpleosDataGridView_CellValidating);
             // 
@@ -424,11 +428,32 @@
             this.id_empleo.ValueMember = "Id";
             this.id_empleo.Width = 175;
             // 
+            // toolStrip3
+            // 
+            this.toolStrip3.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.QuitarEmpleoToolStripButton});
+            this.toolStrip3.Location = new System.Drawing.Point(253, 258);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(146, 25);
+            this.toolStrip3.TabIndex = 26;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
+            // QuitarEmpleoToolStripButton
+            // 
+            this.QuitarEmpleoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitarEmpleoToolStripButton.Image")));
+            this.QuitarEmpleoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.QuitarEmpleoToolStripButton.Name = "QuitarEmpleoToolStripButton";
+            this.QuitarEmpleoToolStripButton.Size = new System.Drawing.Size(103, 22);
+            this.QuitarEmpleoToolStripButton.Text = "Quitar Empleo";
+            this.QuitarEmpleoToolStripButton.Click += new System.EventHandler(this.QuitarEmpleoToolStripButton_Click);
+            // 
             // FrmEditEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 292);
+            this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.trabajadores_EmpleosDataGridView);
             this.Controls.Add(this.foto2PictureBox);
             this.Controls.Add(this.toolStrip2);
@@ -469,6 +494,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.foto2PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosDataGridView)).EndInit();
+            this.toolStrip3.ResumeLayout(false);
+            this.toolStrip3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,5 +538,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_empleo_trabajador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_trabajador;
         private System.Windows.Forms.DataGridViewComboBoxColumn id_empleo;
+        private System.Windows.Forms.ToolStrip toolStrip3;
+        private System.Windows.Forms.ToolStripButton QuitarEmpleoToolStripButton;
     }
 }

@@ -174,9 +174,6 @@
   <metadata name="empresasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>659, 17</value>
   </metadata>
-  <metadata name="empresasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>659, 17</value>
-  </metadata>
   <metadata name="PictureOpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>486, 17</value>
   </metadata>
@@ -238,6 +235,25 @@
   <metadata name="id_empleo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="toolStrip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1122, 95</value>
+  </metadata>
+  <data name="QuitarEmpleoToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIsSURBVDhPrZLtS1MBFMb9n/JL0dv3NHXN4XKWtbmmC5uU
+        6RQ3SjMoM6ZhEGlOS9NZC0pBP6jlerE0g0QDRzVXc5s1r869qvzq3pSLOIOgB55v5/mdwzkn7b9rbXER
+        YWAAr7WGz8YS3EYDX8wXWHzqJBHws1mWWtGpKebNZn42NxIfGybxcYLEOxerz3qZN+mZKdWx9PZVaogY
+        9pwzsfKolw33J5JDj0l22ki2Xmet5y7rr4cIVJt4f1pJaHxsO0Qc21tpJtzdycbcNMk7VxFsVpYbq4jf
+        spJoshBvuEh84CHeUi2Thjxifp8MEfr7CdbWsD49KXWMNVsIXSsnWnd2m8NmLXHnfT5kHcTjaJcB4sIi
+        zgckHa0IDRX8OKlM6ZUKLcs3LhGwVvLGmCsD3KXFJAadJJutCFdM7KaAOpNQyQmWW1sYzT0gA+aKi4g5
+        7MTrTUQvGzbLd0oEBPUaCTCs2isDxDuLo8VsFsLnC6TClM7PQqitlv7CpcuQAcEnfcypjhB1dCDoVIT0
+        ih1hX14GvuMKIp33cGWn4+5qkQGJoJ/psiK8xlNE+uzSwoKa7D9B9VF8qt9hVTarHW3MFCoZ0RwmsjAv
+        A0Qtjb9ksjCHr0UaIl12luotBLT5LBSoCdXVsNrexmxBDkOKdBZcg9vDWxI/bEKfy4RiP/6qckJNNyV/
+        qyzjeeYeqfOu4S3F/N/x9LRJdx5VH2Lk2D5enMnA3X2biM/z9/C/Ky3tF849A4ywze2uAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>163</value>
   </metadata>

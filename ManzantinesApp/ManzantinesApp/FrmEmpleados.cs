@@ -57,9 +57,24 @@
             }
             else
             {
-                if(!string.IsNullOrEmpty(casa)) this.vv_empleadosBindingSource.Filter = $"NroCasa LIKE '%{casa}%'";
-                if(!string.IsNullOrEmpty(empleado)) this.vv_empleadosBindingSource.Filter = $"Nombre LIKE '%{empleado}%' OR Apellidos LIKE '%{empleado}%'";
-                if (!string.IsNullOrEmpty(empresa)) this.vv_empleadosBindingSource.Filter = $"Empresa LIKE '${empresa}$'";
+                string filter = string.Empty;
+                if(!string.IsNullOrEmpty(casa))
+                    filter += $"NroCasa LIKE '%{casa}%'";
+
+                if (!string.IsNullOrEmpty(empleado))
+                {
+                    if (!string.IsNullOrEmpty(filter)) filter += " AND ";
+                    filter += $"FullName LIKE '%{empleado}%'";
+                }
+
+                if (!string.IsNullOrEmpty(empresa))
+                {
+                    if (!string.IsNullOrEmpty(filter)) filter += " AND ";
+
+                    filter += $"Empresa LIKE '%{empresa}%'";
+                }
+
+                vv_empleadosBindingSource.Filter = filter;
             }
             
         }
@@ -83,8 +98,12 @@
 
             if (frmEditEmpleado.UpdateList)
             {
-                this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
+                this.casasTableAdapter.Fill(this.dataSet1.Casas);
+                this.empleosTableAdapter.Fill(this.dataSet1.Empleos);
+                this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
                 this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+                this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
+                this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
             }
         }
 
@@ -253,6 +272,7 @@
             {
                 this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
                 this.trabajadoresTableAdapter.Fill(this.dataSet1.Trabajadores);
+                this.trabajadores_EmpleosTableAdapter.Fill(this.dataSet1.Trabajadores_Empleos);
             }
         }
 

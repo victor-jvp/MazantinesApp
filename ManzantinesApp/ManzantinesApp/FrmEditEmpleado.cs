@@ -77,16 +77,17 @@
                 if(miTrabajador == null)
                 {
                     cury_id_trabajador = this.dataSet1.Trabajadores.AsEnumerable().Select(f => f.Id).Max();
+
+                    foreach (DataSet1.Trabajadores_EmpleosRow item in dataSet1.Trabajadores_Empleos.Rows)
+                    {
+                        this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.Insert(Convert.ToInt32(cury_id_trabajador), item.id_empleo);
+                    }
                 }
                 else
                 {
                     cury_id_trabajador = miTrabajador.Id;
-                    this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.DeleteById_trabajador(cury_id_trabajador);
-                }
-                    
-                foreach (DataSet1.Trabajadores_EmpleosRow item in dataSet1.Trabajadores_Empleos.Rows)
-                {
-                    this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.Insert(Convert.ToInt32(cury_id_trabajador), item.id_empleo);
+                    //this.tableAdapterManager.Trabajadores_EmpleosTableAdapter.DeleteById_trabajador(cury_id_trabajador);
+                    this.trabajadores_EmpleosTableAdapter.Update(this.dataSet1.Trabajadores_Empleos);
                 }
                 
                 this.UpdateList = true;
@@ -182,6 +183,11 @@
                 MessageBox.Show(ex.Message, "Error en validar duplicidad de empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }*/
+        }
+
+        private void QuitarEmpleoToolStripButton_Click(object sender, EventArgs e)
+        {
+            trabajadores_EmpleosBindingSource.RemoveCurrent();
         }
     }
 }

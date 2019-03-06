@@ -188,17 +188,17 @@
   <data name="EditToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJQSURBVDhPjc5dSFNxGMfxs00v0rOyHHhTIHQxLwp6M8oa
-        tW6MiNGm8yKhYjVjmzaXzQUHkwhysLQXit4wjbG5Nl2WjgKHOqupU1EqK5tTZIJgWGFhU5Ff/2PHJunS
-        7825OM/n+T/UanPLDhg705M7AmIK7ZupT+Sr536t3M4zjdV3bQ1o8TRh+vJJzNwxISgRYXVL9KMMfX4Y
-        lpchjI+Po//9EFlyAhFl2vwl3FSMCkYY2hCCwvUdRt8UyhpHEA6H0ep9hRnpOnSnUeAml0k3zNCFQShq
-        CW77hb3ln5GkCyD/YQ+8Xi9sldVo353s56b/SRdiaP0Awd/mcUbFIBI1neCfagP/cB1yS+tRbLHCvWuj
-        ihOL0gQZ+txHyF0Ek7MzrgeRcLYDPNUbUJl1oKR28HOeI+1I2SNOLEozwNAF/VA4J2BsncL+myHQ2i4I
-        FvBBO3jKelDHnlziRDSR1m+mC94ii8UtPyEhOEnfizhVRxRnuwm2LcXWKznmBG0f5M6vuEDwvhtDWF/Y
-        h/i8wN+zeVm1oGRWhiPR/OV71vhLt0+KDL0oav4B6S3ysqEPcWoWkxfZlxUugh8vxWzNJeLMoKM4EvZd
-        Q0r+a6Qau7FW1wXewtlyB6ijVctjNs/F1IrRHudcZMwLdglf+RRC+TMIDtUQXENwZWzMZjdtmoyM+TDR
-        osQXj+TPEpkV8XIbNsgsFm4sdkXq7NnBJhM+ONLnfLe3TL8oFU9V6VImS05vM3Mj/++4fMesKXdr5L5a
-        +O5BnvDqPXWi1KmkBNzvFaKo38qWT3AW+vI6AAAAAElFTkSuQmCC
+        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
 </value>
   </data>
   <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

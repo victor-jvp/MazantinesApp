@@ -173,6 +173,12 @@
       <DependentUpon>RptEmpleados.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\RptEmpleadosCasa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptEmpleadosCasa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="FrmCasas.resx">
       <DependentUpon>FrmCasas.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +221,10 @@
     <EmbeddedResource Include="Reports\RptEmpleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptEmpleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptEmpleadosCasa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptEmpleadosCasa.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Data\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

@@ -613,6 +613,12 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnTelefono;
             
+            private global::System.Data.DataColumn columnFinca;
+            
+            private global::System.Data.DataColumn columnNro_empleado;
+            
+            private global::System.Data.DataColumn columnEmpresa;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vv_EmpleadosCasasDataTable() {
@@ -696,6 +702,30 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FincaColumn {
+                get {
+                    return this.columnFinca;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Nro_empleadoColumn {
+                get {
+                    return this.columnNro_empleado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EmpresaColumn {
+                get {
+                    return this.columnEmpresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -731,7 +761,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vv_EmpleadosCasasRow Addvv_EmpleadosCasasRow(int id_casa, int NroCasa, int id_trabajador, string Nombre, string Apellidos, string Telefono) {
+            public vv_EmpleadosCasasRow Addvv_EmpleadosCasasRow(int id_casa, int NroCasa, int id_trabajador, string Nombre, string Apellidos, string Telefono, string Finca, int Nro_empleado, string Empresa) {
                 vv_EmpleadosCasasRow rowvv_EmpleadosCasasRow = ((vv_EmpleadosCasasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_casa,
@@ -739,7 +769,10 @@ namespace ManzantinesApp.Data {
                         id_trabajador,
                         Nombre,
                         Apellidos,
-                        Telefono};
+                        Telefono,
+                        Finca,
+                        Nro_empleado,
+                        Empresa};
                 rowvv_EmpleadosCasasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvv_EmpleadosCasasRow);
                 return rowvv_EmpleadosCasasRow;
@@ -776,6 +809,9 @@ namespace ManzantinesApp.Data {
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnApellidos = base.Columns["Apellidos"];
                 this.columnTelefono = base.Columns["Telefono"];
+                this.columnFinca = base.Columns["Finca"];
+                this.columnNro_empleado = base.Columns["Nro_empleado"];
+                this.columnEmpresa = base.Columns["Empresa"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -793,6 +829,12 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnApellidos);
                 this.columnTelefono = new global::System.Data.DataColumn("Telefono", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTelefono);
+                this.columnFinca = new global::System.Data.DataColumn("Finca", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFinca);
+                this.columnNro_empleado = new global::System.Data.DataColumn("Nro_empleado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNro_empleado);
+                this.columnEmpresa = new global::System.Data.DataColumn("Empresa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpresa);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_casa,
                                 this.columnid_trabajador}, true));
@@ -802,6 +844,8 @@ namespace ManzantinesApp.Data {
                 this.columnNombre.MaxLength = 30;
                 this.columnApellidos.MaxLength = 30;
                 this.columnTelefono.MaxLength = 15;
+                this.columnFinca.MaxLength = 2147483647;
+                this.columnEmpresa.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3482,6 +3526,54 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Finca {
+                get {
+                    try {
+                        return ((string)(this[this.tablevv_EmpleadosCasas.FincaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Finca\' in table \'vv_EmpleadosCasas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_EmpleadosCasas.FincaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Nro_empleado {
+                get {
+                    try {
+                        return ((int)(this[this.tablevv_EmpleadosCasas.Nro_empleadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Nro_empleado\' in table \'vv_EmpleadosCasas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_EmpleadosCasas.Nro_empleadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Empresa {
+                get {
+                    try {
+                        return ((string)(this[this.tablevv_EmpleadosCasas.EmpresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Empresa\' in table \'vv_EmpleadosCasas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_EmpleadosCasas.EmpresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNombreNull() {
                 return this.IsNull(this.tablevv_EmpleadosCasas.NombreColumn);
             }
@@ -3514,6 +3606,42 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTelefonoNull() {
                 this[this.tablevv_EmpleadosCasas.TelefonoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFincaNull() {
+                return this.IsNull(this.tablevv_EmpleadosCasas.FincaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFincaNull() {
+                this[this.tablevv_EmpleadosCasas.FincaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsNro_empleadoNull() {
+                return this.IsNull(this.tablevv_EmpleadosCasas.Nro_empleadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetNro_empleadoNull() {
+                this[this.tablevv_EmpleadosCasas.Nro_empleadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEmpresaNull() {
+                return this.IsNull(this.tablevv_EmpleadosCasas.EmpresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEmpresaNull() {
+                this[this.tablevv_EmpleadosCasas.EmpresaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4977,6 +5105,9 @@ namespace ManzantinesApp.Data.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Apellidos", "Apellidos");
             tableMapping.ColumnMappings.Add("Telefono", "Telefono");
+            tableMapping.ColumnMappings.Add("Finca", "Finca");
+            tableMapping.ColumnMappings.Add("Nro_empleado", "Nro_empleado");
+            tableMapping.ColumnMappings.Add("Empresa", "Empresa");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4993,13 +5124,13 @@ namespace ManzantinesApp.Data.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id_casa, NroCasa, id_trabajador, Nombre, Apellidos, Telefono\r\nFROM " +
-                "           vv_EmpleadosCasas";
+            this._commandCollection[0].CommandText = "SELECT id_casa, NroCasa, id_trabajador, Nombre, Apellidos, Telefono, Empresa, Fin" +
+                "ca, Nro_empleado FROM vv_EmpleadosCasas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        id_casa, NroCasa, id_trabajador, Nombre, Apellidos, Telefono\r\nFROM " +
-                "           vv_EmpleadosCasas\r\nWHERE        (NroCasa = @NroCasa)";
+            this._commandCollection[1].CommandText = "SELECT id_casa, NroCasa, id_trabajador, Nombre, Apellidos, Telefono, Empresa, Fin" +
+                "ca, Nro_empleado FROM vv_EmpleadosCasas WHERE (NroCasa = @NroCasa)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NroCasa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NroCasa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
