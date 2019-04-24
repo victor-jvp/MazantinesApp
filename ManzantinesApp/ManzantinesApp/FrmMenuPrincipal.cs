@@ -267,5 +267,13 @@
         {
             loadCasa(sender as Button);
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            FrmProveedores frmProveedores = new FrmProveedores();
+            frmProveedores.Show(this);
+            this.Enabled = true;
+        }
     }
 }
