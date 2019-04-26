@@ -14,6 +14,51 @@ namespace ManzantinesApp.Asientos
 
     public partial class FrmAsientos : Form
     {
+        #region Methods
+
+        private void Inicializar()
+        {
+            this.vv_table_asientosTableAdapter.Fill(this.rptDataSet.vv_table_asientos);
+
+            FechaFacturaDateTimePicker.Value = DateTime.Now;
+            FechaPagoDateTimePicker.Value = DateTime.Now;
+
+            FechaFacturaDateTimePicker.Enabled = false;
+            FechaPagoDateTimePicker.Enabled = false;
+
+            FechaFacturaCheckBox.Checked = false;
+            FechaPagoCheckBox.Checked = false;
+        }
+
+        private void FilterTable()
+        {
+            vv_table_asientosBindingSource.RemoveFilter();
+
+            string valor = BuscarToolStripTextBox.Text.Trim();
+            string filtro = string.Empty;
+
+            if (FechaFacturaCheckBox.Checked)
+            {
+                filtro += $"FechaFactura = #{FechaFacturaDateTimePicker.Value.ToString("MM/dd/yyyy")}#";
+            }
+
+            if (!string.IsNullOrEmpty(valor))
+            {
+                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+
+                filtro +=
+                $"(RazonSocial LIKE '%{valor}%' OR " +
+                $"FormaPago LIKE '%{valor}%' OR " +
+                $"NroCuenta LIKE '%{valor}%')";
+            }
+
+            
+
+            if (!string.IsNullOrEmpty(filtro)) vv_table_asientosBindingSource.Filter = filtro;                
+        }
+
+        #endregion
+
         public FrmAsientos()
         {
             InitializeComponent();
@@ -21,7 +66,7 @@ namespace ManzantinesApp.Asientos
 
         private void FrmAsientos_Load(object sender, EventArgs e)
         {
-            this.vv_table_asientosTableAdapter.Fill(this.rptDataSet.vv_table_asientos);
+            Inicializar();
         }
 
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -40,6 +85,38 @@ namespace ManzantinesApp.Asientos
         private void EditToolStripButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FechaFacturaCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (FechaFacturaCheckBox.Checked)
+                FechaFacturaDateTimePicker.Enabled = true;
+            else
+                FechaFacturaDateTimePicker.Enabled = false;
+
+            FilterTable();
+        }
+
+        private void FechaPagoCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (FechaPagoCheckBox.Checked)
+            {
+                FechaPagoDateTimePicker.Enabled = true;
+            }
+            else
+            {
+                FechaPagoDateTimePicker.Enabled = false;
+            }
+        }
+
+        private void BuscarToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterTable();
+        }
+
+        private void FechaFacturaDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            FilterTable();
         }
     }
 }

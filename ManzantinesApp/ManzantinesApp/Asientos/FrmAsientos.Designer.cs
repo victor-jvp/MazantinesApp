@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsientos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
             this.vv_table_asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vv_table_asientosTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_table_asientosTableAdapter();
@@ -53,22 +53,28 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.EditToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.vv_table_asientosDataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FechaPagoCheckBox = new System.Windows.Forms.CheckBox();
+            this.FechaFacturaCheckBox = new System.Windows.Forms.CheckBox();
+            this.FechaPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FechaFacturaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.rptDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosBindingNavigator)).BeginInit();
             this.vv_table_asientosBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // rptDataSet
@@ -140,6 +146,7 @@
             this.BuscarToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BuscarToolStripTextBox.Name = "BuscarToolStripTextBox";
             this.BuscarToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.BuscarToolStripTextBox.TextChanged += new System.EventHandler(this.BuscarToolStripTextBox_TextChanged);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -225,14 +232,14 @@
             // 
             this.vv_table_asientosDataGridView.AllowUserToAddRows = false;
             this.vv_table_asientosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.vv_table_asientosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.vv_table_asientosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.vv_table_asientosDataGridView.AutoGenerateColumns = false;
             this.vv_table_asientosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vv_table_asientosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn8,
+            this.RazonSocial,
             this.FechaFactura,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
@@ -244,21 +251,8 @@
             this.vv_table_asientosDataGridView.Location = new System.Drawing.Point(3, 16);
             this.vv_table_asientosDataGridView.Name = "vv_table_asientosDataGridView";
             this.vv_table_asientosDataGridView.ReadOnly = true;
-            this.vv_table_asientosDataGridView.Size = new System.Drawing.Size(768, 369);
+            this.vv_table_asientosDataGridView.Size = new System.Drawing.Size(762, 312);
             this.vv_table_asientosDataGridView.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.vv_table_asientosDataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(0, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 388);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Listado de Asientos";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -276,21 +270,21 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
-            // dataGridViewTextBoxColumn8
+            // RazonSocial
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "RazonSocial";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Proveedor";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 150;
+            this.RazonSocial.DataPropertyName = "RazonSocial";
+            this.RazonSocial.HeaderText = "Proveedor";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            this.RazonSocial.Width = 150;
             // 
             // FechaFactura
             // 
             this.FechaFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.FechaFactura.DataPropertyName = "FechaFactura";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.FechaFactura.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.FechaFactura.DefaultCellStyle = dataGridViewCellStyle10;
             this.FechaFactura.HeaderText = "Fecha Factura";
             this.FechaFactura.Name = "FechaFactura";
             this.FechaFactura.ReadOnly = true;
@@ -300,10 +294,10 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Importe";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -313,8 +307,8 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "FechaPago";
-            dataGridViewCellStyle4.Format = "d";
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Format = "d";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn5.HeaderText = "Fecha Pago";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -343,11 +337,80 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 65;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.vv_table_asientosDataGridView);
+            this.groupBox1.Location = new System.Drawing.Point(3, 85);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(768, 331);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Listado de Asientos";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.FechaPagoCheckBox);
+            this.groupBox2.Controls.Add(this.FechaFacturaCheckBox);
+            this.groupBox2.Controls.Add(this.FechaPagoDateTimePicker);
+            this.groupBox2.Controls.Add(this.FechaFacturaDateTimePicker);
+            this.groupBox2.Location = new System.Drawing.Point(3, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(768, 51);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtrar Por:";
+            // 
+            // FechaPagoCheckBox
+            // 
+            this.FechaPagoCheckBox.AutoSize = true;
+            this.FechaPagoCheckBox.Location = new System.Drawing.Point(261, 21);
+            this.FechaPagoCheckBox.Name = "FechaPagoCheckBox";
+            this.FechaPagoCheckBox.Size = new System.Drawing.Size(84, 17);
+            this.FechaPagoCheckBox.TabIndex = 4;
+            this.FechaPagoCheckBox.Text = "Fecha Pago";
+            this.FechaPagoCheckBox.UseVisualStyleBackColor = true;
+            this.FechaPagoCheckBox.Visible = false;
+            this.FechaPagoCheckBox.CheckStateChanged += new System.EventHandler(this.FechaPagoCheckBox_CheckStateChanged);
+            // 
+            // FechaFacturaCheckBox
+            // 
+            this.FechaFacturaCheckBox.AutoSize = true;
+            this.FechaFacturaCheckBox.Location = new System.Drawing.Point(10, 21);
+            this.FechaFacturaCheckBox.Name = "FechaFacturaCheckBox";
+            this.FechaFacturaCheckBox.Size = new System.Drawing.Size(95, 17);
+            this.FechaFacturaCheckBox.TabIndex = 3;
+            this.FechaFacturaCheckBox.Text = "Fecha Factura";
+            this.FechaFacturaCheckBox.UseVisualStyleBackColor = true;
+            this.FechaFacturaCheckBox.CheckStateChanged += new System.EventHandler(this.FechaFacturaCheckBox_CheckStateChanged);
+            // 
+            // FechaPagoDateTimePicker
+            // 
+            this.FechaPagoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaPagoDateTimePicker.Location = new System.Drawing.Point(351, 19);
+            this.FechaPagoDateTimePicker.Name = "FechaPagoDateTimePicker";
+            this.FechaPagoDateTimePicker.Size = new System.Drawing.Size(99, 20);
+            this.FechaPagoDateTimePicker.TabIndex = 2;
+            this.FechaPagoDateTimePicker.Visible = false;
+            // 
+            // FechaFacturaDateTimePicker
+            // 
+            this.FechaFacturaDateTimePicker.CustomFormat = "dd-MM-yyyy";
+            this.FechaFacturaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaFacturaDateTimePicker.Location = new System.Drawing.Point(111, 19);
+            this.FechaFacturaDateTimePicker.Name = "FechaFacturaDateTimePicker";
+            this.FechaFacturaDateTimePicker.Size = new System.Drawing.Size(99, 20);
+            this.FechaFacturaDateTimePicker.TabIndex = 0;
+            this.FechaFacturaDateTimePicker.ValueChanged += new System.EventHandler(this.FechaFacturaDateTimePicker_ValueChanged);
+            // 
             // FrmAsientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(774, 428);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.vv_table_asientosBindingNavigator);
             this.Name = "FrmAsientos";
@@ -360,6 +423,8 @@
             this.vv_table_asientosBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,9 +452,14 @@
         private System.Windows.Forms.ToolStripButton EditToolStripButton;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox BuscarToolStripTextBox;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker FechaFacturaDateTimePicker;
+        private System.Windows.Forms.DateTimePicker FechaPagoDateTimePicker;
+        private System.Windows.Forms.CheckBox FechaPagoCheckBox;
+        private System.Windows.Forms.CheckBox FechaFacturaCheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
