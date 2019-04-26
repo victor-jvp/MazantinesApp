@@ -81,8 +81,16 @@
 
         private void FrmEditProveedor_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Asientos' table. You can move, or remove it, as needed.
+            this.asientosTableAdapter.FillByIdProveedor(this.dataSet1.Asientos, miProveedor.Id);
             this.proveedoresTableAdapter.Fill(this.dataSet1.Proveedores);
             this.proveedoresBindingSource.Filter = $"Id = {miProveedor.Id}";
+
+            this.asientosBindingSource.Filter = "Estado = 'Pendiente'";
+            this.asientosBindingSource1.Filter = "Estado = 'Pagado'";
+
+            this.dataGridView1.Columns["idDataGridViewTextBoxColumn"].Visible = false;
+            this.dataGridView2.Columns["idDataGridViewTextBoxColumn1"].Visible = false;
 
             idTextBox.Visible = false;
         }

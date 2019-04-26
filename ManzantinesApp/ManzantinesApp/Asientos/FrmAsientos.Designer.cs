@@ -55,6 +55,8 @@
             this.FechaFacturaCheckBox = new System.Windows.Forms.CheckBox();
             this.FechaPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.FechaFacturaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.TotalesToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +70,6 @@
             this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
             this.vv_table_asientosTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_table_asientosTableAdapter();
             this.tableAdapterManager = new ManzantinesApp.Data.RptDataSetTableAdapters.TableAdapterManager();
-            this.TotalesToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosBindingNavigator)).BeginInit();
             this.vv_table_asientosBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosDataGridView)).BeginInit();
@@ -306,6 +306,20 @@
             this.FechaFacturaDateTimePicker.TabIndex = 0;
             this.FechaFacturaDateTimePicker.ValueChanged += new System.EventHandler(this.FechaFacturaDateTimePicker_ValueChanged);
             // 
+            // TotalesToolStripButton
+            // 
+            this.TotalesToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("TotalesToolStripButton.Image")));
+            this.TotalesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TotalesToolStripButton.Name = "TotalesToolStripButton";
+            this.TotalesToolStripButton.Size = new System.Drawing.Size(64, 22);
+            this.TotalesToolStripButton.Text = "Totales";
+            this.TotalesToolStripButton.Click += new System.EventHandler(this.TotalesToolStripButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -408,20 +422,6 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.RptDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // TotalesToolStripButton
-            // 
-            this.TotalesToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("TotalesToolStripButton.Image")));
-            this.TotalesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TotalesToolStripButton.Name = "TotalesToolStripButton";
-            this.TotalesToolStripButton.Size = new System.Drawing.Size(64, 22);
-            this.TotalesToolStripButton.Text = "Totales";
-            this.TotalesToolStripButton.Click += new System.EventHandler(this.TotalesToolStripButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // FrmAsientos
             // 
