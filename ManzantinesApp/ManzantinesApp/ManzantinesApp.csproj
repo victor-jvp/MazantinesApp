@@ -117,6 +117,12 @@
     <Compile Include="Asientos\FrmAsientos.Designer.cs">
       <DependentUpon>FrmAsientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Asientos\FrmTotales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmTotales.Designer.cs">
+      <DependentUpon>FrmTotales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Asientos\FrmAsientos.resx">
       <DependentUpon>FrmAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asientos\FrmTotales.resx">
+      <DependentUpon>FrmTotales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FrmAddProveedor.resx">
       <DependentUpon>FrmAddProveedor.cs</DependentUpon>

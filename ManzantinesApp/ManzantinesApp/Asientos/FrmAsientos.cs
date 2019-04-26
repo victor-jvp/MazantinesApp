@@ -118,5 +118,11 @@ namespace ManzantinesApp.Asientos
         {
             FilterTable();
         }
+
+        private void TotalesToolStripButton_Click(object sender, EventArgs e)
+        {
+            FrmTotales frmTotales = new FrmTotales();
+            frmTotales.ShowDialog(this);
+        }
     }
 }
