@@ -31,26 +31,29 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsientos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
             this.vv_table_asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vv_table_asientosTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_table_asientosTableAdapter();
             this.tableAdapterManager = new ManzantinesApp.Data.RptDataSetTableAdapters.TableAdapterManager();
             this.vv_table_asientosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.BuscarToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.EditToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.vv_table_asientosDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.EditToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.BuscarToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,6 +122,25 @@
             this.vv_table_asientosBindingNavigator.TabIndex = 0;
             this.vv_table_asientosBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
+            this.toolStripLabel1.Text = "Buscar:";
+            // 
+            // BuscarToolStripTextBox
+            // 
+            this.BuscarToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BuscarToolStripTextBox.Name = "BuscarToolStripTextBox";
+            this.BuscarToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -151,16 +173,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -183,7 +198,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -196,10 +211,22 @@
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.BindingNavigatorAddNewItem_Click);
             // 
+            // EditToolStripButton
+            // 
+            this.EditToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.EditToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("EditToolStripButton.Image")));
+            this.EditToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditToolStripButton.Name = "EditToolStripButton";
+            this.EditToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.EditToolStripButton.Text = "Modificar";
+            this.EditToolStripButton.Click += new System.EventHandler(this.EditToolStripButton_Click);
+            // 
             // vv_table_asientosDataGridView
             // 
             this.vv_table_asientosDataGridView.AllowUserToAddRows = false;
             this.vv_table_asientosDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.vv_table_asientosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.vv_table_asientosDataGridView.AutoGenerateColumns = false;
             this.vv_table_asientosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vv_table_asientosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -233,28 +260,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Asientos";
             // 
-            // EditToolStripButton
-            // 
-            this.EditToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.EditToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("EditToolStripButton.Image")));
-            this.EditToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EditToolStripButton.Name = "EditToolStripButton";
-            this.EditToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.EditToolStripButton.Text = "Modificar";
-            this.EditToolStripButton.Click += new System.EventHandler(this.EditToolStripButton_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
-            this.toolStripLabel1.Text = "Buscar:";
-            // 
-            // BuscarToolStripTextBox
-            // 
-            this.BuscarToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BuscarToolStripTextBox.Name = "BuscarToolStripTextBox";
-            this.BuscarToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -277,31 +282,43 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Proveedor";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 150;
             // 
             // FechaFactura
             // 
+            this.FechaFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.FechaFactura.DataPropertyName = "FechaFactura";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.FechaFactura.DefaultCellStyle = dataGridViewCellStyle2;
             this.FechaFactura.HeaderText = "Fecha Factura";
             this.FechaFactura.Name = "FechaFactura";
             this.FechaFactura.ReadOnly = true;
+            this.FechaFactura.Width = 101;
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Importe";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 67;
             // 
             // dataGridViewTextBoxColumn5
             // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "FechaPago";
+            dataGridViewCellStyle4.Format = "d";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn5.HeaderText = "Fecha Pago";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 90;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -319,10 +336,12 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Estado";
             this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 65;
             // 
             // FrmAsientos
             // 

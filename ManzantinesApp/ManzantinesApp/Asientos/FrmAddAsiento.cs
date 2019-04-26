@@ -70,7 +70,9 @@ namespace ManzantinesApp.Asientos
                 if (!ValidarCampos()) return;
                 this.Validate();
                 this.asientosBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.dataSet1);
+                this.asientosTableAdapter.Update(this.dataSet1.Asientos);
+                this.UpdateList = true;
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -85,15 +87,14 @@ namespace ManzantinesApp.Asientos
 
         private void FrmAddAsiento_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.Proveedores' table. You can move, or remove it, as needed.
             this.proveedoresTableAdapter.Fill(this.dataSet1.Proveedores);
-            // TODO: This line of code loads data into the 'dataSet1.Asientos' table. You can move, or remove it, as needed.
             this.asientosTableAdapter.Fill(this.dataSet1.Asientos);
 
             this.asientosBindingSource.AddNew();
 
             this.fechaFacturaDateTimePicker.Value = DateTime.Now;
             this.fechaPagoDateTimePicker.Value = DateTime.Now;
+            this.ImporteNumericUpDown.Value = 0;
         }
     }
 }
