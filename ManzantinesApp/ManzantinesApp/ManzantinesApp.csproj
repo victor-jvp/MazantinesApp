@@ -16,13 +16,15 @@
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Mazantines Application</ProductName>
+    <PublisherName>Victor Véliz</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -103,6 +105,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asientos\FrmAddAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmAddAsiento.Designer.cs">
+      <DependentUpon>FrmAddAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asientos\FrmAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmAsientos.Designer.cs">
+      <DependentUpon>FrmAsientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -116,10 +130,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RptDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddProveedor.cs">
+    <Compile Include="Proveedores\FrmAddProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddProveedor.Designer.cs">
+    <Compile Include="Proveedores\FrmAddProveedor.Designer.cs">
       <DependentUpon>FrmAddProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCasas.cs">
@@ -134,10 +148,10 @@
     <Compile Include="FrmEditEmpleado.Designer.cs">
       <DependentUpon>FrmEditEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditProveedor.cs">
+    <Compile Include="Proveedores\FrmEditProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditProveedor.Designer.cs">
+    <Compile Include="Proveedores\FrmEditProveedor.Designer.cs">
       <DependentUpon>FrmEditProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEmpleadoCasa.cs">
@@ -182,10 +196,10 @@
     <Compile Include="FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmProveedores.cs">
+    <Compile Include="Proveedores\FrmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProveedores.Designer.cs">
+    <Compile Include="Proveedores\FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -208,7 +222,13 @@
       <DependentUpon>RptEmpleadosCasa.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="FrmAddProveedor.resx">
+    <EmbeddedResource Include="Asientos\FrmAddAsiento.resx">
+      <DependentUpon>FrmAddAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asientos\FrmAsientos.resx">
+      <DependentUpon>FrmAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FrmAddProveedor.resx">
       <DependentUpon>FrmAddProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCasas.resx">
@@ -217,7 +237,7 @@
     <EmbeddedResource Include="FrmEditEmpleado.resx">
       <DependentUpon>FrmEditEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditProveedor.resx">
+    <EmbeddedResource Include="Proveedores\FrmEditProveedor.resx">
       <DependentUpon>FrmEditProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleadoCasa.resx">
@@ -241,7 +261,7 @@
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProveedores.resx">
+    <EmbeddedResource Include="Proveedores\FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

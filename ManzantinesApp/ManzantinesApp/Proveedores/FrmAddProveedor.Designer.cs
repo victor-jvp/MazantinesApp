@@ -66,7 +66,7 @@
             // cifLabel
             // 
             cifLabel.AutoSize = true;
-            cifLabel.Location = new System.Drawing.Point(66, 31);
+            cifLabel.Location = new System.Drawing.Point(62, 31);
             cifLabel.Name = "cifLabel";
             cifLabel.Size = new System.Drawing.Size(26, 13);
             cifLabel.TabIndex = 0;
@@ -84,7 +84,7 @@
             // nroCuentaLabel
             // 
             nroCuentaLabel.AutoSize = true;
-            nroCuentaLabel.Location = new System.Drawing.Point(24, 109);
+            nroCuentaLabel.Location = new System.Drawing.Point(21, 109);
             nroCuentaLabel.Name = "nroCuentaLabel";
             nroCuentaLabel.Size = new System.Drawing.Size(67, 13);
             nroCuentaLabel.TabIndex = 6;

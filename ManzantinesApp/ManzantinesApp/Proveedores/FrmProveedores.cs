@@ -3,6 +3,7 @@
 namespace ManzantinesApp
 {
     using System;
+    using System.Linq;
     using System.Windows.Forms;
 
     public partial class FrmProveedores : Form
@@ -60,7 +61,7 @@ namespace ManzantinesApp
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            /*var confirm = MessageBox.Show(
+            var confirm = MessageBox.Show(
                 "Confirme eliminar el registro",
                 "Atención",
                 MessageBoxButtons.YesNo,
@@ -70,27 +71,21 @@ namespace ManzantinesApp
 
             try
             {
-                var id_trabajador = (int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value;
-                var query = this.dataSet1.Trabajadores_Empleos.Where(t => t.id_trabajador == id_trabajador);
+                var id = (int)proveedoresDataGridView.CurrentRow.Cells["Id"].Value;
+                var query = this.dataSet1.Proveedores.Where(t => t.Id == id);
 
                 foreach (var row in query)
                 {
                     row.Delete();
                 }
-                this.trabajadores_EmpleosTableAdapter.Update(this.dataSet1.Trabajadores_Empleos);
 
-                var trabajador = this.dataSet1.Trabajadores.Where(t => t.Id == id_trabajador).FirstOrDefault();
-                if (trabajador != null) trabajador.Delete();
-
-                this.tableAdapterManager.UpdateAll(this.dataSet1);
-
-                this.vv_empleadosTableAdapter.Fill(this.dataSet1.vv_empleados);
+                this.proveedoresTableAdapter.Update(this.dataSet1.Proveedores);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.trabajadoresBindingSource.CancelEdit();
-            }*/
+                this.proveedoresBindingSource.CancelEdit();
+            }
         }
     }
 }

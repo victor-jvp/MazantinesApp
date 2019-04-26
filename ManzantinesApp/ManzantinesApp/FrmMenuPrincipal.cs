@@ -275,5 +275,13 @@
             frmProveedores.Show(this);
             this.Enabled = true;
         }
+
+        private void AsientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Asientos.FrmAsientos frmAsientos = new Asientos.FrmAsientos();
+            frmAsientos.Show(this);
+            this.Enabled = true;
+        }
     }
 }
