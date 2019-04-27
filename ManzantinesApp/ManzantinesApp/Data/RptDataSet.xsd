@@ -87,30 +87,6 @@ FROM            vv_CasasCountEmpleados</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vv_table_asientosTableAdapter" GeneratorDataComponentClassName="vv_table_asientosTableAdapter" Name="vv_table_asientos" UserDataComponentName="vv_table_asientosTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_table_asientos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Estado, RazonSocial, NroCuenta FROM dbo.vv_table_asientos</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Id" DataSetColumn="Id" />
-              <Mapping SourceColumn="id_proveedor" DataSetColumn="id_proveedor" />
-              <Mapping SourceColumn="FechaFactura" DataSetColumn="FechaFactura" />
-              <Mapping SourceColumn="Importe" DataSetColumn="Importe" />
-              <Mapping SourceColumn="FechaPago" DataSetColumn="FechaPago" />
-              <Mapping SourceColumn="FormaPago" DataSetColumn="FormaPago" />
-              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
-              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
-              <Mapping SourceColumn="NroCuenta" DataSetColumn="NroCuenta" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vv_totales_asientosTableAdapter" GeneratorDataComponentClassName="vv_totales_asientosTableAdapter" Name="vv_totales_asientos" UserDataComponentName="vv_totales_asientosTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_totales_asientos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -129,6 +105,30 @@ FROM            vv_CasasCountEmpleados</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vv_table_asientosTableAdapter" GeneratorDataComponentClassName="vv_table_asientosTableAdapter" Name="vv_table_asientos" UserDataComponentName="vv_table_asientosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_table_asientos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, RazonSocial, NroCuenta, Pagado FROM vv_table_asientos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="id_proveedor" DataSetColumn="id_proveedor" />
+              <Mapping SourceColumn="FechaFactura" DataSetColumn="FechaFactura" />
+              <Mapping SourceColumn="Importe" DataSetColumn="Importe" />
+              <Mapping SourceColumn="FechaPago" DataSetColumn="FechaPago" />
+              <Mapping SourceColumn="FormaPago" DataSetColumn="FormaPago" />
+              <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
+              <Mapping SourceColumn="NroCuenta" DataSetColumn="NroCuenta" />
+              <Mapping SourceColumn="Pagado" DataSetColumn="Pagado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -137,7 +137,7 @@ FROM            vv_CasasCountEmpleados</CommandText>
   <xs:element name="RptDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RptDataSet" msprop:Generator_UserDSName="RptDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vv_EmpleadosCasas" msprop:Generator_TableClassName="vv_EmpleadosCasasDataTable" msprop:Generator_TableVarName="tablevv_EmpleadosCasas" msprop:Generator_TablePropName="vv_EmpleadosCasas" msprop:Generator_RowDeletingName="vv_EmpleadosCasasRowDeleting" msprop:Generator_RowChangingName="vv_EmpleadosCasasRowChanging" msprop:Generator_RowEvHandlerName="vv_EmpleadosCasasRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_EmpleadosCasasRowDeleted" msprop:Generator_UserTableName="vv_EmpleadosCasas" msprop:Generator_RowChangedName="vv_EmpleadosCasasRowChanged" msprop:Generator_RowEvArgName="vv_EmpleadosCasasRowChangeEvent" msprop:Generator_RowClassName="vv_EmpleadosCasasRow">
+        <xs:element name="vv_EmpleadosCasas" msprop:Generator_TableClassName="vv_EmpleadosCasasDataTable" msprop:Generator_TableVarName="tablevv_EmpleadosCasas" msprop:Generator_RowChangedName="vv_EmpleadosCasasRowChanged" msprop:Generator_TablePropName="vv_EmpleadosCasas" msprop:Generator_RowDeletingName="vv_EmpleadosCasasRowDeleting" msprop:Generator_RowChangingName="vv_EmpleadosCasasRowChanging" msprop:Generator_RowEvHandlerName="vv_EmpleadosCasasRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_EmpleadosCasasRowDeleted" msprop:Generator_RowClassName="vv_EmpleadosCasasRow" msprop:Generator_UserTableName="vv_EmpleadosCasas" msprop:Generator_RowEvArgName="vv_EmpleadosCasasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_casa" msprop:Generator_ColumnVarNameInTable="columnid_casa" msprop:Generator_ColumnPropNameInRow="id_casa" msprop:Generator_ColumnPropNameInTable="id_casaColumn" msprop:Generator_UserColumnName="id_casa" type="xs:int" />
@@ -182,7 +182,7 @@ FROM            vv_CasasCountEmpleados</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vv_empleados" msprop:Generator_TableClassName="vv_empleadosDataTable" msprop:Generator_TableVarName="tablevv_empleados" msprop:Generator_TablePropName="vv_empleados" msprop:Generator_RowDeletingName="vv_empleadosRowDeleting" msprop:Generator_RowChangingName="vv_empleadosRowChanging" msprop:Generator_RowEvHandlerName="vv_empleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_empleadosRowDeleted" msprop:Generator_UserTableName="vv_empleados" msprop:Generator_RowChangedName="vv_empleadosRowChanged" msprop:Generator_RowEvArgName="vv_empleadosRowChangeEvent" msprop:Generator_RowClassName="vv_empleadosRow">
+        <xs:element name="vv_empleados" msprop:Generator_TableClassName="vv_empleadosDataTable" msprop:Generator_TableVarName="tablevv_empleados" msprop:Generator_RowChangedName="vv_empleadosRowChanged" msprop:Generator_TablePropName="vv_empleados" msprop:Generator_RowDeletingName="vv_empleadosRowDeleting" msprop:Generator_RowChangingName="vv_empleadosRowChanging" msprop:Generator_RowEvHandlerName="vv_empleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_empleadosRowDeleted" msprop:Generator_RowClassName="vv_empleadosRow" msprop:Generator_UserTableName="vv_empleados" msprop:Generator_RowEvArgName="vv_empleadosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -233,7 +233,7 @@ FROM            vv_CasasCountEmpleados</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vv_CasasCountEmpleados" msprop:Generator_TableClassName="vv_CasasCountEmpleadosDataTable" msprop:Generator_TableVarName="tablevv_CasasCountEmpleados" msprop:Generator_TablePropName="vv_CasasCountEmpleados" msprop:Generator_RowDeletingName="vv_CasasCountEmpleadosRowDeleting" msprop:Generator_RowChangingName="vv_CasasCountEmpleadosRowChanging" msprop:Generator_RowEvHandlerName="vv_CasasCountEmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_CasasCountEmpleadosRowDeleted" msprop:Generator_UserTableName="vv_CasasCountEmpleados" msprop:Generator_RowChangedName="vv_CasasCountEmpleadosRowChanged" msprop:Generator_RowEvArgName="vv_CasasCountEmpleadosRowChangeEvent" msprop:Generator_RowClassName="vv_CasasCountEmpleadosRow">
+        <xs:element name="vv_CasasCountEmpleados" msprop:Generator_TableClassName="vv_CasasCountEmpleadosDataTable" msprop:Generator_TableVarName="tablevv_CasasCountEmpleados" msprop:Generator_RowChangedName="vv_CasasCountEmpleadosRowChanged" msprop:Generator_TablePropName="vv_CasasCountEmpleados" msprop:Generator_RowDeletingName="vv_CasasCountEmpleadosRowDeleting" msprop:Generator_RowChangingName="vv_CasasCountEmpleadosRowChanging" msprop:Generator_RowEvHandlerName="vv_CasasCountEmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_CasasCountEmpleadosRowDeleted" msprop:Generator_RowClassName="vv_CasasCountEmpleadosRow" msprop:Generator_UserTableName="vv_CasasCountEmpleados" msprop:Generator_RowEvArgName="vv_CasasCountEmpleadosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -249,7 +249,16 @@ FROM            vv_CasasCountEmpleados</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vv_table_asientos" msprop:Generator_TableClassName="vv_table_asientosDataTable" msprop:Generator_TableVarName="tablevv_table_asientos" msprop:Generator_RowChangedName="vv_table_asientosRowChanged" msprop:Generator_TablePropName="vv_table_asientos" msprop:Generator_RowDeletingName="vv_table_asientosRowDeleting" msprop:Generator_RowChangingName="vv_table_asientosRowChanging" msprop:Generator_RowEvHandlerName="vv_table_asientosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_table_asientosRowDeleted" msprop:Generator_RowClassName="vv_table_asientosRow" msprop:Generator_UserTableName="vv_table_asientos" msprop:Generator_RowEvArgName="vv_table_asientosRowChangeEvent">
+        <xs:element name="vv_totales_asientos" msprop:Generator_TableClassName="vv_totales_asientosDataTable" msprop:Generator_TableVarName="tablevv_totales_asientos" msprop:Generator_RowChangedName="vv_totales_asientosRowChanged" msprop:Generator_TablePropName="vv_totales_asientos" msprop:Generator_RowDeletingName="vv_totales_asientosRowDeleting" msprop:Generator_RowChangingName="vv_totales_asientosRowChanging" msprop:Generator_RowEvHandlerName="vv_totales_asientosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_totales_asientosRowDeleted" msprop:Generator_RowClassName="vv_totales_asientosRow" msprop:Generator_UserTableName="vv_totales_asientos" msprop:Generator_RowEvArgName="vv_totales_asientosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AsientosPorPagar" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAsientosPorPagar" msprop:Generator_ColumnPropNameInRow="AsientosPorPagar" msprop:Generator_ColumnPropNameInTable="AsientosPorPagarColumn" msprop:Generator_UserColumnName="AsientosPorPagar" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalPagar" msprop:Generator_ColumnVarNameInTable="columnTotalPagar" msprop:Generator_ColumnPropNameInRow="TotalPagar" msprop:Generator_ColumnPropNameInTable="TotalPagarColumn" msprop:Generator_UserColumnName="TotalPagar" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CantidadPagados" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidadPagados" msprop:Generator_ColumnPropNameInRow="CantidadPagados" msprop:Generator_ColumnPropNameInTable="CantidadPagadosColumn" msprop:Generator_UserColumnName="CantidadPagados" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vv_table_asientos" msprop:Generator_TableClassName="vv_table_asientosDataTable" msprop:Generator_TableVarName="tablevv_table_asientos" msprop:Generator_TablePropName="vv_table_asientos" msprop:Generator_RowDeletingName="vv_table_asientosRowDeleting" msprop:Generator_RowChangingName="vv_table_asientosRowChanging" msprop:Generator_RowEvHandlerName="vv_table_asientosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_table_asientosRowDeleted" msprop:Generator_UserTableName="vv_table_asientos" msprop:Generator_RowChangedName="vv_table_asientosRowChanged" msprop:Generator_RowEvArgName="vv_table_asientosRowChangeEvent" msprop:Generator_RowClassName="vv_table_asientosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -261,13 +270,6 @@ FROM            vv_CasasCountEmpleados</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="35" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -285,15 +287,7 @@ FROM            vv_CasasCountEmpleados</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="vv_totales_asientos" msprop:Generator_TableClassName="vv_totales_asientosDataTable" msprop:Generator_TableVarName="tablevv_totales_asientos" msprop:Generator_TablePropName="vv_totales_asientos" msprop:Generator_RowDeletingName="vv_totales_asientosRowDeleting" msprop:Generator_RowChangingName="vv_totales_asientosRowChanging" msprop:Generator_RowEvHandlerName="vv_totales_asientosRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_totales_asientosRowDeleted" msprop:Generator_UserTableName="vv_totales_asientos" msprop:Generator_RowChangedName="vv_totales_asientosRowChanged" msprop:Generator_RowEvArgName="vv_totales_asientosRowChangeEvent" msprop:Generator_RowClassName="vv_totales_asientosRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="AsientosPorPagar" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAsientosPorPagar" msprop:Generator_ColumnPropNameInRow="AsientosPorPagar" msprop:Generator_ColumnPropNameInTable="AsientosPorPagarColumn" msprop:Generator_UserColumnName="AsientosPorPagar" type="xs:int" minOccurs="0" />
-              <xs:element name="TotalPagar" msprop:Generator_ColumnVarNameInTable="columnTotalPagar" msprop:Generator_ColumnPropNameInRow="TotalPagar" msprop:Generator_ColumnPropNameInTable="TotalPagarColumn" msprop:Generator_UserColumnName="TotalPagar" type="xs:decimal" minOccurs="0" />
-              <xs:element name="CantidadPagados" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidadPagados" msprop:Generator_ColumnPropNameInRow="CantidadPagados" msprop:Generator_ColumnPropNameInTable="CantidadPagadosColumn" msprop:Generator_UserColumnName="CantidadPagados" type="xs:int" minOccurs="0" />
+              <xs:element name="Pagado" msprop:Generator_ColumnVarNameInTable="columnPagado" msprop:Generator_ColumnPropNameInRow="Pagado" msprop:Generator_ColumnPropNameInTable="PagadoColumn" msprop:Generator_UserColumnName="Pagado" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

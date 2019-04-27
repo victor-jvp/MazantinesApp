@@ -86,8 +86,8 @@
             this.proveedoresTableAdapter.Fill(this.dataSet1.Proveedores);
             this.proveedoresBindingSource.Filter = $"Id = {miProveedor.Id}";
 
-            this.asientosBindingSource.Filter = "Estado = 'Pendiente'";
-            this.asientosBindingSource1.Filter = "Estado = 'Pagado'";
+            this.asientosBindingSource.Filter = "Pagado = false";
+            this.asientosBindingSource1.Filter = "Pagado = true";
 
             this.dataGridView1.Columns["idDataGridViewTextBoxColumn"].Visible = false;
             this.dataGridView2.Columns["idDataGridViewTextBoxColumn1"].Visible = false;

@@ -47,6 +47,7 @@ namespace ManzantinesApp
                     "Aviso",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                this.Enabled = true;
                 return;
             }
 

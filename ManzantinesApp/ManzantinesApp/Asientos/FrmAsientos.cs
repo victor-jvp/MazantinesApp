@@ -19,6 +19,7 @@ namespace ManzantinesApp.Asientos
         private void Inicializar()
         {
             this.vv_table_asientosTableAdapter.Fill(this.rptDataSet.vv_table_asientos);
+            this.asientosTableAdapter1.Fill(this.dataSet.Asientos);
 
             FechaFacturaDateTimePicker.Value = DateTime.Now;
             FechaPagoDateTimePicker.Value = DateTime.Now;
@@ -52,8 +53,6 @@ namespace ManzantinesApp.Asientos
                 $"NroCuenta LIKE '%{valor}%')";
             }
 
-            
-
             if (!string.IsNullOrEmpty(filtro)) vv_table_asientosBindingSource.Filter = filtro;                
         }
 
@@ -84,7 +83,27 @@ namespace ManzantinesApp.Asientos
 
         private void EditToolStripButton_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
+            FrmEditAsiento frmEditAsiento = new FrmEditAsiento();
+            frmEditAsiento.miAsiento = dataSet.Asientos.FindById((int)asientosDataGridView.CurrentRow.Cells[0].Value);
+            if (frmEditAsiento.miAsiento == null)
+            {
+                MessageBox.Show(
+                    "El proveedor no pudo ser cargado, por favor intente de nuevo.",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                this.Enabled = true;
+                return;
+            }
 
+            frmEditAsiento.ShowDialog(this);
+            this.Enabled = true;
+
+            if (frmEditAsiento.UpdateList)
+            {
+                this.vv_table_asientosTableAdapter.Fill(this.rptDataSet.vv_table_asientos);
+            }
         }
 
         private void FechaFacturaCheckBox_CheckStateChanged(object sender, EventArgs e)

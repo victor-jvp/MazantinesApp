@@ -117,6 +117,12 @@
     <Compile Include="Asientos\FrmAsientos.Designer.cs">
       <DependentUpon>FrmAsientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Asientos\FrmEditAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmEditAsiento.Designer.cs">
+      <DependentUpon>FrmEditAsiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Asientos\FrmTotales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RptDataSet.cs">
+      <DependentUpon>RptDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\RptDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -233,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Asientos\FrmAsientos.resx">
       <DependentUpon>FrmAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asientos\FrmEditAsiento.resx">
+      <DependentUpon>FrmEditAsiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Asientos\FrmTotales.resx">
       <DependentUpon>FrmTotales.cs</DependentUpon>

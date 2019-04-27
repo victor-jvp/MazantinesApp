@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManzantinesApp.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,16 @@ using System.Windows.Forms;
 
 namespace ManzantinesApp.Asientos
 {
-    public partial class FrmAddAsiento : Form
+    public partial class FrmEditAsiento : Form
     {
+
         #region Properties
         public bool UpdateList { get; set; } = false;
+        public DataSet1.AsientosRow miAsiento { get; set; } = null;
         #endregion
 
         #region Constructors
-        public FrmAddAsiento()
+        public FrmEditAsiento()
         {
             InitializeComponent();
         }
@@ -29,14 +32,14 @@ namespace ManzantinesApp.Asientos
         {
             this.errorProvider1.Clear();
 
-            if(id_proveedorComboBox.SelectedValue == null)
+            if (id_proveedorComboBox.SelectedValue == null)
             {
                 this.errorProvider1.SetError(id_proveedorComboBox, "Este campo es requerido");
                 id_proveedorComboBox.Focus();
                 return false;
             }
 
-            if(ImporteNumericUpDown.Value <= 0)
+            if (ImporteNumericUpDown.Value <= 0)
             {
                 this.errorProvider1.SetError(ImporteNumericUpDown, "Este campo debe ser mayor que cero");
                 ImporteNumericUpDown.Focus();
@@ -55,7 +58,7 @@ namespace ManzantinesApp.Asientos
 
         #endregion
 
-        private void AsientosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        private void AsientosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -74,19 +77,13 @@ namespace ManzantinesApp.Asientos
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-
         }
 
-        private void FrmAddAsiento_Load(object sender, EventArgs e)
+        private void FrmEditAsiento_Load(object sender, EventArgs e)
         {
             this.proveedoresTableAdapter.Fill(this.dataSet1.Proveedores);
             this.asientosTableAdapter.Fill(this.dataSet1.Asientos);
-
-            this.asientosBindingSource.AddNew();
-
-            this.fechaFacturaDateTimePicker.Value = DateTime.Now;
-            this.fechaPagoDateTimePicker.Value = DateTime.Now;
-            this.ImporteNumericUpDown.Value = 0;
+            this.asientosBindingSource.Filter = $"Id = {miAsiento.Id}";
         }
     }
 }
