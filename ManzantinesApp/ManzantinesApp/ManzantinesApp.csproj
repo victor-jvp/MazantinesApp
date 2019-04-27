@@ -249,10 +249,22 @@
     <Compile Include="Reports\FrmPreviewCrystal.Designer.cs">
       <DependentUpon>FrmPreviewCrystal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\RptAsientosProveedor.cs">
+    <Compile Include="Reports\RptAsientos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RptAsientosProveedor.rpt</DependentUpon>
+      <DependentUpon>RptAsientos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptAsientosPagados.cs">
+      <DependentUpon>RptAsientosPagados.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\RptAsientosPendientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptAsientosPendientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\RptEmpleados.cs">
@@ -265,6 +277,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptEmpleadosCasa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptLiquidaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptLiquidaciones.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Asientos\FrmAddAsiento.resx">
@@ -339,9 +357,17 @@
     <EmbeddedResource Include="Reports\FrmPreviewCrystal.resx">
       <DependentUpon>FrmPreviewCrystal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\RptAsientosProveedor.rpt">
+    <EmbeddedResource Include="Reports\RptAsientos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RptAsientosProveedor.cs</LastGenOutput>
+      <LastGenOutput>RptAsientos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptAsientosPagados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAsientosPagados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptAsientosPendientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAsientosPendientes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\RptEmpleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -350,6 +376,10 @@
     <EmbeddedResource Include="Reports\RptEmpleadosCasa.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptEmpleadosCasa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptLiquidaciones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptLiquidaciones.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Data\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

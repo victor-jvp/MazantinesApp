@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsientos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.vv_table_asientosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.vv_table_asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
@@ -53,6 +53,10 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.TotalesToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripButton();
             this.asientosDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,10 +77,6 @@
             this.vv_table_asientosTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_table_asientosTableAdapter();
             this.dataSet = new ManzantinesApp.Data.DataSet1();
             this.asientosTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.AsientosTableAdapter();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosBindingNavigator)).BeginInit();
             this.vv_table_asientosBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosBindingSource)).BeginInit();
@@ -259,12 +259,38 @@
             this.TotalesToolStripButton.Text = "Totales";
             this.TotalesToolStripButton.Click += new System.EventHandler(this.TotalesToolStripButton_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // pDFToolStripMenuItem
+            // 
+            this.pDFToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pDFToolStripMenuItem.Image")));
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
+            this.pDFToolStripMenuItem.Text = "PDF";
+            this.pDFToolStripMenuItem.Click += new System.EventHandler(this.pDFToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // vistaPreliminarToolStripMenuItem
+            // 
+            this.vistaPreliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreliminarToolStripMenuItem.Image")));
+            this.vistaPreliminarToolStripMenuItem.Name = "vistaPreliminarToolStripMenuItem";
+            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.vistaPreliminarToolStripMenuItem.Text = "Vista Preliminar";
+            this.vistaPreliminarToolStripMenuItem.Click += new System.EventHandler(this.vistaPreliminarToolStripMenuItem_Click);
+            // 
             // asientosDataGridView
             // 
             this.asientosDataGridView.AllowUserToAddRows = false;
             this.asientosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.asientosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.asientosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.asientosDataGridView.AutoGenerateColumns = false;
             this.asientosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.asientosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -313,9 +339,9 @@
             // 
             this.FechaFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.FechaFactura.DataPropertyName = "FechaFactura";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.FechaFactura.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.FechaFactura.DefaultCellStyle = dataGridViewCellStyle2;
             this.FechaFactura.HeaderText = "Fecha Factura";
             this.FechaFactura.Name = "FechaFactura";
             this.FechaFactura.ReadOnly = true;
@@ -325,10 +351,10 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Importe";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -338,8 +364,8 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "FechaPago";
-            dataGridViewCellStyle8.Format = "d";
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Format = "d";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn5.HeaderText = "Fecha Pago";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -460,30 +486,6 @@
             // 
             this.asientosTableAdapter1.ClearBeforeFill = true;
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // pDFToolStripMenuItem
-            // 
-            this.pDFToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pDFToolStripMenuItem.Image")));
-            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
-            this.pDFToolStripMenuItem.Text = "PDF";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // vistaPreliminarToolStripMenuItem
-            // 
-            this.vistaPreliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreliminarToolStripMenuItem.Image")));
-            this.vistaPreliminarToolStripMenuItem.Name = "vistaPreliminarToolStripMenuItem";
-            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 25);
-            this.vistaPreliminarToolStripMenuItem.Text = "Vista Preliminar";
-            // 
             // FrmAsientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,8 +555,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pagado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton pDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton vistaPreliminarToolStripMenuItem;
     }
 }

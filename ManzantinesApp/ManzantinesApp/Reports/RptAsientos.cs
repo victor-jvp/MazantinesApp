@@ -16,14 +16,14 @@ namespace ManzantinesApp.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class RptAsientosProveedor : ReportClass {
+    public class RptAsientos : ReportClass {
         
-        public RptAsientosProveedor() {
+        public RptAsientos() {
         }
         
         public override string ResourceName {
             get {
-                return "RptAsientosProveedor.rpt";
+                return "RptAsientos.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ManzantinesApp.Reports {
         
         public override string FullResourceName {
             get {
-                return "ManzantinesApp.Reports.RptAsientosProveedor.rpt";
+                return "ManzantinesApp.Reports.RptAsientos.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ManzantinesApp.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRptAsientosProveedor : Component, ICachedReport {
+    public class CachedRptAsientos : Component, ICachedReport {
         
-        public CachedRptAsientosProveedor() {
+        public CachedRptAsientos() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ManzantinesApp.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            RptAsientosProveedor rpt = new RptAsientosProveedor();
+            RptAsientos rpt = new RptAsientos();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -2,6 +2,8 @@
 
 namespace ManzantinesApp.Asientos
 {
+    using CrystalDecisions.Shared;
+    using ManzantinesApp.Reports;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -172,6 +174,71 @@ namespace ManzantinesApp.Asientos
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            try
+            {
+                ExportOptions exportOptions;
+                DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Pdf|*.pdf";
+
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptAsientos();
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.vv_table_asientosBindingSource.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "vv_table_asientos";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    diskFileDestinationOptions.DiskFileName = saveFileDialog.FileName;
+                    exportOptions = frmPreviewCrystal.ReporteCrystal.ExportOptions;
+                    {
+                        exportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        exportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        exportOptions.ExportDestinationOptions = diskFileDestinationOptions;
+                        exportOptions.ExportFormatOptions = new PdfFormatOptions();
+                    }
+                    frmPreviewCrystal.ReporteCrystal.Export();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
+        }
+
+        private void vistaPreliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            try
+            {
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptAsientos();
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.vv_table_asientosBindingSource.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "vv_table_asientos";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+                frmPreviewCrystal.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
         }
     }
 }
