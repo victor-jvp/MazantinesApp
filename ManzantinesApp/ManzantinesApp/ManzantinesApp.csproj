@@ -181,10 +181,10 @@
     <Compile Include="FrmCasas.Designer.cs">
       <DependentUpon>FrmCasas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditEmpleado.cs">
+    <Compile Include="Empleados\FrmEditEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditEmpleado.Designer.cs">
+    <Compile Include="Empleados\FrmEditEmpleado.Designer.cs">
       <DependentUpon>FrmEditEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedores\FrmEditProveedor.cs">
@@ -193,16 +193,16 @@
     <Compile Include="Proveedores\FrmEditProveedor.Designer.cs">
       <DependentUpon>FrmEditProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmpleadoCasa.cs">
+    <Compile Include="Empleados\FrmEmpleadoCasa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmpleadoCasa.Designer.cs">
+    <Compile Include="Empleados\FrmEmpleadoCasa.Designer.cs">
       <DependentUpon>FrmEmpleadoCasa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmpleados.cs">
+    <Compile Include="Empleados\FrmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmpleados.Designer.cs">
+    <Compile Include="Empleados\FrmEmpleados.Designer.cs">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEmpleos.cs">
@@ -291,16 +291,16 @@
     <EmbeddedResource Include="FrmCasas.resx">
       <DependentUpon>FrmCasas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditEmpleado.resx">
+    <EmbeddedResource Include="Empleados\FrmEditEmpleado.resx">
       <DependentUpon>FrmEditEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FrmEditProveedor.resx">
       <DependentUpon>FrmEditProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleadoCasa.resx">
+    <EmbeddedResource Include="Empleados\FrmEmpleadoCasa.resx">
       <DependentUpon>FrmEmpleadoCasa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleados.resx">
+    <EmbeddedResource Include="Empleados\FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleos.resx">
