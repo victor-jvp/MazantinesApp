@@ -37,14 +37,14 @@
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label idLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditProveedor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.proveedoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
@@ -62,25 +62,28 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.asientosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.proveedoresTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.ProveedoresTableAdapter();
-            this.tableAdapterManager = new ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager();
-            this.asientosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.AsientosTableAdapter();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idproveedorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFacturaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idproveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formaPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idproveedorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFacturaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formaPagoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asientosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.proveedoresTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.ProveedoresTableAdapter();
+            this.tableAdapterManager = new ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager();
+            this.asientosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.AsientosTableAdapter();
+            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             cifLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
             bancoLabel = new System.Windows.Forms.Label();
@@ -175,7 +178,10 @@
             this.proveedoresBindingNavigator.DeleteItem = null;
             this.proveedoresBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.proveedoresBindingNavigatorSaveItem,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.pDFToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.vistaPreliminarToolStripMenuItem});
             this.proveedoresBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.proveedoresBindingNavigator.MoveFirstItem = null;
             this.proveedoresBindingNavigator.MoveLastItem = null;
@@ -317,15 +323,15 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(470, 210);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Asientos Pendientes de Pagos";
+            this.tabPage2.Text = "Asientos Pendientes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -343,126 +349,6 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(464, 204);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // asientosBindingSource
-            // 
-            this.asientosBindingSource.DataMember = "Asientos";
-            this.asientosBindingSource.DataSource = this.dataSet1;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(470, 210);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Asientos Pagados";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.idproveedorDataGridViewTextBoxColumn1,
-            this.fechaFacturaDataGridViewTextBoxColumn1,
-            this.importeDataGridViewTextBoxColumn1,
-            this.fechaPagoDataGridViewTextBoxColumn1,
-            this.formaPagoDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.asientosBindingSource1;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(464, 204);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // asientosBindingSource1
-            // 
-            this.asientosBindingSource1.DataMember = "Asientos";
-            this.asientosBindingSource1.DataSource = this.dataSet1;
-            // 
-            // proveedoresTableAdapter
-            // 
-            this.proveedoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AsientosTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CasasTableAdapter = null;
-            this.tableAdapterManager.EmpleosTableAdapter = null;
-            this.tableAdapterManager.EmpresasTableAdapter = null;
-            this.tableAdapterManager.EncargadosTableAdapter = null;
-            this.tableAdapterManager.FincasTableAdapter = null;
-            this.tableAdapterManager.ProveedoresTableAdapter = this.proveedoresTableAdapter;
-            this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = null;
-            this.tableAdapterManager.TrabajadoresTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // asientosTableAdapter
-            // 
-            this.asientosTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // idproveedorDataGridViewTextBoxColumn1
-            // 
-            this.idproveedorDataGridViewTextBoxColumn1.DataPropertyName = "id_proveedor";
-            this.idproveedorDataGridViewTextBoxColumn1.HeaderText = "id_proveedor";
-            this.idproveedorDataGridViewTextBoxColumn1.Name = "idproveedorDataGridViewTextBoxColumn1";
-            this.idproveedorDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idproveedorDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // fechaFacturaDataGridViewTextBoxColumn1
-            // 
-            this.fechaFacturaDataGridViewTextBoxColumn1.DataPropertyName = "FechaFactura";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.fechaFacturaDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.fechaFacturaDataGridViewTextBoxColumn1.HeaderText = "Fecha Factura";
-            this.fechaFacturaDataGridViewTextBoxColumn1.Name = "fechaFacturaDataGridViewTextBoxColumn1";
-            this.fechaFacturaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // importeDataGridViewTextBoxColumn1
-            // 
-            this.importeDataGridViewTextBoxColumn1.DataPropertyName = "Importe";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.importeDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.importeDataGridViewTextBoxColumn1.HeaderText = "Importe";
-            this.importeDataGridViewTextBoxColumn1.Name = "importeDataGridViewTextBoxColumn1";
-            this.importeDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // fechaPagoDataGridViewTextBoxColumn1
-            // 
-            this.fechaPagoDataGridViewTextBoxColumn1.DataPropertyName = "FechaPago";
-            dataGridViewCellStyle8.Format = "d";
-            this.fechaPagoDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.fechaPagoDataGridViewTextBoxColumn1.HeaderText = "Fecha Pago";
-            this.fechaPagoDataGridViewTextBoxColumn1.Name = "fechaPagoDataGridViewTextBoxColumn1";
-            this.fechaPagoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // formaPagoDataGridViewTextBoxColumn1
-            // 
-            this.formaPagoDataGridViewTextBoxColumn1.DataPropertyName = "FormaPago";
-            this.formaPagoDataGridViewTextBoxColumn1.HeaderText = "Forma Pago";
-            this.formaPagoDataGridViewTextBoxColumn1.Name = "formaPagoDataGridViewTextBoxColumn1";
-            this.formaPagoDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -485,9 +371,9 @@
             // fechaFacturaDataGridViewTextBoxColumn
             // 
             this.fechaFacturaDataGridViewTextBoxColumn.DataPropertyName = "FechaFactura";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.fechaFacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.fechaFacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.fechaFacturaDataGridViewTextBoxColumn.HeaderText = "Fecha Factura";
             this.fechaFacturaDataGridViewTextBoxColumn.Name = "fechaFacturaDataGridViewTextBoxColumn";
             this.fechaFacturaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -495,10 +381,10 @@
             // importeDataGridViewTextBoxColumn
             // 
             this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
             this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
             this.importeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -506,9 +392,9 @@
             // fechaPagoDataGridViewTextBoxColumn
             // 
             this.fechaPagoDataGridViewTextBoxColumn.DataPropertyName = "FechaPago";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.fechaPagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Format = "d";
+            dataGridViewCellStyle12.NullValue = null;
+            this.fechaPagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.fechaPagoDataGridViewTextBoxColumn.HeaderText = "Fecha Pago";
             this.fechaPagoDataGridViewTextBoxColumn.Name = "fechaPagoDataGridViewTextBoxColumn";
             this.fechaPagoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -519,6 +405,146 @@
             this.formaPagoDataGridViewTextBoxColumn.HeaderText = "Forma Pago";
             this.formaPagoDataGridViewTextBoxColumn.Name = "formaPagoDataGridViewTextBoxColumn";
             this.formaPagoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asientosBindingSource
+            // 
+            this.asientosBindingSource.DataMember = "Asientos";
+            this.asientosBindingSource.DataSource = this.dataSet1;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(470, 210);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Asientos Pagados";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.idproveedorDataGridViewTextBoxColumn1,
+            this.fechaFacturaDataGridViewTextBoxColumn1,
+            this.importeDataGridViewTextBoxColumn1,
+            this.fechaPagoDataGridViewTextBoxColumn1,
+            this.formaPagoDataGridViewTextBoxColumn1});
+            this.dataGridView2.DataSource = this.asientosBindingSource1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(464, 204);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // idproveedorDataGridViewTextBoxColumn1
+            // 
+            this.idproveedorDataGridViewTextBoxColumn1.DataPropertyName = "id_proveedor";
+            this.idproveedorDataGridViewTextBoxColumn1.HeaderText = "id_proveedor";
+            this.idproveedorDataGridViewTextBoxColumn1.Name = "idproveedorDataGridViewTextBoxColumn1";
+            this.idproveedorDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idproveedorDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // fechaFacturaDataGridViewTextBoxColumn1
+            // 
+            this.fechaFacturaDataGridViewTextBoxColumn1.DataPropertyName = "FechaFactura";
+            dataGridViewCellStyle14.Format = "d";
+            dataGridViewCellStyle14.NullValue = null;
+            this.fechaFacturaDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle14;
+            this.fechaFacturaDataGridViewTextBoxColumn1.HeaderText = "Fecha Factura";
+            this.fechaFacturaDataGridViewTextBoxColumn1.Name = "fechaFacturaDataGridViewTextBoxColumn1";
+            this.fechaFacturaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // importeDataGridViewTextBoxColumn1
+            // 
+            this.importeDataGridViewTextBoxColumn1.DataPropertyName = "Importe";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.importeDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle15;
+            this.importeDataGridViewTextBoxColumn1.HeaderText = "Importe";
+            this.importeDataGridViewTextBoxColumn1.Name = "importeDataGridViewTextBoxColumn1";
+            this.importeDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // fechaPagoDataGridViewTextBoxColumn1
+            // 
+            this.fechaPagoDataGridViewTextBoxColumn1.DataPropertyName = "FechaPago";
+            dataGridViewCellStyle16.Format = "d";
+            this.fechaPagoDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle16;
+            this.fechaPagoDataGridViewTextBoxColumn1.HeaderText = "Fecha Pago";
+            this.fechaPagoDataGridViewTextBoxColumn1.Name = "fechaPagoDataGridViewTextBoxColumn1";
+            this.fechaPagoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // formaPagoDataGridViewTextBoxColumn1
+            // 
+            this.formaPagoDataGridViewTextBoxColumn1.DataPropertyName = "FormaPago";
+            this.formaPagoDataGridViewTextBoxColumn1.HeaderText = "Forma Pago";
+            this.formaPagoDataGridViewTextBoxColumn1.Name = "formaPagoDataGridViewTextBoxColumn1";
+            this.formaPagoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // asientosBindingSource1
+            // 
+            this.asientosBindingSource1.DataMember = "Asientos";
+            this.asientosBindingSource1.DataSource = this.dataSet1;
+            // 
+            // proveedoresTableAdapter
+            // 
+            this.proveedoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AsientosTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CasasTableAdapter = null;
+            this.tableAdapterManager.EmpleosTableAdapter = null;
+            this.tableAdapterManager.EmpresasTableAdapter = null;
+            this.tableAdapterManager.EncargadosTableAdapter = null;
+            this.tableAdapterManager.FincasTableAdapter = null;
+            this.tableAdapterManager.LiquidacionesTableAdapter = null;
+            this.tableAdapterManager.ProveedoresTableAdapter = this.proveedoresTableAdapter;
+            this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = null;
+            this.tableAdapterManager.TrabajadoresTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // asientosTableAdapter
+            // 
+            this.asientosTableAdapter.ClearBeforeFill = true;
+            // 
+            // pDFToolStripMenuItem
+            // 
+            this.pDFToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pDFToolStripMenuItem.Image")));
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
+            this.pDFToolStripMenuItem.Text = "PDF";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // vistaPreliminarToolStripMenuItem
+            // 
+            this.vistaPreliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreliminarToolStripMenuItem.Image")));
+            this.vistaPreliminarToolStripMenuItem.Name = "vistaPreliminarToolStripMenuItem";
+            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 25);
+            this.vistaPreliminarToolStripMenuItem.Text = "Vista Preliminar";
             // 
             // FrmEditProveedor
             // 
@@ -593,5 +619,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn importeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaPagoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formaPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
     }
 }

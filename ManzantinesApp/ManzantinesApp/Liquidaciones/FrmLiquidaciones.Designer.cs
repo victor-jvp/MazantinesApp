@@ -51,14 +51,18 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.EditToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.TotalesToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.liquidacionesDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.TotalesToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).BeginInit();
@@ -118,7 +122,9 @@
             this.EditToolStripButton,
             this.bindingNavigatorDeleteItem,
             this.toolStripSeparator1,
-            this.TotalesToolStripButton});
+            this.TotalesToolStripButton,
+            this.toolStripSeparator2,
+            this.toolStripDropDownButton1});
             this.liquidacionesBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.liquidacionesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.liquidacionesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -126,7 +132,7 @@
             this.liquidacionesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.liquidacionesBindingNavigator.Name = "liquidacionesBindingNavigator";
             this.liquidacionesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.liquidacionesBindingNavigator.Size = new System.Drawing.Size(519, 25);
+            this.liquidacionesBindingNavigator.Size = new System.Drawing.Size(592, 25);
             this.liquidacionesBindingNavigator.TabIndex = 0;
             this.liquidacionesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -240,6 +246,20 @@
             this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.BindingNavigatorDeleteItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // TotalesToolStripButton
+            // 
+            this.TotalesToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("TotalesToolStripButton.Image")));
+            this.TotalesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TotalesToolStripButton.Name = "TotalesToolStripButton";
+            this.TotalesToolStripButton.Size = new System.Drawing.Size(64, 22);
+            this.TotalesToolStripButton.Text = "Totales";
+            this.TotalesToolStripButton.Click += new System.EventHandler(this.TotalesToolStripButton_Click);
+            // 
             // liquidacionesDataGridView
             // 
             this.liquidacionesDataGridView.AllowUserToAddRows = false;
@@ -258,7 +278,7 @@
             this.liquidacionesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.liquidacionesDataGridView.Name = "liquidacionesDataGridView";
             this.liquidacionesDataGridView.ReadOnly = true;
-            this.liquidacionesDataGridView.Size = new System.Drawing.Size(513, 244);
+            this.liquidacionesDataGridView.Size = new System.Drawing.Size(586, 244);
             this.liquidacionesDataGridView.TabIndex = 1;
             // 
             // Id
@@ -306,30 +326,46 @@
             this.groupBox1.Controls.Add(this.liquidacionesDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(0, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(519, 263);
+            this.groupBox1.Size = new System.Drawing.Size(592, 263);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Liquidaciones";
             // 
-            // toolStripSeparator1
+            // toolStripDropDownButton1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.vistaPreliminarToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(82, 22);
+            this.toolStripDropDownButton1.Text = "Reportes";
             // 
-            // TotalesToolStripButton
+            // toolStripSeparator2
             // 
-            this.TotalesToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("TotalesToolStripButton.Image")));
-            this.TotalesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TotalesToolStripButton.Name = "TotalesToolStripButton";
-            this.TotalesToolStripButton.Size = new System.Drawing.Size(64, 22);
-            this.TotalesToolStripButton.Text = "Totales";
-            this.TotalesToolStripButton.Click += new System.EventHandler(this.TotalesToolStripButton_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "PDF";
+            // 
+            // vistaPreliminarToolStripMenuItem
+            // 
+            this.vistaPreliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreliminarToolStripMenuItem.Image")));
+            this.vistaPreliminarToolStripMenuItem.Name = "vistaPreliminarToolStripMenuItem";
+            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vistaPreliminarToolStripMenuItem.Text = "Vista Preliminar";
             // 
             // FrmLiquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 303);
+            this.ClientSize = new System.Drawing.Size(592, 303);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.liquidacionesBindingNavigator);
             this.Name = "FrmLiquidaciones";
@@ -376,5 +412,9 @@
         private System.Windows.Forms.ToolStripTextBox BuscarToolStripTextBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton TotalesToolStripButton;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
     }
 }
