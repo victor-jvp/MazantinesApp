@@ -145,6 +145,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RptDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Liquidaciones\FrmAddLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmAddLiquidacion.Designer.cs">
+      <DependentUpon>FrmAddLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmEditLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmEditLiquidacion.Designer.cs">
+      <DependentUpon>FrmEditLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmLiquidaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmLiquidaciones.Designer.cs">
+      <DependentUpon>FrmLiquidaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmTotalesCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmTotalesCategorias.Designer.cs">
+      <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedores\FrmAddProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +272,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Asientos\FrmTotales.resx">
       <DependentUpon>FrmTotales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmAddLiquidacion.resx">
+      <DependentUpon>FrmAddLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmEditLiquidacion.resx">
+      <DependentUpon>FrmEditLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmLiquidaciones.resx">
+      <DependentUpon>FrmLiquidaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmTotalesCategorias.resx">
+      <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FrmAddProveedor.resx">
       <DependentUpon>FrmAddProveedor.cs</DependentUpon>
@@ -379,5 +415,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

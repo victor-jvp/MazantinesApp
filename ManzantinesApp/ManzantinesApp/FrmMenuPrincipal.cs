@@ -283,5 +283,13 @@
             frmAsientos.Show(this);
             this.Enabled = true;
         }
+
+        private void LiquidacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Liquidaciones.FrmLiquidaciones frmLiquidaciones = new Liquidaciones.FrmLiquidaciones();
+            frmLiquidaciones.Show(this);
+            this.Enabled = true;
+        }
     }
 }

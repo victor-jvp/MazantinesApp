@@ -1,6 +1,6 @@
-﻿namespace ManzantinesApp
+﻿namespace ManzantinesApp.Liquidaciones
 {
-    partial class FrmProveedores
+    partial class FrmLiquidaciones
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProveedores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLiquidaciones));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proveedoresTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.ProveedoresTableAdapter();
+            this.liquidacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.liquidacionesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.LiquidacionesTableAdapter();
             this.tableAdapterManager = new ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager();
-            this.proveedoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.liquidacionesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.BuscarToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -48,19 +51,19 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.EditToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.proveedoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.liquidacionesDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.TotalesToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingNavigator)).BeginInit();
-            this.proveedoresBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).BeginInit();
+            this.liquidacionesBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.liquidacionesDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,14 +72,14 @@
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // proveedoresBindingSource
+            // liquidacionesBindingSource
             // 
-            this.proveedoresBindingSource.DataMember = "Proveedores";
-            this.proveedoresBindingSource.DataSource = this.dataSet1;
+            this.liquidacionesBindingSource.DataMember = "Liquidaciones";
+            this.liquidacionesBindingSource.DataSource = this.dataSet1;
             // 
-            // proveedoresTableAdapter
+            // liquidacionesTableAdapter
             // 
-            this.proveedoresTableAdapter.ClearBeforeFill = true;
+            this.liquidacionesTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -87,19 +90,21 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
-            this.tableAdapterManager.LiquidacionesTableAdapter = null;
-            this.tableAdapterManager.ProveedoresTableAdapter = this.proveedoresTableAdapter;
+            this.tableAdapterManager.LiquidacionesTableAdapter = this.liquidacionesTableAdapter;
+            this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // proveedoresBindingNavigator
+            // liquidacionesBindingNavigator
             // 
-            this.proveedoresBindingNavigator.AddNewItem = null;
-            this.proveedoresBindingNavigator.BindingSource = this.proveedoresBindingSource;
-            this.proveedoresBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.proveedoresBindingNavigator.DeleteItem = null;
-            this.proveedoresBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.liquidacionesBindingNavigator.AddNewItem = null;
+            this.liquidacionesBindingNavigator.BindingSource = this.liquidacionesBindingSource;
+            this.liquidacionesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.liquidacionesBindingNavigator.DeleteItem = null;
+            this.liquidacionesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.BuscarToolStripTextBox,
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -111,17 +116,19 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.EditToolStripButton,
-            this.bindingNavigatorDeleteItem});
-            this.proveedoresBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.proveedoresBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.proveedoresBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.proveedoresBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.proveedoresBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.proveedoresBindingNavigator.Name = "proveedoresBindingNavigator";
-            this.proveedoresBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.proveedoresBindingNavigator.Size = new System.Drawing.Size(484, 25);
-            this.proveedoresBindingNavigator.TabIndex = 0;
-            this.proveedoresBindingNavigator.Text = "bindingNavigator1";
+            this.bindingNavigatorDeleteItem,
+            this.toolStripSeparator1,
+            this.TotalesToolStripButton});
+            this.liquidacionesBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.liquidacionesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.liquidacionesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.liquidacionesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.liquidacionesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.liquidacionesBindingNavigator.Name = "liquidacionesBindingNavigator";
+            this.liquidacionesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.liquidacionesBindingNavigator.Size = new System.Drawing.Size(519, 25);
+            this.liquidacionesBindingNavigator.TabIndex = 0;
+            this.liquidacionesBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -129,6 +136,19 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
+            this.toolStripLabel1.Text = "Buscar:";
+            // 
+            // BuscarToolStripTextBox
+            // 
+            this.BuscarToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BuscarToolStripTextBox.Name = "BuscarToolStripTextBox";
+            this.BuscarToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.BuscarToolStripTextBox.TextChanged += new System.EventHandler(this.BuscarToolStripTextBox_TextChanged);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -198,7 +218,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.BindingNavigatorAddNewItem_Click);
             // 
             // EditToolStripButton
             // 
@@ -218,30 +238,28 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.BindingNavigatorDeleteItem_Click);
             // 
-            // proveedoresDataGridView
+            // liquidacionesDataGridView
             // 
-            this.proveedoresDataGridView.AllowUserToAddRows = false;
-            this.proveedoresDataGridView.AllowUserToDeleteRows = false;
+            this.liquidacionesDataGridView.AllowUserToAddRows = false;
+            this.liquidacionesDataGridView.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.proveedoresDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.proveedoresDataGridView.AutoGenerateColumns = false;
-            this.proveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.proveedoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.liquidacionesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.liquidacionesDataGridView.AutoGenerateColumns = false;
+            this.liquidacionesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.liquidacionesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.proveedoresDataGridView.DataSource = this.proveedoresBindingSource;
-            this.proveedoresDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.proveedoresDataGridView.Location = new System.Drawing.Point(3, 16);
-            this.proveedoresDataGridView.Name = "proveedoresDataGridView";
-            this.proveedoresDataGridView.ReadOnly = true;
-            this.proveedoresDataGridView.Size = new System.Drawing.Size(478, 302);
-            this.proveedoresDataGridView.TabIndex = 1;
+            this.Concepto,
+            this.Categoria,
+            this.Totales});
+            this.liquidacionesDataGridView.DataSource = this.liquidacionesBindingSource;
+            this.liquidacionesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.liquidacionesDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.liquidacionesDataGridView.Name = "liquidacionesDataGridView";
+            this.liquidacionesDataGridView.ReadOnly = true;
+            this.liquidacionesDataGridView.Size = new System.Drawing.Size(513, 244);
+            this.liquidacionesDataGridView.TabIndex = 1;
             // 
             // Id
             // 
@@ -251,74 +269,78 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // Concepto
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Cif";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CIF";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 80;
+            this.Concepto.DataPropertyName = "Concepto";
+            this.Concepto.HeaderText = "Concepto";
+            this.Concepto.Name = "Concepto";
+            this.Concepto.ReadOnly = true;
+            this.Concepto.Width = 200;
             // 
-            // dataGridViewTextBoxColumn3
+            // Categoria
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "RazonSocial";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Razon Social";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 120;
+            this.Categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Categoria.DataPropertyName = "Categoria";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 77;
             // 
-            // dataGridViewTextBoxColumn4
+            // Totales
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NroCuenta";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nro. Cuenta";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Telefono";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Teléfono";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.Totales.DataPropertyName = "Totales";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Totales.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Totales.HeaderText = "Totales";
+            this.Totales.Name = "Totales";
+            this.Totales.ReadOnly = true;
+            this.Totales.Width = 120;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.proveedoresDataGridView);
+            this.groupBox1.Controls.Add(this.liquidacionesDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(0, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(484, 321);
+            this.groupBox1.Size = new System.Drawing.Size(519, 263);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista de Proveedores";
+            this.groupBox1.Text = "Listado de Liquidaciones";
             // 
-            // FrmProveedores
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // TotalesToolStripButton
+            // 
+            this.TotalesToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("TotalesToolStripButton.Image")));
+            this.TotalesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TotalesToolStripButton.Name = "TotalesToolStripButton";
+            this.TotalesToolStripButton.Size = new System.Drawing.Size(64, 22);
+            this.TotalesToolStripButton.Text = "Totales";
+            this.TotalesToolStripButton.Click += new System.EventHandler(this.TotalesToolStripButton_Click);
+            // 
+            // FrmLiquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 361);
+            this.ClientSize = new System.Drawing.Size(519, 303);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.proveedoresBindingNavigator);
-            this.MinimumSize = global::ManzantinesApp.Properties.Settings.Default.sizeMinimo;
-            this.Name = "FrmProveedores";
-            this.Text = "Proveedores";
-            this.Load += new System.EventHandler(this.FrmProveedores_Load);
+            this.Controls.Add(this.liquidacionesBindingNavigator);
+            this.Name = "FrmLiquidaciones";
+            this.Text = "Liquidaciones";
+            this.Load += new System.EventHandler(this.FrmLiquidaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingNavigator)).EndInit();
-            this.proveedoresBindingNavigator.ResumeLayout(false);
-            this.proveedoresBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).EndInit();
+            this.liquidacionesBindingNavigator.ResumeLayout(false);
+            this.liquidacionesBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.liquidacionesDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -328,12 +350,13 @@
         #endregion
 
         private Data.DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource proveedoresBindingSource;
-        private Data.DataSet1TableAdapters.ProveedoresTableAdapter proveedoresTableAdapter;
+        private System.Windows.Forms.BindingSource liquidacionesBindingSource;
+        private Data.DataSet1TableAdapters.LiquidacionesTableAdapter liquidacionesTableAdapter;
         private Data.DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator proveedoresBindingNavigator;
+        private System.Windows.Forms.BindingNavigator liquidacionesBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -342,15 +365,16 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridView proveedoresDataGridView;
+        private System.Windows.Forms.DataGridView liquidacionesDataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton EditToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Concepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox BuscarToolStripTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton TotalesToolStripButton;
     }
 }

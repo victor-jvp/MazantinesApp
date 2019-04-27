@@ -143,5 +143,35 @@ namespace ManzantinesApp.Asientos
             FrmTotales frmTotales = new FrmTotales();
             frmTotales.ShowDialog(this);
         }
+
+        private void BindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show(
+                "Confirme eliminar el registro",
+                "Atención",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+            if (confirm == DialogResult.No) return;
+
+            try
+            {
+                var id = (int)asientosDataGridView.CurrentRow.Cells["Id"].Value;
+                var query = this.dataSet.Asientos.Where(t => t.Id == id);
+
+                foreach (var row in query)
+                {
+                    row.Delete();
+                }
+
+                this.asientosTableAdapter1.Update(this.dataSet.Asientos);
+
+                this.vv_table_asientosTableAdapter.Fill(this.rptDataSet.vv_table_asientos);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
