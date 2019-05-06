@@ -236,7 +236,43 @@ namespace ManzantinesApp.Liquidaciones
 
         private void excelToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
+            try
+            {
+                ExportOptions exportOptions;
+                DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel|*.xlsx";
 
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.liquidacionesBindingSource.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "Liquidaciones";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    diskFileDestinationOptions.DiskFileName = saveFileDialog.FileName;
+                    exportOptions = frmPreviewCrystal.ReporteCrystal.ExportOptions;
+                    {
+                        exportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        exportOptions.ExportFormatType = ExportFormatType.ExcelWorkbook;
+                        exportOptions.ExportDestinationOptions = diskFileDestinationOptions;
+                        exportOptions.ExportFormatOptions = new ExcelFormatOptions();
+                    }
+                    frmPreviewCrystal.ReporteCrystal.Export();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
         }
     }
 }

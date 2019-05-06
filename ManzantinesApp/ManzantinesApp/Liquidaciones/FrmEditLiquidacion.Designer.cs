@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditLiquidacion));
             System.Windows.Forms.Label categoriaLabel1;
             System.Windows.Forms.Label conceptoLabel;
             System.Windows.Forms.Label totalesLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditLiquidacion));
+            System.Windows.Forms.Label fechaLabel;
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.liquidacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.liquidacionesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.LiquidacionesTableAdapter();
@@ -44,9 +45,12 @@
             this.conceptoTextBox = new System.Windows.Forms.TextBox();
             this.totalesNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.pagadoCheckBox = new System.Windows.Forms.CheckBox();
             categoriaLabel1 = new System.Windows.Forms.Label();
             conceptoLabel = new System.Windows.Forms.Label();
             totalesLabel1 = new System.Windows.Forms.Label();
+            fechaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).BeginInit();
@@ -54,6 +58,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.totalesNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // categoriaLabel1
+            // 
+            categoriaLabel1.AutoSize = true;
+            categoriaLabel1.Location = new System.Drawing.Point(19, 95);
+            categoriaLabel1.Name = "categoriaLabel1";
+            categoriaLabel1.Size = new System.Drawing.Size(55, 13);
+            categoriaLabel1.TabIndex = 14;
+            categoriaLabel1.Text = "Categoria:";
+            // 
+            // conceptoLabel
+            // 
+            conceptoLabel.AutoSize = true;
+            conceptoLabel.Location = new System.Drawing.Point(18, 70);
+            conceptoLabel.Name = "conceptoLabel";
+            conceptoLabel.Size = new System.Drawing.Size(56, 13);
+            conceptoLabel.TabIndex = 12;
+            conceptoLabel.Text = "Concepto:";
+            // 
+            // totalesLabel1
+            // 
+            totalesLabel1.AutoSize = true;
+            totalesLabel1.Location = new System.Drawing.Point(167, 95);
+            totalesLabel1.Name = "totalesLabel1";
+            totalesLabel1.Size = new System.Drawing.Size(45, 13);
+            totalesLabel1.TabIndex = 16;
+            totalesLabel1.Text = "Totales:";
             // 
             // dataSet1
             // 
@@ -100,7 +131,7 @@
             this.liquidacionesBindingNavigator.MovePreviousItem = null;
             this.liquidacionesBindingNavigator.Name = "liquidacionesBindingNavigator";
             this.liquidacionesBindingNavigator.PositionItem = null;
-            this.liquidacionesBindingNavigator.Size = new System.Drawing.Size(345, 25);
+            this.liquidacionesBindingNavigator.Size = new System.Drawing.Size(348, 25);
             this.liquidacionesBindingNavigator.TabIndex = 11;
             this.liquidacionesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -117,15 +148,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // categoriaLabel1
-            // 
-            categoriaLabel1.AutoSize = true;
-            categoriaLabel1.Location = new System.Drawing.Point(19, 69);
-            categoriaLabel1.Name = "categoriaLabel1";
-            categoriaLabel1.Size = new System.Drawing.Size(55, 13);
-            categoriaLabel1.TabIndex = 14;
-            categoriaLabel1.Text = "Categoria:";
-            // 
             // categoriaComboBox
             // 
             this.categoriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.liquidacionesBindingSource, "Categoria", true));
@@ -134,42 +156,24 @@
             this.categoriaComboBox.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.categoriaComboBox.Location = new System.Drawing.Point(80, 66);
+            this.categoriaComboBox.Location = new System.Drawing.Point(80, 92);
             this.categoriaComboBox.Name = "categoriaComboBox";
             this.categoriaComboBox.Size = new System.Drawing.Size(73, 21);
             this.categoriaComboBox.TabIndex = 15;
             // 
-            // conceptoLabel
-            // 
-            conceptoLabel.AutoSize = true;
-            conceptoLabel.Location = new System.Drawing.Point(18, 44);
-            conceptoLabel.Name = "conceptoLabel";
-            conceptoLabel.Size = new System.Drawing.Size(56, 13);
-            conceptoLabel.TabIndex = 12;
-            conceptoLabel.Text = "Concepto:";
-            // 
             // conceptoTextBox
             // 
             this.conceptoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.liquidacionesBindingSource, "Concepto", true));
-            this.conceptoTextBox.Location = new System.Drawing.Point(80, 41);
+            this.conceptoTextBox.Location = new System.Drawing.Point(80, 67);
             this.conceptoTextBox.Name = "conceptoTextBox";
             this.conceptoTextBox.Size = new System.Drawing.Size(241, 20);
             this.conceptoTextBox.TabIndex = 13;
-            // 
-            // totalesLabel1
-            // 
-            totalesLabel1.AutoSize = true;
-            totalesLabel1.Location = new System.Drawing.Point(167, 69);
-            totalesLabel1.Name = "totalesLabel1";
-            totalesLabel1.Size = new System.Drawing.Size(45, 13);
-            totalesLabel1.TabIndex = 16;
-            totalesLabel1.Text = "Totales:";
             // 
             // totalesNumericUpDown
             // 
             this.totalesNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.liquidacionesBindingSource, "Totales", true));
             this.totalesNumericUpDown.DecimalPlaces = 2;
-            this.totalesNumericUpDown.Location = new System.Drawing.Point(218, 66);
+            this.totalesNumericUpDown.Location = new System.Drawing.Point(218, 92);
             this.totalesNumericUpDown.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -185,11 +189,42 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Location = new System.Drawing.Point(34, 45);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(40, 13);
+            fechaLabel.TabIndex = 17;
+            fechaLabel.Text = "Fecha:";
+            // 
+            // fechaDateTimePicker
+            // 
+            this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.liquidacionesBindingSource, "Fecha", true));
+            this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(80, 41);
+            this.fechaDateTimePicker.Name = "fechaDateTimePicker";
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(103, 20);
+            this.fechaDateTimePicker.TabIndex = 18;
+            // 
+            // pagadoCheckBox
+            // 
+            this.pagadoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.liquidacionesBindingSource, "Pagado", true));
+            this.pagadoCheckBox.Location = new System.Drawing.Point(238, 37);
+            this.pagadoCheckBox.Name = "pagadoCheckBox";
+            this.pagadoCheckBox.Size = new System.Drawing.Size(83, 24);
+            this.pagadoCheckBox.TabIndex = 19;
+            this.pagadoCheckBox.Text = "Pagado";
+            this.pagadoCheckBox.UseVisualStyleBackColor = true;
+            // 
             // FrmEditLiquidacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 110);
+            this.ClientSize = new System.Drawing.Size(348, 133);
+            this.Controls.Add(this.pagadoCheckBox);
+            this.Controls.Add(fechaLabel);
+            this.Controls.Add(this.fechaDateTimePicker);
             this.Controls.Add(this.liquidacionesBindingNavigator);
             this.Controls.Add(categoriaLabel1);
             this.Controls.Add(this.categoriaComboBox);
@@ -227,5 +262,7 @@
         private System.Windows.Forms.TextBox conceptoTextBox;
         private System.Windows.Forms.NumericUpDown totalesNumericUpDown;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox pagadoCheckBox;
+        private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
     }
 }

@@ -73,6 +73,8 @@ namespace ManzantinesApp.Liquidaciones
             this.categoriaComboBox.SelectedIndex = 0;
             this.conceptoTextBox.Text = string.Empty;
             this.totalesNumericUpDown.Value = 0;
+            this.fechaDateTimePicker.Value = DateTime.Now;
+            this.pagadoCheckBox.Checked = false;
         }
     }
 }
