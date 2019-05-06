@@ -45,6 +45,20 @@ namespace ManzantinesApp.Asientos
                 filtro += $"FechaFactura = #{FechaFacturaDateTimePicker.Value.ToString("MM/dd/yyyy")}#";
             }
 
+            if (PagadasRadioButton.Checked)
+            {
+                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+
+                filtro += $"Pagado = 1";
+            }
+
+            if (SinPagarRadioButton.Checked)
+            {
+                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+
+                filtro += $"Pagado = 0";
+            }
+
             if (!string.IsNullOrEmpty(valor))
             {
                 if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
@@ -239,6 +253,71 @@ namespace ManzantinesApp.Asientos
                 MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Enabled = true;
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            try
+            {
+                ExportOptions exportOptions;
+                DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel|*.xlsx";
+
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptAsientos();
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.vv_table_asientosBindingSource.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "vv_table_asientos";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    diskFileDestinationOptions.DiskFileName = saveFileDialog.FileName;
+                    exportOptions = frmPreviewCrystal.ReporteCrystal.ExportOptions;
+                    {
+                        exportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        exportOptions.ExportFormatType = ExportFormatType.ExcelWorkbook;
+                        exportOptions.ExportDestinationOptions = diskFileDestinationOptions;
+                        exportOptions.ExportFormatOptions = new ExcelFormatOptions();
+                    }
+                    frmPreviewCrystal.ReporteCrystal.Export();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
+        }
+
+        private void TodasRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TodasRadioButton.Checked)
+            {
+                FilterTable();
+            }
+        }
+
+        private void PagadasRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PagadasRadioButton.Checked)
+            {
+                FilterTable();
+            }
+        }
+
+        private void SinPagarRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SinPagarRadioButton.Checked)
+            {
+                FilterTable();
+            }
         }
     }
 }

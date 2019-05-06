@@ -245,7 +245,7 @@ namespace ManzantinesApp.Liquidaciones
                 saveFileDialog.Filter = "Excel|*.xlsx";
 
                 FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
-                frmPreviewCrystal.ReporteCrystal = new RptEmpleados();
+                frmPreviewCrystal.ReporteCrystal = new RptLiquidaciones();
 
                 DataSet ds = new DataSet();
                 DataView view = (DataView)this.liquidacionesBindingSource.List;
