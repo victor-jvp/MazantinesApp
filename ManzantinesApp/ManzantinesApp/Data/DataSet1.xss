@@ -18,7 +18,7 @@
     <Shape ID="DesignTable:vv_CasasCountEmpleados" ZOrder="12" X="100" Y="582" Height="153" Width="293" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:Proveedores" ZOrder="3" X="1174" Y="70" Height="244" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:Asientos" ZOrder="2" X="1174" Y="409" Height="229" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:Liquidaciones" ZOrder="1" X="1544" Y="46" Height="153" Width="224" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:Liquidaciones" ZOrder="1" X="1544" Y="46" Height="191" Width="224" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:id_finca" ZOrder="20" LineWidth="11">

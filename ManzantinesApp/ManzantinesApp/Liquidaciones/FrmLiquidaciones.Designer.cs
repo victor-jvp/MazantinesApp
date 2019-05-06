@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLiquidaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.liquidacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.liquidacionesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.LiquidacionesTableAdapter();
@@ -56,19 +56,27 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liquidacionesDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pagado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TodasRadioButton = new System.Windows.Forms.RadioButton();
+            this.PagadasRadioButton = new System.Windows.Forms.RadioButton();
+            this.SinPagarRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).BeginInit();
             this.liquidacionesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -269,6 +277,7 @@
             // 
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
+            this.excelToolStripMenuItem,
             this.vistaPreliminarToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -280,15 +289,23 @@
             // 
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.toolStripMenuItem1.Text = "PDF";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // excelToolStripMenuItem
+            // 
+            this.excelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("excelToolStripMenuItem.Image")));
+            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excelToolStripMenuItem.Text = "Excel";
+            this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
             // 
             // vistaPreliminarToolStripMenuItem
             // 
             this.vistaPreliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vistaPreliminarToolStripMenuItem.Image")));
             this.vistaPreliminarToolStripMenuItem.Name = "vistaPreliminarToolStripMenuItem";
-            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.vistaPreliminarToolStripMenuItem.Text = "Vista Preliminar";
             this.vistaPreliminarToolStripMenuItem.Click += new System.EventHandler(this.vistaPreliminarToolStripMenuItem_Click);
             // 
@@ -296,21 +313,23 @@
             // 
             this.liquidacionesDataGridView.AllowUserToAddRows = false;
             this.liquidacionesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.liquidacionesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.liquidacionesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.liquidacionesDataGridView.AutoGenerateColumns = false;
             this.liquidacionesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.liquidacionesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.Fecha,
             this.Concepto,
             this.Categoria,
+            this.Pagado,
             this.Totales});
             this.liquidacionesDataGridView.DataSource = this.liquidacionesBindingSource;
             this.liquidacionesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.liquidacionesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.liquidacionesDataGridView.Name = "liquidacionesDataGridView";
             this.liquidacionesDataGridView.ReadOnly = true;
-            this.liquidacionesDataGridView.Size = new System.Drawing.Size(597, 244);
+            this.liquidacionesDataGridView.Size = new System.Drawing.Size(597, 225);
             this.liquidacionesDataGridView.TabIndex = 1;
             // 
             // Id
@@ -320,6 +339,15 @@
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
+            // 
+            // Fecha
+            // 
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 62;
             // 
             // Concepto
             // 
@@ -338,13 +366,22 @@
             this.Categoria.ReadOnly = true;
             this.Categoria.Width = 77;
             // 
+            // Pagado
+            // 
+            this.Pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Pagado.DataPropertyName = "Pagado";
+            this.Pagado.HeaderText = "Pagado";
+            this.Pagado.Name = "Pagado";
+            this.Pagado.ReadOnly = true;
+            this.Pagado.Width = 50;
+            // 
             // Totales
             // 
             this.Totales.DataPropertyName = "Totales";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Totales.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.Totales.DefaultCellStyle = dataGridViewCellStyle14;
             this.Totales.HeaderText = "Totales";
             this.Totales.Name = "Totales";
             this.Totales.ReadOnly = true;
@@ -356,18 +393,66 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.liquidacionesDataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(0, 28);
+            this.groupBox1.Location = new System.Drawing.Point(0, 83);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(603, 263);
+            this.groupBox1.Size = new System.Drawing.Size(603, 244);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Liquidaciones";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.SinPagarRadioButton);
+            this.groupBox2.Controls.Add(this.PagadasRadioButton);
+            this.groupBox2.Controls.Add(this.TodasRadioButton);
+            this.groupBox2.Location = new System.Drawing.Point(4, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(595, 49);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtrar Por:";
+            // 
+            // TodasRadioButton
+            // 
+            this.TodasRadioButton.AutoSize = true;
+            this.TodasRadioButton.Checked = true;
+            this.TodasRadioButton.Location = new System.Drawing.Point(26, 19);
+            this.TodasRadioButton.Name = "TodasRadioButton";
+            this.TodasRadioButton.Size = new System.Drawing.Size(55, 17);
+            this.TodasRadioButton.TabIndex = 0;
+            this.TodasRadioButton.TabStop = true;
+            this.TodasRadioButton.Text = "Todas";
+            this.TodasRadioButton.UseVisualStyleBackColor = true;
+            this.TodasRadioButton.CheckedChanged += new System.EventHandler(this.TodasRadioButton_CheckedChanged);
+            // 
+            // PagadasRadioButton
+            // 
+            this.PagadasRadioButton.AutoSize = true;
+            this.PagadasRadioButton.Location = new System.Drawing.Point(114, 19);
+            this.PagadasRadioButton.Name = "PagadasRadioButton";
+            this.PagadasRadioButton.Size = new System.Drawing.Size(67, 17);
+            this.PagadasRadioButton.TabIndex = 1;
+            this.PagadasRadioButton.Text = "Pagadas";
+            this.PagadasRadioButton.UseVisualStyleBackColor = true;
+            this.PagadasRadioButton.CheckedChanged += new System.EventHandler(this.PagadasRadioButton_CheckedChanged);
+            // 
+            // SinPagarRadioButton
+            // 
+            this.SinPagarRadioButton.AutoSize = true;
+            this.SinPagarRadioButton.Location = new System.Drawing.Point(204, 19);
+            this.SinPagarRadioButton.Name = "SinPagarRadioButton";
+            this.SinPagarRadioButton.Size = new System.Drawing.Size(71, 17);
+            this.SinPagarRadioButton.TabIndex = 2;
+            this.SinPagarRadioButton.Text = "Sin Pagar";
+            this.SinPagarRadioButton.UseVisualStyleBackColor = true;
+            this.SinPagarRadioButton.CheckedChanged += new System.EventHandler(this.SinPagarRadioButton_CheckedChanged);
             // 
             // FrmLiquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 303);
+            this.ClientSize = new System.Drawing.Size(603, 339);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.liquidacionesBindingNavigator);
             this.Name = "FrmLiquidaciones";
@@ -380,6 +465,8 @@
             this.liquidacionesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,10 +493,6 @@
         private System.Windows.Forms.DataGridView liquidacionesDataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripButton EditToolStripButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Concepto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox BuscarToolStripTextBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -418,5 +501,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Concepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Pagado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Totales;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton SinPagarRadioButton;
+        private System.Windows.Forms.RadioButton PagadasRadioButton;
+        private System.Windows.Forms.RadioButton TodasRadioButton;
     }
 }

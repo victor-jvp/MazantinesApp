@@ -28,10 +28,15 @@ namespace ManzantinesApp.Liquidaciones
             string valor = BuscarToolStripTextBox.Text.Trim();
             string filtro = string.Empty;
 
-            //if (FechaFacturaCheckBox.Checked)
-            //{
-            //    filtro += $"FechaFactura = #{FechaFacturaDateTimePicker.Value.ToString("MM/dd/yyyy")}#";
-            //}
+            if (PagadasRadioButton.Checked)
+            {
+                filtro += $"Pagado = 1";
+            }
+
+            if (SinPagarRadioButton.Checked)
+            {
+                filtro += $"Pagado = 0";
+            }
 
             if (!string.IsNullOrEmpty(valor))
             {
@@ -203,6 +208,35 @@ namespace ManzantinesApp.Liquidaciones
                 MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Enabled = true;
+        }
+
+        private void TodasRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TodasRadioButton.Checked)
+            {
+                FilterTable();
+            }
+        }
+
+        private void PagadasRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (PagadasRadioButton.Checked)
+            {
+                FilterTable();
+            }
+        }
+
+        private void SinPagarRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SinPagarRadioButton.Checked)
+            {
+                FilterTable();
+            }
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
