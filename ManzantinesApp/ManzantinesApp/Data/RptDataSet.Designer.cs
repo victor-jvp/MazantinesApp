@@ -1807,6 +1807,10 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnPagado;
             
+            private global::System.Data.DataColumn columnid_empresa;
+            
+            private global::System.Data.DataColumn columnEmpresa;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vv_table_asientosDataTable() {
@@ -1914,6 +1918,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_empresaColumn {
+                get {
+                    return this.columnid_empresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EmpresaColumn {
+                get {
+                    return this.columnEmpresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1949,7 +1969,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vv_table_asientosRow Addvv_table_asientosRow(int Id, int id_proveedor, System.DateTime FechaFactura, decimal Importe, System.DateTime FechaPago, string FormaPago, string RazonSocial, string NroCuenta, bool Pagado) {
+            public vv_table_asientosRow Addvv_table_asientosRow(int Id, int id_proveedor, System.DateTime FechaFactura, decimal Importe, System.DateTime FechaPago, string FormaPago, string RazonSocial, string NroCuenta, bool Pagado, int id_empresa, string Empresa) {
                 vv_table_asientosRow rowvv_table_asientosRow = ((vv_table_asientosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -1960,7 +1980,9 @@ namespace ManzantinesApp.Data {
                         FormaPago,
                         RazonSocial,
                         NroCuenta,
-                        Pagado};
+                        Pagado,
+                        id_empresa,
+                        Empresa};
                 rowvv_table_asientosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvv_table_asientosRow);
                 return rowvv_table_asientosRow;
@@ -1999,6 +2021,8 @@ namespace ManzantinesApp.Data {
                 this.columnRazonSocial = base.Columns["RazonSocial"];
                 this.columnNroCuenta = base.Columns["NroCuenta"];
                 this.columnPagado = base.Columns["Pagado"];
+                this.columnid_empresa = base.Columns["id_empresa"];
+                this.columnEmpresa = base.Columns["Empresa"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2022,6 +2046,10 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnNroCuenta);
                 this.columnPagado = new global::System.Data.DataColumn("Pagado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPagado);
+                this.columnid_empresa = new global::System.Data.DataColumn("id_empresa", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_empresa);
+                this.columnEmpresa = new global::System.Data.DataColumn("Empresa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpresa);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
@@ -2029,6 +2057,7 @@ namespace ManzantinesApp.Data {
                 this.columnFormaPago.MaxLength = 35;
                 this.columnRazonSocial.MaxLength = 2147483647;
                 this.columnNroCuenta.MaxLength = 55;
+                this.columnEmpresa.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3231,6 +3260,38 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_empresa {
+                get {
+                    try {
+                        return ((int)(this[this.tablevv_table_asientos.id_empresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_empresa\' in table \'vv_table_asientos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_table_asientos.id_empresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Empresa {
+                get {
+                    try {
+                        return ((string)(this[this.tablevv_table_asientos.EmpresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Empresa\' in table \'vv_table_asientos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_table_asientos.EmpresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isid_proveedorNull() {
                 return this.IsNull(this.tablevv_table_asientos.id_proveedorColumn);
             }
@@ -3323,6 +3384,30 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPagadoNull() {
                 this[this.tablevv_table_asientos.PagadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isid_empresaNull() {
+                return this.IsNull(this.tablevv_table_asientos.id_empresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setid_empresaNull() {
+                this[this.tablevv_table_asientos.id_empresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEmpresaNull() {
+                return this.IsNull(this.tablevv_table_asientos.EmpresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEmpresaNull() {
+                this[this.tablevv_table_asientos.EmpresaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4460,6 +4545,8 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("RazonSocial", "RazonSocial");
             tableMapping.ColumnMappings.Add("NroCuenta", "NroCuenta");
             tableMapping.ColumnMappings.Add("Pagado", "Pagado");
+            tableMapping.ColumnMappings.Add("id_empresa", "id_empresa");
+            tableMapping.ColumnMappings.Add("Empresa", "Empresa");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4477,7 +4564,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, RazonSocial" +
-                ", NroCuenta, Pagado FROM vv_table_asientos";
+                ", NroCuenta, Pagado, Empresa, id_empresa FROM vv_table_asientos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

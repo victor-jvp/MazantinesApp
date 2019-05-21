@@ -24,13 +24,8 @@ namespace ManzantinesApp.Asientos
             this.asientosTableAdapter1.Fill(this.dataSet.Asientos);
 
             FechaFacturaDateTimePicker.Value = DateTime.Now;
-            FechaPagoDateTimePicker.Value = DateTime.Now;
-
             FechaFacturaDateTimePicker.Enabled = false;
-            FechaPagoDateTimePicker.Enabled = false;
-
             FechaFacturaCheckBox.Checked = false;
-            FechaPagoCheckBox.Checked = false;
         }
 
         private void FilterTable()
@@ -43,6 +38,12 @@ namespace ManzantinesApp.Asientos
             if (FechaFacturaCheckBox.Checked)
             {
                 filtro += $"FechaFactura = #{FechaFacturaDateTimePicker.Value.ToString("MM/dd/yyyy")}#";
+            }
+
+            if(EmpresaCheckBox.Checked && EmpresaComboBox.SelectedValue != null)
+            {
+                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+                filtro += $"id_empresa = {EmpresaComboBox.SelectedValue}";
             }
 
             if (PagadasRadioButton.Checked)
@@ -66,6 +67,7 @@ namespace ManzantinesApp.Asientos
                 filtro +=
                 $"(RazonSocial LIKE '%{valor}%' OR " +
                 $"FormaPago LIKE '%{valor}%' OR " +
+                $"Empresa LIKE '%{valor}%' OR " +
                 $"NroCuenta LIKE '%{valor}%')";
             }
 
@@ -81,6 +83,8 @@ namespace ManzantinesApp.Asientos
 
         private void FrmAsientos_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet.Empresas' table. You can move, or remove it, as needed.
+            this.empresasTableAdapter.Fill(this.dataSet.Empresas);
             Inicializar();
         }
 
@@ -132,18 +136,6 @@ namespace ManzantinesApp.Asientos
             FilterTable();
         }
 
-        private void FechaPagoCheckBox_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (FechaPagoCheckBox.Checked)
-            {
-                FechaPagoDateTimePicker.Enabled = true;
-            }
-            else
-            {
-                FechaPagoDateTimePicker.Enabled = false;
-            }
-        }
-
         private void BuscarToolStripTextBox_TextChanged(object sender, EventArgs e)
         {
             FilterTable();
@@ -188,16 +180,6 @@ namespace ManzantinesApp.Asientos
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void vistaPreliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void excelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -328,6 +310,16 @@ namespace ManzantinesApp.Asientos
                 MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Enabled = true;
+        }
+
+        private void EmpresaCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (EmpresaCheckBox.Checked)
+                EmpresaComboBox.Enabled = true;
+            else
+                EmpresaComboBox.Enabled = false;
+
+            FilterTable();
         }
     }
 }

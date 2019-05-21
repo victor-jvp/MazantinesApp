@@ -81,6 +81,8 @@ namespace ManzantinesApp.Asientos
 
         private void FrmEditAsiento_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Empresas' table. You can move, or remove it, as needed.
+            this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
             this.proveedoresTableAdapter.Fill(this.dataSet1.Proveedores);
             this.asientosTableAdapter.Fill(this.dataSet1.Asientos);
             this.asientosBindingSource.Filter = $"Id = {miAsiento.Id}";

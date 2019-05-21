@@ -107,10 +107,10 @@ FROM            vv_CasasCountEmpleados</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vv_table_asientosTableAdapter" GeneratorDataComponentClassName="vv_table_asientosTableAdapter" Name="vv_table_asientos" UserDataComponentName="vv_table_asientosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_table_asientos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_table_asientos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, RazonSocial, NroCuenta, Pagado FROM vv_table_asientos</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, RazonSocial, NroCuenta, Pagado, Empresa, id_empresa FROM vv_table_asientos</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -126,6 +126,8 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <Mapping SourceColumn="RazonSocial" DataSetColumn="RazonSocial" />
               <Mapping SourceColumn="NroCuenta" DataSetColumn="NroCuenta" />
               <Mapping SourceColumn="Pagado" DataSetColumn="Pagado" />
+              <Mapping SourceColumn="id_empresa" DataSetColumn="id_empresa" />
+              <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -305,6 +307,14 @@ FROM            vv_CasasCountEmpleados</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Pagado" msprop:Generator_ColumnVarNameInTable="columnPagado" msprop:Generator_ColumnPropNameInRow="Pagado" msprop:Generator_ColumnPropNameInTable="PagadoColumn" msprop:Generator_UserColumnName="Pagado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="id_empresa" msprop:Generator_ColumnVarNameInTable="columnid_empresa" msprop:Generator_ColumnPropNameInRow="id_empresa" msprop:Generator_ColumnPropNameInTable="id_empresaColumn" msprop:Generator_UserColumnName="id_empresa" type="xs:int" minOccurs="0" />
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

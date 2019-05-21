@@ -35,6 +35,7 @@
             System.Windows.Forms.Label fechaPagoLabel;
             System.Windows.Forms.Label formaPagoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddAsiento));
+            System.Windows.Forms.Label id_empresaLabel;
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.asientosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.AsientosTableAdapter();
@@ -51,11 +52,15 @@
             this.ImporteNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pagadoCheckBox = new System.Windows.Forms.CheckBox();
+            this.id_empresaComboBox = new System.Windows.Forms.ComboBox();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             id_proveedorLabel = new System.Windows.Forms.Label();
             fechaFacturaLabel = new System.Windows.Forms.Label();
             importeLabel = new System.Windows.Forms.Label();
             fechaPagoLabel = new System.Windows.Forms.Label();
             formaPagoLabel = new System.Windows.Forms.Label();
+            id_empresaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asientosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asientosBindingNavigator)).BeginInit();
@@ -63,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImporteNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // id_proveedorLabel
@@ -77,7 +83,7 @@
             // fechaFacturaLabel
             // 
             fechaFacturaLabel.AutoSize = true;
-            fechaFacturaLabel.Location = new System.Drawing.Point(14, 59);
+            fechaFacturaLabel.Location = new System.Drawing.Point(14, 86);
             fechaFacturaLabel.Name = "fechaFacturaLabel";
             fechaFacturaLabel.Size = new System.Drawing.Size(79, 13);
             fechaFacturaLabel.TabIndex = 2;
@@ -86,7 +92,7 @@
             // importeLabel
             // 
             importeLabel.AutoSize = true;
-            importeLabel.Location = new System.Drawing.Point(48, 84);
+            importeLabel.Location = new System.Drawing.Point(48, 111);
             importeLabel.Name = "importeLabel";
             importeLabel.Size = new System.Drawing.Size(45, 13);
             importeLabel.TabIndex = 4;
@@ -95,7 +101,7 @@
             // fechaPagoLabel
             // 
             fechaPagoLabel.AutoSize = true;
-            fechaPagoLabel.Location = new System.Drawing.Point(25, 111);
+            fechaPagoLabel.Location = new System.Drawing.Point(25, 138);
             fechaPagoLabel.Name = "fechaPagoLabel";
             fechaPagoLabel.Size = new System.Drawing.Size(68, 13);
             fechaPagoLabel.TabIndex = 6;
@@ -104,7 +110,7 @@
             // formaPagoLabel
             // 
             formaPagoLabel.AutoSize = true;
-            formaPagoLabel.Location = new System.Drawing.Point(26, 136);
+            formaPagoLabel.Location = new System.Drawing.Point(26, 163);
             formaPagoLabel.Name = "formaPagoLabel";
             formaPagoLabel.Size = new System.Drawing.Size(67, 13);
             formaPagoLabel.TabIndex = 8;
@@ -133,6 +139,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
+            this.tableAdapterManager.LiquidacionesTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = this.proveedoresTableAdapter;
             this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
@@ -158,7 +165,7 @@
             this.asientosBindingNavigator.MovePreviousItem = null;
             this.asientosBindingNavigator.Name = "asientosBindingNavigator";
             this.asientosBindingNavigator.PositionItem = null;
-            this.asientosBindingNavigator.Size = new System.Drawing.Size(334, 25);
+            this.asientosBindingNavigator.Size = new System.Drawing.Size(337, 25);
             this.asientosBindingNavigator.TabIndex = 12;
             this.asientosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -198,7 +205,7 @@
             // 
             this.fechaFacturaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.asientosBindingSource, "FechaFactura", true));
             this.fechaFacturaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(99, 55);
+            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(99, 82);
             this.fechaFacturaDateTimePicker.Name = "fechaFacturaDateTimePicker";
             this.fechaFacturaDateTimePicker.Size = new System.Drawing.Size(101, 20);
             this.fechaFacturaDateTimePicker.TabIndex = 3;
@@ -207,7 +214,7 @@
             // 
             this.fechaPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.asientosBindingSource, "FechaPago", true));
             this.fechaPagoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaPagoDateTimePicker.Location = new System.Drawing.Point(99, 107);
+            this.fechaPagoDateTimePicker.Location = new System.Drawing.Point(99, 134);
             this.fechaPagoDateTimePicker.Name = "fechaPagoDateTimePicker";
             this.fechaPagoDateTimePicker.Size = new System.Drawing.Size(101, 20);
             this.fechaPagoDateTimePicker.TabIndex = 7;
@@ -215,7 +222,7 @@
             // formaPagoTextBox
             // 
             this.formaPagoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asientosBindingSource, "FormaPago", true));
-            this.formaPagoTextBox.Location = new System.Drawing.Point(99, 133);
+            this.formaPagoTextBox.Location = new System.Drawing.Point(99, 160);
             this.formaPagoTextBox.Name = "formaPagoTextBox";
             this.formaPagoTextBox.Size = new System.Drawing.Size(101, 20);
             this.formaPagoTextBox.TabIndex = 9;
@@ -224,7 +231,7 @@
             // 
             this.ImporteNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.asientosBindingSource, "Importe", true));
             this.ImporteNumericUpDown.DecimalPlaces = 2;
-            this.ImporteNumericUpDown.Location = new System.Drawing.Point(99, 81);
+            this.ImporteNumericUpDown.Location = new System.Drawing.Point(99, 108);
             this.ImporteNumericUpDown.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -243,18 +250,50 @@
             // pagadoCheckBox
             // 
             this.pagadoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.asientosBindingSource, "Pagado", true));
-            this.pagadoCheckBox.Location = new System.Drawing.Point(99, 159);
+            this.pagadoCheckBox.Location = new System.Drawing.Point(225, 158);
             this.pagadoCheckBox.Name = "pagadoCheckBox";
             this.pagadoCheckBox.Size = new System.Drawing.Size(74, 24);
             this.pagadoCheckBox.TabIndex = 13;
             this.pagadoCheckBox.Text = "Pagado";
             this.pagadoCheckBox.UseVisualStyleBackColor = true;
             // 
+            // id_empresaLabel
+            // 
+            id_empresaLabel.AutoSize = true;
+            id_empresaLabel.Location = new System.Drawing.Point(42, 58);
+            id_empresaLabel.Name = "id_empresaLabel";
+            id_empresaLabel.Size = new System.Drawing.Size(51, 13);
+            id_empresaLabel.TabIndex = 13;
+            id_empresaLabel.Text = "Empresa:";
+            // 
+            // id_empresaComboBox
+            // 
+            this.id_empresaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.asientosBindingSource, "id_empresa", true));
+            this.id_empresaComboBox.DataSource = this.empresasBindingSource;
+            this.id_empresaComboBox.DisplayMember = "Empresa";
+            this.id_empresaComboBox.FormattingEnabled = true;
+            this.id_empresaComboBox.Location = new System.Drawing.Point(99, 55);
+            this.id_empresaComboBox.Name = "id_empresaComboBox";
+            this.id_empresaComboBox.Size = new System.Drawing.Size(200, 21);
+            this.id_empresaComboBox.TabIndex = 14;
+            this.id_empresaComboBox.ValueMember = "Id";
+            // 
+            // empresasBindingSource
+            // 
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.dataSet1;
+            // 
+            // empresasTableAdapter
+            // 
+            this.empresasTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmAddAsiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 201);
+            this.ClientSize = new System.Drawing.Size(337, 202);
+            this.Controls.Add(id_empresaLabel);
+            this.Controls.Add(this.id_empresaComboBox);
             this.Controls.Add(this.pagadoCheckBox);
             this.Controls.Add(this.ImporteNumericUpDown);
             this.Controls.Add(id_proveedorLabel);
@@ -282,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImporteNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +345,8 @@
         private System.Windows.Forms.NumericUpDown ImporteNumericUpDown;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox pagadoCheckBox;
+        private System.Windows.Forms.ComboBox id_empresaComboBox;
+        private System.Windows.Forms.BindingSource empresasBindingSource;
+        private Data.DataSet1TableAdapters.EmpresasTableAdapter empresasTableAdapter;
     }
 }
