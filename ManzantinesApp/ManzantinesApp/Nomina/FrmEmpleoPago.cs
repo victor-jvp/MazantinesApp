@@ -19,10 +19,16 @@ namespace ManzantinesApp.Nomina
 
         private void empleosPagosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.empleosPagosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
-
+            try
+            {
+                this.Validate();
+                this.empleosPagosBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.dataSet1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FrmEmpleoPago_Load(object sender, EventArgs e)

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManzantinesApp", "ManzantinesApp\ManzantinesApp.csproj", "{75A65F11-D3F8-412B-84C3-DF8EF389F36D}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MazantinesDB", "..\..\MazantinesDB\MazantinesDB.sqlproj", "{6E5CE1CA-2964-4097-ADF4-9B24831D494A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,18 @@ Global
 		{75A65F11-D3F8-412B-84C3-DF8EF389F36D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75A65F11-D3F8-412B-84C3-DF8EF389F36D}.Release|x86.ActiveCfg = Release|x86
 		{75A65F11-D3F8-412B-84C3-DF8EF389F36D}.Release|x86.Build.0 = Release|x86
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Debug|x86.Build.0 = Debug|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|x86.ActiveCfg = Release|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|x86.Build.0 = Release|Any CPU
+		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

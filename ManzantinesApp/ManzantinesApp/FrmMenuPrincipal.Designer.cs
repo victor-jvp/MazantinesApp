@@ -37,6 +37,9 @@
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liquidacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formasDeEmpleoYPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encargadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,9 +92,6 @@
             this.CasaButton04 = new System.Windows.Forms.Button();
             this.CasaButton02 = new System.Windows.Forms.Button();
             this.CasaButton01 = new System.Windows.Forms.Button();
-            this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formasDeEmpleoYPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nominaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -165,6 +165,29 @@
             this.liquidacionesToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.liquidacionesToolStripMenuItem.Text = "&Liquidaciones";
             this.liquidacionesToolStripMenuItem.Click += new System.EventHandler(this.LiquidacionesToolStripMenuItem_Click);
+            // 
+            // nominaToolStripMenuItem
+            // 
+            this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.formasDeEmpleoYPagosToolStripMenuItem,
+            this.nominaToolStripMenuItem1});
+            this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
+            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.nominaToolStripMenuItem.Text = "&Nomina";
+            // 
+            // formasDeEmpleoYPagosToolStripMenuItem
+            // 
+            this.formasDeEmpleoYPagosToolStripMenuItem.Name = "formasDeEmpleoYPagosToolStripMenuItem";
+            this.formasDeEmpleoYPagosToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.formasDeEmpleoYPagosToolStripMenuItem.Text = "Formas de Empleo y Pagos";
+            this.formasDeEmpleoYPagosToolStripMenuItem.Click += new System.EventHandler(this.formasDeEmpleoYPagosToolStripMenuItem_Click);
+            // 
+            // nominaToolStripMenuItem1
+            // 
+            this.nominaToolStripMenuItem1.Name = "nominaToolStripMenuItem1";
+            this.nominaToolStripMenuItem1.Size = new System.Drawing.Size(216, 22);
+            this.nominaToolStripMenuItem1.Text = "Nomina";
+            this.nominaToolStripMenuItem1.Click += new System.EventHandler(this.nominaToolStripMenuItem1_Click);
             // 
             // datosToolStripMenuItem
             // 
@@ -766,28 +789,6 @@
             this.CasaButton01.Text = "1";
             this.CasaButton01.UseVisualStyleBackColor = true;
             this.CasaButton01.Click += new System.EventHandler(this.CasaButton1_Click);
-            // 
-            // nominaToolStripMenuItem
-            // 
-            this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formasDeEmpleoYPagosToolStripMenuItem,
-            this.nominaToolStripMenuItem1});
-            this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
-            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.nominaToolStripMenuItem.Text = "&Nomina";
-            // 
-            // formasDeEmpleoYPagosToolStripMenuItem
-            // 
-            this.formasDeEmpleoYPagosToolStripMenuItem.Name = "formasDeEmpleoYPagosToolStripMenuItem";
-            this.formasDeEmpleoYPagosToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.formasDeEmpleoYPagosToolStripMenuItem.Text = "Formas de Empleo y Pagos";
-            this.formasDeEmpleoYPagosToolStripMenuItem.Click += new System.EventHandler(this.formasDeEmpleoYPagosToolStripMenuItem_Click);
-            // 
-            // nominaToolStripMenuItem1
-            // 
-            this.nominaToolStripMenuItem1.Name = "nominaToolStripMenuItem1";
-            this.nominaToolStripMenuItem1.Size = new System.Drawing.Size(216, 22);
-            this.nominaToolStripMenuItem1.Text = "Nomina";
             // 
             // FrmMenuPrincipal
             // 

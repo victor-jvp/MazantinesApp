@@ -299,5 +299,13 @@
             frmEmpleoPago.Show(this);
             this.Enabled = true;
         }
+
+        private void nominaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Nomina.FrmNomina frmNomina = new Nomina.FrmNomina();
+            frmNomina.ShowDialog(this);
+            this.Enabled = true;
+        }
     }
 }
