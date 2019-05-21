@@ -22,7 +22,6 @@
         } 
         #endregion
 
-
         private void FrmEditEmpleado_Load(object sender, EventArgs e)
         {
             this.encargadosTableAdapter.Fill(this.dataSet1.Encargados);

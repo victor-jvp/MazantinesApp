@@ -600,7 +600,6 @@
         private System.Windows.Forms.DateTimePicker FechaPagoDateTimePicker;
         private System.Windows.Forms.CheckBox FechaPagoCheckBox;
         private System.Windows.Forms.CheckBox FechaFacturaCheckBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton TotalesToolStripButton;
         private Data.RptDataSetTableAdapters.vv_table_asientosTableAdapter vv_table_asientosTableAdapter;
