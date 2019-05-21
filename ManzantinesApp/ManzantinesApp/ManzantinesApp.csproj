@@ -169,6 +169,12 @@
     <Compile Include="Liquidaciones\FrmTotalesCategorias.Designer.cs">
       <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nomina\FrmNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmNomina.Designer.cs">
+      <DependentUpon>FrmNomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedores\FrmAddProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
     <EmbeddedResource Include="Liquidaciones\FrmTotalesCategorias.resx">
       <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmNomina.resx">
+      <DependentUpon>FrmNomina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FrmAddProveedor.resx">
       <DependentUpon>FrmAddProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,22 +445,22 @@
   <ItemGroup>
     <PublishFile Include="Data\Database1_log.ldf">
       <Visible>False</Visible>
-      <PublishState>DataFile</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
