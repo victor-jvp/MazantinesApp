@@ -169,6 +169,12 @@
     <Compile Include="Liquidaciones\FrmTotalesCategorias.Designer.cs">
       <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nomina\FrmEmpleoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmEmpleoPago.Designer.cs">
+      <DependentUpon>FrmEmpleoPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nomina\FrmNomina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     <EmbeddedResource Include="Liquidaciones\FrmTotalesCategorias.resx">
       <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmEmpleoPago.resx">
+      <DependentUpon>FrmEmpleoPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmNomina.resx">
       <DependentUpon>FrmNomina.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +371,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\FrmPreviewCrystal.resx">
       <DependentUpon>FrmPreviewCrystal.cs</DependentUpon>

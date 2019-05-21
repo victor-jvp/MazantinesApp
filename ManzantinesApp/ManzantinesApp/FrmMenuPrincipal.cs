@@ -291,5 +291,13 @@
             frmLiquidaciones.Show(this);
             this.Enabled = true;
         }
+
+        private void formasDeEmpleoYPagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Nomina.FrmEmpleoPago frmEmpleoPago = new Nomina.FrmEmpleoPago();
+            frmEmpleoPago.Show(this);
+            this.Enabled = true;
+        }
     }
 }
