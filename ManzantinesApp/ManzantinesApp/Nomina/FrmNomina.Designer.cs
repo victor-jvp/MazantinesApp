@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,18 +60,14 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.CargarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.TotalesDataGridView = new System.Windows.Forms.DataGridView();
             this.TipoEmpleo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Extras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.vv_nomina_trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rptDataSet1 = new ManzantinesApp.Data.RptDataSet();
-            this.vv_nomina_trabajadoresTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter();
-            this.vv_nomina_emp_sem_anioTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_emp_sem_anioTableAdapter();
-            this.vv_nomina_emp_sem_anioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -80,7 +75,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vv_nomina_trabajadoresTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter();
+            this.dataSet11 = new ManzantinesApp.Data.DataSet1();
+            this.nominasTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.NominasTableAdapter();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Semana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,9 +104,8 @@
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TotalesDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vv_nomina_trabajadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rptDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vv_nomina_emp_sem_anioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // NominaDataGridView
@@ -123,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NominaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NominaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
+            this.id,
             this.Semana,
             this.Anio,
             this.id_empleado,
@@ -146,6 +143,7 @@
             this.TotalDia,
             this.TotalExtra});
             this.NominaDataGridView.Location = new System.Drawing.Point(0, 55);
+            this.NominaDataGridView.MultiSelect = false;
             this.NominaDataGridView.Name = "NominaDataGridView";
             this.NominaDataGridView.RowHeadersVisible = false;
             this.NominaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -164,7 +162,7 @@
             this.toolStripSeparator2,
             this.CargarNominaToolStripButton,
             this.toolStripSeparator3,
-            this.toolStripButton1});
+            this.GuardarToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1059, 25);
@@ -220,13 +218,14 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton1
+            // GuardarToolStripButton
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
-            this.toolStripButton1.Text = "&Guardar";
+            this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
+            this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GuardarToolStripButton.Name = "GuardarToolStripButton";
+            this.GuardarToolStripButton.Size = new System.Drawing.Size(69, 22);
+            this.GuardarToolStripButton.Text = "&Guardar";
+            this.GuardarToolStripButton.Click += new System.EventHandler(this.GuardarToolStripButton_Click);
             // 
             // TotalesDataGridView
             // 
@@ -293,22 +292,14 @@
             this.rptDataSet1.DataSetName = "RptDataSet";
             this.rptDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // vv_nomina_trabajadoresTableAdapter1
-            // 
-            this.vv_nomina_trabajadoresTableAdapter1.ClearBeforeFill = true;
-            // 
-            // vv_nomina_emp_sem_anioTableAdapter
-            // 
-            this.vv_nomina_emp_sem_anioTableAdapter.ClearBeforeFill = true;
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(171, 32);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(171, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 23);
+            this.label1.Size = new System.Drawing.Size(105, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "LUNES";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,10 +308,10 @@
             // 
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 32);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(275, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 23);
+            this.label2.Size = new System.Drawing.Size(105, 19);
             this.label2.TabIndex = 8;
             this.label2.Text = "MARTES";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,10 +320,10 @@
             // 
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(379, 32);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(379, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 23);
+            this.label3.Size = new System.Drawing.Size(105, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "MIÉRCOLES";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,10 +332,10 @@
             // 
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(483, 32);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(483, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 23);
+            this.label4.Size = new System.Drawing.Size(105, 19);
             this.label4.TabIndex = 10;
             this.label4.Text = "JUEVES";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -353,10 +344,10 @@
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(587, 32);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(587, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 23);
+            this.label5.Size = new System.Drawing.Size(105, 19);
             this.label5.TabIndex = 11;
             this.label5.Text = "VIERNES";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,10 +356,10 @@
             // 
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(691, 32);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(691, 36);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 23);
+            this.label6.Size = new System.Drawing.Size(105, 19);
             this.label6.TabIndex = 12;
             this.label6.Text = "SÁBADO";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,20 +368,33 @@
             // 
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(795, 32);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(795, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 23);
+            this.label7.Size = new System.Drawing.Size(105, 19);
             this.label7.TabIndex = 13;
             this.label7.Text = "DOMINGO";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Id
+            // vv_nomina_trabajadoresTableAdapter1
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
+            this.vv_nomina_trabajadoresTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nominasTableAdapter1
+            // 
+            this.nominasTableAdapter1.ClearBeforeFill = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.Visible = false;
             // 
             // Semana
             // 
@@ -608,9 +612,8 @@
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TotalesDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vv_nomina_trabajadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rptDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vv_nomina_emp_sem_anioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,7 +630,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton GuardarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton CargarNominaToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoEmpleo;
@@ -635,10 +638,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Extras;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private Data.RptDataSet rptDataSet1;
-        private Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter vv_nomina_trabajadoresTableAdapter1;
-        private System.Windows.Forms.BindingSource vv_nomina_trabajadoresBindingSource;
-        private Data.RptDataSetTableAdapters.vv_nomina_emp_sem_anioTableAdapter vv_nomina_emp_sem_anioTableAdapter;
-        private System.Windows.Forms.BindingSource vv_nomina_emp_sem_anioBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -646,7 +645,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private Data.DataSet1 dataSet11;
+        private Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter vv_nomina_trabajadoresTableAdapter1;
+        private Data.DataSet1TableAdapters.NominasTableAdapter nominasTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Semana;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;

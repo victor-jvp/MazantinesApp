@@ -10,7 +10,7 @@
     {
         #region Properties
 
-        public int Id { get; set; }
+        public int? id { get; set; }
         public int Semana { get; set; }
         public int Anio { get; set; }
         public int id_empleado { get; set; }

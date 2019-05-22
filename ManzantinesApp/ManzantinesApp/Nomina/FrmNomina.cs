@@ -2,11 +2,9 @@
 {
     using ManzantinesApp.Classes;
     using System;
-    using System.Data;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.Windows.Forms;
-    using Classes;
-    using System.Collections.Generic;
 
     public partial class FrmNomina : Form
     {
@@ -61,15 +59,13 @@
                     return;
                 }
 
-                //Si la nomina no existe cargar nueva nomina
                 Data.RptDataSet.vv_nomina_trabajadoresDataTable misTrabajadores = vv_nomina_trabajadoresTableAdapter1.GetData();
 
                 listNomina = new List<Nomina>();
 
                 foreach (Data.RptDataSet.vv_nomina_trabajadoresRow miTrabajador in misTrabajadores.Rows)
                 {
-                    Data.RptDataSet.vv_nomina_emp_sem_anioDataTable misConceptos =
-                        vv_nomina_emp_sem_anioTableAdapter.GetDataByEmpSemAnio(anio, semana, miTrabajador.id);
+                    Data.DataSet1.NominasDataTable misConceptos = nominasTableAdapter1.GetDataByAnioSemEmp(anio, semana, miTrabajador.id);
 
                     Nomina miNomina = new Nomina()
                     {
@@ -80,9 +76,9 @@
                         Nro_empleado = miTrabajador.Nro_empleado
                     };
 
-                    foreach (Data.RptDataSet.vv_nomina_emp_sem_anioRow concepto in misConceptos.Rows)
+                    foreach (Data.DataSet1.NominasRow concepto in misConceptos.Rows)
                     {
-                        miNomina.Id = concepto.cab_id;
+                        miNomina.id = concepto.Id;
                         switch (concepto.diaSemana)
                         {
                             case "L":
@@ -157,9 +153,9 @@
         {
             if (e.ColumnIndex > 5) // 1 should be your column index
             {
-                int i;
+                float i;
 
-                if (!int.TryParse(Convert.ToString(e.FormattedValue), out i))
+                if (!float.TryParse(Convert.ToString(e.FormattedValue), out i))
                 {
                     e.Cancel = true;
                     MessageBox.Show(
@@ -182,6 +178,33 @@
 
             NominaDataGridView.Rows[rowIndex].Cells["TotalDia"].Value = totalDias;
             NominaDataGridView.Rows[rowIndex].Cells["TotalExtra"].Value = totalExtra;
+        }
+
+        private void GuardarToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (Nomina nomina in listNomina)
+                {
+                    if (nomina.id == null)
+                    {
+                        //Insertar nuevo registro
+                        this.nominasTableAdapter1.Insert(
+                            nomina.Anio,
+                            nomina.Semana,
+                            nomina.id_empleado,
+                            "L",
+                            "D",
+                            nomina.LunesDia,
+                            3
+                            );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en carga de Nómina", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
