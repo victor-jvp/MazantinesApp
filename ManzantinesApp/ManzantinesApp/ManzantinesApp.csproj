@@ -130,6 +130,7 @@
       <DependentUpon>FrmTotales.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Anios.cs" />
+    <Compile Include="Classes\Nomina.cs" />
     <Compile Include="Classes\Semanas.cs" />
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
