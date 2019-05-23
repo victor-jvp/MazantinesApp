@@ -28,29 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Semana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nro_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LunesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LunesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MartesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MartesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MiercolesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MiercolesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JuevesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JuevesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ViernesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ViernesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SabadoDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SabadoExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DomingoDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DomingoExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.AnioComboBox = new System.Windows.Forms.ToolStripComboBox();
@@ -78,28 +100,10 @@
             this.vv_nomina_trabajadoresTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter();
             this.dataSet11 = new ManzantinesApp.Data.DataSet1();
             this.nominasTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.NominasTableAdapter();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Semana = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nro_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LunesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LunesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MartesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MartesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MiercolesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MiercolesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JuevesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JuevesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ViernesDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ViernesExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SabadoDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SabadoExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DomingoDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DomingoExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.EncargadoComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.encargadosTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.EncargadosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TotalesDataGridView)).BeginInit();
@@ -113,8 +117,8 @@
             this.NominaDataGridView.AllowUserToAddRows = false;
             this.NominaDataGridView.AllowUserToDeleteRows = false;
             this.NominaDataGridView.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.NominaDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.NominaDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.NominaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -151,6 +155,203 @@
             this.NominaDataGridView.TabIndex = 1;
             this.NominaDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.NominaDataGridView_CellValidating);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // Semana
+            // 
+            this.Semana.DataPropertyName = "Semana";
+            this.Semana.HeaderText = "Semana";
+            this.Semana.Name = "Semana";
+            this.Semana.Visible = false;
+            this.Semana.Width = 71;
+            // 
+            // Anio
+            // 
+            this.Anio.DataPropertyName = "Anio";
+            this.Anio.HeaderText = "Anio";
+            this.Anio.Name = "Anio";
+            this.Anio.Visible = false;
+            // 
+            // id_empleado
+            // 
+            this.id_empleado.DataPropertyName = "id_empleado";
+            this.id_empleado.HeaderText = "id_empleado";
+            this.id_empleado.Name = "id_empleado";
+            this.id_empleado.Visible = false;
+            this.id_empleado.Width = 92;
+            // 
+            // Nro_empleado
+            // 
+            this.Nro_empleado.DataPropertyName = "Nro_empleado";
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Silver;
+            this.Nro_empleado.DefaultCellStyle = dataGridViewCellStyle23;
+            this.Nro_empleado.HeaderText = "Nro. Empleado";
+            this.Nro_empleado.Name = "Nro_empleado";
+            this.Nro_empleado.ReadOnly = true;
+            this.Nro_empleado.Width = 70;
+            // 
+            // Empleado
+            // 
+            this.Empleado.DataPropertyName = "Empleado";
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Silver;
+            this.Empleado.DefaultCellStyle = dataGridViewCellStyle24;
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
+            // 
+            // LunesDia
+            // 
+            this.LunesDia.DataPropertyName = "LunesDia";
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.LunesDia.DefaultCellStyle = dataGridViewCellStyle25;
+            this.LunesDia.HeaderText = "Dia";
+            this.LunesDia.Name = "LunesDia";
+            this.LunesDia.Width = 48;
+            // 
+            // LunesExtra
+            // 
+            this.LunesExtra.DataPropertyName = "LunesExtra";
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.LunesExtra.DefaultCellStyle = dataGridViewCellStyle26;
+            this.LunesExtra.HeaderText = "Extra";
+            this.LunesExtra.Name = "LunesExtra";
+            this.LunesExtra.Width = 56;
+            // 
+            // MartesDia
+            // 
+            this.MartesDia.DataPropertyName = "MartesDia";
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MartesDia.DefaultCellStyle = dataGridViewCellStyle27;
+            this.MartesDia.HeaderText = "Dia";
+            this.MartesDia.Name = "MartesDia";
+            this.MartesDia.Width = 48;
+            // 
+            // MartesExtra
+            // 
+            this.MartesExtra.DataPropertyName = "MartesExtra";
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MartesExtra.DefaultCellStyle = dataGridViewCellStyle28;
+            this.MartesExtra.HeaderText = "Extra";
+            this.MartesExtra.Name = "MartesExtra";
+            this.MartesExtra.Width = 56;
+            // 
+            // MiercolesDia
+            // 
+            this.MiercolesDia.DataPropertyName = "MiercolesDia";
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MiercolesDia.DefaultCellStyle = dataGridViewCellStyle29;
+            this.MiercolesDia.HeaderText = "Dia";
+            this.MiercolesDia.Name = "MiercolesDia";
+            this.MiercolesDia.Width = 48;
+            // 
+            // MiercolesExtra
+            // 
+            this.MiercolesExtra.DataPropertyName = "MiercolesExtra";
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MiercolesExtra.DefaultCellStyle = dataGridViewCellStyle30;
+            this.MiercolesExtra.HeaderText = "Extra";
+            this.MiercolesExtra.Name = "MiercolesExtra";
+            this.MiercolesExtra.Width = 56;
+            // 
+            // JuevesDia
+            // 
+            this.JuevesDia.DataPropertyName = "JuevesDia";
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.JuevesDia.DefaultCellStyle = dataGridViewCellStyle31;
+            this.JuevesDia.HeaderText = "Dia";
+            this.JuevesDia.Name = "JuevesDia";
+            this.JuevesDia.Width = 48;
+            // 
+            // JuevesExtra
+            // 
+            this.JuevesExtra.DataPropertyName = "JuevesExtra";
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.JuevesExtra.DefaultCellStyle = dataGridViewCellStyle32;
+            this.JuevesExtra.HeaderText = "Extra";
+            this.JuevesExtra.Name = "JuevesExtra";
+            this.JuevesExtra.Width = 56;
+            // 
+            // ViernesDia
+            // 
+            this.ViernesDia.DataPropertyName = "ViernesDia";
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ViernesDia.DefaultCellStyle = dataGridViewCellStyle33;
+            this.ViernesDia.HeaderText = "Dia";
+            this.ViernesDia.Name = "ViernesDia";
+            this.ViernesDia.Width = 48;
+            // 
+            // ViernesExtra
+            // 
+            this.ViernesExtra.DataPropertyName = "ViernesExtra";
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ViernesExtra.DefaultCellStyle = dataGridViewCellStyle34;
+            this.ViernesExtra.HeaderText = "Extra";
+            this.ViernesExtra.Name = "ViernesExtra";
+            this.ViernesExtra.Width = 56;
+            // 
+            // SabadoDia
+            // 
+            this.SabadoDia.DataPropertyName = "SabadoDia";
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SabadoDia.DefaultCellStyle = dataGridViewCellStyle35;
+            this.SabadoDia.HeaderText = "Dia";
+            this.SabadoDia.Name = "SabadoDia";
+            this.SabadoDia.Width = 48;
+            // 
+            // SabadoExtra
+            // 
+            this.SabadoExtra.DataPropertyName = "SabadoExtra";
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SabadoExtra.DefaultCellStyle = dataGridViewCellStyle36;
+            this.SabadoExtra.HeaderText = "Extra";
+            this.SabadoExtra.Name = "SabadoExtra";
+            this.SabadoExtra.Width = 56;
+            // 
+            // DomingoDia
+            // 
+            this.DomingoDia.DataPropertyName = "DomingoDia";
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DomingoDia.DefaultCellStyle = dataGridViewCellStyle37;
+            this.DomingoDia.HeaderText = "Dia";
+            this.DomingoDia.Name = "DomingoDia";
+            this.DomingoDia.Width = 48;
+            // 
+            // DomingoExtra
+            // 
+            this.DomingoExtra.DataPropertyName = "DomingoExtra";
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DomingoExtra.DefaultCellStyle = dataGridViewCellStyle38;
+            this.DomingoExtra.HeaderText = "Extra";
+            this.DomingoExtra.Name = "DomingoExtra";
+            this.DomingoExtra.Width = 56;
+            // 
+            // TotalDia
+            // 
+            this.TotalDia.DataPropertyName = "TotalDia";
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.Silver;
+            this.TotalDia.DefaultCellStyle = dataGridViewCellStyle39;
+            this.TotalDia.HeaderText = "Total Dias";
+            this.TotalDia.Name = "TotalDia";
+            this.TotalDia.ReadOnly = true;
+            this.TotalDia.Width = 48;
+            // 
+            // TotalExtra
+            // 
+            this.TotalExtra.DataPropertyName = "TotalExtra";
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.Silver;
+            this.TotalExtra.DefaultCellStyle = dataGridViewCellStyle40;
+            this.TotalExtra.HeaderText = "Total H.Extras";
+            this.TotalExtra.Name = "TotalExtra";
+            this.TotalExtra.ReadOnly = true;
+            this.TotalExtra.Width = 56;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -160,6 +361,9 @@
             this.toolStripLabel1,
             this.SemanaComboBox,
             this.toolStripSeparator2,
+            this.toolStripLabel3,
+            this.EncargadoComboBox,
+            this.toolStripSeparator4,
             this.CargarNominaToolStripButton,
             this.toolStripSeparator3,
             this.GuardarToolStripButton});
@@ -223,16 +427,16 @@
             this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
             this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.GuardarToolStripButton.Name = "GuardarToolStripButton";
-            this.GuardarToolStripButton.Size = new System.Drawing.Size(69, 22);
-            this.GuardarToolStripButton.Text = "&Guardar";
+            this.GuardarToolStripButton.Size = new System.Drawing.Size(105, 22);
+            this.GuardarToolStripButton.Text = "&Cerrar &Nómina";
             this.GuardarToolStripButton.Click += new System.EventHandler(this.GuardarToolStripButton_Click);
             // 
             // TotalesDataGridView
             // 
             this.TotalesDataGridView.AllowUserToAddRows = false;
             this.TotalesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
             this.TotalesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TotalesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoEmpleo,
@@ -262,10 +466,10 @@
             // 
             // Extras
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.Format = "N2";
-            dataGridViewCellStyle21.NullValue = null;
-            this.Extras.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle42.Format = "N2";
+            dataGridViewCellStyle42.NullValue = null;
+            this.Extras.DefaultCellStyle = dataGridViewCellStyle42;
             this.Extras.HeaderText = "Extras";
             this.Extras.Name = "Extras";
             this.Extras.ReadOnly = true;
@@ -389,202 +593,28 @@
             // 
             this.nominasTableAdapter1.ClearBeforeFill = true;
             // 
-            // id
+            // toolStripLabel3
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.Visible = false;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(66, 22);
+            this.toolStripLabel3.Text = "Encargado:";
             // 
-            // Semana
+            // EncargadoComboBox
             // 
-            this.Semana.DataPropertyName = "Semana";
-            this.Semana.HeaderText = "Semana";
-            this.Semana.Name = "Semana";
-            this.Semana.Visible = false;
-            this.Semana.Width = 71;
+            this.EncargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.EncargadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EncargadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EncargadoComboBox.Name = "EncargadoComboBox";
+            this.EncargadoComboBox.Size = new System.Drawing.Size(120, 25);
             // 
-            // Anio
+            // toolStripSeparator4
             // 
-            this.Anio.DataPropertyName = "Anio";
-            this.Anio.HeaderText = "Anio";
-            this.Anio.Name = "Anio";
-            this.Anio.Visible = false;
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // id_empleado
+            // encargadosTableAdapter1
             // 
-            this.id_empleado.DataPropertyName = "id_empleado";
-            this.id_empleado.HeaderText = "id_empleado";
-            this.id_empleado.Name = "id_empleado";
-            this.id_empleado.Visible = false;
-            this.id_empleado.Width = 92;
-            // 
-            // Nro_empleado
-            // 
-            this.Nro_empleado.DataPropertyName = "Nro_empleado";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            this.Nro_empleado.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Nro_empleado.HeaderText = "Nro. Empleado";
-            this.Nro_empleado.Name = "Nro_empleado";
-            this.Nro_empleado.ReadOnly = true;
-            this.Nro_empleado.Width = 70;
-            // 
-            // Empleado
-            // 
-            this.Empleado.DataPropertyName = "Empleado";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            this.Empleado.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Empleado.HeaderText = "Empleado";
-            this.Empleado.Name = "Empleado";
-            this.Empleado.ReadOnly = true;
-            // 
-            // LunesDia
-            // 
-            this.LunesDia.DataPropertyName = "LunesDia";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.LunesDia.DefaultCellStyle = dataGridViewCellStyle4;
-            this.LunesDia.HeaderText = "Dia";
-            this.LunesDia.Name = "LunesDia";
-            this.LunesDia.Width = 48;
-            // 
-            // LunesExtra
-            // 
-            this.LunesExtra.DataPropertyName = "LunesExtra";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.LunesExtra.DefaultCellStyle = dataGridViewCellStyle5;
-            this.LunesExtra.HeaderText = "Extra";
-            this.LunesExtra.Name = "LunesExtra";
-            this.LunesExtra.Width = 56;
-            // 
-            // MartesDia
-            // 
-            this.MartesDia.DataPropertyName = "MartesDia";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MartesDia.DefaultCellStyle = dataGridViewCellStyle6;
-            this.MartesDia.HeaderText = "Dia";
-            this.MartesDia.Name = "MartesDia";
-            this.MartesDia.Width = 48;
-            // 
-            // MartesExtra
-            // 
-            this.MartesExtra.DataPropertyName = "MartesExtra";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MartesExtra.DefaultCellStyle = dataGridViewCellStyle7;
-            this.MartesExtra.HeaderText = "Extra";
-            this.MartesExtra.Name = "MartesExtra";
-            this.MartesExtra.Width = 56;
-            // 
-            // MiercolesDia
-            // 
-            this.MiercolesDia.DataPropertyName = "MiercolesDia";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MiercolesDia.DefaultCellStyle = dataGridViewCellStyle8;
-            this.MiercolesDia.HeaderText = "Dia";
-            this.MiercolesDia.Name = "MiercolesDia";
-            this.MiercolesDia.Width = 48;
-            // 
-            // MiercolesExtra
-            // 
-            this.MiercolesExtra.DataPropertyName = "MiercolesExtra";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.MiercolesExtra.DefaultCellStyle = dataGridViewCellStyle9;
-            this.MiercolesExtra.HeaderText = "Extra";
-            this.MiercolesExtra.Name = "MiercolesExtra";
-            this.MiercolesExtra.Width = 56;
-            // 
-            // JuevesDia
-            // 
-            this.JuevesDia.DataPropertyName = "JuevesDia";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.JuevesDia.DefaultCellStyle = dataGridViewCellStyle10;
-            this.JuevesDia.HeaderText = "Dia";
-            this.JuevesDia.Name = "JuevesDia";
-            this.JuevesDia.Width = 48;
-            // 
-            // JuevesExtra
-            // 
-            this.JuevesExtra.DataPropertyName = "JuevesExtra";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.JuevesExtra.DefaultCellStyle = dataGridViewCellStyle11;
-            this.JuevesExtra.HeaderText = "Extra";
-            this.JuevesExtra.Name = "JuevesExtra";
-            this.JuevesExtra.Width = 56;
-            // 
-            // ViernesDia
-            // 
-            this.ViernesDia.DataPropertyName = "ViernesDia";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ViernesDia.DefaultCellStyle = dataGridViewCellStyle12;
-            this.ViernesDia.HeaderText = "Dia";
-            this.ViernesDia.Name = "ViernesDia";
-            this.ViernesDia.Width = 48;
-            // 
-            // ViernesExtra
-            // 
-            this.ViernesExtra.DataPropertyName = "ViernesExtra";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ViernesExtra.DefaultCellStyle = dataGridViewCellStyle13;
-            this.ViernesExtra.HeaderText = "Extra";
-            this.ViernesExtra.Name = "ViernesExtra";
-            this.ViernesExtra.Width = 56;
-            // 
-            // SabadoDia
-            // 
-            this.SabadoDia.DataPropertyName = "SabadoDia";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SabadoDia.DefaultCellStyle = dataGridViewCellStyle14;
-            this.SabadoDia.HeaderText = "Dia";
-            this.SabadoDia.Name = "SabadoDia";
-            this.SabadoDia.Width = 48;
-            // 
-            // SabadoExtra
-            // 
-            this.SabadoExtra.DataPropertyName = "SabadoExtra";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SabadoExtra.DefaultCellStyle = dataGridViewCellStyle15;
-            this.SabadoExtra.HeaderText = "Extra";
-            this.SabadoExtra.Name = "SabadoExtra";
-            this.SabadoExtra.Width = 56;
-            // 
-            // DomingoDia
-            // 
-            this.DomingoDia.DataPropertyName = "DomingoDia";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DomingoDia.DefaultCellStyle = dataGridViewCellStyle16;
-            this.DomingoDia.HeaderText = "Dia";
-            this.DomingoDia.Name = "DomingoDia";
-            this.DomingoDia.Width = 48;
-            // 
-            // DomingoExtra
-            // 
-            this.DomingoExtra.DataPropertyName = "DomingoExtra";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DomingoExtra.DefaultCellStyle = dataGridViewCellStyle17;
-            this.DomingoExtra.HeaderText = "Extra";
-            this.DomingoExtra.Name = "DomingoExtra";
-            this.DomingoExtra.Width = 56;
-            // 
-            // TotalDia
-            // 
-            this.TotalDia.DataPropertyName = "TotalDia";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Silver;
-            this.TotalDia.DefaultCellStyle = dataGridViewCellStyle18;
-            this.TotalDia.HeaderText = "Total Dias";
-            this.TotalDia.Name = "TotalDia";
-            this.TotalDia.ReadOnly = true;
-            this.TotalDia.Width = 48;
-            // 
-            // TotalExtra
-            // 
-            this.TotalExtra.DataPropertyName = "TotalExtra";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Silver;
-            this.TotalExtra.DefaultCellStyle = dataGridViewCellStyle19;
-            this.TotalExtra.HeaderText = "Total H.Extras";
-            this.TotalExtra.Name = "TotalExtra";
-            this.TotalExtra.ReadOnly = true;
-            this.TotalExtra.Width = 56;
+            this.encargadosTableAdapter1.ClearBeforeFill = true;
             // 
             // FrmNomina
             // 
@@ -670,5 +700,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DomingoExtra;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalDia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalExtra;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripComboBox EncargadoComboBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private Data.DataSet1TableAdapters.EncargadosTableAdapter encargadosTableAdapter1;
     }
 }

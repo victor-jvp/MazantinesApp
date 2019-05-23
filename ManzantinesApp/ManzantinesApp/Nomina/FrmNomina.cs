@@ -36,6 +36,11 @@
             SemanaComboBox.ComboBox.DisplayMember = "Value";
             SemanaComboBox.ComboBox.ValueMember = "Value";
             SemanaComboBox.ComboBox.SelectedValue = GetWeekNumber();
+
+            EncargadoComboBox.ComboBox.DataSource = encargadosTableAdapter1.GetData();
+            EncargadoComboBox.ComboBox.DisplayMember = "Encargado";
+            EncargadoComboBox.ComboBox.ValueMember = "Id";
+            EncargadoComboBox.ComboBox.SelectedIndex = -1;
         }
 
         public int GetWeekNumber()
