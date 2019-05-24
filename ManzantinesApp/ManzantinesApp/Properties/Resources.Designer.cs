@@ -59,5 +59,15 @@ namespace ManzantinesApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_Save_70652 {
+            get {
+                object obj = ResourceManager.GetObject("if_Save_70652", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -3,8 +3,10 @@
     using ManzantinesApp.Classes;
     using System;
     using System.Collections.Generic;
+    using System.Data;
     using System.Globalization;
     using System.Windows.Forms;
+    using System.Linq;
 
     public partial class FrmNomina : Form
     {
@@ -65,76 +67,7 @@
                 }
 
                 //Validar si existe una nomina con los parametros indicados
-                //int aux = nominasTableAdapter1.GetDataByAnioSemEmp();
-
-                Data.RptDataSet.vv_nomina_trabajadoresDataTable misTrabajadores = null;
-
-                if (encargado <= 0)
-                {
-                    misTrabajadores = vv_nomina_trabajadoresTableAdapter1.GetData();
-                }
-                else
-                {
-                    misTrabajadores = vv_nomina_trabajadoresTableAdapter1.GetDataByIdEncargado(encargado);
-                }
-
-                listNomina = new List<Nomina>();
-
-                foreach (Data.RptDataSet.vv_nomina_trabajadoresRow miTrabajador in misTrabajadores.Rows)
-                {
-                    Data.DataSet1.NominasDataTable misConceptos = nominasTableAdapter1.GetDataByAnioSemEmp(anio, semana, miTrabajador.id);
-
-                    Nomina miNomina = new Nomina()
-                    {
-                        Anio = anio,
-                        Semana = semana,
-                        Empleado = miTrabajador.trabajador,
-                        id_empleado = miTrabajador.id,
-                        Nro_empleado = miTrabajador.Nro_empleado
-                    };
-
-                    foreach (Data.DataSet1.NominasRow concepto in misConceptos.Rows)
-                    {
-                        miNomina.id = concepto.Id;
-                        switch (concepto.diaSemana)
-                        {
-                            case "L":
-                                if (concepto._base == "d") miNomina.LunesDia = (float)concepto.valor;
-                                if (concepto._base == "h") miNomina.LunesExtra = (float)concepto.valor;
-                                break;
-                            case "M":
-                                if (concepto._base == "d") miNomina.MartesDia = (float)concepto.valor;
-                                if (concepto._base == "h") miNomina.MartesExtra = (float)concepto.valor;
-                                break;
-                            case "X":
-                                if (concepto._base == "d") miNomina.MiercolesDia = (float)concepto.valor;
-                                if (concepto._base == "h") miNomina.MiercolesExtra = (float)concepto.valor;
-                                break;
-                            case "J":
-                                if (concepto._base == "d") miNomina.JuevesDia = (float)concepto.valor;
-                                if (concepto._base == "h") miNomina.JuevesExtra = (float)concepto.valor;
-                                break;
-                            case "V":
-                                if (concepto._base == "d") miNomina.ViernesDia = (float)concepto.valor;
-                                if (concepto._base == "h") miNomina.ViernesExtra = (float)concepto.valor;
-                                break;
-                            case "S":
-                                if (concepto._base == "d") miNomina.SabadoDia = (float)concepto.valor;
-                                if (concepto._base == "h") miNomina.SabadoExtra = (float)concepto.valor;
-                                break;
-                            case "D":
-                                if (concepto._base == "d") miNomina.DomingoDia = (float)concepto.valor;
-                                if (concepto._base == "h") miNomina.DomingoExtra = (float)concepto.valor;
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-
-                    listNomina.Add(miNomina);
-                }
-
-                NominaDataGridView.DataSource = listNomina;
+               
             }
             catch (Exception ex)
             {
@@ -184,7 +117,7 @@
                 }
                 else
                 {
-                        CalcularTotales(e.RowIndex);
+                    CalcularTotales(e.RowIndex);
                 }
             }
         }
@@ -200,29 +133,12 @@
 
         private void GuardarToolStripButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                foreach (Nomina nomina in listNomina)
-                {
-                    if (nomina.id == null)
-                    {
-                        //Insertar nuevo registro
-                        this.nominasTableAdapter1.Insert(
-                            nomina.Anio,
-                            nomina.Semana,
-                            nomina.id_empleado,
-                            "L",
-                            "D",
-                            nomina.LunesDia,
-                            3
-                            );
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error en carga de Nómina", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+        }
+
+        private void CerrarNominaToolStripButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -80,9 +80,14 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.SemanaComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.EncargadoComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.CargarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.CerrarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.TotalesDataGridView = new System.Windows.Forms.DataGridView();
             this.TipoEmpleo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,10 +104,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.vv_nomina_trabajadoresTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter();
             this.dataSet11 = new ManzantinesApp.Data.DataSet1();
-            this.nominasTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.NominasTableAdapter();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.EncargadoComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.encargadosTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.EncargadosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -366,7 +367,9 @@
             this.toolStripSeparator4,
             this.CargarNominaToolStripButton,
             this.toolStripSeparator3,
-            this.GuardarToolStripButton});
+            this.GuardarToolStripButton,
+            this.toolStripSeparator5,
+            this.CerrarNominaToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1059, 25);
@@ -408,6 +411,25 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(66, 22);
+            this.toolStripLabel3.Text = "Encargado:";
+            // 
+            // EncargadoComboBox
+            // 
+            this.EncargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.EncargadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EncargadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EncargadoComboBox.Name = "EncargadoComboBox";
+            this.EncargadoComboBox.Size = new System.Drawing.Size(120, 25);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
             // CargarNominaToolStripButton
             // 
             this.CargarNominaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CargarNominaToolStripButton.Image")));
@@ -427,9 +449,23 @@
             this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
             this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.GuardarToolStripButton.Name = "GuardarToolStripButton";
-            this.GuardarToolStripButton.Size = new System.Drawing.Size(105, 22);
-            this.GuardarToolStripButton.Text = "&Cerrar &Nómina";
+            this.GuardarToolStripButton.Size = new System.Drawing.Size(115, 22);
+            this.GuardarToolStripButton.Text = "&Guardar Nómina";
             this.GuardarToolStripButton.Click += new System.EventHandler(this.GuardarToolStripButton_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // CerrarNominaToolStripButton
+            // 
+            this.CerrarNominaToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Save_70652;
+            this.CerrarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CerrarNominaToolStripButton.Name = "CerrarNominaToolStripButton";
+            this.CerrarNominaToolStripButton.Size = new System.Drawing.Size(105, 22);
+            this.CerrarNominaToolStripButton.Text = "C&errar Nómina";
+            this.CerrarNominaToolStripButton.Click += new System.EventHandler(this.CerrarNominaToolStripButton_Click);
             // 
             // TotalesDataGridView
             // 
@@ -589,29 +625,6 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nominasTableAdapter1
-            // 
-            this.nominasTableAdapter1.ClearBeforeFill = true;
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(66, 22);
-            this.toolStripLabel3.Text = "Encargado:";
-            // 
-            // EncargadoComboBox
-            // 
-            this.EncargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.EncargadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.EncargadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EncargadoComboBox.Name = "EncargadoComboBox";
-            this.EncargadoComboBox.Size = new System.Drawing.Size(120, 25);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
             // encargadosTableAdapter1
             // 
             this.encargadosTableAdapter1.ClearBeforeFill = true;
@@ -677,7 +690,6 @@
         private System.Windows.Forms.Label label7;
         private Data.DataSet1 dataSet11;
         private Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter vv_nomina_trabajadoresTableAdapter1;
-        private Data.DataSet1TableAdapters.NominasTableAdapter nominasTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Semana;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
@@ -704,5 +716,7 @@
         private System.Windows.Forms.ToolStripComboBox EncargadoComboBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private Data.DataSet1TableAdapters.EncargadosTableAdapter encargadosTableAdapter1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton CerrarNominaToolStripButton;
     }
 }

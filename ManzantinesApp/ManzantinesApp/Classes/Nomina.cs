@@ -10,7 +10,8 @@
     {
         #region Properties
 
-        public int? id { get; set; }
+        public int? cab_id { get; set; }
+        public int? det_id { get; set; }
         public int Semana { get; set; }
         public int Anio { get; set; }
         public int id_empleado { get; set; }
@@ -36,7 +37,7 @@
         public float totalExtra {
             get { return LunesExtra + MartesExtra + MiercolesExtra + JuevesExtra + ViernesExtra + SabadoExtra + DomingoExtra; }
         }
-
+        public string Status { get; set; }
         #endregion
     }
 }

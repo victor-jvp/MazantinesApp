@@ -205,12 +205,13 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="Security\Permissions.sql" />
-    <Build Include="dbo\Tables\Nominas.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
+    <Build Include="dbo\Tables\NominasCab.sql" />
+    <Build Include="dbo\Tables\NominasDet.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MazantinesDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MazantinesDB.refactorlog" />
   </ItemGroup>
 </Project>

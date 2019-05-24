@@ -1,0 +1,22 @@
+﻿CREATE TABLE [dbo].[NominasDet]
+(
+	[id_det] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[id_cab] INT NULL,
+    [id_empleado] INT NULL, 
+    [baseEmpleo] NUMERIC(18, 2) NULL, 
+    [lunD] NUMERIC NULL, 
+    [lunH] NUMERIC NULL, 
+	[marD] NUMERIC NULL, 
+    [marH] NUMERIC NULL, 
+	[mieD] NUMERIC NULL, 
+    [mieH] NUMERIC NULL, 
+	[jueD] NUMERIC NULL, 
+    [jueH] NUMERIC NULL, 
+	[vieD] NUMERIC NULL, 
+    [vieH] NUMERIC NULL, 
+	[sabD] NUMERIC NULL, 
+    [sabH] NUMERIC NULL, 
+	[domD] NUMERIC NULL, 
+    [domH] NUMERIC NULL, 
+    CONSTRAINT [FK_NominasDet_Trabajadores] FOREIGN KEY ([id_empleado]) REFERENCES [Trabajadores]([Id]),
+)
