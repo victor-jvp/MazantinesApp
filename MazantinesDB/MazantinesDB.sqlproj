@@ -207,6 +207,10 @@
     <Build Include="Security\Permissions.sql" />
     <Build Include="dbo\Tables\NominasCab.sql" />
     <Build Include="dbo\Tables\NominasDet.sql" />
+    <Build Include="dbo\Views\vv_nominas.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <None Include="MazantinesDB.publish.xml" />

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf183f1155cf4fc2a053875c81cc15ee" Name="Diagram1">
+        <EntityTypeShape EntityType="MazantinesModel.Empleos" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MazantinesModel.EmpleosPagos" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MazantinesModel.NominasCab" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MazantinesModel.Trabajadores" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MazantinesModel.Trabajadores_Empleos" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MazantinesModel.FK_EmpleoPago_Empleos" ManuallyRouted="false" />
+        <AssociationConnector Association="MazantinesModel.id_empleo" ManuallyRouted="false" />
+        <AssociationConnector Association="MazantinesModel.fk_id_trabajador" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MazantinesModel.NominasDet" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_nominas" Width="1.5" PointX="5.375" PointY="5.75" />
+        <AssociationConnector Association="MazantinesModel.FK_NominasDet_Trabajadores" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

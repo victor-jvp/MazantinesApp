@@ -7,6 +7,7 @@
     using System.Globalization;
     using System.Windows.Forms;
     using System.Linq;
+    using ManzantinesApp.DBContext;
 
     public partial class FrmNomina : Form
     {
@@ -45,7 +46,7 @@
             EncargadoComboBox.ComboBox.SelectedIndex = -1;
         }
 
-        public int GetWeekNumber()
+        private int GetWeekNumber()
         {
             CultureInfo ciCurr = CultureInfo.CurrentCulture;
             int weekNum = ciCurr.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
@@ -67,7 +68,16 @@
                 }
 
                 //Validar si existe una nomina con los parametros indicados
-               
+                List<vv_nominas> nominas = null;
+                using (MazantinesEntities db = new MazantinesEntities())
+                {
+                    nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
+                }
+
+                if(nominas != null && nominas.Count > 0)
+                {
+                    NominaDataGridView.DataSource = nominas;
+                }
             }
             catch (Exception ex)
             {
@@ -75,6 +85,16 @@
             }
             
         }
+
+        private void CalcularTotales(int rowIndex)
+        {
+            int totalDias = (int)listNomina[rowIndex].totalDia;
+            int totalExtra = (int)listNomina[rowIndex].totalExtra;
+
+            NominaDataGridView.Rows[rowIndex].Cells["totalD"].Value = totalDias;
+            NominaDataGridView.Rows[rowIndex].Cells["totalH"].Value = totalExtra;
+        }
+
         #endregion
 
         #region Constructors
@@ -93,7 +113,12 @@
         {
             int semana = (int)SemanaComboBox.ComboBox.SelectedValue;
             int anio = (int)AnioComboBox.ComboBox.SelectedValue;
-            int encargado = (int)EncargadoComboBox.ComboBox.SelectedValue;
+
+            int encargado = 0;
+            if(EncargadoComboBox.ComboBox.SelectedValue != null)
+            {
+                encargado = (int)EncargadoComboBox.ComboBox.SelectedValue;
+            }
 
             this.Enabled = false;
             CargarNomina(anio, semana, encargado);
@@ -122,14 +147,7 @@
             }
         }
 
-        private void CalcularTotales(int rowIndex)
-        {
-            int totalDias = (int)listNomina[rowIndex].totalDia;
-            int totalExtra = (int)listNomina[rowIndex].totalExtra;
 
-            NominaDataGridView.Rows[rowIndex].Cells["TotalDia"].Value = totalDias;
-            NominaDataGridView.Rows[rowIndex].Cells["TotalExtra"].Value = totalExtra;
-        }
 
         private void GuardarToolStripButton_Click(object sender, EventArgs e)
         {
