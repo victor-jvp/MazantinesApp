@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManzantinesApp", "ManzantinesApp\ManzantinesApp.csproj", "{75A65F11-D3F8-412B-84C3-DF8EF389F36D}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MazantinesDB", "..\..\MazantinesDB\MazantinesDB.sqlproj", "{6E5CE1CA-2964-4097-ADF4-9B24831D494A}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MazantinesDB", "..\MazantinesDB\MazantinesDB.sqlproj", "{6E5CE1CA-2964-4097-ADF4-9B24831D494A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

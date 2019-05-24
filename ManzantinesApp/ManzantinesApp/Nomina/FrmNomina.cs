@@ -50,7 +50,7 @@
             return weekNum;
         }
 
-        private void CargarNomina(int anio, int semana)
+        private void CargarNomina(int anio, int semana, int encargado = 0)
         {
             try
             {
@@ -64,7 +64,19 @@
                     return;
                 }
 
-                Data.RptDataSet.vv_nomina_trabajadoresDataTable misTrabajadores = vv_nomina_trabajadoresTableAdapter1.GetData();
+                //Validar si existe una nomina con los parametros indicados
+                //int aux = nominasTableAdapter1.GetDataByAnioSemEmp();
+
+                Data.RptDataSet.vv_nomina_trabajadoresDataTable misTrabajadores = null;
+
+                if (encargado <= 0)
+                {
+                    misTrabajadores = vv_nomina_trabajadoresTableAdapter1.GetData();
+                }
+                else
+                {
+                    misTrabajadores = vv_nomina_trabajadoresTableAdapter1.GetDataByIdEncargado(encargado);
+                }
 
                 listNomina = new List<Nomina>();
 
@@ -148,9 +160,10 @@
         {
             int semana = (int)SemanaComboBox.ComboBox.SelectedValue;
             int anio = (int)AnioComboBox.ComboBox.SelectedValue;
+            int encargado = (int)EncargadoComboBox.ComboBox.SelectedValue;
 
             this.Enabled = false;
-            CargarNomina(anio, semana);
+            CargarNomina(anio, semana, encargado);
             this.Enabled = true;
         }
 

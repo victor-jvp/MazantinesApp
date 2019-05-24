@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:vv_totales_asientos" ZOrder="4" X="307" Y="61" Height="187" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="97" />
     <Shape ID="DesignTable:vv_table_asientos" ZOrder="3" X="535" Y="2" Height="286" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:vv_totales_categorias" ZOrder="2" X="850" Y="0" Height="115" Width="267" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:vv_nomina_trabajadores" ZOrder="1" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
+    <Shape ID="DesignTable:vv_nomina_trabajadores" ZOrder="1" X="530" Y="421" Height="172" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

@@ -2493,6 +2493,8 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columntrabajador;
             
+            private global::System.Data.DataColumn columnid_encargado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vv_nomina_trabajadoresDataTable() {
@@ -2552,6 +2554,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_encargadoColumn {
+                get {
+                    return this.columnid_encargado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2587,12 +2597,13 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vv_nomina_trabajadoresRow Addvv_nomina_trabajadoresRow(string Nro_empleado, string trabajador) {
+            public vv_nomina_trabajadoresRow Addvv_nomina_trabajadoresRow(string Nro_empleado, string trabajador, int id_encargado) {
                 vv_nomina_trabajadoresRow rowvv_nomina_trabajadoresRow = ((vv_nomina_trabajadoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nro_empleado,
-                        trabajador};
+                        trabajador,
+                        id_encargado};
                 rowvv_nomina_trabajadoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvv_nomina_trabajadoresRow);
                 return rowvv_nomina_trabajadoresRow;
@@ -2625,6 +2636,7 @@ namespace ManzantinesApp.Data {
                 this.columnid = base.Columns["id"];
                 this.columnNro_empleado = base.Columns["Nro_empleado"];
                 this.columntrabajador = base.Columns["trabajador"];
+                this.columnid_encargado = base.Columns["id_encargado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2636,6 +2648,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnNro_empleado);
                 this.columntrabajador = new global::System.Data.DataColumn("trabajador", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntrabajador);
+                this.columnid_encargado = new global::System.Data.DataColumn("id_encargado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_encargado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -3869,6 +3883,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_encargado {
+                get {
+                    try {
+                        return ((int)(this[this.tablevv_nomina_trabajadores.id_encargadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_encargado\' in table \'vv_nomina_trabajadores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_nomina_trabajadores.id_encargadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNro_empleadoNull() {
                 return this.IsNull(this.tablevv_nomina_trabajadores.Nro_empleadoColumn);
             }
@@ -3889,6 +3919,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SettrabajadorNull() {
                 this[this.tablevv_nomina_trabajadores.trabajadorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isid_encargadoNull() {
+                return this.IsNull(this.tablevv_nomina_trabajadores.id_encargadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setid_encargadoNull() {
+                this[this.tablevv_nomina_trabajadores.id_encargadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5329,6 +5371,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("Nro_empleado", "Nro_empleado");
             tableMapping.ColumnMappings.Add("trabajador", "trabajador");
+            tableMapping.ColumnMappings.Add("id_encargado", "id_encargado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5342,11 +5385,18 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, Nro_empleado, trabajador FROM dbo.vv_nomina_trabajadores";
+            this._commandCollection[0].CommandText = "SELECT        id, Nro_empleado, trabajador, id_encargado\r\nFROM            vv_nomi" +
+                "na_trabajadores";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        id, Nro_empleado, trabajador, id_encargado\r\nFROM            vv_nomi" +
+                "na_trabajadores\r\nWHERE id_encargado = @id_encargado";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_encargado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_encargado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5368,6 +5418,42 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual RptDataSet.vv_nomina_trabajadoresDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            RptDataSet.vv_nomina_trabajadoresDataTable dataTable = new RptDataSet.vv_nomina_trabajadoresDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIdEncargado(RptDataSet.vv_nomina_trabajadoresDataTable dataTable, global::System.Nullable<int> id_encargado) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id_encargado.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_encargado.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual RptDataSet.vv_nomina_trabajadoresDataTable GetDataByIdEncargado(global::System.Nullable<int> id_encargado) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id_encargado.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_encargado.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             RptDataSet.vv_nomina_trabajadoresDataTable dataTable = new RptDataSet.vv_nomina_trabajadoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
