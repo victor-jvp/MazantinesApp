@@ -123,6 +123,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Views\" />
     <Folder Include="Security\" />
+    <Folder Include="dbo\Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Trabajadores_Empleos.sql">
@@ -219,5 +220,8 @@
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MazantinesDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="dbo\Scripts\Script.AddData.sql" />
   </ItemGroup>
 </Project>
