@@ -12,22 +12,20 @@ namespace ManzantinesApp.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class NominasCab
+    public partial class Casas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NominasCab()
+        public Casas()
         {
-            this.NominasDet = new HashSet<NominasDet>();
+            this.Trabajadores = new HashSet<Trabajadores>();
         }
     
-        public int id_cab { get; set; }
-        public Nullable<decimal> anio { get; set; }
-        public Nullable<decimal> semana { get; set; }
-        public Nullable<int> id_encargado { get; set; }
-        public string status { get; set; }
+        public int Id { get; set; }
+        public int NroCasa { get; set; }
+        public Nullable<int> id_finca { get; set; }
     
-        public virtual Encargados Encargados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NominasDet> NominasDet { get; set; }
+        public virtual ICollection<Trabajadores> Trabajadores { get; set; }
+        public virtual Fincas Fincas { get; set; }
     }
 }

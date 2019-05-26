@@ -83,13 +83,17 @@
             this.vv_nomina_trabajadoresTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter();
             this.dataSet11 = new ManzantinesApp.Data.DataSet1();
             this.encargadosTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.EncargadosTableAdapter();
-            this.cab_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.det_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Semana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Semana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nro_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_cab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_det = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lunD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lunH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,13 +130,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NominaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NominaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cab_id,
-            this.det_id,
-            this.Semana,
             this.Anio,
+            this.Semana,
+            this.Status,
+            this.id_encargado,
             this.id_empleado,
             this.Nro_empleado,
             this.Empleado,
+            this.id_cab,
+            this.id_det,
+            this.valorD,
+            this.valorH,
             this.lunD,
             this.lunH,
             this.marD,
@@ -156,6 +164,7 @@
             this.NominaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.NominaDataGridView.Size = new System.Drawing.Size(1059, 302);
             this.NominaDataGridView.TabIndex = 1;
+            this.NominaDataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.NominaDataGridView_CellValidated);
             this.NominaDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.NominaDataGridView_CellValidating);
             // 
             // toolStrip1
@@ -434,19 +443,12 @@
             // 
             this.encargadosTableAdapter1.ClearBeforeFill = true;
             // 
-            // cab_id
+            // Anio
             // 
-            this.cab_id.DataPropertyName = "cab_id";
-            this.cab_id.HeaderText = "cab_id";
-            this.cab_id.Name = "cab_id";
-            this.cab_id.Visible = false;
-            // 
-            // det_id
-            // 
-            this.det_id.DataPropertyName = "det_id";
-            this.det_id.HeaderText = "det_id";
-            this.det_id.Name = "det_id";
-            this.det_id.Visible = false;
+            this.Anio.DataPropertyName = "Anio";
+            this.Anio.HeaderText = "Anio";
+            this.Anio.Name = "Anio";
+            this.Anio.Visible = false;
             // 
             // Semana
             // 
@@ -456,12 +458,19 @@
             this.Semana.Visible = false;
             this.Semana.Width = 71;
             // 
-            // Anio
+            // Status
             // 
-            this.Anio.DataPropertyName = "Anio";
-            this.Anio.HeaderText = "Anio";
-            this.Anio.Name = "Anio";
-            this.Anio.Visible = false;
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.Visible = false;
+            // 
+            // id_encargado
+            // 
+            this.id_encargado.DataPropertyName = "id_encargado";
+            this.id_encargado.HeaderText = "id_encargado";
+            this.id_encargado.Name = "id_encargado";
+            this.id_encargado.Visible = false;
             // 
             // id_empleado
             // 
@@ -483,12 +492,40 @@
             // 
             // Empleado
             // 
-            this.Empleado.DataPropertyName = "Empleado";
+            this.Empleado.DataPropertyName = "trabajador";
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
             this.Empleado.DefaultCellStyle = dataGridViewCellStyle3;
             this.Empleado.HeaderText = "Empleado";
             this.Empleado.Name = "Empleado";
             this.Empleado.ReadOnly = true;
+            // 
+            // id_cab
+            // 
+            this.id_cab.DataPropertyName = "id_cab";
+            this.id_cab.HeaderText = "id_cab";
+            this.id_cab.Name = "id_cab";
+            this.id_cab.Visible = false;
+            // 
+            // id_det
+            // 
+            this.id_det.DataPropertyName = "id_det";
+            this.id_det.HeaderText = "id_det";
+            this.id_det.Name = "id_det";
+            this.id_det.Visible = false;
+            // 
+            // valorD
+            // 
+            this.valorD.DataPropertyName = "valorD";
+            this.valorD.HeaderText = "valorD";
+            this.valorD.Name = "valorD";
+            this.valorD.Visible = false;
+            // 
+            // valorH
+            // 
+            this.valorH.DataPropertyName = "valorH";
+            this.valorH.HeaderText = "valorH";
+            this.valorH.Name = "valorH";
+            this.valorH.Visible = false;
             // 
             // lunD
             // 
@@ -705,13 +742,17 @@
         private Data.DataSet1TableAdapters.EncargadosTableAdapter encargadosTableAdapter1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton CerrarNominaToolStripButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cab_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn det_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Semana;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Semana;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_encargado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nro_empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_cab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_det;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorH;
         private System.Windows.Forms.DataGridViewTextBoxColumn lunD;
         private System.Windows.Forms.DataGridViewTextBoxColumn lunH;
         private System.Windows.Forms.DataGridViewTextBoxColumn marD;

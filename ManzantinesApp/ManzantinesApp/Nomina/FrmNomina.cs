@@ -14,7 +14,7 @@
 
         #region Properties
 
-        List<Nomina> listNomina = null;
+        List<vv_nominas> nominas = null;
 
         #endregion
 
@@ -26,6 +26,7 @@
             LoadCombos(anio);
 
             NominaDataGridView.DataSource = null;
+
         }
 
         private void LoadCombos(int anio)
@@ -68,31 +69,203 @@
                 }
 
                 //Validar si existe una nomina con los parametros indicados
-                List<vv_nominas> nominas = null;
+                nominas = null;
                 using (MazantinesEntities db = new MazantinesEntities())
                 {
                     nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
                 }
 
-                if(nominas != null && nominas.Count > 0)
+                if(nominas == null || nominas.Count <= 0)
                 {
-                    NominaDataGridView.DataSource = nominas;
+                    //Cargar una nueva nomina
+                    if(encargado == 0)
+                    {
+                        List<vv_nomina_trabajadores> trabajadores = null;
+                        using (MazantinesEntities db = new MazantinesEntities())
+                        {
+                            trabajadores = db.vv_nomina_trabajadores.ToList();
+
+                            if(trabajadores.Count == 0)
+                            {
+                                MessageBox.Show(
+                                    "No existen trabajadores registrados.", 
+                                    "Error en carga de Nómina", 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Warning);
+                                return;
+                            }
+
+                            NominasCab cab = new NominasCab()
+                            {
+                                semana = semana,
+                                anio = anio,
+                                status = "A"
+                            };
+                            
+                            foreach (vv_nomina_trabajadores row in trabajadores)
+                            {
+                                cab.NominasDet.Add(new NominasDet
+                                {
+                                    id_empleado = row.id,
+                                    lunD = 0, lunH = 0,
+                                    marD = 0, marH = 0,
+                                    mieD = 0, mieH = 0,
+                                    jueD = 0, jueH = 0,
+                                    vieD = 0, vieH = 0,
+                                    sabD = 0, sabH = 0,
+                                    domD = 0, domH = 0,
+                                    valorD = 0, valorH = 0
+                                });
+                            }
+                            db.NominasCab.Add(cab);
+                            db.SaveChanges();
+                        } 
+                    }
                 }
+
+                using (MazantinesEntities db = new MazantinesEntities())
+                {
+                    nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
+                }
+
+                //Validar si la nomina esta cerrada
+                if (nominas[0].status == "C")
+                {
+                    MessageBox.Show(
+                        "La Nomina seleccionada esta en Cerrada, no es posible modificar.",
+                        "Nomina Cerrada",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                NominaDataGridView.DataSource = null;
+                NominaDataGridView.DataSource = nominas;
+                CalcularTotales();
+                FormatColumns();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error en carga de Nómina", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
+        }
+
+        private void GuardarNomina()
+        {
+            try
+            {
+                using (MazantinesEntities db = new MazantinesEntities())
+                {
+                    foreach (vv_nominas nomina in nominas)
+                    {
+                        NominasDet miNomina = db.NominasDet.Where(d => d.id_det == nomina.id_det).FirstOrDefault();
+                        //miNomina.id_cab = nomina.id_cab;
+                        //miNomina.id_det = nomina.id_det;
+                        //miNomina.id_empleado = nomina.id_empleado;
+                        //miNomina.valorD = nomina.valorD;
+                        //miNomina.valorH = nomina.valorH;
+                        miNomina.lunD = nomina.lunD;
+                        miNomina.lunH = nomina.lunH;
+                        miNomina.marD = nomina.marD;
+                        miNomina.marH = nomina.marH;
+                        miNomina.mieD = nomina.mieD;
+                        miNomina.mieH = nomina.mieH;
+                        miNomina.jueD = nomina.jueD;
+                        miNomina.jueH = nomina.jueH;
+                        miNomina.vieD = nomina.vieD;
+                        miNomina.vieH = nomina.vieH;
+                        miNomina.sabD = nomina.sabD;
+                        miNomina.sabH = nomina.sabH;
+                        miNomina.domD = nomina.domD;
+                        miNomina.domH = nomina.domH;
+                        db.NominasDet.Add(miNomina);
+                        db.Entry(miNomina).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Guardar Nómina", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
 
-        private void CalcularTotales(int rowIndex)
+        private void CerrarNomina()
         {
-            int totalDias = (int)listNomina[rowIndex].totalDia;
-            int totalExtra = (int)listNomina[rowIndex].totalExtra;
+            try
+            {
+                GuardarNomina();
 
-            NominaDataGridView.Rows[rowIndex].Cells["totalD"].Value = totalDias;
-            NominaDataGridView.Rows[rowIndex].Cells["totalH"].Value = totalExtra;
+                int cab_id = (int)nominas[0].id_cab;
+
+                using (MazantinesEntities db = new MazantinesEntities())
+                {
+                    var cab = db.NominasCab.Where(c => c.id_cab == cab_id).First();
+                    cab.status = "C";
+                    db.NominasCab.Add(cab);
+                    db.Entry(cab).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Cerrar Nómina", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }          
+        }
+
+        private void FormatColumns()
+        {
+            int i = 0;
+            NominaDataGridView.Columns["anio"].DisplayIndex = i;
+            NominaDataGridView.Columns["status"].DisplayIndex = i++;
+            NominaDataGridView.Columns["id_encargado"].DisplayIndex = i++;
+            NominaDataGridView.Columns["id_empleado"].DisplayIndex = i++;
+            NominaDataGridView.Columns["nro_empleado"].DisplayIndex = i++;
+            NominaDataGridView.Columns["empleado"].DisplayIndex = i++;
+            NominaDataGridView.Columns["id_cab"].DisplayIndex = i++;
+            NominaDataGridView.Columns["id_det"].DisplayIndex = i++;
+            NominaDataGridView.Columns["valorD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["valorH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["lunD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["lunH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["marD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["marH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["mieD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["mieH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["jueD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["jueH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["vieD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["vieH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["sabD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["sabH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["domD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["domH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["totalD"].DisplayIndex = i++;
+            NominaDataGridView.Columns["totalH"].DisplayIndex = i++;
+        }
+
+        private void CalcularTotales(int rowIndex = -1)
+        {
+            if (rowIndex != -1)
+            {
+                vv_nominas item = nominas[rowIndex];
+                int totalDias = Convert.ToInt32(item.lunD + item.marD + item.mieD + item.jueD + item.vieD + item.sabD + item.domD);
+                int totalExtra = Convert.ToInt32(item.lunH + item.marH + item.mieH + item.jueH + item.vieH + item.sabH + item.domH);
+                NominaDataGridView.Rows[rowIndex].Cells["totalD"].Value = totalDias;
+                NominaDataGridView.Rows[rowIndex].Cells["totalH"].Value = totalExtra;
+                return;
+            }
+
+            int i = 0;
+            foreach (vv_nominas item in nominas)
+            {
+                int totalDias = Convert.ToInt32(item.lunD + item.marD + item.mieD + item.jueD + item.vieD + item.sabD + item.domD);
+                int totalExtra = Convert.ToInt32(item.lunH + item.marH + item.mieH + item.jueH + item.vieH + item.sabH + item.domH);
+                NominaDataGridView.Rows[i].Cells["totalD"].Value = totalDias;
+                NominaDataGridView.Rows[i].Cells["totalH"].Value = totalExtra;
+                i++;
+            }
         }
 
         #endregion
@@ -127,7 +300,7 @@
 
         private void NominaDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (e.ColumnIndex > 5) // 1 should be your column index
+            if (NominaDataGridView.Columns[e.ColumnIndex].ReadOnly == false) // 1 should be your column index
             {
                 float i;
 
@@ -140,23 +313,44 @@
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                 }
-                else
-                {
-                    CalcularTotales(e.RowIndex);
-                }
             }
         }
 
-
-
         private void GuardarToolStripButton_Click(object sender, EventArgs e)
         {
+            if (nominas == null || nominas.Count <= 0) return;
 
+            DialogResult result = MessageBox.Show(
+                "Confirme guardar los cambios de la nómina actual",
+                "Confirme el proceso",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2
+                );
+            if (result == DialogResult.No) return;
+
+            GuardarNomina();
         }
 
         private void CerrarNominaToolStripButton_Click(object sender, EventArgs e)
         {
+            if (nominas == null || nominas.Count <= 0) return;
 
+            DialogResult result = MessageBox.Show(
+                   "Confirme Cerrar la nómina actual. Este proceso no puede deshacerse",
+                   "Confirme el proceso",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Warning,
+                   MessageBoxDefaultButton.Button2
+                   );
+            if (result == DialogResult.No) return;
+
+            CerrarNomina();
+        }
+
+        private void NominaDataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            CalcularTotales(e.RowIndex);
         }
     }
 }

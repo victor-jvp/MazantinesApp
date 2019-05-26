@@ -21,20 +21,23 @@ namespace ManzantinesApp.DBContext
         public int id_det { get; set; }
         public Nullable<int> id_cab { get; set; }
         public Nullable<int> id_empleado { get; set; }
-        public Nullable<decimal> baseEmpleo { get; set; }
-        public Nullable<decimal> lunD { get; set; }
-        public Nullable<decimal> lunH { get; set; }
-        public Nullable<decimal> marD { get; set; }
-        public Nullable<decimal> marH { get; set; }
-        public Nullable<decimal> mieD { get; set; }
-        public Nullable<decimal> mieH { get; set; }
-        public Nullable<decimal> jueD { get; set; }
-        public Nullable<decimal> jueH { get; set; }
-        public Nullable<decimal> vieD { get; set; }
-        public Nullable<decimal> vieH { get; set; }
-        public Nullable<decimal> sabD { get; set; }
-        public Nullable<decimal> sabH { get; set; }
-        public Nullable<decimal> domD { get; set; }
-        public Nullable<decimal> domH { get; set; }
+        public Nullable<decimal> valorD { get; set; }
+        public Nullable<decimal> valorH { get; set; }
+        public Nullable<double> lunD { get; set; }
+        public Nullable<double> lunH { get; set; }
+        public Nullable<double> marD { get; set; }
+        public Nullable<double> marH { get; set; }
+        public Nullable<double> mieD { get; set; }
+        public Nullable<double> mieH { get; set; }
+        public Nullable<double> jueD { get; set; }
+        public Nullable<double> jueH { get; set; }
+        public Nullable<double> vieD { get; set; }
+        public Nullable<double> vieH { get; set; }
+        public Nullable<double> sabD { get; set; }
+        public Nullable<double> sabH { get; set; }
+        public Nullable<double> domD { get; set; }
+        public Nullable<double> domH { get; set; }
+        public string Nro_empleado { get; set; }
+        public string trabajador { get; set; }
     }
 }

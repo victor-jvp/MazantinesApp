@@ -12,30 +12,21 @@ namespace ManzantinesApp.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class Trabajadores
+    public partial class Empresas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Trabajadores()
+        public Empresas()
         {
-            this.Trabajadores_Empleos = new HashSet<Trabajadores_Empleos>();
-            this.NominasDet = new HashSet<NominasDet>();
+            this.Asientos = new HashSet<Asientos>();
+            this.Trabajadores = new HashSet<Trabajadores>();
         }
     
         public int Id { get; set; }
-        public string Nro_empleado { get; set; }
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public string Telefono { get; set; }
-        public Nullable<int> id_empresa { get; set; }
-        public Nullable<int> id_casa { get; set; }
-        public string foto { get; set; }
-        public byte[] foto2 { get; set; }
+        public string Empresa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Trabajadores_Empleos> Trabajadores_Empleos { get; set; }
+        public virtual ICollection<Asientos> Asientos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NominasDet> NominasDet { get; set; }
-        public virtual Casas Casas { get; set; }
-        public virtual Empresas Empresas { get; set; }
+        public virtual ICollection<Trabajadores> Trabajadores { get; set; }
     }
 }

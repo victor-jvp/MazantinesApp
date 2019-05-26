@@ -32,5 +32,19 @@ namespace ManzantinesApp.DBContext
         public virtual DbSet<Trabajadores_Empleos> Trabajadores_Empleos { get; set; }
         public virtual DbSet<NominasDet> NominasDet { get; set; }
         public virtual DbSet<vv_nominas> vv_nominas { get; set; }
+        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+        public virtual DbSet<Asientos> Asientos { get; set; }
+        public virtual DbSet<Casas> Casas { get; set; }
+        public virtual DbSet<DiasSemana> DiasSemana { get; set; }
+        public virtual DbSet<Empresas> Empresas { get; set; }
+        public virtual DbSet<Encargados> Encargados { get; set; }
+        public virtual DbSet<Fincas> Fincas { get; set; }
+        public virtual DbSet<Liquidaciones> Liquidaciones { get; set; }
+        public virtual DbSet<Proveedores> Proveedores { get; set; }
+        public virtual DbSet<vv_CasasCountEmpleados> vv_CasasCountEmpleados { get; set; }
+        public virtual DbSet<vv_empleados> vv_empleados { get; set; }
+        public virtual DbSet<vv_EmpleadosCasas> vv_EmpleadosCasas { get; set; }
+        public virtual DbSet<vv_nomina_trabajadores> vv_nomina_trabajadores { get; set; }
+        public virtual DbSet<vv_table_asientos> vv_table_asientos { get; set; }
     }
 }

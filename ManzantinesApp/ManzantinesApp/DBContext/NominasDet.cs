@@ -35,5 +35,6 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> domH { get; set; }
     
         public virtual Trabajadores Trabajadores { get; set; }
+        public virtual NominasCab NominasCab { get; set; }
     }
 }
