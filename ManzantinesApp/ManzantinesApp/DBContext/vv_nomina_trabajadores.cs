@@ -18,5 +18,8 @@ namespace ManzantinesApp.DBContext
         public string Nro_empleado { get; set; }
         public string trabajador { get; set; }
         public Nullable<int> id_encargado { get; set; }
+        public Nullable<int> id_empleo { get; set; }
+        public decimal valorD { get; set; }
+        public decimal valorH { get; set; }
     }
 }

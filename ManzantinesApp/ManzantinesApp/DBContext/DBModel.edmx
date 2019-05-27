@@ -210,11 +210,16 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nomina_trabajadores' does not ha
           <Key>
             <PropertyRef Name="id" />
             <PropertyRef Name="trabajador" />
+            <PropertyRef Name="valorD" />
+            <PropertyRef Name="valorH" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Nro_empleado" Type="nvarchar(max)" />
           <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
           <Property Name="id_encargado" Type="int" />
+          <Property Name="id_empleo" Type="int" />
+          <Property Name="valorD" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="valorH" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -466,7 +471,10 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
     [vv_nomina_trabajadores].[id] AS [id], 
     [vv_nomina_trabajadores].[Nro_empleado] AS [Nro_empleado], 
     [vv_nomina_trabajadores].[trabajador] AS [trabajador], 
-    [vv_nomina_trabajadores].[id_encargado] AS [id_encargado]
+    [vv_nomina_trabajadores].[id_encargado] AS [id_encargado], 
+    [vv_nomina_trabajadores].[id_empleo] AS [id_empleo], 
+    [vv_nomina_trabajadores].[valorD] AS [valorD], 
+    [vv_nomina_trabajadores].[valorH] AS [valorH]
     FROM [dbo].[vv_nomina_trabajadores] AS [vv_nomina_trabajadores]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vv_nominas" EntityType="Self.vv_nominas" store:Type="Views" store:Schema="dbo">
@@ -937,11 +945,16 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Key>
             <PropertyRef Name="id" />
             <PropertyRef Name="trabajador" />
+            <PropertyRef Name="valorD" />
+            <PropertyRef Name="valorH" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="trabajador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="id_encargado" Type="Int32" />
+          <Property Name="id_empleo" Type="Int32" />
+          <Property Name="valorD" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="valorH" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="vv_table_asientos">
           <Key>
@@ -1302,6 +1315,9 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <EntitySetMapping Name="vv_nomina_trabajadores">
             <EntityTypeMapping TypeName="MazantinesModel.vv_nomina_trabajadores">
               <MappingFragment StoreEntitySet="vv_nomina_trabajadores">
+                <ScalarProperty Name="valorH" ColumnName="valorH" />
+                <ScalarProperty Name="valorD" ColumnName="valorD" />
+                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
                 <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
                 <ScalarProperty Name="trabajador" ColumnName="trabajador" />
                 <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />

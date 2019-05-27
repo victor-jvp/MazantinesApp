@@ -8,6 +8,7 @@
     using System.Windows.Forms;
     using System.Linq;
     using ManzantinesApp.DBContext;
+    using System.Drawing;
 
     public partial class FrmNomina : Form
     {
@@ -107,14 +108,14 @@
                                 cab.NominasDet.Add(new NominasDet
                                 {
                                     id_empleado = row.id,
-                                    lunD = 0, lunH = 0,
-                                    marD = 0, marH = 0,
-                                    mieD = 0, mieH = 0,
-                                    jueD = 0, jueH = 0,
-                                    vieD = 0, vieH = 0,
-                                    sabD = 0, sabH = 0,
-                                    domD = 0, domH = 0,
-                                    valorD = 0, valorH = 0
+                                    lunD = 1, lunH = 0,
+                                    marD = 1, marH = 0,
+                                    mieD = 1, mieH = 0,
+                                    jueD = 1, jueH = 0,
+                                    vieD = 1, vieH = 0,
+                                    sabD = 1, sabH = 0,
+                                    domD = 1, domH = 0,
+                                    valorD = row.valorD, valorH = row.valorH
                                 });
                             }
                             db.NominasCab.Add(cab);
@@ -132,11 +133,15 @@
                 if (nominas[0].status == "C")
                 {
                     MessageBox.Show(
-                        "La Nomina seleccionada esta en Cerrada, no es posible modificar.",
+                        "La Nomina seleccionada esta Cerrada, no es posible modificar.",
                         "Nomina Cerrada",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
-                    return;
+                    DeshabilitarGrid();
+                }
+                else
+                {
+                    HabilitarGrid();
                 }
 
                 NominaDataGridView.DataSource = null;
@@ -266,6 +271,72 @@
                 NominaDataGridView.Rows[i].Cells["totalH"].Value = totalExtra;
                 i++;
             }
+        }
+
+        private void DeshabilitarGrid()
+        {
+            NominaDataGridView.Columns["lunD"].ReadOnly = true;
+            NominaDataGridView.Columns["lunH"].ReadOnly = true;
+            NominaDataGridView.Columns["marD"].ReadOnly = true;
+            NominaDataGridView.Columns["marH"].ReadOnly = true;
+            NominaDataGridView.Columns["mieD"].ReadOnly = true;
+            NominaDataGridView.Columns["mieH"].ReadOnly = true;
+            NominaDataGridView.Columns["jueD"].ReadOnly = true;
+            NominaDataGridView.Columns["jueH"].ReadOnly = true;
+            NominaDataGridView.Columns["vieD"].ReadOnly = true;
+            NominaDataGridView.Columns["vieH"].ReadOnly = true;
+            NominaDataGridView.Columns["sabD"].ReadOnly = true;
+            NominaDataGridView.Columns["sabH"].ReadOnly = true;
+            NominaDataGridView.Columns["domD"].ReadOnly = true;
+            NominaDataGridView.Columns["domH"].ReadOnly = true;
+
+            NominaDataGridView.Columns["lunD"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["lunH"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["marD"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["marH"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["mieD"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["mieH"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["jueD"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["jueH"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["vieD"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["vieH"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["sabD"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["sabH"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["domD"].DefaultCellStyle.BackColor  = Color.Gray;
+            NominaDataGridView.Columns["domH"].DefaultCellStyle.BackColor  = Color.Gray;
+        }
+
+        private void HabilitarGrid()
+        {
+            NominaDataGridView.Columns["lunD"].ReadOnly = false;
+            NominaDataGridView.Columns["lunH"].ReadOnly = false;
+            NominaDataGridView.Columns["marD"].ReadOnly = false;
+            NominaDataGridView.Columns["marH"].ReadOnly = false;
+            NominaDataGridView.Columns["mieD"].ReadOnly = false;
+            NominaDataGridView.Columns["mieH"].ReadOnly = false;
+            NominaDataGridView.Columns["jueD"].ReadOnly = false;
+            NominaDataGridView.Columns["jueH"].ReadOnly = false;
+            NominaDataGridView.Columns["vieD"].ReadOnly = false;
+            NominaDataGridView.Columns["vieH"].ReadOnly = false;
+            NominaDataGridView.Columns["sabD"].ReadOnly = false;
+            NominaDataGridView.Columns["sabH"].ReadOnly = false;
+            NominaDataGridView.Columns["domD"].ReadOnly = false;
+            NominaDataGridView.Columns["domH"].ReadOnly = false;
+
+            NominaDataGridView.Columns["lunD"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["lunH"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["marD"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["marH"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["mieD"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["mieH"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["jueD"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["jueH"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["vieD"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["vieH"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["sabD"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["sabH"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["domD"].DefaultCellStyle.BackColor  = Color.White;
+            NominaDataGridView.Columns["domH"].DefaultCellStyle.BackColor  = Color.White;
         }
 
         #endregion
