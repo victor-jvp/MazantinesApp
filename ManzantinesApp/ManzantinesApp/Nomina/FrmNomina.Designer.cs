@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,6 +49,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -67,10 +71,6 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.CerrarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.TotalesDataGridView = new System.Windows.Forms.DataGridView();
-            this.TipoEmpleo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Extras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rptDataSet1 = new ManzantinesApp.Data.RptDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -110,6 +110,14 @@
             this.domH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_empleo2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_empleo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TotalesDataGridView)).BeginInit();
@@ -156,7 +164,8 @@
             this.domD,
             this.domH,
             this.totalD,
-            this.totalH});
+            this.totalH,
+            this.id_empleo2});
             this.NominaDataGridView.Location = new System.Drawing.Point(0, 55);
             this.NominaDataGridView.MultiSelect = false;
             this.NominaDataGridView.Name = "NominaDataGridView";
@@ -289,46 +298,22 @@
             this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.TotalesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TotalesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoEmpleo,
-            this.Dias,
-            this.Extras,
+            this.id_empleo,
+            this.Empleo,
+            this.TotalDias,
+            this.valorDias,
+            this.TotalHoras,
+            this.valorHoras,
             this.Total});
             this.TotalesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TotalesDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.TotalesDataGridView.MultiSelect = false;
             this.TotalesDataGridView.Name = "TotalesDataGridView";
             this.TotalesDataGridView.ReadOnly = true;
             this.TotalesDataGridView.RowHeadersVisible = false;
-            this.TotalesDataGridView.Size = new System.Drawing.Size(482, 162);
+            this.TotalesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.TotalesDataGridView.Size = new System.Drawing.Size(599, 162);
             this.TotalesDataGridView.TabIndex = 5;
-            // 
-            // TipoEmpleo
-            // 
-            this.TipoEmpleo.HeaderText = "Empleo";
-            this.TipoEmpleo.Name = "TipoEmpleo";
-            this.TipoEmpleo.ReadOnly = true;
-            this.TipoEmpleo.Width = 150;
-            // 
-            // Dias
-            // 
-            this.Dias.HeaderText = "Dias";
-            this.Dias.Name = "Dias";
-            this.Dias.ReadOnly = true;
-            // 
-            // Extras
-            // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.Format = "N2";
-            dataGridViewCellStyle21.NullValue = null;
-            this.Extras.DefaultCellStyle = dataGridViewCellStyle21;
-            this.Extras.HeaderText = "Extras";
-            this.Extras.Name = "Extras";
-            this.Extras.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -336,7 +321,7 @@
             this.groupBox1.Controls.Add(this.TotalesDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(7, 363);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(488, 181);
+            this.groupBox1.Size = new System.Drawing.Size(605, 181);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Totales";
@@ -675,6 +660,86 @@
             this.totalH.ReadOnly = true;
             this.totalH.Width = 56;
             // 
+            // id_empleo2
+            // 
+            this.id_empleo2.DataPropertyName = "id_empleo";
+            this.id_empleo2.HeaderText = "id_empleo2";
+            this.id_empleo2.Name = "id_empleo2";
+            this.id_empleo2.Visible = false;
+            // 
+            // id_empleo
+            // 
+            this.id_empleo.DataPropertyName = "id_empleo";
+            this.id_empleo.HeaderText = "id_empleo";
+            this.id_empleo.Name = "id_empleo";
+            this.id_empleo.ReadOnly = true;
+            this.id_empleo.Visible = false;
+            // 
+            // Empleo
+            // 
+            this.Empleo.DataPropertyName = "Empleo";
+            this.Empleo.HeaderText = "Empleo";
+            this.Empleo.Name = "Empleo";
+            this.Empleo.ReadOnly = true;
+            this.Empleo.Width = 150;
+            // 
+            // TotalDias
+            // 
+            this.TotalDias.DataPropertyName = "TotalDias";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "N0";
+            dataGridViewCellStyle21.NullValue = null;
+            this.TotalDias.DefaultCellStyle = dataGridViewCellStyle21;
+            this.TotalDias.HeaderText = "Dias";
+            this.TotalDias.Name = "TotalDias";
+            this.TotalDias.ReadOnly = true;
+            this.TotalDias.Width = 80;
+            // 
+            // valorDias
+            // 
+            this.valorDias.DataPropertyName = "valorDias";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Format = "C2";
+            this.valorDias.DefaultCellStyle = dataGridViewCellStyle22;
+            this.valorDias.HeaderText = "€";
+            this.valorDias.Name = "valorDias";
+            this.valorDias.ReadOnly = true;
+            this.valorDias.Width = 80;
+            // 
+            // TotalHoras
+            // 
+            this.TotalHoras.DataPropertyName = "TotalHoras";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.Format = "N2";
+            dataGridViewCellStyle23.NullValue = null;
+            this.TotalHoras.DefaultCellStyle = dataGridViewCellStyle23;
+            this.TotalHoras.HeaderText = "Extras";
+            this.TotalHoras.Name = "TotalHoras";
+            this.TotalHoras.ReadOnly = true;
+            this.TotalHoras.Width = 80;
+            // 
+            // valorHoras
+            // 
+            this.valorHoras.DataPropertyName = "valorHoras";
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.Format = "C2";
+            this.valorHoras.DefaultCellStyle = dataGridViewCellStyle24;
+            this.valorHoras.HeaderText = "€";
+            this.valorHoras.Name = "valorHoras";
+            this.valorHoras.ReadOnly = true;
+            this.valorHoras.Width = 80;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle25.Format = "C2";
+            dataGridViewCellStyle25.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle25;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
             // FrmNomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,10 +787,6 @@
         private System.Windows.Forms.ToolStripButton GuardarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton CargarNominaToolStripButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEmpleo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Extras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private Data.RptDataSet rptDataSet1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -769,5 +830,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn domH;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalD;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_empleo2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_empleo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalDias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalHoras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorHoras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

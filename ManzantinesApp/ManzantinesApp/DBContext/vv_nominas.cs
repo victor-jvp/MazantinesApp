@@ -39,5 +39,6 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> domH { get; set; }
         public string Nro_empleado { get; set; }
         public string trabajador { get; set; }
+        public Nullable<int> id_empleo { get; set; }
     }
 }

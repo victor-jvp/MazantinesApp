@@ -188,22 +188,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_empleados' does not have a prima
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_EmpleadosCasas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vv_EmpleadosCasas">
-          <Key>
-            <PropertyRef Name="id_casa" />
-            <PropertyRef Name="NroCasa" />
-            <PropertyRef Name="id_trabajador" />
-          </Key>
-          <Property Name="id_casa" Type="int" Nullable="false" />
-          <Property Name="Finca" Type="nvarchar(max)" />
-          <Property Name="NroCasa" Type="int" Nullable="false" />
-          <Property Name="id_trabajador" Type="int" Nullable="false" />
-          <Property Name="Nro_empleado" Type="nvarchar(max)" />
-          <Property Name="Nombre" Type="nvarchar(max)" />
-          <Property Name="Apellidos" Type="nvarchar(max)" />
-          <Property Name="Telefono" Type="nvarchar(max)" />
-          <Property Name="Empresa" Type="nvarchar(max)" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_nomina_trabajadores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vv_nomina_trabajadores">
@@ -234,6 +218,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="id_encargado" Type="int" />
           <Property Name="Nro_empleado" Type="nvarchar(max)" />
           <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id_empleo" Type="int" />
           <Property Name="id_det" Type="int" Nullable="false" />
           <Property Name="id_cab" Type="int" />
           <Property Name="id_empleado" Type="int" />
@@ -453,19 +438,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
     [vv_empleados].[Empleos] AS [Empleos]
     FROM [dbo].[vv_empleados] AS [vv_empleados]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vv_EmpleadosCasas" EntityType="Self.vv_EmpleadosCasas" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vv_EmpleadosCasas].[id_casa] AS [id_casa], 
-    [vv_EmpleadosCasas].[Finca] AS [Finca], 
-    [vv_EmpleadosCasas].[NroCasa] AS [NroCasa], 
-    [vv_EmpleadosCasas].[id_trabajador] AS [id_trabajador], 
-    [vv_EmpleadosCasas].[Nro_empleado] AS [Nro_empleado], 
-    [vv_EmpleadosCasas].[Nombre] AS [Nombre], 
-    [vv_EmpleadosCasas].[Apellidos] AS [Apellidos], 
-    [vv_EmpleadosCasas].[Telefono] AS [Telefono], 
-    [vv_EmpleadosCasas].[Empresa] AS [Empresa]
-    FROM [dbo].[vv_EmpleadosCasas] AS [vv_EmpleadosCasas]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="vv_nomina_trabajadores" EntityType="Self.vv_nomina_trabajadores" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vv_nomina_trabajadores].[id] AS [id], 
@@ -485,6 +457,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
     [vv_nominas].[id_encargado] AS [id_encargado], 
     [vv_nominas].[Nro_empleado] AS [Nro_empleado], 
     [vv_nominas].[trabajador] AS [trabajador], 
+    [vv_nominas].[id_empleo] AS [id_empleo], 
     [vv_nominas].[id_det] AS [id_det], 
     [vv_nominas].[id_cab] AS [id_cab], 
     [vv_nominas].[id_empleado] AS [id_empleado], 
@@ -704,7 +677,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <EntitySet Name="Proveedores" EntityType="MazantinesModel.Proveedores" />
           <EntitySet Name="vv_CasasCountEmpleados" EntityType="MazantinesModel.vv_CasasCountEmpleados" />
           <EntitySet Name="vv_empleados" EntityType="MazantinesModel.vv_empleados" />
-          <EntitySet Name="vv_EmpleadosCasas" EntityType="MazantinesModel.vv_EmpleadosCasas" />
           <EntitySet Name="vv_nomina_trabajadores" EntityType="MazantinesModel.vv_nomina_trabajadores" />
           <EntitySet Name="vv_table_asientos" EntityType="MazantinesModel.vv_table_asientos" />
           <AssociationSet Name="fk_empresa" Association="MazantinesModel.fk_empresa">
@@ -808,6 +780,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Property Name="domH" Type="Double" />
           <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="trabajador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_empleo" Type="Int32" />
         </EntityType>
         <EntityType Name="C__RefactorLog">
           <Key>
@@ -924,22 +897,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Property Name="NroCasa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Empleos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vv_EmpleadosCasas">
-          <Key>
-            <PropertyRef Name="id_casa" />
-            <PropertyRef Name="NroCasa" />
-            <PropertyRef Name="id_trabajador" />
-          </Key>
-          <Property Name="id_casa" Type="Int32" Nullable="false" />
-          <Property Name="Finca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NroCasa" Type="Int32" Nullable="false" />
-          <Property Name="id_trabajador" Type="Int32" Nullable="false" />
-          <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Apellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vv_nomina_trabajadores">
           <Key>
@@ -1155,6 +1112,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <EntitySetMapping Name="vv_nominas">
             <EntityTypeMapping TypeName="MazantinesModel.vv_nominas">
               <MappingFragment StoreEntitySet="vv_nominas">
+                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
                 <ScalarProperty Name="trabajador" ColumnName="trabajador" />
                 <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
                 <ScalarProperty Name="domH" ColumnName="domH" />
@@ -1294,21 +1252,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vv_EmpleadosCasas">
-            <EntityTypeMapping TypeName="MazantinesModel.vv_EmpleadosCasas">
-              <MappingFragment StoreEntitySet="vv_EmpleadosCasas">
-                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
-                <ScalarProperty Name="NroCasa" ColumnName="NroCasa" />
-                <ScalarProperty Name="Finca" ColumnName="Finca" />
-                <ScalarProperty Name="id_casa" ColumnName="id_casa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

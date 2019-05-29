@@ -259,6 +259,7 @@
                 int totalExtra = Convert.ToInt32(item.lunH + item.marH + item.mieH + item.jueH + item.vieH + item.sabH + item.domH);
                 NominaDataGridView.Rows[rowIndex].Cells["totalD"].Value = totalDias;
                 NominaDataGridView.Rows[rowIndex].Cells["totalH"].Value = totalExtra;
+                LoadTotalesGrid();
                 return;
             }
 
@@ -271,6 +272,7 @@
                 NominaDataGridView.Rows[i].Cells["totalH"].Value = totalExtra;
                 i++;
             }
+            LoadTotalesGrid();
         }
 
         private void DeshabilitarGrid()
@@ -337,6 +339,43 @@
             NominaDataGridView.Columns["sabH"].DefaultCellStyle.BackColor  = Color.White;
             NominaDataGridView.Columns["domD"].DefaultCellStyle.BackColor  = Color.White;
             NominaDataGridView.Columns["domH"].DefaultCellStyle.BackColor  = Color.White;
+        }
+
+        private void LoadTotalesGrid()
+        {
+            try
+            {
+                List<TotalNomina> totalNomina = new List<TotalNomina>();
+                List<Empleos> empleos = null;
+
+                using (MazantinesEntities db = new MazantinesEntities())
+                {
+                    empleos = db.Empleos.ToList();
+                }
+                foreach (Empleos empleo in empleos)
+                {
+                    var rowNom = this.nominas.Where(n => n.id_empleo == empleo.Id).FirstOrDefault();
+
+                    if(rowNom != null)
+                    {
+                        TotalNomina miTotal = new TotalNomina {
+                            Empleo = empleo.Empleo,
+                            Id_empleo = empleo.Id,
+                            TotalDias = Convert.ToDouble(rowNom.lunD + rowNom.marD + rowNom.mieD + rowNom.jueD + rowNom.vieD + rowNom.sabD + rowNom.domD),
+                            TotalHoras = Convert.ToDouble(rowNom.lunH + rowNom.marH + rowNom.mieH + rowNom.jueH + rowNom.vieH + rowNom.sabH + rowNom.domH),
+                            valorDias = (decimal)rowNom.valorD,
+                            valorHoras = (decimal)rowNom.valorH
+                        };
+                        totalNomina.Add(miTotal);
+                    }
+                }
+                TotalesDataGridView.DataSource = totalNomina;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         #endregion

@@ -12,16 +12,12 @@ namespace ManzantinesApp.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class vv_EmpleadosCasas
+    public partial class sysdiagrams
     {
-        public int id_casa { get; set; }
-        public string Finca { get; set; }
-        public int NroCasa { get; set; }
-        public int id_trabajador { get; set; }
-        public string Nro_empleado { get; set; }
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public string Telefono { get; set; }
-        public string Empresa { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

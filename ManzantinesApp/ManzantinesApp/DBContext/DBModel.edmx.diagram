@@ -27,7 +27,6 @@
         <EntityTypeShape EntityType="MazantinesModel.Proveedores" Width="1.5" PointX="1" PointY="20.125" />
         <EntityTypeShape EntityType="MazantinesModel.vv_CasasCountEmpleados" Width="1.5" PointX="9.625" PointY="3.75" />
         <EntityTypeShape EntityType="MazantinesModel.vv_empleados" Width="1.5" PointX="9.625" PointY="6.75" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_EmpleadosCasas" Width="1.5" PointX="7.625" PointY="10.75" />
         <EntityTypeShape EntityType="MazantinesModel.vv_nomina_trabajadores" Width="1.5" PointX="10.625" PointY="0.75" />
         <EntityTypeShape EntityType="MazantinesModel.vv_table_asientos" Width="1.5" PointX="9.625" PointY="10.75" />
         <AssociationConnector Association="MazantinesModel.fk_empresa" />

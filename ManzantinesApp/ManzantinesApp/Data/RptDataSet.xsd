@@ -181,6 +181,90 @@ WHERE id_encargado = @id_encargado</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vv_nominasTableAdapter" GeneratorDataComponentClassName="vv_nominasTableAdapter" Name="vv_nominas" UserDataComponentName="vv_nominasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_nominas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT anio, semana, status, id_encargado, Nro_empleado, trabajador, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH FROM dbo.vv_nominas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="anio" DataSetColumn="anio" />
+              <Mapping SourceColumn="semana" DataSetColumn="semana" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="id_encargado" DataSetColumn="id_encargado" />
+              <Mapping SourceColumn="Nro_empleado" DataSetColumn="Nro_empleado" />
+              <Mapping SourceColumn="trabajador" DataSetColumn="trabajador" />
+              <Mapping SourceColumn="id_empleo" DataSetColumn="id_empleo" />
+              <Mapping SourceColumn="id_det" DataSetColumn="id_det" />
+              <Mapping SourceColumn="id_cab" DataSetColumn="id_cab" />
+              <Mapping SourceColumn="id_empleado" DataSetColumn="id_empleado" />
+              <Mapping SourceColumn="valorD" DataSetColumn="valorD" />
+              <Mapping SourceColumn="valorH" DataSetColumn="valorH" />
+              <Mapping SourceColumn="lunD" DataSetColumn="lunD" />
+              <Mapping SourceColumn="lunH" DataSetColumn="lunH" />
+              <Mapping SourceColumn="marD" DataSetColumn="marD" />
+              <Mapping SourceColumn="marH" DataSetColumn="marH" />
+              <Mapping SourceColumn="mieD" DataSetColumn="mieD" />
+              <Mapping SourceColumn="mieH" DataSetColumn="mieH" />
+              <Mapping SourceColumn="jueD" DataSetColumn="jueD" />
+              <Mapping SourceColumn="jueH" DataSetColumn="jueH" />
+              <Mapping SourceColumn="vieD" DataSetColumn="vieD" />
+              <Mapping SourceColumn="vieH" DataSetColumn="vieH" />
+              <Mapping SourceColumn="sabD" DataSetColumn="sabD" />
+              <Mapping SourceColumn="sabH" DataSetColumn="sabH" />
+              <Mapping SourceColumn="domD" DataSetColumn="domD" />
+              <Mapping SourceColumn="domH" DataSetColumn="domH" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="rpt_nominasTableAdapter" GeneratorDataComponentClassName="rpt_nominasTableAdapter" Name="rpt_nominas" UserDataComponentName="rpt_nominasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_nominas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT anio, semana, status, id_encargado, Encargado, Nro_empleado, trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH FROM dbo.rpt_nominas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="anio" DataSetColumn="anio" />
+              <Mapping SourceColumn="semana" DataSetColumn="semana" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="id_encargado" DataSetColumn="id_encargado" />
+              <Mapping SourceColumn="Encargado" DataSetColumn="Encargado" />
+              <Mapping SourceColumn="Nro_empleado" DataSetColumn="Nro_empleado" />
+              <Mapping SourceColumn="trabajador" DataSetColumn="trabajador" />
+              <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
+              <Mapping SourceColumn="id_empleo" DataSetColumn="id_empleo" />
+              <Mapping SourceColumn="id_det" DataSetColumn="id_det" />
+              <Mapping SourceColumn="id_cab" DataSetColumn="id_cab" />
+              <Mapping SourceColumn="id_empleado" DataSetColumn="id_empleado" />
+              <Mapping SourceColumn="valorD" DataSetColumn="valorD" />
+              <Mapping SourceColumn="valorH" DataSetColumn="valorH" />
+              <Mapping SourceColumn="lunD" DataSetColumn="lunD" />
+              <Mapping SourceColumn="lunH" DataSetColumn="lunH" />
+              <Mapping SourceColumn="marD" DataSetColumn="marD" />
+              <Mapping SourceColumn="marH" DataSetColumn="marH" />
+              <Mapping SourceColumn="mieD" DataSetColumn="mieD" />
+              <Mapping SourceColumn="mieH" DataSetColumn="mieH" />
+              <Mapping SourceColumn="jueD" DataSetColumn="jueD" />
+              <Mapping SourceColumn="jueH" DataSetColumn="jueH" />
+              <Mapping SourceColumn="vieD" DataSetColumn="vieD" />
+              <Mapping SourceColumn="vieH" DataSetColumn="vieH" />
+              <Mapping SourceColumn="sabD" DataSetColumn="sabD" />
+              <Mapping SourceColumn="sabH" DataSetColumn="sabH" />
+              <Mapping SourceColumn="domD" DataSetColumn="domD" />
+              <Mapping SourceColumn="domH" DataSetColumn="domH" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -381,6 +465,120 @@ WHERE id_encargado = @id_encargado</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vv_nominas" msprop:Generator_TableClassName="vv_nominasDataTable" msprop:Generator_TableVarName="tablevv_nominas" msprop:Generator_RowChangedName="vv_nominasRowChanged" msprop:Generator_TablePropName="vv_nominas" msprop:Generator_RowDeletingName="vv_nominasRowDeleting" msprop:Generator_RowChangingName="vv_nominasRowChanging" msprop:Generator_RowEvHandlerName="vv_nominasRowChangeEventHandler" msprop:Generator_RowDeletedName="vv_nominasRowDeleted" msprop:Generator_RowClassName="vv_nominasRow" msprop:Generator_UserTableName="vv_nominas" msprop:Generator_RowEvArgName="vv_nominasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="semana" msprop:Generator_ColumnVarNameInTable="columnsemana" msprop:Generator_ColumnPropNameInRow="semana" msprop:Generator_ColumnPropNameInTable="semanaColumn" msprop:Generator_UserColumnName="semana" type="xs:decimal" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_encargado" msprop:Generator_ColumnVarNameInTable="columnid_encargado" msprop:Generator_ColumnPropNameInRow="id_encargado" msprop:Generator_ColumnPropNameInTable="id_encargadoColumn" msprop:Generator_UserColumnName="id_encargado" type="xs:int" minOccurs="0" />
+              <xs:element name="Nro_empleado" msprop:Generator_ColumnVarNameInTable="columnNro_empleado" msprop:Generator_ColumnPropNameInRow="Nro_empleado" msprop:Generator_ColumnPropNameInTable="Nro_empleadoColumn" msprop:Generator_UserColumnName="Nro_empleado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="trabajador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntrabajador" msprop:Generator_ColumnPropNameInRow="trabajador" msprop:Generator_ColumnPropNameInTable="trabajadorColumn" msprop:Generator_UserColumnName="trabajador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_empleo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnid_empleo" msprop:Generator_ColumnPropNameInRow="id_empleo" msprop:Generator_ColumnPropNameInTable="id_empleoColumn" msprop:Generator_UserColumnName="id_empleo" type="xs:int" minOccurs="0" />
+              <xs:element name="id_det" msprop:Generator_ColumnVarNameInTable="columnid_det" msprop:Generator_ColumnPropNameInRow="id_det" msprop:Generator_ColumnPropNameInTable="id_detColumn" msprop:Generator_UserColumnName="id_det" type="xs:int" />
+              <xs:element name="id_cab" msprop:Generator_ColumnVarNameInTable="columnid_cab" msprop:Generator_ColumnPropNameInRow="id_cab" msprop:Generator_ColumnPropNameInTable="id_cabColumn" msprop:Generator_UserColumnName="id_cab" type="xs:int" minOccurs="0" />
+              <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" minOccurs="0" />
+              <xs:element name="valorD" msprop:Generator_ColumnVarNameInTable="columnvalorD" msprop:Generator_ColumnPropNameInRow="valorD" msprop:Generator_ColumnPropNameInTable="valorDColumn" msprop:Generator_UserColumnName="valorD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorH" msprop:Generator_ColumnVarNameInTable="columnvalorH" msprop:Generator_ColumnPropNameInRow="valorH" msprop:Generator_ColumnPropNameInTable="valorHColumn" msprop:Generator_UserColumnName="valorH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lunD" msprop:Generator_ColumnVarNameInTable="columnlunD" msprop:Generator_ColumnPropNameInRow="lunD" msprop:Generator_ColumnPropNameInTable="lunDColumn" msprop:Generator_UserColumnName="lunD" type="xs:double" minOccurs="0" />
+              <xs:element name="lunH" msprop:Generator_ColumnVarNameInTable="columnlunH" msprop:Generator_ColumnPropNameInRow="lunH" msprop:Generator_ColumnPropNameInTable="lunHColumn" msprop:Generator_UserColumnName="lunH" type="xs:double" minOccurs="0" />
+              <xs:element name="marD" msprop:Generator_ColumnVarNameInTable="columnmarD" msprop:Generator_ColumnPropNameInRow="marD" msprop:Generator_ColumnPropNameInTable="marDColumn" msprop:Generator_UserColumnName="marD" type="xs:double" minOccurs="0" />
+              <xs:element name="marH" msprop:Generator_ColumnVarNameInTable="columnmarH" msprop:Generator_ColumnPropNameInRow="marH" msprop:Generator_ColumnPropNameInTable="marHColumn" msprop:Generator_UserColumnName="marH" type="xs:double" minOccurs="0" />
+              <xs:element name="mieD" msprop:Generator_ColumnVarNameInTable="columnmieD" msprop:Generator_ColumnPropNameInRow="mieD" msprop:Generator_ColumnPropNameInTable="mieDColumn" msprop:Generator_UserColumnName="mieD" type="xs:double" minOccurs="0" />
+              <xs:element name="mieH" msprop:Generator_ColumnVarNameInTable="columnmieH" msprop:Generator_ColumnPropNameInRow="mieH" msprop:Generator_ColumnPropNameInTable="mieHColumn" msprop:Generator_UserColumnName="mieH" type="xs:double" minOccurs="0" />
+              <xs:element name="jueD" msprop:Generator_ColumnVarNameInTable="columnjueD" msprop:Generator_ColumnPropNameInRow="jueD" msprop:Generator_ColumnPropNameInTable="jueDColumn" msprop:Generator_UserColumnName="jueD" type="xs:double" minOccurs="0" />
+              <xs:element name="jueH" msprop:Generator_ColumnVarNameInTable="columnjueH" msprop:Generator_ColumnPropNameInRow="jueH" msprop:Generator_ColumnPropNameInTable="jueHColumn" msprop:Generator_UserColumnName="jueH" type="xs:double" minOccurs="0" />
+              <xs:element name="vieD" msprop:Generator_ColumnVarNameInTable="columnvieD" msprop:Generator_ColumnPropNameInRow="vieD" msprop:Generator_ColumnPropNameInTable="vieDColumn" msprop:Generator_UserColumnName="vieD" type="xs:double" minOccurs="0" />
+              <xs:element name="vieH" msprop:Generator_ColumnVarNameInTable="columnvieH" msprop:Generator_ColumnPropNameInRow="vieH" msprop:Generator_ColumnPropNameInTable="vieHColumn" msprop:Generator_UserColumnName="vieH" type="xs:double" minOccurs="0" />
+              <xs:element name="sabD" msprop:Generator_ColumnVarNameInTable="columnsabD" msprop:Generator_ColumnPropNameInRow="sabD" msprop:Generator_ColumnPropNameInTable="sabDColumn" msprop:Generator_UserColumnName="sabD" type="xs:double" minOccurs="0" />
+              <xs:element name="sabH" msprop:Generator_ColumnVarNameInTable="columnsabH" msprop:Generator_ColumnPropNameInRow="sabH" msprop:Generator_ColumnPropNameInTable="sabHColumn" msprop:Generator_UserColumnName="sabH" type="xs:double" minOccurs="0" />
+              <xs:element name="domD" msprop:Generator_ColumnVarNameInTable="columndomD" msprop:Generator_ColumnPropNameInRow="domD" msprop:Generator_ColumnPropNameInTable="domDColumn" msprop:Generator_UserColumnName="domD" type="xs:double" minOccurs="0" />
+              <xs:element name="domH" msprop:Generator_ColumnVarNameInTable="columndomH" msprop:Generator_ColumnPropNameInRow="domH" msprop:Generator_ColumnPropNameInTable="domHColumn" msprop:Generator_UserColumnName="domH" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rpt_nominas" msprop:Generator_TableClassName="rpt_nominasDataTable" msprop:Generator_TableVarName="tablerpt_nominas" msprop:Generator_TablePropName="rpt_nominas" msprop:Generator_RowDeletingName="rpt_nominasRowDeleting" msprop:Generator_RowChangingName="rpt_nominasRowChanging" msprop:Generator_RowEvHandlerName="rpt_nominasRowChangeEventHandler" msprop:Generator_RowDeletedName="rpt_nominasRowDeleted" msprop:Generator_UserTableName="rpt_nominas" msprop:Generator_RowChangedName="rpt_nominasRowChanged" msprop:Generator_RowEvArgName="rpt_nominasRowChangeEvent" msprop:Generator_RowClassName="rpt_nominasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="semana" msprop:Generator_ColumnVarNameInTable="columnsemana" msprop:Generator_ColumnPropNameInRow="semana" msprop:Generator_ColumnPropNameInTable="semanaColumn" msprop:Generator_UserColumnName="semana" type="xs:decimal" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_encargado" msprop:Generator_ColumnVarNameInTable="columnid_encargado" msprop:Generator_ColumnPropNameInRow="id_encargado" msprop:Generator_ColumnPropNameInTable="id_encargadoColumn" msprop:Generator_UserColumnName="id_encargado" type="xs:int" minOccurs="0" />
+              <xs:element name="Encargado" msprop:Generator_ColumnVarNameInTable="columnEncargado" msprop:Generator_ColumnPropNameInRow="Encargado" msprop:Generator_ColumnPropNameInTable="EncargadoColumn" msprop:Generator_UserColumnName="Encargado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nro_empleado" msprop:Generator_ColumnVarNameInTable="columnNro_empleado" msprop:Generator_ColumnPropNameInRow="Nro_empleado" msprop:Generator_ColumnPropNameInTable="Nro_empleadoColumn" msprop:Generator_UserColumnName="Nro_empleado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="trabajador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntrabajador" msprop:Generator_ColumnPropNameInRow="trabajador" msprop:Generator_ColumnPropNameInTable="trabajadorColumn" msprop:Generator_UserColumnName="trabajador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_empleo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnid_empleo" msprop:Generator_ColumnPropNameInRow="id_empleo" msprop:Generator_ColumnPropNameInTable="id_empleoColumn" msprop:Generator_UserColumnName="id_empleo" type="xs:int" minOccurs="0" />
+              <xs:element name="id_det" msprop:Generator_ColumnVarNameInTable="columnid_det" msprop:Generator_ColumnPropNameInRow="id_det" msprop:Generator_ColumnPropNameInTable="id_detColumn" msprop:Generator_UserColumnName="id_det" type="xs:int" />
+              <xs:element name="id_cab" msprop:Generator_ColumnVarNameInTable="columnid_cab" msprop:Generator_ColumnPropNameInRow="id_cab" msprop:Generator_ColumnPropNameInTable="id_cabColumn" msprop:Generator_UserColumnName="id_cab" type="xs:int" minOccurs="0" />
+              <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" minOccurs="0" />
+              <xs:element name="valorD" msprop:Generator_ColumnVarNameInTable="columnvalorD" msprop:Generator_ColumnPropNameInRow="valorD" msprop:Generator_ColumnPropNameInTable="valorDColumn" msprop:Generator_UserColumnName="valorD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorH" msprop:Generator_ColumnVarNameInTable="columnvalorH" msprop:Generator_ColumnPropNameInRow="valorH" msprop:Generator_ColumnPropNameInTable="valorHColumn" msprop:Generator_UserColumnName="valorH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lunD" msprop:Generator_ColumnVarNameInTable="columnlunD" msprop:Generator_ColumnPropNameInRow="lunD" msprop:Generator_ColumnPropNameInTable="lunDColumn" msprop:Generator_UserColumnName="lunD" type="xs:double" minOccurs="0" />
+              <xs:element name="lunH" msprop:Generator_ColumnVarNameInTable="columnlunH" msprop:Generator_ColumnPropNameInRow="lunH" msprop:Generator_ColumnPropNameInTable="lunHColumn" msprop:Generator_UserColumnName="lunH" type="xs:double" minOccurs="0" />
+              <xs:element name="marD" msprop:Generator_ColumnVarNameInTable="columnmarD" msprop:Generator_ColumnPropNameInRow="marD" msprop:Generator_ColumnPropNameInTable="marDColumn" msprop:Generator_UserColumnName="marD" type="xs:double" minOccurs="0" />
+              <xs:element name="marH" msprop:Generator_ColumnVarNameInTable="columnmarH" msprop:Generator_ColumnPropNameInRow="marH" msprop:Generator_ColumnPropNameInTable="marHColumn" msprop:Generator_UserColumnName="marH" type="xs:double" minOccurs="0" />
+              <xs:element name="mieD" msprop:Generator_ColumnVarNameInTable="columnmieD" msprop:Generator_ColumnPropNameInRow="mieD" msprop:Generator_ColumnPropNameInTable="mieDColumn" msprop:Generator_UserColumnName="mieD" type="xs:double" minOccurs="0" />
+              <xs:element name="mieH" msprop:Generator_ColumnVarNameInTable="columnmieH" msprop:Generator_ColumnPropNameInRow="mieH" msprop:Generator_ColumnPropNameInTable="mieHColumn" msprop:Generator_UserColumnName="mieH" type="xs:double" minOccurs="0" />
+              <xs:element name="jueD" msprop:Generator_ColumnVarNameInTable="columnjueD" msprop:Generator_ColumnPropNameInRow="jueD" msprop:Generator_ColumnPropNameInTable="jueDColumn" msprop:Generator_UserColumnName="jueD" type="xs:double" minOccurs="0" />
+              <xs:element name="jueH" msprop:Generator_ColumnVarNameInTable="columnjueH" msprop:Generator_ColumnPropNameInRow="jueH" msprop:Generator_ColumnPropNameInTable="jueHColumn" msprop:Generator_UserColumnName="jueH" type="xs:double" minOccurs="0" />
+              <xs:element name="vieD" msprop:Generator_ColumnVarNameInTable="columnvieD" msprop:Generator_ColumnPropNameInRow="vieD" msprop:Generator_ColumnPropNameInTable="vieDColumn" msprop:Generator_UserColumnName="vieD" type="xs:double" minOccurs="0" />
+              <xs:element name="vieH" msprop:Generator_ColumnVarNameInTable="columnvieH" msprop:Generator_ColumnPropNameInRow="vieH" msprop:Generator_ColumnPropNameInTable="vieHColumn" msprop:Generator_UserColumnName="vieH" type="xs:double" minOccurs="0" />
+              <xs:element name="sabD" msprop:Generator_ColumnVarNameInTable="columnsabD" msprop:Generator_ColumnPropNameInRow="sabD" msprop:Generator_ColumnPropNameInTable="sabDColumn" msprop:Generator_UserColumnName="sabD" type="xs:double" minOccurs="0" />
+              <xs:element name="sabH" msprop:Generator_ColumnVarNameInTable="columnsabH" msprop:Generator_ColumnPropNameInRow="sabH" msprop:Generator_ColumnPropNameInTable="sabHColumn" msprop:Generator_UserColumnName="sabH" type="xs:double" minOccurs="0" />
+              <xs:element name="domD" msprop:Generator_ColumnVarNameInTable="columndomD" msprop:Generator_ColumnPropNameInRow="domD" msprop:Generator_ColumnPropNameInTable="domDColumn" msprop:Generator_UserColumnName="domD" type="xs:double" minOccurs="0" />
+              <xs:element name="domH" msprop:Generator_ColumnVarNameInTable="columndomH" msprop:Generator_ColumnPropNameInRow="domH" msprop:Generator_ColumnPropNameInTable="domHColumn" msprop:Generator_UserColumnName="domH" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -403,6 +601,14 @@ WHERE id_encargado = @id_encargado</CommandText>
     <xs:unique name="vv_nomina_trabajadores_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vv_nomina_trabajadores" />
       <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="vv_nominas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vv_nominas" />
+      <xs:field xpath="mstns:id_det" />
+    </xs:unique>
+    <xs:unique name="rpt_nominas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:rpt_nominas" />
+      <xs:field xpath="mstns:id_det" />
     </xs:unique>
   </xs:element>
 </xs:schema>

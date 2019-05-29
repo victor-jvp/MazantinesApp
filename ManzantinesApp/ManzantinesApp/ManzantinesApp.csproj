@@ -142,6 +142,7 @@
     <Compile Include="Classes\Anios.cs" />
     <Compile Include="Classes\Nomina.cs" />
     <Compile Include="Classes\Semanas.cs" />
+    <Compile Include="Classes\TotalNomina.cs" />
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -224,9 +225,6 @@
     <Compile Include="DBContext\vv_empleados.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\vv_EmpleadosCasas.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBContext\vv_nominas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -271,6 +269,12 @@
     </Compile>
     <Compile Include="Nomina\FrmNomina.Designer.cs">
       <DependentUpon>FrmNomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\RptNomina.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNomina.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Proveedores\FrmAddProveedor.cs">
       <SubType>Form</SubType>
@@ -417,6 +421,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmNomina.resx">
       <DependentUpon>FrmNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\RptNomina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNomina.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FrmAddProveedor.resx">
       <DependentUpon>FrmAddProveedor.cs</DependentUpon>
