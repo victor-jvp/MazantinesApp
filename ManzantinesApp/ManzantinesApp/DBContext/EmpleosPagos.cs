@@ -16,8 +16,8 @@ namespace ManzantinesApp.DBContext
     {
         public int Id { get; set; }
         public Nullable<int> id_empleo { get; set; }
-        public Nullable<decimal> importeDia { get; set; }
-        public Nullable<decimal> importeHoras { get; set; }
+        public Nullable<double> importeDia { get; set; }
+        public Nullable<double> importeHoras { get; set; }
     
         public virtual Empleos Empleos { get; set; }
     }

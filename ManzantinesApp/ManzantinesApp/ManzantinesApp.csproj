@@ -166,9 +166,6 @@
     <Compile Include="DBContext\Casas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\C__RefactorLog.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBContext\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +211,9 @@
     <Compile Include="DBContext\Proveedores.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBContext\rpt_nominas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\Trabajadores.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -224,6 +224,9 @@
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\vv_empleados.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_EmpleadosCasas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\vv_nominas.cs">

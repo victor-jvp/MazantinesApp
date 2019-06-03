@@ -266,6 +266,30 @@ FROM            vv_CasasCountEmpleados</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="rpt_recibosTableAdapter" GeneratorDataComponentClassName="rpt_recibosTableAdapter" Name="rpt_recibos" UserDataComponentName="rpt_recibosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_recibos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, valorH FROM dbo.rpt_recibos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nro_empleado" DataSetColumn="Nro_empleado" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="Apellidos" DataSetColumn="Apellidos" />
+              <Mapping SourceColumn="anio" DataSetColumn="anio" />
+              <Mapping SourceColumn="semana" DataSetColumn="semana" />
+              <Mapping SourceColumn="totalD" DataSetColumn="totalD" />
+              <Mapping SourceColumn="totalH" DataSetColumn="totalH" />
+              <Mapping SourceColumn="valorD" DataSetColumn="valorD" />
+              <Mapping SourceColumn="valorH" DataSetColumn="valorH" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -564,8 +588,8 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <xs:element name="id_det" msprop:Generator_ColumnVarNameInTable="columnid_det" msprop:Generator_ColumnPropNameInRow="id_det" msprop:Generator_ColumnPropNameInTable="id_detColumn" msprop:Generator_UserColumnName="id_det" type="xs:int" />
               <xs:element name="id_cab" msprop:Generator_ColumnVarNameInTable="columnid_cab" msprop:Generator_ColumnPropNameInRow="id_cab" msprop:Generator_ColumnPropNameInTable="id_cabColumn" msprop:Generator_UserColumnName="id_cab" type="xs:int" minOccurs="0" />
               <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" minOccurs="0" />
-              <xs:element name="valorD" msprop:Generator_ColumnVarNameInTable="columnvalorD" msprop:Generator_ColumnPropNameInRow="valorD" msprop:Generator_ColumnPropNameInTable="valorDColumn" msprop:Generator_UserColumnName="valorD" type="xs:decimal" minOccurs="0" />
-              <xs:element name="valorH" msprop:Generator_ColumnVarNameInTable="columnvalorH" msprop:Generator_ColumnPropNameInRow="valorH" msprop:Generator_ColumnPropNameInTable="valorHColumn" msprop:Generator_UserColumnName="valorH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="valorD" msprop:Generator_ColumnVarNameInTable="columnvalorD" msprop:Generator_ColumnPropNameInRow="valorD" msprop:Generator_ColumnPropNameInTable="valorDColumn" msprop:Generator_UserColumnName="valorD" type="xs:double" minOccurs="0" />
+              <xs:element name="valorH" msprop:Generator_ColumnVarNameInTable="columnvalorH" msprop:Generator_ColumnPropNameInRow="valorH" msprop:Generator_ColumnPropNameInTable="valorHColumn" msprop:Generator_UserColumnName="valorH" type="xs:double" minOccurs="0" />
               <xs:element name="lunD" msprop:Generator_ColumnVarNameInTable="columnlunD" msprop:Generator_ColumnPropNameInRow="lunD" msprop:Generator_ColumnPropNameInTable="lunDColumn" msprop:Generator_UserColumnName="lunD" type="xs:double" minOccurs="0" />
               <xs:element name="lunH" msprop:Generator_ColumnVarNameInTable="columnlunH" msprop:Generator_ColumnPropNameInRow="lunH" msprop:Generator_ColumnPropNameInTable="lunHColumn" msprop:Generator_UserColumnName="lunH" type="xs:double" minOccurs="0" />
               <xs:element name="marD" msprop:Generator_ColumnVarNameInTable="columnmarD" msprop:Generator_ColumnPropNameInRow="marD" msprop:Generator_ColumnPropNameInTable="marDColumn" msprop:Generator_UserColumnName="marD" type="xs:double" minOccurs="0" />
@@ -587,6 +611,39 @@ FROM            vv_CasasCountEmpleados</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rpt_recibos" msprop:Generator_TableClassName="rpt_recibosDataTable" msprop:Generator_TableVarName="tablerpt_recibos" msprop:Generator_TablePropName="rpt_recibos" msprop:Generator_RowDeletingName="rpt_recibosRowDeleting" msprop:Generator_RowChangingName="rpt_recibosRowChanging" msprop:Generator_RowEvHandlerName="rpt_recibosRowChangeEventHandler" msprop:Generator_RowDeletedName="rpt_recibosRowDeleted" msprop:Generator_UserTableName="rpt_recibos" msprop:Generator_RowChangedName="rpt_recibosRowChanged" msprop:Generator_RowEvArgName="rpt_recibosRowChangeEvent" msprop:Generator_RowClassName="rpt_recibosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nro_empleado" msprop:Generator_ColumnVarNameInTable="columnNro_empleado" msprop:Generator_ColumnPropNameInRow="Nro_empleado" msprop:Generator_ColumnPropNameInTable="Nro_empleadoColumn" msprop:Generator_UserColumnName="Nro_empleado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellidos" msprop:Generator_ColumnVarNameInTable="columnApellidos" msprop:Generator_ColumnPropNameInRow="Apellidos" msprop:Generator_ColumnPropNameInTable="ApellidosColumn" msprop:Generator_UserColumnName="Apellidos" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="semana" msprop:Generator_ColumnVarNameInTable="columnsemana" msprop:Generator_ColumnPropNameInRow="semana" msprop:Generator_ColumnPropNameInTable="semanaColumn" msprop:Generator_UserColumnName="semana" type="xs:decimal" minOccurs="0" />
+              <xs:element name="totalD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalD" msprop:Generator_ColumnPropNameInRow="totalD" msprop:Generator_ColumnPropNameInTable="totalDColumn" msprop:Generator_UserColumnName="totalD" type="xs:double" minOccurs="0" />
+              <xs:element name="totalH" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalH" msprop:Generator_ColumnPropNameInRow="totalH" msprop:Generator_ColumnPropNameInTable="totalHColumn" msprop:Generator_UserColumnName="totalH" type="xs:double" minOccurs="0" />
+              <xs:element name="valorD" msprop:Generator_ColumnVarNameInTable="columnvalorD" msprop:Generator_ColumnPropNameInRow="valorD" msprop:Generator_ColumnPropNameInTable="valorDColumn" msprop:Generator_UserColumnName="valorD" type="xs:double" minOccurs="0" />
+              <xs:element name="valorH" msprop:Generator_ColumnVarNameInTable="columnvalorH" msprop:Generator_ColumnPropNameInRow="valorH" msprop:Generator_ColumnPropNameInTable="valorHColumn" msprop:Generator_UserColumnName="valorH" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -7,6 +7,7 @@
     using System.Windows.Forms;
     using System.Linq;
     using Data;
+    using ManzantinesApp.DBContext;
 
     public partial class FrmEditEmpleado : Form
     {
@@ -33,7 +34,7 @@
             if (miTrabajador == null)
             {
                 this.fincaComboBox.SelectedIndex = -1;
-                trabajadoresBindingSource.AddNew();                
+                trabajadoresBindingSource.AddNew();
             }
             else
             {

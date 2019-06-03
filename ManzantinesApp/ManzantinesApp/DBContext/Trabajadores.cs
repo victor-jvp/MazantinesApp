@@ -17,8 +17,8 @@ namespace ManzantinesApp.DBContext
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Trabajadores()
         {
-            this.Trabajadores_Empleos = new HashSet<Trabajadores_Empleos>();
             this.NominasDet = new HashSet<NominasDet>();
+            this.Trabajadores_Empleos = new HashSet<Trabajadores_Empleos>();
         }
     
         public int Id { get; set; }
@@ -30,12 +30,14 @@ namespace ManzantinesApp.DBContext
         public Nullable<int> id_casa { get; set; }
         public string foto { get; set; }
         public byte[] foto2 { get; set; }
+        public string CCC { get; set; }
+        public Nullable<int> Caja { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Trabajadores_Empleos> Trabajadores_Empleos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NominasDet> NominasDet { get; set; }
         public virtual Casas Casas { get; set; }
         public virtual Empresas Empresas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NominasDet> NominasDet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Trabajadores_Empleos> Trabajadores_Empleos { get; set; }
     }
 }

@@ -12,8 +12,18 @@ namespace ManzantinesApp.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class NominasDet
+    public partial class rpt_nominas
     {
+        public Nullable<decimal> anio { get; set; }
+        public Nullable<decimal> semana { get; set; }
+        public string status { get; set; }
+        public Nullable<int> id_encargado { get; set; }
+        public string Encargado { get; set; }
+        public string Nro_empleado { get; set; }
+        public string trabajador { get; set; }
+        public string ccc { get; set; }
+        public string Empresa { get; set; }
+        public Nullable<int> id_empleo { get; set; }
         public int id_det { get; set; }
         public Nullable<int> id_cab { get; set; }
         public Nullable<int> id_empleado { get; set; }
@@ -33,9 +43,5 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> sabH { get; set; }
         public Nullable<double> domD { get; set; }
         public Nullable<double> domH { get; set; }
-        public Nullable<bool> pagado { get; set; }
-    
-        public virtual NominasCab NominasCab { get; set; }
-        public virtual Trabajadores Trabajadores { get; set; }
     }
 }

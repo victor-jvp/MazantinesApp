@@ -16,13 +16,16 @@ namespace ManzantinesApp.DBContext
     {
         public Nullable<decimal> anio { get; set; }
         public Nullable<decimal> semana { get; set; }
-        public Nullable<int> id_encargado { get; set; }
         public string status { get; set; }
+        public Nullable<int> id_encargado { get; set; }
+        public string Nro_empleado { get; set; }
+        public string trabajador { get; set; }
+        public Nullable<int> id_empleo { get; set; }
         public int id_det { get; set; }
         public Nullable<int> id_cab { get; set; }
         public Nullable<int> id_empleado { get; set; }
-        public Nullable<decimal> valorD { get; set; }
-        public Nullable<decimal> valorH { get; set; }
+        public Nullable<double> valorD { get; set; }
+        public Nullable<double> valorH { get; set; }
         public Nullable<double> lunD { get; set; }
         public Nullable<double> lunH { get; set; }
         public Nullable<double> marD { get; set; }
@@ -37,8 +40,5 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> sabH { get; set; }
         public Nullable<double> domD { get; set; }
         public Nullable<double> domH { get; set; }
-        public string Nro_empleado { get; set; }
-        public string trabajador { get; set; }
-        public Nullable<int> id_empleo { get; set; }
     }
 }

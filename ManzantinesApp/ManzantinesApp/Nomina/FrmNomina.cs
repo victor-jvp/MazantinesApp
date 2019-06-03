@@ -130,6 +130,10 @@
                     }
                 }
 
+                NominaDataGridView.DataSource = nominas;
+                FormatColumns();
+                CalcularTotales();
+
                 //Validar si la nomina esta cerrada
                 if (nominas[0].status == "C")
                 {
@@ -145,9 +149,7 @@
                     HabilitarGrid();
                 }
 
-                NominaDataGridView.DataSource = nominas;
-                CalcularTotales();
-                FormatColumns();
+
             }
             catch (Exception ex)
             {
@@ -188,12 +190,21 @@
                         db.SaveChanges();
                     }
                 }
+
+                LimpiarNominaGrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error en Guardar Nómina", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+        }
+
+        private void LimpiarNominaGrid()
+        {
+            NominaDataGridView.DataSource = null;
+            NominaDataGridView.Columns.Clear();
+
+            TotalesDataGridView.DataSource = null;
         }
 
         private void CerrarNomina()
@@ -221,15 +232,90 @@
 
         private void FormatColumns()
         {
+            if(NominaDataGridView.Columns["totalD"] == null)
+            {
+                NominaDataGridView.Columns.Add("totalD", "Dias");
+                NominaDataGridView.Columns.Add("totalH", "Horas");
+            }            
+
+            NominaDataGridView.Columns["anio"].Visible = false;
+            NominaDataGridView.Columns["semana"].Visible = false;
+            NominaDataGridView.Columns["status"].Visible = false;
+            NominaDataGridView.Columns["id_encargado"].Visible = false;
+            NominaDataGridView.Columns["nro_empleado"].HeaderText = "Nro. Empleado";
+            NominaDataGridView.Columns["nro_empleado"].ReadOnly = true;
+            NominaDataGridView.Columns["nro_empleado"].DefaultCellStyle.BackColor = Color.LightGray;
+            NominaDataGridView.Columns["trabajador"].HeaderText = "Empleado";
+            NominaDataGridView.Columns["trabajador"].DefaultCellStyle.BackColor = Color.LightGray;
+            NominaDataGridView.Columns["trabajador"].ReadOnly = true;
+            NominaDataGridView.Columns["id_empleo"].Visible = false;
+            NominaDataGridView.Columns["id_det"].Visible = false;
+            NominaDataGridView.Columns["id_cab"].Visible = false;
+            NominaDataGridView.Columns["id_empleado"].Visible = false;
+            NominaDataGridView.Columns["valorD"].Visible = false;
+            NominaDataGridView.Columns["valorH"].Visible = false;
+            NominaDataGridView.Columns["lunD"].HeaderText = "Dia";
+            NominaDataGridView.Columns["lunH"].HeaderText = "Extra";
+            NominaDataGridView.Columns["lunD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["lunD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["lunH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["lunH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["marD"].HeaderText = "Dia";
+            NominaDataGridView.Columns["marH"].HeaderText = "Extra";
+            NominaDataGridView.Columns["marD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["marD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["marH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["marH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["mieD"].HeaderText = "Dia";
+            NominaDataGridView.Columns["mieH"].HeaderText = "Extra";
+            NominaDataGridView.Columns["mieD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["mieD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["mieH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["mieH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["jueD"].HeaderText = "Dia";
+            NominaDataGridView.Columns["jueH"].HeaderText = "Extra";
+            NominaDataGridView.Columns["jueD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["jueD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["jueH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["jueH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["vieD"].HeaderText = "Dia";
+            NominaDataGridView.Columns["vieH"].HeaderText = "Extra";
+            NominaDataGridView.Columns["vieD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["vieD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["vieH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["vieH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["sabD"].HeaderText = "Dia";
+            NominaDataGridView.Columns["sabH"].HeaderText = "Extra";
+            NominaDataGridView.Columns["sabD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["sabD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["sabH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["sabH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["domD"].HeaderText = "Dia";
+            NominaDataGridView.Columns["domH"].HeaderText = "Extra";
+            NominaDataGridView.Columns["domD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["domD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["domH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["domH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            NominaDataGridView.Columns["totalD"].HeaderText = "Dias";
+            NominaDataGridView.Columns["totalD"].ReadOnly = true;
+            NominaDataGridView.Columns["totalD"].DefaultCellStyle.BackColor = Color.LightGray;
+            NominaDataGridView.Columns["totalD"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["totalH"].HeaderText = "Horas";
+            NominaDataGridView.Columns["totalH"].ReadOnly = true;
+            NominaDataGridView.Columns["totalH"].DefaultCellStyle.BackColor = Color.LightGray;
+            NominaDataGridView.Columns["totalH"].DefaultCellStyle.Format = "N0";
+
             int i = 0;
             NominaDataGridView.Columns["anio"].DisplayIndex = i;
+            NominaDataGridView.Columns["semana"].DisplayIndex = i++;
             NominaDataGridView.Columns["status"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_encargado"].DisplayIndex = i++;
-            NominaDataGridView.Columns["id_empleado"].DisplayIndex = i++;
             NominaDataGridView.Columns["nro_empleado"].DisplayIndex = i++;
-            NominaDataGridView.Columns["empleado"].DisplayIndex = i++;
-            NominaDataGridView.Columns["id_cab"].DisplayIndex = i++;
+            NominaDataGridView.Columns["trabajador"].DisplayIndex = i++;
+            NominaDataGridView.Columns["id_empleo"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_det"].DisplayIndex = i++;
+            NominaDataGridView.Columns["id_cab"].DisplayIndex = i++;
+            NominaDataGridView.Columns["id_empleado"].DisplayIndex = i++;            
             NominaDataGridView.Columns["valorD"].DisplayIndex = i++;
             NominaDataGridView.Columns["valorH"].DisplayIndex = i++;
             NominaDataGridView.Columns["lunD"].DisplayIndex = i++;
@@ -248,6 +334,26 @@
             NominaDataGridView.Columns["domH"].DisplayIndex = i++;
             NominaDataGridView.Columns["totalD"].DisplayIndex = i++;
             NominaDataGridView.Columns["totalH"].DisplayIndex = i++;
+
+            NominaDataGridView.Columns["nro_empleado"].Width = 60;
+            NominaDataGridView.Columns["trabajador"].Width = 110;
+            int valores = 50;
+            NominaDataGridView.Columns["lunD"].Width = valores;
+            NominaDataGridView.Columns["lunH"].Width = valores;
+            NominaDataGridView.Columns["marD"].Width = valores;
+            NominaDataGridView.Columns["marH"].Width = valores;
+            NominaDataGridView.Columns["mieD"].Width = valores;
+            NominaDataGridView.Columns["mieH"].Width = valores;
+            NominaDataGridView.Columns["jueD"].Width = valores;
+            NominaDataGridView.Columns["jueH"].Width = valores;
+            NominaDataGridView.Columns["vieD"].Width = valores;
+            NominaDataGridView.Columns["vieH"].Width = valores;
+            NominaDataGridView.Columns["sabD"].Width = valores;
+            NominaDataGridView.Columns["sabH"].Width = valores;
+            NominaDataGridView.Columns["domD"].Width = valores;
+            NominaDataGridView.Columns["domH"].Width = valores;
+            NominaDataGridView.Columns["totalD"].Width = valores;
+            NominaDataGridView.Columns["totalH"].Width = valores;
         }
 
         private void CalcularTotales(int rowIndex = -1)
@@ -369,7 +475,34 @@
                         totalNomina.Add(miTotal);
                     }
                 }
+
                 TotalesDataGridView.DataSource = totalNomina;
+
+                TotalesDataGridView.Columns["id_empleo"].Visible = false;
+                TotalesDataGridView.Columns["TotalDias"].HeaderText = "Dias";
+                TotalesDataGridView.Columns["TotalDias"].DefaultCellStyle.Format = "N0";
+                TotalesDataGridView.Columns["TotalDias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                TotalesDataGridView.Columns["TotalHoras"].HeaderText = "Horas";
+                TotalesDataGridView.Columns["TotalHoras"].DefaultCellStyle.Format = "N0";
+                TotalesDataGridView.Columns["TotalHoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                TotalesDataGridView.Columns["valorDias"].HeaderText = "€ Dias";
+                TotalesDataGridView.Columns["valorDias"].DefaultCellStyle.Format = "N2";
+                TotalesDataGridView.Columns["valorDias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                TotalesDataGridView.Columns["valorHoras"].HeaderText = "€ Horas";
+                TotalesDataGridView.Columns["valorHoras"].DefaultCellStyle.Format = "N2";
+                TotalesDataGridView.Columns["valorHoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                TotalesDataGridView.Columns["total"].DefaultCellStyle.Format = "N2";
+                TotalesDataGridView.Columns["total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+                int pos = 0;
+                TotalesDataGridView.Columns["Id_empleo"].DisplayIndex = pos++;
+                TotalesDataGridView.Columns["Empleo"].DisplayIndex = pos++;
+                TotalesDataGridView.Columns["TotalDias"].DisplayIndex = pos++;
+                TotalesDataGridView.Columns["valorDias"].DisplayIndex = pos++;
+                TotalesDataGridView.Columns["TotalHoras"].DisplayIndex = pos++;
+                TotalesDataGridView.Columns["valorHoras"].DisplayIndex = pos++;
+                TotalesDataGridView.Columns["Total"].DisplayIndex = pos++;
+
             }
             catch (Exception)
             {
@@ -410,7 +543,7 @@
 
         private void NominaDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (NominaDataGridView.Columns[e.ColumnIndex].ReadOnly == false) // 1 should be your column index
+            if (NominaDataGridView.Columns[e.ColumnIndex].ReadOnly == false && NominaDataGridView.Columns[e.ColumnIndex].Visible == true) // 1 should be your column index
             {
                 float i;
 
@@ -470,8 +603,16 @@
                 MessageBox.Show("No existen datos cargados para imprimir", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            List<rpt_nominas> rptNomina = null;
+            using (MazantinesEntities db = new MazantinesEntities())
+            {
+                int id_cab = Convert.ToInt32(nominas[0].id_cab);
+                rptNomina = db.rpt_nominas.Where(r => r.id_cab == id_cab).ToList();
+            }
+
             this.Enabled = false;
-            Reports.VistaPreliminar(new RptNomina(), ToDataTable(this.nominas));
+            Reports.VistaPreliminar(new RptNomina(), ToDataTable(rptNomina));
             this.Enabled = true;
         }
 

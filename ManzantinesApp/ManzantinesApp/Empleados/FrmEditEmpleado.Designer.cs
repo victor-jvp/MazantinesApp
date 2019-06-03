@@ -37,6 +37,8 @@
             System.Windows.Forms.Label id_empresaLabel;
             System.Windows.Forms.Label fincaLabel;
             System.Windows.Forms.Label nroCasaLabel;
+            System.Windows.Forms.Label cCCLabel;
+            System.Windows.Forms.Label cajaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditEmpleado));
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,6 +75,8 @@
             this.id_empleo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.QuitarEmpleoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.cCCTextBox = new System.Windows.Forms.TextBox();
+            this.cajaTextBox = new System.Windows.Forms.TextBox();
             nro_empleadoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -81,6 +85,8 @@
             id_empresaLabel = new System.Windows.Forms.Label();
             fincaLabel = new System.Windows.Forms.Label();
             nroCasaLabel = new System.Windows.Forms.Label();
+            cCCLabel = new System.Windows.Forms.Label();
+            cajaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
@@ -144,7 +150,7 @@
             // id_empresaLabel
             // 
             id_empresaLabel.AutoSize = true;
-            id_empresaLabel.Location = new System.Drawing.Point(275, 170);
+            id_empresaLabel.Location = new System.Drawing.Point(275, 206);
             id_empresaLabel.Name = "id_empresaLabel";
             id_empresaLabel.Size = new System.Drawing.Size(51, 13);
             id_empresaLabel.TabIndex = 8;
@@ -153,7 +159,7 @@
             // fincaLabel
             // 
             fincaLabel.AutoSize = true;
-            fincaLabel.Location = new System.Drawing.Point(290, 197);
+            fincaLabel.Location = new System.Drawing.Point(290, 233);
             fincaLabel.Name = "fincaLabel";
             fincaLabel.Size = new System.Drawing.Size(36, 13);
             fincaLabel.TabIndex = 20;
@@ -162,11 +168,29 @@
             // nroCasaLabel
             // 
             nroCasaLabel.AutoSize = true;
-            nroCasaLabel.Location = new System.Drawing.Point(272, 224);
+            nroCasaLabel.Location = new System.Drawing.Point(272, 260);
             nroCasaLabel.Name = "nroCasaLabel";
             nroCasaLabel.Size = new System.Drawing.Size(54, 13);
             nroCasaLabel.TabIndex = 21;
             nroCasaLabel.Text = "Nro Casa:";
+            // 
+            // cCCLabel
+            // 
+            cCCLabel.AutoSize = true;
+            cCCLabel.Location = new System.Drawing.Point(61, 150);
+            cCCLabel.Name = "cCCLabel";
+            cCCLabel.Size = new System.Drawing.Size(31, 13);
+            cCCLabel.TabIndex = 26;
+            cCCLabel.Text = "CCC:";
+            // 
+            // cajaLabel
+            // 
+            cajaLabel.AutoSize = true;
+            cajaLabel.Location = new System.Drawing.Point(216, 34);
+            cajaLabel.Name = "cajaLabel";
+            cajaLabel.Size = new System.Drawing.Size(31, 13);
+            cajaLabel.TabIndex = 27;
+            cajaLabel.Text = "Caja:";
             // 
             // dataSet1
             // 
@@ -187,11 +211,15 @@
             this.tableAdapterManager.AsientosTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = null;
+            this.tableAdapterManager.DiasSemanaTableAdapter = null;
+            this.tableAdapterManager.EmpleosPagosTableAdapter = null;
             this.tableAdapterManager.EmpleosTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
             this.tableAdapterManager.LiquidacionesTableAdapter = null;
+            this.tableAdapterManager.NominasCabTableAdapter = null;
+            this.tableAdapterManager.NominasDetTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = this.trabajadores_EmpleosTableAdapter;
             this.tableAdapterManager.TrabajadoresTableAdapter = this.trabajadoresTableAdapter;
@@ -261,7 +289,7 @@
             this.id_empresaComboBox.DataSource = this.empresasBindingSource;
             this.id_empresaComboBox.DisplayMember = "Empresa";
             this.id_empresaComboBox.FormattingEnabled = true;
-            this.id_empresaComboBox.Location = new System.Drawing.Point(332, 167);
+            this.id_empresaComboBox.Location = new System.Drawing.Point(332, 203);
             this.id_empresaComboBox.Name = "id_empresaComboBox";
             this.id_empresaComboBox.Size = new System.Drawing.Size(140, 21);
             this.id_empresaComboBox.TabIndex = 9;
@@ -283,7 +311,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(484, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(492, 25);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -321,7 +349,7 @@
             this.fincaComboBox.DataSource = this.fincasBindingSource;
             this.fincaComboBox.DisplayMember = "Finca";
             this.fincaComboBox.FormattingEnabled = true;
-            this.fincaComboBox.Location = new System.Drawing.Point(332, 194);
+            this.fincaComboBox.Location = new System.Drawing.Point(332, 230);
             this.fincaComboBox.Name = "fincaComboBox";
             this.fincaComboBox.Size = new System.Drawing.Size(140, 21);
             this.fincaComboBox.TabIndex = 21;
@@ -341,7 +369,7 @@
             this.nroCasaComboBox.DataSource = this.casasBindingSource;
             this.nroCasaComboBox.DisplayMember = "NroCasa";
             this.nroCasaComboBox.FormattingEnabled = true;
-            this.nroCasaComboBox.Location = new System.Drawing.Point(332, 221);
+            this.nroCasaComboBox.Location = new System.Drawing.Point(332, 257);
             this.nroCasaComboBox.Name = "nroCasaComboBox";
             this.nroCasaComboBox.Size = new System.Drawing.Size(140, 21);
             this.nroCasaComboBox.TabIndex = 22;
@@ -396,7 +424,7 @@
             this.id_trabajador,
             this.id_empleo});
             this.trabajadores_EmpleosDataGridView.DataSource = this.trabajadores_EmpleosBindingSource;
-            this.trabajadores_EmpleosDataGridView.Location = new System.Drawing.Point(12, 147);
+            this.trabajadores_EmpleosDataGridView.Location = new System.Drawing.Point(12, 183);
             this.trabajadores_EmpleosDataGridView.Name = "trabajadores_EmpleosDataGridView";
             this.trabajadores_EmpleosDataGridView.RowHeadersWidth = 31;
             this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(238, 135);
@@ -436,7 +464,7 @@
             this.toolStrip3.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QuitarEmpleoToolStripButton});
-            this.toolStrip3.Location = new System.Drawing.Point(253, 258);
+            this.toolStrip3.Location = new System.Drawing.Point(253, 294);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(115, 25);
             this.toolStrip3.TabIndex = 26;
@@ -451,11 +479,31 @@
             this.QuitarEmpleoToolStripButton.Text = "Quitar Empleo";
             this.QuitarEmpleoToolStripButton.Click += new System.EventHandler(this.QuitarEmpleoToolStripButton_Click);
             // 
+            // cCCTextBox
+            // 
+            this.cCCTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "CCC", true));
+            this.cCCTextBox.Location = new System.Drawing.Point(98, 147);
+            this.cCCTextBox.Name = "cCCTextBox";
+            this.cCCTextBox.Size = new System.Drawing.Size(121, 20);
+            this.cCCTextBox.TabIndex = 27;
+            // 
+            // cajaTextBox
+            // 
+            this.cajaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.trabajadoresBindingSource, "Caja", true));
+            this.cajaTextBox.Location = new System.Drawing.Point(253, 31);
+            this.cajaTextBox.Name = "cajaTextBox";
+            this.cajaTextBox.Size = new System.Drawing.Size(56, 20);
+            this.cajaTextBox.TabIndex = 28;
+            // 
             // FrmEditEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 292);
+            this.ClientSize = new System.Drawing.Size(492, 321);
+            this.Controls.Add(cajaLabel);
+            this.Controls.Add(this.cajaTextBox);
+            this.Controls.Add(cCCLabel);
+            this.Controls.Add(this.cCCTextBox);
             this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.trabajadores_EmpleosDataGridView);
             this.Controls.Add(this.foto2PictureBox);
@@ -543,5 +591,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn id_empleo;
         private System.Windows.Forms.ToolStrip toolStrip3;
         private System.Windows.Forms.ToolStripButton QuitarEmpleoToolStripButton;
+        private System.Windows.Forms.TextBox cCCTextBox;
+        private System.Windows.Forms.TextBox cajaTextBox;
     }
 }
