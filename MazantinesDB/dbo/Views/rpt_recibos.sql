@@ -3,6 +3,7 @@
 	tra.Nro_empleado,
 	tra.Nombre,
 	tra.Apellidos,
+	cab.id_cab,
 	cab.anio,
 	cab.semana,
 	cab.id_encargado,
