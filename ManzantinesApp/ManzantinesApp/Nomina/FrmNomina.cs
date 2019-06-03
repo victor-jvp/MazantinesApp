@@ -484,20 +484,37 @@
                 }
                 foreach (Empleos empleo in empleos)
                 {
-                    var rowNom = this.nominas.Where(n => n.id_empleo == empleo.Id).FirstOrDefault();
+                    var empNomina = this.nominas.Where(n => n.id_empleo == empleo.Id).ToList();
 
-                    if(rowNom != null)
+                    double lunD = empNomina.Sum(f => (double)f.lunD);
+                    double marD = empNomina.Sum(f => (double)f.marD);
+                    double mieD = empNomina.Sum(f => (double)f.mieD);
+                    double jueD = empNomina.Sum(f => (double)f.jueD);
+                    double vieD = empNomina.Sum(f => (double)f.vieD);
+                    double sabD = empNomina.Sum(f => (double)f.sabD);
+                    double domD = empNomina.Sum(f => (double)f.domD);
+
+                    double lunH = empNomina.Sum(f => (double)f.lunH);
+                    double marH = empNomina.Sum(f => (double)f.marH);
+                    double mieH = empNomina.Sum(f => (double)f.mieH);
+                    double jueH = empNomina.Sum(f => (double)f.jueH);
+                    double vieH = empNomina.Sum(f => (double)f.vieH);
+                    double sabH = empNomina.Sum(f => (double)f.sabH);
+                    double domH = empNomina.Sum(f => (double)f.domH);
+
+                    double valorD = empNomina.Select(f => (double)f.valorD).FirstOrDefault();
+                    double valorH = empNomina.Select(f => (double)f.valorH).FirstOrDefault();
+
+                    TotalNomina miTotal = new TotalNomina
                     {
-                        TotalNomina miTotal = new TotalNomina {
-                            Empleo = empleo.Empleo,
-                            Id_empleo = empleo.Id,
-                            TotalDias = Convert.ToDouble(rowNom.lunD + rowNom.marD + rowNom.mieD + rowNom.jueD + rowNom.vieD + rowNom.sabD + rowNom.domD),
-                            TotalHoras = Convert.ToDouble(rowNom.lunH + rowNom.marH + rowNom.mieH + rowNom.jueH + rowNom.vieH + rowNom.sabH + rowNom.domH),
-                            valorDias = (decimal)rowNom.valorD,
-                            valorHoras = (decimal)rowNom.valorH
-                        };
-                        totalNomina.Add(miTotal);
-                    }
+                        Empleo = empleo.Empleo,
+                        Id_empleo = empleo.Id,
+                        TotalDias = Convert.ToDouble(lunD + marD + mieD + jueD + vieD + sabD + domD),
+                        TotalHoras = Convert.ToDouble(lunH + marH + mieH + jueH + vieH + sabH + domH),
+                        valorDias = (decimal)valorD,
+                        valorHoras = (decimal)valorH
+                    };
+                    totalNomina.Add(miTotal);
                 }
 
                 TotalesDataGridView.DataSource = totalNomina;
@@ -650,15 +667,11 @@
                 return;
             }
 
-            List<RptRecibos> rptNomina = null;
-            using (MazantinesEntities db = new MazantinesEntities())
-            {
-                int id_cab = Convert.ToInt32(nominas[0].id_cab);
-                rptNomina = db.rpt_nominas.Where(r => r.id_cab == id_cab).ToList();
-            }
+            int id_cab = Convert.ToInt32(nominas[0].id_cab);
+            DataTable dt = rpt_recibosTableAdapter1.GetDataByIdCab(id_cab);
 
             this.Enabled = false;
-            Reports.VistaPreliminar(new RptNomina(), ToDataTable(rptNomina));
+            Reports.VistaPreliminar(new RptRecibos(), dt);
             this.Enabled = true;
         }
     }
