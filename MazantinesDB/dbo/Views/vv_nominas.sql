@@ -5,6 +5,7 @@
 	cab.id_encargado,
 	tra.Nro_empleado,
 	tra.trabajador,
+	tra.id_empleo,
 	det.* 
 FROM
 	NominasCab cab

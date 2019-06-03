@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="Classes\Anios.cs" />
     <Compile Include="Classes\Nomina.cs" />
+    <Compile Include="Classes\Reports.cs" />
     <Compile Include="Classes\Semanas.cs" />
     <Compile Include="Classes\TotalNomina.cs" />
     <Compile Include="Data\DataSet1.cs">
@@ -592,6 +593,9 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\PrintSetup_16x_32.bmp" />
+    <None Include="Resources\Report_16x_32.bmp" />
+    <None Include="Resources\Print_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

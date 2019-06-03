@@ -9,6 +9,7 @@
     using System.Linq;
     using ManzantinesApp.DBContext;
     using System.Drawing;
+    using System.Reflection;
 
     public partial class FrmNomina : Form
     {
@@ -461,6 +462,42 @@
         private void NominaDataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
             CalcularTotales(e.RowIndex);
+        }
+
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(NominaDataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No existen datos cargados para imprimir", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            this.Enabled = false;
+            Reports.VistaPreliminar(new RptNomina(), ToDataTable(this.nominas));
+            this.Enabled = true;
+        }
+
+        private static DataTable ToDataTable<T>(List<T> items)
+        {
+            DataTable dataTable = new DataTable(typeof(T).Name);
+            //Get all the properties by using reflection   
+            PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (PropertyInfo prop in Props)
+            {
+                //Setting column names as Property names  
+                dataTable.Columns.Add(prop.Name);
+            }
+            foreach (T item in items)
+            {
+                var values = new object[Props.Length];
+                for (int i = 0; i < Props.Length; i++)
+                {
+
+                    values[i] = Props[i].GetValue(item, null);
+                }
+                dataTable.Rows.Add(values);
+            }
+
+            return dataTable;
         }
     }
 }

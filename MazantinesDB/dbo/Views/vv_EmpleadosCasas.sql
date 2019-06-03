@@ -3,7 +3,7 @@
 	Finca,
 	Casas.NroCasa,
 	Trabajadores.Id AS id_trabajador,
-	Nro_empleado,
+	Trabajadores.Nro_empleado,
 	Nombre,
 	Apellidos,
 	Telefono,

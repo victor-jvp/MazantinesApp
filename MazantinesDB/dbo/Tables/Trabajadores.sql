@@ -8,10 +8,14 @@
     [id_casa]      INT            NULL,
     [foto]         NTEXT          NULL,
     [foto2]        IMAGE          NULL,
+    [CCC]          NVARCHAR (MAX) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [id_casa] FOREIGN KEY ([id_casa]) REFERENCES [dbo].[Casas] ([Id]),
     CONSTRAINT [id_empresa] FOREIGN KEY ([id_empresa]) REFERENCES [dbo].[Empresas] ([Id])
 );
+
+
+
 
 
 GO

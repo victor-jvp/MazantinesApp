@@ -121,4 +121,13 @@
   <data name="if_Save_70652" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_Save_70652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PrintSetup_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PrintSetup_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Print_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Report_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Report_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
