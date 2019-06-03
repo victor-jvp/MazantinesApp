@@ -229,14 +229,15 @@
             // 
             this.recibosToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
             this.recibosToolStripMenuItem.Name = "recibosToolStripMenuItem";
-            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.recibosToolStripMenuItem.Text = "Recibos";
+            this.recibosToolStripMenuItem.Click += new System.EventHandler(this.recibosToolStripMenuItem_Click);
             // 
             // listadoToolStripMenuItem
             // 
             this.listadoToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
             this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoToolStripMenuItem.Text = "Listado";
             this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 

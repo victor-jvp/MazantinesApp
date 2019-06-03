@@ -271,7 +271,7 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_recibos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, valorH FROM dbo.rpt_recibos</CommandText>
+                    <CommandText>SELECT Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, valorH, Empresa, semanaFin, semanaIni, id_encargado FROM rpt_recibos</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -287,6 +287,10 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <Mapping SourceColumn="totalH" DataSetColumn="totalH" />
               <Mapping SourceColumn="valorD" DataSetColumn="valorD" />
               <Mapping SourceColumn="valorH" DataSetColumn="valorH" />
+              <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
+              <Mapping SourceColumn="semanaIni" DataSetColumn="semanaIni" />
+              <Mapping SourceColumn="semanaFin" DataSetColumn="semanaFin" />
+              <Mapping SourceColumn="id_encargado" DataSetColumn="id_encargado" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -644,6 +648,16 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <xs:element name="totalH" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalH" msprop:Generator_ColumnPropNameInRow="totalH" msprop:Generator_ColumnPropNameInTable="totalHColumn" msprop:Generator_UserColumnName="totalH" type="xs:double" minOccurs="0" />
               <xs:element name="valorD" msprop:Generator_ColumnVarNameInTable="columnvalorD" msprop:Generator_ColumnPropNameInRow="valorD" msprop:Generator_ColumnPropNameInTable="valorDColumn" msprop:Generator_UserColumnName="valorD" type="xs:double" minOccurs="0" />
               <xs:element name="valorH" msprop:Generator_ColumnVarNameInTable="columnvalorH" msprop:Generator_ColumnPropNameInRow="valorH" msprop:Generator_ColumnPropNameInTable="valorHColumn" msprop:Generator_UserColumnName="valorH" type="xs:double" minOccurs="0" />
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semanaIni" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsemanaIni" msprop:Generator_ColumnPropNameInRow="semanaIni" msprop:Generator_ColumnPropNameInTable="semanaIniColumn" msprop:Generator_UserColumnName="semanaIni" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="semanaFin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsemanaFin" msprop:Generator_ColumnPropNameInRow="semanaFin" msprop:Generator_ColumnPropNameInTable="semanaFinColumn" msprop:Generator_UserColumnName="semanaFin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_encargado" msprop:Generator_ColumnVarNameInTable="columnid_encargado" msprop:Generator_ColumnPropNameInRow="id_encargado" msprop:Generator_ColumnPropNameInTable="id_encargadoColumn" msprop:Generator_UserColumnName="id_encargado" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

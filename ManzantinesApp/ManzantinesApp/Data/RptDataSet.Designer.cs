@@ -4288,6 +4288,14 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnvalorH;
             
+            private global::System.Data.DataColumn columnEmpresa;
+            
+            private global::System.Data.DataColumn columnsemanaIni;
+            
+            private global::System.Data.DataColumn columnsemanaFin;
+            
+            private global::System.Data.DataColumn columnid_encargado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public rpt_recibosDataTable() {
@@ -4395,6 +4403,38 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EmpresaColumn {
+                get {
+                    return this.columnEmpresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn semanaIniColumn {
+                get {
+                    return this.columnsemanaIni;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn semanaFinColumn {
+                get {
+                    return this.columnsemanaFin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_encargadoColumn {
+                get {
+                    return this.columnid_encargado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4430,7 +4470,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public rpt_recibosRow Addrpt_recibosRow(string Nro_empleado, string Nombre, string Apellidos, decimal anio, decimal semana, double totalD, double totalH, double valorD, double valorH) {
+            public rpt_recibosRow Addrpt_recibosRow(string Nro_empleado, string Nombre, string Apellidos, decimal anio, decimal semana, double totalD, double totalH, double valorD, double valorH, string Empresa, System.DateTime semanaIni, System.DateTime semanaFin, int id_encargado) {
                 rpt_recibosRow rowrpt_recibosRow = ((rpt_recibosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nro_empleado,
@@ -4441,7 +4481,11 @@ namespace ManzantinesApp.Data {
                         totalD,
                         totalH,
                         valorD,
-                        valorH};
+                        valorH,
+                        Empresa,
+                        semanaIni,
+                        semanaFin,
+                        id_encargado};
                 rowrpt_recibosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_recibosRow);
                 return rowrpt_recibosRow;
@@ -4473,6 +4517,10 @@ namespace ManzantinesApp.Data {
                 this.columntotalH = base.Columns["totalH"];
                 this.columnvalorD = base.Columns["valorD"];
                 this.columnvalorH = base.Columns["valorH"];
+                this.columnEmpresa = base.Columns["Empresa"];
+                this.columnsemanaIni = base.Columns["semanaIni"];
+                this.columnsemanaFin = base.Columns["semanaFin"];
+                this.columnid_encargado = base.Columns["id_encargado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4496,11 +4544,22 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnvalorD);
                 this.columnvalorH = new global::System.Data.DataColumn("valorH", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvalorH);
+                this.columnEmpresa = new global::System.Data.DataColumn("Empresa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmpresa);
+                this.columnsemanaIni = new global::System.Data.DataColumn("semanaIni", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsemanaIni);
+                this.columnsemanaFin = new global::System.Data.DataColumn("semanaFin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsemanaFin);
+                this.columnid_encargado = new global::System.Data.DataColumn("id_encargado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_encargado);
                 this.columnNro_empleado.MaxLength = 2147483647;
                 this.columnNombre.MaxLength = 2147483647;
                 this.columnApellidos.MaxLength = 2147483647;
                 this.columntotalD.ReadOnly = true;
                 this.columntotalH.ReadOnly = true;
+                this.columnEmpresa.MaxLength = 2147483647;
+                this.columnsemanaIni.ReadOnly = true;
+                this.columnsemanaFin.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7554,6 +7613,70 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Empresa {
+                get {
+                    try {
+                        return ((string)(this[this.tablerpt_recibos.EmpresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Empresa\' in table \'rpt_recibos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_recibos.EmpresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime semanaIni {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablerpt_recibos.semanaIniColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'semanaIni\' in table \'rpt_recibos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_recibos.semanaIniColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime semanaFin {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablerpt_recibos.semanaFinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'semanaFin\' in table \'rpt_recibos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_recibos.semanaFinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_encargado {
+                get {
+                    try {
+                        return ((int)(this[this.tablerpt_recibos.id_encargadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_encargado\' in table \'rpt_recibos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_recibos.id_encargadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNro_empleadoNull() {
                 return this.IsNull(this.tablerpt_recibos.Nro_empleadoColumn);
             }
@@ -7658,6 +7781,54 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetvalorHNull() {
                 this[this.tablerpt_recibos.valorHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEmpresaNull() {
+                return this.IsNull(this.tablerpt_recibos.EmpresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEmpresaNull() {
+                this[this.tablerpt_recibos.EmpresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssemanaIniNull() {
+                return this.IsNull(this.tablerpt_recibos.semanaIniColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsemanaIniNull() {
+                this[this.tablerpt_recibos.semanaIniColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssemanaFinNull() {
+                return this.IsNull(this.tablerpt_recibos.semanaFinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsemanaFinNull() {
+                this[this.tablerpt_recibos.semanaFinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isid_encargadoNull() {
+                return this.IsNull(this.tablerpt_recibos.id_encargadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setid_encargadoNull() {
+                this[this.tablerpt_recibos.id_encargadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9814,6 +9985,10 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("totalH", "totalH");
             tableMapping.ColumnMappings.Add("valorD", "valorD");
             tableMapping.ColumnMappings.Add("valorH", "valorH");
+            tableMapping.ColumnMappings.Add("Empresa", "Empresa");
+            tableMapping.ColumnMappings.Add("semanaIni", "semanaIni");
+            tableMapping.ColumnMappings.Add("semanaFin", "semanaFin");
+            tableMapping.ColumnMappings.Add("id_encargado", "id_encargado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -9831,7 +10006,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, val" +
-                "orH FROM dbo.rpt_recibos";
+                "orH, Empresa, semanaFin, semanaIni, id_encargado FROM rpt_recibos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

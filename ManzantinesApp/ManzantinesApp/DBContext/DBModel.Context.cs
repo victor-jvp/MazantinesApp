@@ -25,6 +25,7 @@ namespace ManzantinesApp.DBContext
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
         public virtual DbSet<Asientos> Asientos { get; set; }
         public virtual DbSet<Casas> Casas { get; set; }
         public virtual DbSet<DiasSemana> DiasSemana { get; set; }

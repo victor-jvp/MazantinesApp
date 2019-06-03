@@ -166,6 +166,9 @@
     <Compile Include="DBContext\Casas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBContext\C__RefactorLog.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,6 +281,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptNomina.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Nomina\RptRecibos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptRecibos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Proveedores\FrmAddProveedor.cs">
@@ -429,6 +438,10 @@
     <EmbeddedResource Include="Nomina\RptNomina.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptNomina.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\RptRecibos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptRecibos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FrmAddProveedor.resx">
       <DependentUpon>FrmAddProveedor.cs</DependentUpon>
