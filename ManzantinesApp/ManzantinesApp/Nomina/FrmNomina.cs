@@ -123,11 +123,11 @@
                             db.SaveChanges();
                         } 
                     }
-                }
 
-                using (MazantinesEntities db = new MazantinesEntities())
-                {
-                    nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
+                    using (MazantinesEntities db = new MazantinesEntities())
+                    {
+                        nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
+                    }
                 }
 
                 //Validar si la nomina esta cerrada
@@ -145,7 +145,6 @@
                     HabilitarGrid();
                 }
 
-                NominaDataGridView.DataSource = null;
                 NominaDataGridView.DataSource = nominas;
                 CalcularTotales();
                 FormatColumns();
