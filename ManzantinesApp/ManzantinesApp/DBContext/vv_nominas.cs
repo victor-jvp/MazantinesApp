@@ -19,6 +19,7 @@ namespace ManzantinesApp.DBContext
         public string status { get; set; }
         public Nullable<int> id_encargado { get; set; }
         public string Nro_empleado { get; set; }
+        public Nullable<int> caja { get; set; }
         public string trabajador { get; set; }
         public Nullable<int> id_empleo { get; set; }
         public int id_det { get; set; }
@@ -40,5 +41,6 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> sabH { get; set; }
         public Nullable<double> domD { get; set; }
         public Nullable<double> domH { get; set; }
+        public Nullable<bool> pagado { get; set; }
     }
 }

@@ -18,15 +18,17 @@
         <EntityTypeShape EntityType="MazantinesModel.NominasCab" Width="1.5" PointX="3" PointY="4.25" />
         <EntityTypeShape EntityType="MazantinesModel.NominasDet" Width="1.5" PointX="5.25" PointY="0.75" />
         <EntityTypeShape EntityType="MazantinesModel.Proveedores" Width="1.5" PointX="5.25" PointY="13" />
+        <EntityTypeShape EntityType="MazantinesModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="1.25" />
         <EntityTypeShape EntityType="MazantinesModel.Trabajadores" Width="1.5" PointX="7.5" PointY="6.375" />
         <EntityTypeShape EntityType="MazantinesModel.Trabajadores_Empleos" Width="1.5" PointX="9.75" PointY="7.25" />
-        <EntityTypeShape EntityType="MazantinesModel.rpt_nominas" Width="1.5" PointX="11.75" PointY="1.25" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_CasasCountEmpleados" Width="1.5" PointX="11.75" PointY="9.25" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_empleados" Width="1.5" PointX="11.75" PointY="12.25" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_EmpleadosCasas" Width="1.5" PointX="0.75" PointY="13.25" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_nomina_trabajadores" Width="1.5" PointX="13.75" PointY="1.25" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_nominas" Width="1.5" PointX="13.75" PointY="5.25" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_table_asientos" Width="1.5" PointX="13.75" PointY="12.25" />
+        <EntityTypeShape EntityType="MazantinesModel.rpt_nominas" Width="1.5" PointX="11.75" PointY="4.25" />
+        <EntityTypeShape EntityType="MazantinesModel.rpt_recibos" Width="1.5" PointX="11.75" PointY="12.25" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_CasasCountEmpleados" Width="1.5" PointX="0.75" PointY="13.25" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_empleados" Width="1.5" PointX="13.75" PointY="1.25" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_EmpleadosCasas" Width="1.5" PointX="13.75" PointY="5.25" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_nomina_trabajadores" Width="1.5" PointX="13.75" PointY="9.25" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_nominas" Width="1.5" PointX="13.75" PointY="13.25" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_table_asientos" Width="1.5" PointX="15.75" PointY="1.25" />
         <AssociationConnector Association="MazantinesModel.fk_empresa" />
         <AssociationConnector Association="MazantinesModel.fk_proveedores" />
         <AssociationConnector Association="MazantinesModel.id_casa" />

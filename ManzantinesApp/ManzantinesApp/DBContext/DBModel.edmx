@@ -136,6 +136,16 @@
           <Property Name="Email" Type="nvarchar" MaxLength="55" />
           <Property Name="Banco" Type="nvarchar" MaxLength="55" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Trabajadores">
           <Key>
             <PropertyRef Name="Id" />
@@ -196,14 +206,19 @@ warning 6002: The table/view 'Mazantines.dbo.rpt_nominas' does not have a primar
           <Property Name="sabH" Type="float" />
           <Property Name="domD" Type="float" />
           <Property Name="domH" Type="float" />
+          <Property Name="pagado" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'Mazantines.dbo.rpt_recibos' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6002: The table/view 'Mazantines.dbo.rpt_recibos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="rpt_recibos">
+          <Key>
+            <PropertyRef Name="id_cab" />
+          </Key>
           <Property Name="Empresa" Type="nvarchar(max)" />
           <Property Name="Nro_empleado" Type="nvarchar(max)" />
           <Property Name="Nombre" Type="nvarchar(max)" />
           <Property Name="Apellidos" Type="nvarchar(max)" />
+          <Property Name="id_cab" Type="int" Nullable="false" />
           <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
           <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
           <Property Name="id_encargado" Type="int" />
@@ -213,7 +228,7 @@ warning 6013: The table/view 'Mazantines.dbo.rpt_recibos' does not have a primar
           <Property Name="totalH" Type="float" />
           <Property Name="valorD" Type="float" />
           <Property Name="valorH" Type="float" />
-        </EntityType>-->
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_CasasCountEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vv_CasasCountEmpleados">
@@ -272,6 +287,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nomina_trabajadores' does not ha
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Nro_empleado" Type="nvarchar(max)" />
+          <Property Name="caja" Type="int" />
           <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
           <Property Name="id_encargado" Type="int" />
           <Property Name="id_empleo" Type="int" />
@@ -290,6 +306,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="status" Type="nchar" MaxLength="1" />
           <Property Name="id_encargado" Type="int" />
           <Property Name="Nro_empleado" Type="nvarchar(max)" />
+          <Property Name="caja" Type="int" />
           <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
           <Property Name="id_empleo" Type="int" />
           <Property Name="id_det" Type="int" Nullable="false" />
@@ -311,6 +328,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="sabH" Type="float" />
           <Property Name="domD" Type="float" />
           <Property Name="domH" Type="float" />
+          <Property Name="pagado" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -330,6 +348,19 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Property Name="RazonSocial" Type="nvarchar(max)" />
           <Property Name="NroCuenta" Type="nvarchar" MaxLength="55" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Mazantines.dbo.vv_totales_asientos' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vv_totales_asientos">
+          <Property Name="AsientosPorPagar" Type="int" />
+          <Property Name="TotalPagar" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="CantidadPagados" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Mazantines.dbo.vv_totales_categorias' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vv_totales_categorias">
+          <Property Name="Categoria" Type="int" />
+          <Property Name="Total" Type="decimal" Precision="38" Scale="2" />
+        </EntityType>-->
         <Association Name="FK_EmpleoPago_Empleos">
           <End Role="Empleos" Type="Self.Empleos" Multiplicity="0..1" />
           <End Role="EmpleosPagos" Type="Self.EmpleosPagos" Multiplicity="*" />
@@ -488,6 +519,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <EntitySet Name="NominasCab" EntityType="Self.NominasCab" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NominasDet" EntityType="Self.NominasDet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trabajadores" EntityType="Self.Trabajadores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trabajadores_Empleos" EntityType="Self.Trabajadores_Empleos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="rpt_nominas" EntityType="Self.rpt_nominas" store:Type="Views" store:Schema="dbo">
@@ -520,8 +552,27 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
     [rpt_nominas].[sabD] AS [sabD], 
     [rpt_nominas].[sabH] AS [sabH], 
     [rpt_nominas].[domD] AS [domD], 
-    [rpt_nominas].[domH] AS [domH]
+    [rpt_nominas].[domH] AS [domH], 
+    [rpt_nominas].[pagado] AS [pagado]
     FROM [dbo].[rpt_nominas] AS [rpt_nominas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="rpt_recibos" EntityType="Self.rpt_recibos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [rpt_recibos].[Empresa] AS [Empresa], 
+    [rpt_recibos].[Nro_empleado] AS [Nro_empleado], 
+    [rpt_recibos].[Nombre] AS [Nombre], 
+    [rpt_recibos].[Apellidos] AS [Apellidos], 
+    [rpt_recibos].[id_cab] AS [id_cab], 
+    [rpt_recibos].[anio] AS [anio], 
+    [rpt_recibos].[semana] AS [semana], 
+    [rpt_recibos].[id_encargado] AS [id_encargado], 
+    [rpt_recibos].[semanaIni] AS [semanaIni], 
+    [rpt_recibos].[semanaFin] AS [semanaFin], 
+    [rpt_recibos].[totalD] AS [totalD], 
+    [rpt_recibos].[totalH] AS [totalH], 
+    [rpt_recibos].[valorD] AS [valorD], 
+    [rpt_recibos].[valorH] AS [valorH]
+    FROM [dbo].[rpt_recibos] AS [rpt_recibos]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vv_CasasCountEmpleados" EntityType="Self.vv_CasasCountEmpleados" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -561,6 +612,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
             <DefiningQuery>SELECT 
     [vv_nomina_trabajadores].[id] AS [id], 
     [vv_nomina_trabajadores].[Nro_empleado] AS [Nro_empleado], 
+    [vv_nomina_trabajadores].[caja] AS [caja], 
     [vv_nomina_trabajadores].[trabajador] AS [trabajador], 
     [vv_nomina_trabajadores].[id_encargado] AS [id_encargado], 
     [vv_nomina_trabajadores].[id_empleo] AS [id_empleo], 
@@ -575,6 +627,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
     [vv_nominas].[status] AS [status], 
     [vv_nominas].[id_encargado] AS [id_encargado], 
     [vv_nominas].[Nro_empleado] AS [Nro_empleado], 
+    [vv_nominas].[caja] AS [caja], 
     [vv_nominas].[trabajador] AS [trabajador], 
     [vv_nominas].[id_empleo] AS [id_empleo], 
     [vv_nominas].[id_det] AS [id_det], 
@@ -595,7 +648,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
     [vv_nominas].[sabD] AS [sabD], 
     [vv_nominas].[sabH] AS [sabH], 
     [vv_nominas].[domD] AS [domD], 
-    [vv_nominas].[domH] AS [domH]
+    [vv_nominas].[domH] AS [domH], 
+    [vv_nominas].[pagado] AS [pagado]
     FROM [dbo].[vv_nominas] AS [vv_nominas]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vv_table_asientos" EntityType="Self.vv_table_asientos" store:Type="Views" store:Schema="dbo">
@@ -680,9 +734,11 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <EntitySet Name="NominasCab" EntityType="MazantinesModel.NominasCab" />
           <EntitySet Name="NominasDet" EntityType="MazantinesModel.NominasDet" />
           <EntitySet Name="Proveedores" EntityType="MazantinesModel.Proveedores" />
+          <EntitySet Name="sysdiagrams" EntityType="MazantinesModel.sysdiagrams" />
           <EntitySet Name="Trabajadores" EntityType="MazantinesModel.Trabajadores" />
           <EntitySet Name="Trabajadores_Empleos" EntityType="MazantinesModel.Trabajadores_Empleos" />
           <EntitySet Name="rpt_nominas" EntityType="MazantinesModel.rpt_nominas" />
+          <EntitySet Name="rpt_recibos" EntityType="MazantinesModel.rpt_recibos" />
           <EntitySet Name="vv_CasasCountEmpleados" EntityType="MazantinesModel.vv_CasasCountEmpleados" />
           <EntitySet Name="vv_empleados" EntityType="MazantinesModel.vv_empleados" />
           <EntitySet Name="vv_EmpleadosCasas" EntityType="MazantinesModel.vv_EmpleadosCasas" />
@@ -887,6 +943,16 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Property Name="Banco" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Asientos" Relationship="MazantinesModel.fk_proveedores" FromRole="Proveedores" ToRole="Asientos" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="Trabajadores">
           <Key>
             <PropertyRef Name="Id" />
@@ -951,6 +1017,26 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Property Name="sabH" Type="Double" />
           <Property Name="domD" Type="Double" />
           <Property Name="domH" Type="Double" />
+          <Property Name="pagado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="rpt_recibos">
+          <Key>
+            <PropertyRef Name="id_cab" />
+          </Key>
+          <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_cab" Type="Int32" Nullable="false" />
+          <Property Name="anio" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="semana" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="id_encargado" Type="Int32" />
+          <Property Name="semanaIni" Type="DateTime" Precision="3" />
+          <Property Name="semanaFin" Type="DateTime" Precision="3" />
+          <Property Name="totalD" Type="Double" />
+          <Property Name="totalH" Type="Double" />
+          <Property Name="valorD" Type="Double" />
+          <Property Name="valorH" Type="Double" />
         </EntityType>
         <EntityType Name="vv_CasasCountEmpleados">
           <Key>
@@ -1002,6 +1088,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="caja" Type="Int32" />
           <Property Name="trabajador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="id_encargado" Type="Int32" />
           <Property Name="id_empleo" Type="Int32" />
@@ -1018,6 +1105,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
           <Property Name="id_encargado" Type="Int32" />
           <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="caja" Type="Int32" />
           <Property Name="trabajador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="id_empleo" Type="Int32" />
           <Property Name="id_det" Type="Int32" Nullable="false" />
@@ -1039,6 +1127,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <Property Name="sabH" Type="Double" />
           <Property Name="domD" Type="Double" />
           <Property Name="domH" Type="Double" />
+          <Property Name="pagado" Type="Boolean" />
         </EntityType>
         <EntityType Name="vv_table_asientos">
           <Key>
@@ -1350,6 +1439,17 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MazantinesModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Trabajadores">
             <EntityTypeMapping TypeName="MazantinesModel.Trabajadores">
               <MappingFragment StoreEntitySet="Trabajadores">
@@ -1379,6 +1479,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <EntitySetMapping Name="rpt_nominas">
             <EntityTypeMapping TypeName="MazantinesModel.rpt_nominas">
               <MappingFragment StoreEntitySet="rpt_nominas">
+                <ScalarProperty Name="pagado" ColumnName="pagado" />
                 <ScalarProperty Name="domH" ColumnName="domH" />
                 <ScalarProperty Name="domD" ColumnName="domD" />
                 <ScalarProperty Name="sabH" ColumnName="sabH" />
@@ -1408,6 +1509,26 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="semana" ColumnName="semana" />
                 <ScalarProperty Name="anio" ColumnName="anio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rpt_recibos">
+            <EntityTypeMapping TypeName="MazantinesModel.rpt_recibos">
+              <MappingFragment StoreEntitySet="rpt_recibos">
+                <ScalarProperty Name="valorH" ColumnName="valorH" />
+                <ScalarProperty Name="valorD" ColumnName="valorD" />
+                <ScalarProperty Name="totalH" ColumnName="totalH" />
+                <ScalarProperty Name="totalD" ColumnName="totalD" />
+                <ScalarProperty Name="semanaFin" ColumnName="semanaFin" />
+                <ScalarProperty Name="semanaIni" ColumnName="semanaIni" />
+                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+                <ScalarProperty Name="semana" ColumnName="semana" />
+                <ScalarProperty Name="anio" ColumnName="anio" />
+                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1459,6 +1580,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
                 <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
                 <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
                 <ScalarProperty Name="trabajador" ColumnName="trabajador" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
                 <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
@@ -1467,6 +1589,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
           <EntitySetMapping Name="vv_nominas">
             <EntityTypeMapping TypeName="MazantinesModel.vv_nominas">
               <MappingFragment StoreEntitySet="vv_nominas">
+                <ScalarProperty Name="pagado" ColumnName="pagado" />
                 <ScalarProperty Name="domH" ColumnName="domH" />
                 <ScalarProperty Name="domD" ColumnName="domD" />
                 <ScalarProperty Name="sabH" ColumnName="sabH" />
@@ -1488,6 +1611,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_table_asientos' does not have a 
                 <ScalarProperty Name="id_det" ColumnName="id_det" />
                 <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
                 <ScalarProperty Name="trabajador" ColumnName="trabajador" />
+                <ScalarProperty Name="caja" ColumnName="caja" />
                 <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
                 <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
                 <ScalarProperty Name="status" ColumnName="status" />

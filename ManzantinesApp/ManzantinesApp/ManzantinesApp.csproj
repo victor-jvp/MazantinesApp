@@ -217,6 +217,12 @@
     <Compile Include="DBContext\rpt_nominas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBContext\rpt_recibos.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\sysdiagrams.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\Trabajadores.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>

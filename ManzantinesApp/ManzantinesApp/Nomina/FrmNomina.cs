@@ -153,7 +153,11 @@
                         nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
                     }
                 }
-
+                if (NominaDataGridView.Columns["pagado"] == null)
+                {
+                    NominaDataGridView.Columns.Add(new DataGridViewCheckBoxColumn() { Name = "pagado", HeaderText = "Pagado", TrueValue = true, FalseValue = false, DataPropertyName = "pagado" });
+                }
+                
                 NominaDataGridView.DataSource = nominas;
                 FormatColumns();
                 CalcularTotales();
@@ -209,6 +213,7 @@
                         miNomina.sabH = nomina.sabH;
                         miNomina.domD = nomina.domD;
                         miNomina.domH = nomina.domH;
+                        miNomina.pagado = nomina.pagado;
                         db.NominasDet.Add(miNomina);
                         db.Entry(miNomina).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
@@ -269,6 +274,9 @@
             NominaDataGridView.Columns["nro_empleado"].HeaderText = "Nro. Empleado";
             NominaDataGridView.Columns["nro_empleado"].ReadOnly = true;
             NominaDataGridView.Columns["nro_empleado"].DefaultCellStyle.BackColor = Color.LightGray;
+            NominaDataGridView.Columns["caja"].HeaderText = "Nro. Casa";
+            NominaDataGridView.Columns["caja"].ReadOnly = true;
+            NominaDataGridView.Columns["caja"].DefaultCellStyle.BackColor = Color.LightGray;
             NominaDataGridView.Columns["trabajador"].HeaderText = "Empleado";
             NominaDataGridView.Columns["trabajador"].DefaultCellStyle.BackColor = Color.LightGray;
             NominaDataGridView.Columns["trabajador"].ReadOnly = true;
@@ -335,6 +343,7 @@
             NominaDataGridView.Columns["status"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_encargado"].DisplayIndex = i++;
             NominaDataGridView.Columns["nro_empleado"].DisplayIndex = i++;
+            NominaDataGridView.Columns["caja"].DisplayIndex = i++;
             NominaDataGridView.Columns["trabajador"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_empleo"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_det"].DisplayIndex = i++;
@@ -358,8 +367,10 @@
             NominaDataGridView.Columns["domH"].DisplayIndex = i++;
             NominaDataGridView.Columns["totalD"].DisplayIndex = i++;
             NominaDataGridView.Columns["totalH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["pagado"].DisplayIndex = i++;
 
             NominaDataGridView.Columns["nro_empleado"].Width = 60;
+            NominaDataGridView.Columns["caja"].Width = 60;
             NominaDataGridView.Columns["trabajador"].Width = 110;
             int valores = 50;
             NominaDataGridView.Columns["lunD"].Width = valores;
@@ -378,6 +389,7 @@
             NominaDataGridView.Columns["domH"].Width = valores;
             NominaDataGridView.Columns["totalD"].Width = valores;
             NominaDataGridView.Columns["totalH"].Width = valores;
+            NominaDataGridView.Columns["pagado"].Width = valores;
         }
 
         private void CalcularTotales(int rowIndex = -1)
@@ -584,7 +596,9 @@
 
         private void NominaDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (NominaDataGridView.Columns[e.ColumnIndex].ReadOnly == false && NominaDataGridView.Columns[e.ColumnIndex].Visible == true) // 1 should be your column index
+            if (NominaDataGridView.Columns[e.ColumnIndex].ReadOnly == false && 
+                NominaDataGridView.Columns[e.ColumnIndex].Visible == true &&
+                NominaDataGridView.Columns[e.ColumnIndex].Name != "pagado") // 1 should be your column index
             {
                 float i;
 
@@ -673,6 +687,14 @@
             this.Enabled = false;
             Reports.VistaPreliminar(new RptRecibos(), dt);
             this.Enabled = true;
+        }
+
+        private void NominaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (NominaDataGridView.Columns[e.ColumnIndex].Name == "pagado" && NominaDataGridView.CurrentRow.Cells["status"].Value.ToString() == "A")
+            {
+                nominas[e.RowIndex].pagado = !(bool)NominaDataGridView.Rows[e.RowIndex].Cells["pagado"].Value;
+            }
         }
     }
 }
