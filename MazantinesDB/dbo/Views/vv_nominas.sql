@@ -4,6 +4,7 @@
 	cab.status,
 	cab.id_encargado,
 	tra.Nro_empleado,
+	tra.caja,
 	tra.trabajador,
 	tra.id_empleo,
 	det.* 

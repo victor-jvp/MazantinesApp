@@ -1,6 +1,7 @@
 ﻿CREATE VIEW [dbo].[vv_nomina_trabajadores] AS SELECT
 	tra.id,
 	tra.Nro_empleado,
+	tra.caja,
 	CONCAT ( tra.Nombre, ' ', tra.Apellidos ) AS trabajador,
 	fin.id_encargado,
 	( SELECT TOP 1 id_empleo FROM Trabajadores_Empleos WHERE Trabajadores_Empleos.id_trabajador = tra.id ) AS id_empleo,

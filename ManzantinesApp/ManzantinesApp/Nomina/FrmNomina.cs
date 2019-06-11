@@ -140,7 +140,8 @@
                                     vieD = 1, vieH = 0,
                                     sabD = 1, sabH = 0,
                                     domD = 1, domH = 0,
-                                    valorD = row.valorD, valorH = row.valorH
+                                    valorD = row.valorD, valorH = row.valorH,
+                                    pagado = false
                                 });
                             }
                             db.NominasCab.Add(cab);
@@ -670,8 +671,6 @@
             Reports.VistaPreliminar(new RptNomina(), ToDataTable(rptNomina));
             this.Enabled = true;
         }
-
-        
 
         private void recibosToolStripMenuItem_Click(object sender, EventArgs e)
         {
