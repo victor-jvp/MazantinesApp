@@ -275,7 +275,7 @@
             NominaDataGridView.Columns["nro_empleado"].HeaderText = "Nro. Empleado";
             NominaDataGridView.Columns["nro_empleado"].ReadOnly = true;
             NominaDataGridView.Columns["nro_empleado"].DefaultCellStyle.BackColor = Color.LightGray;
-            NominaDataGridView.Columns["caja"].HeaderText = "Nro. Casa";
+            NominaDataGridView.Columns["caja"].HeaderText = "Nro. Caja";
             NominaDataGridView.Columns["caja"].ReadOnly = true;
             NominaDataGridView.Columns["caja"].DefaultCellStyle.BackColor = Color.LightGray;
             NominaDataGridView.Columns["trabajador"].HeaderText = "Empleado";

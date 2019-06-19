@@ -117,7 +117,7 @@
             nombreLabel.Location = new System.Drawing.Point(45, 72);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 2;
+            nombreLabel.TabIndex = 4;
             nombreLabel.Text = "Nombre:";
             // 
             // apellidosLabel
@@ -126,7 +126,7 @@
             apellidosLabel.Location = new System.Drawing.Point(40, 98);
             apellidosLabel.Name = "apellidosLabel";
             apellidosLabel.Size = new System.Drawing.Size(52, 13);
-            apellidosLabel.TabIndex = 4;
+            apellidosLabel.TabIndex = 6;
             apellidosLabel.Text = "Apellidos:";
             // 
             // telefonoLabel
@@ -135,7 +135,7 @@
             telefonoLabel.Location = new System.Drawing.Point(40, 124);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 6;
+            telefonoLabel.TabIndex = 8;
             telefonoLabel.Text = "Telefono:";
             // 
             // label1
@@ -144,7 +144,7 @@
             label1.Location = new System.Drawing.Point(323, 31);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(31, 13);
-            label1.TabIndex = 18;
+            label1.TabIndex = 19;
             label1.Text = "Foto:";
             // 
             // id_empresaLabel
@@ -153,7 +153,7 @@
             id_empresaLabel.Location = new System.Drawing.Point(275, 206);
             id_empresaLabel.Name = "id_empresaLabel";
             id_empresaLabel.Size = new System.Drawing.Size(51, 13);
-            id_empresaLabel.TabIndex = 8;
+            id_empresaLabel.TabIndex = 12;
             id_empresaLabel.Text = "Empresa:";
             // 
             // fincaLabel
@@ -162,7 +162,7 @@
             fincaLabel.Location = new System.Drawing.Point(290, 233);
             fincaLabel.Name = "fincaLabel";
             fincaLabel.Size = new System.Drawing.Size(36, 13);
-            fincaLabel.TabIndex = 20;
+            fincaLabel.TabIndex = 14;
             fincaLabel.Text = "Finca:";
             // 
             // nroCasaLabel
@@ -171,7 +171,7 @@
             nroCasaLabel.Location = new System.Drawing.Point(272, 260);
             nroCasaLabel.Name = "nroCasaLabel";
             nroCasaLabel.Size = new System.Drawing.Size(54, 13);
-            nroCasaLabel.TabIndex = 21;
+            nroCasaLabel.TabIndex = 16;
             nroCasaLabel.Text = "Nro Casa:";
             // 
             // cCCLabel
@@ -180,7 +180,7 @@
             cCCLabel.Location = new System.Drawing.Point(61, 150);
             cCCLabel.Name = "cCCLabel";
             cCCLabel.Size = new System.Drawing.Size(31, 13);
-            cCCLabel.TabIndex = 26;
+            cCCLabel.TabIndex = 10;
             cCCLabel.Text = "CCC:";
             // 
             // cajaLabel
@@ -189,7 +189,7 @@
             cajaLabel.Location = new System.Drawing.Point(216, 34);
             cajaLabel.Name = "cajaLabel";
             cajaLabel.Size = new System.Drawing.Size(31, 13);
-            cajaLabel.TabIndex = 27;
+            cajaLabel.TabIndex = 2;
             cajaLabel.Text = "Caja:";
             // 
             // dataSet1
@@ -263,7 +263,7 @@
             this.nombreTextBox.Location = new System.Drawing.Point(98, 69);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(236, 20);
-            this.nombreTextBox.TabIndex = 3;
+            this.nombreTextBox.TabIndex = 5;
             // 
             // apellidosTextBox
             // 
@@ -271,7 +271,7 @@
             this.apellidosTextBox.Location = new System.Drawing.Point(98, 95);
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(236, 20);
-            this.apellidosTextBox.TabIndex = 5;
+            this.apellidosTextBox.TabIndex = 7;
             // 
             // telefonoTextBox
             // 
@@ -279,7 +279,7 @@
             this.telefonoTextBox.Location = new System.Drawing.Point(98, 121);
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.Size = new System.Drawing.Size(121, 20);
-            this.telefonoTextBox.TabIndex = 7;
+            this.telefonoTextBox.TabIndex = 9;
             // 
             // id_empresaComboBox
             // 
@@ -292,7 +292,7 @@
             this.id_empresaComboBox.Location = new System.Drawing.Point(332, 203);
             this.id_empresaComboBox.Name = "id_empresaComboBox";
             this.id_empresaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.id_empresaComboBox.TabIndex = 9;
+            this.id_empresaComboBox.TabIndex = 13;
             this.id_empresaComboBox.ValueMember = "Id";
             // 
             // empresasBindingSource
@@ -312,7 +312,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(492, 25);
-            this.toolStrip1.TabIndex = 19;
+            this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButton1
@@ -352,7 +352,7 @@
             this.fincaComboBox.Location = new System.Drawing.Point(332, 230);
             this.fincaComboBox.Name = "fincaComboBox";
             this.fincaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.fincaComboBox.TabIndex = 21;
+            this.fincaComboBox.TabIndex = 15;
             this.fincaComboBox.ValueMember = "Id";
             this.fincaComboBox.SelectedIndexChanged += new System.EventHandler(this.fincaComboBox_SelectedIndexChanged);
             // 
@@ -372,7 +372,7 @@
             this.nroCasaComboBox.Location = new System.Drawing.Point(332, 257);
             this.nroCasaComboBox.Name = "nroCasaComboBox";
             this.nroCasaComboBox.Size = new System.Drawing.Size(140, 21);
-            this.nroCasaComboBox.TabIndex = 22;
+            this.nroCasaComboBox.TabIndex = 17;
             this.nroCasaComboBox.ValueMember = "Id";
             // 
             // toolStrip2
@@ -383,7 +383,7 @@
             this.toolStrip2.Location = new System.Drawing.Point(372, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(99, 25);
-            this.toolStrip2.TabIndex = 24;
+            this.toolStrip2.TabIndex = 20;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // QuitarFototoolStripButton
@@ -428,7 +428,7 @@
             this.trabajadores_EmpleosDataGridView.Name = "trabajadores_EmpleosDataGridView";
             this.trabajadores_EmpleosDataGridView.RowHeadersWidth = 31;
             this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(238, 135);
-            this.trabajadores_EmpleosDataGridView.TabIndex = 25;
+            this.trabajadores_EmpleosDataGridView.TabIndex = 18;
             this.trabajadores_EmpleosDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.trabajadores_EmpleosDataGridView_CellValidating);
             // 
             // Id_empleo_trabajador
@@ -467,7 +467,7 @@
             this.toolStrip3.Location = new System.Drawing.Point(253, 294);
             this.toolStrip3.Name = "toolStrip3";
             this.toolStrip3.Size = new System.Drawing.Size(115, 25);
-            this.toolStrip3.TabIndex = 26;
+            this.toolStrip3.TabIndex = 21;
             this.toolStrip3.Text = "toolStrip3";
             // 
             // QuitarEmpleoToolStripButton
@@ -485,7 +485,7 @@
             this.cCCTextBox.Location = new System.Drawing.Point(98, 147);
             this.cCCTextBox.Name = "cCCTextBox";
             this.cCCTextBox.Size = new System.Drawing.Size(121, 20);
-            this.cCCTextBox.TabIndex = 27;
+            this.cCCTextBox.TabIndex = 11;
             // 
             // cajaTextBox
             // 
@@ -493,7 +493,7 @@
             this.cajaTextBox.Location = new System.Drawing.Point(253, 31);
             this.cajaTextBox.Name = "cajaTextBox";
             this.cajaTextBox.Size = new System.Drawing.Size(56, 20);
-            this.cajaTextBox.TabIndex = 28;
+            this.cajaTextBox.TabIndex = 3;
             // 
             // FrmEditEmpleado
             // 
