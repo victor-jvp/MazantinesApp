@@ -44,8 +44,7 @@ namespace ManzantinesApp.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Mazantines;Integrated Security=True;Persist Securit" +
-            "y Info=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Mazantines;Integrated Security=True")]
         public string MazantinesConnectionString {
             get {
                 return ((string)(this["MazantinesConnectionString"]));
