@@ -210,13 +210,13 @@
             // 
             this.tableAdapterManager.AsientosTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CasasTableAdapter = null;
+            this.tableAdapterManager.CasasTableAdapter = this.casasTableAdapter;
             this.tableAdapterManager.DiasSemanaTableAdapter = null;
             this.tableAdapterManager.EmpleosPagosTableAdapter = null;
-            this.tableAdapterManager.EmpleosTableAdapter = null;
-            this.tableAdapterManager.EmpresasTableAdapter = null;
-            this.tableAdapterManager.EncargadosTableAdapter = null;
-            this.tableAdapterManager.FincasTableAdapter = null;
+            this.tableAdapterManager.EmpleosTableAdapter = this.empleosTableAdapter;
+            this.tableAdapterManager.EmpresasTableAdapter = this.empresasTableAdapter;
+            this.tableAdapterManager.EncargadosTableAdapter = this.encargadosTableAdapter;
+            this.tableAdapterManager.FincasTableAdapter = this.fincasTableAdapter;
             this.tableAdapterManager.LiquidacionesTableAdapter = null;
             this.tableAdapterManager.NominasCabTableAdapter = null;
             this.tableAdapterManager.NominasDetTableAdapter = null;
