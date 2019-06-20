@@ -98,60 +98,75 @@
                 nominas = null;
                 using (MazantinesEntities db = new MazantinesEntities())
                 {
-                    nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
+                    if(encargado == 0)
+                    {
+                        nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).OrderBy(f => f.caja).ToList();
+                    }
+                    else
+                    {
+                        nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.caja).ToList();
+                    }                    
                 }
 
                 if(nominas == null || nominas.Count <= 0)
                 {
-                    //Cargar una nueva nomina
-                    if(encargado == 0)
-                    {
-                        List<vv_nomina_trabajadores> trabajadores = null;
-                        using (MazantinesEntities db = new MazantinesEntities())
-                        {
-                            trabajadores = db.vv_nomina_trabajadores.ToList();
-
-                            if(trabajadores.Count == 0)
-                            {
-                                MessageBox.Show(
-                                    "No existen trabajadores registrados.", 
-                                    "Error en carga de Nómina", 
-                                    MessageBoxButtons.OK, 
-                                    MessageBoxIcon.Warning);
-                                return;
-                            }
-
-                            NominasCab cab = new NominasCab()
-                            {
-                                semana = semana,
-                                anio = anio,
-                                status = "A"
-                            };
-                            
-                            foreach (vv_nomina_trabajadores row in trabajadores)
-                            {
-                                cab.NominasDet.Add(new NominasDet
-                                {
-                                    id_empleado = row.id,
-                                    lunD = 1, lunH = 0,
-                                    marD = 1, marH = 0,
-                                    mieD = 1, mieH = 0,
-                                    jueD = 1, jueH = 0,
-                                    vieD = 1, vieH = 0,
-                                    sabD = 1, sabH = 0,
-                                    domD = 1, domH = 0,
-                                    valorD = row.valorD, valorH = row.valorH,
-                                    pagado = false
-                                });
-                            }
-                            db.NominasCab.Add(cab);
-                            db.SaveChanges();
-                        } 
-                    }
-
+                    List<vv_nomina_trabajadores> trabajadores = null;
                     using (MazantinesEntities db = new MazantinesEntities())
                     {
-                        nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).ToList();
+                        trabajadores = db.vv_nomina_trabajadores.ToList();
+
+                        if (trabajadores.Count == 0)
+                        {
+                            MessageBox.Show(
+                                "No existen trabajadores registrados.",
+                                "Error en carga de Nómina",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        NominasCab cab = new NominasCab()
+                        {
+                            semana = semana,
+                            anio = anio,
+                            status = "A"
+                        };
+
+                        foreach (vv_nomina_trabajadores row in trabajadores)
+                        {
+                            cab.NominasDet.Add(new NominasDet
+                            {
+                                id_empleado = row.id,
+                                lunD = 1,
+                                lunH = 0,
+                                marD = 1,
+                                marH = 0,
+                                mieD = 1,
+                                mieH = 0,
+                                jueD = 1,
+                                jueH = 0,
+                                vieD = 1,
+                                vieH = 0,
+                                sabD = 1,
+                                sabH = 0,
+                                domD = 1,
+                                domH = 0,
+                                valorD = row.valorD,
+                                valorH = row.valorH,
+                                pagado = false
+                            });
+                        }
+                        db.NominasCab.Add(cab);
+                        db.SaveChanges();
+
+                        if (encargado == 0)
+                        {
+                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).OrderBy(f => f.caja).ToList();
+                        }
+                        else
+                        {
+                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.caja).ToList();
+                        }
                     }
                 }
                 if (NominaDataGridView.Columns["pagado"] == null)
@@ -343,8 +358,8 @@
             NominaDataGridView.Columns["semana"].DisplayIndex = i++;
             NominaDataGridView.Columns["status"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_encargado"].DisplayIndex = i++;
-            NominaDataGridView.Columns["nro_empleado"].DisplayIndex = i++;
             NominaDataGridView.Columns["caja"].DisplayIndex = i++;
+            NominaDataGridView.Columns["nro_empleado"].DisplayIndex = i++;
             NominaDataGridView.Columns["trabajador"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_empleo"].DisplayIndex = i++;
             NominaDataGridView.Columns["id_det"].DisplayIndex = i++;
