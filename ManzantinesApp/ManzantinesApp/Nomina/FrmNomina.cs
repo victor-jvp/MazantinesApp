@@ -48,11 +48,11 @@
         private void Inicializar()
         {
             var anio = DateTime.Now.Year;
-
             LoadCombos(anio);
 
             NominaDataGridView.DataSource = null;
 
+            ModoEdicionNominaFalse();
         }
 
         private void LoadCombos(int anio)
@@ -100,7 +100,7 @@
                 {
                     if(encargado == 0)
                     {
-                        nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).OrderBy(f => f.caja).ToList();
+                        nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.caja).ToList();
                     }
                     else
                     {
@@ -129,8 +129,10 @@
                         {
                             semana = semana,
                             anio = anio,
-                            status = "A"
+                            status = "A"                            
                         };
+
+                        if (encargado != 0) cab.id_encargado = encargado;
 
                         foreach (vv_nomina_trabajadores row in trabajadores)
                         {
@@ -161,7 +163,7 @@
 
                         if (encargado == 0)
                         {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana).OrderBy(f => f.caja).ToList();
+                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.caja).ToList();
                         }
                         else
                         {
@@ -177,6 +179,7 @@
                 NominaDataGridView.DataSource = nominas;
                 FormatColumns();
                 CalcularTotales();
+                ModoEdicionNominaTrue();
 
                 //Validar si la nomina esta cerrada
                 if (nominas[0].status == "C")
@@ -187,13 +190,12 @@
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                     DeshabilitarGrid();
+                    ModoNominaCerrada();
                 }
                 else
                 {
                     HabilitarGrid();
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -268,6 +270,8 @@
                     db.Entry(cab).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
+
+                ModoNominaCerrada();
             }
             catch (Exception ex)
             {
@@ -433,6 +437,14 @@
             LoadTotalesGrid();
         }
 
+        private void CancelarCambios()
+        {
+            EncargadoComboBox.ComboBox.SelectedIndex = -1;
+
+            LimpiarNominaGrid();
+            ModoEdicionNominaFalse();
+        }
+
         private void DeshabilitarGrid()
         {
             NominaDataGridView.Columns["lunD"].ReadOnly = true;
@@ -497,6 +509,42 @@
             NominaDataGridView.Columns["sabH"].DefaultCellStyle.BackColor  = Color.White;
             NominaDataGridView.Columns["domD"].DefaultCellStyle.BackColor  = Color.White;
             NominaDataGridView.Columns["domH"].DefaultCellStyle.BackColor  = Color.White;
+        }
+
+        private void ModoEdicionNominaTrue()
+        { 
+            SemanaComboBox.Enabled = false;
+            AnioComboBox.Enabled = false;
+            EncargadoComboBox.Enabled = false;
+            CargarNominaToolStripButton.Enabled = false;
+
+            GuardarToolStripButton.Enabled = true;
+            CancelarToolStripButton.Enabled = true;
+            CerrarNominaToolStripButton.Enabled = true;
+        }
+
+        private void ModoEdicionNominaFalse()
+        {
+            SemanaComboBox.Enabled = true;
+            AnioComboBox.Enabled = true;
+            EncargadoComboBox.Enabled = true;
+            CargarNominaToolStripButton.Enabled = true;
+
+            GuardarToolStripButton.Enabled = false;
+            CancelarToolStripButton.Enabled = false;
+            CerrarNominaToolStripButton.Enabled = false;
+        }
+
+        private void ModoNominaCerrada()
+        {
+            SemanaComboBox.Enabled = true;
+            AnioComboBox.Enabled = true;
+            EncargadoComboBox.Enabled = true;
+            CargarNominaToolStripButton.Enabled = true;
+
+            GuardarToolStripButton.Enabled = false;
+            CancelarToolStripButton.Enabled = false;
+            CerrarNominaToolStripButton.Enabled = false;
         }
 
         private void LoadTotalesGrid()
@@ -644,6 +692,7 @@
             if (result == DialogResult.No) return;
 
             GuardarNomina();
+            ModoEdicionNominaFalse();
         }
 
         private void CerrarNominaToolStripButton_Click(object sender, EventArgs e)
@@ -709,6 +758,11 @@
             {
                 nominas[e.RowIndex].pagado = !(bool)NominaDataGridView.Rows[e.RowIndex].Cells["pagado"].Value;
             }
+        }
+
+        private void CancelarToolStripButton_Click(object sender, EventArgs e)
+        {
+            CancelarCambios();
         }
     }
 }

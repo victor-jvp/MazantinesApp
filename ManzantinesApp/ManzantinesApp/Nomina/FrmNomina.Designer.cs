@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -41,15 +41,9 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.EncargadoComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.CargarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.CerrarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TotalesDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,6 +58,14 @@
             this.rptDataSet1 = new ManzantinesApp.Data.RptDataSet();
             this.vv_nomina_trabajadoresTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter();
             this.rpt_recibosTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.rpt_recibosTableAdapter();
+            this.CargarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CerrarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CancelarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TotalesDataGridView)).BeginInit();
@@ -106,6 +108,8 @@
             this.toolStripSeparator4,
             this.CargarNominaToolStripButton,
             this.toolStripSeparator3,
+            this.CancelarToolStripButton,
+            this.toolStripSeparator7,
             this.GuardarToolStripButton,
             this.toolStripSeparator5,
             this.CerrarNominaToolStripButton,
@@ -171,81 +175,27 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // CargarNominaToolStripButton
-            // 
-            this.CargarNominaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CargarNominaToolStripButton.Image")));
-            this.CargarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CargarNominaToolStripButton.Name = "CargarNominaToolStripButton";
-            this.CargarNominaToolStripButton.Size = new System.Drawing.Size(108, 22);
-            this.CargarNominaToolStripButton.Text = "&Cargar Nomina";
-            this.CargarNominaToolStripButton.Click += new System.EventHandler(this.CargarNominaToolStripButton_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // GuardarToolStripButton
-            // 
-            this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
-            this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.GuardarToolStripButton.Name = "GuardarToolStripButton";
-            this.GuardarToolStripButton.Size = new System.Drawing.Size(115, 22);
-            this.GuardarToolStripButton.Text = "&Guardar Nómina";
-            this.GuardarToolStripButton.Click += new System.EventHandler(this.GuardarToolStripButton_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // CerrarNominaToolStripButton
-            // 
-            this.CerrarNominaToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Save_70652;
-            this.CerrarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CerrarNominaToolStripButton.Name = "CerrarNominaToolStripButton";
-            this.CerrarNominaToolStripButton.Size = new System.Drawing.Size(105, 22);
-            this.CerrarNominaToolStripButton.Text = "C&errar Nómina";
-            this.CerrarNominaToolStripButton.Click += new System.EventHandler(this.CerrarNominaToolStripButton_Click);
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recibosToolStripMenuItem,
-            this.listadoToolStripMenuItem});
-            this.toolStripButton1.Image = global::ManzantinesApp.Properties.Resources.Report_16x_32;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(82, 22);
-            this.toolStripButton1.Text = "Reportes";
-            // 
-            // recibosToolStripMenuItem
-            // 
-            this.recibosToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
-            this.recibosToolStripMenuItem.Name = "recibosToolStripMenuItem";
-            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.recibosToolStripMenuItem.Text = "Recibos";
-            this.recibosToolStripMenuItem.Click += new System.EventHandler(this.recibosToolStripMenuItem_Click);
-            // 
-            // listadoToolStripMenuItem
-            // 
-            this.listadoToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.listadoToolStripMenuItem.Text = "Listado";
-            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
-            // 
             // TotalesDataGridView
             // 
             this.TotalesDataGridView.AllowUserToAddRows = false;
             this.TotalesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.TotalesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.TotalesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TotalesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -375,6 +325,74 @@
             // 
             this.rpt_recibosTableAdapter1.ClearBeforeFill = true;
             // 
+            // CargarNominaToolStripButton
+            // 
+            this.CargarNominaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CargarNominaToolStripButton.Image")));
+            this.CargarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CargarNominaToolStripButton.Name = "CargarNominaToolStripButton";
+            this.CargarNominaToolStripButton.Size = new System.Drawing.Size(108, 22);
+            this.CargarNominaToolStripButton.Text = "&Cargar Nomina";
+            this.CargarNominaToolStripButton.Click += new System.EventHandler(this.CargarNominaToolStripButton_Click);
+            // 
+            // GuardarToolStripButton
+            // 
+            this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
+            this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GuardarToolStripButton.Name = "GuardarToolStripButton";
+            this.GuardarToolStripButton.Size = new System.Drawing.Size(115, 22);
+            this.GuardarToolStripButton.Text = "&Guardar Nómina";
+            this.GuardarToolStripButton.Click += new System.EventHandler(this.GuardarToolStripButton_Click);
+            // 
+            // CerrarNominaToolStripButton
+            // 
+            this.CerrarNominaToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Save_70652;
+            this.CerrarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CerrarNominaToolStripButton.Name = "CerrarNominaToolStripButton";
+            this.CerrarNominaToolStripButton.Size = new System.Drawing.Size(105, 22);
+            this.CerrarNominaToolStripButton.Text = "C&errar Nómina";
+            this.CerrarNominaToolStripButton.Click += new System.EventHandler(this.CerrarNominaToolStripButton_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recibosToolStripMenuItem,
+            this.listadoToolStripMenuItem});
+            this.toolStripButton1.Image = global::ManzantinesApp.Properties.Resources.Report_16x_32;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(82, 22);
+            this.toolStripButton1.Text = "Reportes";
+            // 
+            // recibosToolStripMenuItem
+            // 
+            this.recibosToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
+            this.recibosToolStripMenuItem.Name = "recibosToolStripMenuItem";
+            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.recibosToolStripMenuItem.Text = "Recibos";
+            this.recibosToolStripMenuItem.Click += new System.EventHandler(this.recibosToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem
+            // 
+            this.listadoToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
+            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            // 
+            // CancelarToolStripButton
+            // 
+            this.CancelarToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Cancel__Red_34208;
+            this.CancelarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CancelarToolStripButton.Name = "CancelarToolStripButton";
+            this.CancelarToolStripButton.Size = new System.Drawing.Size(73, 22);
+            this.CancelarToolStripButton.Text = "Cancelar";
+            this.CancelarToolStripButton.Click += new System.EventHandler(this.CancelarToolStripButton_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
+            // 
             // FrmNomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,5 +462,7 @@
         private System.Windows.Forms.ToolStripMenuItem recibosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
         private Data.RptDataSetTableAdapters.rpt_recibosTableAdapter rpt_recibosTableAdapter1;
+        private System.Windows.Forms.ToolStripButton CancelarToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }

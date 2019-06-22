@@ -39,38 +39,6 @@
                 return false;
             }
 
-            control = bancoTextBox;
-            if (string.IsNullOrEmpty(control.Text.Trim()))
-            {
-                errorProvider1.SetError(control, "Este campo es requerido");
-                control.Focus();
-                return false;
-            }
-
-            control = nroCuentaTextBox;
-            if (string.IsNullOrEmpty(control.Text.Trim()))
-            {
-                errorProvider1.SetError(control, "Este campo es requerido");
-                control.Focus();
-                return false;
-            }
-
-            control = telefonoTextBox;
-            if (string.IsNullOrEmpty(control.Text.Trim()))
-            {
-                errorProvider1.SetError(control, "Este campo es requerido");
-                control.Focus();
-                return false;
-            }
-
-            control = emailTextBox;
-            if (string.IsNullOrEmpty(control.Text.Trim()))
-            {
-                errorProvider1.SetError(control, "Este campo es requerido");
-                control.Focus();
-                return false;
-            }
-
             return true;
         }
 

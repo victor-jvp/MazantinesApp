@@ -615,6 +615,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\if_Cancel__Red_34208.png" />
     <None Include="Resources\PrintSetup_16x_32.bmp" />
     <None Include="Resources\Report_16x_32.bmp" />
     <None Include="Resources\Print_16x.png" />
