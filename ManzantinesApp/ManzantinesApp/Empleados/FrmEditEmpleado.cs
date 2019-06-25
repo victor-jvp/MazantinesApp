@@ -40,13 +40,13 @@
             {
                 this.trabajadoresBindingSource.Position = trabajadoresBindingSource.Find("Id", miTrabajador.Id);
                 this.trabajadores_EmpleosTableAdapter.FillByIdTrabajador(this.dataSet1.Trabajadores_Empleos, (int)miTrabajador.Id);
-                if (miTrabajador.id_casa == 0)
+                if (miTrabajador.id_casa == null)
                 {
                     this.fincaComboBox.SelectedIndex = -1;
                 }
                 else
                 {
-                    DataSet1.CasasDataTable miCasa = this.casasTableAdapter.GetDataById(miTrabajador.id_casa);
+                    DataSet1.CasasDataTable miCasa = this.casasTableAdapter.GetDataById((int)miTrabajador.id_casa);
                     DataSet1.CasasRow miRow = miCasa[0];
                     fincaComboBox.SelectedValue = miRow.id_finca;
                     fincaComboBox_SelectedIndexChanged(sender, e);
@@ -102,9 +102,9 @@
         private bool ValidarCampos()
         {
             ErrorProvider error = new ErrorProvider();
-            if(nroCasaComboBox.SelectedIndex == -1)
+            if (fincaComboBox.Text == "" && nroCasaComboBox.Text != "")
             {
-                error.SetError(nroCasaComboBox, "Este campo es requerido");
+                error.SetError(nroCasaComboBox, "No es posible asignar casa a trabajador sin su finca. Valide que haya seleccionado la finca.");
                 nroCasaComboBox.Focus();
                 return false;
             }
@@ -152,37 +152,6 @@
             {
                 foto2PictureBox.Image = Image.FromFile(PictureOpenFileDialog.FileName);
             }
-        }
-
-        private void trabajadores_EmpleosDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            /*try
-            {
-                var empleo = e.FormattedValue.ToString();
-                if (string.IsNullOrEmpty(empleo))
-                {
-                    e.Cancel = true;
-                    return;
-                }
-
-                var empleos = this.dataSet1.Empleos;
-                var id_empleo = empleos.Where(x => x.Empleo == empleo).Select(x => x.Id).FirstOrDefault();
-                var t_empleos = this.dataSet1.Trabajadores_Empleos;                
-                
-                int found = t_empleos.AsEnumerable().Where(f => f.id_empleo == id_empleo).Count();
-
-                if (found > 0)
-                {
-                    MessageBox.Show("El empleo ya esta cargado en la lista", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //this.trabajadores_EmpleosDataGridView.Rows.Remove(trabajadores_EmpleosDataGridView.CurrentRow);
-                    e.Cancel = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error en validar duplicidad de empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-            }*/
         }
 
         private void QuitarEmpleoToolStripButton_Click(object sender, EventArgs e)

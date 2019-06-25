@@ -16,7 +16,7 @@ namespace ManzantinesApp.DBContext
     {
         public int id { get; set; }
         public string Nro_empleado { get; set; }
-        public Nullable<int> caja { get; set; }
+        public string Caja { get; set; }
         public string trabajador { get; set; }
         public Nullable<int> id_encargado { get; set; }
         public Nullable<int> id_empleo { get; set; }

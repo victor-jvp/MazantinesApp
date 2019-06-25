@@ -2996,6 +2996,10 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columndomH;
             
+            private global::System.Data.DataColumn columncaja;
+            
+            private global::System.Data.DataColumn columnpagado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vv_nominasDataTable() {
@@ -3239,6 +3243,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cajaColumn {
+                get {
+                    return this.columncaja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn pagadoColumn {
+                get {
+                    return this.columnpagado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3300,7 +3320,9 @@ namespace ManzantinesApp.Data {
                         double sabD, 
                         double sabH, 
                         double domD, 
-                        double domH) {
+                        double domH, 
+                        string caja, 
+                        bool pagado) {
                 vv_nominasRow rowvv_nominasRow = ((vv_nominasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         anio,
@@ -3328,7 +3350,9 @@ namespace ManzantinesApp.Data {
                         sabD,
                         sabH,
                         domD,
-                        domH};
+                        domH,
+                        caja,
+                        pagado};
                 rowvv_nominasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvv_nominasRow);
                 return rowvv_nominasRow;
@@ -3384,6 +3408,8 @@ namespace ManzantinesApp.Data {
                 this.columnsabH = base.Columns["sabH"];
                 this.columndomD = base.Columns["domD"];
                 this.columndomH = base.Columns["domH"];
+                this.columncaja = base.Columns["caja"];
+                this.columnpagado = base.Columns["pagado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3441,6 +3467,10 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columndomD);
                 this.columndomH = new global::System.Data.DataColumn("domH", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndomH);
+                this.columncaja = new global::System.Data.DataColumn("caja", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncaja);
+                this.columnpagado = new global::System.Data.DataColumn("pagado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpagado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_det}, true));
                 this.columnstatus.MaxLength = 1;
@@ -3450,6 +3480,8 @@ namespace ManzantinesApp.Data {
                 this.columnid_empleo.ReadOnly = true;
                 this.columnid_det.AllowDBNull = false;
                 this.columnid_det.Unique = true;
+                this.columncaja.AllowDBNull = false;
+                this.columncaja.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3640,6 +3672,8 @@ namespace ManzantinesApp.Data {
             private global::System.Data.DataColumn columndomH;
             
             private global::System.Data.DataColumn columnccc;
+            
+            private global::System.Data.DataColumn columnpagado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3908,6 +3942,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn pagadoColumn {
+                get {
+                    return this.columnpagado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3972,7 +4014,8 @@ namespace ManzantinesApp.Data {
                         double sabH, 
                         double domD, 
                         double domH, 
-                        string ccc) {
+                        string ccc, 
+                        bool pagado) {
                 rpt_nominasRow rowrpt_nominasRow = ((rpt_nominasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         anio,
@@ -4003,7 +4046,8 @@ namespace ManzantinesApp.Data {
                         sabH,
                         domD,
                         domH,
-                        ccc};
+                        ccc,
+                        pagado};
                 rowrpt_nominasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_nominasRow);
                 return rowrpt_nominasRow;
@@ -4062,6 +4106,7 @@ namespace ManzantinesApp.Data {
                 this.columndomD = base.Columns["domD"];
                 this.columndomH = base.Columns["domH"];
                 this.columnccc = base.Columns["ccc"];
+                this.columnpagado = base.Columns["pagado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4125,6 +4170,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columndomH);
                 this.columnccc = new global::System.Data.DataColumn("ccc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnccc);
+                this.columnpagado = new global::System.Data.DataColumn("pagado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpagado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_det}, true));
                 this.columnstatus.MaxLength = 1;
@@ -6359,6 +6406,33 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string caja {
+                get {
+                    return ((string)(this[this.tablevv_nominas.cajaColumn]));
+                }
+                set {
+                    this[this.tablevv_nominas.cajaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool pagado {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevv_nominas.pagadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pagado\' in table \'vv_nominas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_nominas.pagadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsanioNull() {
                 return this.IsNull(this.tablevv_nominas.anioColumn);
             }
@@ -6655,6 +6729,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetdomHNull() {
                 this[this.tablevv_nominas.domHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IspagadoNull() {
+                return this.IsNull(this.tablevv_nominas.pagadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetpagadoNull() {
+                this[this.tablevv_nominas.pagadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7133,6 +7219,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool pagado {
+                get {
+                    try {
+                        return ((bool)(this[this.tablerpt_nominas.pagadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pagado\' in table \'rpt_nominas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_nominas.pagadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsanioNull() {
                 return this.IsNull(this.tablerpt_nominas.anioColumn);
             }
@@ -7465,6 +7567,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcccNull() {
                 this[this.tablerpt_nominas.cccColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IspagadoNull() {
+                return this.IsNull(this.tablerpt_nominas.pagadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetpagadoNull() {
+                this[this.tablerpt_nominas.pagadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9636,6 +9750,8 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("sabH", "sabH");
             tableMapping.ColumnMappings.Add("domD", "domD");
             tableMapping.ColumnMappings.Add("domH", "domH");
+            tableMapping.ColumnMappings.Add("caja", "caja");
+            tableMapping.ColumnMappings.Add("pagado", "pagado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -9654,7 +9770,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT anio, semana, status, id_encargado, Nro_empleado, trabajador, id_empleo, i" +
                 "d_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, " +
-                "jueD, jueH, vieD, vieH, sabD, sabH, domD, domH FROM dbo.vv_nominas";
+                "jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, caja, pagado FROM vv_nominas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9833,6 +9949,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("domD", "domD");
             tableMapping.ColumnMappings.Add("domH", "domH");
             tableMapping.ColumnMappings.Add("ccc", "ccc");
+            tableMapping.ColumnMappings.Add("pagado", "pagado");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -9849,10 +9966,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT anio, semana, status, id_encargado, Encargado, Nro_empleado, trabajador, E" +
-                "mpresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD" +
-                ", marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, ccc FROM rpt" +
-                "_nominas";
+            this._commandCollection[0].CommandText = @"SELECT anio, semana, status, id_encargado, Encargado, Nro_empleado, trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, ccc, pagado FROM rpt_nominas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -31,7 +31,7 @@ namespace ManzantinesApp.DBContext
         public string foto { get; set; }
         public byte[] foto2 { get; set; }
         public string CCC { get; set; }
-        public Nullable<int> Caja { get; set; }
+        public string Caja { get; set; }
     
         public virtual Casas Casas { get; set; }
         public virtual Empresas Empresas { get; set; }

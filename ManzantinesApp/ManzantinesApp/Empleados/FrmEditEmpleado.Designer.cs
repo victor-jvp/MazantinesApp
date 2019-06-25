@@ -44,12 +44,12 @@
             this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trabajadoresTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.TrabajadoresTableAdapter();
             this.tableAdapterManager = new ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager();
-            this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
             this.casasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.CasasTableAdapter();
             this.empleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpleosTableAdapter();
             this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             this.encargadosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EncargadosTableAdapter();
             this.fincasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.FincasTableAdapter();
+            this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
             this.nro_empleadoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
@@ -225,10 +225,6 @@
             this.tableAdapterManager.TrabajadoresTableAdapter = this.trabajadoresTableAdapter;
             this.tableAdapterManager.UpdateOrder = ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // trabajadores_EmpleosTableAdapter
-            // 
-            this.trabajadores_EmpleosTableAdapter.ClearBeforeFill = true;
-            // 
             // casasTableAdapter
             // 
             this.casasTableAdapter.ClearBeforeFill = true;
@@ -248,6 +244,10 @@
             // fincasTableAdapter
             // 
             this.fincasTableAdapter.ClearBeforeFill = true;
+            // 
+            // trabajadores_EmpleosTableAdapter
+            // 
+            this.trabajadores_EmpleosTableAdapter.ClearBeforeFill = true;
             // 
             // nro_empleadoTextBox
             // 
@@ -429,7 +429,6 @@
             this.trabajadores_EmpleosDataGridView.RowHeadersWidth = 31;
             this.trabajadores_EmpleosDataGridView.Size = new System.Drawing.Size(238, 135);
             this.trabajadores_EmpleosDataGridView.TabIndex = 18;
-            this.trabajadores_EmpleosDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.trabajadores_EmpleosDataGridView_CellValidating);
             // 
             // Id_empleo_trabajador
             // 
