@@ -150,7 +150,7 @@
 warning 6002: The table/view 'Mazantines.dbo.rpt_nominas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="rpt_nominas">
           <Key>
-            <PropertyRef Name="trabajador" />
+            <PropertyRef Name="Trabajador" />
             <PropertyRef Name="id_det" />
           </Key>
           <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
@@ -159,7 +159,7 @@ warning 6002: The table/view 'Mazantines.dbo.rpt_nominas' does not have a primar
           <Property Name="id_encargado" Type="int" />
           <Property Name="Encargado" Type="nvarchar(max)" />
           <Property Name="Nro_empleado" Type="nvarchar(max)" />
-          <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Trabajador" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ccc" Type="nvarchar(max)" />
           <Property Name="Empresa" Type="nvarchar(max)" />
           <Property Name="id_empleo" Type="int" />
@@ -225,7 +225,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_empleados' does not have a prima
             <PropertyRef Name="FullName" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Nro_empleado" Type="varchar" MaxLength="30" />
+          <Property Name="Nro_empleado" Type="nvarchar(max)" />
+          <Property Name="Caja" Type="nvarchar(max)" />
           <Property Name="Nombre" Type="nvarchar(max)" />
           <Property Name="Apellidos" Type="nvarchar(max)" />
           <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
@@ -274,9 +275,9 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nomina_trabajadores' does not ha
 warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vv_nominas">
           <Key>
-            <PropertyRef Name="caja" />
             <PropertyRef Name="trabajador" />
             <PropertyRef Name="id_det" />
+            <PropertyRef Name="caja" />
           </Key>
           <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
           <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
@@ -473,7 +474,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
     [rpt_nominas].[id_encargado] AS [id_encargado], 
     [rpt_nominas].[Encargado] AS [Encargado], 
     [rpt_nominas].[Nro_empleado] AS [Nro_empleado], 
-    [rpt_nominas].[trabajador] AS [trabajador], 
+    [rpt_nominas].[Trabajador] AS [Trabajador], 
     [rpt_nominas].[ccc] AS [ccc], 
     [rpt_nominas].[Empresa] AS [Empresa], 
     [rpt_nominas].[id_empleo] AS [id_empleo], 
@@ -529,6 +530,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
             <DefiningQuery>SELECT 
     [vv_empleados].[Id] AS [Id], 
     [vv_empleados].[Nro_empleado] AS [Nro_empleado], 
+    [vv_empleados].[Caja] AS [Caja], 
     [vv_empleados].[Nombre] AS [Nombre], 
     [vv_empleados].[Apellidos] AS [Apellidos], 
     [vv_empleados].[FullName] AS [FullName], 
@@ -662,7 +664,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <EntitySet Name="Proveedores" EntityType="MazantinesModel.Proveedores" />
           <EntitySet Name="Trabajadores" EntityType="MazantinesModel.Trabajadores" />
           <EntitySet Name="Trabajadores_Empleos" EntityType="MazantinesModel.Trabajadores_Empleos" />
-          <EntitySet Name="rpt_nominas" EntityType="MazantinesModel.rpt_nominas" />
           <EntitySet Name="rpt_recibos" EntityType="MazantinesModel.rpt_recibos" />
           <EntitySet Name="vv_empleados" EntityType="MazantinesModel.vv_empleados" />
           <EntitySet Name="vv_EmpleadosCasas" EntityType="MazantinesModel.vv_EmpleadosCasas" />
@@ -717,6 +718,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <EntitySet Name="vv_CasasCountEmpleados" EntityType="MazantinesModel.vv_CasasCountEmpleados" />
           <EntitySet Name="vv_nominas" EntityType="MazantinesModel.vv_nominas" />
           <EntitySet Name="vv_nomina_trabajadores" EntityType="MazantinesModel.vv_nomina_trabajadores" />
+          <EntitySet Name="rpt_nominas" EntityType="MazantinesModel.rpt_nominas" />
         </EntityContainer>
         <EntityType Name="Asientos">
           <Key>
@@ -862,8 +864,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Apellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="id_empresa" Type="Int32" />
-          <Property Name="id_casa" Type="Int32" />
+          <Property Name="id_empresa" Type="Int32" Nullable="true" />
+          <Property Name="id_casa" Type="Int32" Nullable="true" />
           <Property Name="foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="foto2" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="CCC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -882,42 +884,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="id_empleo" Type="Int32" />
           <NavigationProperty Name="Empleos" Relationship="MazantinesModel.id_empleo" FromRole="Trabajadores_Empleos" ToRole="Empleos" />
           <NavigationProperty Name="Trabajadores" Relationship="MazantinesModel.fk_id_trabajador" FromRole="Trabajadores_Empleos" ToRole="Trabajadores" />
-        </EntityType>
-        <EntityType Name="rpt_nominas">
-          <Key>
-            <PropertyRef Name="trabajador" />
-            <PropertyRef Name="id_det" />
-          </Key>
-          <Property Name="anio" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="semana" Type="Decimal" Precision="2" Scale="0" />
-          <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
-          <Property Name="id_encargado" Type="Int32" />
-          <Property Name="Encargado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="trabajador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ccc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="id_empleo" Type="Int32" />
-          <Property Name="id_det" Type="Int32" Nullable="false" />
-          <Property Name="id_cab" Type="Int32" />
-          <Property Name="id_empleado" Type="Int32" />
-          <Property Name="valorD" Type="Double" />
-          <Property Name="valorH" Type="Double" />
-          <Property Name="lunD" Type="Double" />
-          <Property Name="lunH" Type="Double" />
-          <Property Name="marD" Type="Double" />
-          <Property Name="marH" Type="Double" />
-          <Property Name="mieD" Type="Double" />
-          <Property Name="mieH" Type="Double" />
-          <Property Name="jueD" Type="Double" />
-          <Property Name="jueH" Type="Double" />
-          <Property Name="vieD" Type="Double" />
-          <Property Name="vieH" Type="Double" />
-          <Property Name="sabD" Type="Double" />
-          <Property Name="sabH" Type="Double" />
-          <Property Name="domD" Type="Double" />
-          <Property Name="domH" Type="Double" />
-          <Property Name="pagado" Type="Boolean" />
         </EntityType>
         <EntityType Name="rpt_recibos">
           <Key>
@@ -944,7 +910,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
             <PropertyRef Name="FullName" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Nro_empleado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Apellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -952,6 +918,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="NroCasa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Empleos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vv_EmpleadosCasas">
           <Key>
@@ -1174,6 +1141,42 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="valorD" Type="Double" Nullable="false" />
           <Property Name="valorH" Type="Double" Nullable="false" />
         </EntityType>
+        <EntityType Name="rpt_nominas">
+          <Key>
+            <PropertyRef Name="Trabajador" />
+            <PropertyRef Name="id_det" />
+          </Key>
+          <Property Name="anio" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="semana" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="id_encargado" Type="Int32" />
+          <Property Name="Encargado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nro_empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Trabajador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ccc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_empleo" Type="Int32" />
+          <Property Name="id_det" Type="Int32" Nullable="false" />
+          <Property Name="id_cab" Type="Int32" />
+          <Property Name="id_empleado" Type="Int32" />
+          <Property Name="valorD" Type="Double" />
+          <Property Name="valorH" Type="Double" />
+          <Property Name="lunD" Type="Double" />
+          <Property Name="lunH" Type="Double" />
+          <Property Name="marD" Type="Double" />
+          <Property Name="marH" Type="Double" />
+          <Property Name="mieD" Type="Double" />
+          <Property Name="mieH" Type="Double" />
+          <Property Name="jueD" Type="Double" />
+          <Property Name="jueH" Type="Double" />
+          <Property Name="vieD" Type="Double" />
+          <Property Name="vieH" Type="Double" />
+          <Property Name="sabD" Type="Double" />
+          <Property Name="sabH" Type="Double" />
+          <Property Name="domD" Type="Double" />
+          <Property Name="domH" Type="Double" />
+          <Property Name="pagado" Type="Boolean" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1334,42 +1337,6 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="rpt_nominas">
-            <EntityTypeMapping TypeName="MazantinesModel.rpt_nominas">
-              <MappingFragment StoreEntitySet="rpt_nominas">
-                <ScalarProperty Name="pagado" ColumnName="pagado" />
-                <ScalarProperty Name="domH" ColumnName="domH" />
-                <ScalarProperty Name="domD" ColumnName="domD" />
-                <ScalarProperty Name="sabH" ColumnName="sabH" />
-                <ScalarProperty Name="sabD" ColumnName="sabD" />
-                <ScalarProperty Name="vieH" ColumnName="vieH" />
-                <ScalarProperty Name="vieD" ColumnName="vieD" />
-                <ScalarProperty Name="jueH" ColumnName="jueH" />
-                <ScalarProperty Name="jueD" ColumnName="jueD" />
-                <ScalarProperty Name="mieH" ColumnName="mieH" />
-                <ScalarProperty Name="mieD" ColumnName="mieD" />
-                <ScalarProperty Name="marH" ColumnName="marH" />
-                <ScalarProperty Name="marD" ColumnName="marD" />
-                <ScalarProperty Name="lunH" ColumnName="lunH" />
-                <ScalarProperty Name="lunD" ColumnName="lunD" />
-                <ScalarProperty Name="valorH" ColumnName="valorH" />
-                <ScalarProperty Name="valorD" ColumnName="valorD" />
-                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
-                <ScalarProperty Name="id_det" ColumnName="id_det" />
-                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
-                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-                <ScalarProperty Name="ccc" ColumnName="ccc" />
-                <ScalarProperty Name="trabajador" ColumnName="trabajador" />
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="semana" ColumnName="semana" />
-                <ScalarProperty Name="anio" ColumnName="anio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="rpt_recibos">
             <EntityTypeMapping TypeName="MazantinesModel.rpt_recibos">
               <MappingFragment StoreEntitySet="rpt_recibos">
@@ -1393,6 +1360,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <EntitySetMapping Name="vv_empleados">
             <EntityTypeMapping TypeName="MazantinesModel.vv_empleados">
               <MappingFragment StoreEntitySet="vv_empleados">
+                <ScalarProperty Name="Caja" ColumnName="Caja" />
                 <ScalarProperty Name="Empleos" ColumnName="Empleos" />
                 <ScalarProperty Name="Empresa" ColumnName="Empresa" />
                 <ScalarProperty Name="NroCasa" ColumnName="NroCasa" />
@@ -1475,6 +1443,42 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
                 <ScalarProperty Name="Caja" ColumnName="Caja" />
                 <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rpt_nominas">
+            <EntityTypeMapping TypeName="MazantinesModel.rpt_nominas">
+              <MappingFragment StoreEntitySet="rpt_nominas">
+                <ScalarProperty Name="pagado" ColumnName="pagado" />
+                <ScalarProperty Name="domH" ColumnName="domH" />
+                <ScalarProperty Name="domD" ColumnName="domD" />
+                <ScalarProperty Name="sabH" ColumnName="sabH" />
+                <ScalarProperty Name="sabD" ColumnName="sabD" />
+                <ScalarProperty Name="vieH" ColumnName="vieH" />
+                <ScalarProperty Name="vieD" ColumnName="vieD" />
+                <ScalarProperty Name="jueH" ColumnName="jueH" />
+                <ScalarProperty Name="jueD" ColumnName="jueD" />
+                <ScalarProperty Name="mieH" ColumnName="mieH" />
+                <ScalarProperty Name="mieD" ColumnName="mieD" />
+                <ScalarProperty Name="marH" ColumnName="marH" />
+                <ScalarProperty Name="marD" ColumnName="marD" />
+                <ScalarProperty Name="lunH" ColumnName="lunH" />
+                <ScalarProperty Name="lunD" ColumnName="lunD" />
+                <ScalarProperty Name="valorH" ColumnName="valorH" />
+                <ScalarProperty Name="valorD" ColumnName="valorD" />
+                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
+                <ScalarProperty Name="id_det" ColumnName="id_det" />
+                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="ccc" ColumnName="ccc" />
+                <ScalarProperty Name="Trabajador" ColumnName="Trabajador" />
+                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="semana" ColumnName="semana" />
+                <ScalarProperty Name="anio" ColumnName="anio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

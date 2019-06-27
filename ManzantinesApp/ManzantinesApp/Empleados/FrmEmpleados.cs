@@ -7,6 +7,7 @@
     using Reports;
     using System.Linq;
     using System.Data;
+    using ManzantinesApp.DBContext;
 
     public partial class FrmEmpleados : Form
     {
@@ -254,7 +255,12 @@
 
             this.Enabled = false;
             FrmEditEmpleado frmEditEmpleado = new FrmEditEmpleado();
-            frmEditEmpleado.miTrabajador = dataSet1.Trabajadores.FindById((int)trabajadoresDataGridView.CurrentRow.Cells[0].Value);
+            using (MazantinesEntities db = new MazantinesEntities())
+            {
+                int id = (int)trabajadoresDataGridView.CurrentRow.Cells[0].Value;
+                frmEditEmpleado.miTrabajador = db.Trabajadores.Where(t => t.Id == id).FirstOrDefault();
+            }
+            
             if (frmEditEmpleado.miTrabajador == null)
             {
                 MessageBox.Show(

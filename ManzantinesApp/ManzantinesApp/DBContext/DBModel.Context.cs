@@ -38,12 +38,12 @@ namespace ManzantinesApp.DBContext
         public virtual DbSet<Proveedores> Proveedores { get; set; }
         public virtual DbSet<Trabajadores> Trabajadores { get; set; }
         public virtual DbSet<Trabajadores_Empleos> Trabajadores_Empleos { get; set; }
-        public virtual DbSet<rpt_nominas> rpt_nominas { get; set; }
         public virtual DbSet<rpt_recibos> rpt_recibos { get; set; }
         public virtual DbSet<vv_empleados> vv_empleados { get; set; }
         public virtual DbSet<vv_EmpleadosCasas> vv_EmpleadosCasas { get; set; }
         public virtual DbSet<vv_CasasCountEmpleados> vv_CasasCountEmpleados { get; set; }
         public virtual DbSet<vv_nominas> vv_nominas { get; set; }
         public virtual DbSet<vv_nomina_trabajadores> vv_nomina_trabajadores { get; set; }
+        public virtual DbSet<rpt_nominas> rpt_nominas { get; set; }
     }
 }

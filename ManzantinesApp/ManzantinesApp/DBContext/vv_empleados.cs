@@ -23,5 +23,6 @@ namespace ManzantinesApp.DBContext
         public string NroCasa { get; set; }
         public string Empresa { get; set; }
         public string Empleos { get; set; }
+        public string Caja { get; set; }
     }
 }
