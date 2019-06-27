@@ -33,15 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleados));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.trabajadoresDataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroempleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroCasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vv_empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -84,6 +75,16 @@
             this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
             this.trabajadores_EmpleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vv_empleadosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.vv_empleadosTableAdapter();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroempleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroCasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vv_empleadosBindingSource)).BeginInit();
@@ -123,6 +124,7 @@
             this.trabajadoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.nroempleadoDataGridViewTextBoxColumn,
+            this.Caja,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidosDataGridViewTextBoxColumn,
             this.fullNameDataGridViewTextBoxColumn,
@@ -137,80 +139,6 @@
             this.trabajadoresDataGridView.ReadOnly = true;
             this.trabajadoresDataGridView.Size = new System.Drawing.Size(707, 318);
             this.trabajadoresDataGridView.TabIndex = 0;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 41;
-            // 
-            // nroempleadoDataGridViewTextBoxColumn
-            // 
-            this.nroempleadoDataGridViewTextBoxColumn.DataPropertyName = "Nro_empleado";
-            this.nroempleadoDataGridViewTextBoxColumn.HeaderText = "Nro. Empleado";
-            this.nroempleadoDataGridViewTextBoxColumn.Name = "nroempleadoDataGridViewTextBoxColumn";
-            this.nroempleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroempleadoDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
-            this.apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
-            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.apellidosDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullNameDataGridViewTextBoxColumn.Visible = false;
-            this.fullNameDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonoDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // nroCasaDataGridViewTextBoxColumn
-            // 
-            this.nroCasaDataGridViewTextBoxColumn.DataPropertyName = "NroCasa";
-            this.nroCasaDataGridViewTextBoxColumn.HeaderText = "Casa";
-            this.nroCasaDataGridViewTextBoxColumn.Name = "nroCasaDataGridViewTextBoxColumn";
-            this.nroCasaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroCasaDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // empresaDataGridViewTextBoxColumn
-            // 
-            this.empresaDataGridViewTextBoxColumn.DataPropertyName = "Empresa";
-            this.empresaDataGridViewTextBoxColumn.HeaderText = "Empresa";
-            this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
-            this.empresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.empresaDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // Empleos
-            // 
-            this.Empleos.DataPropertyName = "Empleos";
-            this.Empleos.HeaderText = "Empleos";
-            this.Empleos.Name = "Empleos";
-            this.Empleos.ReadOnly = true;
-            this.Empleos.Width = 72;
             // 
             // vv_empleadosBindingSource
             // 
@@ -493,11 +421,15 @@
             this.tableAdapterManager.AsientosTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = this.casasTableAdapter;
+            this.tableAdapterManager.DiasSemanaTableAdapter = null;
+            this.tableAdapterManager.EmpleosPagosTableAdapter = null;
             this.tableAdapterManager.EmpleosTableAdapter = this.empleosTableAdapter;
             this.tableAdapterManager.EmpresasTableAdapter = this.empresasTableAdapter;
             this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
             this.tableAdapterManager.LiquidacionesTableAdapter = null;
+            this.tableAdapterManager.NominasCabTableAdapter = null;
+            this.tableAdapterManager.NominasDetTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = this.trabajadoresTableAdapter;
@@ -531,6 +463,88 @@
             // vv_empleadosTableAdapter
             // 
             this.vv_empleadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 41;
+            // 
+            // nroempleadoDataGridViewTextBoxColumn
+            // 
+            this.nroempleadoDataGridViewTextBoxColumn.DataPropertyName = "Nro_empleado";
+            this.nroempleadoDataGridViewTextBoxColumn.HeaderText = "Nro. Empleado";
+            this.nroempleadoDataGridViewTextBoxColumn.Name = "nroempleadoDataGridViewTextBoxColumn";
+            this.nroempleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroempleadoDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // Caja
+            // 
+            this.Caja.DataPropertyName = "Caja";
+            this.Caja.HeaderText = "Caja";
+            this.Caja.Name = "Caja";
+            this.Caja.ReadOnly = true;
+            this.Caja.Width = 53;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
+            this.apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
+            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apellidosDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameDataGridViewTextBoxColumn.Visible = false;
+            this.fullNameDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefonoDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // nroCasaDataGridViewTextBoxColumn
+            // 
+            this.nroCasaDataGridViewTextBoxColumn.DataPropertyName = "NroCasa";
+            this.nroCasaDataGridViewTextBoxColumn.HeaderText = "Casa";
+            this.nroCasaDataGridViewTextBoxColumn.Name = "nroCasaDataGridViewTextBoxColumn";
+            this.nroCasaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroCasaDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // empresaDataGridViewTextBoxColumn
+            // 
+            this.empresaDataGridViewTextBoxColumn.DataPropertyName = "Empresa";
+            this.empresaDataGridViewTextBoxColumn.HeaderText = "Empresa";
+            this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
+            this.empresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empresaDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // Empleos
+            // 
+            this.Empleos.DataPropertyName = "Empleos";
+            this.Empleos.HeaderText = "Empleos";
+            this.Empleos.Name = "Empleos";
+            this.Empleos.ReadOnly = true;
+            this.Empleos.Width = 72;
             // 
             // FrmEmpleados
             // 
@@ -608,14 +622,15 @@
         private System.Windows.Forms.ToolStripTextBox CasaToolStripTextBox;
         private Data.DataSet1TableAdapters.vv_empleadosTableAdapter vv_empleadosTableAdapter;
         private System.Windows.Forms.BindingSource vv_empleadosBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Empleos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroempleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Caja;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroCasaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empresaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleos;
     }
 }

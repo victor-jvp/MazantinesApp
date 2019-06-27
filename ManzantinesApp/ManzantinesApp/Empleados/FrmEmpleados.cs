@@ -293,6 +293,7 @@
             {
                 this.vv_empleadosBindingSource.Filter = $"NroCasa LIKE '%{buscar}%' " +
                     $"OR Nro_empleado LIKE '%{buscar}%' " +
+                    $"OR Caja LIKE '%{buscar}%' " +
                     $"OR Nombre LIKE '%{buscar}%' " +
                     $"OR Apellidos LIKE '%{buscar}%' " +
                     $"OR Telefono LIKE '%{buscar}%' " +

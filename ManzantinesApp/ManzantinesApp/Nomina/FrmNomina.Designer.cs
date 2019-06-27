@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -41,9 +41,17 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.EncargadoComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.CargarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.CancelarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.CerrarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TotalesDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,14 +66,6 @@
             this.rptDataSet1 = new ManzantinesApp.Data.RptDataSet();
             this.vv_nomina_trabajadoresTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_nomina_trabajadoresTableAdapter();
             this.rpt_recibosTableAdapter1 = new ManzantinesApp.Data.RptDataSetTableAdapters.rpt_recibosTableAdapter();
-            this.CargarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.CerrarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CancelarToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TotalesDataGridView)).BeginInit();
@@ -88,7 +88,7 @@
             this.NominaDataGridView.Name = "NominaDataGridView";
             this.NominaDataGridView.RowHeadersVisible = false;
             this.NominaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.NominaDataGridView.Size = new System.Drawing.Size(1144, 302);
+            this.NominaDataGridView.Size = new System.Drawing.Size(1029, 309);
             this.NominaDataGridView.TabIndex = 1;
             this.NominaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NominaDataGridView_CellContentClick);
             this.NominaDataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.NominaDataGridView_CellValidated);
@@ -117,7 +117,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1144, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1029, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -175,20 +175,88 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
+            // CargarNominaToolStripButton
+            // 
+            this.CargarNominaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CargarNominaToolStripButton.Image")));
+            this.CargarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CargarNominaToolStripButton.Name = "CargarNominaToolStripButton";
+            this.CargarNominaToolStripButton.Size = new System.Drawing.Size(108, 22);
+            this.CargarNominaToolStripButton.Text = "&Cargar Nomina";
+            this.CargarNominaToolStripButton.Click += new System.EventHandler(this.CargarNominaToolStripButton_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // CancelarToolStripButton
+            // 
+            this.CancelarToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Cancel__Red_34208;
+            this.CancelarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CancelarToolStripButton.Name = "CancelarToolStripButton";
+            this.CancelarToolStripButton.Size = new System.Drawing.Size(73, 22);
+            this.CancelarToolStripButton.Text = "Cancelar";
+            this.CancelarToolStripButton.Click += new System.EventHandler(this.CancelarToolStripButton_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
+            // 
+            // GuardarToolStripButton
+            // 
+            this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
+            this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GuardarToolStripButton.Name = "GuardarToolStripButton";
+            this.GuardarToolStripButton.Size = new System.Drawing.Size(115, 22);
+            this.GuardarToolStripButton.Text = "&Guardar Nómina";
+            this.GuardarToolStripButton.Click += new System.EventHandler(this.GuardarToolStripButton_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // CerrarNominaToolStripButton
+            // 
+            this.CerrarNominaToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Save_70652;
+            this.CerrarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CerrarNominaToolStripButton.Name = "CerrarNominaToolStripButton";
+            this.CerrarNominaToolStripButton.Size = new System.Drawing.Size(105, 22);
+            this.CerrarNominaToolStripButton.Text = "C&errar Nómina";
+            this.CerrarNominaToolStripButton.Click += new System.EventHandler(this.CerrarNominaToolStripButton_Click);
+            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recibosToolStripMenuItem,
+            this.listadoToolStripMenuItem});
+            this.toolStripButton1.Image = global::ManzantinesApp.Properties.Resources.Report_16x_32;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(82, 22);
+            this.toolStripButton1.Text = "Reportes";
+            // 
+            // recibosToolStripMenuItem
+            // 
+            this.recibosToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
+            this.recibosToolStripMenuItem.Name = "recibosToolStripMenuItem";
+            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.recibosToolStripMenuItem.Text = "Recibos";
+            this.recibosToolStripMenuItem.Click += new System.EventHandler(this.recibosToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem
+            // 
+            this.listadoToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
+            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
             // TotalesDataGridView
             // 
@@ -212,7 +280,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.TotalesDataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(7, 363);
+            this.groupBox1.Location = new System.Drawing.Point(7, 370);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(605, 181);
             this.groupBox1.TabIndex = 6;
@@ -325,79 +393,11 @@
             // 
             this.rpt_recibosTableAdapter1.ClearBeforeFill = true;
             // 
-            // CargarNominaToolStripButton
-            // 
-            this.CargarNominaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CargarNominaToolStripButton.Image")));
-            this.CargarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CargarNominaToolStripButton.Name = "CargarNominaToolStripButton";
-            this.CargarNominaToolStripButton.Size = new System.Drawing.Size(108, 22);
-            this.CargarNominaToolStripButton.Text = "&Cargar Nomina";
-            this.CargarNominaToolStripButton.Click += new System.EventHandler(this.CargarNominaToolStripButton_Click);
-            // 
-            // GuardarToolStripButton
-            // 
-            this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
-            this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.GuardarToolStripButton.Name = "GuardarToolStripButton";
-            this.GuardarToolStripButton.Size = new System.Drawing.Size(115, 22);
-            this.GuardarToolStripButton.Text = "&Guardar Nómina";
-            this.GuardarToolStripButton.Click += new System.EventHandler(this.GuardarToolStripButton_Click);
-            // 
-            // CerrarNominaToolStripButton
-            // 
-            this.CerrarNominaToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Save_70652;
-            this.CerrarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CerrarNominaToolStripButton.Name = "CerrarNominaToolStripButton";
-            this.CerrarNominaToolStripButton.Size = new System.Drawing.Size(105, 22);
-            this.CerrarNominaToolStripButton.Text = "C&errar Nómina";
-            this.CerrarNominaToolStripButton.Click += new System.EventHandler(this.CerrarNominaToolStripButton_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recibosToolStripMenuItem,
-            this.listadoToolStripMenuItem});
-            this.toolStripButton1.Image = global::ManzantinesApp.Properties.Resources.Report_16x_32;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(82, 22);
-            this.toolStripButton1.Text = "Reportes";
-            // 
-            // recibosToolStripMenuItem
-            // 
-            this.recibosToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
-            this.recibosToolStripMenuItem.Name = "recibosToolStripMenuItem";
-            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.recibosToolStripMenuItem.Text = "Recibos";
-            this.recibosToolStripMenuItem.Click += new System.EventHandler(this.recibosToolStripMenuItem_Click);
-            // 
-            // listadoToolStripMenuItem
-            // 
-            this.listadoToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.listadoToolStripMenuItem.Text = "Listado";
-            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
-            // 
-            // CancelarToolStripButton
-            // 
-            this.CancelarToolStripButton.Image = global::ManzantinesApp.Properties.Resources.if_Cancel__Red_34208;
-            this.CancelarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CancelarToolStripButton.Name = "CancelarToolStripButton";
-            this.CancelarToolStripButton.Size = new System.Drawing.Size(73, 22);
-            this.CancelarToolStripButton.Text = "Cancelar";
-            this.CancelarToolStripButton.Click += new System.EventHandler(this.CancelarToolStripButton_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
-            // 
             // FrmNomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 554);
+            this.ClientSize = new System.Drawing.Size(1029, 561);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -408,12 +408,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.NominaDataGridView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1045, 600);
             this.Name = "FrmNomina";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nomina";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmNomina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);

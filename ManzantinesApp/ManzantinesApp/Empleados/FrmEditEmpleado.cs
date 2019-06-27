@@ -69,6 +69,12 @@
             try
             {
                 if (!ValidarCampos()) return;
+
+                if(this.nroCasaComboBox.Text == "" ||this.nroCasaComboBox.SelectedIndex == -1)
+                {
+                    
+                }
+
                 this.Validate();
                 this.trabajadoresBindingSource.EndEdit();
 

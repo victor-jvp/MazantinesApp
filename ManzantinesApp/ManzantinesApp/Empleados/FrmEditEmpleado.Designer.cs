@@ -365,7 +365,6 @@
             // 
             this.nroCasaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.nroCasaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.nroCasaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.trabajadoresBindingSource, "id_casa", true));
             this.nroCasaComboBox.DataSource = this.casasBindingSource;
             this.nroCasaComboBox.DisplayMember = "NroCasa";
             this.nroCasaComboBox.FormattingEnabled = true;

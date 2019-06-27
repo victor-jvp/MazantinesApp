@@ -545,6 +545,8 @@
             GuardarToolStripButton.Enabled = false;
             CancelarToolStripButton.Enabled = false;
             CerrarNominaToolStripButton.Enabled = false;
+
+            EncargadoComboBox.SelectedIndex = -1;
         }
 
         private void LoadTotalesGrid()
