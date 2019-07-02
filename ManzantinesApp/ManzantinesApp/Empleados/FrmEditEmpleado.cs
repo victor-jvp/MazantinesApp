@@ -61,8 +61,11 @@
                 this.id_empleo.DisplayMember = "Empleo";
                 this.id_empleo.DataSource = db.Empleos.ToList();
 
+                NominasToolStripButton.Visible = false;
+
                 if (miTrabajador != null)
                 {
+                    NominasToolStripButton.Visible = true;
                     nro_empleadoTextBox.Text = miTrabajador.Nro_empleado;
                     cajaTextBox.Text = miTrabajador.Caja;
                     nombreTextBox.Text = miTrabajador.Nombre;
@@ -241,6 +244,13 @@
             {
                 foto2PictureBox.Image = Image.FromFile(PictureOpenFileDialog.FileName);
             }
+        }
+
+        private void NominasToolStripButton_Click(object sender, EventArgs e)
+        {
+            var miForm = new Empleados.FrmEmpleadoNominas();
+            miForm.id_trabajador = miTrabajador.Id;
+            miForm.ShowDialog(this);
         }
     }
 }

@@ -235,6 +235,12 @@
     <Compile Include="DBContext\vv_nomina_trabajadores.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Empleados\FrmEmpleadoNominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\FrmEmpleadoNominas.Designer.cs">
+      <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Liquidaciones\FrmAddLiquidacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Asientos\FrmTotales.resx">
       <DependentUpon>FrmTotales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\FrmEmpleadoNominas.resx">
+      <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidaciones\FrmAddLiquidacion.resx">
       <DependentUpon>FrmAddLiquidacion.cs</DependentUpon>

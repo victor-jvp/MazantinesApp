@@ -80,6 +80,8 @@ namespace ManzantinesApp.Data {
         
         private global::System.Data.DataRelation relationfk_NominasDet_NominasCab_pk;
         
+        private global::System.Data.DataRelation relationid_casa;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -611,6 +613,7 @@ namespace ManzantinesApp.Data {
             this.relationFK_NominasCab_Encargados = this.Relations["FK_NominasCab_Encargados"];
             this.relationFK_NominasDet_Trabajadores = this.Relations["FK_NominasDet_Trabajadores"];
             this.relationfk_NominasDet_NominasCab_pk = this.Relations["fk_NominasDet_NominasCab_pk"];
+            this.relationid_casa = this.Relations["id_casa"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -699,6 +702,10 @@ namespace ManzantinesApp.Data {
                         this.tableNominasCab.id_cabColumn}, new global::System.Data.DataColumn[] {
                         this.tableNominasDet.id_cabColumn}, false);
             this.Relations.Add(this.relationfk_NominasDet_NominasCab_pk);
+            this.relationid_casa = new global::System.Data.DataRelation("id_casa", new global::System.Data.DataColumn[] {
+                        this.tableCasas.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTrabajadores.id_casaColumn}, false);
+            this.Relations.Add(this.relationid_casa);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2873,7 +2880,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TrabajadoresRow AddTrabajadoresRow(string Nro_empleado, string Nombre, string Apellidos, string Telefono, EmpresasRow parentEmpresasRowByid_empresa, string foto, byte[] foto2, string CCC, string Caja, int id_casa) {
+            public TrabajadoresRow AddTrabajadoresRow(string Nro_empleado, string Nombre, string Apellidos, string Telefono, EmpresasRow parentEmpresasRowByid_empresa, string foto, byte[] foto2, string CCC, string Caja, CasasRow parentCasasRowByid_casa) {
                 TrabajadoresRow rowTrabajadoresRow = ((TrabajadoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2886,9 +2893,12 @@ namespace ManzantinesApp.Data {
                         foto2,
                         CCC,
                         Caja,
-                        id_casa};
+                        null};
                 if ((parentEmpresasRowByid_empresa != null)) {
                     columnValuesArray[5] = parentEmpresasRowByid_empresa[0];
+                }
+                if ((parentCasasRowByid_casa != null)) {
+                    columnValuesArray[10] = parentCasasRowByid_casa[0];
                 }
                 rowTrabajadoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTrabajadoresRow);
@@ -7055,6 +7065,17 @@ namespace ManzantinesApp.Data {
             public void Setid_fincaNull() {
                 this[this.tableCasas.id_fincaColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public TrabajadoresRow[] GetTrabajadoresRows() {
+                if ((this.Table.ChildRelations["id_casa"] == null)) {
+                    return new TrabajadoresRow[0];
+                }
+                else {
+                    return ((TrabajadoresRow[])(base.GetChildRows(this.Table.ChildRelations["id_casa"])));
+                }
+            }
         }
         
         /// <summary>
@@ -7430,6 +7451,17 @@ namespace ManzantinesApp.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["id_empresa"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CasasRow CasasRow {
+                get {
+                    return ((CasasRow)(this.GetParentRow(this.Table.ParentRelations["id_casa"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["id_casa"]);
                 }
             }
             
@@ -17477,6 +17509,15 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._fincasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Fincas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fincasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._empresasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Empresas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -17486,21 +17527,21 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._casasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Casas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._casasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._empleosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Empleos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._empleosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._fincasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Fincas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._fincasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -17567,15 +17608,6 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._casasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Casas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._casasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._asientosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Asientos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -17612,6 +17644,14 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._fincasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Fincas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fincasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._empresasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Empresas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -17620,19 +17660,19 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._casasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Casas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._casasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._empleosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Empleos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._empleosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._fincasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Fincas.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._fincasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -17692,14 +17732,6 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._casasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Casas.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._casasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._asientosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Asientos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -17739,14 +17771,6 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._asientosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._casasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Casas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._casasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -17806,14 +17830,6 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._fincasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Fincas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._fincasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._empleosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Empleos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -17822,11 +17838,27 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._casasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Casas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._casasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._empresasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Empresas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._empresasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fincasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Fincas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fincasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
