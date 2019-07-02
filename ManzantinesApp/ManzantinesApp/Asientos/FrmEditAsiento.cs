@@ -39,13 +39,6 @@ namespace ManzantinesApp.Asientos
                 return false;
             }
 
-            if (ImporteNumericUpDown.Value <= 0)
-            {
-                this.errorProvider1.SetError(ImporteNumericUpDown, "Este campo debe ser mayor que cero");
-                ImporteNumericUpDown.Focus();
-                return false;
-            }
-
             if (string.IsNullOrEmpty(formaPagoTextBox.Text))
             {
                 this.errorProvider1.SetError(formaPagoTextBox, "Este campo es requerido");

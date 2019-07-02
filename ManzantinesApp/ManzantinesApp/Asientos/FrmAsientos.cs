@@ -98,6 +98,7 @@ namespace ManzantinesApp.Asientos
             if (frmAddAsiento.UpdateList)
             {
                 this.vv_table_asientosTableAdapter.Fill(this.rptDataSet.vv_table_asientos);
+                this.asientosTableAdapter1.Fill(this.dataSet.Asientos);
             }
         }
 

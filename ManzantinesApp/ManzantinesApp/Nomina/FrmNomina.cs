@@ -643,7 +643,6 @@
         {
             Inicializar();
         }
-
         private void CargarNominaToolStripButton_Click(object sender, EventArgs e)
         {
             int semana = (int)SemanaComboBox.ComboBox.SelectedValue;
@@ -734,7 +733,7 @@
             }
 
             this.Enabled = false;
-            Reports.VistaPreliminar(new RptNomina(), ToDataTable(rptNomina));
+            Reports.VistaPreliminarNomina(new RptNomina(), ToDataTable(rptNomina));
             this.Enabled = true;
         }
 
@@ -750,7 +749,7 @@
             DataTable dt = rpt_recibosTableAdapter1.GetDataByIdCab(id_cab);
 
             this.Enabled = false;
-            Reports.VistaPreliminar(new RptRecibos(), dt);
+            Reports.VistaPreliminarNomina(new RptRecibos(), dt);
             this.Enabled = true;
         }
 

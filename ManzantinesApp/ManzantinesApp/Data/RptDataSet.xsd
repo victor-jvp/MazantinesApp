@@ -226,10 +226,12 @@ FROM            vv_CasasCountEmpleados</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="rpt_nominasTableAdapter" GeneratorDataComponentClassName="rpt_nominasTableAdapter" Name="rpt_nominas" UserDataComponentName="rpt_nominasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_nominas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_nominas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT anio, semana, status, id_encargado, Encargado, Nro_empleado, trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, ccc, pagado FROM rpt_nominas</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        anio, semana, status, id_encargado, Encargado, Nro_empleado, Trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, 
+                         domH, ccc, pagado
+FROM            rpt_nominas</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -242,7 +244,6 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <Mapping SourceColumn="id_encargado" DataSetColumn="id_encargado" />
               <Mapping SourceColumn="Encargado" DataSetColumn="Encargado" />
               <Mapping SourceColumn="Nro_empleado" DataSetColumn="Nro_empleado" />
-              <Mapping SourceColumn="trabajador" DataSetColumn="trabajador" />
               <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
               <Mapping SourceColumn="id_empleo" DataSetColumn="id_empleo" />
               <Mapping SourceColumn="id_det" DataSetColumn="id_det" />
@@ -266,6 +267,7 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <Mapping SourceColumn="domH" DataSetColumn="domH" />
               <Mapping SourceColumn="ccc" DataSetColumn="ccc" />
               <Mapping SourceColumn="pagado" DataSetColumn="pagado" />
+              <Mapping SourceColumn="Trabajador" DataSetColumn="Trabajador" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -598,13 +600,6 @@ WHERE id_cab = @id_cab</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="trabajador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntrabajador" msprop:Generator_ColumnPropNameInRow="trabajador" msprop:Generator_ColumnPropNameInTable="trabajadorColumn" msprop:Generator_UserColumnName="trabajador" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -639,7 +634,14 @@ WHERE id_cab = @id_cab</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="pagado" msprop:Generator_ColumnVarNameInTable="columnpagado" msprop:Generator_ColumnPropNameInRow="pagado" msprop:Generator_ColumnPropNameInTable="pagadoColumn" msprop:Generator_UserColumnName="pagado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="pagado" msprop:Generator_ColumnVarNameInTable="columnpagado" msprop:Generator_ColumnPropNameInRow="pagado" msprop:Generator_ColumnPropNameInTable="pagadoColumn" msprop:Generator_UserColumnName="pagado" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Trabajador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTrabajador" msprop:Generator_ColumnPropNameInRow="Trabajador" msprop:Generator_ColumnPropNameInTable="TrabajadorColumn" msprop:Generator_UserColumnName="Trabajador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

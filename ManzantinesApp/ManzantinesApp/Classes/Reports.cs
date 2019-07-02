@@ -31,6 +31,24 @@
             }
         }
 
-       
+        public static void VistaPreliminarNomina(ReportDocument CrystalReport, DataTable dt)
+        {
+
+            try
+            {
+                FrmPreviewNomina frmPreviewCrystal = new FrmPreviewNomina();
+                frmPreviewCrystal.ReporteCrystal = CrystalReport;
+
+                DataSet ds = new DataSet();
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+                frmPreviewCrystal.Show();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

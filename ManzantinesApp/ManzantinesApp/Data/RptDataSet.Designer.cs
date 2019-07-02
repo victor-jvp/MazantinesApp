@@ -3627,8 +3627,6 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnNro_empleado;
             
-            private global::System.Data.DataColumn columntrabajador;
-            
             private global::System.Data.DataColumn columnEmpresa;
             
             private global::System.Data.DataColumn columnid_empleo;
@@ -3674,6 +3672,8 @@ namespace ManzantinesApp.Data {
             private global::System.Data.DataColumn columnccc;
             
             private global::System.Data.DataColumn columnpagado;
+            
+            private global::System.Data.DataColumn columnTrabajador;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3753,14 +3753,6 @@ namespace ManzantinesApp.Data {
             public global::System.Data.DataColumn Nro_empleadoColumn {
                 get {
                     return this.columnNro_empleado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn trabajadorColumn {
-                get {
-                    return this.columntrabajador;
                 }
             }
             
@@ -3950,6 +3942,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TrabajadorColumn {
+                get {
+                    return this.columnTrabajador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3992,7 +3992,6 @@ namespace ManzantinesApp.Data {
                         int id_encargado, 
                         string Encargado, 
                         string Nro_empleado, 
-                        string trabajador, 
                         string Empresa, 
                         int id_empleo, 
                         int id_det, 
@@ -4015,7 +4014,8 @@ namespace ManzantinesApp.Data {
                         double domD, 
                         double domH, 
                         string ccc, 
-                        bool pagado) {
+                        bool pagado, 
+                        string Trabajador) {
                 rpt_nominasRow rowrpt_nominasRow = ((rpt_nominasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         anio,
@@ -4024,7 +4024,6 @@ namespace ManzantinesApp.Data {
                         id_encargado,
                         Encargado,
                         Nro_empleado,
-                        trabajador,
                         Empresa,
                         id_empleo,
                         id_det,
@@ -4047,7 +4046,8 @@ namespace ManzantinesApp.Data {
                         domD,
                         domH,
                         ccc,
-                        pagado};
+                        pagado,
+                        Trabajador};
                 rowrpt_nominasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_nominasRow);
                 return rowrpt_nominasRow;
@@ -4083,7 +4083,6 @@ namespace ManzantinesApp.Data {
                 this.columnid_encargado = base.Columns["id_encargado"];
                 this.columnEncargado = base.Columns["Encargado"];
                 this.columnNro_empleado = base.Columns["Nro_empleado"];
-                this.columntrabajador = base.Columns["trabajador"];
                 this.columnEmpresa = base.Columns["Empresa"];
                 this.columnid_empleo = base.Columns["id_empleo"];
                 this.columnid_det = base.Columns["id_det"];
@@ -4107,6 +4106,7 @@ namespace ManzantinesApp.Data {
                 this.columndomH = base.Columns["domH"];
                 this.columnccc = base.Columns["ccc"];
                 this.columnpagado = base.Columns["pagado"];
+                this.columnTrabajador = base.Columns["Trabajador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4124,8 +4124,6 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnEncargado);
                 this.columnNro_empleado = new global::System.Data.DataColumn("Nro_empleado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNro_empleado);
-                this.columntrabajador = new global::System.Data.DataColumn("trabajador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntrabajador);
                 this.columnEmpresa = new global::System.Data.DataColumn("Empresa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmpresa);
                 this.columnid_empleo = new global::System.Data.DataColumn("id_empleo", typeof(int), null, global::System.Data.MappingType.Element);
@@ -4172,18 +4170,21 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnccc);
                 this.columnpagado = new global::System.Data.DataColumn("pagado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpagado);
+                this.columnTrabajador = new global::System.Data.DataColumn("Trabajador", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTrabajador);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_det}, true));
                 this.columnstatus.MaxLength = 1;
                 this.columnEncargado.MaxLength = 2147483647;
                 this.columnNro_empleado.MaxLength = 2147483647;
-                this.columntrabajador.ReadOnly = true;
-                this.columntrabajador.MaxLength = 2147483647;
                 this.columnEmpresa.MaxLength = 2147483647;
                 this.columnid_empleo.ReadOnly = true;
                 this.columnid_det.AllowDBNull = false;
                 this.columnid_det.Unique = true;
                 this.columnccc.MaxLength = 2147483647;
+                this.columnpagado.DefaultValue = ((bool)(false));
+                this.columnTrabajador.ReadOnly = true;
+                this.columnTrabajador.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6856,22 +6857,6 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string trabajador {
-                get {
-                    try {
-                        return ((string)(this[this.tablerpt_nominas.trabajadorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'trabajador\' in table \'rpt_nominas\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablerpt_nominas.trabajadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Empresa {
                 get {
                     try {
@@ -7235,6 +7220,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Trabajador {
+                get {
+                    try {
+                        return ((string)(this[this.tablerpt_nominas.TrabajadorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Trabajador\' in table \'rpt_nominas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_nominas.TrabajadorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsanioNull() {
                 return this.IsNull(this.tablerpt_nominas.anioColumn);
             }
@@ -7303,18 +7304,6 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNro_empleadoNull() {
                 this[this.tablerpt_nominas.Nro_empleadoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IstrabajadorNull() {
-                return this.IsNull(this.tablerpt_nominas.trabajadorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SettrabajadorNull() {
-                this[this.tablerpt_nominas.trabajadorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7579,6 +7568,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpagadoNull() {
                 this[this.tablerpt_nominas.pagadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTrabajadorNull() {
+                return this.IsNull(this.tablerpt_nominas.TrabajadorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTrabajadorNull() {
+                this[this.tablerpt_nominas.TrabajadorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9926,7 +9927,6 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("id_encargado", "id_encargado");
             tableMapping.ColumnMappings.Add("Encargado", "Encargado");
             tableMapping.ColumnMappings.Add("Nro_empleado", "Nro_empleado");
-            tableMapping.ColumnMappings.Add("trabajador", "trabajador");
             tableMapping.ColumnMappings.Add("Empresa", "Empresa");
             tableMapping.ColumnMappings.Add("id_empleo", "id_empleo");
             tableMapping.ColumnMappings.Add("id_det", "id_det");
@@ -9950,6 +9950,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("domH", "domH");
             tableMapping.ColumnMappings.Add("ccc", "ccc");
             tableMapping.ColumnMappings.Add("pagado", "pagado");
+            tableMapping.ColumnMappings.Add("Trabajador", "Trabajador");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -9966,7 +9967,9 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT anio, semana, status, id_encargado, Encargado, Nro_empleado, trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, ccc, pagado FROM rpt_nominas";
+            this._commandCollection[0].CommandText = @"SELECT        anio, semana, status, id_encargado, Encargado, Nro_empleado, Trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, 
+                         domH, ccc, pagado
+FROM            rpt_nominas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
