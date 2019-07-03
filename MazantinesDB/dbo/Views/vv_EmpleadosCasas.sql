@@ -13,3 +13,5 @@ FROM
 	INNER JOIN Trabajadores ON Trabajadores.id_casa = Casas.Id
 	LEFT JOIN Empresas ON Empresas.Id = Trabajadores.id_empresa
 	LEFT JOIN Fincas ON Fincas.Id = Casas.id_finca
+WHERE
+	Trabajadores.Activo = 1

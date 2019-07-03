@@ -19,10 +19,12 @@
     [domD]        FLOAT (53) NULL,
     [domH]        FLOAT (53) NULL,
     [pagado]      BIT        DEFAULT ((0)) NULL,
-    PRIMARY KEY CLUSTERED ([id_det] ASC),
+    CONSTRAINT [PK__tmp_ms_x__D5EA63501C1D203D] PRIMARY KEY CLUSTERED ([id_det] ASC),
     CONSTRAINT [fk_NominasDet_NominasCab_pk] FOREIGN KEY ([id_cab]) REFERENCES [dbo].[NominasCab] ([id_cab]),
     CONSTRAINT [FK_NominasDet_Trabajadores] FOREIGN KEY ([id_empleado]) REFERENCES [dbo].[Trabajadores] ([Id])
 );
+
+
 
 
 

@@ -1,2 +1,4 @@
-﻿CREATE USER [mazantines] FOR LOGIN [mazantines];
+﻿CREATE USER [mazantines];
+
+
 

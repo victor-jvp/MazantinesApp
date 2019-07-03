@@ -1,9 +1,11 @@
 ﻿CREATE VIEW [dbo].[vv_empleados] AS SELECT
 	Trabajadores.Id,
-	CAST ( Trabajadores.Nro_empleado AS VARCHAR ) AS Nro_empleado,
+	Trabajadores.Nro_empleado,
+	Trabajadores.Caja,
 	Trabajadores.Nombre,
 	Trabajadores.Apellidos,
 	CONCAT ( Trabajadores.Nombre, ' ', Trabajadores.Apellidos ) AS FullName,
+	Encargados.Encargado,
 	Trabajadores.Telefono,
 	CAST ( NroCasa AS VARCHAR ) AS NroCasa,
 	Empresa,
@@ -17,8 +19,10 @@
 		Trabajadores_Empleos 
 	WHERE
 		Trabajadores_Empleos.id_trabajador = Trabajadores.Id 
-	) AS Empleos 
+	) AS Empleos,
+	Trabajadores.Activo
 FROM
 	Trabajadores
 	LEFT JOIN Casas ON casas.Id = Trabajadores.id_casa
 	LEFT JOIN Empresas ON Empresas.Id = Trabajadores.id_empresa
+	LEFT JOIN Encargados ON Encargados.Id = Trabajadores.id_encargado
