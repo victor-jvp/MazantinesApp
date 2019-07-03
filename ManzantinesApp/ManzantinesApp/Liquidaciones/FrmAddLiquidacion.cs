@@ -33,20 +33,6 @@ namespace ManzantinesApp.Liquidaciones
                 return false;
             }
 
-            if(totalesNumericUpDown.Value <= 0)
-            {
-                this.errorProvider1.SetError(totalesNumericUpDown, "Este campo debe ser mayor que cero");
-                totalesNumericUpDown.Focus();
-                return false;
-            }
-
-            if (CantidadNumericUpDown.Value <= 0)
-            {
-                this.errorProvider1.SetError(CantidadNumericUpDown, "Este campo debe ser mayor que cero");
-                CantidadNumericUpDown.Focus();
-                return false;
-            }
-
             return true;
         }
         #endregion

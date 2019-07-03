@@ -46,22 +46,23 @@
             this.id_empresaComboBox = new System.Windows.Forms.ComboBox();
             this.PictureOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.GuardarToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.NominasToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fincaComboBox = new System.Windows.Forms.ComboBox();
             this.nroCasaComboBox = new System.Windows.Forms.ComboBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.QuitarFototoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.trabajadores_EmpleosDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_trabajador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_empleo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.QuitarEmpleoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cCCTextBox = new System.Windows.Forms.TextBox();
             this.cajaTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.QuitarEmpleoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.foto2PictureBox = new System.Windows.Forms.PictureBox();
-            this.QuitarFototoolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.GuardarToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.NominasToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ActivoCheckBox = new System.Windows.Forms.CheckBox();
             nro_empleadoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -225,6 +226,29 @@
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // GuardarToolStripButton1
+            // 
+            this.GuardarToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton1.Image")));
+            this.GuardarToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GuardarToolStripButton1.Name = "GuardarToolStripButton1";
+            this.GuardarToolStripButton1.Size = new System.Drawing.Size(69, 22);
+            this.GuardarToolStripButton1.Text = "&Guardar";
+            this.GuardarToolStripButton1.Click += new System.EventHandler(this.GuardarToolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // NominasToolStripButton
+            // 
+            this.NominasToolStripButton.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
+            this.NominasToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.NominasToolStripButton.Name = "NominasToolStripButton";
+            this.NominasToolStripButton.Size = new System.Drawing.Size(94, 22);
+            this.NominasToolStripButton.Text = "Ver Nominas";
+            this.NominasToolStripButton.Click += new System.EventHandler(this.NominasToolStripButton_Click);
+            // 
             // fincaComboBox
             // 
             this.fincaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -261,6 +285,15 @@
             this.toolStrip2.Size = new System.Drawing.Size(99, 25);
             this.toolStrip2.TabIndex = 20;
             this.toolStrip2.Text = "toolStrip2";
+            // 
+            // QuitarFototoolStripButton
+            // 
+            this.QuitarFototoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitarFototoolStripButton.Image")));
+            this.QuitarFototoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.QuitarFototoolStripButton.Name = "QuitarFototoolStripButton";
+            this.QuitarFototoolStripButton.Size = new System.Drawing.Size(87, 22);
+            this.QuitarFototoolStripButton.Text = "Quitar Foto";
+            this.QuitarFototoolStripButton.Click += new System.EventHandler(this.QuitarFototoolStripButton_Click_1);
             // 
             // trabajadores_EmpleosDataGridView
             // 
@@ -310,6 +343,15 @@
             this.toolStrip3.TabIndex = 21;
             this.toolStrip3.Text = "toolStrip3";
             // 
+            // QuitarEmpleoToolStripButton
+            // 
+            this.QuitarEmpleoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitarEmpleoToolStripButton.Image")));
+            this.QuitarEmpleoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.QuitarEmpleoToolStripButton.Name = "QuitarEmpleoToolStripButton";
+            this.QuitarEmpleoToolStripButton.Size = new System.Drawing.Size(103, 22);
+            this.QuitarEmpleoToolStripButton.Text = "Quitar Empleo";
+            this.QuitarEmpleoToolStripButton.Click += new System.EventHandler(this.QuitarEmpleoToolStripButton_Click_1);
+            // 
             // cCCTextBox
             // 
             this.cCCTextBox.Location = new System.Drawing.Point(98, 147);
@@ -324,20 +366,6 @@
             this.cajaTextBox.Size = new System.Drawing.Size(56, 20);
             this.cajaTextBox.TabIndex = 3;
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // QuitarEmpleoToolStripButton
-            // 
-            this.QuitarEmpleoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitarEmpleoToolStripButton.Image")));
-            this.QuitarEmpleoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.QuitarEmpleoToolStripButton.Name = "QuitarEmpleoToolStripButton";
-            this.QuitarEmpleoToolStripButton.Size = new System.Drawing.Size(103, 22);
-            this.QuitarEmpleoToolStripButton.Text = "Quitar Empleo";
-            this.QuitarEmpleoToolStripButton.Click += new System.EventHandler(this.QuitarEmpleoToolStripButton_Click_1);
-            // 
             // foto2PictureBox
             // 
             this.foto2PictureBox.BackColor = System.Drawing.Color.White;
@@ -351,38 +379,22 @@
             this.foto2PictureBox.TabStop = false;
             this.foto2PictureBox.Click += new System.EventHandler(this.foto2PictureBox_Click_1);
             // 
-            // QuitarFototoolStripButton
+            // ActivoCheckBox
             // 
-            this.QuitarFototoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("QuitarFototoolStripButton.Image")));
-            this.QuitarFototoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.QuitarFototoolStripButton.Name = "QuitarFototoolStripButton";
-            this.QuitarFototoolStripButton.Size = new System.Drawing.Size(87, 22);
-            this.QuitarFototoolStripButton.Text = "Quitar Foto";
-            this.QuitarFototoolStripButton.Click += new System.EventHandler(this.QuitarFototoolStripButton_Click_1);
-            // 
-            // GuardarToolStripButton1
-            // 
-            this.GuardarToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton1.Image")));
-            this.GuardarToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.GuardarToolStripButton1.Name = "GuardarToolStripButton1";
-            this.GuardarToolStripButton1.Size = new System.Drawing.Size(69, 22);
-            this.GuardarToolStripButton1.Text = "&Guardar";
-            this.GuardarToolStripButton1.Click += new System.EventHandler(this.GuardarToolStripButton1_Click);
-            // 
-            // NominasToolStripButton
-            // 
-            this.NominasToolStripButton.Image = global::ManzantinesApp.Properties.Resources.PrintSetup_16x_32;
-            this.NominasToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NominasToolStripButton.Name = "NominasToolStripButton";
-            this.NominasToolStripButton.Size = new System.Drawing.Size(95, 22);
-            this.NominasToolStripButton.Text = "Ver Nominas";
-            this.NominasToolStripButton.Click += new System.EventHandler(this.NominasToolStripButton_Click);
+            this.ActivoCheckBox.AutoSize = true;
+            this.ActivoCheckBox.Location = new System.Drawing.Point(415, 292);
+            this.ActivoCheckBox.Name = "ActivoCheckBox";
+            this.ActivoCheckBox.Size = new System.Drawing.Size(56, 17);
+            this.ActivoCheckBox.TabIndex = 26;
+            this.ActivoCheckBox.Text = "Activo";
+            this.ActivoCheckBox.UseVisualStyleBackColor = true;
             // 
             // FrmEditEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 321);
+            this.Controls.Add(this.ActivoCheckBox);
             this.Controls.Add(cajaLabel);
             this.Controls.Add(this.cajaTextBox);
             this.Controls.Add(cCCLabel);
@@ -451,5 +463,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn id_empleo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton NominasToolStripButton;
+        private System.Windows.Forms.CheckBox ActivoCheckBox;
     }
 }

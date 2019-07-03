@@ -32,6 +32,7 @@ namespace ManzantinesApp.DBContext
         public byte[] foto2 { get; set; }
         public string CCC { get; set; }
         public string Caja { get; set; }
+        public Nullable<bool> Activo { get; set; }
     
         public virtual Casas Casas { get; set; }
         public virtual Empresas Empresas { get; set; }

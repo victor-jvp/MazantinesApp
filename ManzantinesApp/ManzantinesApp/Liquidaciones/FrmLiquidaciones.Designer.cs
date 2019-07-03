@@ -60,12 +60,12 @@
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liquidacionesDataGridView = new System.Windows.Forms.DataGridView();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.SinPagarRadioButton = new System.Windows.Forms.RadioButton();
             this.PagadasRadioButton = new System.Windows.Forms.RadioButton();
             this.TodasRadioButton = new System.Windows.Forms.RadioButton();
-            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,9 +80,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).BeginInit();
             this.liquidacionesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -344,6 +344,11 @@
             this.liquidacionesDataGridView.Size = new System.Drawing.Size(757, 225);
             this.liquidacionesDataGridView.TabIndex = 1;
             // 
+            // empresasBindingSource
+            // 
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.dataSet1;
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -403,11 +408,6 @@
             this.TodasRadioButton.Text = "Todas";
             this.TodasRadioButton.UseVisualStyleBackColor = true;
             this.TodasRadioButton.CheckedChanged += new System.EventHandler(this.TodasRadioButton_CheckedChanged);
-            // 
-            // empresasBindingSource
-            // 
-            this.empresasBindingSource.DataMember = "Empresas";
-            this.empresasBindingSource.DataSource = this.dataSet1;
             // 
             // empresasTableAdapter
             // 
@@ -506,10 +506,10 @@
             this.liquidacionesBindingNavigator.ResumeLayout(false);
             this.liquidacionesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

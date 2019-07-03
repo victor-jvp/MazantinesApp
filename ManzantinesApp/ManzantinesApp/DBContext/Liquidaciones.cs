@@ -20,5 +20,7 @@ namespace ManzantinesApp.DBContext
         public Nullable<decimal> Totales { get; set; }
         public Nullable<bool> Pagado { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
+        public Nullable<int> id_empresa { get; set; }
+        public Nullable<double> Cantidad { get; set; }
     }
 }

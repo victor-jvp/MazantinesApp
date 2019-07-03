@@ -72,13 +72,19 @@
                     apellidosTextBox.Text = miTrabajador.Apellidos;
                     telefonoTextBox.Text = miTrabajador.Telefono;
                     cCCTextBox.Text = miTrabajador.CCC;
+                    if(miTrabajador.Activo != null) ActivoCheckBox.Checked = (bool)miTrabajador.Activo ;
                     if (miTrabajador.foto2 != null) foto2PictureBox.Image = (Bitmap)new ImageConverter().ConvertFrom(miTrabajador.foto2);
                     if(miTrabajador.id_empresa != null) id_empresaComboBox.SelectedValue = miTrabajador.id_empresa;
                     if (miTrabajador.id_casa != null)
                     {
-                        nroCasaComboBox.SelectedValue = miTrabajador.id_casa;
+                        
                         int? selected_finca = db.Casas.Where(c => c.Id == miTrabajador.id_casa).Select(f => f.id_finca).FirstOrDefault();
                         this.fincaComboBox.SelectedValue = selected_finca;
+
+                        this.nroCasaComboBox.ValueMember = "Id";
+                        this.nroCasaComboBox.DisplayMember = "NroCasa";
+                        this.nroCasaComboBox.DataSource = db.Casas.Where(c => c.id_finca == (int)fincaComboBox.SelectedValue).ToList();
+                        nroCasaComboBox.SelectedValue = miTrabajador.id_casa;
                     }
 
                     List<Trabajadores_Empleos> empleos = db.Trabajadores_Empleos.Where(e => e.id_trabajador == miTrabajador.Id).ToList();
@@ -179,6 +185,7 @@
                         Nombre = nombreTextBox.Text.Trim(),
                         Nro_empleado = nro_empleadoTextBox.Text.Trim(),
                         Telefono = telefonoTextBox.Text.Trim(),
+                        Activo = ActivoCheckBox.Checked
                     };
 
                     if (miTrabajador != null)

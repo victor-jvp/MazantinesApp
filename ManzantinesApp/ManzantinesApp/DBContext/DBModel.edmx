@@ -74,6 +74,8 @@
           <Property Name="Totales" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Pagado" Type="bit" />
           <Property Name="Fecha" Type="date" />
+          <Property Name="id_empresa" Type="int" />
+          <Property Name="Cantidad" Type="float" />
         </EntityType>
         <EntityType Name="NominasCab">
           <Key>
@@ -137,6 +139,7 @@
           <Property Name="foto2" Type="image" />
           <Property Name="CCC" Type="nvarchar(max)" />
           <Property Name="Caja" Type="nvarchar(max)" />
+          <Property Name="Activo" Type="bit" />
         </EntityType>
         <EntityType Name="Trabajadores_Empleos">
           <Key>
@@ -234,6 +237,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_empleados' does not have a prima
           <Property Name="NroCasa" Type="varchar" MaxLength="30" />
           <Property Name="Empresa" Type="nvarchar(max)" />
           <Property Name="Empleos" Type="nvarchar(max)" />
+          <Property Name="Activo" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_EmpleadosCasas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -537,7 +541,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
     [vv_empleados].[Telefono] AS [Telefono], 
     [vv_empleados].[NroCasa] AS [NroCasa], 
     [vv_empleados].[Empresa] AS [Empresa], 
-    [vv_empleados].[Empleos] AS [Empleos]
+    [vv_empleados].[Empleos] AS [Empleos], 
+    [vv_empleados].[Activo] AS [Activo]
     FROM [dbo].[vv_empleados] AS [vv_empleados]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vv_EmpleadosCasas" EntityType="Self.vv_EmpleadosCasas" store:Type="Views" store:Schema="dbo">
@@ -802,6 +807,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="Totales" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Pagado" Type="Boolean" />
           <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="id_empresa" Type="Int32" />
+          <Property Name="Cantidad" Type="Double" />
         </EntityType>
         <EntityType Name="NominasCab">
           <Key>
@@ -874,6 +881,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <NavigationProperty Name="Empresas" Relationship="MazantinesModel.id_empresa" FromRole="Trabajadores" ToRole="Empresas" />
           <NavigationProperty Name="NominasDet" Relationship="MazantinesModel.FK_NominasDet_Trabajadores" FromRole="Trabajadores" ToRole="NominasDet" />
           <NavigationProperty Name="Trabajadores_Empleos" Relationship="MazantinesModel.fk_id_trabajador" FromRole="Trabajadores" ToRole="Trabajadores_Empleos" />
+          <Property Name="Activo" Type="Boolean" />
         </EntityType>
         <EntityType Name="Trabajadores_Empleos">
           <Key>
@@ -919,6 +927,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Empleos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Activo" Type="Boolean" />
         </EntityType>
         <EntityType Name="vv_EmpleadosCasas">
           <Key>
@@ -1252,6 +1261,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <EntitySetMapping Name="Liquidaciones">
             <EntityTypeMapping TypeName="MazantinesModel.Liquidaciones">
               <MappingFragment StoreEntitySet="Liquidaciones">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Pagado" ColumnName="Pagado" />
                 <ScalarProperty Name="Totales" ColumnName="Totales" />
@@ -1314,6 +1325,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <EntitySetMapping Name="Trabajadores">
             <EntityTypeMapping TypeName="MazantinesModel.Trabajadores">
               <MappingFragment StoreEntitySet="Trabajadores">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Caja" ColumnName="Caja" />
                 <ScalarProperty Name="CCC" ColumnName="CCC" />
                 <ScalarProperty Name="foto2" ColumnName="foto2" />
@@ -1360,6 +1372,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <EntitySetMapping Name="vv_empleados">
             <EntityTypeMapping TypeName="MazantinesModel.vv_empleados">
               <MappingFragment StoreEntitySet="vv_empleados">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Caja" ColumnName="Caja" />
                 <ScalarProperty Name="Empleos" ColumnName="Empleos" />
                 <ScalarProperty Name="Empresa" ColumnName="Empresa" />

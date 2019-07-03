@@ -33,6 +33,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleados));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.trabajadoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroempleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroCasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empleos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.vv_empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -75,16 +86,7 @@
             this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
             this.trabajadores_EmpleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vv_empleadosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.vv_empleadosTableAdapter();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroempleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroCasaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empleos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vv_empleadosBindingSource)).BeginInit();
@@ -97,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rptDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -107,7 +110,7 @@
             this.groupBox1.Controls.Add(this.trabajadoresDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(0, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(713, 337);
+            this.groupBox1.Size = new System.Drawing.Size(782, 337);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Empleados";
@@ -131,14 +134,105 @@
             this.telefonoDataGridViewTextBoxColumn,
             this.nroCasaDataGridViewTextBoxColumn,
             this.empresaDataGridViewTextBoxColumn,
-            this.Empleos});
+            this.Empleos,
+            this.Activo});
             this.trabajadoresDataGridView.DataSource = this.vv_empleadosBindingSource;
             this.trabajadoresDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trabajadoresDataGridView.Location = new System.Drawing.Point(3, 16);
             this.trabajadoresDataGridView.Name = "trabajadoresDataGridView";
             this.trabajadoresDataGridView.ReadOnly = true;
-            this.trabajadoresDataGridView.Size = new System.Drawing.Size(707, 318);
+            this.trabajadoresDataGridView.Size = new System.Drawing.Size(776, 318);
             this.trabajadoresDataGridView.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 41;
+            // 
+            // nroempleadoDataGridViewTextBoxColumn
+            // 
+            this.nroempleadoDataGridViewTextBoxColumn.DataPropertyName = "Nro_empleado";
+            this.nroempleadoDataGridViewTextBoxColumn.HeaderText = "Nro. Empleado";
+            this.nroempleadoDataGridViewTextBoxColumn.Name = "nroempleadoDataGridViewTextBoxColumn";
+            this.nroempleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroempleadoDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // Caja
+            // 
+            this.Caja.DataPropertyName = "Caja";
+            this.Caja.HeaderText = "Caja";
+            this.Caja.Name = "Caja";
+            this.Caja.ReadOnly = true;
+            this.Caja.Width = 53;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // apellidosDataGridViewTextBoxColumn
+            // 
+            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
+            this.apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
+            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.apellidosDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameDataGridViewTextBoxColumn.Visible = false;
+            this.fullNameDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefonoDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // nroCasaDataGridViewTextBoxColumn
+            // 
+            this.nroCasaDataGridViewTextBoxColumn.DataPropertyName = "NroCasa";
+            this.nroCasaDataGridViewTextBoxColumn.HeaderText = "Casa";
+            this.nroCasaDataGridViewTextBoxColumn.Name = "nroCasaDataGridViewTextBoxColumn";
+            this.nroCasaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nroCasaDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // empresaDataGridViewTextBoxColumn
+            // 
+            this.empresaDataGridViewTextBoxColumn.DataPropertyName = "Empresa";
+            this.empresaDataGridViewTextBoxColumn.HeaderText = "Empresa";
+            this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
+            this.empresaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empresaDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // Empleos
+            // 
+            this.Empleos.DataPropertyName = "Empleos";
+            this.Empleos.HeaderText = "Empleos";
+            this.Empleos.Name = "Empleos";
+            this.Empleos.ReadOnly = true;
+            this.Empleos.Width = 72;
+            // 
+            // Activo
+            // 
+            this.Activo.DataPropertyName = "Activo";
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            this.Activo.Width = 43;
             // 
             // vv_empleadosBindingSource
             // 
@@ -164,7 +258,7 @@
             this.EmpresaToolStripTextBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(713, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(782, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -245,7 +339,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(713, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(782, 25);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -464,93 +558,16 @@
             // 
             this.vv_empleadosTableAdapter.ClearBeforeFill = true;
             // 
-            // Id
+            // rptDataSet
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 41;
-            // 
-            // nroempleadoDataGridViewTextBoxColumn
-            // 
-            this.nroempleadoDataGridViewTextBoxColumn.DataPropertyName = "Nro_empleado";
-            this.nroempleadoDataGridViewTextBoxColumn.HeaderText = "Nro. Empleado";
-            this.nroempleadoDataGridViewTextBoxColumn.Name = "nroempleadoDataGridViewTextBoxColumn";
-            this.nroempleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroempleadoDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // Caja
-            // 
-            this.Caja.DataPropertyName = "Caja";
-            this.Caja.HeaderText = "Caja";
-            this.Caja.Name = "Caja";
-            this.Caja.ReadOnly = true;
-            this.Caja.Width = 53;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // apellidosDataGridViewTextBoxColumn
-            // 
-            this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "Apellidos";
-            this.apellidosDataGridViewTextBoxColumn.HeaderText = "Apellidos";
-            this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            this.apellidosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.apellidosDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullNameDataGridViewTextBoxColumn.Visible = false;
-            this.fullNameDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonoDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // nroCasaDataGridViewTextBoxColumn
-            // 
-            this.nroCasaDataGridViewTextBoxColumn.DataPropertyName = "NroCasa";
-            this.nroCasaDataGridViewTextBoxColumn.HeaderText = "Casa";
-            this.nroCasaDataGridViewTextBoxColumn.Name = "nroCasaDataGridViewTextBoxColumn";
-            this.nroCasaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nroCasaDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // empresaDataGridViewTextBoxColumn
-            // 
-            this.empresaDataGridViewTextBoxColumn.DataPropertyName = "Empresa";
-            this.empresaDataGridViewTextBoxColumn.HeaderText = "Empresa";
-            this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
-            this.empresaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.empresaDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // Empleos
-            // 
-            this.Empleos.DataPropertyName = "Empleos";
-            this.Empleos.HeaderText = "Empleos";
-            this.Empleos.Name = "Empleos";
-            this.Empleos.ReadOnly = true;
-            this.Empleos.Width = 72;
+            this.rptDataSet.DataSetName = "RptDataSet";
+            this.rptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 402);
+            this.ClientSize = new System.Drawing.Size(782, 402);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.groupBox1);
@@ -571,6 +588,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rptDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -622,6 +640,7 @@
         private System.Windows.Forms.ToolStripTextBox CasaToolStripTextBox;
         private Data.DataSet1TableAdapters.vv_empleadosTableAdapter vv_empleadosTableAdapter;
         private System.Windows.Forms.BindingSource vv_empleadosBindingSource;
+        private Data.RptDataSet rptDataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroempleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Caja;
@@ -632,5 +651,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nroCasaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
     }
 }
