@@ -39,6 +39,7 @@
             System.Windows.Forms.Label cCCLabel;
             System.Windows.Forms.Label cajaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditEmpleado));
+            System.Windows.Forms.Label label2;
             this.nro_empleadoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
@@ -63,6 +64,7 @@
             this.cajaTextBox = new System.Windows.Forms.TextBox();
             this.foto2PictureBox = new System.Windows.Forms.PictureBox();
             this.ActivoCheckBox = new System.Windows.Forms.CheckBox();
+            this.EncargadoComboBox = new System.Windows.Forms.ComboBox();
             nro_empleadoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -73,6 +75,7 @@
             nroCasaLabel = new System.Windows.Forms.Label();
             cCCLabel = new System.Windows.Forms.Label();
             cajaLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadores_EmpleosDataGridView)).BeginInit();
@@ -389,11 +392,34 @@
             this.ActivoCheckBox.Text = "Activo";
             this.ActivoCheckBox.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(264, 179);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(62, 13);
+            label2.TabIndex = 27;
+            label2.Text = "Encargado:";
+            // 
+            // EncargadoComboBox
+            // 
+            this.EncargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.EncargadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EncargadoComboBox.DisplayMember = "Id";
+            this.EncargadoComboBox.FormattingEnabled = true;
+            this.EncargadoComboBox.Location = new System.Drawing.Point(332, 176);
+            this.EncargadoComboBox.Name = "EncargadoComboBox";
+            this.EncargadoComboBox.Size = new System.Drawing.Size(140, 21);
+            this.EncargadoComboBox.TabIndex = 28;
+            this.EncargadoComboBox.ValueMember = "Id";
+            // 
             // FrmEditEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 321);
+            this.Controls.Add(label2);
+            this.Controls.Add(this.EncargadoComboBox);
             this.Controls.Add(this.ActivoCheckBox);
             this.Controls.Add(cajaLabel);
             this.Controls.Add(this.cajaTextBox);
@@ -464,5 +490,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton NominasToolStripButton;
         private System.Windows.Forms.CheckBox ActivoCheckBox;
+        private System.Windows.Forms.ComboBox EncargadoComboBox;
     }
 }

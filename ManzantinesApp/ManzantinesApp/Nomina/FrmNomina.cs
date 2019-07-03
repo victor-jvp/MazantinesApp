@@ -113,26 +113,32 @@
                     List<vv_nomina_trabajadores> trabajadores = null;
                     using (MazantinesEntities db = new MazantinesEntities())
                     {
-                        trabajadores = db.vv_nomina_trabajadores.ToList();
+                        NominasCab cab = new NominasCab()
+                        {
+                            semana = semana,
+                            anio = anio,
+                            status = "A"
+                        };
+
+                        if (encargado != 0)
+                        {
+                            cab.id_encargado = encargado;
+                            trabajadores = db.vv_nomina_trabajadores.Where(t => t.id_encargado == encargado).ToList();
+                        }
+                        else
+                        {
+                            trabajadores = db.vv_nomina_trabajadores.Where(t=> t.id_encargado == null).ToList();
+                        }
 
                         if (trabajadores.Count == 0)
                         {
                             MessageBox.Show(
-                                "No existen trabajadores registrados.",
+                                "No existen trabajadores asociados al encargado seleccionado.",
                                 "Error en carga de Nómina",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
                             return;
                         }
-
-                        NominasCab cab = new NominasCab()
-                        {
-                            semana = semana,
-                            anio = anio,
-                            status = "A"                            
-                        };
-
-                        if (encargado != 0) cab.id_encargado = encargado;
 
                         foreach (vv_nomina_trabajadores row in trabajadores)
                         {

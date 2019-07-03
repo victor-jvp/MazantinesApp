@@ -38,6 +38,7 @@
         <EntityTypeShape EntityType="MazantinesModel.vv_nomina_trabajadores" Width="1.5" PointX="14.375" PointY="9.75" />
         <EntityTypeShape EntityType="MazantinesModel.rpt_nominas" Width="1.5" PointX="14.375" PointY="13.75" />
         <EntityTypeShape EntityType="MazantinesModel.vv_NominasEmpleadosMes" Width="1.5" PointX="15.375" PointY="0.75" />
+        <AssociationConnector Association="MazantinesModel.id_encargado_trabajador" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -33,6 +33,7 @@ namespace ManzantinesApp.DBContext
         public string CCC { get; set; }
         public string Caja { get; set; }
         public Nullable<bool> Activo { get; set; }
+        public Nullable<int> id_encargado { get; set; }
     
         public virtual Casas Casas { get; set; }
         public virtual Empresas Empresas { get; set; }
@@ -40,5 +41,6 @@ namespace ManzantinesApp.DBContext
         public virtual ICollection<NominasDet> NominasDet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Trabajadores_Empleos> Trabajadores_Empleos { get; set; }
+        public virtual Encargados Encargados { get; set; }
     }
 }

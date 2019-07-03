@@ -19,6 +19,7 @@ namespace ManzantinesApp.DBContext
         {
             this.NominasCab = new HashSet<NominasCab>();
             this.Fincas = new HashSet<Fincas>();
+            this.Trabajadores = new HashSet<Trabajadores>();
         }
     
         public int Id { get; set; }
@@ -28,5 +29,7 @@ namespace ManzantinesApp.DBContext
         public virtual ICollection<NominasCab> NominasCab { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Fincas> Fincas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Trabajadores> Trabajadores { get; set; }
     }
 }

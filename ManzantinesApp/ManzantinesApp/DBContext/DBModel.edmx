@@ -135,6 +135,7 @@
           <Property Name="Telefono" Type="nvarchar(max)" />
           <Property Name="id_empresa" Type="int" />
           <Property Name="id_casa" Type="int" />
+          <Property Name="id_encargado" Type="int" />
           <Property Name="foto" Type="ntext" />
           <Property Name="foto2" Type="image" />
           <Property Name="CCC" Type="nvarchar(max)" />
@@ -233,6 +234,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_empleados' does not have a prima
           <Property Name="Nombre" Type="nvarchar(max)" />
           <Property Name="Apellidos" Type="nvarchar(max)" />
           <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Encargado" Type="nvarchar(max)" />
           <Property Name="Telefono" Type="nvarchar(max)" />
           <Property Name="NroCasa" Type="varchar" MaxLength="30" />
           <Property Name="Empresa" Type="nvarchar(max)" />
@@ -468,6 +470,18 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="id_encargado_trabajador">
+          <End Role="Encargados" Type="Self.Encargados" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encargados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="id_encargado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="id_finca">
           <End Role="Fincas" Type="Self.Fincas" Multiplicity="0..1" />
           <End Role="Casas" Type="Self.Casas" Multiplicity="*" />
@@ -562,6 +576,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [vv_empleados].[Nombre] AS [Nombre], 
     [vv_empleados].[Apellidos] AS [Apellidos], 
     [vv_empleados].[FullName] AS [FullName], 
+    [vv_empleados].[Encargado] AS [Encargado], 
     [vv_empleados].[Telefono] AS [Telefono], 
     [vv_empleados].[NroCasa] AS [NroCasa], 
     [vv_empleados].[Empresa] AS [Empresa], 
@@ -691,6 +706,10 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
             <End Role="Encargados" EntitySet="Encargados" />
             <End Role="Fincas" EntitySet="Fincas" />
           </AssociationSet>
+          <AssociationSet Name="id_encargado_trabajador" Association="Self.id_encargado_trabajador">
+            <End Role="Encargados" EntitySet="Encargados" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
           <AssociationSet Name="id_finca" Association="Self.id_finca">
             <End Role="Fincas" EntitySet="Fincas" />
             <End Role="Casas" EntitySet="Casas" />
@@ -770,6 +789,10 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySet Name="vv_nomina_trabajadores" EntityType="MazantinesModel.vv_nomina_trabajadores" />
           <EntitySet Name="rpt_nominas" EntityType="MazantinesModel.rpt_nominas" />
           <EntitySet Name="vv_NominasEmpleadosMes" EntityType="MazantinesModel.vv_NominasEmpleadosMes" />
+          <AssociationSet Name="id_encargado_trabajador" Association="MazantinesModel.id_encargado_trabajador">
+            <End Role="Encargados" EntitySet="Encargados" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Asientos">
           <Key>
@@ -832,6 +855,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="Encargado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NominasCab" Relationship="MazantinesModel.FK_NominasCab_Encargados" FromRole="Encargados" ToRole="NominasCab" />
           <NavigationProperty Name="Fincas" Relationship="MazantinesModel.id_encargado" FromRole="Encargados" ToRole="Fincas" />
+          <NavigationProperty Name="Trabajadores" Relationship="MazantinesModel.id_encargado_trabajador" FromRole="Encargados" ToRole="Trabajadores" />
         </EntityType>
         <EntityType Name="Fincas">
           <Key>
@@ -928,6 +952,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <NavigationProperty Name="NominasDet" Relationship="MazantinesModel.FK_NominasDet_Trabajadores" FromRole="Trabajadores" ToRole="NominasDet" />
           <NavigationProperty Name="Trabajadores_Empleos" Relationship="MazantinesModel.fk_id_trabajador" FromRole="Trabajadores" ToRole="Trabajadores_Empleos" />
           <Property Name="Activo" Type="Boolean" />
+          <Property Name="id_encargado" Type="Int32" />
+          <NavigationProperty Name="Encargados" Relationship="MazantinesModel.id_encargado_trabajador" FromRole="Trabajadores" ToRole="Encargados" />
         </EntityType>
         <EntityType Name="Trabajadores_Empleos">
           <Key>
@@ -974,6 +1000,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="Empleos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Activo" Type="Boolean" />
+          <Property Name="Encargado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vv_EmpleadosCasas">
           <Key>
@@ -1254,6 +1281,18 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="Encargado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TotalPago" Type="Double" />
         </EntityType>
+        <Association Name="id_encargado_trabajador">
+          <End Type="MazantinesModel.Encargados" Role="Encargados" Multiplicity="0..1" />
+          <End Type="MazantinesModel.Trabajadores" Role="Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Encargados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="id_encargado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1393,6 +1432,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="Trabajadores">
             <EntityTypeMapping TypeName="MazantinesModel.Trabajadores">
               <MappingFragment StoreEntitySet="Trabajadores">
+                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Caja" ColumnName="Caja" />
                 <ScalarProperty Name="CCC" ColumnName="CCC" />
@@ -1440,6 +1480,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="vv_empleados">
             <EntityTypeMapping TypeName="MazantinesModel.vv_empleados">
               <MappingFragment StoreEntitySet="vv_empleados">
+                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Caja" ColumnName="Caja" />
                 <ScalarProperty Name="Empleos" ColumnName="Empleos" />

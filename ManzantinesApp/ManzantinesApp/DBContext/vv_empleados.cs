@@ -25,5 +25,6 @@ namespace ManzantinesApp.DBContext
         public string Empleos { get; set; }
         public string Caja { get; set; }
         public Nullable<bool> Activo { get; set; }
+        public string Encargado { get; set; }
     }
 }

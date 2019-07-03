@@ -47,6 +47,11 @@
         {
             using (MazantinesEntities db = new MazantinesEntities())
             {
+                this.EncargadoComboBox.DisplayMember = "Encargado";
+                this.EncargadoComboBox.ValueMember = "Id";
+                this.EncargadoComboBox.DataSource = db.Encargados.OrderBy(e => e.Encargado).ToList();
+                this.EncargadoComboBox.SelectedIndex = -1;
+
                 this.id_empresaComboBox.ValueMember = "Id";
                 this.id_empresaComboBox.DisplayMember = "Empresa";
                 this.id_empresaComboBox.DataSource = db.Empresas.ToList();
@@ -75,6 +80,7 @@
                     if(miTrabajador.Activo != null) ActivoCheckBox.Checked = (bool)miTrabajador.Activo ;
                     if (miTrabajador.foto2 != null) foto2PictureBox.Image = (Bitmap)new ImageConverter().ConvertFrom(miTrabajador.foto2);
                     if(miTrabajador.id_empresa != null) id_empresaComboBox.SelectedValue = miTrabajador.id_empresa;
+                    if (miTrabajador.id_encargado != null) EncargadoComboBox.SelectedValue = miTrabajador.id_encargado;
                     if (miTrabajador.id_casa != null)
                     {
                         
@@ -167,12 +173,16 @@
                 {
                     int? id_casa = null;
                     int? id_empresa = null;
+                    int? id_encargado = null;
 
                     if (nroCasaComboBox.SelectedValue != null)
                         id_casa = (int)nroCasaComboBox.SelectedValue;
 
                     if (id_empresaComboBox.SelectedValue != null)
                         id_empresa = (int)id_empresaComboBox.SelectedValue;
+
+                    if (EncargadoComboBox.SelectedValue != null)
+                        id_encargado = (int)EncargadoComboBox.SelectedValue;
 
                     Trabajadores trabajador = new Trabajadores()
                     {
@@ -182,10 +192,11 @@
                         foto2 = ImageToByteArray(foto2PictureBox.Image),
                         id_casa = id_casa,
                         id_empresa = id_empresa,
+                        id_encargado = id_encargado,
                         Nombre = nombreTextBox.Text.Trim(),
                         Nro_empleado = nro_empleadoTextBox.Text.Trim(),
                         Telefono = telefonoTextBox.Text.Trim(),
-                        Activo = ActivoCheckBox.Checked
+                        Activo = ActivoCheckBox.Checked                        
                     };
 
                     if (miTrabajador != null)
