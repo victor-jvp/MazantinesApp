@@ -68,6 +68,8 @@ namespace ManzantinesApp.Liquidaciones
 
         private void FrmAddLiquidacion_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Empresas' table. You can move, or remove it, as needed.
+            this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
             this.liquidacionesTableAdapter.Fill(this.dataSet1.Liquidaciones);
             this.liquidacionesBindingSource.AddNew();
             this.categoriaComboBox.SelectedIndex = 0;
@@ -75,6 +77,8 @@ namespace ManzantinesApp.Liquidaciones
             this.totalesNumericUpDown.Value = 0;
             this.fechaDateTimePicker.Value = DateTime.Now;
             this.pagadoCheckBox.Checked = false;
+
+            this.id_empresaComboBox.SelectedIndex = -1;
         }
     }
 }
