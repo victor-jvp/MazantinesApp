@@ -307,5 +307,13 @@
             frmNomina.ShowDialog(this);
             this.Enabled = true;
         }
+
+        private void nominaPorMesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Nomina.FrmNominaMes miForm = new Nomina.FrmNominaMes();
+            miForm.ShowDialog(this);
+            this.Enabled = true;
+        }
     }
 }

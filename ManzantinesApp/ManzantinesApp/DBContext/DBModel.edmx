@@ -312,6 +312,28 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="domH" Type="float" />
           <Property Name="pagado" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vv_NominasEmpleadosMes">
+          <Key>
+            <PropertyRef Name="id_det" />
+          </Key>
+          <Property Name="id_det" Type="int" Nullable="false" />
+          <Property Name="Anio" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="Semana" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="id_encargado" Type="int" />
+          <Property Name="Nro_Empleado" Type="nvarchar(max)" />
+          <Property Name="Caja" Type="nvarchar(max)" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="Apellidos" Type="nvarchar(max)" />
+          <Property Name="semanaIni" Type="datetime" />
+          <Property Name="semanaFin" Type="datetime" />
+          <Property Name="mesIni" Type="int" />
+          <Property Name="totalD" Type="float" />
+          <Property Name="totalH" Type="float" />
+          <Property Name="valorD" Type="float" />
+          <Property Name="valorH" Type="float" />
+        </EntityType>
         <Association Name="FK_EmpleoPago_Empleos">
           <End Role="Empleos" Type="Self.Empleos" Multiplicity="0..1" />
           <End Role="EmpleosPagos" Type="Self.EmpleosPagos" Multiplicity="*" />
@@ -602,6 +624,25 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
     [vv_nominas].[pagado] AS [pagado]
     FROM [dbo].[vv_nominas] AS [vv_nominas]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vv_NominasEmpleadosMes" EntityType="Self.vv_NominasEmpleadosMes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vv_NominasEmpleadosMes].[id_det] AS [id_det], 
+    [vv_NominasEmpleadosMes].[Anio] AS [Anio], 
+    [vv_NominasEmpleadosMes].[Semana] AS [Semana], 
+    [vv_NominasEmpleadosMes].[id_encargado] AS [id_encargado], 
+    [vv_NominasEmpleadosMes].[Nro_Empleado] AS [Nro_Empleado], 
+    [vv_NominasEmpleadosMes].[Caja] AS [Caja], 
+    [vv_NominasEmpleadosMes].[Nombre] AS [Nombre], 
+    [vv_NominasEmpleadosMes].[Apellidos] AS [Apellidos], 
+    [vv_NominasEmpleadosMes].[semanaIni] AS [semanaIni], 
+    [vv_NominasEmpleadosMes].[semanaFin] AS [semanaFin], 
+    [vv_NominasEmpleadosMes].[mesIni] AS [mesIni], 
+    [vv_NominasEmpleadosMes].[totalD] AS [totalD], 
+    [vv_NominasEmpleadosMes].[totalH] AS [totalH], 
+    [vv_NominasEmpleadosMes].[valorD] AS [valorD], 
+    [vv_NominasEmpleadosMes].[valorH] AS [valorH]
+    FROM [dbo].[vv_NominasEmpleadosMes] AS [vv_NominasEmpleadosMes]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_EmpleoPago_Empleos" Association="Self.FK_EmpleoPago_Empleos">
             <End Role="Empleos" EntitySet="Empleos" />
             <End Role="EmpleosPagos" EntitySet="EmpleosPagos" />
@@ -724,6 +765,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <EntitySet Name="vv_nominas" EntityType="MazantinesModel.vv_nominas" />
           <EntitySet Name="vv_nomina_trabajadores" EntityType="MazantinesModel.vv_nomina_trabajadores" />
           <EntitySet Name="rpt_nominas" EntityType="MazantinesModel.rpt_nominas" />
+          <EntitySet Name="vv_NominasEmpleadosMes" EntityType="MazantinesModel.vv_NominasEmpleadosMes" />
         </EntityContainer>
         <EntityType Name="Asientos">
           <Key>
@@ -1186,6 +1228,26 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="domH" Type="Double" />
           <Property Name="pagado" Type="Boolean" />
         </EntityType>
+        <EntityType Name="vv_NominasEmpleadosMes">
+          <Key>
+            <PropertyRef Name="id_det" />
+          </Key>
+          <Property Name="id_det" Type="Int32" Nullable="false" />
+          <Property Name="Anio" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="Semana" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="id_encargado" Type="Int32" />
+          <Property Name="Nro_Empleado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="semanaIni" Type="DateTime" Precision="3" />
+          <Property Name="semanaFin" Type="DateTime" Precision="3" />
+          <Property Name="mesIni" Type="Int32" />
+          <Property Name="totalD" Type="Double" />
+          <Property Name="totalH" Type="Double" />
+          <Property Name="valorD" Type="Double" />
+          <Property Name="valorH" Type="Double" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1492,6 +1554,27 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="semana" ColumnName="semana" />
                 <ScalarProperty Name="anio" ColumnName="anio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vv_NominasEmpleadosMes">
+            <EntityTypeMapping TypeName="MazantinesModel.vv_NominasEmpleadosMes">
+              <MappingFragment StoreEntitySet="vv_NominasEmpleadosMes">
+                <ScalarProperty Name="valorH" ColumnName="valorH" />
+                <ScalarProperty Name="valorD" ColumnName="valorD" />
+                <ScalarProperty Name="totalH" ColumnName="totalH" />
+                <ScalarProperty Name="totalD" ColumnName="totalD" />
+                <ScalarProperty Name="mesIni" ColumnName="mesIni" />
+                <ScalarProperty Name="semanaFin" ColumnName="semanaFin" />
+                <ScalarProperty Name="semanaIni" ColumnName="semanaIni" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Caja" ColumnName="Caja" />
+                <ScalarProperty Name="Nro_Empleado" ColumnName="Nro_Empleado" />
+                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+                <ScalarProperty Name="Semana" ColumnName="Semana" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="id_det" ColumnName="id_det" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

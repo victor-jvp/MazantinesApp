@@ -92,6 +92,7 @@
             this.CasaButton04 = new System.Windows.Forms.Button();
             this.CasaButton02 = new System.Windows.Forms.Button();
             this.CasaButton01 = new System.Windows.Forms.Button();
+            this.nominaPorMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,7 +171,8 @@
             // 
             this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.formasDeEmpleoYPagosToolStripMenuItem,
-            this.nominaToolStripMenuItem1});
+            this.nominaToolStripMenuItem1,
+            this.nominaPorMesToolStripMenuItem});
             this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
             this.nominaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.nominaToolStripMenuItem.Text = "&Nomina";
@@ -790,6 +792,13 @@
             this.CasaButton01.UseVisualStyleBackColor = true;
             this.CasaButton01.Click += new System.EventHandler(this.CasaButton1_Click);
             // 
+            // nominaPorMesToolStripMenuItem
+            // 
+            this.nominaPorMesToolStripMenuItem.Name = "nominaPorMesToolStripMenuItem";
+            this.nominaPorMesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.nominaPorMesToolStripMenuItem.Text = "Nomina por Mes";
+            this.nominaPorMesToolStripMenuItem.Click += new System.EventHandler(this.nominaPorMesToolStripMenuItem_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -880,6 +889,7 @@
         private System.Windows.Forms.ToolStripMenuItem nominaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formasDeEmpleoYPagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nominaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem nominaPorMesToolStripMenuItem;
     }
 }
 

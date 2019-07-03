@@ -20,7 +20,7 @@
         <EntityTypeShape EntityType="MazantinesModel.Trabajadores_Empleos" Width="2.125" PointX="12.75" PointY="6.25" />
         <EntityTypeShape EntityType="MazantinesModel.rpt_recibos" Width="1.5" PointX="7.75" PointY="12.25" />
         <EntityTypeShape EntityType="MazantinesModel.vv_empleados" Width="1.5" PointX="9.75" PointY="12.25" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_EmpleadosCasas" Width="1.5" PointX="2.75" PointY="14.25" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_EmpleadosCasas" Width="2.5" PointX="2.75" PointY="14.25" />
         <AssociationConnector Association="MazantinesModel.fk_empresa" />
         <AssociationConnector Association="MazantinesModel.fk_proveedores" />
         <AssociationConnector Association="MazantinesModel.id_casa" />
@@ -37,6 +37,7 @@
         <EntityTypeShape EntityType="MazantinesModel.vv_nominas" Width="1.5" PointX="12.375" PointY="9.75" />
         <EntityTypeShape EntityType="MazantinesModel.vv_nomina_trabajadores" Width="1.5" PointX="14.375" PointY="9.75" />
         <EntityTypeShape EntityType="MazantinesModel.rpt_nominas" Width="1.5" PointX="14.375" PointY="13.75" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_NominasEmpleadosMes" Width="1.5" PointX="15.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

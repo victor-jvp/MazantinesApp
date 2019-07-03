@@ -140,6 +140,7 @@
       <DependentUpon>FrmTotales.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Anios.cs" />
+    <Compile Include="Classes\Meses.cs" />
     <Compile Include="Classes\Nomina.cs" />
     <Compile Include="Classes\Reports.cs" />
     <Compile Include="Classes\Semanas.cs" />
@@ -232,6 +233,9 @@
     <Compile Include="DBContext\vv_nominas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBContext\vv_NominasEmpleadosMes.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\vv_nomina_trabajadores.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -276,6 +280,12 @@
     </Compile>
     <Compile Include="Nomina\FrmNomina.Designer.cs">
       <DependentUpon>FrmNomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\FrmNominaMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmNominaMes.Designer.cs">
+      <DependentUpon>FrmNominaMes.cs</DependentUpon>
     </Compile>
     <Compile Include="Nomina\FrmPreviewNomina.cs">
       <SubType>Form</SubType>
@@ -443,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmNomina.resx">
       <DependentUpon>FrmNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmNominaMes.resx">
+      <DependentUpon>FrmNominaMes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmPreviewNomina.resx">
       <DependentUpon>FrmPreviewNomina.cs</DependentUpon>
