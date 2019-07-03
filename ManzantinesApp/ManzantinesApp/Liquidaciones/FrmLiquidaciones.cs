@@ -59,6 +59,8 @@ namespace ManzantinesApp.Liquidaciones
 
         private void FrmLiquidaciones_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Empresas' table. You can move, or remove it, as needed.
+            this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
             // TODO: This line of code loads data into the 'dataSet1.Liquidaciones' table. You can move, or remove it, as needed.
             this.liquidacionesTableAdapter.Fill(this.dataSet1.Liquidaciones);
 

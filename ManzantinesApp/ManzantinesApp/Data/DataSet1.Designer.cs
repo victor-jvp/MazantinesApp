@@ -4983,7 +4983,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public LiquidacionesRow AddLiquidacionesRow(string Concepto, int Categoria, decimal Totales, bool Pagado, System.DateTime Fecha, EmpresasRow parentEmpresasRowByfk_id_empresa, decimal Cantidad) {
+            public LiquidacionesRow AddLiquidacionesRow(string Concepto, int Categoria, decimal Totales, bool Pagado, System.DateTime Fecha, EmpresasRow parentEmpresasRowByfk_id_empresa, double Cantidad) {
                 LiquidacionesRow rowLiquidacionesRow = ((LiquidacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5053,7 +5053,7 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnFecha);
                 this.columnid_empresa = new global::System.Data.DataColumn("id_empresa", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_empresa);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
@@ -8705,10 +8705,10 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal Cantidad {
+            public double Cantidad {
                 get {
                     try {
-                        return ((decimal)(this[this.tableLiquidaciones.CantidadColumn]));
+                        return ((double)(this[this.tableLiquidaciones.CantidadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Cantidad\' in table \'Liquidaciones\' is DBNull.", e);

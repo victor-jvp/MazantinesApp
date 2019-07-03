@@ -32,8 +32,10 @@
             System.Windows.Forms.Label categoriaLabel1;
             System.Windows.Forms.Label conceptoLabel;
             System.Windows.Forms.Label totalesLabel1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditLiquidacion));
             System.Windows.Forms.Label fechaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditLiquidacion));
+            System.Windows.Forms.Label cantidadLabel;
+            System.Windows.Forms.Label id_empresaLabel;
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.liquidacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.liquidacionesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.LiquidacionesTableAdapter();
@@ -47,16 +49,24 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.pagadoCheckBox = new System.Windows.Forms.CheckBox();
+            this.id_empresaComboBox = new System.Windows.Forms.ComboBox();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
+            this.CantidadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             categoriaLabel1 = new System.Windows.Forms.Label();
             conceptoLabel = new System.Windows.Forms.Label();
             totalesLabel1 = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
+            cantidadLabel = new System.Windows.Forms.Label();
+            id_empresaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).BeginInit();
             this.liquidacionesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalesNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // categoriaLabel1
@@ -86,6 +96,15 @@
             totalesLabel1.TabIndex = 16;
             totalesLabel1.Text = "Totales:";
             // 
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Location = new System.Drawing.Point(34, 45);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(40, 13);
+            fechaLabel.TabIndex = 17;
+            fechaLabel.Text = "Fecha:";
+            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
@@ -105,11 +124,15 @@
             this.tableAdapterManager.AsientosTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = null;
+            this.tableAdapterManager.DiasSemanaTableAdapter = null;
+            this.tableAdapterManager.EmpleosPagosTableAdapter = null;
             this.tableAdapterManager.EmpleosTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
             this.tableAdapterManager.LiquidacionesTableAdapter = this.liquidacionesTableAdapter;
+            this.tableAdapterManager.NominasCabTableAdapter = null;
+            this.tableAdapterManager.NominasDetTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
@@ -189,15 +212,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // fechaLabel
-            // 
-            fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(34, 45);
-            fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(40, 13);
-            fechaLabel.TabIndex = 17;
-            fechaLabel.Text = "Fecha:";
-            // 
             // fechaDateTimePicker
             // 
             this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.liquidacionesBindingSource, "Fecha", true));
@@ -217,11 +231,70 @@
             this.pagadoCheckBox.Text = "Pagado";
             this.pagadoCheckBox.UseVisualStyleBackColor = true;
             // 
+            // cantidadLabel
+            // 
+            cantidadLabel.AutoSize = true;
+            cantidadLabel.Location = new System.Drawing.Point(151, 148);
+            cantidadLabel.Name = "cantidadLabel";
+            cantidadLabel.Size = new System.Drawing.Size(61, 13);
+            cantidadLabel.TabIndex = 21;
+            cantidadLabel.Text = "Kilogramos:";
+            // 
+            // id_empresaLabel
+            // 
+            id_empresaLabel.AutoSize = true;
+            id_empresaLabel.Location = new System.Drawing.Point(23, 122);
+            id_empresaLabel.Name = "id_empresaLabel";
+            id_empresaLabel.Size = new System.Drawing.Size(51, 13);
+            id_empresaLabel.TabIndex = 20;
+            id_empresaLabel.Text = "Empresa:";
+            // 
+            // id_empresaComboBox
+            // 
+            this.id_empresaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.liquidacionesBindingSource, "id_empresa", true));
+            this.id_empresaComboBox.DataSource = this.empresasBindingSource;
+            this.id_empresaComboBox.DisplayMember = "Empresa";
+            this.id_empresaComboBox.FormattingEnabled = true;
+            this.id_empresaComboBox.Location = new System.Drawing.Point(80, 119);
+            this.id_empresaComboBox.Name = "id_empresaComboBox";
+            this.id_empresaComboBox.Size = new System.Drawing.Size(241, 21);
+            this.id_empresaComboBox.TabIndex = 22;
+            this.id_empresaComboBox.ValueMember = "Id";
+            // 
+            // empresasBindingSource
+            // 
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.dataSet1;
+            // 
+            // empresasTableAdapter
+            // 
+            this.empresasTableAdapter.ClearBeforeFill = true;
+            // 
+            // CantidadNumericUpDown
+            // 
+            this.CantidadNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.liquidacionesBindingSource, "Cantidad", true));
+            this.CantidadNumericUpDown.DecimalPlaces = 2;
+            this.CantidadNumericUpDown.Location = new System.Drawing.Point(218, 146);
+            this.CantidadNumericUpDown.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.CantidadNumericUpDown.Name = "CantidadNumericUpDown";
+            this.CantidadNumericUpDown.Size = new System.Drawing.Size(103, 20);
+            this.CantidadNumericUpDown.TabIndex = 23;
+            this.CantidadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CantidadNumericUpDown.ThousandsSeparator = true;
+            // 
             // FrmEditLiquidacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 133);
+            this.ClientSize = new System.Drawing.Size(348, 178);
+            this.Controls.Add(this.CantidadNumericUpDown);
+            this.Controls.Add(cantidadLabel);
+            this.Controls.Add(id_empresaLabel);
+            this.Controls.Add(this.id_empresaComboBox);
             this.Controls.Add(this.pagadoCheckBox);
             this.Controls.Add(fechaLabel);
             this.Controls.Add(this.fechaDateTimePicker);
@@ -244,6 +317,8 @@
             this.liquidacionesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalesNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CantidadNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +339,9 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox pagadoCheckBox;
         private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
+        private System.Windows.Forms.ComboBox id_empresaComboBox;
+        private System.Windows.Forms.BindingSource empresasBindingSource;
+        private Data.DataSet1TableAdapters.EmpresasTableAdapter empresasTableAdapter;
+        private System.Windows.Forms.NumericUpDown CantidadNumericUpDown;
     }
 }

@@ -40,6 +40,13 @@ namespace ManzantinesApp.Liquidaciones
                 return false;
             }
 
+            if (CantidadNumericUpDown.Value <= 0)
+            {
+                this.errorProvider1.SetError(CantidadNumericUpDown, "Este campo debe ser mayor que cero");
+                CantidadNumericUpDown.Focus();
+                return false;
+            }
+
             return true;
         }
         #endregion
@@ -77,6 +84,7 @@ namespace ManzantinesApp.Liquidaciones
             this.totalesNumericUpDown.Value = 0;
             this.fechaDateTimePicker.Value = DateTime.Now;
             this.pagadoCheckBox.Checked = false;
+            this.CantidadNumericUpDown.Value = 0;
 
             this.id_empresaComboBox.SelectedIndex = -1;
         }

@@ -42,6 +42,13 @@ namespace ManzantinesApp.Liquidaciones
                 return false;
             }
 
+            if (CantidadNumericUpDown.Value <= 0)
+            {
+                this.errorProvider1.SetError(CantidadNumericUpDown, "Este campo debe ser mayor que cero");
+                CantidadNumericUpDown.Focus();
+                return false;
+            }
+
             return true;
         }
         #endregion
@@ -70,6 +77,8 @@ namespace ManzantinesApp.Liquidaciones
 
         private void FrmEditLiquidacion_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Empresas' table. You can move, or remove it, as needed.
+            this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
             this.liquidacionesTableAdapter.Fill(this.dataSet1.Liquidaciones);
             this.liquidacionesBindingSource.Filter = $"Id = {miLiquidacion.Id}";
         }
