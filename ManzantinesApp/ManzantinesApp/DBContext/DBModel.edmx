@@ -322,6 +322,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="Anio" Type="numeric" Precision="4" Scale="0" />
           <Property Name="Semana" Type="numeric" Precision="2" Scale="0" />
           <Property Name="id_encargado" Type="int" />
+          <Property Name="Encargado" Type="nvarchar(max)" />
           <Property Name="Nro_Empleado" Type="nvarchar(max)" />
           <Property Name="Caja" Type="nvarchar(max)" />
           <Property Name="Nombre" Type="nvarchar(max)" />
@@ -333,6 +334,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="totalH" Type="float" />
           <Property Name="valorD" Type="float" />
           <Property Name="valorH" Type="float" />
+          <Property Name="TotalPago" Type="float" />
         </EntityType>
         <Association Name="FK_EmpleoPago_Empleos">
           <End Role="Empleos" Type="Self.Empleos" Multiplicity="0..1" />
@@ -630,6 +632,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [vv_NominasEmpleadosMes].[Anio] AS [Anio], 
     [vv_NominasEmpleadosMes].[Semana] AS [Semana], 
     [vv_NominasEmpleadosMes].[id_encargado] AS [id_encargado], 
+    [vv_NominasEmpleadosMes].[Encargado] AS [Encargado], 
     [vv_NominasEmpleadosMes].[Nro_Empleado] AS [Nro_Empleado], 
     [vv_NominasEmpleadosMes].[Caja] AS [Caja], 
     [vv_NominasEmpleadosMes].[Nombre] AS [Nombre], 
@@ -640,7 +643,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [vv_NominasEmpleadosMes].[totalD] AS [totalD], 
     [vv_NominasEmpleadosMes].[totalH] AS [totalH], 
     [vv_NominasEmpleadosMes].[valorD] AS [valorD], 
-    [vv_NominasEmpleadosMes].[valorH] AS [valorH]
+    [vv_NominasEmpleadosMes].[valorH] AS [valorH], 
+    [vv_NominasEmpleadosMes].[TotalPago] AS [TotalPago]
     FROM [dbo].[vv_NominasEmpleadosMes] AS [vv_NominasEmpleadosMes]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_EmpleoPago_Empleos" Association="Self.FK_EmpleoPago_Empleos">
@@ -1247,6 +1251,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="totalH" Type="Double" />
           <Property Name="valorD" Type="Double" />
           <Property Name="valorH" Type="Double" />
+          <Property Name="Encargado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPago" Type="Double" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1560,6 +1566,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="vv_NominasEmpleadosMes">
             <EntityTypeMapping TypeName="MazantinesModel.vv_NominasEmpleadosMes">
               <MappingFragment StoreEntitySet="vv_NominasEmpleadosMes">
+                <ScalarProperty Name="TotalPago" ColumnName="TotalPago" />
+                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
                 <ScalarProperty Name="valorH" ColumnName="valorH" />
                 <ScalarProperty Name="valorD" ColumnName="valorD" />
                 <ScalarProperty Name="totalH" ColumnName="totalH" />

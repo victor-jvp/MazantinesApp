@@ -29,5 +29,7 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> totalH { get; set; }
         public Nullable<double> valorD { get; set; }
         public Nullable<double> valorH { get; set; }
+        public string Encargado { get; set; }
+        public Nullable<double> TotalPago { get; set; }
     }
 }
