@@ -60,21 +60,21 @@
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liquidacionesDataGridView = new System.Windows.Forms.DataGridView();
-            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.SinPagarRadioButton = new System.Windows.Forms.RadioButton();
-            this.PagadasRadioButton = new System.Windows.Forms.RadioButton();
-            this.TodasRadioButton = new System.Windows.Forms.RadioButton();
-            this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pagado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.id_empresa = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SinPagarRadioButton = new System.Windows.Forms.RadioButton();
+            this.PagadasRadioButton = new System.Windows.Forms.RadioButton();
+            this.TodasRadioButton = new System.Windows.Forms.RadioButton();
+            this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.liquidacionesBindingNavigator)).BeginInit();
@@ -344,10 +344,86 @@
             this.liquidacionesDataGridView.Size = new System.Drawing.Size(757, 225);
             this.liquidacionesDataGridView.TabIndex = 1;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Fecha
+            // 
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 62;
+            // 
+            // Concepto
+            // 
+            this.Concepto.DataPropertyName = "Concepto";
+            this.Concepto.HeaderText = "Concepto";
+            this.Concepto.Name = "Concepto";
+            this.Concepto.ReadOnly = true;
+            this.Concepto.Width = 200;
+            // 
+            // Categoria
+            // 
+            this.Categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Categoria.DataPropertyName = "Categoria";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 77;
+            // 
+            // Pagado
+            // 
+            this.Pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Pagado.DataPropertyName = "Pagado";
+            this.Pagado.HeaderText = "Pagado";
+            this.Pagado.Name = "Pagado";
+            this.Pagado.ReadOnly = true;
+            this.Pagado.Width = 50;
+            // 
+            // id_empresa
+            // 
+            this.id_empresa.DataPropertyName = "id_empresa";
+            this.id_empresa.DataSource = this.empresasBindingSource;
+            this.id_empresa.DisplayMember = "Empresa";
+            this.id_empresa.HeaderText = "Empresa";
+            this.id_empresa.Name = "id_empresa";
+            this.id_empresa.ReadOnly = true;
+            this.id_empresa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_empresa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.id_empresa.ValueMember = "Id";
+            // 
             // empresasBindingSource
             // 
             this.empresasBindingSource.DataMember = "Empresas";
             this.empresasBindingSource.DataSource = this.dataSet1;
+            // 
+            // Totales
+            // 
+            this.Totales.DataPropertyName = "Totales";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Totales.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Totales.HeaderText = "Totales";
+            this.Totales.Name = "Totales";
+            this.Totales.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -413,82 +489,6 @@
             // 
             this.empresasTableAdapter.ClearBeforeFill = true;
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Fecha
-            // 
-            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 62;
-            // 
-            // Concepto
-            // 
-            this.Concepto.DataPropertyName = "Concepto";
-            this.Concepto.HeaderText = "Concepto";
-            this.Concepto.Name = "Concepto";
-            this.Concepto.ReadOnly = true;
-            this.Concepto.Width = 200;
-            // 
-            // Categoria
-            // 
-            this.Categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Categoria.DataPropertyName = "Categoria";
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 77;
-            // 
-            // Pagado
-            // 
-            this.Pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Pagado.DataPropertyName = "Pagado";
-            this.Pagado.HeaderText = "Pagado";
-            this.Pagado.Name = "Pagado";
-            this.Pagado.ReadOnly = true;
-            this.Pagado.Width = 50;
-            // 
-            // id_empresa
-            // 
-            this.id_empresa.DataPropertyName = "id_empresa";
-            this.id_empresa.DataSource = this.empresasBindingSource;
-            this.id_empresa.DisplayMember = "Empresa";
-            this.id_empresa.HeaderText = "Empresa";
-            this.id_empresa.Name = "id_empresa";
-            this.id_empresa.ReadOnly = true;
-            this.id_empresa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_empresa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.id_empresa.ValueMember = "Id";
-            // 
-            // Totales
-            // 
-            this.Totales.DataPropertyName = "Totales";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Totales.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Totales.HeaderText = "Totales";
-            this.Totales.Name = "Totales";
-            this.Totales.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
             // FrmLiquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,6 +498,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.liquidacionesBindingNavigator);
             this.Name = "FrmLiquidaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Liquidaciones";
             this.Load += new System.EventHandler(this.FrmLiquidaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

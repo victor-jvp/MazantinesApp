@@ -88,5 +88,28 @@ namespace ManzantinesApp
                 this.proveedoresBindingSource.CancelEdit();
             }
         }
+
+        private void BuscarToolStripTextBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarToolStripTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
+        }
+
+        private void FiltrarDatos()
+        {
+            string filtrar = BuscarToolStripTextBox.Text.Trim();
+            if (string.IsNullOrEmpty(filtrar))
+            {
+                proveedoresBindingSource.RemoveFilter();
+                return;
+            }
+
+            string filtro = $"CIF LIKE '%{filtrar}%' OR RazonSocial LIKE '%{filtrar}%' OR Telefono LIKE '%{filtrar}%' OR Email LIKE '%{filtrar}%'";
+            proveedoresBindingSource.Filter = filtro;
+        }
     }
 }

@@ -191,8 +191,8 @@
                 if (nominas[0].status == "C")
                 {
                     MessageBox.Show(
-                        "La Nomina seleccionada esta Cerrada, no es posible modificar.",
-                        "Nomina Cerrada",
+                        "La Nomina seleccionada esta Cerrada, no es posible modificar valores. Se permite marcar/desmarcar pago.",
+                        "Nomina Cerrada ",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                     DeshabilitarGrid();
@@ -548,8 +548,8 @@
             EncargadoComboBox.Enabled = true;
             CargarNominaToolStripButton.Enabled = true;
 
-            GuardarToolStripButton.Enabled = false;
-            CancelarToolStripButton.Enabled = false;
+            GuardarToolStripButton.Enabled = true;
+            CancelarToolStripButton.Enabled = true;
             CerrarNominaToolStripButton.Enabled = false;
 
             EncargadoComboBox.SelectedIndex = -1;
