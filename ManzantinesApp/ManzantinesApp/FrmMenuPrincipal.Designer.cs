@@ -40,6 +40,7 @@
             this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formasDeEmpleoYPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nominaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaPorMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encargadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +93,6 @@
             this.CasaButton04 = new System.Windows.Forms.Button();
             this.CasaButton02 = new System.Windows.Forms.Button();
             this.CasaButton01 = new System.Windows.Forms.Button();
-            this.nominaPorMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -190,6 +190,13 @@
             this.nominaToolStripMenuItem1.Size = new System.Drawing.Size(216, 22);
             this.nominaToolStripMenuItem1.Text = "Nomina";
             this.nominaToolStripMenuItem1.Click += new System.EventHandler(this.nominaToolStripMenuItem1_Click);
+            // 
+            // nominaPorMesToolStripMenuItem
+            // 
+            this.nominaPorMesToolStripMenuItem.Name = "nominaPorMesToolStripMenuItem";
+            this.nominaPorMesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.nominaPorMesToolStripMenuItem.Text = "Nomina por Mes";
+            this.nominaPorMesToolStripMenuItem.Click += new System.EventHandler(this.nominaPorMesToolStripMenuItem_Click);
             // 
             // datosToolStripMenuItem
             // 
@@ -792,13 +799,6 @@
             this.CasaButton01.UseVisualStyleBackColor = true;
             this.CasaButton01.Click += new System.EventHandler(this.CasaButton1_Click);
             // 
-            // nominaPorMesToolStripMenuItem
-            // 
-            this.nominaPorMesToolStripMenuItem.Name = "nominaPorMesToolStripMenuItem";
-            this.nominaPorMesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.nominaPorMesToolStripMenuItem.Text = "Nomina por Mes";
-            this.nominaPorMesToolStripMenuItem.Click += new System.EventHandler(this.nominaPorMesToolStripMenuItem_Click);
-            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -811,6 +811,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FrmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal - Mazantines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);

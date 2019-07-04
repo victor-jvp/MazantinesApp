@@ -34,6 +34,7 @@ namespace ManzantinesApp.DBContext
         public string Caja { get; set; }
         public Nullable<bool> Activo { get; set; }
         public Nullable<int> id_encargado { get; set; }
+        public Nullable<System.DateTime> DeletedAt { get; set; }
     
         public virtual Casas Casas { get; set; }
         public virtual Empresas Empresas { get; set; }

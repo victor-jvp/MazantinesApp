@@ -121,16 +121,13 @@
             try
             {
                 var id_trabajador = (int)trabajadoresDataGridView.CurrentRow.Cells["Id"].Value;
-                var query = this.dataSet1.Trabajadores_Empleos.Where(t => t.id_trabajador == id_trabajador);
-
-                foreach (var row in query)
-                {
-                    row.Delete();
-                }
-                this.trabajadores_EmpleosTableAdapter.Update(this.dataSet1.Trabajadores_Empleos);
 
                 var trabajador = this.dataSet1.Trabajadores.Where(t => t.Id == id_trabajador).FirstOrDefault();
-                if(trabajador != null) trabajador.Delete();
+                if (trabajador != null)
+                {
+                    trabajador.DeletedAt = DateTime.Now;
+                    trabajador.Activo = false;
+                }
 
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
 

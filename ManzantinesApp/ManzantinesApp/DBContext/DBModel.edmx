@@ -141,6 +141,7 @@
           <Property Name="CCC" Type="nvarchar(max)" />
           <Property Name="Caja" Type="nvarchar(max)" />
           <Property Name="Activo" Type="bit" />
+          <Property Name="DeletedAt" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="Trabajadores_Empleos">
           <Key>
@@ -954,6 +955,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="Activo" Type="Boolean" />
           <Property Name="id_encargado" Type="Int32" />
           <NavigationProperty Name="Encargados" Relationship="MazantinesModel.id_encargado_trabajador" FromRole="Trabajadores" ToRole="Encargados" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Trabajadores_Empleos">
           <Key>
@@ -1432,6 +1434,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="Trabajadores">
             <EntityTypeMapping TypeName="MazantinesModel.Trabajadores">
               <MappingFragment StoreEntitySet="Trabajadores">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
                 <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
                 <ScalarProperty Name="Caja" ColumnName="Caja" />
