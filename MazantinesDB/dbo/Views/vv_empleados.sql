@@ -26,3 +26,5 @@ FROM
 	LEFT JOIN Casas ON casas.Id = Trabajadores.id_casa
 	LEFT JOIN Empresas ON Empresas.Id = Trabajadores.id_empresa
 	LEFT JOIN Encargados ON Encargados.Id = Trabajadores.id_encargado
+WHERE 
+	Trabajadores.DeletedAt IS NULL
