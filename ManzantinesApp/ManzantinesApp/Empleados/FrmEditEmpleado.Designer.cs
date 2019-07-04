@@ -38,8 +38,8 @@
             System.Windows.Forms.Label nroCasaLabel;
             System.Windows.Forms.Label cCCLabel;
             System.Windows.Forms.Label cajaLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditEmpleado));
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditEmpleado));
             this.nro_empleadoTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.apellidosTextBox = new System.Windows.Forms.TextBox();
@@ -172,6 +172,15 @@
             cajaLabel.Size = new System.Drawing.Size(31, 13);
             cajaLabel.TabIndex = 2;
             cajaLabel.Text = "Caja:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(264, 179);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(62, 13);
+            label2.TabIndex = 27;
+            label2.Text = "Encargado:";
             // 
             // nro_empleadoTextBox
             // 
@@ -392,15 +401,6 @@
             this.ActivoCheckBox.Text = "Activo";
             this.ActivoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(264, 179);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(62, 13);
-            label2.TabIndex = 27;
-            label2.Text = "Encargado:";
-            // 
             // EncargadoComboBox
             // 
             this.EncargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -450,6 +450,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "FrmEditEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Empleado";
             this.Load += new System.EventHandler(this.FrmEditEmpleado_Load);
             this.toolStrip1.ResumeLayout(false);

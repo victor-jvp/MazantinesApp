@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAsientos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.vv_table_asientosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.vv_table_asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
@@ -72,6 +72,10 @@
             this.Pagado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.EmpresaComboBox = new System.Windows.Forms.ComboBox();
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet = new ManzantinesApp.Data.DataSet1();
+            this.EmpresaCheckBox = new System.Windows.Forms.CheckBox();
             this.SinPagarRadioButton = new System.Windows.Forms.RadioButton();
             this.PagadasRadioButton = new System.Windows.Forms.RadioButton();
             this.TodasRadioButton = new System.Windows.Forms.RadioButton();
@@ -79,11 +83,7 @@
             this.FechaFacturaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tableAdapterManager = new ManzantinesApp.Data.RptDataSetTableAdapters.TableAdapterManager();
             this.vv_table_asientosTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_table_asientosTableAdapter();
-            this.dataSet = new ManzantinesApp.Data.DataSet1();
             this.asientosTableAdapter1 = new ManzantinesApp.Data.DataSet1TableAdapters.AsientosTableAdapter();
-            this.EmpresaCheckBox = new System.Windows.Forms.CheckBox();
-            this.EmpresaComboBox = new System.Windows.Forms.ComboBox();
-            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosBindingNavigator)).BeginInit();
             this.vv_table_asientosBindingNavigator.SuspendLayout();
@@ -92,8 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.asientosDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // vv_table_asientosBindingNavigator
@@ -263,7 +263,7 @@
             this.TotalesToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("TotalesToolStripButton.Image")));
             this.TotalesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TotalesToolStripButton.Name = "TotalesToolStripButton";
-            this.TotalesToolStripButton.Size = new System.Drawing.Size(64, 22);
+            this.TotalesToolStripButton.Size = new System.Drawing.Size(63, 22);
             this.TotalesToolStripButton.Text = "Totales";
             this.TotalesToolStripButton.Click += new System.EventHandler(this.TotalesToolStripButton_Click);
             // 
@@ -317,8 +317,8 @@
             // 
             this.asientosDataGridView.AllowUserToAddRows = false;
             this.asientosDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.asientosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.asientosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.asientosDataGridView.AutoGenerateColumns = false;
             this.asientosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.asientosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -376,9 +376,9 @@
             // 
             this.FechaFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.FechaFactura.DataPropertyName = "FechaFactura";
-            dataGridViewCellStyle18.Format = "d";
-            dataGridViewCellStyle18.NullValue = null;
-            this.FechaFactura.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.FechaFactura.DefaultCellStyle = dataGridViewCellStyle2;
             this.FechaFactura.HeaderText = "Fecha Factura";
             this.FechaFactura.Name = "FechaFactura";
             this.FechaFactura.ReadOnly = true;
@@ -388,10 +388,10 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Importe";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.Format = "N2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -401,8 +401,8 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "FechaPago";
-            dataGridViewCellStyle20.Format = "d";
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Format = "d";
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn5.HeaderText = "Fecha Pago";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -464,6 +464,41 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtrar Por:";
+            // 
+            // EmpresaComboBox
+            // 
+            this.EmpresaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.EmpresaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EmpresaComboBox.DataSource = this.empresasBindingSource;
+            this.EmpresaComboBox.DisplayMember = "Empresa";
+            this.EmpresaComboBox.Enabled = false;
+            this.EmpresaComboBox.FormattingEnabled = true;
+            this.EmpresaComboBox.Location = new System.Drawing.Point(302, 19);
+            this.EmpresaComboBox.Name = "EmpresaComboBox";
+            this.EmpresaComboBox.Size = new System.Drawing.Size(174, 21);
+            this.EmpresaComboBox.TabIndex = 9;
+            this.EmpresaComboBox.ValueMember = "Id";
+            // 
+            // empresasBindingSource
+            // 
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.dataSet;
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // EmpresaCheckBox
+            // 
+            this.EmpresaCheckBox.AutoSize = true;
+            this.EmpresaCheckBox.Location = new System.Drawing.Point(226, 21);
+            this.EmpresaCheckBox.Name = "EmpresaCheckBox";
+            this.EmpresaCheckBox.Size = new System.Drawing.Size(70, 17);
+            this.EmpresaCheckBox.TabIndex = 8;
+            this.EmpresaCheckBox.Text = "Empresa:";
+            this.EmpresaCheckBox.UseVisualStyleBackColor = true;
+            this.EmpresaCheckBox.CheckedChanged += new System.EventHandler(this.EmpresaCheckBox_CheckedChanged);
             // 
             // SinPagarRadioButton
             // 
@@ -531,44 +566,9 @@
             // 
             this.vv_table_asientosTableAdapter.ClearBeforeFill = true;
             // 
-            // dataSet
-            // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // asientosTableAdapter1
             // 
             this.asientosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // EmpresaCheckBox
-            // 
-            this.EmpresaCheckBox.AutoSize = true;
-            this.EmpresaCheckBox.Location = new System.Drawing.Point(226, 21);
-            this.EmpresaCheckBox.Name = "EmpresaCheckBox";
-            this.EmpresaCheckBox.Size = new System.Drawing.Size(70, 17);
-            this.EmpresaCheckBox.TabIndex = 8;
-            this.EmpresaCheckBox.Text = "Empresa:";
-            this.EmpresaCheckBox.UseVisualStyleBackColor = true;
-            this.EmpresaCheckBox.CheckedChanged += new System.EventHandler(this.EmpresaCheckBox_CheckedChanged);
-            // 
-            // EmpresaComboBox
-            // 
-            this.EmpresaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.EmpresaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.EmpresaComboBox.DataSource = this.empresasBindingSource;
-            this.EmpresaComboBox.DisplayMember = "Empresa";
-            this.EmpresaComboBox.Enabled = false;
-            this.EmpresaComboBox.FormattingEnabled = true;
-            this.EmpresaComboBox.Location = new System.Drawing.Point(302, 19);
-            this.EmpresaComboBox.Name = "EmpresaComboBox";
-            this.EmpresaComboBox.Size = new System.Drawing.Size(174, 21);
-            this.EmpresaComboBox.TabIndex = 9;
-            this.EmpresaComboBox.ValueMember = "Id";
-            // 
-            // empresasBindingSource
-            // 
-            this.empresasBindingSource.DataMember = "Empresas";
-            this.empresasBindingSource.DataSource = this.dataSet;
             // 
             // empresasTableAdapter
             // 
@@ -583,6 +583,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.vv_table_asientosBindingNavigator);
             this.Name = "FrmAsientos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asientos";
             this.Load += new System.EventHandler(this.FrmAsientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.vv_table_asientosBindingNavigator)).EndInit();
@@ -594,8 +595,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

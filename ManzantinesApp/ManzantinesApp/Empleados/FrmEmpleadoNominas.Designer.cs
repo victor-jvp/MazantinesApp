@@ -35,9 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominasDataGridView = new System.Windows.Forms.DataGridView();
-            this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
-            this.vvresumenNominaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vv_resumenNominaEmpleadoTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_resumenNominaEmpleadoTableAdapter();
             this.anioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semanaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idempleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +45,12 @@
             this.totalDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalHorasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.vvresumenNominaEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rptDataSet = new ManzantinesApp.Data.RptDataSet();
+            this.vv_resumenNominaEmpleadoTableAdapter = new ManzantinesApp.Data.RptDataSetTableAdapters.vv_resumenNominaEmpleadoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.NominasDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rptDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vvresumenNominaEmpleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rptDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // NominasDataGridView
@@ -79,20 +79,6 @@
             this.NominasDataGridView.ReadOnly = true;
             this.NominasDataGridView.Size = new System.Drawing.Size(968, 375);
             this.NominasDataGridView.TabIndex = 0;
-            // 
-            // rptDataSet
-            // 
-            this.rptDataSet.DataSetName = "RptDataSet";
-            this.rptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vvresumenNominaEmpleadoBindingSource
-            // 
-            this.vvresumenNominaEmpleadoBindingSource.DataMember = "vv_resumenNominaEmpleado";
-            this.vvresumenNominaEmpleadoBindingSource.DataSource = this.rptDataSet;
-            // 
-            // vv_resumenNominaEmpleadoTableAdapter
-            // 
-            this.vv_resumenNominaEmpleadoTableAdapter.ClearBeforeFill = true;
             // 
             // anioDataGridViewTextBoxColumn
             // 
@@ -181,6 +167,20 @@
             this.pagadoDataGridViewCheckBoxColumn.ReadOnly = true;
             this.pagadoDataGridViewCheckBoxColumn.TrueValue = "1";
             // 
+            // vvresumenNominaEmpleadoBindingSource
+            // 
+            this.vvresumenNominaEmpleadoBindingSource.DataMember = "vv_resumenNominaEmpleado";
+            this.vvresumenNominaEmpleadoBindingSource.DataSource = this.rptDataSet;
+            // 
+            // rptDataSet
+            // 
+            this.rptDataSet.DataSetName = "RptDataSet";
+            this.rptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vv_resumenNominaEmpleadoTableAdapter
+            // 
+            this.vv_resumenNominaEmpleadoTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmEmpleadoNominas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,11 +191,12 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmEmpleadoNominas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Empleado Nominas";
             this.Load += new System.EventHandler(this.FrmEmpleadoNominas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NominasDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rptDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vvresumenNominaEmpleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rptDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

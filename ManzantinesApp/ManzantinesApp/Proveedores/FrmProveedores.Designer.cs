@@ -30,13 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProveedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedoresTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.ProveedoresTableAdapter();
             this.tableAdapterManager = new ManzantinesApp.Data.DataSet1TableAdapters.TableAdapterManager();
             this.proveedoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.BuscarToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -56,9 +59,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.BuscarToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingNavigator)).BeginInit();
@@ -139,6 +139,25 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
+            this.toolStripLabel1.Text = "Buscar:";
+            // 
+            // BuscarToolStripTextBox
+            // 
+            this.BuscarToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BuscarToolStripTextBox.Name = "BuscarToolStripTextBox";
+            this.BuscarToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.BuscarToolStripTextBox.Click += new System.EventHandler(this.BuscarToolStripTextBox_Click);
+            this.BuscarToolStripTextBox.TextChanged += new System.EventHandler(this.BuscarToolStripTextBox_TextChanged);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -234,8 +253,8 @@
             // 
             this.proveedoresDataGridView.AllowUserToAddRows = false;
             this.proveedoresDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.proveedoresDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.proveedoresDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.proveedoresDataGridView.AutoGenerateColumns = false;
             this.proveedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.proveedoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -312,25 +331,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Proveedores";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
-            this.toolStripLabel1.Text = "Buscar:";
-            // 
-            // BuscarToolStripTextBox
-            // 
-            this.BuscarToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BuscarToolStripTextBox.Name = "BuscarToolStripTextBox";
-            this.BuscarToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            this.BuscarToolStripTextBox.Click += new System.EventHandler(this.BuscarToolStripTextBox_Click);
-            this.BuscarToolStripTextBox.TextChanged += new System.EventHandler(this.BuscarToolStripTextBox_TextChanged);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // FrmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +340,7 @@
             this.Controls.Add(this.proveedoresBindingNavigator);
             this.MinimumSize = global::ManzantinesApp.Properties.Settings.Default.sizeMinimo;
             this.Name = "FrmProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.FrmProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

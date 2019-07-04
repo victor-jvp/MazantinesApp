@@ -37,13 +37,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.AnioToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.MesToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.AnioToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.vvNominasEmpleadosMesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iddetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semanaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +60,7 @@
             this.valorDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vvNominasEmpleadosMesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vvNominasEmpleadosMesBindingSource)).BeginInit();
@@ -79,6 +79,24 @@
             this.toolStrip1.Size = new System.Drawing.Size(1003, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(32, 22);
+            this.toolStripLabel2.Text = "Año:";
+            // 
+            // AnioToolStripComboBox
+            // 
+            this.AnioToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AnioToolStripComboBox.Name = "AnioToolStripComboBox";
+            this.AnioToolStripComboBox.Size = new System.Drawing.Size(121, 25);
+            this.AnioToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.AnioToolStripComboBox_SelectedIndexChanged);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel1
             // 
@@ -126,28 +144,6 @@
             this.NominaDataGridView.ReadOnly = true;
             this.NominaDataGridView.Size = new System.Drawing.Size(1003, 378);
             this.NominaDataGridView.TabIndex = 2;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(32, 22);
-            this.toolStripLabel2.Text = "Año:";
-            // 
-            // AnioToolStripComboBox
-            // 
-            this.AnioToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AnioToolStripComboBox.Name = "AnioToolStripComboBox";
-            this.AnioToolStripComboBox.Size = new System.Drawing.Size(121, 25);
-            this.AnioToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.AnioToolStripComboBox_SelectedIndexChanged);
-            // 
-            // vvNominasEmpleadosMesBindingSource
-            // 
-            this.vvNominasEmpleadosMesBindingSource.DataSource = typeof(ManzantinesApp.DBContext.vv_NominasEmpleadosMes);
             // 
             // iddetDataGridViewTextBoxColumn
             // 
@@ -299,6 +295,10 @@
             this.TotalPago.ReadOnly = true;
             this.TotalPago.Width = 80;
             // 
+            // vvNominasEmpleadosMesBindingSource
+            // 
+            this.vvNominasEmpleadosMesBindingSource.DataSource = typeof(ManzantinesApp.DBContext.vv_NominasEmpleadosMes);
+            // 
             // FrmNominaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +307,7 @@
             this.Controls.Add(this.NominaDataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmNominaMes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nomina por Mes";
             this.Load += new System.EventHandler(this.FrmNominaMes_Load);
             this.toolStrip1.ResumeLayout(false);

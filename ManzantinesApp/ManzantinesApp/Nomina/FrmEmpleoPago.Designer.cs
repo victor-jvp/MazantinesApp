@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleoPago));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.empleosPagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleosPagosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpleosPagosTableAdapter();
@@ -83,12 +83,15 @@
             this.tableAdapterManager.AsientosTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = null;
+            this.tableAdapterManager.DiasSemanaTableAdapter = null;
             this.tableAdapterManager.EmpleosPagosTableAdapter = this.empleosPagosTableAdapter;
             this.tableAdapterManager.EmpleosTableAdapter = this.empleosTableAdapter;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
             this.tableAdapterManager.LiquidacionesTableAdapter = null;
+            this.tableAdapterManager.NominasCabTableAdapter = null;
+            this.tableAdapterManager.NominasDetTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Trabajadores_EmpleosTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
@@ -267,10 +270,10 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "importeDia";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn3.HeaderText = "Dia-Peonadas";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 120;
@@ -278,10 +281,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "importeHoras";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "Horas Extras";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 120;
@@ -294,6 +297,7 @@
             this.Controls.Add(this.empleosPagosDataGridView);
             this.Controls.Add(this.empleosPagosBindingNavigator);
             this.Name = "FrmEmpleoPago";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Formas de Empleo y Pago";
             this.Load += new System.EventHandler(this.FrmEmpleoPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
