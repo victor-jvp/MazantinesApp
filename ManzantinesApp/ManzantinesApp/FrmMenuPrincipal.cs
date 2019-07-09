@@ -315,5 +315,10 @@
             miForm.ShowDialog(this);
             this.Enabled = true;
         }
+
+        private void SoporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.jesusjg.es/");
+        }
     }
 }

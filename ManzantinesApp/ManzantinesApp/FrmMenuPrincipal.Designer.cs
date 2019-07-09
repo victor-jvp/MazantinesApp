@@ -143,8 +143,9 @@
             // soporteToolStripMenuItem
             // 
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.soporteToolStripMenuItem.Text = "&Soporte";
+            this.soporteToolStripMenuItem.Click += new System.EventHandler(this.SoporteToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 
