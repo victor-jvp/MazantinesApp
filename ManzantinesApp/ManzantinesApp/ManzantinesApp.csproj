@@ -17,12 +17,16 @@
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
+    <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://www.jesusjg.es/</SupportUrl>
+    <ProductName>Mazantines Application</ProductName>
+    <PublisherName>JesusJG</PublisherName>
+    <SuiteName>Mazantines Application</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -69,17 +73,33 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
@@ -97,6 +117,36 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asientos\FrmAddAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmAddAsiento.Designer.cs">
+      <DependentUpon>FrmAddAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asientos\FrmAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmAsientos.Designer.cs">
+      <DependentUpon>FrmAsientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asientos\FrmEditAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmEditAsiento.Designer.cs">
+      <DependentUpon>FrmEditAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asientos\FrmTotales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos\FrmTotales.Designer.cs">
+      <DependentUpon>FrmTotales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Anios.cs" />
+    <Compile Include="Classes\Meses.cs" />
+    <Compile Include="Classes\Nomina.cs" />
+    <Compile Include="Classes\Reports.cs" />
+    <Compile Include="Classes\Semanas.cs" />
+    <Compile Include="Classes\TotalNomina.cs" />
     <Compile Include="Data\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -105,28 +155,192 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\RptDataSet.cs">
+      <DependentUpon>RptDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RptDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Asientos.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Casas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Empleos.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\EmpleosPagos.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Empresas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Encargados.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Fincas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Liquidaciones.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\NominasCab.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\NominasDet.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Proveedores.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\rpt_nominas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\rpt_recibos.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Trabajadores.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Trabajadores_Empleos.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_CasasCountEmpleados.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_empleados.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_EmpleadosCasas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_nominas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_NominasEmpleadosMes.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_nomina_trabajadores.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\FrmEmpleadoNominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\FrmEmpleadoNominas.Designer.cs">
+      <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmAddLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmAddLiquidacion.Designer.cs">
+      <DependentUpon>FrmAddLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmEditLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmEditLiquidacion.Designer.cs">
+      <DependentUpon>FrmEditLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmLiquidaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmLiquidaciones.Designer.cs">
+      <DependentUpon>FrmLiquidaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmTotalesCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidaciones\FrmTotalesCategorias.Designer.cs">
+      <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\FrmEmpleoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmEmpleoPago.Designer.cs">
+      <DependentUpon>FrmEmpleoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\FrmNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmNomina.Designer.cs">
+      <DependentUpon>FrmNomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\FrmNominaMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmNominaMes.Designer.cs">
+      <DependentUpon>FrmNominaMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\FrmPreviewNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmPreviewNomina.Designer.cs">
+      <DependentUpon>FrmPreviewNomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomina\RptNomina.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNomina.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Nomina\RptRecibos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptRecibos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FrmAddProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FrmAddProveedor.Designer.cs">
+      <DependentUpon>FrmAddProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCasas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCasas.Designer.cs">
       <DependentUpon>FrmCasas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditEmpleado.cs">
+    <Compile Include="Empleados\FrmEditEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditEmpleado.Designer.cs">
+    <Compile Include="Empleados\FrmEditEmpleado.Designer.cs">
       <DependentUpon>FrmEditEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmpleadoCasa.cs">
+    <Compile Include="Proveedores\FrmEditProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmpleadoCasa.Designer.cs">
+    <Compile Include="Proveedores\FrmEditProveedor.Designer.cs">
+      <DependentUpon>FrmEditProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\FrmEmpleadoCasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\FrmEmpleadoCasa.Designer.cs">
       <DependentUpon>FrmEmpleadoCasa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmpleados.cs">
+    <Compile Include="Empleados\FrmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmpleados.Designer.cs">
+    <Compile Include="Empleados\FrmEmpleados.Designer.cs">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEmpleos.cs">
@@ -159,6 +373,12 @@
     <Compile Include="FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedores\FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\FrmPreviewCrystal.cs">
@@ -166,6 +386,24 @@
     </Compile>
     <Compile Include="Reports\FrmPreviewCrystal.Designer.cs">
       <DependentUpon>FrmPreviewCrystal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RptAsientos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptAsientos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RptAsientosPagados.cs">
+      <DependentUpon>RptAsientosPagados.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\RptAsientosPendientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptAsientosPendientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\RptEmpleados.cs">
       <AutoGen>True</AutoGen>
@@ -179,16 +417,75 @@
       <DependentUpon>RptEmpleadosCasa.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\RptLiquidaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptLiquidaciones.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Asientos\FrmAddAsiento.resx">
+      <DependentUpon>FrmAddAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asientos\FrmAsientos.resx">
+      <DependentUpon>FrmAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asientos\FrmEditAsiento.resx">
+      <DependentUpon>FrmEditAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asientos\FrmTotales.resx">
+      <DependentUpon>FrmTotales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\FrmEmpleadoNominas.resx">
+      <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmAddLiquidacion.resx">
+      <DependentUpon>FrmAddLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmEditLiquidacion.resx">
+      <DependentUpon>FrmEditLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmLiquidaciones.resx">
+      <DependentUpon>FrmLiquidaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidaciones\FrmTotalesCategorias.resx">
+      <DependentUpon>FrmTotalesCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmEmpleoPago.resx">
+      <DependentUpon>FrmEmpleoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmNomina.resx">
+      <DependentUpon>FrmNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmNominaMes.resx">
+      <DependentUpon>FrmNominaMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmPreviewNomina.resx">
+      <DependentUpon>FrmPreviewNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\RptNomina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNomina.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\RptRecibos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptRecibos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FrmAddProveedor.resx">
+      <DependentUpon>FrmAddProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCasas.resx">
       <DependentUpon>FrmCasas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditEmpleado.resx">
+    <EmbeddedResource Include="Empleados\FrmEditEmpleado.resx">
       <DependentUpon>FrmEditEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleadoCasa.resx">
+    <EmbeddedResource Include="Proveedores\FrmEditProveedor.resx">
+      <DependentUpon>FrmEditProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\FrmEmpleadoCasa.resx">
       <DependentUpon>FrmEmpleadoCasa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleados.resx">
+    <EmbeddedResource Include="Empleados\FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleos.resx">
@@ -206,6 +503,9 @@
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -214,9 +514,22 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\FrmPreviewCrystal.resx">
       <DependentUpon>FrmPreviewCrystal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptAsientos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAsientos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptAsientosPagados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAsientosPagados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptAsientosPendientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAsientosPendientes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\RptEmpleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -225,6 +538,10 @@
     <EmbeddedResource Include="Reports\RptEmpleadosCasa.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptEmpleadosCasa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptLiquidaciones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptLiquidaciones.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Data\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -237,7 +554,27 @@
     <None Include="Data\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="ManzantinesApp_TemporaryKey.pfx" />
+    <None Include="Data\RptDataSet.xsc">
+      <DependentUpon>RptDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\RptDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\RptDataSet.xss">
+      <DependentUpon>RptDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="DBContext\DBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBContext\DBModel.edmx.diagram">
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\ManzantinesApp.DBContext.vv_NominasEmpleadosMes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -254,7 +591,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -264,6 +601,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
@@ -287,6 +625,22 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBContext\DBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBContext\DBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\if_Cancel__Red_34208.png" />
+    <None Include="Resources\PrintSetup_16x_32.bmp" />
+    <None Include="Resources\Report_16x_32.bmp" />
+    <None Include="Resources\Print_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
