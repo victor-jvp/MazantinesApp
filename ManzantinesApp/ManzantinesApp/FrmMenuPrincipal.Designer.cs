@@ -35,12 +35,19 @@
             this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liquidacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formasDeEmpleoYPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nominaPorMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.casasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encargadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fincasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
@@ -115,6 +122,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivosToolStripMenuItem,
             this.empleadosToolStripMenuItem,
+            this.asientosToolStripMenuItem,
+            this.liquidacionesToolStripMenuItem,
+            this.nominaToolStripMenuItem,
             this.datosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -133,8 +143,9 @@
             // soporteToolStripMenuItem
             // 
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.soporteToolStripMenuItem.Text = "&Soporte";
+            this.soporteToolStripMenuItem.Click += new System.EventHandler(this.SoporteToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 
@@ -143,6 +154,51 @@
             this.empleadosToolStripMenuItem.Text = "&Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
+            // asientosToolStripMenuItem
+            // 
+            this.asientosToolStripMenuItem.Name = "asientosToolStripMenuItem";
+            this.asientosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.asientosToolStripMenuItem.Text = "A&sientos";
+            this.asientosToolStripMenuItem.Click += new System.EventHandler(this.AsientosToolStripMenuItem_Click);
+            // 
+            // liquidacionesToolStripMenuItem
+            // 
+            this.liquidacionesToolStripMenuItem.Name = "liquidacionesToolStripMenuItem";
+            this.liquidacionesToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.liquidacionesToolStripMenuItem.Text = "&Liquidaciones";
+            this.liquidacionesToolStripMenuItem.Click += new System.EventHandler(this.LiquidacionesToolStripMenuItem_Click);
+            // 
+            // nominaToolStripMenuItem
+            // 
+            this.nominaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.formasDeEmpleoYPagosToolStripMenuItem,
+            this.nominaToolStripMenuItem1,
+            this.nominaPorMesToolStripMenuItem});
+            this.nominaToolStripMenuItem.Name = "nominaToolStripMenuItem";
+            this.nominaToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.nominaToolStripMenuItem.Text = "&Nomina";
+            // 
+            // formasDeEmpleoYPagosToolStripMenuItem
+            // 
+            this.formasDeEmpleoYPagosToolStripMenuItem.Name = "formasDeEmpleoYPagosToolStripMenuItem";
+            this.formasDeEmpleoYPagosToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.formasDeEmpleoYPagosToolStripMenuItem.Text = "Formas de Empleo y Pagos";
+            this.formasDeEmpleoYPagosToolStripMenuItem.Click += new System.EventHandler(this.formasDeEmpleoYPagosToolStripMenuItem_Click);
+            // 
+            // nominaToolStripMenuItem1
+            // 
+            this.nominaToolStripMenuItem1.Name = "nominaToolStripMenuItem1";
+            this.nominaToolStripMenuItem1.Size = new System.Drawing.Size(216, 22);
+            this.nominaToolStripMenuItem1.Text = "Nomina";
+            this.nominaToolStripMenuItem1.Click += new System.EventHandler(this.nominaToolStripMenuItem1_Click);
+            // 
+            // nominaPorMesToolStripMenuItem
+            // 
+            this.nominaPorMesToolStripMenuItem.Name = "nominaPorMesToolStripMenuItem";
+            this.nominaPorMesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.nominaPorMesToolStripMenuItem.Text = "Nomina por Mes";
+            this.nominaPorMesToolStripMenuItem.Click += new System.EventHandler(this.nominaPorMesToolStripMenuItem_Click);
+            // 
             // datosToolStripMenuItem
             // 
             this.datosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,7 +206,8 @@
             this.encargadosToolStripMenuItem,
             this.empleoToolStripMenuItem,
             this.empresaToolStripMenuItem,
-            this.fincasToolStripMenuItem});
+            this.fincasToolStripMenuItem,
+            this.proveedoresToolStripMenuItem});
             this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
             this.datosToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.datosToolStripMenuItem.Text = "&Datos";
@@ -158,37 +215,44 @@
             // casasToolStripMenuItem
             // 
             this.casasToolStripMenuItem.Name = "casasToolStripMenuItem";
-            this.casasToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.casasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.casasToolStripMenuItem.Text = "&Casas";
             this.casasToolStripMenuItem.Click += new System.EventHandler(this.casasToolStripMenuItem_Click);
             // 
             // encargadosToolStripMenuItem
             // 
             this.encargadosToolStripMenuItem.Name = "encargadosToolStripMenuItem";
-            this.encargadosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.encargadosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.encargadosToolStripMenuItem.Text = "&Encargados";
             this.encargadosToolStripMenuItem.Click += new System.EventHandler(this.encargadosToolStripMenuItem_Click);
             // 
             // empleoToolStripMenuItem
             // 
             this.empleoToolStripMenuItem.Name = "empleoToolStripMenuItem";
-            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.empleoToolStripMenuItem.Text = "E&mpleos";
             this.empleoToolStripMenuItem.Click += new System.EventHandler(this.empleoToolStripMenuItem_Click);
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.empresaToolStripMenuItem.Text = "Em&presas";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
             // fincasToolStripMenuItem
             // 
             this.fincasToolStripMenuItem.Name = "fincasToolStripMenuItem";
-            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.fincasToolStripMenuItem.Text = "&Fincas";
             this.fincasToolStripMenuItem.Click += new System.EventHandler(this.fincasToolStripMenuItem_Click);
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem.Text = "&Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -748,6 +812,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FrmMenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal - Mazantines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
@@ -820,6 +885,13 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ToolStripMenuItem encargadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asientosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liquidacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nominaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formasDeEmpleoYPagosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nominaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem nominaPorMesToolStripMenuItem;
     }
 }
 

@@ -267,5 +267,58 @@
         {
             loadCasa(sender as Button);
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            FrmProveedores frmProveedores = new FrmProveedores();
+            frmProveedores.Show(this);
+            this.Enabled = true;
+        }
+
+        private void AsientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Asientos.FrmAsientos frmAsientos = new Asientos.FrmAsientos();
+            frmAsientos.Show(this);
+            this.Enabled = true;
+        }
+
+        private void LiquidacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Liquidaciones.FrmLiquidaciones frmLiquidaciones = new Liquidaciones.FrmLiquidaciones();
+            frmLiquidaciones.Show(this);
+            this.Enabled = true;
+        }
+
+        private void formasDeEmpleoYPagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Nomina.FrmEmpleoPago frmEmpleoPago = new Nomina.FrmEmpleoPago();
+            frmEmpleoPago.Show(this);
+            this.Enabled = true;
+        }
+
+        private void nominaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Nomina.FrmNomina frmNomina = new Nomina.FrmNomina();
+            frmNomina.ShowDialog(this);
+            this.Enabled = true;
+        }
+
+        private void nominaPorMesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Nomina.FrmNominaMes miForm = new Nomina.FrmNominaMes();
+            miForm.ShowDialog(this);
+            this.Enabled = true;
+        }
+
+        private void SoporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.jesusjg.es/");
+        }
     }
 }
