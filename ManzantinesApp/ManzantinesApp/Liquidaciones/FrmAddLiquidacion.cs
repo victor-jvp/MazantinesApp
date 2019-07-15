@@ -26,12 +26,12 @@ namespace ManzantinesApp.Liquidaciones
         {
             this.errorProvider1.Clear();
 
-            if (string.IsNullOrEmpty(conceptoTextBox.Text))
-            {
-                this.errorProvider1.SetError(conceptoTextBox, "Este campo es requerido");
-                conceptoTextBox.Focus();
-                return false;
-            }
+            //if (string.IsNullOrEmpty(conceptoTextBox.Text))
+            //{
+            //    this.errorProvider1.SetError(conceptoTextBox, "Este campo es requerido");
+            //    conceptoTextBox.Focus();
+            //    return false;
+            //}
 
             return true;
         }
@@ -66,11 +66,12 @@ namespace ManzantinesApp.Liquidaciones
             this.liquidacionesTableAdapter.Fill(this.dataSet1.Liquidaciones);
             this.liquidacionesBindingSource.AddNew();
             this.categoriaComboBox.SelectedIndex = 0;
-            this.conceptoTextBox.Text = string.Empty;
+            //this.conceptoTextBox.Text = string.Empty;
             this.totalesNumericUpDown.Value = 0;
             this.fechaDateTimePicker.Value = DateTime.Now;
+            this.fechaPagoDateTimePicker.Value = DateTime.Now;
             this.pagadoCheckBox.Checked = false;
-            this.CantidadNumericUpDown.Value = 0;
+            //this.CantidadNumericUpDown.Value = 0;
 
             this.id_empresaComboBox.SelectedIndex = -1;
         }

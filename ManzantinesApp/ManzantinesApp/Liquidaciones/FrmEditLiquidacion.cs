@@ -1,12 +1,5 @@
 ﻿using ManzantinesApp.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ManzantinesApp.Liquidaciones
@@ -28,12 +21,12 @@ namespace ManzantinesApp.Liquidaciones
         {
             this.errorProvider1.Clear();
 
-            if (string.IsNullOrEmpty(conceptoTextBox.Text))
-            {
-                this.errorProvider1.SetError(conceptoTextBox, "Este campo es requerido");
-                conceptoTextBox.Focus();
-                return false;
-            }
+            //if (string.IsNullOrEmpty(conceptoTextBox.Text))
+            //{
+            //    this.errorProvider1.SetError(conceptoTextBox, "Este campo es requerido");
+            //    conceptoTextBox.Focus();
+            //    return false;
+            //}
 
             return true;
         }
@@ -43,7 +36,11 @@ namespace ManzantinesApp.Liquidaciones
         {
             try
             {
-                if (!Validarcampos()) return;
+                if (!Validarcampos())
+                {
+                    return;
+                }
+
                 this.Validate();
                 this.liquidacionesBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
@@ -67,6 +64,14 @@ namespace ManzantinesApp.Liquidaciones
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
             this.liquidacionesTableAdapter.Fill(this.dataSet1.Liquidaciones);
             this.liquidacionesBindingSource.Filter = $"Id = {miLiquidacion.Id}";
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            FrmKilogramos frmKilogramos = new FrmKilogramos();
+            frmKilogramos.ShowDialog(this);
+            this.Enabled = true;
         }
     }
 }

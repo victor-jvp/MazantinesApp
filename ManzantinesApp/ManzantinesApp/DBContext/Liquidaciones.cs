@@ -15,12 +15,15 @@ namespace ManzantinesApp.DBContext
     public partial class Liquidaciones
     {
         public int Id { get; set; }
+        public string NroLiquidacion { get; set; }
+        public string NroFactura { get; set; }
+        public Nullable<System.DateTime> FechaPago { get; set; }
+        public string Banco { get; set; }
         public string Concepto { get; set; }
         public Nullable<int> Categoria { get; set; }
         public Nullable<decimal> Totales { get; set; }
         public Nullable<bool> Pagado { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> id_empresa { get; set; }
-        public Nullable<double> Cantidad { get; set; }
     }
 }

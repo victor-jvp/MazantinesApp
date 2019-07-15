@@ -12,19 +12,11 @@ namespace ManzantinesApp.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class vv_empleados
+    public partial class Frutas
     {
         public int Id { get; set; }
-        public string Nro_empleado { get; set; }
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
-        public string FullName { get; set; }
-        public string Telefono { get; set; }
-        public string NroCasa { get; set; }
-        public string Empresa { get; set; }
-        public string Empleos { get; set; }
-        public string Caja { get; set; }
-        public Nullable<bool> Activo { get; set; }
-        public string Encargado { get; set; }
+        public string Fruta { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public Nullable<System.DateTime> DeletedAt { get; set; }
     }
 }

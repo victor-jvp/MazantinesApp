@@ -16,12 +16,12 @@ namespace ManzantinesApp.DBContext
     {
         public int Id { get; set; }
         public Nullable<int> id_proveedor { get; set; }
-        public Nullable<int> id_empresa { get; set; }
         public Nullable<System.DateTime> FechaFactura { get; set; }
         public Nullable<decimal> Importe { get; set; }
         public Nullable<System.DateTime> FechaPago { get; set; }
         public string FormaPago { get; set; }
         public Nullable<bool> Pagado { get; set; }
+        public Nullable<int> id_empresa { get; set; }
     
         public virtual Empresas Empresas { get; set; }
         public virtual Proveedores Proveedores { get; set; }

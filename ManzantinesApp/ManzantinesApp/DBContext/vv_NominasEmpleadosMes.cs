@@ -18,7 +18,8 @@ namespace ManzantinesApp.DBContext
         public Nullable<decimal> Anio { get; set; }
         public Nullable<decimal> Semana { get; set; }
         public Nullable<int> id_encargado { get; set; }
-        public string Nro_Empleado { get; set; }
+        public string Encargado { get; set; }
+        public Nullable<int> Nro_Empleado { get; set; }
         public string Caja { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
@@ -29,7 +30,6 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> totalH { get; set; }
         public Nullable<double> valorD { get; set; }
         public Nullable<double> valorH { get; set; }
-        public string Encargado { get; set; }
         public Nullable<double> TotalPago { get; set; }
     }
 }
