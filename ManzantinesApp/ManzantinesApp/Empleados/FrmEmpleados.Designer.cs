@@ -88,6 +88,9 @@
             this.trabajadores_EmpleosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.Trabajadores_EmpleosTableAdapter();
             this.trabajadores_EmpleosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vv_empleadosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.vv_empleadosTableAdapter();
+            this.TodosRadioButton = new System.Windows.Forms.RadioButton();
+            this.ActivosRadioButton = new System.Windows.Forms.RadioButton();
+            this.InactivosRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vv_empleadosBindingSource)).BeginInit();
@@ -111,7 +114,7 @@
             this.groupBox1.Controls.Add(this.trabajadoresDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(0, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(871, 337);
+            this.groupBox1.Size = new System.Drawing.Size(958, 378);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Empleados";
@@ -143,7 +146,7 @@
             this.trabajadoresDataGridView.Location = new System.Drawing.Point(3, 16);
             this.trabajadoresDataGridView.Name = "trabajadoresDataGridView";
             this.trabajadoresDataGridView.ReadOnly = true;
-            this.trabajadoresDataGridView.Size = new System.Drawing.Size(865, 318);
+            this.trabajadoresDataGridView.Size = new System.Drawing.Size(952, 359);
             this.trabajadoresDataGridView.TabIndex = 0;
             // 
             // Id
@@ -268,7 +271,7 @@
             this.EmpresaToolStripTextBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(871, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(958, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -281,6 +284,7 @@
             // CasaToolStripTextBox
             // 
             this.CasaToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CasaToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CasaToolStripTextBox.Name = "CasaToolStripTextBox";
             this.CasaToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             this.CasaToolStripTextBox.TextChanged += new System.EventHandler(this.CasaToolStripTextBox_TextChanged);
@@ -299,6 +303,7 @@
             // EmpleadoToolStripTextBox
             // 
             this.EmpleadoToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmpleadoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmpleadoToolStripTextBox.Name = "EmpleadoToolStripTextBox";
             this.EmpleadoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             this.EmpleadoToolStripTextBox.TextChanged += new System.EventHandler(this.EmpleadoToolStripTextBox_TextChanged);
@@ -317,6 +322,7 @@
             // EmpresaToolStripTextBox
             // 
             this.EmpresaToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmpresaToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmpresaToolStripTextBox.Name = "EmpresaToolStripTextBox";
             this.EmpresaToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             this.EmpresaToolStripTextBox.TextChanged += new System.EventHandler(this.EmpresaToolStripTextBox_TextChanged);
@@ -349,7 +355,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(871, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(958, 25);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -369,6 +375,7 @@
             // BuscarToolStripTextBox
             // 
             this.BuscarToolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BuscarToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BuscarToolStripTextBox.Name = "BuscarToolStripTextBox";
             this.BuscarToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             this.BuscarToolStripTextBox.TextChanged += new System.EventHandler(this.BuscarToolStripTextBox_TextChanged);
@@ -400,6 +407,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -573,11 +581,49 @@
             // 
             this.vv_empleadosTableAdapter.ClearBeforeFill = true;
             // 
+            // TodosRadioButton
+            // 
+            this.TodosRadioButton.AutoSize = true;
+            this.TodosRadioButton.Checked = true;
+            this.TodosRadioButton.Location = new System.Drawing.Point(494, 30);
+            this.TodosRadioButton.Name = "TodosRadioButton";
+            this.TodosRadioButton.Size = new System.Drawing.Size(55, 17);
+            this.TodosRadioButton.TabIndex = 4;
+            this.TodosRadioButton.TabStop = true;
+            this.TodosRadioButton.Text = "Todos";
+            this.TodosRadioButton.UseVisualStyleBackColor = true;
+            this.TodosRadioButton.CheckedChanged += new System.EventHandler(this.TodosRadioButton_CheckedChanged);
+            // 
+            // ActivosRadioButton
+            // 
+            this.ActivosRadioButton.AutoSize = true;
+            this.ActivosRadioButton.Location = new System.Drawing.Point(555, 30);
+            this.ActivosRadioButton.Name = "ActivosRadioButton";
+            this.ActivosRadioButton.Size = new System.Drawing.Size(60, 17);
+            this.ActivosRadioButton.TabIndex = 5;
+            this.ActivosRadioButton.Text = "Activos";
+            this.ActivosRadioButton.UseVisualStyleBackColor = true;
+            this.ActivosRadioButton.CheckedChanged += new System.EventHandler(this.ActivosRadioButton_CheckedChanged);
+            // 
+            // InactivosRadioButton
+            // 
+            this.InactivosRadioButton.AutoSize = true;
+            this.InactivosRadioButton.Location = new System.Drawing.Point(616, 30);
+            this.InactivosRadioButton.Name = "InactivosRadioButton";
+            this.InactivosRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.InactivosRadioButton.TabIndex = 6;
+            this.InactivosRadioButton.Text = "Inactivos";
+            this.InactivosRadioButton.UseVisualStyleBackColor = true;
+            this.InactivosRadioButton.CheckedChanged += new System.EventHandler(this.InactivosRadioButton_CheckedChanged);
+            // 
             // FrmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 402);
+            this.ClientSize = new System.Drawing.Size(958, 435);
+            this.Controls.Add(this.InactivosRadioButton);
+            this.Controls.Add(this.ActivosRadioButton);
+            this.Controls.Add(this.TodosRadioButton);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.groupBox1);
@@ -664,5 +710,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empresaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleos;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activo;
+        private System.Windows.Forms.RadioButton TodosRadioButton;
+        private System.Windows.Forms.RadioButton ActivosRadioButton;
+        private System.Windows.Forms.RadioButton InactivosRadioButton;
     }
 }

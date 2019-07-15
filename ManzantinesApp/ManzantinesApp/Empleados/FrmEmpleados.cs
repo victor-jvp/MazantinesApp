@@ -52,7 +52,7 @@
             var empleado = EmpleadoToolStripTextBox.Text.Trim();
             var empresa = EmpresaToolStripTextBox.Text.Trim();
 
-            if(string.IsNullOrEmpty(casa) && string.IsNullOrEmpty(empleado) && string.IsNullOrEmpty(empresa))
+            if(string.IsNullOrEmpty(casa) && string.IsNullOrEmpty(empleado) && string.IsNullOrEmpty(empresa) && TodosRadioButton.Checked)
             {
                 this.vv_empleadosBindingSource.RemoveFilter();
             }
@@ -73,6 +73,20 @@
                     if (!string.IsNullOrEmpty(filter)) filter += " AND ";
 
                     filter += $"Empresa LIKE '%{empresa}%'";
+                }
+
+                if (ActivosRadioButton.Checked)
+                {
+                    if (!string.IsNullOrEmpty(filter)) filter += " AND ";
+
+                    filter += $"Activo = true";
+                }
+
+                if (InactivosRadioButton.Checked)
+                {
+                    if (!string.IsNullOrEmpty(filter)) filter += " AND ";
+
+                    filter += $"Activo = false";
                 }
 
                 vv_empleadosBindingSource.Filter = filter;
@@ -302,6 +316,30 @@
                     $"OR Telefono LIKE '%{buscar}%' " +
                     $"OR Empresa LIKE '%{buscar}%' " +
                     $"OR Empleos LIKE '%{buscar}%'";
+            }
+        }
+
+        private void TodosRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TodosRadioButton.Checked)
+            {
+                FilterTable();
+            }            
+        }
+
+        private void ActivosRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ActivosRadioButton.Checked)
+            {
+                FilterTable();
+            }
+        }
+
+        private void InactivosRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (InactivosRadioButton.Checked)
+            {
+                FilterTable();
             }
         }
     }
