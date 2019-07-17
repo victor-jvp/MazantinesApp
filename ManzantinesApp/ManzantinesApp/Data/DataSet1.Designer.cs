@@ -16004,13 +16004,27 @@ SELECT Id, Categoria, Totales, Fecha, Pagado, id_empresa, Banco, FechaPago, NroF
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Categoria, Totales, Fecha, Pagado, id_empresa, Banco, FechaPago, NroFa" +
                 "ctura, NroLiquidacion, DeletedAt, id_fruta, Variedad, id_finca FROM Liquidacione" +
                 "s";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        Id, Categoria, Totales, Fecha, Pagado, id_empresa, Banco, FechaPago" +
+                ", NroFactura, NroLiquidacion, DeletedAt, id_fruta, Variedad, id_finca\r\nFROM     " +
+                "       Liquidaciones\r\nWHERE        (DeletedAt IS NULL)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        ISNULL(SUM(Totales), 0) AS total\r\nFROM            Liquidaciones\r\nWH" +
+                "ERE        (id_fruta = @id_fruta) AND (DeletedAt IS NULL) AND (id_finca = @id_fi" +
+                "nca)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_fruta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_fruta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_finca", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_finca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16032,6 +16046,30 @@ SELECT Id, Categoria, Totales, Fecha, Pagado, id_empresa, Banco, FechaPago, NroF
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.LiquidacionesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.LiquidacionesDataTable dataTable = new DataSet1.LiquidacionesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillActive(DataSet1.LiquidacionesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.LiquidacionesDataTable GetDataActive() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             DataSet1.LiquidacionesDataTable dataTable = new DataSet1.LiquidacionesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -16485,6 +16523,46 @@ SELECT Id, Categoria, Totales, Fecha, Pagado, id_empresa, Banco, FechaPago, NroF
                     global::System.Nullable<int> Original_id_fruta, 
                     global::System.Nullable<int> Original_id_finca) {
             return this.Update(Categoria, Totales, Fecha, Pagado, id_empresa, Banco, FechaPago, NroFactura, NroLiquidacion, DeletedAt, id_fruta, Variedad, id_finca, Original_Id, Original_Categoria, Original_Totales, Original_Fecha, Original_Pagado, Original_id_empresa, Original_FechaPago, Original_DeletedAt, Original_id_fruta, Original_id_finca, Original_Id);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object SumTotalByFrutaAndFinca(global::System.Nullable<int> id_fruta, global::System.Nullable<int> id_finca) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((id_fruta.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(id_fruta.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_finca.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(id_finca.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

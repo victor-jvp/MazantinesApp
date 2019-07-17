@@ -182,17 +182,17 @@
   <data name="EditToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -384,19 +384,25 @@
   <metadata name="Fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="FechaPago.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="NroLiquidacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="NroFactura.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="FechaPago.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Banco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Pagado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="id_fruta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="frutasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <metadata name="Variedad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="id_empresa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -405,6 +411,18 @@
   <metadata name="empresasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>903, 17</value>
   </metadata>
+  <metadata name="Pagado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DeletedAt.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="fincasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>773, 56</value>
+  </metadata>
+  <metadata name="frutasvariedadesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 56</value>
+  </metadata>
   <metadata name="liquidacionesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>536, 17</value>
   </metadata>
@@ -412,6 +430,18 @@
     <value>732, 17</value>
   </metadata>
   <metadata name="empresasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>1085, 17</value>
+  </metadata>
+  <metadata name="frutasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>178, 56</value>
+  </metadata>
+  <metadata name="frutas_variedadesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>554, 56</value>
+  </metadata>
+  <metadata name="fincasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>934, 56</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>128</value>
   </metadata>
 </root>
