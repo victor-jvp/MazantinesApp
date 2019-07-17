@@ -38,6 +38,10 @@
         <AssociationConnector Association="MazantinesModel.fk_NominasDet_NominasCab_pk" />
         <AssociationConnector Association="MazantinesModel.FK_NominasDet_Trabajadores" />
         <AssociationConnector Association="MazantinesModel.fk_id_trabajador" />
+        <AssociationConnector Association="MazantinesModel.fk_id_empresa_liquidaciones" />
+        <AssociationConnector Association="MazantinesModel.FK__Liquidaci__id_fr__2FCF1A8A" />
+        <EntityTypeShape EntityType="MazantinesModel.Frutas_variedades" Width="1.5" PointX="3" PointY="10.75" />
+        <AssociationConnector Association="MazantinesModel.if_fruta_variedad" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -202,6 +202,9 @@
     <Compile Include="DBContext\Frutas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBContext\Frutas_variedades.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\Liquidaciones.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -244,6 +247,18 @@
     <Compile Include="Empleados\FrmEmpleadoNominas.Designer.cs">
       <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frutas\FrmEditFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frutas\FrmEditFrutas.Designer.cs">
+      <DependentUpon>FrmEditFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frutas\FrmFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frutas\FrmFrutas.Designer.cs">
+      <DependentUpon>FrmFrutas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Liquidaciones\FrmAddLiquidacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,12 +270,6 @@
     </Compile>
     <Compile Include="Liquidaciones\FrmEditLiquidacion.Designer.cs">
       <DependentUpon>FrmEditLiquidacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Liquidaciones\FrmKilogramos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Liquidaciones\FrmKilogramos.Designer.cs">
-      <DependentUpon>FrmKilogramos.cs</DependentUpon>
     </Compile>
     <Compile Include="Liquidaciones\FrmLiquidaciones.cs">
       <SubType>Form</SubType>
@@ -441,14 +450,17 @@
     <EmbeddedResource Include="Empleados\FrmEmpleadoNominas.resx">
       <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frutas\FrmEditFrutas.resx">
+      <DependentUpon>FrmEditFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frutas\FrmFrutas.resx">
+      <DependentUpon>FrmFrutas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Liquidaciones\FrmAddLiquidacion.resx">
       <DependentUpon>FrmAddLiquidacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidaciones\FrmEditLiquidacion.resx">
       <DependentUpon>FrmEditLiquidacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Liquidaciones\FrmKilogramos.resx">
-      <DependentUpon>FrmKilogramos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidaciones\FrmLiquidaciones.resx">
       <DependentUpon>FrmLiquidaciones.cs</DependentUpon>

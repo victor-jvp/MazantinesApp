@@ -45,5 +45,6 @@ namespace ManzantinesApp.DBContext
         public virtual DbSet<vv_nomina_trabajadores> vv_nomina_trabajadores { get; set; }
         public virtual DbSet<vv_nominas> vv_nominas { get; set; }
         public virtual DbSet<vv_NominasEmpleadosMes> vv_NominasEmpleadosMes { get; set; }
+        public virtual DbSet<Frutas_variedades> Frutas_variedades { get; set; }
     }
 }

@@ -73,6 +73,15 @@
           <Property Name="Status" Type="bit" />
           <Property Name="DeletedAt" Type="smalldatetime" />
         </EntityType>
+        <EntityType Name="Frutas_variedades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_fruta" Type="int" />
+          <Property Name="Variedad" Type="nvarchar(max)" />
+          <Property Name="DeletedAt" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="Liquidaciones">
           <Key>
             <PropertyRef Name="Id" />
@@ -82,12 +91,14 @@
           <Property Name="NroFactura" Type="nvarchar(max)" />
           <Property Name="FechaPago" Type="date" />
           <Property Name="Banco" Type="nvarchar(max)" />
-          <Property Name="Concepto" Type="nvarchar(max)" />
           <Property Name="Categoria" Type="int" />
           <Property Name="Totales" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Pagado" Type="bit" />
           <Property Name="Fecha" Type="date" />
           <Property Name="id_empresa" Type="int" />
+          <Property Name="id_fruta" Type="int" />
+          <Property Name="id_variedad" Type="int" />
+          <Property Name="DeletedAt" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="NominasCab">
           <Key>
@@ -269,7 +280,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
           <Property Name="status" Type="nchar" MaxLength="1" />
           <Property Name="id_encargado" Type="int" />
-          <Property Name="Nro_empleado" Type="int" />
+          <Property Name="Nro_empleado" Type="nvarchar(max)" />
           <Property Name="caja" Type="nvarchar(max)" />
           <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
           <Property Name="id_empleo" Type="int" />
@@ -318,20 +329,18 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="valorH" Type="float" />
           <Property Name="TotalPago" Type="float" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vv_resumenNominaEmpleado">
-          <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
-          <Property Name="id_empleado" Type="int" />
-          <Property Name="pagado" Type="bit" />
-          <Property Name="valorD" Type="float" />
-          <Property Name="valorH" Type="float" />
-          <Property Name="Dias" Type="float" />
-          <Property Name="Horas" Type="float" />
-          <Property Name="TotalDias" Type="float" />
-          <Property Name="TotalHoras" Type="float" />
-        </EntityType>-->
+        <Association Name="FK__Liquidaci__id_fr__2FCF1A8A">
+          <End Role="Frutas" Type="Self.Frutas" Multiplicity="0..1" />
+          <End Role="Liquidaciones" Type="Self.Liquidaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Frutas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Liquidaciones">
+              <PropertyRef Name="id_fruta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_EmpleoPago_Empleos">
           <End Role="Empleos" Type="Self.Empleos" Multiplicity="0..1" />
           <End Role="EmpleosPagos" Type="Self.EmpleosPagos" Multiplicity="*" />
@@ -352,6 +361,18 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Asientos">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_id_empresa_liquidaciones">
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
+          <End Role="Liquidaciones" Type="Self.Liquidaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Liquidaciones">
               <PropertyRef Name="id_empresa" />
             </Dependent>
           </ReferentialConstraint>
@@ -488,6 +509,18 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="if_fruta_variedad">
+          <End Role="Frutas" Type="Self.Frutas" Multiplicity="0..1" />
+          <End Role="Frutas_variedades" Type="Self.Frutas_variedades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Frutas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Frutas_variedades">
+              <PropertyRef Name="id_fruta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="MazantinesModelStoreContainer">
           <EntitySet Name="Asientos" EntityType="Self.Asientos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Casas" EntityType="Self.Casas" Schema="dbo" store:Type="Tables" />
@@ -497,6 +530,7 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <EntitySet Name="Encargados" EntityType="Self.Encargados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fincas" EntityType="Self.Fincas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Frutas" EntityType="Self.Frutas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Frutas_variedades" EntityType="Self.Frutas_variedades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Liquidaciones" EntityType="Self.Liquidaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NominasCab" EntityType="Self.NominasCab" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NominasDet" EntityType="Self.NominasDet" Schema="dbo" store:Type="Tables" />
@@ -633,6 +667,10 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
     [vv_NominasEmpleadosMes].[TotalPago] AS [TotalPago]
     FROM [dbo].[vv_NominasEmpleadosMes] AS [vv_NominasEmpleadosMes]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK__Liquidaci__id_fr__2FCF1A8A" Association="Self.FK__Liquidaci__id_fr__2FCF1A8A">
+            <End Role="Frutas" EntitySet="Frutas" />
+            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+          </AssociationSet>
           <AssociationSet Name="FK_EmpleoPago_Empleos" Association="Self.FK_EmpleoPago_Empleos">
             <End Role="Empleos" EntitySet="Empleos" />
             <End Role="EmpleosPagos" EntitySet="EmpleosPagos" />
@@ -640,6 +678,10 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <AssociationSet Name="fk_empresa" Association="Self.fk_empresa">
             <End Role="Empresas" EntitySet="Empresas" />
             <End Role="Asientos" EntitySet="Asientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_id_empresa_liquidaciones" Association="Self.fk_id_empresa_liquidaciones">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
           </AssociationSet>
           <AssociationSet Name="fk_id_trabajador" Association="Self.fk_id_trabajador">
             <End Role="Trabajadores" EntitySet="Trabajadores" />
@@ -684,6 +726,10 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <AssociationSet Name="id_finca" Association="Self.id_finca">
             <End Role="Fincas" EntitySet="Fincas" />
             <End Role="Casas" EntitySet="Casas" />
+          </AssociationSet>
+          <AssociationSet Name="if_fruta_variedad" Association="Self.if_fruta_variedad">
+            <End Role="Frutas" EntitySet="Frutas" />
+            <End Role="Frutas_variedades" EntitySet="Frutas_variedades" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -763,6 +809,19 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
             <End Role="Trabajadores" EntitySet="Trabajadores" />
             <End Role="Trabajadores_Empleos" EntitySet="Trabajadores_Empleos" />
           </AssociationSet>
+          <AssociationSet Name="fk_id_empresa_liquidaciones" Association="MazantinesModel.fk_id_empresa_liquidaciones">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Liquidaci__id_fr__2FCF1A8A" Association="MazantinesModel.FK__Liquidaci__id_fr__2FCF1A8A">
+            <End Role="Frutas" EntitySet="Frutas" />
+            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+          </AssociationSet>
+          <EntitySet Name="Frutas_variedades" EntityType="MazantinesModel.Frutas_variedades" />
+          <AssociationSet Name="if_fruta_variedad" Association="MazantinesModel.if_fruta_variedad">
+            <End Role="Frutas" EntitySet="Frutas" />
+            <End Role="Frutas_variedades" EntitySet="Frutas_variedades" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Asientos">
           <Key>
@@ -816,6 +875,7 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <Property Name="Empresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Asientos" Relationship="MazantinesModel.fk_empresa" FromRole="Empresas" ToRole="Asientos" />
           <NavigationProperty Name="Trabajadores" Relationship="MazantinesModel.id_empresa" FromRole="Empresas" ToRole="Trabajadores" />
+          <NavigationProperty Name="Liquidaciones" Relationship="MazantinesModel.fk_id_empresa_liquidaciones" FromRole="Empresas" ToRole="Liquidaciones" />
         </EntityType>
         <EntityType Name="Encargados">
           <Key>
@@ -845,6 +905,8 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <Property Name="Fruta" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="DeletedAt" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Liquidaciones" Relationship="MazantinesModel.FK__Liquidaci__id_fr__2FCF1A8A" FromRole="Frutas" ToRole="Liquidaciones" />
+          <NavigationProperty Name="Frutas_variedades" Relationship="MazantinesModel.if_fruta_variedad" FromRole="Frutas" ToRole="Frutas_variedades" />
         </EntityType>
         <EntityType Name="Liquidaciones">
           <Key>
@@ -855,12 +917,16 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <Property Name="NroFactura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="FechaPago" Type="DateTime" Precision="0" />
           <Property Name="Banco" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Concepto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Categoria" Type="Int32" />
           <Property Name="Totales" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Pagado" Type="Boolean" />
           <Property Name="Fecha" Type="DateTime" Precision="0" />
           <Property Name="id_empresa" Type="Int32" />
+          <Property Name="id_fruta" Type="Int32" />
+          <Property Name="id_variedad" Type="Int32" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Empresas" Relationship="MazantinesModel.fk_id_empresa_liquidaciones" FromRole="Liquidaciones" ToRole="Empresas" />
+          <NavigationProperty Name="Frutas" Relationship="MazantinesModel.FK__Liquidaci__id_fr__2FCF1A8A" FromRole="Liquidaciones" ToRole="Frutas" />
         </EntityType>
         <EntityType Name="NominasCab">
           <Key>
@@ -1044,7 +1110,7 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <Property Name="semana" Type="Decimal" Precision="2" Scale="0" />
           <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
           <Property Name="id_encargado" Type="Int32" />
-          <Property Name="Nro_empleado" Type="Int32" />
+          <Property Name="Nro_empleado" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="trabajador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="id_empleo" Type="Int32" />
@@ -1247,6 +1313,52 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_id_empresa_liquidaciones">
+          <End Type="MazantinesModel.Empresas" Role="Empresas" Multiplicity="0..1" />
+          <End Type="MazantinesModel.Liquidaciones" Role="Liquidaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Liquidaciones">
+              <PropertyRef Name="id_empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Liquidaci__id_fr__2FCF1A8A">
+          <End Type="MazantinesModel.Frutas" Role="Frutas" Multiplicity="0..1" />
+          <End Type="MazantinesModel.Liquidaciones" Role="Liquidaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Frutas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Liquidaciones">
+              <PropertyRef Name="id_fruta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Frutas_variedades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_fruta" Type="Int32" />
+          <Property Name="Variedad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Frutas" Relationship="MazantinesModel.if_fruta_variedad" FromRole="Frutas_variedades" ToRole="Frutas" />
+        </EntityType>
+        <Association Name="if_fruta_variedad">
+          <End Type="MazantinesModel.Frutas" Role="Frutas" Multiplicity="0..1" />
+          <End Type="MazantinesModel.Frutas_variedades" Role="Frutas_variedades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Frutas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Frutas_variedades">
+              <PropertyRef Name="id_fruta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1332,12 +1444,14 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
           <EntitySetMapping Name="Liquidaciones">
             <EntityTypeMapping TypeName="MazantinesModel.Liquidaciones">
               <MappingFragment StoreEntitySet="Liquidaciones">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="id_variedad" ColumnName="id_variedad" />
+                <ScalarProperty Name="id_fruta" ColumnName="id_fruta" />
                 <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Pagado" ColumnName="Pagado" />
                 <ScalarProperty Name="Totales" ColumnName="Totales" />
                 <ScalarProperty Name="Categoria" ColumnName="Categoria" />
-                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
                 <ScalarProperty Name="Banco" ColumnName="Banco" />
                 <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
                 <ScalarProperty Name="NroFactura" ColumnName="NroFactura" />
@@ -1564,6 +1678,16 @@ warning 6013: The table/view 'Mazantines.dbo.vv_resumenNominaEmpleado' does not 
                 <ScalarProperty Name="Semana" ColumnName="Semana" />
                 <ScalarProperty Name="Anio" ColumnName="Anio" />
                 <ScalarProperty Name="id_det" ColumnName="id_det" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Frutas_variedades">
+            <EntityTypeMapping TypeName="MazantinesModel.Frutas_variedades">
+              <MappingFragment StoreEntitySet="Frutas_variedades">
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="Variedad" ColumnName="Variedad" />
+                <ScalarProperty Name="id_fruta" ColumnName="id_fruta" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

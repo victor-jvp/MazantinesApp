@@ -69,8 +69,8 @@ namespace ManzantinesApp.Liquidaciones
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            FrmKilogramos frmKilogramos = new FrmKilogramos();
-            frmKilogramos.ShowDialog(this);
+            //FrmKilogramos frmKilogramos = new FrmKilogramos();
+            //frmKilogramos.ShowDialog(this);
             this.Enabled = true;
         }
     }
