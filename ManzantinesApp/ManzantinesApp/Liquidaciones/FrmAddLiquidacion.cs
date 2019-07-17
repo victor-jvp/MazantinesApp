@@ -61,19 +61,28 @@ namespace ManzantinesApp.Liquidaciones
 
         private void FrmAddLiquidacion_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.Empresas' table. You can move, or remove it, as needed.
-            this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
+            
             this.liquidacionesTableAdapter.Fill(this.dataSet1.Liquidaciones);
+
+            this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
+            this.frutasTableAdapter.Fill(this.dataSet1.Frutas);
+            this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
+            this.frutas_variedadesTableAdapter.FillByIdFruta(dataSet1.Frutas_variedades, new int?((int)Convert.ChangeType(id_frutaComboBox.SelectedValue, typeof(int))));
+
             this.liquidacionesBindingSource.AddNew();
             this.categoriaComboBox.SelectedIndex = 0;
-            //this.conceptoTextBox.Text = string.Empty;
             this.totalesNumericUpDown.Value = 0;
             this.fechaDateTimePicker.Value = DateTime.Now;
             this.fechaPagoDateTimePicker.Value = DateTime.Now;
             this.pagadoCheckBox.Checked = false;
-            //this.CantidadNumericUpDown.Value = 0;
 
             this.id_empresaComboBox.SelectedIndex = -1;
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (id_frutaComboBox.SelectedValue == null) return;
+            this.frutas_variedadesTableAdapter.FillByIdFruta(this.dataSet1.Frutas_variedades, new System.Nullable<int>(((int)(System.Convert.ChangeType(id_frutaComboBox.SelectedValue, typeof(int))))));
         }
     }
 }

@@ -60,18 +60,20 @@ namespace ManzantinesApp.Liquidaciones
 
         private void FrmEditLiquidacion_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.Empresas' table. You can move, or remove it, as needed.
+            this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
+            this.frutas_variedadesTableAdapter.Fill(this.dataSet1.Frutas_variedades);
+            this.frutasTableAdapter.Fill(this.dataSet1.Frutas);
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
+
             this.liquidacionesTableAdapter.Fill(this.dataSet1.Liquidaciones);
             this.liquidacionesBindingSource.Filter = $"Id = {miLiquidacion.Id}";
+            this.categoriaComboBox.Text= miLiquidacion.Categoria.ToString();
         }
 
-        private void ToolStripButton1_Click(object sender, EventArgs e)
+        private void id_frutaComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.Enabled = false;
-            //FrmKilogramos frmKilogramos = new FrmKilogramos();
-            //frmKilogramos.ShowDialog(this);
-            this.Enabled = true;
+            if (id_frutaComboBox.SelectedValue == null) return;
+            this.frutas_variedadesTableAdapter.FillByIdFruta(this.dataSet1.Frutas_variedades, new System.Nullable<int>(((int)(System.Convert.ChangeType(id_frutaComboBox.SelectedValue, typeof(int))))));
         }
     }
 }
