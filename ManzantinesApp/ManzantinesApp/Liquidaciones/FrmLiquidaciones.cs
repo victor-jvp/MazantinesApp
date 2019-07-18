@@ -1,21 +1,14 @@
-﻿using CrystalDecisions.Shared;
-using ManzantinesApp.Data;
-using ManzantinesApp.Reports;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ManzantinesApp.Liquidaciones
+﻿namespace ManzantinesApp.Liquidaciones
 {
+    using CrystalDecisions.Shared;
+    using ManzantinesApp.Data;
+    using ManzantinesApp.Reports;
+    using System;
+    using System.Data;
+    using System.Windows.Forms;
+
     public partial class FrmLiquidaciones : Form
     {
-
 
         public FrmLiquidaciones()
         {
@@ -41,33 +34,48 @@ namespace ManzantinesApp.Liquidaciones
 
             if (FrutaComboBox.SelectedValue != null && !string.IsNullOrEmpty(FrutaComboBox.Text))
             {
-                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    filtro += " AND ";
+                }
 
                 filtro += $"id_fruta = '{FrutaComboBox.SelectedValue.ToString().Trim()}'";
             }
 
             if (VariedadComboBox.SelectedValue != null && !string.IsNullOrEmpty(VariedadComboBox.Text))
             {
-                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    filtro += " AND ";
+                }
 
                 filtro += $"Variedad = '{VariedadComboBox.SelectedValue.ToString().Trim()}'";
             }
 
-            if (FincaComboBox.SelectedValue != null && !string.IsNullOrEmpty(FincaComboBox.Text))    
+            if (FincaComboBox.SelectedValue != null && !string.IsNullOrEmpty(FincaComboBox.Text))
             {
-                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    filtro += " AND ";
+                }
 
                 filtro += $"id_finca = '{FincaComboBox.SelectedValue.ToString().Trim()}'";
             }
 
             if (DesdeCheckBox.Checked)
             {
-                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    filtro += " AND ";
+                }
 
                 filtro += $"( Fecha >= #{DesdeDateTimePicker.Value.ToString("MM/dd/yyyy")}# AND Fecha <= #{HastaDateTimePicker.Value.ToString("MM/dd/yyyy")}# )";
             }
 
-            if (!string.IsNullOrEmpty(filtro)) liquidacionesBindingSource.Filter = filtro;
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                liquidacionesBindingSource.Filter = filtro;
+            }
         }
 
         private void LoadGridtotales()
@@ -100,8 +108,10 @@ namespace ManzantinesApp.Liquidaciones
                 }
             }
 
-            BindingSource totalesBS = new BindingSource();
-            totalesBS.DataSource = totalesDT;
+            BindingSource totalesBS = new BindingSource
+            {
+                DataSource = totalesDT
+            };
             TotalesDataGridView.DataSource = totalesBS;
         }
         #endregion
@@ -120,7 +130,7 @@ namespace ManzantinesApp.Liquidaciones
             this.fincasTableAdapter.Fill(this.dataSet1.Fincas);
             this.frutasTableAdapter.Fill(this.dataSet1.Frutas);
             this.empresasTableAdapter.Fill(this.dataSet1.Empresas);
-            this.liquidacionesTableAdapter.FillActive(this.dataSet1.Liquidaciones);            
+            this.liquidacionesTableAdapter.FillActive(this.dataSet1.Liquidaciones);
 
             this.FrutaComboBox.SelectedIndex = -1;
             this.VariedadComboBox.SelectedIndex = -1;
@@ -157,7 +167,10 @@ namespace ManzantinesApp.Liquidaciones
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
-            if (confirm == DialogResult.No) return;
+            if (confirm == DialogResult.No)
+            {
+                return;
+            }
 
             try
             {
@@ -175,11 +188,16 @@ namespace ManzantinesApp.Liquidaciones
 
         private void EditToolStripButton_Click(object sender, EventArgs e)
         {
-            if (liquidacionesDataGridView.CurrentRow == null) return;
+            if (liquidacionesDataGridView.CurrentRow == null)
+            {
+                return;
+            }
 
             this.Enabled = false;
-            FrmEditLiquidacion frmEditLiquidacion = new FrmEditLiquidacion();
-            frmEditLiquidacion.miLiquidacion = dataSet1.Liquidaciones.FindById((int)liquidacionesDataGridView.CurrentRow.Cells[0].Value);
+            FrmEditLiquidacion frmEditLiquidacion = new FrmEditLiquidacion
+            {
+                miLiquidacion = dataSet1.Liquidaciones.FindById((int)liquidacionesDataGridView.CurrentRow.Cells[0].Value)
+            };
             if (frmEditLiquidacion.miLiquidacion == null)
             {
                 MessageBox.Show(
@@ -221,19 +239,17 @@ namespace ManzantinesApp.Liquidaciones
             {
                 ExportOptions exportOptions;
                 DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Pdf|*.pdf";
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Pdf|*.pdf"
+                };
 
-                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
-                frmPreviewCrystal.ReporteCrystal = new RptLiquidaciones();
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal
+                {
+                    ReporteCrystal = new RptLiquidaciones()
+                };
 
-                DataSet ds = new DataSet();
-                DataView view = (DataView)this.liquidacionesBindingSource.List;
-                DataTable dt = view.ToTable();
-                dt.TableName = "Liquidaciones";
-                ds.Tables.Add(dt);
-
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -260,16 +276,12 @@ namespace ManzantinesApp.Liquidaciones
             this.Enabled = false;
             try
             {
-                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
-                frmPreviewCrystal.ReporteCrystal = new RptLiquidaciones();
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal
+                {
+                    ReporteCrystal = new RptLiquidaciones()
+                };
 
-                DataSet ds = new DataSet();
-                DataView view = (DataView)this.liquidacionesBindingSource.List;
-                DataTable dt = view.ToTable();
-                dt.TableName = "Liquidaciones";
-                ds.Tables.Add(dt);
-
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
                 frmPreviewCrystal.ShowDialog(this);
             }
             catch (Exception ex)
@@ -310,19 +322,17 @@ namespace ManzantinesApp.Liquidaciones
             {
                 ExportOptions exportOptions;
                 DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Excel|*.xlsx";
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Excel|*.xlsx"
+                };
 
-                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal();
-                frmPreviewCrystal.ReporteCrystal = new RptLiquidaciones();
+                FrmPreviewCrystal frmPreviewCrystal = new FrmPreviewCrystal
+                {
+                    ReporteCrystal = new RptLiquidaciones()
+                };
 
-                DataSet ds = new DataSet();
-                DataView view = (DataView)this.liquidacionesBindingSource.List;
-                DataTable dt = view.ToTable();
-                dt.TableName = "Liquidaciones";
-                ds.Tables.Add(dt);
-
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
