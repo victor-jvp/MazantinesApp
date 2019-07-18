@@ -176,17 +176,17 @@
   <data name="EditToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -201,6 +201,15 @@
         bO+G80MFwKUTxgfgcO/b8D9IpXoFiiMDHIQm0skAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Fruta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DeletedAt.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
