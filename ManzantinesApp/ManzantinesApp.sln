@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManzantinesApp", "ManzantinesApp\ManzantinesApp.csproj", "{75A65F11-D3F8-412B-84C3-DF8EF389F36D}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MazantinesDB", "..\MazantinesDB\MazantinesDB.sqlproj", "{6E5CE1CA-2964-4097-ADF4-9B24831D494A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MazantinesSetup", "..\MazantinesSetup\MazantinesSetup\MazantinesSetup.vdproj", "{4788B602-0041-4F87-8526-6CE484673BB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|x86.ActiveCfg = Release|Any CPU
 		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|x86.Build.0 = Release|Any CPU
 		{6E5CE1CA-2964-4097-ADF4-9B24831D494A}.Release|x86.Deploy.0 = Release|Any CPU
+		{4788B602-0041-4F87-8526-6CE484673BB3}.Debug|Any CPU.ActiveCfg = Debug
+		{4788B602-0041-4F87-8526-6CE484673BB3}.Debug|x86.ActiveCfg = Debug
+		{4788B602-0041-4F87-8526-6CE484673BB3}.Release|Any CPU.ActiveCfg = Release
+		{4788B602-0041-4F87-8526-6CE484673BB3}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
