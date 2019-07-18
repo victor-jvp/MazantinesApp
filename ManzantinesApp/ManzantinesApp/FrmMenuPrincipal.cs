@@ -320,5 +320,13 @@
         {
             System.Diagnostics.Process.Start("http://www.jesusjg.es/");
         }
+
+        private void FrutasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Frutas.FrmFrutas miForm = new Frutas.FrmFrutas();
+            miForm.ShowDialog(this);
+            this.Enabled = true;
+        }
     }
 }

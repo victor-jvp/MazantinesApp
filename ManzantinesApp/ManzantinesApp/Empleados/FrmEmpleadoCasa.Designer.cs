@@ -359,7 +359,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = null;
             this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.DiasSemanaTableAdapter = null;
+            
             this.tableAdapterManager.EmpleosPagosTableAdapter = null;
             this.tableAdapterManager.EmpleosTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;

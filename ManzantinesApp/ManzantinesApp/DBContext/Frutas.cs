@@ -12,24 +12,23 @@ namespace ManzantinesApp.DBContext
     using System;
     using System.Collections.Generic;
     
-    public partial class Empresas
+    public partial class Frutas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Empresas()
+        public Frutas()
         {
-            this.Asientos = new HashSet<Asientos>();
-            this.Trabajadores = new HashSet<Trabajadores>();
             this.Liquidaciones = new HashSet<Liquidaciones>();
+            this.Frutas_variedades = new HashSet<Frutas_variedades>();
         }
     
         public int Id { get; set; }
-        public string Empresa { get; set; }
+        public string Fruta { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public Nullable<System.DateTime> DeletedAt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Asientos> Asientos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Trabajadores> Trabajadores { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Liquidaciones> Liquidaciones { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Frutas_variedades> Frutas_variedades { get; set; }
     }
 }

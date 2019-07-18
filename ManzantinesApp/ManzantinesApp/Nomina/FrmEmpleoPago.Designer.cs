@@ -83,7 +83,7 @@
             this.tableAdapterManager.AsientosTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = null;
-            this.tableAdapterManager.DiasSemanaTableAdapter = null;
+            
             this.tableAdapterManager.EmpleosPagosTableAdapter = this.empleosPagosTableAdapter;
             this.tableAdapterManager.EmpleosTableAdapter = this.empleosTableAdapter;
             this.tableAdapterManager.EmpresasTableAdapter = null;

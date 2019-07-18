@@ -199,6 +199,12 @@
     <Compile Include="DBContext\Fincas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBContext\Frutas.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\Frutas_variedades.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\Liquidaciones.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -223,12 +229,6 @@
     <Compile Include="DBContext\Trabajadores_Empleos.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\vv_CasasCountEmpleados.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBContext\vv_empleados.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DBContext\vv_EmpleadosCasas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -246,6 +246,18 @@
     </Compile>
     <Compile Include="Empleados\FrmEmpleadoNominas.Designer.cs">
       <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frutas\FrmEditFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frutas\FrmEditFrutas.Designer.cs">
+      <DependentUpon>FrmEditFrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frutas\FrmFrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frutas\FrmFrutas.Designer.cs">
+      <DependentUpon>FrmFrutas.cs</DependentUpon>
     </Compile>
     <Compile Include="Liquidaciones\FrmAddLiquidacion.cs">
       <SubType>Form</SubType>
@@ -437,6 +449,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\FrmEmpleadoNominas.resx">
       <DependentUpon>FrmEmpleadoNominas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frutas\FrmEditFrutas.resx">
+      <DependentUpon>FrmEditFrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frutas\FrmFrutas.resx">
+      <DependentUpon>FrmFrutas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidaciones\FrmAddLiquidacion.resx">
       <DependentUpon>FrmAddLiquidacion.cs</DependentUpon>
@@ -637,6 +655,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\iconfinder_table_sum_64786.png" />
     <None Include="Resources\if_Cancel__Red_34208.png" />
     <None Include="Resources\PrintSetup_16x_32.bmp" />
     <None Include="Resources\Report_16x_32.bmp" />

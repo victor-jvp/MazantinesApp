@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ManzantinesApp
+﻿namespace ManzantinesApp
 {
-    static class Program
+
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Reflection;
+    using System.Windows.Forms;
+
+    internal static class Program
     {
         public static FrmMenuPrincipal frmMenuPrincipal;
 
@@ -14,7 +15,7 @@ namespace ManzantinesApp
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-ES");
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
