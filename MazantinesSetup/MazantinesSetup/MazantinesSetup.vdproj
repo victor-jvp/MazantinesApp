@@ -94,12 +94,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_23246C35528F7B361DFC07411953BE0E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_9D1AFC5FEDBF46FFA155795F2E2049FD"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -145,6 +139,12 @@
         "OwnerKey" = "8:_94F8C46F2B4B05088EB7F9F93C097AE2"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_23246C35528F7B361DFC07411953BE0E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -163,6 +163,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -179,6 +195,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -542,9 +566,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:MazantinesSetup"
+        "ProductName" = "8:MazantinesApp"
         "ProductCode" = "8:{B3DBFA5A-3AED-4D46-B665-1305AE7FAE07}"
-        "PackageCode" = "8:{16595A24-2631-4569-8311-6D032307B61A}"
+        "PackageCode" = "8:{78142D64-AC71-4222-BC51-A953C652CE70}"
         "UpgradeCode" = "8:{B0C34EDC-7EA8-4251-BDA2-841DD624E361}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -555,7 +579,7 @@
         "Manufacturer" = "8:JGCloud"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:MazantinesSetup"
+        "Title" = "8:Mazantines Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:JGCloud"
         "Keywords" = "8:"
