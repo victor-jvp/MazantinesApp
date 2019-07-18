@@ -249,7 +249,15 @@
                     ReporteCrystal = new RptLiquidaciones()
                 };
 
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+
+                this.dataSet1.Liquidaciones.DefaultView.RowFilter = liquidacionesBindingSource.Filter;
+                DataSet ds = new DataSet();
+                ds.Tables.Add(this.dataSet1.Fincas.Copy());
+                ds.Tables.Add(this.dataSet1.Frutas.Copy());
+                ds.Tables.Add(this.dataSet1.Empresas.Copy());
+                ds.Tables.Add(this.dataSet1.Liquidaciones.DefaultView.ToTable());
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -281,7 +289,14 @@
                     ReporteCrystal = new RptLiquidaciones()
                 };
 
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+                this.dataSet1.Liquidaciones.DefaultView.RowFilter = liquidacionesBindingSource.Filter;
+                DataSet ds = new DataSet();
+                ds.Tables.Add(this.dataSet1.Fincas.Copy());
+                ds.Tables.Add(this.dataSet1.Frutas.Copy());
+                ds.Tables.Add(this.dataSet1.Empresas.Copy());
+                ds.Tables.Add(this.dataSet1.Liquidaciones.DefaultView.ToTable());
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
                 frmPreviewCrystal.ShowDialog(this);
             }
             catch (Exception ex)
@@ -332,7 +347,13 @@
                     ReporteCrystal = new RptLiquidaciones()
                 };
 
-                frmPreviewCrystal.ReporteCrystal.SetDataSource(this.dataSet1);
+                this.dataSet1.Liquidaciones.DefaultView.RowFilter = liquidacionesBindingSource.Filter;
+                DataSet ds = new DataSet();
+                ds.Tables.Add(this.dataSet1.Fincas.Copy());
+                ds.Tables.Add(this.dataSet1.Frutas.Copy());
+                ds.Tables.Add(this.dataSet1.Empresas.Copy());
+                ds.Tables.Add(this.dataSet1.Liquidaciones.DefaultView.ToTable());
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {

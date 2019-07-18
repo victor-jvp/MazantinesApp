@@ -148,7 +148,7 @@
             this.liquidacionesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.liquidacionesBindingNavigator.Name = "liquidacionesBindingNavigator";
             this.liquidacionesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.liquidacionesBindingNavigator.Size = new System.Drawing.Size(1081, 25);
+            this.liquidacionesBindingNavigator.Size = new System.Drawing.Size(1082, 25);
             this.liquidacionesBindingNavigator.TabIndex = 0;
             this.liquidacionesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -196,6 +196,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -341,7 +342,7 @@
             this.liquidacionesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.liquidacionesDataGridView.Name = "liquidacionesDataGridView";
             this.liquidacionesDataGridView.ReadOnly = true;
-            this.liquidacionesDataGridView.Size = new System.Drawing.Size(1065, 216);
+            this.liquidacionesDataGridView.Size = new System.Drawing.Size(1066, 216);
             this.liquidacionesDataGridView.TabIndex = 1;
             // 
             // Id
@@ -478,7 +479,7 @@
             this.groupBox1.Controls.Add(this.liquidacionesDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1071, 235);
+            this.groupBox1.Size = new System.Drawing.Size(1072, 235);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Liquidaciones";
@@ -500,7 +501,7 @@
             this.groupBox2.Controls.Add(this.TodasRadioButton);
             this.groupBox2.Location = new System.Drawing.Point(4, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1074, 49);
+            this.groupBox2.Size = new System.Drawing.Size(1053, 49);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtrar Por:";
@@ -510,7 +511,7 @@
             this.HastaDateTimePicker.CustomFormat = "dd-MM-yyyy";
             this.HastaDateTimePicker.Enabled = false;
             this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(976, 17);
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(951, 18);
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
             this.HastaDateTimePicker.Size = new System.Drawing.Size(92, 20);
             this.HastaDateTimePicker.TabIndex = 11;
@@ -519,7 +520,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(937, 20);
+            this.label4.Location = new System.Drawing.Point(907, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 10;
@@ -530,7 +531,7 @@
             this.DesdeDateTimePicker.CustomFormat = "dd-MM-yyyy";
             this.DesdeDateTimePicker.Enabled = false;
             this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(835, 17);
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(805, 18);
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
             this.DesdeDateTimePicker.Size = new System.Drawing.Size(96, 20);
             this.DesdeDateTimePicker.TabIndex = 4;
@@ -539,7 +540,7 @@
             // DesdeCheckBox
             // 
             this.DesdeCheckBox.AutoSize = true;
-            this.DesdeCheckBox.Location = new System.Drawing.Point(768, 19);
+            this.DesdeCheckBox.Location = new System.Drawing.Point(738, 20);
             this.DesdeCheckBox.Name = "DesdeCheckBox";
             this.DesdeCheckBox.Size = new System.Drawing.Size(61, 17);
             this.DesdeCheckBox.TabIndex = 9;
@@ -552,7 +553,7 @@
             this.FincaComboBox.DataSource = this.fincasBindingSource;
             this.FincaComboBox.DisplayMember = "Finca";
             this.FincaComboBox.FormattingEnabled = true;
-            this.FincaComboBox.Location = new System.Drawing.Point(631, 17);
+            this.FincaComboBox.Location = new System.Drawing.Point(611, 18);
             this.FincaComboBox.Name = "FincaComboBox";
             this.FincaComboBox.Size = new System.Drawing.Size(121, 21);
             this.FincaComboBox.TabIndex = 8;
@@ -568,7 +569,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(589, 21);
+            this.label3.Location = new System.Drawing.Point(569, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 7;
@@ -579,7 +580,7 @@
             this.VariedadComboBox.DataSource = this.frutasvariedadesBindingSource;
             this.VariedadComboBox.DisplayMember = "Variedad";
             this.VariedadComboBox.FormattingEnabled = true;
-            this.VariedadComboBox.Location = new System.Drawing.Point(462, 17);
+            this.VariedadComboBox.Location = new System.Drawing.Point(442, 18);
             this.VariedadComboBox.Name = "VariedadComboBox";
             this.VariedadComboBox.Size = new System.Drawing.Size(121, 21);
             this.VariedadComboBox.TabIndex = 6;
@@ -595,7 +596,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(404, 21);
+            this.label2.Location = new System.Drawing.Point(384, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 5;
@@ -606,7 +607,7 @@
             this.FrutaComboBox.DataSource = this.frutasBindingSource;
             this.FrutaComboBox.DisplayMember = "Fruta";
             this.FrutaComboBox.FormattingEnabled = true;
-            this.FrutaComboBox.Location = new System.Drawing.Point(277, 17);
+            this.FrutaComboBox.Location = new System.Drawing.Point(257, 18);
             this.FrutaComboBox.Name = "FrutaComboBox";
             this.FrutaComboBox.Size = new System.Drawing.Size(121, 21);
             this.FrutaComboBox.TabIndex = 4;
@@ -617,7 +618,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(237, 21);
+            this.label1.Location = new System.Drawing.Point(217, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 3;
@@ -626,7 +627,7 @@
             // SinPagarRadioButton
             // 
             this.SinPagarRadioButton.AutoSize = true;
-            this.SinPagarRadioButton.Location = new System.Drawing.Point(160, 19);
+            this.SinPagarRadioButton.Location = new System.Drawing.Point(140, 20);
             this.SinPagarRadioButton.Name = "SinPagarRadioButton";
             this.SinPagarRadioButton.Size = new System.Drawing.Size(71, 17);
             this.SinPagarRadioButton.TabIndex = 2;
@@ -637,7 +638,7 @@
             // PagadasRadioButton
             // 
             this.PagadasRadioButton.AutoSize = true;
-            this.PagadasRadioButton.Location = new System.Drawing.Point(87, 19);
+            this.PagadasRadioButton.Location = new System.Drawing.Point(67, 20);
             this.PagadasRadioButton.Name = "PagadasRadioButton";
             this.PagadasRadioButton.Size = new System.Drawing.Size(67, 17);
             this.PagadasRadioButton.TabIndex = 1;
@@ -649,7 +650,7 @@
             // 
             this.TodasRadioButton.AutoSize = true;
             this.TodasRadioButton.Checked = true;
-            this.TodasRadioButton.Location = new System.Drawing.Point(26, 19);
+            this.TodasRadioButton.Location = new System.Drawing.Point(6, 20);
             this.TodasRadioButton.Name = "TodasRadioButton";
             this.TodasRadioButton.Size = new System.Drawing.Size(55, 17);
             this.TodasRadioButton.TabIndex = 0;
@@ -706,7 +707,7 @@
             this.groupBox3.Controls.Add(this.TotalesDataGridView);
             this.groupBox3.Location = new System.Drawing.Point(6, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1068, 232);
+            this.groupBox3.Size = new System.Drawing.Size(1069, 232);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Totales";
@@ -722,11 +723,14 @@
             this.TotalesDataGridView.Location = new System.Drawing.Point(3, 16);
             this.TotalesDataGridView.Name = "TotalesDataGridView";
             this.TotalesDataGridView.ReadOnly = true;
-            this.TotalesDataGridView.Size = new System.Drawing.Size(1062, 213);
+            this.TotalesDataGridView.Size = new System.Drawing.Size(1063, 213);
             this.TotalesDataGridView.TabIndex = 0;
             // 
             // splitContainer1
             // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(4, 83);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -738,7 +742,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
-            this.splitContainer1.Size = new System.Drawing.Size(1077, 483);
+            this.splitContainer1.Size = new System.Drawing.Size(1078, 483);
             this.splitContainer1.SplitterDistance = 241;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -746,7 +750,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 568);
+            this.ClientSize = new System.Drawing.Size(1082, 568);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.liquidacionesBindingNavigator);
