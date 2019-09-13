@@ -47,6 +47,7 @@
             this.empleoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fincasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frutasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
@@ -93,7 +94,23 @@
             this.CasaButton04 = new System.Windows.Forms.Button();
             this.CasaButton02 = new System.Windows.Forms.Button();
             this.CasaButton01 = new System.Windows.Forms.Button();
-            this.frutasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.CasaButton36 = new System.Windows.Forms.Button();
+            this.CasaButton37 = new System.Windows.Forms.Button();
+            this.CasaButton38 = new System.Windows.Forms.Button();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.CasaButton39 = new System.Windows.Forms.Button();
+            this.CasaButton40 = new System.Windows.Forms.Button();
+            this.CasaButton41 = new System.Windows.Forms.Button();
+            this.CasaButton42 = new System.Windows.Forms.Button();
+            this.CasaButton43 = new System.Windows.Forms.Button();
+            this.CasaButton44 = new System.Windows.Forms.Button();
+            this.CasaButton45 = new System.Windows.Forms.Button();
+            this.CasaButton46 = new System.Windows.Forms.Button();
+            this.CasaButton47 = new System.Windows.Forms.Button();
+            this.CasaButton48 = new System.Windows.Forms.Button();
+            this.CasaButton49 = new System.Windows.Forms.Button();
+            this.CasaButton50 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -217,47 +234,71 @@
             // casasToolStripMenuItem
             // 
             this.casasToolStripMenuItem.Name = "casasToolStripMenuItem";
-            this.casasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.casasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.casasToolStripMenuItem.Text = "&Casas";
             this.casasToolStripMenuItem.Click += new System.EventHandler(this.casasToolStripMenuItem_Click);
             // 
             // encargadosToolStripMenuItem
             // 
             this.encargadosToolStripMenuItem.Name = "encargadosToolStripMenuItem";
-            this.encargadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.encargadosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.encargadosToolStripMenuItem.Text = "&Encargados";
             this.encargadosToolStripMenuItem.Click += new System.EventHandler(this.encargadosToolStripMenuItem_Click);
             // 
             // empleoToolStripMenuItem
             // 
             this.empleoToolStripMenuItem.Name = "empleoToolStripMenuItem";
-            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.empleoToolStripMenuItem.Text = "E&mpleos";
             this.empleoToolStripMenuItem.Click += new System.EventHandler(this.empleoToolStripMenuItem_Click);
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.empresaToolStripMenuItem.Text = "Em&presas";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
             // fincasToolStripMenuItem
             // 
             this.fincasToolStripMenuItem.Name = "fincasToolStripMenuItem";
-            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fincasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.fincasToolStripMenuItem.Text = "&Fincas";
             this.fincasToolStripMenuItem.Click += new System.EventHandler(this.fincasToolStripMenuItem_Click);
+            // 
+            // frutasToolStripMenuItem
+            // 
+            this.frutasToolStripMenuItem.Name = "frutasToolStripMenuItem";
+            this.frutasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.frutasToolStripMenuItem.Text = "F&rutas";
+            this.frutasToolStripMenuItem.Click += new System.EventHandler(this.FrutasToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.proveedoresToolStripMenuItem.Text = "&Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.CasaButton50);
+            this.panel1.Controls.Add(this.CasaButton49);
+            this.panel1.Controls.Add(this.CasaButton48);
+            this.panel1.Controls.Add(this.CasaButton47);
+            this.panel1.Controls.Add(this.CasaButton46);
+            this.panel1.Controls.Add(this.CasaButton45);
+            this.panel1.Controls.Add(this.CasaButton44);
+            this.panel1.Controls.Add(this.CasaButton43);
+            this.panel1.Controls.Add(this.CasaButton42);
+            this.panel1.Controls.Add(this.CasaButton41);
+            this.panel1.Controls.Add(this.CasaButton40);
+            this.panel1.Controls.Add(this.CasaButton39);
+            this.panel1.Controls.Add(this.linkLabel9);
+            this.panel1.Controls.Add(this.CasaButton38);
+            this.panel1.Controls.Add(this.CasaButton37);
+            this.panel1.Controls.Add(this.CasaButton36);
+            this.panel1.Controls.Add(this.linkLabel8);
             this.panel1.Controls.Add(this.linkLabel7);
             this.panel1.Controls.Add(this.linkLabel6);
             this.panel1.Controls.Add(this.linkLabel5);
@@ -802,12 +843,196 @@
             this.CasaButton01.UseVisualStyleBackColor = true;
             this.CasaButton01.Click += new System.EventHandler(this.CasaButton1_Click);
             // 
-            // frutasToolStripMenuItem
+            // linkLabel8
             // 
-            this.frutasToolStripMenuItem.Name = "frutasToolStripMenuItem";
-            this.frutasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.frutasToolStripMenuItem.Text = "F&rutas";
-            this.frutasToolStripMenuItem.Click += new System.EventHandler(this.FrutasToolStripMenuItem_Click);
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel8.Location = new System.Drawing.Point(68, 344);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(111, 40);
+            this.linkLabel8.TabIndex = 45;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "FINCA \r\nARANDANOS";
+            this.linkLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CasaButton36
+            // 
+            this.CasaButton36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton36.Location = new System.Drawing.Point(68, 388);
+            this.CasaButton36.Name = "CasaButton36";
+            this.CasaButton36.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton36.TabIndex = 46;
+            this.CasaButton36.Text = "36";
+            this.CasaButton36.UseVisualStyleBackColor = true;
+            this.CasaButton36.Click += new System.EventHandler(this.CasaButton36_Click);
+            // 
+            // CasaButton37
+            // 
+            this.CasaButton37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton37.Location = new System.Drawing.Point(108, 388);
+            this.CasaButton37.Name = "CasaButton37";
+            this.CasaButton37.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton37.TabIndex = 47;
+            this.CasaButton37.Text = "37";
+            this.CasaButton37.UseVisualStyleBackColor = true;
+            this.CasaButton37.Click += new System.EventHandler(this.CasaButton37_Click);
+            // 
+            // CasaButton38
+            // 
+            this.CasaButton38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton38.Location = new System.Drawing.Point(149, 388);
+            this.CasaButton38.Name = "CasaButton38";
+            this.CasaButton38.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton38.TabIndex = 48;
+            this.CasaButton38.Text = "38";
+            this.CasaButton38.UseVisualStyleBackColor = true;
+            this.CasaButton38.Click += new System.EventHandler(this.CasaButton38_Click);
+            // 
+            // linkLabel9
+            // 
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.BackColor = System.Drawing.SystemColors.Control;
+            this.linkLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel9.Location = new System.Drawing.Point(74, 28);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(71, 40);
+            this.linkLabel9.TabIndex = 49;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "FINCA \r\nVARIOS";
+            this.linkLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CasaButton39
+            // 
+            this.CasaButton39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton39.Location = new System.Drawing.Point(42, 79);
+            this.CasaButton39.Name = "CasaButton39";
+            this.CasaButton39.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton39.TabIndex = 50;
+            this.CasaButton39.Text = "39";
+            this.CasaButton39.UseVisualStyleBackColor = true;
+            this.CasaButton39.Click += new System.EventHandler(this.CasaButton39_Click);
+            // 
+            // CasaButton40
+            // 
+            this.CasaButton40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton40.Location = new System.Drawing.Point(78, 79);
+            this.CasaButton40.Name = "CasaButton40";
+            this.CasaButton40.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton40.TabIndex = 51;
+            this.CasaButton40.Text = "40";
+            this.CasaButton40.UseVisualStyleBackColor = true;
+            this.CasaButton40.Click += new System.EventHandler(this.CasaButton40_Click);
+            // 
+            // CasaButton41
+            // 
+            this.CasaButton41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton41.Location = new System.Drawing.Point(114, 79);
+            this.CasaButton41.Name = "CasaButton41";
+            this.CasaButton41.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton41.TabIndex = 52;
+            this.CasaButton41.Text = "41";
+            this.CasaButton41.UseVisualStyleBackColor = true;
+            this.CasaButton41.Click += new System.EventHandler(this.CasaButton41_Click);
+            // 
+            // CasaButton42
+            // 
+            this.CasaButton42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton42.Location = new System.Drawing.Point(150, 79);
+            this.CasaButton42.Name = "CasaButton42";
+            this.CasaButton42.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton42.TabIndex = 53;
+            this.CasaButton42.Text = "42";
+            this.CasaButton42.UseVisualStyleBackColor = true;
+            this.CasaButton42.Click += new System.EventHandler(this.CasaButton42_Click);
+            // 
+            // CasaButton43
+            // 
+            this.CasaButton43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton43.Location = new System.Drawing.Point(42, 117);
+            this.CasaButton43.Name = "CasaButton43";
+            this.CasaButton43.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton43.TabIndex = 54;
+            this.CasaButton43.Text = "43";
+            this.CasaButton43.UseVisualStyleBackColor = true;
+            this.CasaButton43.Click += new System.EventHandler(this.CasaButton43_Click);
+            // 
+            // CasaButton44
+            // 
+            this.CasaButton44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton44.Location = new System.Drawing.Point(78, 117);
+            this.CasaButton44.Name = "CasaButton44";
+            this.CasaButton44.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton44.TabIndex = 55;
+            this.CasaButton44.Text = "44";
+            this.CasaButton44.UseVisualStyleBackColor = true;
+            this.CasaButton44.Click += new System.EventHandler(this.CasaButton44_Click);
+            // 
+            // CasaButton45
+            // 
+            this.CasaButton45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton45.Location = new System.Drawing.Point(113, 117);
+            this.CasaButton45.Name = "CasaButton45";
+            this.CasaButton45.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton45.TabIndex = 56;
+            this.CasaButton45.Text = "45";
+            this.CasaButton45.UseVisualStyleBackColor = true;
+            this.CasaButton45.Click += new System.EventHandler(this.CasaButton45_Click);
+            // 
+            // CasaButton46
+            // 
+            this.CasaButton46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton46.Location = new System.Drawing.Point(149, 117);
+            this.CasaButton46.Name = "CasaButton46";
+            this.CasaButton46.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton46.TabIndex = 57;
+            this.CasaButton46.Text = "46";
+            this.CasaButton46.UseVisualStyleBackColor = true;
+            this.CasaButton46.Click += new System.EventHandler(this.CasaButton46_Click);
+            // 
+            // CasaButton47
+            // 
+            this.CasaButton47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton47.Location = new System.Drawing.Point(41, 151);
+            this.CasaButton47.Name = "CasaButton47";
+            this.CasaButton47.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton47.TabIndex = 58;
+            this.CasaButton47.Text = "47";
+            this.CasaButton47.UseVisualStyleBackColor = true;
+            this.CasaButton47.Click += new System.EventHandler(this.CasaButton47_Click);
+            // 
+            // CasaButton48
+            // 
+            this.CasaButton48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton48.Location = new System.Drawing.Point(77, 151);
+            this.CasaButton48.Name = "CasaButton48";
+            this.CasaButton48.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton48.TabIndex = 59;
+            this.CasaButton48.Text = "48";
+            this.CasaButton48.UseVisualStyleBackColor = true;
+            this.CasaButton48.Click += new System.EventHandler(this.CasaButton48_Click);
+            // 
+            // CasaButton49
+            // 
+            this.CasaButton49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton49.Location = new System.Drawing.Point(113, 151);
+            this.CasaButton49.Name = "CasaButton49";
+            this.CasaButton49.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton49.TabIndex = 60;
+            this.CasaButton49.Text = "49";
+            this.CasaButton49.UseVisualStyleBackColor = true;
+            this.CasaButton49.Click += new System.EventHandler(this.CasaButton49_Click);
+            // 
+            // CasaButton50
+            // 
+            this.CasaButton50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CasaButton50.Location = new System.Drawing.Point(149, 151);
+            this.CasaButton50.Name = "CasaButton50";
+            this.CasaButton50.Size = new System.Drawing.Size(30, 28);
+            this.CasaButton50.TabIndex = 61;
+            this.CasaButton50.Text = "50";
+            this.CasaButton50.UseVisualStyleBackColor = true;
+            this.CasaButton50.Click += new System.EventHandler(this.CasaButton50_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -902,6 +1127,23 @@
         private System.Windows.Forms.ToolStripMenuItem nominaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nominaPorMesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frutasToolStripMenuItem;
+        private System.Windows.Forms.Button CasaButton38;
+        private System.Windows.Forms.Button CasaButton37;
+        private System.Windows.Forms.Button CasaButton36;
+        private System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.Button CasaButton50;
+        private System.Windows.Forms.Button CasaButton49;
+        private System.Windows.Forms.Button CasaButton48;
+        private System.Windows.Forms.Button CasaButton47;
+        private System.Windows.Forms.Button CasaButton46;
+        private System.Windows.Forms.Button CasaButton45;
+        private System.Windows.Forms.Button CasaButton44;
+        private System.Windows.Forms.Button CasaButton43;
+        private System.Windows.Forms.Button CasaButton42;
+        private System.Windows.Forms.Button CasaButton41;
+        private System.Windows.Forms.Button CasaButton40;
+        private System.Windows.Forms.Button CasaButton39;
+        private System.Windows.Forms.LinkLabel linkLabel9;
     }
 }
 

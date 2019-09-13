@@ -328,5 +328,80 @@
             miForm.ShowDialog(this);
             this.Enabled = true;
         }
+
+        private void CasaButton36_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton37_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton38_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton39_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton40_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton41_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton42_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton43_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton44_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton45_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton46_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton47_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton48_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton49_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
+
+        private void CasaButton50_Click(object sender, EventArgs e)
+        {
+            loadCasa(sender as Button);
+        }
     }
 }

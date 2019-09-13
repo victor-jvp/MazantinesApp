@@ -169,11 +169,11 @@
 
                         if (encargado == 0)
                         {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.caja).ToList();
+                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.caja).ThenBy(g => g.Nro_empleado).ThenBy(h => h.trabajador).ToList();
                         }
                         else
                         {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.caja).ToList();
+                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.caja).ThenBy(g => g.Nro_empleado).ThenBy(h => h.trabajador).ToList();
                         }
                     }
                 }
@@ -316,43 +316,43 @@
             NominaDataGridView.Columns["lunH"].HeaderText = "Extra";
             NominaDataGridView.Columns["lunD"].DefaultCellStyle.Format = "N0";
             NominaDataGridView.Columns["lunD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NominaDataGridView.Columns["lunH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["lunH"].DefaultCellStyle.Format = "N1";
             NominaDataGridView.Columns["lunH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             NominaDataGridView.Columns["marD"].HeaderText = "Dia";
             NominaDataGridView.Columns["marH"].HeaderText = "Extra";
             NominaDataGridView.Columns["marD"].DefaultCellStyle.Format = "N0";
             NominaDataGridView.Columns["marD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NominaDataGridView.Columns["marH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["marH"].DefaultCellStyle.Format = "N1";
             NominaDataGridView.Columns["marH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             NominaDataGridView.Columns["mieD"].HeaderText = "Dia";
             NominaDataGridView.Columns["mieH"].HeaderText = "Extra";
             NominaDataGridView.Columns["mieD"].DefaultCellStyle.Format = "N0";
             NominaDataGridView.Columns["mieD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NominaDataGridView.Columns["mieH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["mieH"].DefaultCellStyle.Format = "N1";
             NominaDataGridView.Columns["mieH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             NominaDataGridView.Columns["jueD"].HeaderText = "Dia";
             NominaDataGridView.Columns["jueH"].HeaderText = "Extra";
             NominaDataGridView.Columns["jueD"].DefaultCellStyle.Format = "N0";
             NominaDataGridView.Columns["jueD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NominaDataGridView.Columns["jueH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["jueH"].DefaultCellStyle.Format = "N1";
             NominaDataGridView.Columns["jueH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             NominaDataGridView.Columns["vieD"].HeaderText = "Dia";
             NominaDataGridView.Columns["vieH"].HeaderText = "Extra";
             NominaDataGridView.Columns["vieD"].DefaultCellStyle.Format = "N0";
             NominaDataGridView.Columns["vieD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NominaDataGridView.Columns["vieH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["vieH"].DefaultCellStyle.Format = "N1";
             NominaDataGridView.Columns["vieH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             NominaDataGridView.Columns["sabD"].HeaderText = "Dia";
             NominaDataGridView.Columns["sabH"].HeaderText = "Extra";
             NominaDataGridView.Columns["sabD"].DefaultCellStyle.Format = "N0";
             NominaDataGridView.Columns["sabD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NominaDataGridView.Columns["sabH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["sabH"].DefaultCellStyle.Format = "N1";
             NominaDataGridView.Columns["sabH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             NominaDataGridView.Columns["domD"].HeaderText = "Dia";
             NominaDataGridView.Columns["domH"].HeaderText = "Extra";
             NominaDataGridView.Columns["domD"].DefaultCellStyle.Format = "N0";
             NominaDataGridView.Columns["domD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            NominaDataGridView.Columns["domH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["domH"].DefaultCellStyle.Format = "N1";
             NominaDataGridView.Columns["domH"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             NominaDataGridView.Columns["totalD"].HeaderText = "Dias";
             NominaDataGridView.Columns["totalD"].ReadOnly = true;
@@ -361,7 +361,7 @@
             NominaDataGridView.Columns["totalH"].HeaderText = "Horas";
             NominaDataGridView.Columns["totalH"].ReadOnly = true;
             NominaDataGridView.Columns["totalH"].DefaultCellStyle.BackColor = Color.LightGray;
-            NominaDataGridView.Columns["totalH"].DefaultCellStyle.Format = "N0";
+            NominaDataGridView.Columns["totalH"].DefaultCellStyle.Format = "N1";
 
             int i = 0;
             NominaDataGridView.Columns["anio"].DisplayIndex = i;
@@ -608,7 +608,7 @@
                 TotalesDataGridView.Columns["TotalDias"].DefaultCellStyle.Format = "N0";
                 TotalesDataGridView.Columns["TotalDias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 TotalesDataGridView.Columns["TotalHoras"].HeaderText = "Horas";
-                TotalesDataGridView.Columns["TotalHoras"].DefaultCellStyle.Format = "N0";
+                TotalesDataGridView.Columns["TotalHoras"].DefaultCellStyle.Format = "N1";
                 TotalesDataGridView.Columns["TotalHoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 TotalesDataGridView.Columns["valorDias"].HeaderText = "€ Dias";
                 TotalesDataGridView.Columns["valorDias"].DefaultCellStyle.Format = "N2";
