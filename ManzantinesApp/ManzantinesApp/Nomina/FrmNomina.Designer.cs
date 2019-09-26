@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -90,6 +90,7 @@
             this.NominaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.NominaDataGridView.Size = new System.Drawing.Size(1029, 309);
             this.NominaDataGridView.TabIndex = 1;
+            this.NominaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NominaDataGridView_CellClick);
             this.NominaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NominaDataGridView_CellContentClick);
             this.NominaDataGridView.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.NominaDataGridView_CellValidated);
             this.NominaDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.NominaDataGridView_CellValidating);
@@ -262,8 +263,8 @@
             // 
             this.TotalesDataGridView.AllowUserToAddRows = false;
             this.TotalesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.TotalesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.TotalesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TotalesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -4003,6 +4003,8 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnid_cab;
             
+            private global::System.Data.DataColumn columncaja;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public rpt_recibosDataTable() {
@@ -4150,6 +4152,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cajaColumn {
+                get {
+                    return this.columncaja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4185,7 +4195,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public rpt_recibosRow Addrpt_recibosRow(string Nro_empleado, string Nombre, string Apellidos, decimal anio, decimal semana, double totalD, double totalH, double valorD, double valorH, string Empresa, System.DateTime semanaIni, System.DateTime semanaFin, int id_encargado, int id_cab) {
+            public rpt_recibosRow Addrpt_recibosRow(string Nro_empleado, string Nombre, string Apellidos, decimal anio, decimal semana, double totalD, double totalH, double valorD, double valorH, string Empresa, System.DateTime semanaIni, System.DateTime semanaFin, int id_encargado, int id_cab, string caja) {
                 rpt_recibosRow rowrpt_recibosRow = ((rpt_recibosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nro_empleado,
@@ -4201,7 +4211,8 @@ namespace ManzantinesApp.Data {
                         semanaIni,
                         semanaFin,
                         id_encargado,
-                        id_cab};
+                        id_cab,
+                        caja};
                 rowrpt_recibosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_recibosRow);
                 return rowrpt_recibosRow;
@@ -4238,6 +4249,7 @@ namespace ManzantinesApp.Data {
                 this.columnsemanaFin = base.Columns["semanaFin"];
                 this.columnid_encargado = base.Columns["id_encargado"];
                 this.columnid_cab = base.Columns["id_cab"];
+                this.columncaja = base.Columns["caja"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4271,6 +4283,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnid_encargado);
                 this.columnid_cab = new global::System.Data.DataColumn("id_cab", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_cab);
+                this.columncaja = new global::System.Data.DataColumn("caja", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncaja);
                 this.columnNro_empleado.MaxLength = 2147483647;
                 this.columnNombre.MaxLength = 2147483647;
                 this.columnApellidos.MaxLength = 2147483647;
@@ -4280,6 +4294,7 @@ namespace ManzantinesApp.Data {
                 this.columnsemanaIni.ReadOnly = true;
                 this.columnsemanaFin.ReadOnly = true;
                 this.columnid_cab.AllowDBNull = false;
+                this.columncaja.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8112,6 +8127,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string caja {
+                get {
+                    try {
+                        return ((string)(this[this.tablerpt_recibos.cajaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'caja\' in table \'rpt_recibos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_recibos.cajaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNro_empleadoNull() {
                 return this.IsNull(this.tablerpt_recibos.Nro_empleadoColumn);
             }
@@ -8264,6 +8295,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_encargadoNull() {
                 this[this.tablerpt_recibos.id_encargadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscajaNull() {
+                return this.IsNull(this.tablerpt_recibos.cajaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcajaNull() {
+                this[this.tablerpt_recibos.cajaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11055,6 +11098,7 @@ FROM            rpt_nominas";
             tableMapping.ColumnMappings.Add("semanaFin", "semanaFin");
             tableMapping.ColumnMappings.Add("id_encargado", "id_encargado");
             tableMapping.ColumnMappings.Add("id_cab", "id_cab");
+            tableMapping.ColumnMappings.Add("caja", "caja");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11068,19 +11112,34 @@ FROM            rpt_nominas";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, val" +
-                "orH, Empresa, semanaFin, semanaIni, id_encargado, id_cab FROM rpt_recibos";
+            this._commandCollection[0].CommandText = "SELECT        Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valo" +
+                "rD, valorH, Empresa, semanaFin, semanaIni, id_encargado, id_cab, caja\r\nFROM     " +
+                "       rpt_recibos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, val" +
-                "orH, Empresa, semanaFin, semanaIni, id_encargado, id_cab FROM rpt_recibos\r\nWHERE" +
-                " id_cab = @id_cab";
+            this._commandCollection[1].CommandText = "SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado" +
+                ", semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt_recibos " +
+                "WHERE (id_cab = @id_cab) ORDER BY caja";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado" +
+                ", semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt_recibos " +
+                "WHERE (id_cab = @id_cab) ORDER BY Nro_empleado";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_en" +
+                "cargado, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH\r\nFROM     " +
+                "       rpt_recibos\r\nWHERE        (id_cab = @id_cab)\r\nORDER BY Nombre";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11111,7 +11170,7 @@ FROM            rpt_nominas";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByIdCab(RptDataSet.rpt_recibosDataTable dataTable, int id_cab) {
+        public virtual int FillByIdCabSortCaja(RptDataSet.rpt_recibosDataTable dataTable, int id_cab) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_cab));
             if ((this.ClearBeforeFill == true)) {
@@ -11125,8 +11184,60 @@ FROM            rpt_nominas";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual RptDataSet.rpt_recibosDataTable GetDataByIdCab(int id_cab) {
+        public virtual RptDataSet.rpt_recibosDataTable GetDataByIdCabSortCaja(int id_cab) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_cab));
+            RptDataSet.rpt_recibosDataTable dataTable = new RptDataSet.rpt_recibosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIdCabSortNroEmpleado(RptDataSet.rpt_recibosDataTable dataTable, int id_cab) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_cab));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual RptDataSet.rpt_recibosDataTable GetDataByIdCabSortNroEmpleado(int id_cab) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_cab));
+            RptDataSet.rpt_recibosDataTable dataTable = new RptDataSet.rpt_recibosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIdCabSortTrabajador(RptDataSet.rpt_recibosDataTable dataTable, int id_cab) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_cab));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual RptDataSet.rpt_recibosDataTable GetDataByIdCabSortTrabajador(int id_cab) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_cab));
             RptDataSet.rpt_recibosDataTable dataTable = new RptDataSet.rpt_recibosDataTable();
             this.Adapter.Fill(dataTable);

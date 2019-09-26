@@ -189,6 +189,7 @@ warning 6002: The table/view 'Mazantines.dbo.rpt_nominas' does not have a primar
           <Property Name="Encargado" Type="nvarchar(max)" />
           <Property Name="Nro_empleado" Type="varchar(max)" />
           <Property Name="Trabajador" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="caja" Type="nvarchar(max)" />
           <Property Name="ccc" Type="nvarchar(max)" />
           <Property Name="Empresa" Type="nvarchar(max)" />
           <Property Name="id_empleo" Type="int" />
@@ -224,6 +225,7 @@ warning 6002: The table/view 'Mazantines.dbo.rpt_recibos' does not have a primar
           <Property Name="Nombre" Type="nvarchar(max)" />
           <Property Name="Apellidos" Type="nvarchar(max)" />
           <Property Name="id_cab" Type="int" Nullable="false" />
+          <Property Name="caja" Type="nvarchar(max)" />
           <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
           <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
           <Property Name="id_encargado" Type="int" />
@@ -559,6 +561,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [rpt_nominas].[Encargado] AS [Encargado], 
     [rpt_nominas].[Nro_empleado] AS [Nro_empleado], 
     [rpt_nominas].[Trabajador] AS [Trabajador], 
+    [rpt_nominas].[caja] AS [caja], 
     [rpt_nominas].[ccc] AS [ccc], 
     [rpt_nominas].[Empresa] AS [Empresa], 
     [rpt_nominas].[id_empleo] AS [id_empleo], 
@@ -591,6 +594,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [rpt_recibos].[Nombre] AS [Nombre], 
     [rpt_recibos].[Apellidos] AS [Apellidos], 
     [rpt_recibos].[id_cab] AS [id_cab], 
+    [rpt_recibos].[caja] AS [caja], 
     [rpt_recibos].[anio] AS [anio], 
     [rpt_recibos].[semana] AS [semana], 
     [rpt_recibos].[id_encargado] AS [id_encargado], 
@@ -1073,6 +1077,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="domD" Type="Double" />
           <Property Name="domH" Type="Double" />
           <Property Name="pagado" Type="Boolean" />
+          <Property Name="caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="rpt_recibos">
           <Key>
@@ -1092,6 +1097,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="totalH" Type="Double" />
           <Property Name="valorD" Type="Double" />
           <Property Name="valorH" Type="Double" />
+          <Property Name="caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vv_EmpleadosCasas">
           <Key>
@@ -1579,6 +1585,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="rpt_nominas">
             <EntityTypeMapping TypeName="MazantinesModel.rpt_nominas">
               <MappingFragment StoreEntitySet="rpt_nominas">
+                <ScalarProperty Name="caja" ColumnName="caja" />
                 <ScalarProperty Name="pagado" ColumnName="pagado" />
                 <ScalarProperty Name="domH" ColumnName="domH" />
                 <ScalarProperty Name="domD" ColumnName="domD" />
@@ -1615,6 +1622,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="rpt_recibos">
             <EntityTypeMapping TypeName="MazantinesModel.rpt_recibos">
               <MappingFragment StoreEntitySet="rpt_recibos">
+                <ScalarProperty Name="caja" ColumnName="caja" />
                 <ScalarProperty Name="valorH" ColumnName="valorH" />
                 <ScalarProperty Name="valorD" ColumnName="valorD" />
                 <ScalarProperty Name="totalH" ColumnName="totalH" />
