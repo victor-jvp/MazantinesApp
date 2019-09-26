@@ -25,10 +25,12 @@ namespace ManzantinesApp.DBContext
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<int> id_empresa { get; set; }
         public Nullable<int> id_fruta { get; set; }
-        public Nullable<int> id_variedad { get; set; }
         public Nullable<System.DateTime> DeletedAt { get; set; }
+        public Nullable<int> id_finca { get; set; }
+        public string Variedad { get; set; }
     
         public virtual Empresas Empresas { get; set; }
         public virtual Frutas Frutas { get; set; }
+        public virtual Fincas Fincas { get; set; }
     }
 }

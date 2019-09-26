@@ -397,7 +397,7 @@
 
             NominaDataGridView.Columns["nro_empleado"].Width = 60;
             NominaDataGridView.Columns["caja"].Width = 60;
-            NominaDataGridView.Columns["trabajador"].Width = 110;
+            NominaDataGridView.Columns["trabajador"].Width = 115;
             int valores = 50;
             NominaDataGridView.Columns["lunD"].Width = valores;
             NominaDataGridView.Columns["lunH"].Width = valores;

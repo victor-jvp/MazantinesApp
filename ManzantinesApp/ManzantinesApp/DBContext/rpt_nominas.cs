@@ -19,7 +19,7 @@ namespace ManzantinesApp.DBContext
         public string status { get; set; }
         public Nullable<int> id_encargado { get; set; }
         public string Encargado { get; set; }
-        public Nullable<int> Nro_empleado { get; set; }
+        public string Nro_empleado { get; set; }
         public string Trabajador { get; set; }
         public string ccc { get; set; }
         public string Empresa { get; set; }

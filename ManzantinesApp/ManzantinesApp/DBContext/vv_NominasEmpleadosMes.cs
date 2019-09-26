@@ -19,7 +19,7 @@ namespace ManzantinesApp.DBContext
         public Nullable<decimal> Semana { get; set; }
         public Nullable<int> id_encargado { get; set; }
         public string Encargado { get; set; }
-        public Nullable<int> Nro_Empleado { get; set; }
+        public string Nro_Empleado { get; set; }
         public string Caja { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }

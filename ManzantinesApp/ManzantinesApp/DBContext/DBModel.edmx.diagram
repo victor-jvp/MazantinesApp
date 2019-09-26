@@ -42,6 +42,7 @@
         <AssociationConnector Association="MazantinesModel.FK__Liquidaci__id_fr__2FCF1A8A" />
         <EntityTypeShape EntityType="MazantinesModel.Frutas_variedades" Width="1.5" PointX="3" PointY="10.75" />
         <AssociationConnector Association="MazantinesModel.if_fruta_variedad" />
+        <AssociationConnector Association="MazantinesModel.FK__Liquidaci__id_fi__3D2915A8" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

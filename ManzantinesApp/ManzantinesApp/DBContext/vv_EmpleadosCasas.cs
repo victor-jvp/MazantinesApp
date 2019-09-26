@@ -18,7 +18,7 @@ namespace ManzantinesApp.DBContext
         public string Finca { get; set; }
         public int NroCasa { get; set; }
         public int id_trabajador { get; set; }
-        public Nullable<int> Nro_empleado { get; set; }
+        public string Nro_empleado { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Telefono { get; set; }

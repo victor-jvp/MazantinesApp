@@ -18,6 +18,7 @@ namespace ManzantinesApp.DBContext
         public Fincas()
         {
             this.Casas = new HashSet<Casas>();
+            this.Liquidaciones = new HashSet<Liquidaciones>();
         }
     
         public int Id { get; set; }
@@ -27,5 +28,7 @@ namespace ManzantinesApp.DBContext
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Casas> Casas { get; set; }
         public virtual Encargados Encargados { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Liquidaciones> Liquidaciones { get; set; }
     }
 }
