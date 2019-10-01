@@ -289,6 +289,12 @@
     <Compile Include="Nomina\FrmEmpleoPago.Designer.cs">
       <DependentUpon>FrmEmpleoPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nomina\FrmLoadNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmLoadNomina.Designer.cs">
+      <DependentUpon>FrmLoadNomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nomina\FrmNomina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmEmpleoPago.resx">
       <DependentUpon>FrmEmpleoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmLoadNomina.resx">
+      <DependentUpon>FrmLoadNomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmNomina.resx">
       <DependentUpon>FrmNomina.cs</DependentUpon>
@@ -655,6 +664,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\if_01_Pencil_2064476.png" />
     <None Include="Resources\iconfinder_table_sum_64786.png" />
     <None Include="Resources\if_Cancel__Red_34208.png" />
     <None Include="Resources\PrintSetup_16x_32.bmp" />

@@ -73,6 +73,16 @@ namespace ManzantinesApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_01_Pencil_2064476 {
+            get {
+                object obj = ResourceManager.GetObject("if_01_Pencil_2064476", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_Cancel__Red_34208 {
             get {
                 object obj = ResourceManager.GetObject("if_Cancel__Red_34208", resourceCulture);

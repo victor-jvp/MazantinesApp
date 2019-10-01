@@ -303,7 +303,8 @@
         private void nominaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            Nomina.FrmNomina frmNomina = new Nomina.FrmNomina();
+            //Nomina.FrmNomina frmNomina = new Nomina.FrmNomina();
+            Nomina.FrmLoadNomina frmNomina = new Nomina.FrmLoadNomina();
             frmNomina.ShowDialog(this);
             this.Enabled = true;
         }

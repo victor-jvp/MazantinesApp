@@ -17,6 +17,7 @@
         #region Properties
 
         List<vv_nominas> nominas = null;
+        public int? id_nomina = null;
         string sortBy = "caja";
 
         #endregion
