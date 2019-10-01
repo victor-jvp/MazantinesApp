@@ -18,6 +18,10 @@
 
         List<vv_nominas> nominas = null;
         public int? id_nomina = null;
+        public int semana = 0;
+        public int anio = 0;
+        public int encargado = 0;
+        public bool trabajadoresFaltantes = false;
         string sortBy = "caja";
 
         #endregion
@@ -50,12 +54,25 @@
 
         private void Inicializar()
         {
-            var anio = DateTime.Now.Year;
-            LoadCombos(anio);
+            var anio2 = DateTime.Now.Year;
+            LoadCombos(anio2);
 
             NominaDataGridView.DataSource = null;
 
-            ModoEdicionNominaFalse();
+            SemanaComboBox.ComboBox.SelectedValue = semana;
+            AnioComboBox.ComboBox.SelectedValue = anio;
+
+            if (encargado != 0)
+            {
+                EncargadoComboBox.ComboBox.SelectedValue = encargado;
+            }
+
+            CargarNomina(anio, semana, encargado);
+
+            if (id_nomina != null)
+            {
+                this.Text = this.Text + " | Nomina: " + this.id_nomina;
+            }
         }
 
         private void LoadCombos(int anio)
@@ -101,37 +118,21 @@
                 nominas = null;
                 using (MazantinesEntities db = new MazantinesEntities())
                 {
-                    if(encargado == 0)
+                    if(id_nomina != null)
                     {
                         if (sortBy == "caja")
                         {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.caja).ToList();
+                            nominas = db.vv_nominas.Where(f => f.id_cab == id_nomina).OrderBy(f => f.caja).ToList();
                         }
                         if (sortBy == "Nro_empleado")
                         {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.Nro_empleado).ToList();
+                            nominas = db.vv_nominas.Where(f => f.id_cab == id_nomina).OrderBy(f => f.Nro_empleado).ToList();
                         }
                         if (sortBy == "trabajador")
                         {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.trabajador).ToList();
+                            nominas = db.vv_nominas.Where(f => f.id_cab == id_nomina).OrderBy(f => f.trabajador).ToList();
                         }
-                    }
-                    else
-                    {
-                        if (sortBy == "caja")
-                        {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.caja).ToList();
-                        }
-                        if (sortBy == "Nro_empleado")
-                        {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.Nro_empleado).ToList();
-                        }
-                        if (sortBy == "trabajador")
-                        {
-                            nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.trabajador).ToList();
-                        }
-                        
-                    }                    
+                    }                                  
                 }
 
                 if(nominas == null || nominas.Count <= 0)
@@ -168,6 +169,12 @@
 
                         foreach (vv_nomina_trabajadores row in trabajadores)
                         {
+                            if (trabajadoresFaltantes)
+                            {
+                                int hasNomina = db.vv_nominas.Where(n => n.id_empleado == row.id && n.anio == anio && n.semana == semana).Count();
+                                if (hasNomina > 0) continue;
+                            }
+
                             cab.NominasDet.Add(new NominasDet
                             {
                                 id_empleado = row.id,
@@ -188,41 +195,24 @@
                                 valorD = row.valorD,
                                 valorH = row.valorH,
                                 pagado = false
-                            });
+                            });                                                
                         }
                         db.NominasCab.Add(cab);
                         db.SaveChanges();
 
-                        if (encargado == 0)
-                        {
-                            if (sortBy == "caja")
-                            {
-                                nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.caja).ToList();
-                            }
-                            if (sortBy == "Nro_empleado")
-                            {
-                                nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.Nro_empleado).ToList();
-                            }
-                            if (sortBy == "trabajador")
-                            {
-                                nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == null).OrderBy(f => f.trabajador).ToList();
-                            }
-                        }
-                        else
-                        {
-                            if (sortBy == "caja")
-                            {
-                                nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.caja).ToList();
-                            }
-                            if (sortBy == "Nro_empleado")
-                            {
-                                nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.Nro_empleado).ToList();
-                            }
-                            if (sortBy == "trabajador")
-                            {
-                                nominas = db.vv_nominas.Where(f => f.anio == anio && f.semana == semana && f.id_encargado == encargado).OrderBy(f => f.trabajador).ToList();
-                            }
+                        id_nomina = cab.id_cab;
 
+                        if (sortBy == "caja")
+                        {
+                            nominas = db.vv_nominas.Where(f => f.id_cab == id_nomina).OrderBy(f => f.caja).ToList();
+                        }
+                        if (sortBy == "Nro_empleado")
+                        {
+                            nominas = db.vv_nominas.Where(f => f.id_cab == id_nomina).OrderBy(f => f.Nro_empleado).ToList();
+                        }
+                        if (sortBy == "trabajador")
+                        {
+                            nominas = db.vv_nominas.Where(f => f.id_cab == id_nomina).OrderBy(f => f.trabajador).ToList();
                         }
                     }
                 }
@@ -494,10 +484,8 @@
 
         private void CancelarCambios()
         {
-            EncargadoComboBox.ComboBox.SelectedIndex = -1;
-
             LimpiarNominaGrid();
-            ModoEdicionNominaFalse();
+            CargarNomina(anio, semana, encargado);
         }
 
         private void DeshabilitarGrid()
@@ -571,7 +559,6 @@
             SemanaComboBox.Enabled = false;
             AnioComboBox.Enabled = false;
             EncargadoComboBox.Enabled = false;
-            CargarNominaToolStripButton.Enabled = false;
 
             GuardarToolStripButton.Enabled = true;
             CancelarToolStripButton.Enabled = true;
@@ -583,7 +570,6 @@
             SemanaComboBox.Enabled = true;
             AnioComboBox.Enabled = true;
             EncargadoComboBox.Enabled = true;
-            CargarNominaToolStripButton.Enabled = true;
 
             GuardarToolStripButton.Enabled = false;
             CancelarToolStripButton.Enabled = false;
@@ -595,7 +581,6 @@
             SemanaComboBox.Enabled = true;
             AnioComboBox.Enabled = true;
             EncargadoComboBox.Enabled = true;
-            CargarNominaToolStripButton.Enabled = true;
 
             GuardarToolStripButton.Enabled = true;
             CancelarToolStripButton.Enabled = true;
@@ -698,21 +683,6 @@
         {
             Inicializar();
         }
-        private void CargarNominaToolStripButton_Click(object sender, EventArgs e)
-        {
-            int semana = (int)SemanaComboBox.ComboBox.SelectedValue;
-            int anio = (int)AnioComboBox.ComboBox.SelectedValue;
-
-            int encargado = 0;
-            if(EncargadoComboBox.ComboBox.SelectedValue != null)
-            {
-                encargado = (int)EncargadoComboBox.ComboBox.SelectedValue;
-            }
-
-            this.Enabled = false;
-            CargarNomina(anio, semana, encargado);
-            this.Enabled = true;
-        }
 
         private void NominaDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
@@ -748,7 +718,7 @@
             if (result == DialogResult.No) return;
 
             GuardarNomina();
-            ModoEdicionNominaFalse();
+            CargarNomina(anio, semana, encargado);
         }
 
         private void CerrarNominaToolStripButton_Click(object sender, EventArgs e)

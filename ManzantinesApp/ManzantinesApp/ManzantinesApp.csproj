@@ -295,6 +295,12 @@
     <Compile Include="Nomina\FrmLoadNomina.Designer.cs">
       <DependentUpon>FrmLoadNomina.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nomina\FrmNewNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomina\FrmNewNomina.Designer.cs">
+      <DependentUpon>FrmNewNomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nomina\FrmNomina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -479,6 +485,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmLoadNomina.resx">
       <DependentUpon>FrmLoadNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\FrmNewNomina.resx">
+      <DependentUpon>FrmNewNomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\FrmNomina.resx">
       <DependentUpon>FrmNomina.cs</DependentUpon>

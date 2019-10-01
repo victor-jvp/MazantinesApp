@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -41,8 +41,6 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.EncargadoComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.CargarNominaToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.CancelarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -79,6 +77,7 @@
             this.NominaDataGridView.AllowUserToAddRows = false;
             this.NominaDataGridView.AllowUserToDeleteRows = false;
             this.NominaDataGridView.AllowUserToResizeColumns = false;
+            this.NominaDataGridView.AllowUserToResizeRows = false;
             this.NominaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -107,8 +106,6 @@
             this.toolStripLabel3,
             this.EncargadoComboBox,
             this.toolStripSeparator4,
-            this.CargarNominaToolStripButton,
-            this.toolStripSeparator3,
             this.CancelarToolStripButton,
             this.toolStripSeparator7,
             this.GuardarToolStripButton,
@@ -130,6 +127,7 @@
             // 
             // AnioComboBox
             // 
+            this.AnioComboBox.Enabled = false;
             this.AnioComboBox.Name = "AnioComboBox";
             this.AnioComboBox.Size = new System.Drawing.Size(80, 25);
             // 
@@ -149,6 +147,7 @@
             this.SemanaComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.SemanaComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.SemanaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SemanaComboBox.Enabled = false;
             this.SemanaComboBox.Name = "SemanaComboBox";
             this.SemanaComboBox.Size = new System.Drawing.Size(80, 25);
             // 
@@ -168,6 +167,7 @@
             this.EncargadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.EncargadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.EncargadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EncargadoComboBox.Enabled = false;
             this.EncargadoComboBox.Name = "EncargadoComboBox";
             this.EncargadoComboBox.Size = new System.Drawing.Size(120, 25);
             // 
@@ -175,20 +175,6 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // CargarNominaToolStripButton
-            // 
-            this.CargarNominaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CargarNominaToolStripButton.Image")));
-            this.CargarNominaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.CargarNominaToolStripButton.Name = "CargarNominaToolStripButton";
-            this.CargarNominaToolStripButton.Size = new System.Drawing.Size(108, 22);
-            this.CargarNominaToolStripButton.Text = "&Cargar Nomina";
-            this.CargarNominaToolStripButton.Click += new System.EventHandler(this.CargarNominaToolStripButton_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // CancelarToolStripButton
             // 
@@ -263,8 +249,8 @@
             // 
             this.TotalesDataGridView.AllowUserToAddRows = false;
             this.TotalesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.TotalesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.TotalesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TotalesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -439,8 +425,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton GuardarToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton CargarNominaToolStripButton;
         private Data.RptDataSet rptDataSet1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

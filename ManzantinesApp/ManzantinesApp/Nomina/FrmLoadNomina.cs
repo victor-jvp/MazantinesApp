@@ -13,6 +13,8 @@ namespace ManzantinesApp.Nomina
 
     public partial class FrmLoadNomina : Form
     {
+        public bool refreshGrid { get; set; } = false;
+
         private void Inicializar()
         {
             try
@@ -23,6 +25,7 @@ namespace ManzantinesApp.Nomina
                         id_cab = n.id_cab,
                         anio = n.anio,
                         semana = n.semana,
+                        id_encargado = n.id_encargado,
                         encargado = n.Encargados.Encargado,
                         estado = n.status
                     }).OrderByDescending(f => f.anio).ThenByDescending(f => f.semana).ToList();
@@ -48,9 +51,9 @@ namespace ManzantinesApp.Nomina
         {
             try
             {
-                FrmNomina miNomina = new FrmNomina();
-                miNomina.id_nomina = null;
-                miNomina.ShowDialog(this);
+                FrmNewNomina newNomina = new FrmNewNomina();
+                newNomina.ShowDialog(this);
+                Inicializar();
             }
             catch (Exception ex)
             {
@@ -63,9 +66,19 @@ namespace ManzantinesApp.Nomina
             try
             {
                 int id = (int)this.NominasDataGridView.CurrentRow.Cells["id"].Value;
+                int anio = Convert.ToInt32(this.NominasDataGridView.CurrentRow.Cells["anio"].Value.ToString());
+                int semana = Convert.ToInt32(this.NominasDataGridView.CurrentRow.Cells["semana"].Value.ToString());
+
                 FrmNomina miNomina = new FrmNomina();
                 miNomina.id_nomina = id;
+                miNomina.anio = anio;
+                miNomina.semana = semana;
+                if(this.NominasDataGridView.CurrentRow.Cells["id_encargado"].Value != null)
+                {
+                    miNomina.encargado = (int)this.NominasDataGridView.CurrentRow.Cells["id_encargado"].Value;
+                }                
                 miNomina.ShowDialog(this);
+                Inicializar();
             }
             catch (Exception ex)
             {

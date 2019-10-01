@@ -30,17 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLoadNomina));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.CargarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.NuevaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.NominasDataGridView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.semana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NuevaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.NominasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NominasDataGridView)).BeginInit();
@@ -51,7 +53,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(593, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(534, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -63,7 +65,7 @@
             this.NuevaToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(593, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(534, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -81,22 +83,34 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
+            // NuevaToolStripButton
+            // 
+            this.NuevaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevaToolStripButton.Image")));
+            this.NuevaToolStripButton.Name = "NuevaToolStripButton";
+            this.NuevaToolStripButton.RightToLeftAutoMirrorImage = true;
+            this.NuevaToolStripButton.Size = new System.Drawing.Size(61, 22);
+            this.NuevaToolStripButton.Text = "Nueva";
+            this.NuevaToolStripButton.Click += new System.EventHandler(this.NuevaToolStripButton_Click);
+            // 
             // NominasDataGridView
             // 
             this.NominasDataGridView.AllowUserToAddRows = false;
             this.NominasDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.NominasDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.NominasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NominasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.Anio,
             this.semana,
+            this.encargado,
             this.id_encargado,
             this.estado});
             this.NominasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NominasDataGridView.Location = new System.Drawing.Point(0, 25);
             this.NominasDataGridView.Name = "NominasDataGridView";
             this.NominasDataGridView.ReadOnly = true;
-            this.NominasDataGridView.Size = new System.Drawing.Size(593, 403);
+            this.NominasDataGridView.Size = new System.Drawing.Size(534, 403);
             this.NominasDataGridView.TabIndex = 2;
             // 
             // id
@@ -105,6 +119,7 @@
             this.id.HeaderText = "Id";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Width = 60;
             // 
             // Anio
             // 
@@ -120,14 +135,22 @@
             this.semana.Name = "semana";
             this.semana.ReadOnly = true;
             // 
+            // encargado
+            // 
+            this.encargado.DataPropertyName = "encargado";
+            this.encargado.HeaderText = "Encargado";
+            this.encargado.Name = "encargado";
+            this.encargado.ReadOnly = true;
+            this.encargado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.encargado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // id_encargado
             // 
-            this.id_encargado.DataPropertyName = "encargado";
-            this.id_encargado.HeaderText = "Encargado";
+            this.id_encargado.DataPropertyName = "id_encargado";
+            this.id_encargado.HeaderText = "id_encargado";
             this.id_encargado.Name = "id_encargado";
             this.id_encargado.ReadOnly = true;
-            this.id_encargado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_encargado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.id_encargado.Visible = false;
             // 
             // estado
             // 
@@ -138,20 +161,11 @@
             this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // NuevaToolStripButton
-            // 
-            this.NuevaToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevaToolStripButton.Image")));
-            this.NuevaToolStripButton.Name = "NuevaToolStripButton";
-            this.NuevaToolStripButton.RightToLeftAutoMirrorImage = true;
-            this.NuevaToolStripButton.Size = new System.Drawing.Size(61, 22);
-            this.NuevaToolStripButton.Text = "Nueva";
-            this.NuevaToolStripButton.Click += new System.EventHandler(this.NuevaToolStripButton_Click);
-            // 
             // FrmLoadNomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 450);
+            this.ClientSize = new System.Drawing.Size(534, 450);
             this.Controls.Add(this.NominasDataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -175,12 +189,13 @@
         private System.Windows.Forms.DataGridView NominasDataGridView;
         private System.Windows.Forms.ToolStripButton CargarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton NuevaToolStripButton;
+        private System.Windows.Forms.BindingSource NominasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anio;
         private System.Windows.Forms.DataGridViewTextBoxColumn semana;
+        private System.Windows.Forms.DataGridViewTextBoxColumn encargado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_encargado;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.ToolStripButton NuevaToolStripButton;
-        private System.Windows.Forms.BindingSource NominasBindingSource;
     }
 }
