@@ -10,9 +10,10 @@ namespace ManzantinesApp.Classes
         public double TotalHoras { get; set; }
         public decimal valorDias { get; set; }
         public decimal valorHoras { get; set; }
+        public decimal Importe { get; set; }
         public decimal Total {
             get {
-                return Convert.ToDecimal((TotalDias * (double)valorDias) + ( TotalHoras * (double)valorHoras));
+                return Convert.ToDecimal((TotalDias * (double)valorDias) + ( TotalHoras * (double)valorHoras) + (double)Importe);
             }
         }
     }
