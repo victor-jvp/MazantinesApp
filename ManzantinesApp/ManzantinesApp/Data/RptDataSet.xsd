@@ -158,10 +158,12 @@ FROM            vv_CasasCountEmpleados</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vv_nominasTableAdapter" GeneratorDataComponentClassName="vv_nominasTableAdapter" Name="vv_nominas" UserDataComponentName="vv_nominasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_nominas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.vv_nominas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT anio, semana, status, id_encargado, Nro_empleado, trabajador, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, caja, pagado FROM vv_nominas</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        anio, semana, status, id_encargado, Nro_empleado, trabajador, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, caja, pagado, 
+                         importe
+FROM            vv_nominas</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -178,8 +180,6 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <Mapping SourceColumn="id_det" DataSetColumn="id_det" />
               <Mapping SourceColumn="id_cab" DataSetColumn="id_cab" />
               <Mapping SourceColumn="id_empleado" DataSetColumn="id_empleado" />
-              <Mapping SourceColumn="valorD" DataSetColumn="valorD" />
-              <Mapping SourceColumn="valorH" DataSetColumn="valorH" />
               <Mapping SourceColumn="lunD" DataSetColumn="lunD" />
               <Mapping SourceColumn="lunH" DataSetColumn="lunH" />
               <Mapping SourceColumn="marD" DataSetColumn="marD" />
@@ -196,6 +196,9 @@ FROM            vv_CasasCountEmpleados</CommandText>
               <Mapping SourceColumn="domH" DataSetColumn="domH" />
               <Mapping SourceColumn="caja" DataSetColumn="caja" />
               <Mapping SourceColumn="pagado" DataSetColumn="pagado" />
+              <Mapping SourceColumn="valorD" DataSetColumn="valorD1" />
+              <Mapping SourceColumn="valorH" DataSetColumn="valorH1" />
+              <Mapping SourceColumn="importe" DataSetColumn="importe" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -205,7 +208,7 @@ FROM            vv_CasasCountEmpleados</CommandText>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        anio, semana, status, id_encargado, Encargado, Nro_empleado, Trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, 
-                         domH, ccc, pagado
+                         domH, ccc, pagado, importe
 FROM            rpt_nominas</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -243,6 +246,7 @@ FROM            rpt_nominas</CommandText>
               <Mapping SourceColumn="ccc" DataSetColumn="ccc" />
               <Mapping SourceColumn="pagado" DataSetColumn="pagado" />
               <Mapping SourceColumn="Trabajador" DataSetColumn="Trabajador" />
+              <Mapping SourceColumn="importe" DataSetColumn="importe" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -251,7 +255,7 @@ FROM            rpt_nominas</CommandText>
               <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_recibos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, valorH, Empresa, semanaFin, semanaIni, id_encargado, id_cab, caja
+                    <CommandText>SELECT        Nro_empleado, Nombre, Apellidos, anio, semana, totalD, totalH, valorD, valorH, Empresa, semanaFin, semanaIni, id_encargado, id_cab, caja, importe
 FROM            rpt_recibos</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -274,12 +278,13 @@ FROM            rpt_recibos</CommandText>
               <Mapping SourceColumn="id_encargado" DataSetColumn="id_encargado" />
               <Mapping SourceColumn="id_cab" DataSetColumn="id_cab" />
               <Mapping SourceColumn="caja" DataSetColumn="caja" />
+              <Mapping SourceColumn="importe" DataSetColumn="importe" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_recibos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIdCabSortCaja" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCabSortCaja" GeneratorSourceName="FillByIdCabSortCaja" GetMethodModifier="Public" GetMethodName="GetDataByIdCabSortCaja" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCabSortCaja" UserSourceName="FillByIdCabSortCaja">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt_recibos WHERE (id_cab = @id_cab) ORDER BY caja</CommandText>
+                    <CommandText>SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado, importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt_recibos WHERE (id_cab = @id_cab) ORDER BY caja</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="id_cab" ColumnName="id_cab" DataSourceName="Mazantines.dbo.rpt_recibos" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_cab" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_cab" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -289,7 +294,7 @@ FROM            rpt_recibos</CommandText>
               <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_recibos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIdCabSortNroEmpleado" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCabSortNroEmpleado" GeneratorSourceName="FillByIdCabSortNroEmpleado" GetMethodModifier="Public" GetMethodName="GetDataByIdCabSortNroEmpleado" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCabSortNroEmpleado" UserSourceName="FillByIdCabSortNroEmpleado">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt_recibos WHERE (id_cab = @id_cab) ORDER BY Nro_empleado</CommandText>
+                    <CommandText>SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado, importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt_recibos WHERE (id_cab = @id_cab) ORDER BY Nro_empleado</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="id_cab" ColumnName="id_cab" DataSourceName="Mazantines.dbo.rpt_recibos" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_cab" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_cab" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -299,10 +304,7 @@ FROM            rpt_recibos</CommandText>
               <DbSource ConnectionRef="MazantinesConnectionString (Settings)" DbObjectName="Mazantines.dbo.rpt_recibos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByIdCabSortTrabajador" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCabSortTrabajador" GeneratorSourceName="FillByIdCabSortTrabajador" GetMethodModifier="Public" GetMethodName="GetDataByIdCabSortTrabajador" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCabSortTrabajador" UserSourceName="FillByIdCabSortTrabajador">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH
-FROM            rpt_recibos
-WHERE        (id_cab = @id_cab)
-ORDER BY Nombre</CommandText>
+                    <CommandText>SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado, importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt_recibos WHERE (id_cab = @id_cab) ORDER BY Nombre</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="id_cab" ColumnName="id_cab" DataSourceName="Mazantines.dbo.rpt_recibos" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_cab" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_cab" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -578,7 +580,7 @@ ORDER BY Nombre</CommandText>
               <xs:element name="sabH" msprop:Generator_ColumnVarNameInTable="columnsabH" msprop:Generator_ColumnPropNameInRow="sabH" msprop:Generator_ColumnPropNameInTable="sabHColumn" msprop:Generator_UserColumnName="sabH" type="xs:double" minOccurs="0" />
               <xs:element name="domD" msprop:Generator_ColumnVarNameInTable="columndomD" msprop:Generator_ColumnPropNameInRow="domD" msprop:Generator_ColumnPropNameInTable="domDColumn" msprop:Generator_UserColumnName="domD" type="xs:double" minOccurs="0" />
               <xs:element name="domH" msprop:Generator_ColumnVarNameInTable="columndomH" msprop:Generator_ColumnPropNameInRow="domH" msprop:Generator_ColumnPropNameInTable="domHColumn" msprop:Generator_UserColumnName="domH" type="xs:double" minOccurs="0" />
-              <xs:element name="caja" msprop:Generator_ColumnVarNameInTable="columncaja" msprop:Generator_ColumnPropNameInRow="caja" msprop:Generator_ColumnPropNameInTable="cajaColumn" msprop:Generator_UserColumnName="caja">
+              <xs:element name="caja" msprop:Generator_ColumnVarNameInTable="columncaja" msprop:Generator_ColumnPropNameInRow="caja" msprop:Generator_ColumnPropNameInTable="cajaColumn" msprop:Generator_UserColumnName="caja" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -586,6 +588,9 @@ ORDER BY Nombre</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="pagado" msprop:Generator_ColumnVarNameInTable="columnpagado" msprop:Generator_ColumnPropNameInRow="pagado" msprop:Generator_ColumnPropNameInTable="pagadoColumn" msprop:Generator_UserColumnName="pagado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="valorD1" msdata:Caption="valorD" msprop:Generator_ColumnVarNameInTable="columnvalorD1" msprop:Generator_ColumnPropNameInRow="valorD1" msprop:Generator_ColumnPropNameInTable="valorD1Column" msprop:Generator_UserColumnName="valorD1" type="xs:double" minOccurs="0" />
+              <xs:element name="valorH1" msdata:Caption="valorH" msprop:Generator_ColumnVarNameInTable="columnvalorH1" msprop:Generator_ColumnPropNameInRow="valorH1" msprop:Generator_ColumnPropNameInTable="valorH1Column" msprop:Generator_UserColumnName="valorH1" type="xs:double" minOccurs="0" />
+              <xs:element name="importe" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -658,6 +663,7 @@ ORDER BY Nombre</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="importe" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -709,6 +715,7 @@ ORDER BY Nombre</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="importe" msprop:Generator_ColumnVarNameInTable="columnimporte" msprop:Generator_ColumnPropNameInRow="importe" msprop:Generator_ColumnPropNameInTable="importeColumn" msprop:Generator_UserColumnName="importe" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -807,6 +814,10 @@ ORDER BY Nombre</CommandText>
     <xs:unique name="rpt_nominas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:rpt_nominas" />
       <xs:field xpath="mstns:id_det" />
+    </xs:unique>
+    <xs:unique name="rpt_recibos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:rpt_recibos" />
+      <xs:field xpath="mstns:id_cab" />
     </xs:unique>
     <xs:unique name="vv_NominasEmpleadosMes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vv_NominasEmpleadosMes" />

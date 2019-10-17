@@ -42,5 +42,6 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> domD { get; set; }
         public Nullable<double> domH { get; set; }
         public Nullable<bool> pagado { get; set; }
+        public Nullable<double> importe { get; set; }
     }
 }

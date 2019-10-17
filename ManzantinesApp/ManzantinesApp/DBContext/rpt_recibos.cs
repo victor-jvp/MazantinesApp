@@ -29,5 +29,6 @@ namespace ManzantinesApp.DBContext
         public Nullable<double> valorD { get; set; }
         public Nullable<double> valorH { get; set; }
         public string caja { get; set; }
+        public Nullable<double> importe { get; set; }
     }
 }

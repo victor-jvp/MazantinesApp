@@ -194,6 +194,7 @@
                                 domH = 0,
                                 valorD = row.valorD,
                                 valorH = row.valorH,
+                                importe = 0,
                                 pagado = false
                             });                                                
                         }
@@ -277,6 +278,7 @@
                         miNomina.domD = nomina.domD;
                         miNomina.domH = nomina.domH;
                         miNomina.pagado = nomina.pagado;
+                        miNomina.importe = nomina.importe;
                         db.NominasDet.Add(miNomina);
                         db.Entry(miNomina).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
@@ -351,6 +353,7 @@
             NominaDataGridView.Columns["id_empleado"].Visible = false;
             NominaDataGridView.Columns["valorD"].Visible = false;
             NominaDataGridView.Columns["valorH"].Visible = false;
+            NominaDataGridView.Columns["importe"].HeaderText = "Importe";
             NominaDataGridView.Columns["lunD"].HeaderText = "Dia";
             NominaDataGridView.Columns["lunH"].HeaderText = "Extra";
             NominaDataGridView.Columns["lunD"].DefaultCellStyle.Format = "N0";
@@ -401,6 +404,8 @@
             NominaDataGridView.Columns["totalH"].ReadOnly = true;
             NominaDataGridView.Columns["totalH"].DefaultCellStyle.BackColor = Color.LightGray;
             NominaDataGridView.Columns["totalH"].DefaultCellStyle.Format = "N1";
+            NominaDataGridView.Columns["importe"].DefaultCellStyle.Format = "N1";
+            NominaDataGridView.Columns["importe"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             int i = 0;
             NominaDataGridView.Columns["anio"].DisplayIndex = i;
@@ -432,6 +437,7 @@
             NominaDataGridView.Columns["domH"].DisplayIndex = i++;
             NominaDataGridView.Columns["totalD"].DisplayIndex = i++;
             NominaDataGridView.Columns["totalH"].DisplayIndex = i++;
+            NominaDataGridView.Columns["importe"].DisplayIndex = i++;
             NominaDataGridView.Columns["pagado"].DisplayIndex = i++;
 
             NominaDataGridView.Columns["nro_empleado"].Width = 60;
@@ -454,6 +460,7 @@
             NominaDataGridView.Columns["domH"].Width = valores;
             NominaDataGridView.Columns["totalD"].Width = valores;
             NominaDataGridView.Columns["totalH"].Width = valores;
+            NominaDataGridView.Columns["importe"].Width = valores;
             NominaDataGridView.Columns["pagado"].Width = valores;
         }
 
@@ -622,6 +629,7 @@
 
                     double valorD = empNomina.Select(f => (double)f.valorD).FirstOrDefault();
                     double valorH = empNomina.Select(f => (double)f.valorH).FirstOrDefault();
+                    double importe = empNomina.Select(f => (double)f.importe).FirstOrDefault();
 
                     TotalNomina miTotal = new TotalNomina
                     {
@@ -822,31 +830,31 @@
         {
             if (e.RowIndex == -1)
             {
-                sortBy = NominaDataGridView.Columns[e.ColumnIndex].Name;
-                if (sortBy == "caja" || sortBy == "Nro_empleado" || sortBy == "trabajador")
+                try
                 {
-                    var result = MessageBox.Show(
-                        "El proceso de ordenamiento amerita guardar la nomina, confirme continuar con el proceso",
-                        "Atención",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question,
-                        MessageBoxDefaultButton.Button2
-                        );
-                    GuardarNomina();
-                    if (result == DialogResult.No) return;
-                    int semana = (int)SemanaComboBox.ComboBox.SelectedValue;
-                    int anio = (int)AnioComboBox.ComboBox.SelectedValue;
-
-                    int encargado = 0;
-                    if (EncargadoComboBox.ComboBox.SelectedValue != null)
+                    sortBy = NominaDataGridView.Columns[e.ColumnIndex].Name;
+                    if (sortBy == "caja" || sortBy == "Nro_empleado" || sortBy == "trabajador")
                     {
-                        encargado = (int)EncargadoComboBox.ComboBox.SelectedValue;
-                    }
+                        GuardarNomina();
 
-                    this.Enabled = false;
-                    CargarNomina(anio, semana, encargado);
-                    this.Enabled = true;
-                }                
+                        int semana = (int)SemanaComboBox.ComboBox.SelectedValue;
+                        int anio = (int)AnioComboBox.ComboBox.SelectedValue;
+
+                        int encargado = 0;
+                        if (EncargadoComboBox.ComboBox.SelectedValue != null)
+                        {
+                            encargado = (int)EncargadoComboBox.ComboBox.SelectedValue;
+                        }
+
+                        this.Enabled = false;
+                        CargarNomina(anio, semana, encargado);
+                        this.Enabled = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error en func Ordenamiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }                              
             }
         }
     }

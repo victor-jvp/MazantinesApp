@@ -135,6 +135,7 @@
           <Property Name="domD" Type="float" />
           <Property Name="domH" Type="float" />
           <Property Name="pagado" Type="bit" />
+          <Property Name="importe" Type="float" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
@@ -235,6 +236,7 @@ warning 6002: The table/view 'Mazantines.dbo.rpt_recibos' does not have a primar
           <Property Name="totalH" Type="float" />
           <Property Name="valorD" Type="float" />
           <Property Name="valorH" Type="float" />
+          <Property Name="importe" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_EmpleadosCasas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -307,6 +309,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary
           <Property Name="domD" Type="float" />
           <Property Name="domH" Type="float" />
           <Property Name="pagado" Type="bit" />
+          <Property Name="importe" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -603,7 +606,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [rpt_recibos].[totalD] AS [totalD], 
     [rpt_recibos].[totalH] AS [totalH], 
     [rpt_recibos].[valorD] AS [valorD], 
-    [rpt_recibos].[valorH] AS [valorH]
+    [rpt_recibos].[valorH] AS [valorH], 
+    [rpt_recibos].[importe] AS [importe]
     FROM [dbo].[rpt_recibos] AS [rpt_recibos]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vv_EmpleadosCasas" EntityType="Self.vv_EmpleadosCasas" store:Type="Views" store:Schema="dbo">
@@ -660,7 +664,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [vv_nominas].[sabH] AS [sabH], 
     [vv_nominas].[domD] AS [domD], 
     [vv_nominas].[domH] AS [domH], 
-    [vv_nominas].[pagado] AS [pagado]
+    [vv_nominas].[pagado] AS [pagado], 
+    [vv_nominas].[importe] AS [importe]
     FROM [dbo].[vv_nominas] AS [vv_nominas]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vv_NominasEmpleadosMes" EntityType="Self.vv_NominasEmpleadosMes" store:Type="Views" store:Schema="dbo">
@@ -994,6 +999,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="pagado" Type="Boolean" />
           <NavigationProperty Name="NominasCab" Relationship="MazantinesModel.fk_NominasDet_NominasCab_pk" FromRole="NominasDet" ToRole="NominasCab" />
           <NavigationProperty Name="Trabajadores" Relationship="MazantinesModel.FK_NominasDet_Trabajadores" FromRole="NominasDet" ToRole="Trabajadores" />
+          <Property Name="importe" Type="Double" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
@@ -1098,6 +1104,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="valorD" Type="Double" />
           <Property Name="valorH" Type="Double" />
           <Property Name="caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="importe" Type="Double" />
         </EntityType>
         <EntityType Name="vv_EmpleadosCasas">
           <Key>
@@ -1164,6 +1171,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="domD" Type="Double" />
           <Property Name="domH" Type="Double" />
           <Property Name="pagado" Type="Boolean" />
+          <Property Name="importe" Type="Double" />
         </EntityType>
         <EntityType Name="vv_NominasEmpleadosMes">
           <Key>
@@ -1517,6 +1525,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="NominasDet">
             <EntityTypeMapping TypeName="MazantinesModel.NominasDet">
               <MappingFragment StoreEntitySet="NominasDet">
+                <ScalarProperty Name="importe" ColumnName="importe" />
                 <ScalarProperty Name="pagado" ColumnName="pagado" />
                 <ScalarProperty Name="domH" ColumnName="domH" />
                 <ScalarProperty Name="domD" ColumnName="domD" />
@@ -1622,6 +1631,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="rpt_recibos">
             <EntityTypeMapping TypeName="MazantinesModel.rpt_recibos">
               <MappingFragment StoreEntitySet="rpt_recibos">
+                <ScalarProperty Name="importe" ColumnName="importe" />
                 <ScalarProperty Name="caja" ColumnName="caja" />
                 <ScalarProperty Name="valorH" ColumnName="valorH" />
                 <ScalarProperty Name="valorD" ColumnName="valorD" />
@@ -1672,6 +1682,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="vv_nominas">
             <EntityTypeMapping TypeName="MazantinesModel.vv_nominas">
               <MappingFragment StoreEntitySet="vv_nominas">
+                <ScalarProperty Name="importe" ColumnName="importe" />
                 <ScalarProperty Name="pagado" ColumnName="pagado" />
                 <ScalarProperty Name="domH" ColumnName="domH" />
                 <ScalarProperty Name="domD" ColumnName="domD" />
