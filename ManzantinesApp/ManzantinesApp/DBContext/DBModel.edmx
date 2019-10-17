@@ -214,6 +214,7 @@ warning 6002: The table/view 'Mazantines.dbo.rpt_nominas' does not have a primar
           <Property Name="domD" Type="float" />
           <Property Name="domH" Type="float" />
           <Property Name="pagado" Type="bit" />
+          <Property Name="importe" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mazantines.dbo.rpt_recibos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -587,7 +588,8 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     [rpt_nominas].[sabH] AS [sabH], 
     [rpt_nominas].[domD] AS [domD], 
     [rpt_nominas].[domH] AS [domH], 
-    [rpt_nominas].[pagado] AS [pagado]
+    [rpt_nominas].[pagado] AS [pagado], 
+    [rpt_nominas].[importe] AS [importe]
     FROM [dbo].[rpt_nominas] AS [rpt_nominas]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="rpt_recibos" EntityType="Self.rpt_recibos" store:Type="Views" store:Schema="dbo">
@@ -1084,6 +1086,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <Property Name="domH" Type="Double" />
           <Property Name="pagado" Type="Boolean" />
           <Property Name="caja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="importe" Type="Double" />
         </EntityType>
         <EntityType Name="rpt_recibos">
           <Key>
@@ -1594,6 +1597,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
           <EntitySetMapping Name="rpt_nominas">
             <EntityTypeMapping TypeName="MazantinesModel.rpt_nominas">
               <MappingFragment StoreEntitySet="rpt_nominas">
+                <ScalarProperty Name="importe" ColumnName="importe" />
                 <ScalarProperty Name="caja" ColumnName="caja" />
                 <ScalarProperty Name="pagado" ColumnName="pagado" />
                 <ScalarProperty Name="domH" ColumnName="domH" />

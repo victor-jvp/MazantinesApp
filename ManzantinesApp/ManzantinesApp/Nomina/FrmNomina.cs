@@ -626,10 +626,10 @@
                     double vieH = empNomina.Sum(f => (double)f.vieH);
                     double sabH = empNomina.Sum(f => (double)f.sabH);
                     double domH = empNomina.Sum(f => (double)f.domH);
+                    double importe = empNomina.Sum(f => (double)f.importe);
 
                     double valorD = empNomina.Select(f => (double)f.valorD).FirstOrDefault();
-                    double valorH = empNomina.Select(f => (double)f.valorH).FirstOrDefault();
-                    double importe = empNomina.Select(f => (double)f.importe).FirstOrDefault();
+                    double valorH = empNomina.Select(f => (double)f.valorH).FirstOrDefault();                    
 
                     TotalNomina miTotal = new TotalNomina
                     {
@@ -638,7 +638,8 @@
                         TotalDias = Convert.ToDouble(lunD + marD + mieD + jueD + vieD + sabD + domD),
                         TotalHoras = Convert.ToDouble(lunH + marH + mieH + jueH + vieH + sabH + domH),
                         valorDias = (decimal)valorD,
-                        valorHoras = (decimal)valorH
+                        valorHoras = (decimal)valorH,
+                        Importe = (decimal)importe
                     };
                     totalNomina.Add(miTotal);
                 }
@@ -658,6 +659,8 @@
                 TotalesDataGridView.Columns["valorHoras"].HeaderText = "€ Horas";                
                 TotalesDataGridView.Columns["valorHoras"].DefaultCellStyle.Format = "N2";
                 TotalesDataGridView.Columns["valorHoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                TotalesDataGridView.Columns["Importe"].DefaultCellStyle.Format = "N2";
+                TotalesDataGridView.Columns["Importe"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                 TotalesDataGridView.Columns["total"].DefaultCellStyle.Format = "N2";
                 TotalesDataGridView.Columns["total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
@@ -668,6 +671,7 @@
                 TotalesDataGridView.Columns["valorDias"].DisplayIndex = pos++;
                 TotalesDataGridView.Columns["TotalHoras"].DisplayIndex = pos++;
                 TotalesDataGridView.Columns["valorHoras"].DisplayIndex = pos++;
+                TotalesDataGridView.Columns["Importe"].DisplayIndex = pos++;
                 TotalesDataGridView.Columns["Total"].DisplayIndex = pos++;
 
             }
@@ -774,9 +778,7 @@
                 if (sortBy == "trabajador")
                 {
                     rptNomina = db.rpt_nominas.Where(r => r.id_cab == id_cab).OrderBy(f => f.Trabajador).ToList();
-                }
-
-                
+                }                
             }
 
             this.Enabled = false;

@@ -4308,13 +4308,6 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rpt_recibosRow FindByid_cab(int id_cab) {
-                return ((rpt_recibosRow)(this.Rows.Find(new object[] {
-                            id_cab})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 rpt_recibosDataTable cln = ((rpt_recibosDataTable)(base.Clone()));
                 cln.InitVars();
@@ -4383,8 +4376,6 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columncaja);
                 this.columnimporte = new global::System.Data.DataColumn("importe", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimporte);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_cab}, true));
                 this.columnNro_empleado.MaxLength = 2147483647;
                 this.columnNombre.MaxLength = 2147483647;
                 this.columnApellidos.MaxLength = 2147483647;
@@ -4394,7 +4385,6 @@ namespace ManzantinesApp.Data {
                 this.columnsemanaIni.ReadOnly = true;
                 this.columnsemanaFin.ReadOnly = true;
                 this.columnid_cab.AllowDBNull = false;
-                this.columnid_cab.Unique = true;
                 this.columncaja.MaxLength = 2147483647;
             }
             
@@ -11382,23 +11372,24 @@ FROM            rpt_nominas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado" +
-                ", importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt" +
-                "_recibos WHERE (id_cab = @id_cab) ORDER BY caja";
+            this._commandCollection[1].CommandText = "SELECT        Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_en" +
+                "cargado, importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH\r\n" +
+                "FROM            rpt_recibos\r\nWHERE        (id_cab = @id_cab)\r\nORDER BY caja";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado" +
-                ", importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt" +
-                "_recibos WHERE (id_cab = @id_cab) ORDER BY Nro_empleado";
+            this._commandCollection[2].CommandText = "SELECT        Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_en" +
+                "cargado, importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH\r\n" +
+                "FROM            rpt_recibos\r\nWHERE        (id_cab = @id_cab)\r\nORDER BY Nro_emple" +
+                "ado";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_encargado" +
-                ", importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH FROM rpt" +
-                "_recibos WHERE (id_cab = @id_cab) ORDER BY Nombre";
+            this._commandCollection[3].CommandText = "SELECT        Apellidos, Empresa, Nombre, Nro_empleado, anio, caja, id_cab, id_en" +
+                "cargado, importe, semana, semanaFin, semanaIni, totalD, totalH, valorD, valorH\r\n" +
+                "FROM            rpt_recibos\r\nWHERE        (id_cab = @id_cab)\r\nORDER BY Nombre";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
