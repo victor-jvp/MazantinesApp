@@ -1,9 +1,10 @@
 ﻿CREATE VIEW [dbo].[rpt_recibos] AS SELECT
 	emp.Empresa,
-	tra.Nro_empleado,
+	CAST(tra.Nro_empleado AS VARCHAR(MAX)) as Nro_empleado,
 	tra.Nombre,
 	tra.Apellidos,
 	cab.id_cab,
+	tra.caja,
 	cab.anio,
 	cab.semana,
 	cab.id_encargado,
@@ -12,7 +13,8 @@
 	(det.lunD + det.marD + mieD + jueD + vieD + sabD + domD) as totalD,
 	(det.lunH + det.marH + mieH + jueH + vieH + sabH + domH) as totalH,
 	det.valorD,
-	det.valorH
+	det.valorH,
+	det.importe
 FROM
 	Trabajadores as tra
 LEFT JOIN Empresas AS emp ON emp.id = tra.id_empresa

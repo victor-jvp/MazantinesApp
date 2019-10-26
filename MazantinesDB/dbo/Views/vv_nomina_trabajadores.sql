@@ -1,6 +1,6 @@
 ﻿CREATE VIEW [dbo].[vv_nomina_trabajadores] AS SELECT
 	tra.id,
-	tra.Nro_empleado,
+	CAST(tra.Nro_empleado AS VARCHAR(MAX)) as Nro_empleado,
 	RTRIM(tra.caja) AS Caja,
 	CONCAT ( tra.Nombre, ' ', tra.Apellidos ) AS trabajador,
 	tra.id_encargado,

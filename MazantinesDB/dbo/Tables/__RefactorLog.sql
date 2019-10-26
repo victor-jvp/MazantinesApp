@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[__RefactorLog] (
-    [OperationKey] UNIQUEIDENTIFIER NOT NULL,
-    CONSTRAINT [PK____Refact__D3AEFFDB696DB36D] PRIMARY KEY CLUSTERED ([OperationKey] ASC)
-);
-

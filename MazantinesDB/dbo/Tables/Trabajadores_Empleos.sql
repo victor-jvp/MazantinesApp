@@ -1,16 +1,24 @@
-﻿CREATE TABLE [dbo].[Trabajadores_Empleos] (
+CREATE TABLE [dbo].[Trabajadores_Empleos] (
     [Id]            INT IDENTITY (1, 1) NOT NULL,
     [id_trabajador] INT NULL,
     [id_empleo]     INT NULL,
-    CONSTRAINT [PK__Trabajad__3214EC07C58D89C4] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [fk_id_trabajador] FOREIGN KEY ([id_trabajador]) REFERENCES [dbo].[Trabajadores] ([Id]),
-    CONSTRAINT [id_empleo] FOREIGN KEY ([id_empleo]) REFERENCES [dbo].[Empleos] ([Id])
+    CONSTRAINT [PK_Trabajadores_Empleos] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_id_empleo] FOREIGN KEY ([id_empleo]) REFERENCES [dbo].[Empleos] ([Id]),
+    CONSTRAINT [fk_id_trabajador] FOREIGN KEY ([id_trabajador]) REFERENCES [dbo].[Trabajadores] ([Id])
 );
 
 
 
 
 
+
+
 GO
-ALTER TABLE [dbo].[Trabajadores_Empleos] SET (LOCK_ESCALATION = AUTO);
+CREATE NONCLUSTERED INDEX [IX_fk_id_trabajador]
+    ON [dbo].[Trabajadores_Empleos]([id_trabajador] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_FK_id_empleo]
+    ON [dbo].[Trabajadores_Empleos]([id_empleo] ASC);
 

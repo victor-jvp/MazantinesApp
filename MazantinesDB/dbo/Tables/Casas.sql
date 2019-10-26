@@ -2,9 +2,16 @@
     [Id]       INT NOT NULL,
     [NroCasa]  INT NOT NULL,
     [id_finca] INT NULL,
-    CONSTRAINT [PK__Casas__3214EC073F3468B7] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [id_finca] FOREIGN KEY ([id_finca]) REFERENCES [dbo].[Fincas] ([Id])
+    CONSTRAINT [PK_Casas] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_id_finca] FOREIGN KEY ([id_finca]) REFERENCES [dbo].[Fincas] ([Id])
 );
 
 
+
+
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_FK_id_finca]
+    ON [dbo].[Casas]([id_finca] ASC);
 

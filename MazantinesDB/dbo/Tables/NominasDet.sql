@@ -18,8 +18,9 @@
     [sabH]        FLOAT (53) NULL,
     [domD]        FLOAT (53) NULL,
     [domH]        FLOAT (53) NULL,
-    [pagado]      BIT        DEFAULT ((0)) NULL,
-    CONSTRAINT [PK__tmp_ms_x__D5EA63501C1D203D] PRIMARY KEY CLUSTERED ([id_det] ASC),
+    [pagado]      BIT        NULL,
+    [importe]     FLOAT (53) NULL,
+    CONSTRAINT [PK_NominasDet] PRIMARY KEY CLUSTERED ([id_det] ASC),
     CONSTRAINT [fk_NominasDet_NominasCab_pk] FOREIGN KEY ([id_cab]) REFERENCES [dbo].[NominasCab] ([id_cab]),
     CONSTRAINT [FK_NominasDet_Trabajadores] FOREIGN KEY ([id_empleado]) REFERENCES [dbo].[Trabajadores] ([Id])
 );
@@ -30,4 +31,16 @@
 
 
 
+
+
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_FK_NominasDet_Trabajadores]
+    ON [dbo].[NominasDet]([id_empleado] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_fk_NominasDet_NominasCab_pk]
+    ON [dbo].[NominasDet]([id_cab] ASC);
 

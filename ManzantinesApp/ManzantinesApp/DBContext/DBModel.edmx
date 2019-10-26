@@ -4,763 +4,622 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MazantinesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Asientos">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_proveedor" Type="int" />
-          <Property Name="FechaFactura" Type="date" />
-          <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="FechaPago" Type="date" />
-          <Property Name="FormaPago" Type="nvarchar" MaxLength="35" />
-          <Property Name="Pagado" Type="bit" />
-          <Property Name="id_empresa" Type="int" />
-        </EntityType>
-        <EntityType Name="Casas">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="NroCasa" Type="int" Nullable="false" />
-          <Property Name="id_finca" Type="int" />
-        </EntityType>
-        <EntityType Name="Empleos">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Empleo" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="EmpleosPagos">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_empleo" Type="int" />
-          <Property Name="importeDia" Type="float" />
-          <Property Name="importeHoras" Type="float" />
-        </EntityType>
-        <EntityType Name="Empresas">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Empresa" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="Encargados">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Encargado" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="Fincas">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Finca" Type="nvarchar(max)" />
-          <Property Name="id_encargado" Type="int" />
-        </EntityType>
-        <EntityType Name="Frutas">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fruta" Type="varchar" MaxLength="55" />
-          <Property Name="Status" Type="bit" />
-          <Property Name="DeletedAt" Type="smalldatetime" />
-        </EntityType>
-        <EntityType Name="Frutas_variedades">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_fruta" Type="int" />
-          <Property Name="Variedad" Type="nvarchar(max)" />
-          <Property Name="DeletedAt" Type="smalldatetime" />
-        </EntityType>
-        <EntityType Name="Liquidaciones">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NroLiquidacion" Type="nvarchar(max)" />
-          <Property Name="NroFactura" Type="nvarchar(max)" />
-          <Property Name="FechaPago" Type="date" />
-          <Property Name="Banco" Type="nvarchar(max)" />
-          <Property Name="Categoria" Type="int" />
-          <Property Name="Totales" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="Pagado" Type="bit" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="id_empresa" Type="int" />
-          <Property Name="id_finca" Type="int" />
-          <Property Name="id_fruta" Type="int" />
-          <Property Name="Variedad" Type="nvarchar(max)" />
-          <Property Name="DeletedAt" Type="smalldatetime" />
-        </EntityType>
-        <EntityType Name="NominasCab">
-          <Key>
-            <PropertyRef Name="id_cab" />
-          </Key>
-          <Property Name="id_cab" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
-          <Property Name="id_encargado" Type="int" />
-          <Property Name="status" Type="nchar" MaxLength="1" />
-        </EntityType>
-        <EntityType Name="NominasDet">
-          <Key>
-            <PropertyRef Name="id_det" />
-          </Key>
-          <Property Name="id_det" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_cab" Type="int" />
-          <Property Name="id_empleado" Type="int" />
-          <Property Name="valorD" Type="float" />
-          <Property Name="valorH" Type="float" />
-          <Property Name="lunD" Type="float" />
-          <Property Name="lunH" Type="float" />
-          <Property Name="marD" Type="float" />
-          <Property Name="marH" Type="float" />
-          <Property Name="mieD" Type="float" />
-          <Property Name="mieH" Type="float" />
-          <Property Name="jueD" Type="float" />
-          <Property Name="jueH" Type="float" />
-          <Property Name="vieD" Type="float" />
-          <Property Name="vieH" Type="float" />
-          <Property Name="sabD" Type="float" />
-          <Property Name="sabH" Type="float" />
-          <Property Name="domD" Type="float" />
-          <Property Name="domH" Type="float" />
-          <Property Name="pagado" Type="bit" />
-          <Property Name="importe" Type="float" />
-        </EntityType>
-        <EntityType Name="Proveedores">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Cif" Type="nvarchar" MaxLength="35" />
-          <Property Name="RazonSocial" Type="nvarchar(max)" />
-          <Property Name="NroCuenta" Type="nvarchar" MaxLength="55" />
-          <Property Name="Telefono" Type="nvarchar" MaxLength="35" />
-          <Property Name="Email" Type="nvarchar" MaxLength="55" />
-          <Property Name="Banco" Type="nvarchar" MaxLength="55" />
-        </EntityType>
-        <EntityType Name="Trabajadores">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nro_empleado" Type="nvarchar(max)" />
-          <Property Name="Nombre" Type="nvarchar(max)" />
-          <Property Name="Apellidos" Type="nvarchar(max)" />
-          <Property Name="Telefono" Type="nvarchar(max)" />
-          <Property Name="id_empresa" Type="int" />
-          <Property Name="id_casa" Type="int" />
-          <Property Name="foto" Type="ntext" />
-          <Property Name="foto2" Type="image" />
-          <Property Name="id_encargado" Type="int" />
-          <Property Name="CCC" Type="nvarchar(max)" />
-          <Property Name="Caja" Type="nvarchar(max)" />
-          <Property Name="Activo" Type="bit" />
-          <Property Name="DeletedAt" Type="smalldatetime" />
-        </EntityType>
-        <EntityType Name="Trabajadores_Empleos">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_trabajador" Type="int" />
-          <Property Name="id_empleo" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Mazantines.dbo.rpt_nominas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="rpt_nominas">
-          <Key>
-            <PropertyRef Name="Trabajador" />
-            <PropertyRef Name="id_det" />
-          </Key>
-          <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
-          <Property Name="status" Type="nchar" MaxLength="1" />
-          <Property Name="id_encargado" Type="int" />
-          <Property Name="Encargado" Type="nvarchar(max)" />
-          <Property Name="Nro_empleado" Type="varchar(max)" />
-          <Property Name="Trabajador" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="caja" Type="nvarchar(max)" />
-          <Property Name="ccc" Type="nvarchar(max)" />
-          <Property Name="Empresa" Type="nvarchar(max)" />
-          <Property Name="id_empleo" Type="int" />
-          <Property Name="id_det" Type="int" Nullable="false" />
-          <Property Name="id_cab" Type="int" />
-          <Property Name="id_empleado" Type="int" />
-          <Property Name="valorD" Type="float" />
-          <Property Name="valorH" Type="float" />
-          <Property Name="lunD" Type="float" />
-          <Property Name="lunH" Type="float" />
-          <Property Name="marD" Type="float" />
-          <Property Name="marH" Type="float" />
-          <Property Name="mieD" Type="float" />
-          <Property Name="mieH" Type="float" />
-          <Property Name="jueD" Type="float" />
-          <Property Name="jueH" Type="float" />
-          <Property Name="vieD" Type="float" />
-          <Property Name="vieH" Type="float" />
-          <Property Name="sabD" Type="float" />
-          <Property Name="sabH" Type="float" />
-          <Property Name="domD" Type="float" />
-          <Property Name="domH" Type="float" />
-          <Property Name="pagado" Type="bit" />
-          <Property Name="importe" Type="float" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Mazantines.dbo.rpt_recibos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="rpt_recibos">
-          <Key>
-            <PropertyRef Name="id_cab" />
-          </Key>
-          <Property Name="Empresa" Type="nvarchar(max)" />
-          <Property Name="Nro_empleado" Type="varchar(max)" />
-          <Property Name="Nombre" Type="nvarchar(max)" />
-          <Property Name="Apellidos" Type="nvarchar(max)" />
-          <Property Name="id_cab" Type="int" Nullable="false" />
-          <Property Name="caja" Type="nvarchar(max)" />
-          <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
-          <Property Name="id_encargado" Type="int" />
-          <Property Name="semanaIni" Type="datetime" />
-          <Property Name="semanaFin" Type="datetime" />
-          <Property Name="totalD" Type="float" />
-          <Property Name="totalH" Type="float" />
-          <Property Name="valorD" Type="float" />
-          <Property Name="valorH" Type="float" />
-          <Property Name="importe" Type="float" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Mazantines.dbo.vv_EmpleadosCasas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vv_EmpleadosCasas">
-          <Key>
-            <PropertyRef Name="id_casa" />
-            <PropertyRef Name="NroCasa" />
-            <PropertyRef Name="id_trabajador" />
-          </Key>
-          <Property Name="id_casa" Type="int" Nullable="false" />
-          <Property Name="Finca" Type="nvarchar(max)" />
-          <Property Name="NroCasa" Type="int" Nullable="false" />
-          <Property Name="id_trabajador" Type="int" Nullable="false" />
-          <Property Name="Nro_empleado" Type="varchar(max)" />
-          <Property Name="Nombre" Type="nvarchar(max)" />
-          <Property Name="Apellidos" Type="nvarchar(max)" />
-          <Property Name="Telefono" Type="nvarchar(max)" />
-          <Property Name="Empresa" Type="nvarchar(max)" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Mazantines.dbo.vv_nomina_trabajadores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vv_nomina_trabajadores">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="trabajador" />
-            <PropertyRef Name="valorD" />
-            <PropertyRef Name="valorH" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="Nro_empleado" Type="varchar(max)" />
-          <Property Name="Caja" Type="nvarchar(max)" />
-          <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="id_encargado" Type="int" />
-          <Property Name="id_empleo" Type="int" />
-          <Property Name="valorD" Type="float" Nullable="false" />
-          <Property Name="valorH" Type="float" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Mazantines.dbo.vv_nominas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vv_nominas">
-          <Key>
-            <PropertyRef Name="trabajador" />
-            <PropertyRef Name="id_det" />
-          </Key>
-          <Property Name="anio" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="semana" Type="numeric" Precision="2" Scale="0" />
-          <Property Name="status" Type="nchar" MaxLength="1" />
-          <Property Name="id_encargado" Type="int" />
-          <Property Name="Nro_empleado" Type="varchar(max)" />
-          <Property Name="caja" Type="nvarchar(max)" />
-          <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="id_empleo" Type="int" />
-          <Property Name="id_det" Type="int" Nullable="false" />
-          <Property Name="id_cab" Type="int" />
-          <Property Name="id_empleado" Type="int" />
-          <Property Name="valorD" Type="float" />
-          <Property Name="valorH" Type="float" />
-          <Property Name="lunD" Type="float" />
-          <Property Name="lunH" Type="float" />
-          <Property Name="marD" Type="float" />
-          <Property Name="marH" Type="float" />
-          <Property Name="mieD" Type="float" />
-          <Property Name="mieH" Type="float" />
-          <Property Name="jueD" Type="float" />
-          <Property Name="jueH" Type="float" />
-          <Property Name="vieD" Type="float" />
-          <Property Name="vieH" Type="float" />
-          <Property Name="sabD" Type="float" />
-          <Property Name="sabH" Type="float" />
-          <Property Name="domD" Type="float" />
-          <Property Name="domH" Type="float" />
-          <Property Name="pagado" Type="bit" />
-          <Property Name="importe" Type="float" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vv_NominasEmpleadosMes">
-          <Key>
-            <PropertyRef Name="id_det" />
-          </Key>
-          <Property Name="id_det" Type="int" Nullable="false" />
-          <Property Name="Anio" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="Semana" Type="numeric" Precision="2" Scale="0" />
-          <Property Name="id_encargado" Type="int" />
-          <Property Name="Encargado" Type="nvarchar(max)" />
-          <Property Name="Nro_Empleado" Type="varchar(max)" />
-          <Property Name="Caja" Type="nvarchar(max)" />
-          <Property Name="Nombre" Type="nvarchar(max)" />
-          <Property Name="Apellidos" Type="nvarchar(max)" />
-          <Property Name="semanaIni" Type="datetime" />
-          <Property Name="semanaFin" Type="datetime" />
-          <Property Name="mesIni" Type="int" />
-          <Property Name="totalD" Type="float" />
-          <Property Name="totalH" Type="float" />
-          <Property Name="valorD" Type="float" />
-          <Property Name="valorH" Type="float" />
-          <Property Name="TotalPago" Type="float" />
-        </EntityType>
-        <Association Name="FK__Liquidaci__id_fi__3D2915A8">
-          <End Role="Fincas" Type="Self.Fincas" Multiplicity="0..1" />
-          <End Role="Liquidaciones" Type="Self.Liquidaciones" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Fincas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Liquidaciones">
-              <PropertyRef Name="id_finca" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Liquidaci__id_fr__3C34F16F">
-          <End Role="Frutas" Type="Self.Frutas" Multiplicity="0..1" />
-          <End Role="Liquidaciones" Type="Self.Liquidaciones" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Frutas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Liquidaciones">
-              <PropertyRef Name="id_fruta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EmpleoPago_Empleos">
-          <End Role="Empleos" Type="Self.Empleos" Multiplicity="0..1" />
-          <End Role="EmpleosPagos" Type="Self.EmpleosPagos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleos">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="EmpleosPagos">
-              <PropertyRef Name="id_empleo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_empresa">
-          <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
-          <End Role="Asientos" Type="Self.Asientos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empresas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Asientos">
-              <PropertyRef Name="id_empresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_empresa_liquidaciones">
-          <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
-          <End Role="Liquidaciones" Type="Self.Liquidaciones" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empresas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Liquidaciones">
-              <PropertyRef Name="id_empresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_id_trabajador">
-          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
-          <End Role="Trabajadores_Empleos" Type="Self.Trabajadores_Empleos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trabajadores">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Trabajadores_Empleos">
-              <PropertyRef Name="id_trabajador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NominasCab_Encargados">
-          <End Role="Encargados" Type="Self.Encargados" Multiplicity="0..1" />
-          <End Role="NominasCab" Type="Self.NominasCab" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Encargados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NominasCab">
-              <PropertyRef Name="id_encargado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_NominasDet_NominasCab_pk">
-          <End Role="NominasCab" Type="Self.NominasCab" Multiplicity="0..1" />
-          <End Role="NominasDet" Type="Self.NominasDet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NominasCab">
-              <PropertyRef Name="id_cab" />
-            </Principal>
-            <Dependent Role="NominasDet">
-              <PropertyRef Name="id_cab" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NominasDet_Trabajadores">
-          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
-          <End Role="NominasDet" Type="Self.NominasDet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trabajadores">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NominasDet">
-              <PropertyRef Name="id_empleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_proveedores">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="Asientos" Type="Self.Asientos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Asientos">
-              <PropertyRef Name="id_proveedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="id_casa">
-          <End Role="Casas" Type="Self.Casas" Multiplicity="0..1" />
-          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Casas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Trabajadores">
-              <PropertyRef Name="id_casa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="id_empleo">
-          <End Role="Empleos" Type="Self.Empleos" Multiplicity="0..1" />
-          <End Role="Trabajadores_Empleos" Type="Self.Trabajadores_Empleos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleos">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Trabajadores_Empleos">
-              <PropertyRef Name="id_empleo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="id_empresa">
-          <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
-          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empresas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Trabajadores">
-              <PropertyRef Name="id_empresa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="id_encargado">
-          <End Role="Encargados" Type="Self.Encargados" Multiplicity="0..1" />
-          <End Role="Fincas" Type="Self.Fincas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Encargados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Fincas">
-              <PropertyRef Name="id_encargado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="id_encargado_trabajador">
-          <End Role="Encargados" Type="Self.Encargados" Multiplicity="0..1" />
-          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Encargados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Trabajadores">
-              <PropertyRef Name="id_encargado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="id_finca">
-          <End Role="Fincas" Type="Self.Fincas" Multiplicity="0..1" />
-          <End Role="Casas" Type="Self.Casas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Fincas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Casas">
-              <PropertyRef Name="id_finca" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="if_fruta_variedad">
-          <End Role="Frutas" Type="Self.Frutas" Multiplicity="0..1" />
-          <End Role="Frutas_variedades" Type="Self.Frutas_variedades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Frutas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Frutas_variedades">
-              <PropertyRef Name="id_fruta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="MazantinesModelStoreContainer">
-          <EntitySet Name="Asientos" EntityType="Self.Asientos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Casas" EntityType="Self.Casas" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Empleos" EntityType="Self.Empleos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EmpleosPagos" EntityType="Self.EmpleosPagos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Encargados" EntityType="Self.Encargados" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Fincas" EntityType="Self.Fincas" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Frutas" EntityType="Self.Frutas" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Frutas_variedades" EntityType="Self.Frutas_variedades" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Liquidaciones" EntityType="Self.Liquidaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NominasCab" EntityType="Self.NominasCab" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NominasDet" EntityType="Self.NominasDet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Trabajadores" EntityType="Self.Trabajadores" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Trabajadores_Empleos" EntityType="Self.Trabajadores_Empleos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="rpt_nominas" EntityType="Self.rpt_nominas" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [rpt_nominas].[anio] AS [anio], 
-    [rpt_nominas].[semana] AS [semana], 
-    [rpt_nominas].[status] AS [status], 
-    [rpt_nominas].[id_encargado] AS [id_encargado], 
-    [rpt_nominas].[Encargado] AS [Encargado], 
-    [rpt_nominas].[Nro_empleado] AS [Nro_empleado], 
-    [rpt_nominas].[Trabajador] AS [Trabajador], 
-    [rpt_nominas].[caja] AS [caja], 
-    [rpt_nominas].[ccc] AS [ccc], 
-    [rpt_nominas].[Empresa] AS [Empresa], 
-    [rpt_nominas].[id_empleo] AS [id_empleo], 
-    [rpt_nominas].[id_det] AS [id_det], 
-    [rpt_nominas].[id_cab] AS [id_cab], 
-    [rpt_nominas].[id_empleado] AS [id_empleado], 
-    [rpt_nominas].[valorD] AS [valorD], 
-    [rpt_nominas].[valorH] AS [valorH], 
-    [rpt_nominas].[lunD] AS [lunD], 
-    [rpt_nominas].[lunH] AS [lunH], 
-    [rpt_nominas].[marD] AS [marD], 
-    [rpt_nominas].[marH] AS [marH], 
-    [rpt_nominas].[mieD] AS [mieD], 
-    [rpt_nominas].[mieH] AS [mieH], 
-    [rpt_nominas].[jueD] AS [jueD], 
-    [rpt_nominas].[jueH] AS [jueH], 
-    [rpt_nominas].[vieD] AS [vieD], 
-    [rpt_nominas].[vieH] AS [vieH], 
-    [rpt_nominas].[sabD] AS [sabD], 
-    [rpt_nominas].[sabH] AS [sabH], 
-    [rpt_nominas].[domD] AS [domD], 
-    [rpt_nominas].[domH] AS [domH], 
-    [rpt_nominas].[pagado] AS [pagado], 
-    [rpt_nominas].[importe] AS [importe]
-    FROM [dbo].[rpt_nominas] AS [rpt_nominas]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="rpt_recibos" EntityType="Self.rpt_recibos" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [rpt_recibos].[Empresa] AS [Empresa], 
-    [rpt_recibos].[Nro_empleado] AS [Nro_empleado], 
-    [rpt_recibos].[Nombre] AS [Nombre], 
-    [rpt_recibos].[Apellidos] AS [Apellidos], 
-    [rpt_recibos].[id_cab] AS [id_cab], 
-    [rpt_recibos].[caja] AS [caja], 
-    [rpt_recibos].[anio] AS [anio], 
-    [rpt_recibos].[semana] AS [semana], 
-    [rpt_recibos].[id_encargado] AS [id_encargado], 
-    [rpt_recibos].[semanaIni] AS [semanaIni], 
-    [rpt_recibos].[semanaFin] AS [semanaFin], 
-    [rpt_recibos].[totalD] AS [totalD], 
-    [rpt_recibos].[totalH] AS [totalH], 
-    [rpt_recibos].[valorD] AS [valorD], 
-    [rpt_recibos].[valorH] AS [valorH], 
-    [rpt_recibos].[importe] AS [importe]
-    FROM [dbo].[rpt_recibos] AS [rpt_recibos]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vv_EmpleadosCasas" EntityType="Self.vv_EmpleadosCasas" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vv_EmpleadosCasas].[id_casa] AS [id_casa], 
-    [vv_EmpleadosCasas].[Finca] AS [Finca], 
-    [vv_EmpleadosCasas].[NroCasa] AS [NroCasa], 
-    [vv_EmpleadosCasas].[id_trabajador] AS [id_trabajador], 
-    [vv_EmpleadosCasas].[Nro_empleado] AS [Nro_empleado], 
-    [vv_EmpleadosCasas].[Nombre] AS [Nombre], 
-    [vv_EmpleadosCasas].[Apellidos] AS [Apellidos], 
-    [vv_EmpleadosCasas].[Telefono] AS [Telefono], 
-    [vv_EmpleadosCasas].[Empresa] AS [Empresa]
-    FROM [dbo].[vv_EmpleadosCasas] AS [vv_EmpleadosCasas]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vv_nomina_trabajadores" EntityType="Self.vv_nomina_trabajadores" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vv_nomina_trabajadores].[id] AS [id], 
-    [vv_nomina_trabajadores].[Nro_empleado] AS [Nro_empleado], 
-    [vv_nomina_trabajadores].[Caja] AS [Caja], 
-    [vv_nomina_trabajadores].[trabajador] AS [trabajador], 
-    [vv_nomina_trabajadores].[id_encargado] AS [id_encargado], 
-    [vv_nomina_trabajadores].[id_empleo] AS [id_empleo], 
-    [vv_nomina_trabajadores].[valorD] AS [valorD], 
-    [vv_nomina_trabajadores].[valorH] AS [valorH]
-    FROM [dbo].[vv_nomina_trabajadores] AS [vv_nomina_trabajadores]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vv_nominas" EntityType="Self.vv_nominas" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vv_nominas].[anio] AS [anio], 
-    [vv_nominas].[semana] AS [semana], 
-    [vv_nominas].[status] AS [status], 
-    [vv_nominas].[id_encargado] AS [id_encargado], 
-    [vv_nominas].[Nro_empleado] AS [Nro_empleado], 
-    [vv_nominas].[caja] AS [caja], 
-    [vv_nominas].[trabajador] AS [trabajador], 
-    [vv_nominas].[id_empleo] AS [id_empleo], 
-    [vv_nominas].[id_det] AS [id_det], 
-    [vv_nominas].[id_cab] AS [id_cab], 
-    [vv_nominas].[id_empleado] AS [id_empleado], 
-    [vv_nominas].[valorD] AS [valorD], 
-    [vv_nominas].[valorH] AS [valorH], 
-    [vv_nominas].[lunD] AS [lunD], 
-    [vv_nominas].[lunH] AS [lunH], 
-    [vv_nominas].[marD] AS [marD], 
-    [vv_nominas].[marH] AS [marH], 
-    [vv_nominas].[mieD] AS [mieD], 
-    [vv_nominas].[mieH] AS [mieH], 
-    [vv_nominas].[jueD] AS [jueD], 
-    [vv_nominas].[jueH] AS [jueH], 
-    [vv_nominas].[vieD] AS [vieD], 
-    [vv_nominas].[vieH] AS [vieH], 
-    [vv_nominas].[sabD] AS [sabD], 
-    [vv_nominas].[sabH] AS [sabH], 
-    [vv_nominas].[domD] AS [domD], 
-    [vv_nominas].[domH] AS [domH], 
-    [vv_nominas].[pagado] AS [pagado], 
-    [vv_nominas].[importe] AS [importe]
-    FROM [dbo].[vv_nominas] AS [vv_nominas]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vv_NominasEmpleadosMes" EntityType="Self.vv_NominasEmpleadosMes" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vv_NominasEmpleadosMes].[id_det] AS [id_det], 
-    [vv_NominasEmpleadosMes].[Anio] AS [Anio], 
-    [vv_NominasEmpleadosMes].[Semana] AS [Semana], 
-    [vv_NominasEmpleadosMes].[id_encargado] AS [id_encargado], 
-    [vv_NominasEmpleadosMes].[Encargado] AS [Encargado], 
-    [vv_NominasEmpleadosMes].[Nro_Empleado] AS [Nro_Empleado], 
-    [vv_NominasEmpleadosMes].[Caja] AS [Caja], 
-    [vv_NominasEmpleadosMes].[Nombre] AS [Nombre], 
-    [vv_NominasEmpleadosMes].[Apellidos] AS [Apellidos], 
-    [vv_NominasEmpleadosMes].[semanaIni] AS [semanaIni], 
-    [vv_NominasEmpleadosMes].[semanaFin] AS [semanaFin], 
-    [vv_NominasEmpleadosMes].[mesIni] AS [mesIni], 
-    [vv_NominasEmpleadosMes].[totalD] AS [totalD], 
-    [vv_NominasEmpleadosMes].[totalH] AS [totalH], 
-    [vv_NominasEmpleadosMes].[valorD] AS [valorD], 
-    [vv_NominasEmpleadosMes].[valorH] AS [valorH], 
-    [vv_NominasEmpleadosMes].[TotalPago] AS [TotalPago]
-    FROM [dbo].[vv_NominasEmpleadosMes] AS [vv_NominasEmpleadosMes]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK__Liquidaci__id_fi__3D2915A8" Association="Self.FK__Liquidaci__id_fi__3D2915A8">
-            <End Role="Fincas" EntitySet="Fincas" />
-            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Liquidaci__id_fr__3C34F16F" Association="Self.FK__Liquidaci__id_fr__3C34F16F">
-            <End Role="Frutas" EntitySet="Frutas" />
-            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EmpleoPago_Empleos" Association="Self.FK_EmpleoPago_Empleos">
-            <End Role="Empleos" EntitySet="Empleos" />
-            <End Role="EmpleosPagos" EntitySet="EmpleosPagos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_empresa" Association="Self.fk_empresa">
-            <End Role="Empresas" EntitySet="Empresas" />
-            <End Role="Asientos" EntitySet="Asientos" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_empresa_liquidaciones" Association="Self.fk_id_empresa_liquidaciones">
-            <End Role="Empresas" EntitySet="Empresas" />
-            <End Role="Liquidaciones" EntitySet="Liquidaciones" />
-          </AssociationSet>
-          <AssociationSet Name="fk_id_trabajador" Association="Self.fk_id_trabajador">
-            <End Role="Trabajadores" EntitySet="Trabajadores" />
-            <End Role="Trabajadores_Empleos" EntitySet="Trabajadores_Empleos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NominasCab_Encargados" Association="Self.FK_NominasCab_Encargados">
-            <End Role="Encargados" EntitySet="Encargados" />
-            <End Role="NominasCab" EntitySet="NominasCab" />
-          </AssociationSet>
-          <AssociationSet Name="fk_NominasDet_NominasCab_pk" Association="Self.fk_NominasDet_NominasCab_pk">
-            <End Role="NominasCab" EntitySet="NominasCab" />
-            <End Role="NominasDet" EntitySet="NominasDet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NominasDet_Trabajadores" Association="Self.FK_NominasDet_Trabajadores">
-            <End Role="Trabajadores" EntitySet="Trabajadores" />
-            <End Role="NominasDet" EntitySet="NominasDet" />
-          </AssociationSet>
-          <AssociationSet Name="fk_proveedores" Association="Self.fk_proveedores">
-            <End Role="Proveedores" EntitySet="Proveedores" />
-            <End Role="Asientos" EntitySet="Asientos" />
-          </AssociationSet>
-          <AssociationSet Name="id_casa" Association="Self.id_casa">
-            <End Role="Casas" EntitySet="Casas" />
-            <End Role="Trabajadores" EntitySet="Trabajadores" />
-          </AssociationSet>
-          <AssociationSet Name="id_empleo" Association="Self.id_empleo">
-            <End Role="Empleos" EntitySet="Empleos" />
-            <End Role="Trabajadores_Empleos" EntitySet="Trabajadores_Empleos" />
-          </AssociationSet>
-          <AssociationSet Name="id_empresa" Association="Self.id_empresa">
-            <End Role="Empresas" EntitySet="Empresas" />
-            <End Role="Trabajadores" EntitySet="Trabajadores" />
-          </AssociationSet>
-          <AssociationSet Name="id_encargado" Association="Self.id_encargado">
-            <End Role="Encargados" EntitySet="Encargados" />
-            <End Role="Fincas" EntitySet="Fincas" />
-          </AssociationSet>
-          <AssociationSet Name="id_encargado_trabajador" Association="Self.id_encargado_trabajador">
-            <End Role="Encargados" EntitySet="Encargados" />
-            <End Role="Trabajadores" EntitySet="Trabajadores" />
-          </AssociationSet>
-          <AssociationSet Name="id_finca" Association="Self.id_finca">
-            <End Role="Fincas" EntitySet="Fincas" />
-            <End Role="Casas" EntitySet="Casas" />
-          </AssociationSet>
-          <AssociationSet Name="if_fruta_variedad" Association="Self.if_fruta_variedad">
-            <End Role="Frutas" EntitySet="Frutas" />
-            <End Role="Frutas_variedades" EntitySet="Frutas_variedades" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="MazantinesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MazantinesModelStoreContainer">
+    <EntitySet Name="Asientos" EntityType="MazantinesModel.Store.Asientos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Casas" EntityType="MazantinesModel.Store.Casas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empleos" EntityType="MazantinesModel.Store.Empleos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmpleosPagos" EntityType="MazantinesModel.Store.EmpleosPagos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empresas" EntityType="MazantinesModel.Store.Empresas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Encargados" EntityType="MazantinesModel.Store.Encargados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Fincas" EntityType="MazantinesModel.Store.Fincas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Frutas" EntityType="MazantinesModel.Store.Frutas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Liquidaciones" EntityType="MazantinesModel.Store.Liquidaciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NominasCab" EntityType="MazantinesModel.Store.NominasCab" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NominasDet" EntityType="MazantinesModel.Store.NominasDet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proveedores" EntityType="MazantinesModel.Store.Proveedores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trabajadores" EntityType="MazantinesModel.Store.Trabajadores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trabajadores_Empleos" EntityType="MazantinesModel.Store.Trabajadores_Empleos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="rpt_nominas" EntityType="MazantinesModel.Store.rpt_nominas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="rpt_recibos" EntityType="MazantinesModel.Store.rpt_recibos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vv_EmpleadosCasas" EntityType="MazantinesModel.Store.vv_EmpleadosCasas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vv_nomina_trabajadores" EntityType="MazantinesModel.Store.vv_nomina_trabajadores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vv_nominas" EntityType="MazantinesModel.Store.vv_nominas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vv_NominasEmpleadosMes" EntityType="MazantinesModel.Store.vv_NominasEmpleadosMes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Frutas_variedades" EntityType="MazantinesModel.Store.Frutas_variedades" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="fk_empresa" Association="MazantinesModel.Store.fk_empresa">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Asientos" EntitySet="Asientos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_proveedores" Association="MazantinesModel.Store.fk_proveedores">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Asientos" EntitySet="Asientos" />
+    </AssociationSet>
+    <AssociationSet Name="id_casa" Association="MazantinesModel.Store.id_casa">
+      <End Role="Casas" EntitySet="Casas" />
+      <End Role="Trabajadores" EntitySet="Trabajadores" />
+    </AssociationSet>
+    <AssociationSet Name="id_finca" Association="MazantinesModel.Store.id_finca">
+      <End Role="Fincas" EntitySet="Fincas" />
+      <End Role="Casas" EntitySet="Casas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpleoPago_Empleos" Association="MazantinesModel.Store.FK_EmpleoPago_Empleos">
+      <End Role="Empleos" EntitySet="Empleos" />
+      <End Role="EmpleosPagos" EntitySet="EmpleosPagos" />
+    </AssociationSet>
+    <AssociationSet Name="id_empleo" Association="MazantinesModel.Store.id_empleo">
+      <End Role="Empleos" EntitySet="Empleos" />
+      <End Role="Trabajadores_Empleos" EntitySet="Trabajadores_Empleos" />
+    </AssociationSet>
+    <AssociationSet Name="id_empresa" Association="MazantinesModel.Store.id_empresa">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Trabajadores" EntitySet="Trabajadores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NominasCab_Encargados" Association="MazantinesModel.Store.FK_NominasCab_Encargados">
+      <End Role="Encargados" EntitySet="Encargados" />
+      <End Role="NominasCab" EntitySet="NominasCab" />
+    </AssociationSet>
+    <AssociationSet Name="id_encargado" Association="MazantinesModel.Store.id_encargado">
+      <End Role="Encargados" EntitySet="Encargados" />
+      <End Role="Fincas" EntitySet="Fincas" />
+    </AssociationSet>
+    <AssociationSet Name="id_encargado_trabajador" Association="MazantinesModel.Store.id_encargado_trabajador">
+      <End Role="Encargados" EntitySet="Encargados" />
+      <End Role="Trabajadores" EntitySet="Trabajadores" />
+    </AssociationSet>
+    <AssociationSet Name="fk_NominasDet_NominasCab_pk" Association="MazantinesModel.Store.fk_NominasDet_NominasCab_pk">
+      <End Role="NominasCab" EntitySet="NominasCab" />
+      <End Role="NominasDet" EntitySet="NominasDet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NominasDet_Trabajadores" Association="MazantinesModel.Store.FK_NominasDet_Trabajadores">
+      <End Role="Trabajadores" EntitySet="Trabajadores" />
+      <End Role="NominasDet" EntitySet="NominasDet" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_trabajador" Association="MazantinesModel.Store.fk_id_trabajador">
+      <End Role="Trabajadores" EntitySet="Trabajadores" />
+      <End Role="Trabajadores_Empleos" EntitySet="Trabajadores_Empleos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_empresa_liquidaciones" Association="MazantinesModel.Store.fk_id_empresa_liquidaciones">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Liquidaci__id_fr__2FCF1A8A" Association="MazantinesModel.Store.FK__Liquidaci__id_fr__2FCF1A8A">
+      <End Role="Frutas" EntitySet="Frutas" />
+      <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+    </AssociationSet>
+    <AssociationSet Name="if_fruta_variedad" Association="MazantinesModel.Store.if_fruta_variedad">
+      <End Role="Frutas" EntitySet="Frutas" />
+      <End Role="Frutas_variedades" EntitySet="Frutas_variedades" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Liquidaci__id_fi__3D2915A8" Association="MazantinesModel.Store.FK__Liquidaci__id_fi__3D2915A8">
+      <End Role="Fincas" EntitySet="Fincas" />
+      <End Role="Liquidaciones" EntitySet="Liquidaciones" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Asientos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_proveedor" Type="int" Nullable="true" />
+    <Property Name="FechaFactura" Type="datetime" Nullable="true" />
+    <Property Name="Importe" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="FechaPago" Type="datetime" Nullable="true" />
+    <Property Name="FormaPago" Type="nvarchar" Nullable="true" MaxLength="35" />
+    <Property Name="Pagado" Type="bit" Nullable="true" />
+    <Property Name="id_empresa" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Casas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="NroCasa" Type="int" Nullable="false" />
+    <Property Name="id_finca" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Empleos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Empleo" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="EmpleosPagos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_empleo" Type="int" Nullable="true" />
+    <Property Name="importeDia" Type="float" Nullable="true" />
+    <Property Name="importeHoras" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Empresa" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Encargados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Encargado" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Fincas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Finca" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Frutas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fruta" Type="varchar" Nullable="true" MaxLength="55" />
+    <Property Name="Status" Type="bit" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Liquidaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NroLiquidacion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NroFactura" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaPago" Type="datetime" Nullable="true" />
+    <Property Name="Banco" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Categoria" Type="int" Nullable="true" />
+    <Property Name="Totales" Type="decimal" Nullable="true" Precision="18" Scale="2" />
+    <Property Name="Pagado" Type="bit" Nullable="true" />
+    <Property Name="Fecha" Type="datetime" Nullable="true" />
+    <Property Name="id_empresa" Type="int" Nullable="true" />
+    <Property Name="id_fruta" Type="int" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+    <Property Name="id_finca" Type="int" Nullable="true" />
+    <Property Name="Variedad" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="NominasCab">
+    <Key>
+      <PropertyRef Name="id_cab" />
+    </Key>
+    <Property Name="id_cab" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="anio" Type="decimal" Nullable="true" Precision="4" Scale="0" />
+    <Property Name="semana" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+    <Property Name="status" Type="nchar" Nullable="true" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="NominasDet">
+    <Key>
+      <PropertyRef Name="id_det" />
+    </Key>
+    <Property Name="id_det" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cab" Type="int" Nullable="true" />
+    <Property Name="id_empleado" Type="int" Nullable="true" />
+    <Property Name="valorD" Type="float" Nullable="true" />
+    <Property Name="valorH" Type="float" Nullable="true" />
+    <Property Name="lunD" Type="float" Nullable="true" />
+    <Property Name="lunH" Type="float" Nullable="true" />
+    <Property Name="marD" Type="float" Nullable="true" />
+    <Property Name="marH" Type="float" Nullable="true" />
+    <Property Name="mieD" Type="float" Nullable="true" />
+    <Property Name="mieH" Type="float" Nullable="true" />
+    <Property Name="jueD" Type="float" Nullable="true" />
+    <Property Name="jueH" Type="float" Nullable="true" />
+    <Property Name="vieD" Type="float" Nullable="true" />
+    <Property Name="vieH" Type="float" Nullable="true" />
+    <Property Name="sabD" Type="float" Nullable="true" />
+    <Property Name="sabH" Type="float" Nullable="true" />
+    <Property Name="domD" Type="float" Nullable="true" />
+    <Property Name="domH" Type="float" Nullable="true" />
+    <Property Name="pagado" Type="bit" Nullable="true" />
+    <Property Name="importe" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cif" Type="nvarchar" Nullable="true" MaxLength="35" />
+    <Property Name="RazonSocial" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NroCuenta" Type="nvarchar" Nullable="true" MaxLength="55" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="true" MaxLength="35" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="55" />
+    <Property Name="Banco" Type="nvarchar" Nullable="true" MaxLength="55" />
+  </EntityType>
+  <EntityType Name="Trabajadores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nro_empleado" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Apellidos" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="id_empresa" Type="int" Nullable="true" />
+    <Property Name="id_casa" Type="int" Nullable="true" />
+    <Property Name="foto" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="foto2" Type="varbinary(max)" Nullable="true" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+    <Property Name="CCC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Caja" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Activo" Type="bit" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Trabajadores_Empleos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_trabajador" Type="int" Nullable="true" />
+    <Property Name="id_empleo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="rpt_nominas">
+    <Key>
+      <PropertyRef Name="Trabajador" />
+      <PropertyRef Name="id_det" />
+    </Key>
+    <Property Name="anio" Type="decimal" Nullable="true" Precision="4" Scale="0" />
+    <Property Name="semana" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="status" Type="nchar" Nullable="true" MaxLength="1" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+    <Property Name="Encargado" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Nro_empleado" Type="varchar(max)" Nullable="true" />
+    <Property Name="Trabajador" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ccc" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Empresa" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="id_empleo" Type="int" Nullable="true" />
+    <Property Name="id_det" Type="int" Nullable="false" />
+    <Property Name="id_cab" Type="int" Nullable="true" />
+    <Property Name="id_empleado" Type="int" Nullable="true" />
+    <Property Name="valorD" Type="float" Nullable="true" />
+    <Property Name="valorH" Type="float" Nullable="true" />
+    <Property Name="lunD" Type="float" Nullable="true" />
+    <Property Name="lunH" Type="float" Nullable="true" />
+    <Property Name="marD" Type="float" Nullable="true" />
+    <Property Name="marH" Type="float" Nullable="true" />
+    <Property Name="mieD" Type="float" Nullable="true" />
+    <Property Name="mieH" Type="float" Nullable="true" />
+    <Property Name="jueD" Type="float" Nullable="true" />
+    <Property Name="jueH" Type="float" Nullable="true" />
+    <Property Name="vieD" Type="float" Nullable="true" />
+    <Property Name="vieH" Type="float" Nullable="true" />
+    <Property Name="sabD" Type="float" Nullable="true" />
+    <Property Name="sabH" Type="float" Nullable="true" />
+    <Property Name="domD" Type="float" Nullable="true" />
+    <Property Name="domH" Type="float" Nullable="true" />
+    <Property Name="pagado" Type="bit" Nullable="true" />
+    <Property Name="caja" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="importe" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="rpt_recibos">
+    <Key>
+      <PropertyRef Name="id_cab" />
+    </Key>
+    <Property Name="Empresa" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Nro_empleado" Type="varchar(max)" Nullable="true" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Apellidos" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="id_cab" Type="int" Nullable="false" />
+    <Property Name="anio" Type="decimal" Nullable="true" Precision="4" Scale="0" />
+    <Property Name="semana" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+    <Property Name="semanaIni" Type="datetime" Nullable="true" />
+    <Property Name="semanaFin" Type="datetime" Nullable="true" />
+    <Property Name="totalD" Type="float" Nullable="true" />
+    <Property Name="totalH" Type="float" Nullable="true" />
+    <Property Name="valorD" Type="float" Nullable="true" />
+    <Property Name="valorH" Type="float" Nullable="true" />
+    <Property Name="caja" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="importe" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="vv_EmpleadosCasas">
+    <Key>
+      <PropertyRef Name="id_casa" />
+      <PropertyRef Name="NroCasa" />
+      <PropertyRef Name="id_trabajador" />
+    </Key>
+    <Property Name="id_casa" Type="int" Nullable="false" />
+    <Property Name="Finca" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="NroCasa" Type="int" Nullable="false" />
+    <Property Name="id_trabajador" Type="int" Nullable="false" />
+    <Property Name="Nro_empleado" Type="varchar(max)" Nullable="true" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Apellidos" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Empresa" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="vv_nomina_trabajadores">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="trabajador" />
+      <PropertyRef Name="valorD" />
+      <PropertyRef Name="valorH" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Caja" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+    <Property Name="id_empleo" Type="int" Nullable="true" />
+    <Property Name="valorD" Type="float" Nullable="false" />
+    <Property Name="valorH" Type="float" Nullable="false" />
+    <Property Name="Nro_empleado" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="vv_nominas">
+    <Key>
+      <PropertyRef Name="trabajador" />
+      <PropertyRef Name="id_det" />
+    </Key>
+    <Property Name="anio" Type="decimal" Nullable="true" Precision="4" Scale="0" />
+    <Property Name="semana" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="status" Type="nchar" Nullable="true" MaxLength="1" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+    <Property Name="Nro_empleado" Type="varchar(max)" Nullable="true" />
+    <Property Name="caja" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="trabajador" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id_empleo" Type="int" Nullable="true" />
+    <Property Name="id_det" Type="int" Nullable="false" />
+    <Property Name="id_cab" Type="int" Nullable="true" />
+    <Property Name="id_empleado" Type="int" Nullable="true" />
+    <Property Name="valorD" Type="float" Nullable="true" />
+    <Property Name="valorH" Type="float" Nullable="true" />
+    <Property Name="lunD" Type="float" Nullable="true" />
+    <Property Name="lunH" Type="float" Nullable="true" />
+    <Property Name="marD" Type="float" Nullable="true" />
+    <Property Name="marH" Type="float" Nullable="true" />
+    <Property Name="mieD" Type="float" Nullable="true" />
+    <Property Name="mieH" Type="float" Nullable="true" />
+    <Property Name="jueD" Type="float" Nullable="true" />
+    <Property Name="jueH" Type="float" Nullable="true" />
+    <Property Name="vieD" Type="float" Nullable="true" />
+    <Property Name="vieH" Type="float" Nullable="true" />
+    <Property Name="sabD" Type="float" Nullable="true" />
+    <Property Name="sabH" Type="float" Nullable="true" />
+    <Property Name="domD" Type="float" Nullable="true" />
+    <Property Name="domH" Type="float" Nullable="true" />
+    <Property Name="pagado" Type="bit" Nullable="true" />
+    <Property Name="importe" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="vv_NominasEmpleadosMes">
+    <Key>
+      <PropertyRef Name="id_det" />
+    </Key>
+    <Property Name="id_det" Type="int" Nullable="false" />
+    <Property Name="Anio" Type="decimal" Nullable="true" Precision="4" Scale="0" />
+    <Property Name="Semana" Type="decimal" Nullable="true" Precision="2" Scale="0" />
+    <Property Name="id_encargado" Type="int" Nullable="true" />
+    <Property Name="Encargado" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Nro_Empleado" Type="varchar(max)" Nullable="true" />
+    <Property Name="Caja" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Apellidos" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="semanaIni" Type="datetime" Nullable="true" />
+    <Property Name="semanaFin" Type="datetime" Nullable="true" />
+    <Property Name="mesIni" Type="int" Nullable="true" />
+    <Property Name="totalD" Type="float" Nullable="true" />
+    <Property Name="totalH" Type="float" Nullable="true" />
+    <Property Name="valorD" Type="float" Nullable="true" />
+    <Property Name="valorH" Type="float" Nullable="true" />
+    <Property Name="TotalPago" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Frutas_variedades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_fruta" Type="int" Nullable="true" />
+    <Property Name="Variedad" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DeletedAt" Type="datetime" Nullable="true" />
+  </EntityType>
+  <Association Name="fk_empresa">
+    <End Role="Empresas" Type="MazantinesModel.Store.Empresas" Multiplicity="0..1" />
+    <End Role="Asientos" Type="MazantinesModel.Store.Asientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Asientos">
+        <PropertyRef Name="id_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_proveedores">
+    <End Role="Proveedores" Type="MazantinesModel.Store.Proveedores" Multiplicity="0..1" />
+    <End Role="Asientos" Type="MazantinesModel.Store.Asientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Asientos">
+        <PropertyRef Name="id_proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_casa">
+    <End Role="Casas" Type="MazantinesModel.Store.Casas" Multiplicity="0..1" />
+    <End Role="Trabajadores" Type="MazantinesModel.Store.Trabajadores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Casas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trabajadores">
+        <PropertyRef Name="id_casa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_finca">
+    <End Role="Fincas" Type="MazantinesModel.Store.Fincas" Multiplicity="0..1" />
+    <End Role="Casas" Type="MazantinesModel.Store.Casas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fincas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Casas">
+        <PropertyRef Name="id_finca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpleoPago_Empleos">
+    <End Role="Empleos" Type="MazantinesModel.Store.Empleos" Multiplicity="0..1" />
+    <End Role="EmpleosPagos" Type="MazantinesModel.Store.EmpleosPagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpleosPagos">
+        <PropertyRef Name="id_empleo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_empleo">
+    <End Role="Empleos" Type="MazantinesModel.Store.Empleos" Multiplicity="0..1" />
+    <End Role="Trabajadores_Empleos" Type="MazantinesModel.Store.Trabajadores_Empleos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trabajadores_Empleos">
+        <PropertyRef Name="id_empleo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_empresa">
+    <End Role="Empresas" Type="MazantinesModel.Store.Empresas" Multiplicity="0..1" />
+    <End Role="Trabajadores" Type="MazantinesModel.Store.Trabajadores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trabajadores">
+        <PropertyRef Name="id_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NominasCab_Encargados">
+    <End Role="Encargados" Type="MazantinesModel.Store.Encargados" Multiplicity="0..1" />
+    <End Role="NominasCab" Type="MazantinesModel.Store.NominasCab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Encargados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NominasCab">
+        <PropertyRef Name="id_encargado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_encargado">
+    <End Role="Encargados" Type="MazantinesModel.Store.Encargados" Multiplicity="0..1" />
+    <End Role="Fincas" Type="MazantinesModel.Store.Fincas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Encargados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fincas">
+        <PropertyRef Name="id_encargado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_encargado_trabajador">
+    <End Role="Encargados" Type="MazantinesModel.Store.Encargados" Multiplicity="0..1" />
+    <End Role="Trabajadores" Type="MazantinesModel.Store.Trabajadores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Encargados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trabajadores">
+        <PropertyRef Name="id_encargado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_NominasDet_NominasCab_pk">
+    <End Role="NominasCab" Type="MazantinesModel.Store.NominasCab" Multiplicity="0..1" />
+    <End Role="NominasDet" Type="MazantinesModel.Store.NominasDet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NominasCab">
+        <PropertyRef Name="id_cab" />
+      </Principal>
+      <Dependent Role="NominasDet">
+        <PropertyRef Name="id_cab" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NominasDet_Trabajadores">
+    <End Role="Trabajadores" Type="MazantinesModel.Store.Trabajadores" Multiplicity="0..1" />
+    <End Role="NominasDet" Type="MazantinesModel.Store.NominasDet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trabajadores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NominasDet">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_trabajador">
+    <End Role="Trabajadores" Type="MazantinesModel.Store.Trabajadores" Multiplicity="0..1" />
+    <End Role="Trabajadores_Empleos" Type="MazantinesModel.Store.Trabajadores_Empleos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trabajadores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trabajadores_Empleos">
+        <PropertyRef Name="id_trabajador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_empresa_liquidaciones">
+    <End Role="Empresas" Type="MazantinesModel.Store.Empresas" Multiplicity="0..1" />
+    <End Role="Liquidaciones" Type="MazantinesModel.Store.Liquidaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Liquidaciones">
+        <PropertyRef Name="id_empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Liquidaci__id_fr__2FCF1A8A">
+    <End Role="Frutas" Type="MazantinesModel.Store.Frutas" Multiplicity="0..1" />
+    <End Role="Liquidaciones" Type="MazantinesModel.Store.Liquidaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Frutas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Liquidaciones">
+        <PropertyRef Name="id_fruta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="if_fruta_variedad">
+    <End Role="Frutas" Type="MazantinesModel.Store.Frutas" Multiplicity="0..1" />
+    <End Role="Frutas_variedades" Type="MazantinesModel.Store.Frutas_variedades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Frutas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Frutas_variedades">
+        <PropertyRef Name="id_fruta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Liquidaci__id_fi__3D2915A8">
+    <End Role="Fincas" Type="MazantinesModel.Store.Fincas" Multiplicity="0..1" />
+    <End Role="Liquidaciones" Type="MazantinesModel.Store.Liquidaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fincas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Liquidaciones">
+        <PropertyRef Name="id_finca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MazantinesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1416,344 +1275,343 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MazantinesModelStoreContainer" CdmEntityContainer="MazantinesEntities">
-          <EntitySetMapping Name="Asientos">
-            <EntityTypeMapping TypeName="MazantinesModel.Asientos">
-              <MappingFragment StoreEntitySet="Asientos">
-                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
-                <ScalarProperty Name="Pagado" ColumnName="Pagado" />
-                <ScalarProperty Name="FormaPago" ColumnName="FormaPago" />
-                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
-                <ScalarProperty Name="Importe" ColumnName="Importe" />
-                <ScalarProperty Name="FechaFactura" ColumnName="FechaFactura" />
-                <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Casas">
-            <EntityTypeMapping TypeName="MazantinesModel.Casas">
-              <MappingFragment StoreEntitySet="Casas">
-                <ScalarProperty Name="id_finca" ColumnName="id_finca" />
-                <ScalarProperty Name="NroCasa" ColumnName="NroCasa" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Empleos">
-            <EntityTypeMapping TypeName="MazantinesModel.Empleos">
-              <MappingFragment StoreEntitySet="Empleos">
-                <ScalarProperty Name="Empleo" ColumnName="Empleo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EmpleosPagos">
-            <EntityTypeMapping TypeName="MazantinesModel.EmpleosPagos">
-              <MappingFragment StoreEntitySet="EmpleosPagos">
-                <ScalarProperty Name="importeHoras" ColumnName="importeHoras" />
-                <ScalarProperty Name="importeDia" ColumnName="importeDia" />
-                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Empresas">
-            <EntityTypeMapping TypeName="MazantinesModel.Empresas">
-              <MappingFragment StoreEntitySet="Empresas">
-                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Encargados">
-            <EntityTypeMapping TypeName="MazantinesModel.Encargados">
-              <MappingFragment StoreEntitySet="Encargados">
-                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Fincas">
-            <EntityTypeMapping TypeName="MazantinesModel.Fincas">
-              <MappingFragment StoreEntitySet="Fincas">
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="Finca" ColumnName="Finca" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Frutas">
-            <EntityTypeMapping TypeName="MazantinesModel.Frutas">
-              <MappingFragment StoreEntitySet="Frutas">
-                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Fruta" ColumnName="Fruta" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Liquidaciones">
-            <EntityTypeMapping TypeName="MazantinesModel.Liquidaciones">
-              <MappingFragment StoreEntitySet="Liquidaciones">
-                <ScalarProperty Name="Variedad" ColumnName="Variedad" />
-                <ScalarProperty Name="id_finca" ColumnName="id_finca" />
-                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
-                <ScalarProperty Name="id_fruta" ColumnName="id_fruta" />
-                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Pagado" ColumnName="Pagado" />
-                <ScalarProperty Name="Totales" ColumnName="Totales" />
-                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
-                <ScalarProperty Name="Banco" ColumnName="Banco" />
-                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
-                <ScalarProperty Name="NroFactura" ColumnName="NroFactura" />
-                <ScalarProperty Name="NroLiquidacion" ColumnName="NroLiquidacion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NominasCab">
-            <EntityTypeMapping TypeName="MazantinesModel.NominasCab">
-              <MappingFragment StoreEntitySet="NominasCab">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="semana" ColumnName="semana" />
-                <ScalarProperty Name="anio" ColumnName="anio" />
-                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NominasDet">
-            <EntityTypeMapping TypeName="MazantinesModel.NominasDet">
-              <MappingFragment StoreEntitySet="NominasDet">
-                <ScalarProperty Name="importe" ColumnName="importe" />
-                <ScalarProperty Name="pagado" ColumnName="pagado" />
-                <ScalarProperty Name="domH" ColumnName="domH" />
-                <ScalarProperty Name="domD" ColumnName="domD" />
-                <ScalarProperty Name="sabH" ColumnName="sabH" />
-                <ScalarProperty Name="sabD" ColumnName="sabD" />
-                <ScalarProperty Name="vieH" ColumnName="vieH" />
-                <ScalarProperty Name="vieD" ColumnName="vieD" />
-                <ScalarProperty Name="jueH" ColumnName="jueH" />
-                <ScalarProperty Name="jueD" ColumnName="jueD" />
-                <ScalarProperty Name="mieH" ColumnName="mieH" />
-                <ScalarProperty Name="mieD" ColumnName="mieD" />
-                <ScalarProperty Name="marH" ColumnName="marH" />
-                <ScalarProperty Name="marD" ColumnName="marD" />
-                <ScalarProperty Name="lunH" ColumnName="lunH" />
-                <ScalarProperty Name="lunD" ColumnName="lunD" />
-                <ScalarProperty Name="valorH" ColumnName="valorH" />
-                <ScalarProperty Name="valorD" ColumnName="valorD" />
-                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
-                <ScalarProperty Name="id_det" ColumnName="id_det" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Proveedores">
-            <EntityTypeMapping TypeName="MazantinesModel.Proveedores">
-              <MappingFragment StoreEntitySet="Proveedores">
-                <ScalarProperty Name="Banco" ColumnName="Banco" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="NroCuenta" ColumnName="NroCuenta" />
-                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
-                <ScalarProperty Name="Cif" ColumnName="Cif" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Trabajadores">
-            <EntityTypeMapping TypeName="MazantinesModel.Trabajadores">
-              <MappingFragment StoreEntitySet="Trabajadores">
-                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
-                <ScalarProperty Name="Activo" ColumnName="Activo" />
-                <ScalarProperty Name="Caja" ColumnName="Caja" />
-                <ScalarProperty Name="CCC" ColumnName="CCC" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="foto2" ColumnName="foto2" />
-                <ScalarProperty Name="foto" ColumnName="foto" />
-                <ScalarProperty Name="id_casa" ColumnName="id_casa" />
-                <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Trabajadores_Empleos">
-            <EntityTypeMapping TypeName="MazantinesModel.Trabajadores_Empleos">
-              <MappingFragment StoreEntitySet="Trabajadores_Empleos">
-                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
-                <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="rpt_nominas">
-            <EntityTypeMapping TypeName="MazantinesModel.rpt_nominas">
-              <MappingFragment StoreEntitySet="rpt_nominas">
-                <ScalarProperty Name="importe" ColumnName="importe" />
-                <ScalarProperty Name="caja" ColumnName="caja" />
-                <ScalarProperty Name="pagado" ColumnName="pagado" />
-                <ScalarProperty Name="domH" ColumnName="domH" />
-                <ScalarProperty Name="domD" ColumnName="domD" />
-                <ScalarProperty Name="sabH" ColumnName="sabH" />
-                <ScalarProperty Name="sabD" ColumnName="sabD" />
-                <ScalarProperty Name="vieH" ColumnName="vieH" />
-                <ScalarProperty Name="vieD" ColumnName="vieD" />
-                <ScalarProperty Name="jueH" ColumnName="jueH" />
-                <ScalarProperty Name="jueD" ColumnName="jueD" />
-                <ScalarProperty Name="mieH" ColumnName="mieH" />
-                <ScalarProperty Name="mieD" ColumnName="mieD" />
-                <ScalarProperty Name="marH" ColumnName="marH" />
-                <ScalarProperty Name="marD" ColumnName="marD" />
-                <ScalarProperty Name="lunH" ColumnName="lunH" />
-                <ScalarProperty Name="lunD" ColumnName="lunD" />
-                <ScalarProperty Name="valorH" ColumnName="valorH" />
-                <ScalarProperty Name="valorD" ColumnName="valorD" />
-                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
-                <ScalarProperty Name="id_det" ColumnName="id_det" />
-                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
-                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-                <ScalarProperty Name="ccc" ColumnName="ccc" />
-                <ScalarProperty Name="Trabajador" ColumnName="Trabajador" />
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="semana" ColumnName="semana" />
-                <ScalarProperty Name="anio" ColumnName="anio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="rpt_recibos">
-            <EntityTypeMapping TypeName="MazantinesModel.rpt_recibos">
-              <MappingFragment StoreEntitySet="rpt_recibos">
-                <ScalarProperty Name="importe" ColumnName="importe" />
-                <ScalarProperty Name="caja" ColumnName="caja" />
-                <ScalarProperty Name="valorH" ColumnName="valorH" />
-                <ScalarProperty Name="valorD" ColumnName="valorD" />
-                <ScalarProperty Name="totalH" ColumnName="totalH" />
-                <ScalarProperty Name="totalD" ColumnName="totalD" />
-                <ScalarProperty Name="semanaFin" ColumnName="semanaFin" />
-                <ScalarProperty Name="semanaIni" ColumnName="semanaIni" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="semana" ColumnName="semana" />
-                <ScalarProperty Name="anio" ColumnName="anio" />
-                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vv_EmpleadosCasas">
-            <EntityTypeMapping TypeName="MazantinesModel.vv_EmpleadosCasas">
-              <MappingFragment StoreEntitySet="vv_EmpleadosCasas">
-                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
-                <ScalarProperty Name="NroCasa" ColumnName="NroCasa" />
-                <ScalarProperty Name="Finca" ColumnName="Finca" />
-                <ScalarProperty Name="id_casa" ColumnName="id_casa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vv_nomina_trabajadores">
-            <EntityTypeMapping TypeName="MazantinesModel.vv_nomina_trabajadores">
-              <MappingFragment StoreEntitySet="vv_nomina_trabajadores">
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="valorH" ColumnName="valorH" />
-                <ScalarProperty Name="valorD" ColumnName="valorD" />
-                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="trabajador" ColumnName="trabajador" />
-                <ScalarProperty Name="Caja" ColumnName="Caja" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vv_nominas">
-            <EntityTypeMapping TypeName="MazantinesModel.vv_nominas">
-              <MappingFragment StoreEntitySet="vv_nominas">
-                <ScalarProperty Name="importe" ColumnName="importe" />
-                <ScalarProperty Name="pagado" ColumnName="pagado" />
-                <ScalarProperty Name="domH" ColumnName="domH" />
-                <ScalarProperty Name="domD" ColumnName="domD" />
-                <ScalarProperty Name="sabH" ColumnName="sabH" />
-                <ScalarProperty Name="sabD" ColumnName="sabD" />
-                <ScalarProperty Name="vieH" ColumnName="vieH" />
-                <ScalarProperty Name="vieD" ColumnName="vieD" />
-                <ScalarProperty Name="jueH" ColumnName="jueH" />
-                <ScalarProperty Name="jueD" ColumnName="jueD" />
-                <ScalarProperty Name="mieH" ColumnName="mieH" />
-                <ScalarProperty Name="mieD" ColumnName="mieD" />
-                <ScalarProperty Name="marH" ColumnName="marH" />
-                <ScalarProperty Name="marD" ColumnName="marD" />
-                <ScalarProperty Name="lunH" ColumnName="lunH" />
-                <ScalarProperty Name="lunD" ColumnName="lunD" />
-                <ScalarProperty Name="valorH" ColumnName="valorH" />
-                <ScalarProperty Name="valorD" ColumnName="valorD" />
-                <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
-                <ScalarProperty Name="id_cab" ColumnName="id_cab" />
-                <ScalarProperty Name="id_det" ColumnName="id_det" />
-                <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
-                <ScalarProperty Name="trabajador" ColumnName="trabajador" />
-                <ScalarProperty Name="caja" ColumnName="caja" />
-                <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="semana" ColumnName="semana" />
-                <ScalarProperty Name="anio" ColumnName="anio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vv_NominasEmpleadosMes">
-            <EntityTypeMapping TypeName="MazantinesModel.vv_NominasEmpleadosMes">
-              <MappingFragment StoreEntitySet="vv_NominasEmpleadosMes">
-                <ScalarProperty Name="TotalPago" ColumnName="TotalPago" />
-                <ScalarProperty Name="valorH" ColumnName="valorH" />
-                <ScalarProperty Name="valorD" ColumnName="valorD" />
-                <ScalarProperty Name="totalH" ColumnName="totalH" />
-                <ScalarProperty Name="totalD" ColumnName="totalD" />
-                <ScalarProperty Name="mesIni" ColumnName="mesIni" />
-                <ScalarProperty Name="semanaFin" ColumnName="semanaFin" />
-                <ScalarProperty Name="semanaIni" ColumnName="semanaIni" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Caja" ColumnName="Caja" />
-                <ScalarProperty Name="Nro_Empleado" ColumnName="Nro_Empleado" />
-                <ScalarProperty Name="Encargado" ColumnName="Encargado" />
-                <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
-                <ScalarProperty Name="Semana" ColumnName="Semana" />
-                <ScalarProperty Name="Anio" ColumnName="Anio" />
-                <ScalarProperty Name="id_det" ColumnName="id_det" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Frutas_variedades">
-            <EntityTypeMapping TypeName="MazantinesModel.Frutas_variedades">
-              <MappingFragment StoreEntitySet="Frutas_variedades">
-                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
-                <ScalarProperty Name="Variedad" ColumnName="Variedad" />
-                <ScalarProperty Name="id_fruta" ColumnName="id_fruta" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MazantinesModelStoreContainer" CdmEntityContainer="MazantinesEntities">
+    <EntitySetMapping Name="Asientos">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Asientos)">
+        <MappingFragment StoreEntitySet="Asientos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id_proveedor" ColumnName="id_proveedor" />
+          <ScalarProperty Name="FechaFactura" ColumnName="FechaFactura" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="FormaPago" ColumnName="FormaPago" />
+          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Casas">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Casas)">
+        <MappingFragment StoreEntitySet="Casas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NroCasa" ColumnName="NroCasa" />
+          <ScalarProperty Name="id_finca" ColumnName="id_finca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleos">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Empleos)">
+        <MappingFragment StoreEntitySet="Empleos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Empleo" ColumnName="Empleo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpleosPagos">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.EmpleosPagos)">
+        <MappingFragment StoreEntitySet="EmpleosPagos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
+          <ScalarProperty Name="importeDia" ColumnName="importeDia" />
+          <ScalarProperty Name="importeHoras" ColumnName="importeHoras" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Empresas)">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Encargados">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Encargados)">
+        <MappingFragment StoreEntitySet="Encargados">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fincas">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Fincas)">
+        <MappingFragment StoreEntitySet="Fincas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Finca" ColumnName="Finca" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frutas">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Frutas)">
+        <MappingFragment StoreEntitySet="Frutas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fruta" ColumnName="Fruta" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Liquidaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Liquidaciones)">
+        <MappingFragment StoreEntitySet="Liquidaciones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NroLiquidacion" ColumnName="NroLiquidacion" />
+          <ScalarProperty Name="NroFactura" ColumnName="NroFactura" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="Banco" ColumnName="Banco" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Totales" ColumnName="Totales" />
+          <ScalarProperty Name="Pagado" ColumnName="Pagado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="id_fruta" ColumnName="id_fruta" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+          <ScalarProperty Name="id_finca" ColumnName="id_finca" />
+          <ScalarProperty Name="Variedad" ColumnName="Variedad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NominasCab">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.NominasCab)">
+        <MappingFragment StoreEntitySet="NominasCab">
+          <ScalarProperty Name="id_cab" ColumnName="id_cab" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
+          <ScalarProperty Name="semana" ColumnName="semana" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NominasDet">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.NominasDet)">
+        <MappingFragment StoreEntitySet="NominasDet">
+          <ScalarProperty Name="id_det" ColumnName="id_det" />
+          <ScalarProperty Name="id_cab" ColumnName="id_cab" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="valorD" ColumnName="valorD" />
+          <ScalarProperty Name="valorH" ColumnName="valorH" />
+          <ScalarProperty Name="lunD" ColumnName="lunD" />
+          <ScalarProperty Name="lunH" ColumnName="lunH" />
+          <ScalarProperty Name="marD" ColumnName="marD" />
+          <ScalarProperty Name="marH" ColumnName="marH" />
+          <ScalarProperty Name="mieD" ColumnName="mieD" />
+          <ScalarProperty Name="mieH" ColumnName="mieH" />
+          <ScalarProperty Name="jueD" ColumnName="jueD" />
+          <ScalarProperty Name="jueH" ColumnName="jueH" />
+          <ScalarProperty Name="vieD" ColumnName="vieD" />
+          <ScalarProperty Name="vieH" ColumnName="vieH" />
+          <ScalarProperty Name="sabD" ColumnName="sabD" />
+          <ScalarProperty Name="sabH" ColumnName="sabH" />
+          <ScalarProperty Name="domD" ColumnName="domD" />
+          <ScalarProperty Name="domH" ColumnName="domH" />
+          <ScalarProperty Name="pagado" ColumnName="pagado" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Proveedores)">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cif" ColumnName="Cif" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="NroCuenta" ColumnName="NroCuenta" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Banco" ColumnName="Banco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trabajadores">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Trabajadores)">
+        <MappingFragment StoreEntitySet="Trabajadores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="id_empresa" ColumnName="id_empresa" />
+          <ScalarProperty Name="id_casa" ColumnName="id_casa" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="foto2" ColumnName="foto2" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+          <ScalarProperty Name="CCC" ColumnName="CCC" />
+          <ScalarProperty Name="Caja" ColumnName="Caja" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trabajadores_Empleos">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Trabajadores_Empleos)">
+        <MappingFragment StoreEntitySet="Trabajadores_Empleos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rpt_nominas">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.rpt_nominas)">
+        <MappingFragment StoreEntitySet="rpt_nominas">
+          <ScalarProperty Name="Trabajador" ColumnName="Trabajador" />
+          <ScalarProperty Name="id_det" ColumnName="id_det" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
+          <ScalarProperty Name="semana" ColumnName="semana" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+          <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+          <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+          <ScalarProperty Name="ccc" ColumnName="ccc" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
+          <ScalarProperty Name="id_cab" ColumnName="id_cab" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="valorD" ColumnName="valorD" />
+          <ScalarProperty Name="valorH" ColumnName="valorH" />
+          <ScalarProperty Name="lunD" ColumnName="lunD" />
+          <ScalarProperty Name="lunH" ColumnName="lunH" />
+          <ScalarProperty Name="marD" ColumnName="marD" />
+          <ScalarProperty Name="marH" ColumnName="marH" />
+          <ScalarProperty Name="mieD" ColumnName="mieD" />
+          <ScalarProperty Name="mieH" ColumnName="mieH" />
+          <ScalarProperty Name="jueD" ColumnName="jueD" />
+          <ScalarProperty Name="jueH" ColumnName="jueH" />
+          <ScalarProperty Name="vieD" ColumnName="vieD" />
+          <ScalarProperty Name="vieH" ColumnName="vieH" />
+          <ScalarProperty Name="sabD" ColumnName="sabD" />
+          <ScalarProperty Name="sabH" ColumnName="sabH" />
+          <ScalarProperty Name="domD" ColumnName="domD" />
+          <ScalarProperty Name="domH" ColumnName="domH" />
+          <ScalarProperty Name="pagado" ColumnName="pagado" />
+          <ScalarProperty Name="caja" ColumnName="caja" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rpt_recibos">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.rpt_recibos)">
+        <MappingFragment StoreEntitySet="rpt_recibos">
+          <ScalarProperty Name="id_cab" ColumnName="id_cab" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
+          <ScalarProperty Name="semana" ColumnName="semana" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+          <ScalarProperty Name="semanaIni" ColumnName="semanaIni" />
+          <ScalarProperty Name="semanaFin" ColumnName="semanaFin" />
+          <ScalarProperty Name="totalD" ColumnName="totalD" />
+          <ScalarProperty Name="totalH" ColumnName="totalH" />
+          <ScalarProperty Name="valorD" ColumnName="valorD" />
+          <ScalarProperty Name="valorH" ColumnName="valorH" />
+          <ScalarProperty Name="caja" ColumnName="caja" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_EmpleadosCasas">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.vv_EmpleadosCasas)">
+        <MappingFragment StoreEntitySet="vv_EmpleadosCasas">
+          <ScalarProperty Name="id_casa" ColumnName="id_casa" />
+          <ScalarProperty Name="NroCasa" ColumnName="NroCasa" />
+          <ScalarProperty Name="id_trabajador" ColumnName="id_trabajador" />
+          <ScalarProperty Name="Finca" ColumnName="Finca" />
+          <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_nomina_trabajadores">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.vv_nomina_trabajadores)">
+        <MappingFragment StoreEntitySet="vv_nomina_trabajadores">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="trabajador" ColumnName="trabajador" />
+          <ScalarProperty Name="valorD" ColumnName="valorD" />
+          <ScalarProperty Name="valorH" ColumnName="valorH" />
+          <ScalarProperty Name="Caja" ColumnName="Caja" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+          <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
+          <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_nominas">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.vv_nominas)">
+        <MappingFragment StoreEntitySet="vv_nominas">
+          <ScalarProperty Name="trabajador" ColumnName="trabajador" />
+          <ScalarProperty Name="id_det" ColumnName="id_det" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
+          <ScalarProperty Name="semana" ColumnName="semana" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+          <ScalarProperty Name="Nro_empleado" ColumnName="Nro_empleado" />
+          <ScalarProperty Name="caja" ColumnName="caja" />
+          <ScalarProperty Name="id_empleo" ColumnName="id_empleo" />
+          <ScalarProperty Name="id_cab" ColumnName="id_cab" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="valorD" ColumnName="valorD" />
+          <ScalarProperty Name="valorH" ColumnName="valorH" />
+          <ScalarProperty Name="lunD" ColumnName="lunD" />
+          <ScalarProperty Name="lunH" ColumnName="lunH" />
+          <ScalarProperty Name="marD" ColumnName="marD" />
+          <ScalarProperty Name="marH" ColumnName="marH" />
+          <ScalarProperty Name="mieD" ColumnName="mieD" />
+          <ScalarProperty Name="mieH" ColumnName="mieH" />
+          <ScalarProperty Name="jueD" ColumnName="jueD" />
+          <ScalarProperty Name="jueH" ColumnName="jueH" />
+          <ScalarProperty Name="vieD" ColumnName="vieD" />
+          <ScalarProperty Name="vieH" ColumnName="vieH" />
+          <ScalarProperty Name="sabD" ColumnName="sabD" />
+          <ScalarProperty Name="sabH" ColumnName="sabH" />
+          <ScalarProperty Name="domD" ColumnName="domD" />
+          <ScalarProperty Name="domH" ColumnName="domH" />
+          <ScalarProperty Name="pagado" ColumnName="pagado" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vv_NominasEmpleadosMes">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.vv_NominasEmpleadosMes)">
+        <MappingFragment StoreEntitySet="vv_NominasEmpleadosMes">
+          <ScalarProperty Name="id_det" ColumnName="id_det" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+          <ScalarProperty Name="Semana" ColumnName="Semana" />
+          <ScalarProperty Name="id_encargado" ColumnName="id_encargado" />
+          <ScalarProperty Name="Encargado" ColumnName="Encargado" />
+          <ScalarProperty Name="Nro_Empleado" ColumnName="Nro_Empleado" />
+          <ScalarProperty Name="Caja" ColumnName="Caja" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="semanaIni" ColumnName="semanaIni" />
+          <ScalarProperty Name="semanaFin" ColumnName="semanaFin" />
+          <ScalarProperty Name="mesIni" ColumnName="mesIni" />
+          <ScalarProperty Name="totalD" ColumnName="totalD" />
+          <ScalarProperty Name="totalH" ColumnName="totalH" />
+          <ScalarProperty Name="valorD" ColumnName="valorD" />
+          <ScalarProperty Name="valorH" ColumnName="valorH" />
+          <ScalarProperty Name="TotalPago" ColumnName="TotalPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frutas_variedades">
+      <EntityTypeMapping TypeName="IsTypeOf(MazantinesModel.Frutas_variedades)">
+        <MappingFragment StoreEntitySet="Frutas_variedades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id_fruta" ColumnName="id_fruta" />
+          <ScalarProperty Name="Variedad" ColumnName="Variedad" />
+          <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -1767,7 +1625,7 @@ warning 6002: The table/view 'Mazantines.dbo.vv_NominasEmpleadosMes' does not ha
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
