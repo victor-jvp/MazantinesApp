@@ -37,11 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.AnioToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.MesToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +57,10 @@
             this.vvNominasEmpleadosMesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.vv_NominasEmpleadosMesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.vv_NominasEmpleadosMesTableAdapter();
+            this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.DesdeCheckBox = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vvNominasEmpleadosMesBindingSource1)).BeginInit();
@@ -71,48 +70,12 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel2,
-            this.AnioToolStripComboBox,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.MesToolStripComboBox,
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1044, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(953, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(32, 22);
-            this.toolStripLabel2.Text = "Año:";
-            // 
-            // AnioToolStripComboBox
-            // 
-            this.AnioToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AnioToolStripComboBox.Name = "AnioToolStripComboBox";
-            this.AnioToolStripComboBox.Size = new System.Drawing.Size(121, 25);
-            this.AnioToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.AnioToolStripComboBox_SelectedIndexChanged);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(32, 22);
-            this.toolStripLabel1.Text = "Mes:";
-            // 
-            // MesToolStripComboBox
-            // 
-            this.MesToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MesToolStripComboBox.Name = "MesToolStripComboBox";
-            this.MesToolStripComboBox.Size = new System.Drawing.Size(121, 25);
-            this.MesToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.MesToolStripComboBox_SelectedIndexChanged);
             // 
             // toolStripDropDownButton1
             // 
@@ -166,11 +129,10 @@
             this.dataGridViewTextBoxColumn14,
             this.totalPagoDataGridViewTextBoxColumn});
             this.NominaDataGridView.DataSource = this.vvNominasEmpleadosMesBindingSource1;
-            this.NominaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NominaDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.NominaDataGridView.Location = new System.Drawing.Point(0, 28);
             this.NominaDataGridView.Name = "NominaDataGridView";
             this.NominaDataGridView.ReadOnly = true;
-            this.NominaDataGridView.Size = new System.Drawing.Size(1044, 386);
+            this.NominaDataGridView.Size = new System.Drawing.Size(970, 383);
             this.NominaDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -308,11 +270,54 @@
             // 
             this.vv_NominasEmpleadosMesTableAdapter.ClearBeforeFill = true;
             // 
+            // HastaDateTimePicker
+            // 
+            this.HastaDateTimePicker.CustomFormat = "dd-MM-yyyy";
+            this.HastaDateTimePicker.Enabled = false;
+            this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(259, 5);
+            this.HastaDateTimePicker.Name = "HastaDateTimePicker";
+            this.HastaDateTimePicker.Size = new System.Drawing.Size(92, 20);
+            this.HastaDateTimePicker.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(215, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Hasta:";
+            // 
+            // DesdeDateTimePicker
+            // 
+            this.DesdeDateTimePicker.CustomFormat = "dd-MM-yyyy";
+            this.DesdeDateTimePicker.Enabled = false;
+            this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(113, 5);
+            this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
+            this.DesdeDateTimePicker.Size = new System.Drawing.Size(96, 20);
+            this.DesdeDateTimePicker.TabIndex = 12;
+            // 
+            // DesdeCheckBox
+            // 
+            this.DesdeCheckBox.AutoSize = true;
+            this.DesdeCheckBox.Location = new System.Drawing.Point(46, 7);
+            this.DesdeCheckBox.Name = "DesdeCheckBox";
+            this.DesdeCheckBox.Size = new System.Drawing.Size(61, 17);
+            this.DesdeCheckBox.TabIndex = 13;
+            this.DesdeCheckBox.Text = "Rango:";
+            this.DesdeCheckBox.UseVisualStyleBackColor = true;
+            // 
             // FrmNominaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 411);
+            this.ClientSize = new System.Drawing.Size(953, 411);
+            this.Controls.Add(this.HastaDateTimePicker);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DesdeDateTimePicker);
+            this.Controls.Add(this.DesdeCheckBox);
             this.Controls.Add(this.NominaDataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmNominaMes";
@@ -331,12 +336,7 @@
 
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox MesToolStripComboBox;
         private System.Windows.Forms.DataGridView NominaDataGridView;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripComboBox AnioToolStripComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn iddetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn semanaDataGridViewTextBoxColumn;
@@ -374,5 +374,9 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
+        private System.Windows.Forms.CheckBox DesdeCheckBox;
     }
 }

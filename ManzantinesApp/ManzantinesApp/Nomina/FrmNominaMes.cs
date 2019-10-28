@@ -45,14 +45,14 @@ namespace ManzantinesApp.Nomina
             AnioToolStripComboBox.ComboBox.ValueMember = "Value";
             
 
-            MesToolStripComboBox.ComboBox.DisplayMember = "Text";
-            MesToolStripComboBox.ComboBox.ValueMember = "Value";
+            HastaToolStripComboBox.ComboBox.DisplayMember = "Text";
+            HastaToolStripComboBox.ComboBox.ValueMember = "Value";
 
             AnioToolStripComboBox.ComboBox.DataSource = Anios.GetAnios(DateTime.Now.Year);
-            MesToolStripComboBox.ComboBox.DataSource = Meses.GetMeses();
+            HastaToolStripComboBox.ComboBox.DataSource = Meses.GetMeses();
 
             AnioToolStripComboBox.ComboBox.SelectedValue = DateTime.Now.Year;
-            MesToolStripComboBox.ComboBox.SelectedValue = DateTime.Now.Month;
+            HastaToolStripComboBox.ComboBox.SelectedValue = DateTime.Now.Month;
 
             //using (var db = new MazantinesEntities())
             //{
@@ -90,20 +90,20 @@ namespace ManzantinesApp.Nomina
 
         private void MesToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(AnioToolStripComboBox.ComboBox.SelectedValue != null && MesToolStripComboBox.ComboBox.SelectedValue != null)
+            if(AnioToolStripComboBox.ComboBox.SelectedValue != null && HastaToolStripComboBox.ComboBox.SelectedValue != null)
             {
                 int anio = (int)AnioToolStripComboBox.ComboBox.SelectedValue;
-                int mes = (int)MesToolStripComboBox.ComboBox.SelectedValue;
+                int mes = (int)HastaToolStripComboBox.ComboBox.SelectedValue;
                 UpdateNominaMes(anio, mes);
             }            
         }
 
         private void AnioToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (AnioToolStripComboBox.ComboBox.SelectedValue != null && MesToolStripComboBox.ComboBox.SelectedValue != null)
+            if (AnioToolStripComboBox.ComboBox.SelectedValue != null && HastaToolStripComboBox.ComboBox.SelectedValue != null)
             {
                 int anio = (int)AnioToolStripComboBox.ComboBox.SelectedValue;
-                int mes = (int)MesToolStripComboBox.ComboBox.SelectedValue;
+                int mes = (int)HastaToolStripComboBox.ComboBox.SelectedValue;
                 UpdateNominaMes(anio, mes);
             }
         }
