@@ -1,6 +1,5 @@
 ﻿CREATE VIEW [dbo].[vv_NominasEmpleadosMes] AS SELECT
 	cab.anio,
-	cab.semana,
 	cab.id_encargado,
 	enc.Encargado,
 	CAST (
@@ -8,22 +7,6 @@
 	tra.Caja,
 	tra.Nombre,
 	tra.Apellidos,
-	DATEADD(
-		wk,
-		DATEDIFF(
-			wk,
-			6,
-		'1/1/' + CONVERT ( VARCHAR ( 10 ), cab.anio )) + ( cab.semana - 1 ),
-		6 
-	) AS semanaIni,
-	DATEADD(
-		wk,
-		DATEDIFF(
-			wk,
-			5,
-		'1/1/' + CONVERT ( VARCHAR ( 10 ), cab.anio )) + ( cab.semana - 1 ),
-		5 
-	) AS semanaFin,
 	DATEPART(
 		mm,
 		DATEADD(
@@ -51,7 +34,6 @@ WHERE
 	( tra.Activo = 1 ) 
 GROUP BY
 	cab.anio,
-	cab.semana,
 	cab.id_encargado,
 	enc.Encargado,
 	CAST (
@@ -59,22 +41,6 @@ GROUP BY
 	tra.Caja,
 	tra.Nombre,
 	tra.Apellidos,
-	DATEADD(
-		wk,
-		DATEDIFF(
-			wk,
-			6,
-		'1/1/' + CONVERT ( VARCHAR ( 10 ), cab.anio )) + ( cab.semana - 1 ),
-		6 
-	),
-	DATEADD(
-		wk,
-		DATEDIFF(
-			wk,
-			5,
-		'1/1/' + CONVERT ( VARCHAR ( 10 ), cab.anio )) + ( cab.semana - 1 ),
-		5 
-	),
 	DATEPART(
 		mm,
 		DATEADD(
