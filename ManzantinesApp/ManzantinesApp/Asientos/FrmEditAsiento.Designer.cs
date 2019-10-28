@@ -37,6 +37,7 @@
             System.Windows.Forms.Label formaPagoLabel;
             System.Windows.Forms.Label id_empresaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditAsiento));
+            System.Windows.Forms.Label facturaLabel;
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.asientosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.asientosTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.AsientosTableAdapter();
@@ -57,6 +58,7 @@
             this.id_empresaComboBox = new System.Windows.Forms.ComboBox();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.EmpresasTableAdapter();
+            this.facturaTextBox = new System.Windows.Forms.TextBox();
             idLabel = new System.Windows.Forms.Label();
             id_proveedorLabel = new System.Windows.Forms.Label();
             fechaFacturaLabel = new System.Windows.Forms.Label();
@@ -64,6 +66,7 @@
             fechaPagoLabel = new System.Windows.Forms.Label();
             formaPagoLabel = new System.Windows.Forms.Label();
             id_empresaLabel = new System.Windows.Forms.Label();
+            facturaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asientosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asientosBindingNavigator)).BeginInit();
@@ -157,12 +160,13 @@
             this.tableAdapterManager.AsientosTableAdapter = this.asientosTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CasasTableAdapter = null;
-            
             this.tableAdapterManager.EmpleosPagosTableAdapter = null;
             this.tableAdapterManager.EmpleosTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EncargadosTableAdapter = null;
             this.tableAdapterManager.FincasTableAdapter = null;
+            this.tableAdapterManager.Frutas_variedadesTableAdapter = null;
+            this.tableAdapterManager.FrutasTableAdapter = null;
             this.tableAdapterManager.LiquidacionesTableAdapter = null;
             this.tableAdapterManager.NominasCabTableAdapter = null;
             this.tableAdapterManager.NominasDetTableAdapter = null;
@@ -321,11 +325,30 @@
             // 
             this.empresasTableAdapter.ClearBeforeFill = true;
             // 
+            // facturaLabel
+            // 
+            facturaLabel.AutoSize = true;
+            facturaLabel.Location = new System.Drawing.Point(45, 189);
+            facturaLabel.Name = "facturaLabel";
+            facturaLabel.Size = new System.Drawing.Size(46, 13);
+            facturaLabel.TabIndex = 16;
+            facturaLabel.Text = "Factura:";
+            // 
+            // facturaTextBox
+            // 
+            this.facturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asientosBindingSource, "Factura", true));
+            this.facturaTextBox.Location = new System.Drawing.Point(97, 186);
+            this.facturaTextBox.Name = "facturaTextBox";
+            this.facturaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.facturaTextBox.TabIndex = 17;
+            // 
             // FrmEditAsiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 211);
+            this.ClientSize = new System.Drawing.Size(334, 217);
+            this.Controls.Add(facturaLabel);
+            this.Controls.Add(this.facturaTextBox);
             this.Controls.Add(id_empresaLabel);
             this.Controls.Add(this.id_empresaComboBox);
             this.Controls.Add(this.ImporteNumericUpDown);
@@ -385,5 +408,6 @@
         private System.Windows.Forms.ComboBox id_empresaComboBox;
         private System.Windows.Forms.BindingSource empresasBindingSource;
         private Data.DataSet1TableAdapters.EmpresasTableAdapter empresasTableAdapter;
+        private System.Windows.Forms.TextBox facturaTextBox;
     }
 }

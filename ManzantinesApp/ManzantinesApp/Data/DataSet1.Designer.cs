@@ -4655,6 +4655,8 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnid_empresa;
             
+            private global::System.Data.DataColumn columnFactura;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AsientosDataTable() {
@@ -4754,6 +4756,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FacturaColumn {
+                get {
+                    return this.columnFactura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4789,7 +4799,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AsientosRow AddAsientosRow(ProveedoresRow parentProveedoresRowByfk_proveedores, System.DateTime FechaFactura, decimal Importe, System.DateTime FechaPago, string FormaPago, bool Pagado, EmpresasRow parentEmpresasRowByfk_empresa) {
+            public AsientosRow AddAsientosRow(ProveedoresRow parentProveedoresRowByfk_proveedores, System.DateTime FechaFactura, decimal Importe, System.DateTime FechaPago, string FormaPago, bool Pagado, EmpresasRow parentEmpresasRowByfk_empresa, string Factura) {
                 AsientosRow rowAsientosRow = ((AsientosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4799,7 +4809,8 @@ namespace ManzantinesApp.Data {
                         FechaPago,
                         FormaPago,
                         Pagado,
-                        null};
+                        null,
+                        Factura};
                 if ((parentProveedoresRowByfk_proveedores != null)) {
                     columnValuesArray[1] = parentProveedoresRowByfk_proveedores[0];
                 }
@@ -4843,6 +4854,7 @@ namespace ManzantinesApp.Data {
                 this.columnFormaPago = base.Columns["FormaPago"];
                 this.columnPagado = base.Columns["Pagado"];
                 this.columnid_empresa = base.Columns["id_empresa"];
+                this.columnFactura = base.Columns["Factura"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4864,6 +4876,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnPagado);
                 this.columnid_empresa = new global::System.Data.DataColumn("id_empresa", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_empresa);
+                this.columnFactura = new global::System.Data.DataColumn("Factura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFactura);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -4873,6 +4887,7 @@ namespace ManzantinesApp.Data {
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnFormaPago.MaxLength = 35;
+                this.columnFactura.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6132,6 +6147,8 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnpagado;
             
+            private global::System.Data.DataColumn columnimporte;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NominasDetDataTable() {
@@ -6327,6 +6344,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn importeColumn {
+                get {
+                    return this.columnimporte;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6381,7 +6406,8 @@ namespace ManzantinesApp.Data {
                         decimal domH, 
                         double valorD, 
                         double valorH, 
-                        bool pagado) {
+                        bool pagado, 
+                        double importe) {
                 NominasDetRow rowNominasDetRow = ((NominasDetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6403,7 +6429,8 @@ namespace ManzantinesApp.Data {
                         domH,
                         valorD,
                         valorH,
-                        pagado};
+                        pagado,
+                        importe};
                 if ((parentNominasCabRowByfk_NominasDet_NominasCab_pk != null)) {
                     columnValuesArray[1] = parentNominasCabRowByfk_NominasDet_NominasCab_pk[0];
                 }
@@ -6459,6 +6486,7 @@ namespace ManzantinesApp.Data {
                 this.columnvalorD = base.Columns["valorD"];
                 this.columnvalorH = base.Columns["valorH"];
                 this.columnpagado = base.Columns["pagado"];
+                this.columnimporte = base.Columns["importe"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6504,6 +6532,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnvalorH);
                 this.columnpagado = new global::System.Data.DataColumn("pagado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpagado);
+                this.columnimporte = new global::System.Data.DataColumn("importe", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimporte);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_det}, true));
                 this.columnid_det.AutoIncrement = true;
@@ -9661,6 +9691,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Factura {
+                get {
+                    try {
+                        return ((string)(this[this.tableAsientos.FacturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Factura\' in table \'Asientos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAsientos.FacturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ProveedoresRow ProveedoresRow {
                 get {
                     return ((ProveedoresRow)(this.GetParentRow(this.Table.ParentRelations["fk_proveedores"])));
@@ -9763,6 +9809,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setid_empresaNull() {
                 this[this.tableAsientos.id_empresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFacturaNull() {
+                return this.IsNull(this.tableAsientos.FacturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFacturaNull() {
+                this[this.tableAsientos.FacturaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10801,6 +10859,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double importe {
+                get {
+                    try {
+                        return ((double)(this[this.tableNominasDet.importeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'importe\' in table \'NominasDet\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNominasDet.importeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public TrabajadoresRow TrabajadoresRow {
                 get {
                     return ((TrabajadoresRow)(this.GetParentRow(this.Table.ParentRelations["FK_NominasDet_Trabajadores"])));
@@ -11047,6 +11121,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpagadoNull() {
                 this[this.tableNominasDet.pagadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsimporteNull() {
+                return this.IsNull(this.tableNominasDet.importeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetimporteNull() {
+                this[this.tableNominasDet.importeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -16184,65 +16270,72 @@ SELECT Id, Cif, RazonSocial, NroCuenta, Telefono, Email, Banco FROM Proveedores 
             tableMapping.ColumnMappings.Add("FormaPago", "FormaPago");
             tableMapping.ColumnMappings.Add("Pagado", "Pagado");
             tableMapping.ColumnMappings.Add("id_empresa", "id_empresa");
+            tableMapping.ColumnMappings.Add("Factura", "Factura");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Asientos] WHERE (([Id] = @Original_Id) AND ((@IsNull_id_proveedor = 1 AND [id_proveedor] IS NULL) OR ([id_proveedor] = @Original_id_proveedor)) AND ((@IsNull_FechaFactura = 1 AND [FechaFactura] IS NULL) OR ([FechaFactura] = @Original_FechaFactura)) AND ((@IsNull_Importe = 1 AND [Importe] IS NULL) OR ([Importe] = @Original_Importe)) AND ((@IsNull_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Original_FechaPago)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_Pagado = 1 AND [Pagado] IS NULL) OR ([Pagado] = @Original_Pagado)) AND ((@IsNull_id_empresa = 1 AND [id_empresa] IS NULL) OR ([id_empresa] = @Original_id_empresa)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Asientos] WHERE (([Id] = @Original_Id) AND ((@IsNull_id_proveedor = 1 AND [id_proveedor] IS NULL) OR ([id_proveedor] = @Original_id_proveedor)) AND ((@IsNull_FechaFactura = 1 AND [FechaFactura] IS NULL) OR ([FechaFactura] = @Original_FechaFactura)) AND ((@IsNull_Importe = 1 AND [Importe] IS NULL) OR ([Importe] = @Original_Importe)) AND ((@IsNull_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Original_FechaPago)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_Pagado = 1 AND [Pagado] IS NULL) OR ([Pagado] = @Original_Pagado)) AND ((@IsNull_id_empresa = 1 AND [id_empresa] IS NULL) OR ([id_empresa] = @Original_id_empresa)) AND ((@IsNull_Factura = 1 AND [Factura] IS NULL) OR ([Factura] = @Original_Factura)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_proveedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_proveedor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_proveedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_proveedor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaFactura", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaFactura", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaFactura", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Importe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Importe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Importe", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Importe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaPago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaPago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaPago", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FormaPago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FormaPago", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pagado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pagado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pagado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_empresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empresa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_empresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Factura", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Factura", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Factura", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Factura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Asientos] ([id_proveedor], [FechaFactura], [Importe], [FechaPago], [FormaPago], [Pagado], [id_empresa]) VALUES (@id_proveedor, @FechaFactura, @Importe, @FechaPago, @FormaPago, @Pagado, @id_empresa);
-SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_empresa FROM Asientos WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Asientos] ([id_proveedor], [FechaFactura], [Importe], [FechaPago], [FormaPago], [Pagado], [id_empresa], [Factura]) VALUES (@id_proveedor, @FechaFactura, @Importe, @FechaPago, @FormaPago, @Pagado, @id_empresa, @Factura);
+SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_empresa, Factura FROM Asientos WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_proveedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_proveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFactura", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFactura", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Importe", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Importe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaPago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaPago", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormaPago", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pagado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_empresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Factura", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Factura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Asientos] SET [id_proveedor] = @id_proveedor, [FechaFactura] = @FechaFactura, [Importe] = @Importe, [FechaPago] = @FechaPago, [FormaPago] = @FormaPago, [Pagado] = @Pagado, [id_empresa] = @id_empresa WHERE (([Id] = @Original_Id) AND ((@IsNull_id_proveedor = 1 AND [id_proveedor] IS NULL) OR ([id_proveedor] = @Original_id_proveedor)) AND ((@IsNull_FechaFactura = 1 AND [FechaFactura] IS NULL) OR ([FechaFactura] = @Original_FechaFactura)) AND ((@IsNull_Importe = 1 AND [Importe] IS NULL) OR ([Importe] = @Original_Importe)) AND ((@IsNull_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Original_FechaPago)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_Pagado = 1 AND [Pagado] IS NULL) OR ([Pagado] = @Original_Pagado)) AND ((@IsNull_id_empresa = 1 AND [id_empresa] IS NULL) OR ([id_empresa] = @Original_id_empresa)));
-SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_empresa FROM Asientos WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Asientos] SET [id_proveedor] = @id_proveedor, [FechaFactura] = @FechaFactura, [Importe] = @Importe, [FechaPago] = @FechaPago, [FormaPago] = @FormaPago, [Pagado] = @Pagado, [id_empresa] = @id_empresa, [Factura] = @Factura WHERE (([Id] = @Original_Id) AND ((@IsNull_id_proveedor = 1 AND [id_proveedor] IS NULL) OR ([id_proveedor] = @Original_id_proveedor)) AND ((@IsNull_FechaFactura = 1 AND [FechaFactura] IS NULL) OR ([FechaFactura] = @Original_FechaFactura)) AND ((@IsNull_Importe = 1 AND [Importe] IS NULL) OR ([Importe] = @Original_Importe)) AND ((@IsNull_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Original_FechaPago)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_Pagado = 1 AND [Pagado] IS NULL) OR ([Pagado] = @Original_Pagado)) AND ((@IsNull_id_empresa = 1 AND [id_empresa] IS NULL) OR ([id_empresa] = @Original_id_empresa)) AND ((@IsNull_Factura = 1 AND [Factura] IS NULL) OR ([Factura] = @Original_Factura)));
+SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_empresa, Factura FROM Asientos WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_proveedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_proveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFactura", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFactura", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Importe", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Importe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaPago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaPago", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FormaPago", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pagado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_empresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Factura", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Factura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_proveedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_proveedor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_proveedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_proveedor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaFactura", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaFactura", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaFactura", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFactura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Importe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Importe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Importe", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Importe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FechaPago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaPago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FechaPago", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FormaPago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FormaPago", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FormaPago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pagado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pagado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pagado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_empresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empresa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_empresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Factura", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Factura", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Factura", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Factura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -16260,12 +16353,12 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_" +
-                "empresa FROM Asientos";
+                "empresa, Factura FROM Asientos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_" +
-                "empresa FROM Asientos WHERE (id_proveedor = @id_proveedor)";
+                "empresa, Factura FROM Asientos WHERE (id_proveedor = @id_proveedor)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_proveedor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_proveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -16363,7 +16456,7 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, global::System.Nullable<int> Original_id_proveedor, global::System.Nullable<global::System.DateTime> Original_FechaFactura, global::System.Nullable<decimal> Original_Importe, global::System.Nullable<global::System.DateTime> Original_FechaPago, string Original_FormaPago, global::System.Nullable<bool> Original_Pagado, global::System.Nullable<int> Original_id_empresa) {
+        public virtual int Delete(int Original_Id, global::System.Nullable<int> Original_id_proveedor, global::System.Nullable<global::System.DateTime> Original_FechaFactura, global::System.Nullable<decimal> Original_Importe, global::System.Nullable<global::System.DateTime> Original_FechaPago, string Original_FormaPago, global::System.Nullable<bool> Original_Pagado, global::System.Nullable<int> Original_id_empresa, string Original_Factura) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_id_proveedor.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -16421,6 +16514,14 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
+            if ((Original_Factura == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Factura));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16441,7 +16542,7 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> id_proveedor, global::System.Nullable<global::System.DateTime> FechaFactura, global::System.Nullable<decimal> Importe, global::System.Nullable<global::System.DateTime> FechaPago, string FormaPago, global::System.Nullable<bool> Pagado, global::System.Nullable<int> id_empresa) {
+        public virtual int Insert(global::System.Nullable<int> id_proveedor, global::System.Nullable<global::System.DateTime> FechaFactura, global::System.Nullable<decimal> Importe, global::System.Nullable<global::System.DateTime> FechaPago, string FormaPago, global::System.Nullable<bool> Pagado, global::System.Nullable<int> id_empresa, string Factura) {
             if ((id_proveedor.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_proveedor.Value));
             }
@@ -16484,6 +16585,12 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Factura == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Factura));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16512,6 +16619,7 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
                     string FormaPago, 
                     global::System.Nullable<bool> Pagado, 
                     global::System.Nullable<int> id_empresa, 
+                    string Factura, 
                     int Original_Id, 
                     global::System.Nullable<int> Original_id_proveedor, 
                     global::System.Nullable<global::System.DateTime> Original_FechaFactura, 
@@ -16520,6 +16628,7 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
                     string Original_FormaPago, 
                     global::System.Nullable<bool> Original_Pagado, 
                     global::System.Nullable<int> Original_id_empresa, 
+                    string Original_Factura, 
                     int Id) {
             if ((id_proveedor.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_proveedor.Value));
@@ -16563,64 +16672,78 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
-            if ((Original_id_proveedor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_id_proveedor.Value));
+            if ((Factura == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Factura));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
+            if ((Original_id_proveedor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_id_proveedor.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_FechaFactura.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_FechaFactura.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_FechaFactura.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_Importe.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_Importe.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_Importe.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_FechaPago.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_FechaPago.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_FechaPago.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_FormaPago == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_FormaPago));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_FormaPago));
             }
             if ((Original_Pagado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(Original_Pagado.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(Original_Pagado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_id_empresa.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_id_empresa.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_id_empresa.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Id));
+            if ((Original_Factura == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Factura));
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16641,8 +16764,25 @@ SELECT Id, id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id_proveedor, global::System.Nullable<global::System.DateTime> FechaFactura, global::System.Nullable<decimal> Importe, global::System.Nullable<global::System.DateTime> FechaPago, string FormaPago, global::System.Nullable<bool> Pagado, global::System.Nullable<int> id_empresa, int Original_Id, global::System.Nullable<int> Original_id_proveedor, global::System.Nullable<global::System.DateTime> Original_FechaFactura, global::System.Nullable<decimal> Original_Importe, global::System.Nullable<global::System.DateTime> Original_FechaPago, string Original_FormaPago, global::System.Nullable<bool> Original_Pagado, global::System.Nullable<int> Original_id_empresa) {
-            return this.Update(id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_empresa, Original_Id, Original_id_proveedor, Original_FechaFactura, Original_Importe, Original_FechaPago, Original_FormaPago, Original_Pagado, Original_id_empresa, Original_Id);
+        public virtual int Update(
+                    global::System.Nullable<int> id_proveedor, 
+                    global::System.Nullable<global::System.DateTime> FechaFactura, 
+                    global::System.Nullable<decimal> Importe, 
+                    global::System.Nullable<global::System.DateTime> FechaPago, 
+                    string FormaPago, 
+                    global::System.Nullable<bool> Pagado, 
+                    global::System.Nullable<int> id_empresa, 
+                    string Factura, 
+                    int Original_Id, 
+                    global::System.Nullable<int> Original_id_proveedor, 
+                    global::System.Nullable<global::System.DateTime> Original_FechaFactura, 
+                    global::System.Nullable<decimal> Original_Importe, 
+                    global::System.Nullable<global::System.DateTime> Original_FechaPago, 
+                    string Original_FormaPago, 
+                    global::System.Nullable<bool> Original_Pagado, 
+                    global::System.Nullable<int> Original_id_empresa, 
+                    string Original_Factura) {
+            return this.Update(id_proveedor, FechaFactura, Importe, FechaPago, FormaPago, Pagado, id_empresa, Factura, Original_Id, Original_id_proveedor, Original_FechaFactura, Original_Importe, Original_FechaPago, Original_FormaPago, Original_Pagado, Original_id_empresa, Original_Factura, Original_Id);
         }
     }
     
@@ -18397,6 +18537,7 @@ SELECT id_cab, anio, semana, id_encargado, status FROM NominasCab WHERE (id_cab 
             tableMapping.ColumnMappings.Add("valorD", "valorD");
             tableMapping.ColumnMappings.Add("valorH", "valorH");
             tableMapping.ColumnMappings.Add("pagado", "pagado");
+            tableMapping.ColumnMappings.Add("importe", "importe");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -18418,7 +18559,8 @@ SELECT id_cab, anio, semana, id_encargado, status FROM NominasCab WHERE (id_cab 
                 "sNull_domH = 1 AND [domH] IS NULL) OR ([domH] = @Original_domH)) AND ((@IsNull_v" +
                 "alorD = 1 AND [valorD] IS NULL) OR ([valorD] = @Original_valorD)) AND ((@IsNull_" +
                 "valorH = 1 AND [valorH] IS NULL) OR ([valorH] = @Original_valorH)) AND ((@IsNull" +
-                "_pagado = 1 AND [pagado] IS NULL) OR ([pagado] = @Original_pagado)))";
+                "_pagado = 1 AND [pagado] IS NULL) OR ([pagado] = @Original_pagado)) AND ((@IsNul" +
+                "l_importe = 1 AND [importe] IS NULL) OR ([importe] = @Original_importe)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_det", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_det", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -18459,10 +18601,12 @@ SELECT id_cab, anio, semana, id_encargado, status FROM NominasCab WHERE (id_cab 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valorH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pagado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_importe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "importe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_importe", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "importe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [NominasDet] ([id_cab], [id_empleado], [lunD], [lunH], [marD], [marH], [mieD], [mieH], [jueD], [jueH], [vieD], [vieH], [sabD], [sabH], [domD], [domH], [valorD], [valorH], [pagado]) VALUES (@id_cab, @id_empleado, @lunD, @lunH, @marD, @marH, @mieD, @mieH, @jueD, @jueH, @vieD, @vieH, @sabD, @sabH, @domD, @domH, @valorD, @valorH, @pagado);
-SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, valorD, valorH, pagado FROM NominasDet WHERE (id_det = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [NominasDet] ([id_cab], [id_empleado], [lunD], [lunH], [marD], [marH], [mieD], [mieH], [jueD], [jueH], [vieD], [vieH], [sabD], [sabH], [domD], [domH], [valorD], [valorH], [pagado], [importe]) VALUES (@id_cab, @id_empleado, @lunD, @lunH, @marD, @marH, @mieD, @mieH, @jueD, @jueH, @vieD, @vieH, @sabD, @sabH, @domD, @domH, @valorD, @valorH, @pagado, @importe);
+SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, valorD, valorH, pagado, importe FROM NominasDet WHERE (id_det = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_empleado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18483,34 +18627,36 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorD", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@importe", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "importe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [NominasDet] SET [id_cab] = @id_cab, [id_empleado] = @id_empleado, [lunD] " +
                 "= @lunD, [lunH] = @lunH, [marD] = @marD, [marH] = @marH, [mieD] = @mieD, [mieH] " +
                 "= @mieH, [jueD] = @jueD, [jueH] = @jueH, [vieD] = @vieD, [vieH] = @vieH, [sabD] " +
                 "= @sabD, [sabH] = @sabH, [domD] = @domD, [domH] = @domH, [valorD] = @valorD, [va" +
-                "lorH] = @valorH, [pagado] = @pagado WHERE (([id_det] = @Original_id_det) AND ((@" +
-                "IsNull_id_cab = 1 AND [id_cab] IS NULL) OR ([id_cab] = @Original_id_cab)) AND ((" +
-                "@IsNull_id_empleado = 1 AND [id_empleado] IS NULL) OR ([id_empleado] = @Original" +
-                "_id_empleado)) AND ((@IsNull_lunD = 1 AND [lunD] IS NULL) OR ([lunD] = @Original" +
-                "_lunD)) AND ((@IsNull_lunH = 1 AND [lunH] IS NULL) OR ([lunH] = @Original_lunH))" +
-                " AND ((@IsNull_marD = 1 AND [marD] IS NULL) OR ([marD] = @Original_marD)) AND ((" +
-                "@IsNull_marH = 1 AND [marH] IS NULL) OR ([marH] = @Original_marH)) AND ((@IsNull" +
-                "_mieD = 1 AND [mieD] IS NULL) OR ([mieD] = @Original_mieD)) AND ((@IsNull_mieH =" +
-                " 1 AND [mieH] IS NULL) OR ([mieH] = @Original_mieH)) AND ((@IsNull_jueD = 1 AND " +
-                "[jueD] IS NULL) OR ([jueD] = @Original_jueD)) AND ((@IsNull_jueH = 1 AND [jueH] " +
-                "IS NULL) OR ([jueH] = @Original_jueH)) AND ((@IsNull_vieD = 1 AND [vieD] IS NULL" +
-                ") OR ([vieD] = @Original_vieD)) AND ((@IsNull_vieH = 1 AND [vieH] IS NULL) OR ([" +
-                "vieH] = @Original_vieH)) AND ((@IsNull_sabD = 1 AND [sabD] IS NULL) OR ([sabD] =" +
-                " @Original_sabD)) AND ((@IsNull_sabH = 1 AND [sabH] IS NULL) OR ([sabH] = @Origi" +
-                "nal_sabH)) AND ((@IsNull_domD = 1 AND [domD] IS NULL) OR ([domD] = @Original_dom" +
-                "D)) AND ((@IsNull_domH = 1 AND [domH] IS NULL) OR ([domH] = @Original_domH)) AND" +
-                " ((@IsNull_valorD = 1 AND [valorD] IS NULL) OR ([valorD] = @Original_valorD)) AN" +
-                "D ((@IsNull_valorH = 1 AND [valorH] IS NULL) OR ([valorH] = @Original_valorH)) A" +
-                "ND ((@IsNull_pagado = 1 AND [pagado] IS NULL) OR ([pagado] = @Original_pagado)))" +
-                ";\r\nSELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD," +
-                " jueH, vieD, vieH, sabD, sabH, domD, domH, valorD, valorH, pagado FROM NominasDe" +
-                "t WHERE (id_det = @id_det)";
+                "lorH] = @valorH, [pagado] = @pagado, [importe] = @importe WHERE (([id_det] = @Or" +
+                "iginal_id_det) AND ((@IsNull_id_cab = 1 AND [id_cab] IS NULL) OR ([id_cab] = @Or" +
+                "iginal_id_cab)) AND ((@IsNull_id_empleado = 1 AND [id_empleado] IS NULL) OR ([id" +
+                "_empleado] = @Original_id_empleado)) AND ((@IsNull_lunD = 1 AND [lunD] IS NULL) " +
+                "OR ([lunD] = @Original_lunD)) AND ((@IsNull_lunH = 1 AND [lunH] IS NULL) OR ([lu" +
+                "nH] = @Original_lunH)) AND ((@IsNull_marD = 1 AND [marD] IS NULL) OR ([marD] = @" +
+                "Original_marD)) AND ((@IsNull_marH = 1 AND [marH] IS NULL) OR ([marH] = @Origina" +
+                "l_marH)) AND ((@IsNull_mieD = 1 AND [mieD] IS NULL) OR ([mieD] = @Original_mieD)" +
+                ") AND ((@IsNull_mieH = 1 AND [mieH] IS NULL) OR ([mieH] = @Original_mieH)) AND (" +
+                "(@IsNull_jueD = 1 AND [jueD] IS NULL) OR ([jueD] = @Original_jueD)) AND ((@IsNul" +
+                "l_jueH = 1 AND [jueH] IS NULL) OR ([jueH] = @Original_jueH)) AND ((@IsNull_vieD " +
+                "= 1 AND [vieD] IS NULL) OR ([vieD] = @Original_vieD)) AND ((@IsNull_vieH = 1 AND" +
+                " [vieH] IS NULL) OR ([vieH] = @Original_vieH)) AND ((@IsNull_sabD = 1 AND [sabD]" +
+                " IS NULL) OR ([sabD] = @Original_sabD)) AND ((@IsNull_sabH = 1 AND [sabH] IS NUL" +
+                "L) OR ([sabH] = @Original_sabH)) AND ((@IsNull_domD = 1 AND [domD] IS NULL) OR (" +
+                "[domD] = @Original_domD)) AND ((@IsNull_domH = 1 AND [domH] IS NULL) OR ([domH] " +
+                "= @Original_domH)) AND ((@IsNull_valorD = 1 AND [valorD] IS NULL) OR ([valorD] =" +
+                " @Original_valorD)) AND ((@IsNull_valorH = 1 AND [valorH] IS NULL) OR ([valorH] " +
+                "= @Original_valorH)) AND ((@IsNull_pagado = 1 AND [pagado] IS NULL) OR ([pagado]" +
+                " = @Original_pagado)) AND ((@IsNull_importe = 1 AND [importe] IS NULL) OR ([impo" +
+                "rte] = @Original_importe)));\r\nSELECT id_det, id_cab, id_empleado, lunD, lunH, ma" +
+                "rD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, valorD, va" +
+                "lorH, pagado, importe FROM NominasDet WHERE (id_det = @id_det)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_empleado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_empleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18531,6 +18677,7 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorD", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@importe", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "importe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_det", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_det", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cab", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -18570,6 +18717,8 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valorH", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pagado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pagado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_importe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "importe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_importe", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "importe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_det", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_det", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -18587,7 +18736,8 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, jue" +
-                "H, vieD, vieH, sabD, sabH, domD, domH, valorD, valorH, pagado FROM NominasDet";
+                "H, vieD, vieH, sabD, sabH, domD, domH, valorD, valorH, pagado, importe FROM Nomi" +
+                "nasDet";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18668,7 +18818,8 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     global::System.Nullable<double> Original_domH, 
                     global::System.Nullable<double> Original_valorD, 
                     global::System.Nullable<double> Original_valorH, 
-                    global::System.Nullable<bool> Original_pagado) {
+                    global::System.Nullable<bool> Original_pagado, 
+                    global::System.Nullable<double> Original_importe) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_det));
             if ((Original_id_cab.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -18822,6 +18973,14 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
+            if ((Original_importe.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((double)(Original_importe.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18861,7 +19020,8 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     global::System.Nullable<double> domH, 
                     global::System.Nullable<double> valorD, 
                     global::System.Nullable<double> valorH, 
-                    global::System.Nullable<bool> pagado) {
+                    global::System.Nullable<bool> pagado, 
+                    global::System.Nullable<double> importe) {
             if ((id_cab.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_cab.Value));
             }
@@ -18976,6 +19136,12 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
+            if ((importe.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((double)(importe.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19016,6 +19182,7 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     global::System.Nullable<double> valorD, 
                     global::System.Nullable<double> valorH, 
                     global::System.Nullable<bool> pagado, 
+                    global::System.Nullable<double> importe, 
                     int Original_id_det, 
                     global::System.Nullable<int> Original_id_cab, 
                     global::System.Nullable<int> Original_id_empleado, 
@@ -19036,6 +19203,7 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     global::System.Nullable<double> Original_valorD, 
                     global::System.Nullable<double> Original_valorH, 
                     global::System.Nullable<bool> Original_pagado, 
+                    global::System.Nullable<double> Original_importe, 
                     int id_det) {
             if ((id_cab.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_cab.Value));
@@ -19151,160 +19319,174 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_id_det));
-            if ((Original_id_cab.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_id_cab.Value));
+            if ((importe.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(importe.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_id_det));
+            if ((Original_id_cab.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_id_cab.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             if ((Original_id_empleado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_id_empleado.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_id_empleado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             if ((Original_lunD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Original_lunD.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((double)(Original_lunD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             if ((Original_lunH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((double)(Original_lunH.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((double)(Original_lunH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             if ((Original_marD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(Original_marD.Value));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((double)(Original_marD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             if ((Original_marH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((double)(Original_marH.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((double)(Original_marH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_mieD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((double)(Original_mieD.Value));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((double)(Original_mieD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             if ((Original_mieH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((double)(Original_mieH.Value));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((double)(Original_mieH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             if ((Original_jueD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((double)(Original_jueD.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((double)(Original_jueD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_jueH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((double)(Original_jueH.Value));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((double)(Original_jueH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             if ((Original_vieD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((double)(Original_vieD.Value));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((double)(Original_vieD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             if ((Original_vieH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((double)(Original_vieH.Value));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((double)(Original_vieH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             if ((Original_sabD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((double)(Original_sabD.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((double)(Original_sabD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             if ((Original_sabH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((double)(Original_sabH.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((double)(Original_sabH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             if ((Original_domD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((double)(Original_domD.Value));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((double)(Original_domD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             if ((Original_domH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((double)(Original_domH.Value));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((double)(Original_domH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             if ((Original_valorD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((double)(Original_valorD.Value));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((double)(Original_valorD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             if ((Original_valorH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((double)(Original_valorH.Value));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((double)(Original_valorH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             if ((Original_pagado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((bool)(Original_pagado.Value));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((bool)(Original_pagado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[58].Value = ((int)(id_det));
+            if ((Original_importe.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((double)(Original_importe.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[61].Value = ((int)(id_det));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19345,6 +19527,7 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     global::System.Nullable<double> valorD, 
                     global::System.Nullable<double> valorH, 
                     global::System.Nullable<bool> pagado, 
+                    global::System.Nullable<double> importe, 
                     int Original_id_det, 
                     global::System.Nullable<int> Original_id_cab, 
                     global::System.Nullable<int> Original_id_empleado, 
@@ -19364,8 +19547,9 @@ SELECT id_det, id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, ju
                     global::System.Nullable<double> Original_domH, 
                     global::System.Nullable<double> Original_valorD, 
                     global::System.Nullable<double> Original_valorH, 
-                    global::System.Nullable<bool> Original_pagado) {
-            return this.Update(id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, valorD, valorH, pagado, Original_id_det, Original_id_cab, Original_id_empleado, Original_lunD, Original_lunH, Original_marD, Original_marH, Original_mieD, Original_mieH, Original_jueD, Original_jueH, Original_vieD, Original_vieH, Original_sabD, Original_sabH, Original_domD, Original_domH, Original_valorD, Original_valorH, Original_pagado, Original_id_det);
+                    global::System.Nullable<bool> Original_pagado, 
+                    global::System.Nullable<double> Original_importe) {
+            return this.Update(id_cab, id_empleado, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, valorD, valorH, pagado, importe, Original_id_det, Original_id_cab, Original_id_empleado, Original_lunD, Original_lunH, Original_marD, Original_marH, Original_mieD, Original_mieH, Original_jueD, Original_jueH, Original_vieD, Original_vieH, Original_sabD, Original_sabH, Original_domD, Original_domH, Original_valorD, Original_valorH, Original_pagado, Original_importe, Original_id_det);
         }
     }
     

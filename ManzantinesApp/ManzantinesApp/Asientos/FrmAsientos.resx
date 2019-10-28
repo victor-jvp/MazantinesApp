@@ -183,16 +183,16 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJQSURBVDhPjc5dSFNxGMfx/6ZepGdlOfCmSOhCLwqKMsqS
-        WjdGxOhM50VCxmrGNm1azQUHkwhysLQXit4wjTG1+ZKVUuDwuFVTp6FUUjanyALBsGLFmor8+h87pqRL
+        WjdGxOhM50VCxmrGNm1azQUHkwhysLQXit4wjTG1+ZKVUuDwbFZTp6FUUjanyALBsGLFmor8+h87pqRL
         vzfn4jyf5/+Qldak3GfqTk3o8iYTdG4iH+nXKP5avu0nW6pv25+Bb23D5MVcTN0yw5cux8qWGD9zzJkR
-        WF/4MT4+joH3w3TJMYTVKbOXiFMRKhjlmCI/VPXfYXKFUNYyikAggA7nS0wp1qA3hUCcXCLDCMcU+qBq
-        oNj9C7vLPyHe4EX+/TdwOp2wV1ajc2eCR5z+J4OfY4yDFH+bxWkVQ4jTdUN63A3pwUbklDaj2GpD0471
-        GlEsSOfjmNMfwNZTTM9Ou+pD7KkuSDSvQTIaQRQ1kGY/RcqhsgeiWJBukGMKBqByTMDUEcLe634w+h5E
+        WF/4MT4+joH3w3TJMYTVKbOXiFMRKhjlmCI/VPXfYXKHUNYyikAgAJfzJaYUa9CbQiBOLpFhhGMKfVA1
+        UNzxC7vLPyHe4EX+/TdwOp2wV1ajc2eCR5z+J4OfY4yDFH+bxWkVQ4jTdUN6vAPSg43IKW1GsdWGph3r
+        NaJYkM7HMac/gK2nmJ6ddtWH2FNdkGheg2Q0gihqIM1+ipRDZQ9EsSDdIMcUDEDlmIDJFcLe634w+h5E
         zeH9NZCom0GOPLogivnkeo+FKXiLTAHzP5FOcbyxD9Garnmc1USxfTG2Xcq2xOr7wTq+4hzFe64NY21h
-        P2LyvH/PlmQ2gChtnEjm85TvWuUp3RaUF/XhbPsPKG7Ql4v6Ea0VMH1ReFlVT/HDxViovSQ5w2crDgdc
-        V5CY/wpJpl6sNvRAMnc2WwdyuGppLNR6PqnCzTtmwmNOCEuk6seQsU8QdaCW4lqKKyNjoRrzhmB4zIUJ
+        P2LyvH/PlmQ2gChtnEjm85TvWuUp3RaUF/XhbPsPKG7Ql4v6Ea0VMH1ReFlVT/HDxViovSQ5w2crDgfc
+        V5CY/wpJpl6sNvRAMnc2WwdyuGppLNR6PqnCxTtmwmNOCEuk6seQsU8QdaCW4lqKKyNjoRrzhmB4zI0J
         Xo0vrel/lihtiGHtWKe0WsWxyOXmZk0PtZnB16XO8Dc3Tz4vTQ5VGRKDJSe2WsSR/3eU3ThtztkSvquV
-        vbuXJ7t8RxuncKhJlPh7mQj5DXciTvVFopUUAAAAAElFTkSuQmCC
+        vbuXJ7t8RxuncKhJlPh7mQj5DXUkTvPe3eNjAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -384,6 +384,9 @@
   <metadata name="Empresa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Factura.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Pagado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -404,5 +407,8 @@
   </metadata>
   <metadata name="empresasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>594, 56</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>116</value>
   </metadata>
 </root>

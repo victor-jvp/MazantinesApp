@@ -17,11 +17,11 @@
     <Shape ID="DesignTable:vv_empleados" ZOrder="4" X="392" Y="360" Height="305" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:vv_CasasCountEmpleados" ZOrder="11" X="100" Y="582" Height="153" Width="293" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:Proveedores" ZOrder="24" X="1174" Y="70" Height="244" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:Asientos" ZOrder="23" X="1174" Y="409" Height="229" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:Asientos" ZOrder="23" X="1174" Y="409" Height="267" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:Liquidaciones" ZOrder="2" X="1544" Y="-8" Height="343" Width="224" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:EmpleosPagos" ZOrder="21" X="1838" Y="46" Height="153" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:NominasCab" ZOrder="19" X="1526" Y="280" Height="268" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:NominasDet" ZOrder="18" X="462" Y="491" Height="306" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:NominasDet" ZOrder="18" X="462" Y="491" Height="305" Width="217" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Frutas" ZOrder="8" X="55" Y="457" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="39" />
     <Shape ID="DesignTable:Frutas_variedades" ZOrder="3" X="244" Y="368" Height="172" Width="248" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:vv_NominasEmpleadosMes" ZOrder="1" X="1840" Y="243" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
@@ -162,7 +162,7 @@
           <Y>714</Y>
         </Point>
         <Point>
-          <X>620</X>
+          <X>679</X>
           <Y>714</Y>
         </Point>
       </RoutePoints>
@@ -174,7 +174,7 @@
           <Y>519</Y>
         </Point>
         <Point>
-          <X>620</X>
+          <X>679</X>
           <Y>519</Y>
         </Point>
       </RoutePoints>
