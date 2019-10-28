@@ -15,7 +15,7 @@ namespace ManzantinesApp.DBContext
     public partial class vv_empleados
     {
         public int Id { get; set; }
-        public Nullable<int> Nro_empleado { get; set; }
+        public string Nro_Empleado { get; set; }
         public string Caja { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }

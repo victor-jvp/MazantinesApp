@@ -57,24 +57,25 @@ namespace ManzantinesApp.Nomina
             AnioToolStripComboBox.ComboBox.SelectedValue = DateTime.Now.Year;
             MesToolStripComboBox.ComboBox.SelectedValue = DateTime.Now.Month;
 
-            using (var db = new MazantinesEntities())
-            {
-                vvNominasEmpleadosMesBindingSource.DataSource = ToDataTable(db.vv_NominasEmpleadosMes
-                    .Where(m => m.mesIni == (int)MesToolStripComboBox.ComboBox.SelectedValue && 
-                        m.Anio == (int)AnioToolStripComboBox.ComboBox.SelectedValue).ToList());
-                NominaDataGridView.DataSource = vvNominasEmpleadosMesBindingSource;
-            }
+            //using (var db = new MazantinesEntities())
+            //{
+            //    vvNominasEmpleadosMesBindingSource.DataSource = ToDataTable(db.vv_NominasEmpleadosMes
+            //        .Where(m => m.mesIni == (int)MesToolStripComboBox.ComboBox.SelectedValue && 
+            //            m.Anio == (int)AnioToolStripComboBox.ComboBox.SelectedValue).ToList());
+            //    NominaDataGridView.DataSource = vvNominasEmpleadosMesBindingSource;
+            //}
         }
 
         private void UpdateNominaMes(int anio, int mes)
         {
-            using (var db = new MazantinesEntities())
-            {
-                vvNominasEmpleadosMesBindingSource.DataSource = ToDataTable(db.vv_NominasEmpleadosMes
-                    .Where(m => m.mesIni == (int)MesToolStripComboBox.ComboBox.SelectedValue &&
-                        m.Anio == (int)AnioToolStripComboBox.ComboBox.SelectedValue).ToList());
-                NominaDataGridView.DataSource = vvNominasEmpleadosMesBindingSource;
-            }
+            //using (var db = new MazantinesEntities())
+            //{
+            //    vvNominasEmpleadosMesBindingSource.DataSource = ToDataTable(db.vv_NominasEmpleadosMes
+            //        .Where(m => m.mesIni == (int)MesToolStripComboBox.ComboBox.SelectedValue &&
+            //            m.Anio == (int)AnioToolStripComboBox.ComboBox.SelectedValue).ToList());
+            //    NominaDataGridView.DataSource = vvNominasEmpleadosMesBindingSource;
+            //}
+            this.vv_NominasEmpleadosMesTableAdapter.FillByAnioAndMes(this.dataSet1.vv_NominasEmpleadosMes, anio, mes);
         }
 
         #endregion
@@ -85,6 +86,8 @@ namespace ManzantinesApp.Nomina
 
         private void FrmNominaMes_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.vv_NominasEmpleadosMes' table. You can move, or remove it, as needed.
+            this.vv_NominasEmpleadosMesTableAdapter.Fill(this.dataSet1.vv_NominasEmpleadosMes);
             Inicializar();
         }
 

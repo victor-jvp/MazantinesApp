@@ -17,19 +17,19 @@ namespace ManzantinesApp.DBContext
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Encargados()
         {
-            this.NominasCab = new HashSet<NominasCab>();
             this.Fincas = new HashSet<Fincas>();
             this.Trabajadores = new HashSet<Trabajadores>();
+            this.NominasCab = new HashSet<NominasCab>();
         }
     
         public int Id { get; set; }
         public string Encargado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NominasCab> NominasCab { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Fincas> Fincas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Trabajadores> Trabajadores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NominasCab> NominasCab { get; set; }
     }
 }

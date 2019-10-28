@@ -229,15 +229,19 @@
     <Compile Include="DBContext\Trabajadores_Empleos.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBContext\vv_CasasCountEmpleados.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\vv_empleados.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBContext\vv_EmpleadosCasas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBContext\vv_nominas.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBContext\vv_NominasEmpleadosMes.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DBContext\vv_NominasEmpleadosMes.cs" />
     <Compile Include="DBContext\vv_nomina_trabajadores.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -610,7 +614,6 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
-    <None Include="Properties\DataSources\ManzantinesApp.DBContext.vv_NominasEmpleadosMes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -680,6 +683,9 @@
     <None Include="Resources\PrintSetup_16x_32.bmp" />
     <None Include="Resources\Report_16x_32.bmp" />
     <None Include="Resources\Print_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

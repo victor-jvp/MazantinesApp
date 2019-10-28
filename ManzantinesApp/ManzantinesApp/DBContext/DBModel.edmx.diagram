@@ -5,44 +5,45 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bf183f1155cf4fc2a053875c81cc15ee" Name="Diagram1" ZoomLevel="94">
-        <EntityTypeShape EntityType="MazantinesModel.Asientos" Width="1.5" PointX="7.5" PointY="9.5" />
-        <EntityTypeShape EntityType="MazantinesModel.Casas" Width="1.5" PointX="5.25" PointY="4.125" />
-        <EntityTypeShape EntityType="MazantinesModel.Empleos" Width="1.5" PointX="10.5" PointY="1" />
-        <EntityTypeShape EntityType="MazantinesModel.EmpleosPagos" Width="1.5" PointX="12.75" PointY="0.875" />
-        <EntityTypeShape EntityType="MazantinesModel.Empresas" Width="1.5" PointX="5.25" PointY="7" />
-        <EntityTypeShape EntityType="MazantinesModel.Encargados" Width="1.5" PointX="0.75" PointY="5.75" />
-        <EntityTypeShape EntityType="MazantinesModel.Fincas" Width="1.5" PointX="3" PointY="4.125" />
-        <EntityTypeShape EntityType="MazantinesModel.Frutas" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="MazantinesModel.Liquidaciones" Width="1.5" PointX="0.75" PointY="10.75" />
-        <EntityTypeShape EntityType="MazantinesModel.NominasCab" Width="1.5" PointX="3" PointY="6.875" />
-        <EntityTypeShape EntityType="MazantinesModel.NominasDet" Width="1.5" PointX="9.75" PointY="3.75" />
-        <EntityTypeShape EntityType="MazantinesModel.Proveedores" Width="1.5" PointX="5.25" PointY="9.625" />
-        <EntityTypeShape EntityType="MazantinesModel.Trabajadores" Width="1.5" PointX="7.5" PointY="3.625" />
-        <EntityTypeShape EntityType="MazantinesModel.Trabajadores_Empleos" Width="1.5" PointX="12.75" PointY="4.875" />
-        <EntityTypeShape EntityType="MazantinesModel.rpt_nominas" Width="1.5" PointX="9.75" PointY="10.75" />
-        <EntityTypeShape EntityType="MazantinesModel.rpt_recibos" Width="1.5" PointX="11.75" PointY="7.75" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_EmpleadosCasas" Width="1.5" PointX="11.75" PointY="12.75" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_nomina_trabajadores" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_nominas" Width="1.5" PointX="2.75" PointY="13.75" />
-        <EntityTypeShape EntityType="MazantinesModel.vv_NominasEmpleadosMes" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="MazantinesModel.Asientos" Width="1.5" PointX="5.25" PointY="18.375" />
+        <EntityTypeShape EntityType="MazantinesModel.Casas" Width="1.5" PointX="5.25" PointY="15.375" />
+        <EntityTypeShape EntityType="MazantinesModel.Empleos" Width="1.5" PointX="7.5" PointY="16.25" />
+        <EntityTypeShape EntityType="MazantinesModel.EmpleosPagos" Width="1.5" PointX="9.75" PointY="18.125" />
+        <EntityTypeShape EntityType="MazantinesModel.Empresas" Width="1.5" PointX="3" PointY="13.875" />
+        <EntityTypeShape EntityType="MazantinesModel.Encargados" Width="1.5" PointX="0.75" PointY="8.875" />
+        <EntityTypeShape EntityType="MazantinesModel.Fincas" Width="1.5" PointX="3" PointY="10.25" />
+        <EntityTypeShape EntityType="MazantinesModel.Frutas" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="MazantinesModel.Frutas_variedades" Width="1.5" PointX="5.25" PointY="4" />
+        <EntityTypeShape EntityType="MazantinesModel.Liquidaciones" Width="1.5" PointX="5.25" PointY="9.25" />
+        <EntityTypeShape EntityType="MazantinesModel.NominasCab" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="MazantinesModel.NominasDet" Width="1.5" PointX="9.75" PointY="8.625" />
+        <EntityTypeShape EntityType="MazantinesModel.Proveedores" Width="1.5" PointX="3" PointY="18.5" />
+        <EntityTypeShape EntityType="MazantinesModel.Trabajadores" Width="1.5" PointX="7.5" PointY="10.75" />
+        <EntityTypeShape EntityType="MazantinesModel.Trabajadores_Empleos" Width="1.5" PointX="9.75" PointY="15.125" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_empleados" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_EmpleadosCasas" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_nomina_trabajadores" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_nominas" Width="1.5" PointX="11.75" PointY="0.75" />
         <AssociationConnector Association="MazantinesModel.fk_empresa" />
         <AssociationConnector Association="MazantinesModel.fk_proveedores" />
-        <AssociationConnector Association="MazantinesModel.id_casa" />
-        <AssociationConnector Association="MazantinesModel.id_finca" />
+        <AssociationConnector Association="MazantinesModel.FK_id_casa" />
+        <AssociationConnector Association="MazantinesModel.FK_id_finca" />
         <AssociationConnector Association="MazantinesModel.FK_EmpleoPago_Empleos" />
-        <AssociationConnector Association="MazantinesModel.id_empleo" />
-        <AssociationConnector Association="MazantinesModel.id_empresa" />
+        <AssociationConnector Association="MazantinesModel.FK_id_empleo" />
+        <AssociationConnector Association="MazantinesModel.FK_id_empresa" />
+        <AssociationConnector Association="MazantinesModel.fk_id_empresa_liquidaciones" />
+        <AssociationConnector Association="MazantinesModel.FK_id_encargado" />
+        <AssociationConnector Association="MazantinesModel.FK_id_encargado_trabajador" />
         <AssociationConnector Association="MazantinesModel.FK_NominasCab_Encargados" />
-        <AssociationConnector Association="MazantinesModel.id_encargado" />
-        <AssociationConnector Association="MazantinesModel.id_encargado_trabajador" />
+        <AssociationConnector Association="MazantinesModel.FK__Liquidaci__id_fi__3D2915A8" />
+        <AssociationConnector Association="MazantinesModel.FK__Liquidaci__id_fr__2FCF1A8A" />
+        <AssociationConnector Association="MazantinesModel.FK_if_fruta_variedad" />
         <AssociationConnector Association="MazantinesModel.fk_NominasDet_NominasCab_pk" />
         <AssociationConnector Association="MazantinesModel.FK_NominasDet_Trabajadores" />
         <AssociationConnector Association="MazantinesModel.fk_id_trabajador" />
-        <AssociationConnector Association="MazantinesModel.fk_id_empresa_liquidaciones" />
-        <AssociationConnector Association="MazantinesModel.FK__Liquidaci__id_fr__2FCF1A8A" />
-        <EntityTypeShape EntityType="MazantinesModel.Frutas_variedades" Width="1.5" PointX="3" PointY="10.75" />
-        <AssociationConnector Association="MazantinesModel.if_fruta_variedad" />
-        <AssociationConnector Association="MazantinesModel.FK__Liquidaci__id_fi__3D2915A8" />
+        <EntityTypeShape EntityType="MazantinesModel.rpt_nominas" Width="1.5" PointX="12.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MazantinesModel.rpt_recibos" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MazantinesModel.vv_CasasCountEmpleados" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

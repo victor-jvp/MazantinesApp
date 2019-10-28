@@ -30,7 +30,7 @@ namespace ManzantinesApp.DBContext
         public string Variedad { get; set; }
     
         public virtual Empresas Empresas { get; set; }
-        public virtual Frutas Frutas { get; set; }
         public virtual Fincas Fincas { get; set; }
+        public virtual Frutas Frutas { get; set; }
     }
 }

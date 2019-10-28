@@ -15,12 +15,12 @@ namespace ManzantinesApp.DBContext
     public partial class vv_nomina_trabajadores
     {
         public int id { get; set; }
+        public string Nro_empleado { get; set; }
         public string Caja { get; set; }
         public string trabajador { get; set; }
         public Nullable<int> id_encargado { get; set; }
         public Nullable<int> id_empleo { get; set; }
         public double valorD { get; set; }
         public double valorH { get; set; }
-        public string Nro_empleado { get; set; }
     }
 }
