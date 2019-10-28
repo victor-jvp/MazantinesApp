@@ -56,7 +56,7 @@
         {
             var anio2 = DateTime.Now.Year;
             LoadCombos(anio2);
-
+            NominaDataGridView.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             NominaDataGridView.DataSource = null;
 
             SemanaComboBox.ComboBox.SelectedValue = semana;
@@ -682,6 +682,18 @@
             }
         }
 
+        private void CopyPasteColumn(string valor)
+        {
+            var selection = NominaDataGridView.SelectedCells;
+
+            if (selection.Count <= 1 || !NominaDataGridView.IsCurrentCellInEditMode) return;
+
+            foreach (DataGridViewCell cell in selection)
+            {
+                this.NominaDataGridView.Rows[cell.RowIndex].Cells[cell.ColumnIndex].Value = valor;
+            }
+        }
+
         #endregion
 
         #region Constructors
@@ -702,6 +714,7 @@
                 NominaDataGridView.Columns[e.ColumnIndex].Visible == true &&
                 NominaDataGridView.Columns[e.ColumnIndex].Name != "pagado") // 1 should be your column index
             {
+
                 float i;
 
                 if (!float.TryParse(Convert.ToString(e.FormattedValue), out i))
@@ -712,7 +725,10 @@
                         "Aviso",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
+                    return;
                 }
+
+                CopyPasteColumn(e.FormattedValue.ToString());
             }
         }
 

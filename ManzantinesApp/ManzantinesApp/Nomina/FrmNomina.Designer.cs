@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNomina));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -81,9 +81,9 @@
             this.NominaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.NominaDataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.NominaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NominaDataGridView.Location = new System.Drawing.Point(0, 55);
-            this.NominaDataGridView.MultiSelect = false;
             this.NominaDataGridView.Name = "NominaDataGridView";
             this.NominaDataGridView.RowHeadersVisible = false;
             this.NominaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -249,8 +249,8 @@
             // 
             this.TotalesDataGridView.AllowUserToAddRows = false;
             this.TotalesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TotalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.TotalesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.TotalesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TotalesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
