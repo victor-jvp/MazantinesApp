@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 using ManzantinesApp.Classes;
-using ManzantinesApp.DBContext;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Windows.Forms;
+using CrystalDecisions.Shared;
 
 namespace ManzantinesApp.Nomina
 {
@@ -109,6 +106,56 @@ namespace ManzantinesApp.Nomina
                 int mes = (int)MesToolStripComboBox.ComboBox.SelectedValue;
                 UpdateNominaMes(anio, mes);
             }
+        }
+
+        private void vistaPreliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            var dt = new DataTable();
+            dt = this.dataSet1.vv_NominasEmpleadosMes.Copy();
+            ManzantinesApp.Classes.Reports.VistaPreliminar(new RptNominaPorMes(), dt);
+            this.Enabled = true;
+        }
+
+        private void excelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            try
+            {
+                CrystalDecisions.Shared.ExportOptions exportOptions;
+                DiskFileDestinationOptions diskFileDestinationOptions = new DiskFileDestinationOptions();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel|*.xlsx";
+
+                Reports.FrmPreviewCrystal frmPreviewCrystal = new Reports.FrmPreviewCrystal();
+                frmPreviewCrystal.ReporteCrystal = new RptNominaPorMes();
+
+                DataSet ds = new DataSet();
+                DataView view = (DataView)this.vvNominasEmpleadosMesBindingSource1.List;
+                DataTable dt = view.ToTable();
+                dt.TableName = "vv_NominasEmpleadosMes";
+                ds.Tables.Add(dt);
+
+                frmPreviewCrystal.ReporteCrystal.SetDataSource(ds);
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    diskFileDestinationOptions.DiskFileName = saveFileDialog.FileName;
+                    exportOptions = frmPreviewCrystal.ReporteCrystal.ExportOptions;
+                    {
+                        exportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        exportOptions.ExportFormatType = ExportFormatType.ExcelWorkbook;
+                        exportOptions.ExportDestinationOptions = diskFileDestinationOptions;
+                        exportOptions.ExportFormatOptions = new ExcelFormatOptions();
+                    }
+                    frmPreviewCrystal.ReporteCrystal.Export();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
         }
     }
 }

@@ -329,6 +329,12 @@
       <DependentUpon>RptNomina.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Nomina\RptNominaPorMes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNominaPorMes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Nomina\RptRecibos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -505,6 +511,10 @@
     <EmbeddedResource Include="Nomina\RptNomina.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptNomina.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nomina\RptNominaPorMes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNominaPorMes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina\RptRecibos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

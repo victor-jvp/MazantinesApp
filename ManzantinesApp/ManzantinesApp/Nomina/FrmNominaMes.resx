@@ -120,6 +120,26 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="excelToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAw5JREFUOE+Nk1lPE2EUhuenaIyiKAoFkU0EkUXUKIVuWKBQlC5AQWIrq9TCTKFA
+        WVtatYjFtRgjBr0yqAjERHGLEYmJGlo0kSXGGPXq9cxYiMEbT/JlLmbO8z1nGWZtyK5aNhzqq1Kk2XW2
+        xPZjo/Et6vcR1jx58PW/IXObDIf7jZ6DjhNT6d3lyymdOuxuO4bYliLs4lSIbFZCxCmPBj//Nw44KpHR
+        a0Bqdyn2dmqR1FGChLZiAhRiJ5sPUZMSWb1Vy2pv03yR1zKv8poD+RcaA8qBhoCIy19iMvsqkN5bjn1d
+        eiTbtUhsP454WzFirCpEsXmIaDqKXFcNSoeseDY3i4phO8p97fBM3YZioM7P7O8zIK2nDCldOiTZNYJ+
+        nE2NXQSIbM5DuCUXuW4CDHKYmJlGha8DhuEOeCZHIPcQYEU/x20SDq9vvNGFI44qiKh+HiB3VUN/kcX4
+        6yfQDXEou2bDeQLIPLV+RtDv1qPSZ8eHhXnor7TCv/SZylAL+jvOKIIAKwGeQksgHnJu4hak52v8zN/6
+        D2en8fX7NzSMuBBJ9Yc35WL7GTlkBNBR4qM309DQs4SOc8wH6VkCCN0PAti7A/jx6ydSO/Wr+tvMMgGg
+        91qFHmi9HDRDLBz3rkPsNAYYXj+ZxsdbfFz4hOkPMxicGkVEM+lbFNjaKIXUdQo6SpyceQ6Nlwy8zXCM
+        DSPLcTLApND4kjo1qLvlxJ1XE9jfY8CXr0vI7DYI+qGnJZC6yYDGOPn2Bd3+x8B53wcxD1jRT2in7bPR
+        9rWoENtahGiuAGFmObbwAJcJWkqcmuUBLI6TgfPBDYhdJ+cYXn8PbV88jS+GT7QWQMQqV/U3N+RAQgY6
+        Mnj87iU0lziUXGbRT4CsfuMck0SA3bR9cW1qAhQiisun+pWkr0BoowQhDdnI6CpdkrmrA9QLOqZAtsvk
+        F7uMcyFmySITZy3WxrOq/piWwvFotmAxkm4PpwaGUf28/qZ6MTaZJTLhx/mfCG+Ur9teK83eWi+2hNSJ
+        b26szXq3vk6cE3y9JhjmN0wlEg7SUD81AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="vvNominasEmpleadosMesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>221, 17</value>
   </metadata>

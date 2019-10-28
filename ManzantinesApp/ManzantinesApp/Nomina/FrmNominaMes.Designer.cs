@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNominaMes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,10 +42,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.MesToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
-            this.vvNominasEmpleadosMesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ManzantinesApp.Data.DataSet1();
-            this.vv_NominasEmpleadosMesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.vv_NominasEmpleadosMesTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +59,9 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vvNominasEmpleadosMesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ManzantinesApp.Data.DataSet1();
+            this.vv_NominasEmpleadosMesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.vv_NominasEmpleadosMesTableAdapter();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vvNominasEmpleadosMesBindingSource1)).BeginInit();
@@ -71,7 +75,8 @@
             this.AnioToolStripComboBox,
             this.toolStripSeparator1,
             this.toolStripLabel1,
-            this.MesToolStripComboBox});
+            this.MesToolStripComboBox,
+            this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1044, 25);
@@ -109,6 +114,34 @@
             this.MesToolStripComboBox.Size = new System.Drawing.Size(121, 25);
             this.MesToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.MesToolStripComboBox_SelectedIndexChanged);
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vistaPreliminarToolStripMenuItem,
+            this.excelToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = global::ManzantinesApp.Properties.Resources.Print_16x;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // vistaPreliminarToolStripMenuItem
+            // 
+            this.vistaPreliminarToolStripMenuItem.Image = global::ManzantinesApp.Properties.Resources.Report_16x_32;
+            this.vistaPreliminarToolStripMenuItem.Name = "vistaPreliminarToolStripMenuItem";
+            this.vistaPreliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vistaPreliminarToolStripMenuItem.Text = "Vista Preliminar";
+            this.vistaPreliminarToolStripMenuItem.Click += new System.EventHandler(this.vistaPreliminarToolStripMenuItem_Click);
+            // 
+            // excelToolStripMenuItem
+            // 
+            this.excelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("excelToolStripMenuItem.Image")));
+            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
+            this.excelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excelToolStripMenuItem.Text = "Excel";
+            this.excelToolStripMenuItem.Click += new System.EventHandler(this.excelToolStripMenuItem_Click);
+            // 
             // NominaDataGridView
             // 
             this.NominaDataGridView.AllowUserToAddRows = false;
@@ -139,20 +172,6 @@
             this.NominaDataGridView.ReadOnly = true;
             this.NominaDataGridView.Size = new System.Drawing.Size(1044, 386);
             this.NominaDataGridView.TabIndex = 2;
-            // 
-            // vvNominasEmpleadosMesBindingSource1
-            // 
-            this.vvNominasEmpleadosMesBindingSource1.DataMember = "vv_NominasEmpleadosMes";
-            this.vvNominasEmpleadosMesBindingSource1.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vv_NominasEmpleadosMesTableAdapter
-            // 
-            this.vv_NominasEmpleadosMesTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -275,6 +294,20 @@
             this.totalPagoDataGridViewTextBoxColumn.ReadOnly = true;
             this.totalPagoDataGridViewTextBoxColumn.Width = 84;
             // 
+            // vvNominasEmpleadosMesBindingSource1
+            // 
+            this.vvNominasEmpleadosMesBindingSource1.DataMember = "vv_NominasEmpleadosMes";
+            this.vvNominasEmpleadosMesBindingSource1.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vv_NominasEmpleadosMesTableAdapter
+            // 
+            this.vv_NominasEmpleadosMesTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmNominaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,5 +371,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
     }
 }
