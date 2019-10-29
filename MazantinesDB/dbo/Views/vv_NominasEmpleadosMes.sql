@@ -1,37 +1,24 @@
 ﻿CREATE VIEW [dbo].[vv_NominasEmpleadosMes] AS SELECT
 	cab.anio,
+	DATEPART(mm, DATEADD(wk, DATEDIFF(wk, 6, '1/1/' + convert(varchar(10),cab.anio)) + (cab.semana-1), 6)) as mesIni,
 	cab.id_encargado,
 	enc.Encargado,
-	CAST (
-	tra.Nro_empleado AS VARCHAR ( MAX )) AS Nro_Empleado,
+	CAST (tra.Nro_empleado AS VARCHAR ( MAX )) AS Nro_Empleado,
 	tra.Caja,
 	tra.Nombre,
 	tra.Apellidos,
-	DATEPART(
-		mm,
-		DATEADD(
-			wk,
-			DATEDIFF(
-				wk,
-				6,
-			'1/1/' + CONVERT ( VARCHAR ( 10 ), cab.anio )) + ( cab.semana - 1 ),
-			6 
-		)) AS mesIni,
 	SUM ( det.lunD + det.marD + det.mieD + det.jueD + det.vieD + det.sabD + det.domD ) AS totalD,
 	SUM ( det.lunH + det.marH + det.mieH + det.jueH + det.vieH + det.sabH + det.domH ) AS totalH,
 	det.valorD,
 	det.valorH,
-	SUM ((
-			det.lunD + det.marD + det.mieD + det.jueD + det.vieD + det.sabD + det.domD 
-			) * det.valorD + ( det.lunH + det.marH + det.mieH + det.jueH + det.vieH + det.sabH + det.domH ) * det.valorH + det.importe 
-	) AS TotalPago 
+	SUM (( det.lunD + det.marD + det.mieD + det.jueD + det.vieD + det.sabD + det.domD ) * det.valorD + ( det.lunH + det.marH + det.mieH + det.jueH + det.vieH + det.sabH + det.domH ) * det.valorH + det.importe ) AS TotalPago 
 FROM
 	dbo.Trabajadores AS tra
 	INNER JOIN dbo.NominasDet AS det ON det.id_empleado = tra.Id
 	INNER JOIN dbo.NominasCab AS cab ON cab.id_cab = det.id_cab
 	LEFT OUTER JOIN dbo.Encargados AS enc ON enc.Id = cab.id_encargado 
 WHERE
-	( tra.Activo = 1 ) 
+		tra.Activo = 1 	
 GROUP BY
 	cab.anio,
 	cab.id_encargado,
@@ -41,16 +28,7 @@ GROUP BY
 	tra.Caja,
 	tra.Nombre,
 	tra.Apellidos,
-	DATEPART(
-		mm,
-		DATEADD(
-			wk,
-			DATEDIFF(
-				wk,
-				6,
-			'1/1/' + CONVERT ( VARCHAR ( 10 ), cab.anio )) + ( cab.semana - 1 ),
-			6 
-		)),
+	DATEPART(mm, DATEADD(wk, DATEDIFF(wk, 6, '1/1/' + convert(varchar(10),cab.anio)) + (cab.semana-1), 6)),
 	det.valorD,
 	det.valorH
 GO

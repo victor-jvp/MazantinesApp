@@ -7,10 +7,13 @@
     [FormaPago]    NVARCHAR (35)   NULL,
     [Pagado]       BIT             NULL,
     [id_empresa]   INT             NULL,
+    [Factura]      NVARCHAR (15)   NULL,
     CONSTRAINT [PK_Asientos] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [fk_empresa] FOREIGN KEY ([id_empresa]) REFERENCES [dbo].[Empresas] ([Id]),
     CONSTRAINT [fk_proveedores] FOREIGN KEY ([id_proveedor]) REFERENCES [dbo].[Proveedores] ([Id])
 );
+
+
 
 
 

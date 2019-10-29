@@ -3,6 +3,7 @@
 	dbo.Asientos.id_proveedor,
 	dbo.Asientos.id_empresa,
 	dbo.Empresas.Empresa,
+	dbo.Asientos.Factura,
 	dbo.Asientos.FechaFactura,
 	dbo.Asientos.Importe,
 	dbo.Asientos.FechaPago,
