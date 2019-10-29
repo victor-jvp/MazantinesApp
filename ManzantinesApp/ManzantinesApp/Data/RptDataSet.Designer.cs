@@ -2278,6 +2278,8 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnvalorH;
             
+            private global::System.Data.DataColumn columnCaja;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vv_nomina_trabajadoresDataTable() {
@@ -2369,6 +2371,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CajaColumn {
+                get {
+                    return this.columnCaja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2404,7 +2414,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vv_nomina_trabajadoresRow Addvv_nomina_trabajadoresRow(string Nro_empleado, string trabajador, int id_encargado, int id_empleo, decimal valorD, decimal valorH) {
+            public vv_nomina_trabajadoresRow Addvv_nomina_trabajadoresRow(string Nro_empleado, string trabajador, int id_encargado, int id_empleo, decimal valorD, decimal valorH, string Caja) {
                 vv_nomina_trabajadoresRow rowvv_nomina_trabajadoresRow = ((vv_nomina_trabajadoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2413,7 +2423,8 @@ namespace ManzantinesApp.Data {
                         id_encargado,
                         id_empleo,
                         valorD,
-                        valorH};
+                        valorH,
+                        Caja};
                 rowvv_nomina_trabajadoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvv_nomina_trabajadoresRow);
                 return rowvv_nomina_trabajadoresRow;
@@ -2450,6 +2461,7 @@ namespace ManzantinesApp.Data {
                 this.columnid_empleo = base.Columns["id_empleo"];
                 this.columnvalorD = base.Columns["valorD"];
                 this.columnvalorH = base.Columns["valorH"];
+                this.columnCaja = base.Columns["Caja"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2469,6 +2481,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnvalorD);
                 this.columnvalorH = new global::System.Data.DataColumn("valorH", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvalorH);
+                this.columnCaja = new global::System.Data.DataColumn("Caja", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCaja);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2483,6 +2497,8 @@ namespace ManzantinesApp.Data {
                 this.columnid_empleo.ReadOnly = true;
                 this.columnvalorD.ReadOnly = true;
                 this.columnvalorH.ReadOnly = true;
+                this.columnCaja.ReadOnly = true;
+                this.columnCaja.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3395,6 +3411,8 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnimporte;
             
+            private global::System.Data.DataColumn columncaja;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public rpt_nominasDataTable() {
@@ -3678,6 +3696,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cajaColumn {
+                get {
+                    return this.columncaja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3744,7 +3770,8 @@ namespace ManzantinesApp.Data {
                         string ccc, 
                         bool pagado, 
                         string Trabajador, 
-                        double importe) {
+                        double importe, 
+                        string caja) {
                 rpt_nominasRow rowrpt_nominasRow = ((rpt_nominasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         anio,
@@ -3777,7 +3804,8 @@ namespace ManzantinesApp.Data {
                         ccc,
                         pagado,
                         Trabajador,
-                        importe};
+                        importe,
+                        caja};
                 rowrpt_nominasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_nominasRow);
                 return rowrpt_nominasRow;
@@ -3838,6 +3866,7 @@ namespace ManzantinesApp.Data {
                 this.columnpagado = base.Columns["pagado"];
                 this.columnTrabajador = base.Columns["Trabajador"];
                 this.columnimporte = base.Columns["importe"];
+                this.columncaja = base.Columns["caja"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3905,6 +3934,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnTrabajador);
                 this.columnimporte = new global::System.Data.DataColumn("importe", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimporte);
+                this.columncaja = new global::System.Data.DataColumn("caja", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncaja);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_det}, true));
                 this.columnstatus.MaxLength = 1;
@@ -3918,6 +3949,7 @@ namespace ManzantinesApp.Data {
                 this.columnpagado.DefaultValue = ((bool)(false));
                 this.columnTrabajador.ReadOnly = true;
                 this.columnTrabajador.MaxLength = 2147483647;
+                this.columncaja.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6280,6 +6312,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Caja {
+                get {
+                    try {
+                        return ((string)(this[this.tablevv_nomina_trabajadores.CajaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Caja\' in table \'vv_nomina_trabajadores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_nomina_trabajadores.CajaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNro_empleadoNull() {
                 return this.IsNull(this.tablevv_nomina_trabajadores.Nro_empleadoColumn);
             }
@@ -6348,6 +6396,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetvalorHNull() {
                 this[this.tablevv_nomina_trabajadores.valorHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCajaNull() {
+                return this.IsNull(this.tablevv_nomina_trabajadores.CajaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCajaNull() {
+                this[this.tablevv_nomina_trabajadores.CajaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7724,6 +7784,22 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string caja {
+                get {
+                    try {
+                        return ((string)(this[this.tablerpt_nominas.cajaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'caja\' in table \'rpt_nominas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_nominas.cajaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsanioNull() {
                 return this.IsNull(this.tablerpt_nominas.anioColumn);
             }
@@ -8080,6 +8156,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetimporteNull() {
                 this[this.tablerpt_nominas.importeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscajaNull() {
+                return this.IsNull(this.tablerpt_nominas.cajaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcajaNull() {
+                this[this.tablerpt_nominas.cajaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10634,6 +10722,7 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("id_empleo", "id_empleo");
             tableMapping.ColumnMappings.Add("valorD", "valorD");
             tableMapping.ColumnMappings.Add("valorH", "valorH");
+            tableMapping.ColumnMappings.Add("Caja", "Caja");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10650,13 +10739,13 @@ namespace ManzantinesApp.Data.RptDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, Nro_empleado, trabajador, id_encargado, id_empleo, valorD, valorH FROM" +
-                " vv_nomina_trabajadores";
+            this._commandCollection[0].CommandText = "SELECT id, Nro_empleado, trabajador, id_encargado, id_empleo, valorD, valorH, Caj" +
+                "a FROM vv_nomina_trabajadores";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id, Nro_empleado, trabajador, id_encargado, id_empleo, valorD, valorH FROM" +
-                " vv_nomina_trabajadores WHERE (id_encargado = @id_encargado)";
+            this._commandCollection[1].CommandText = "SELECT id, Nro_empleado, trabajador, id_encargado, id_empleo, valorD, valorH, Caj" +
+                "a FROM vv_nomina_trabajadores WHERE (id_encargado = @id_encargado)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_encargado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_encargado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -11071,6 +11160,7 @@ FROM            vv_nominas";
             tableMapping.ColumnMappings.Add("pagado", "pagado");
             tableMapping.ColumnMappings.Add("Trabajador", "Trabajador");
             tableMapping.ColumnMappings.Add("importe", "importe");
+            tableMapping.ColumnMappings.Add("caja", "caja");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11087,9 +11177,7 @@ FROM            vv_nominas";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        anio, semana, status, id_encargado, Encargado, Nro_empleado, Trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, 
-                         domH, ccc, pagado, importe
-FROM            rpt_nominas";
+            this._commandCollection[0].CommandText = @"SELECT anio, semana, status, id_encargado, Encargado, Nro_empleado, Trabajador, Empresa, id_empleo, id_det, id_cab, id_empleado, valorD, valorH, lunD, lunH, marD, marH, mieD, mieH, jueD, jueH, vieD, vieH, sabD, sabH, domD, domH, ccc, pagado, importe, caja FROM rpt_nominas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

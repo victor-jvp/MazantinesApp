@@ -30,19 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNominaMes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.vistaPreliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NominaDataGridView = new System.Windows.Forms.DataGridView();
+            this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mesIni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.encargadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,10 +61,6 @@
             this.vvNominasEmpleadosMesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ManzantinesApp.Data.DataSet1();
             this.vv_NominasEmpleadosMesTableAdapter = new ManzantinesApp.Data.DataSet1TableAdapters.vv_NominasEmpleadosMesTableAdapter();
-            this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.DesdeCheckBox = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NominaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vvNominasEmpleadosMesBindingSource1)).BeginInit();
@@ -73,7 +73,7 @@
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(953, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(928, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -109,14 +109,14 @@
             // 
             this.NominaDataGridView.AllowUserToAddRows = false;
             this.NominaDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.NominaDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.NominaDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.NominaDataGridView.AutoGenerateColumns = false;
             this.NominaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.NominaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NominaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn10,
+            this.mesIni,
             this.dataGridViewTextBoxColumn3,
             this.encargadoDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn4,
@@ -129,11 +129,60 @@
             this.dataGridViewTextBoxColumn14,
             this.totalPagoDataGridViewTextBoxColumn});
             this.NominaDataGridView.DataSource = this.vvNominasEmpleadosMesBindingSource1;
-            this.NominaDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.NominaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NominaDataGridView.Location = new System.Drawing.Point(0, 25);
             this.NominaDataGridView.Name = "NominaDataGridView";
             this.NominaDataGridView.ReadOnly = true;
-            this.NominaDataGridView.Size = new System.Drawing.Size(970, 383);
+            this.NominaDataGridView.Size = new System.Drawing.Size(928, 386);
             this.NominaDataGridView.TabIndex = 2;
+            this.NominaDataGridView.Validated += new System.EventHandler(this.NominaDataGridView_Validated);
+            // 
+            // HastaDateTimePicker
+            // 
+            this.HastaDateTimePicker.CustomFormat = "dd-MM-yyyy";
+            this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(246, 3);
+            this.HastaDateTimePicker.Name = "HastaDateTimePicker";
+            this.HastaDateTimePicker.Size = new System.Drawing.Size(92, 20);
+            this.HastaDateTimePicker.TabIndex = 15;
+            this.HastaDateTimePicker.ValueChanged += new System.EventHandler(this.HastaDateTimePicker_ValueChanged);
+            this.HastaDateTimePicker.Validated += new System.EventHandler(this.HastaDateTimePicker_Validated);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(202, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Hasta:";
+            // 
+            // DesdeDateTimePicker
+            // 
+            this.DesdeDateTimePicker.CustomFormat = "dd-MM-yyyy";
+            this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(100, 3);
+            this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
+            this.DesdeDateTimePicker.Size = new System.Drawing.Size(96, 20);
+            this.DesdeDateTimePicker.TabIndex = 12;
+            this.DesdeDateTimePicker.ValueChanged += new System.EventHandler(this.DesdeDateTimePicker_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Desde:";
+            // 
+            // mesIni
+            // 
+            this.mesIni.DataPropertyName = "mesIni";
+            this.mesIni.HeaderText = "Mes";
+            this.mesIni.Name = "mesIni";
+            this.mesIni.ReadOnly = true;
+            this.mesIni.Width = 52;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -142,14 +191,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 53;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "mesIni";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Mes";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 52;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -171,7 +212,7 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Nro_Empleado";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nro_Empleado";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nro. Empleado";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 102;
@@ -203,10 +244,10 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "totalD";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn11.HeaderText = "Dias";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -215,9 +256,9 @@
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "totalH";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N2";
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn12.HeaderText = "Horas";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
@@ -226,9 +267,9 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "valorD";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N0";
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn13.HeaderText = "Valor Dias";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -237,9 +278,9 @@
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "valorH";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N2";
+            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn14.HeaderText = "Valor Horas";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
@@ -248,9 +289,9 @@
             // totalPagoDataGridViewTextBoxColumn
             // 
             this.totalPagoDataGridViewTextBoxColumn.DataPropertyName = "TotalPago";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N2";
-            this.totalPagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N2";
+            this.totalPagoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.totalPagoDataGridViewTextBoxColumn.HeaderText = "Total Pago";
             this.totalPagoDataGridViewTextBoxColumn.Name = "totalPagoDataGridViewTextBoxColumn";
             this.totalPagoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -270,54 +311,15 @@
             // 
             this.vv_NominasEmpleadosMesTableAdapter.ClearBeforeFill = true;
             // 
-            // HastaDateTimePicker
-            // 
-            this.HastaDateTimePicker.CustomFormat = "dd-MM-yyyy";
-            this.HastaDateTimePicker.Enabled = false;
-            this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(259, 5);
-            this.HastaDateTimePicker.Name = "HastaDateTimePicker";
-            this.HastaDateTimePicker.Size = new System.Drawing.Size(92, 20);
-            this.HastaDateTimePicker.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(215, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Hasta:";
-            // 
-            // DesdeDateTimePicker
-            // 
-            this.DesdeDateTimePicker.CustomFormat = "dd-MM-yyyy";
-            this.DesdeDateTimePicker.Enabled = false;
-            this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(113, 5);
-            this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
-            this.DesdeDateTimePicker.Size = new System.Drawing.Size(96, 20);
-            this.DesdeDateTimePicker.TabIndex = 12;
-            // 
-            // DesdeCheckBox
-            // 
-            this.DesdeCheckBox.AutoSize = true;
-            this.DesdeCheckBox.Location = new System.Drawing.Point(46, 7);
-            this.DesdeCheckBox.Name = "DesdeCheckBox";
-            this.DesdeCheckBox.Size = new System.Drawing.Size(61, 17);
-            this.DesdeCheckBox.TabIndex = 13;
-            this.DesdeCheckBox.Text = "Rango:";
-            this.DesdeCheckBox.UseVisualStyleBackColor = true;
-            // 
             // FrmNominaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 411);
+            this.ClientSize = new System.Drawing.Size(928, 411);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.HastaDateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.DesdeDateTimePicker);
-            this.Controls.Add(this.DesdeCheckBox);
             this.Controls.Add(this.NominaDataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmNominaMes";
@@ -358,8 +360,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mesIni;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn encargadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -371,12 +381,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPagoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem vistaPreliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
-        private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
-        private System.Windows.Forms.CheckBox DesdeCheckBox;
     }
 }

@@ -7302,8 +7302,6 @@ namespace ManzantinesApp.Data {
             
             private global::System.Data.DataColumn columnApellidos;
             
-            private global::System.Data.DataColumn columnmesIni;
-            
             private global::System.Data.DataColumn columntotalD;
             
             private global::System.Data.DataColumn columntotalH;
@@ -7313,6 +7311,8 @@ namespace ManzantinesApp.Data {
             private global::System.Data.DataColumn columnvalorH;
             
             private global::System.Data.DataColumn columnTotalPago;
+            
+            private global::System.Data.DataColumn columnmesIni;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -7405,14 +7405,6 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn mesIniColumn {
-                get {
-                    return this.columnmesIni;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn totalDColumn {
                 get {
                     return this.columntotalD;
@@ -7453,6 +7445,14 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn mesIniColumn {
+                get {
+                    return this.columnmesIni;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7488,7 +7488,7 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vv_NominasEmpleadosMesRow Addvv_NominasEmpleadosMesRow(decimal anio, int id_encargado, string Encargado, string Nro_Empleado, string Caja, string Nombre, string Apellidos, int mesIni, double totalD, double totalH, double valorD, double valorH, double TotalPago) {
+            public vv_NominasEmpleadosMesRow Addvv_NominasEmpleadosMesRow(decimal anio, int id_encargado, string Encargado, string Nro_Empleado, string Caja, string Nombre, string Apellidos, double totalD, double totalH, double valorD, double valorH, double TotalPago, int mesIni) {
                 vv_NominasEmpleadosMesRow rowvv_NominasEmpleadosMesRow = ((vv_NominasEmpleadosMesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         anio,
@@ -7498,12 +7498,12 @@ namespace ManzantinesApp.Data {
                         Caja,
                         Nombre,
                         Apellidos,
-                        mesIni,
                         totalD,
                         totalH,
                         valorD,
                         valorH,
-                        TotalPago};
+                        TotalPago,
+                        mesIni};
                 rowvv_NominasEmpleadosMesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvv_NominasEmpleadosMesRow);
                 return rowvv_NominasEmpleadosMesRow;
@@ -7533,12 +7533,12 @@ namespace ManzantinesApp.Data {
                 this.columnCaja = base.Columns["Caja"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnApellidos = base.Columns["Apellidos"];
-                this.columnmesIni = base.Columns["mesIni"];
                 this.columntotalD = base.Columns["totalD"];
                 this.columntotalH = base.Columns["totalH"];
                 this.columnvalorD = base.Columns["valorD"];
                 this.columnvalorH = base.Columns["valorH"];
                 this.columnTotalPago = base.Columns["TotalPago"];
+                this.columnmesIni = base.Columns["mesIni"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7558,8 +7558,6 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnNombre);
                 this.columnApellidos = new global::System.Data.DataColumn("Apellidos", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApellidos);
-                this.columnmesIni = new global::System.Data.DataColumn("mesIni", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmesIni);
                 this.columntotalD = new global::System.Data.DataColumn("totalD", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotalD);
                 this.columntotalH = new global::System.Data.DataColumn("totalH", typeof(double), null, global::System.Data.MappingType.Element);
@@ -7570,6 +7568,8 @@ namespace ManzantinesApp.Data {
                 base.Columns.Add(this.columnvalorH);
                 this.columnTotalPago = new global::System.Data.DataColumn("TotalPago", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalPago);
+                this.columnmesIni = new global::System.Data.DataColumn("mesIni", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmesIni);
                 this.columnEncargado.MaxLength = 2147483647;
                 this.columnNro_Empleado.MaxLength = 2147483647;
                 this.columnCaja.MaxLength = 2147483647;
@@ -11517,22 +11517,6 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int mesIni {
-                get {
-                    try {
-                        return ((int)(this[this.tablevv_NominasEmpleadosMes.mesIniColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'mesIni\' in table \'vv_NominasEmpleadosMes\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevv_NominasEmpleadosMes.mesIniColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public double totalD {
                 get {
                     try {
@@ -11608,6 +11592,22 @@ namespace ManzantinesApp.Data {
                 }
                 set {
                     this[this.tablevv_NominasEmpleadosMes.TotalPagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int mesIni {
+                get {
+                    try {
+                        return ((int)(this[this.tablevv_NominasEmpleadosMes.mesIniColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'mesIni\' in table \'vv_NominasEmpleadosMes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevv_NominasEmpleadosMes.mesIniColumn] = value;
                 }
             }
             
@@ -11697,18 +11697,6 @@ namespace ManzantinesApp.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsmesIniNull() {
-                return this.IsNull(this.tablevv_NominasEmpleadosMes.mesIniColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetmesIniNull() {
-                this[this.tablevv_NominasEmpleadosMes.mesIniColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IstotalDNull() {
                 return this.IsNull(this.tablevv_NominasEmpleadosMes.totalDColumn);
             }
@@ -11765,6 +11753,18 @@ namespace ManzantinesApp.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTotalPagoNull() {
                 this[this.tablevv_NominasEmpleadosMes.TotalPagoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmesIniNull() {
+                return this.IsNull(this.tablevv_NominasEmpleadosMes.mesIniColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmesIniNull() {
+                this[this.tablevv_NominasEmpleadosMes.mesIniColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -20475,12 +20475,12 @@ SELECT Id, id_fruta, Variedad, DeletedAt FROM Frutas_variedades WHERE (Id = @Id)
             tableMapping.ColumnMappings.Add("Caja", "Caja");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Apellidos", "Apellidos");
-            tableMapping.ColumnMappings.Add("mesIni", "mesIni");
             tableMapping.ColumnMappings.Add("totalD", "totalD");
             tableMapping.ColumnMappings.Add("totalH", "totalH");
             tableMapping.ColumnMappings.Add("valorD", "valorD");
             tableMapping.ColumnMappings.Add("valorH", "valorH");
             tableMapping.ColumnMappings.Add("TotalPago", "TotalPago");
+            tableMapping.ColumnMappings.Add("mesIni", "mesIni");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -20497,17 +20497,20 @@ SELECT Id, id_fruta, Variedad, DeletedAt FROM Frutas_variedades WHERE (Id = @Id)
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT anio, id_encargado, Encargado, Nro_Empleado, Caja, Nombre, Apellidos, mesI" +
-                "ni, totalD, totalH, valorD, valorH, TotalPago FROM vv_NominasEmpleadosMes";
+            this._commandCollection[0].CommandText = "SELECT        anio, id_encargado, Encargado, Nro_Empleado, Caja, Nombre, Apellido" +
+                "s, totalD, totalH, valorD, valorH, TotalPago, mesIni\r\nFROM            vv_Nominas" +
+                "EmpleadosMes\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        anio, id_encargado, Encargado, Nro_Empleado, Caja, Nombre, Apellido" +
-                "s, mesIni, totalD, totalH, valorD, valorH, TotalPago\r\nFROM            vv_Nominas" +
-                "EmpleadosMes\r\nWHERE        (anio = @anio) AND (mesIni = @mes)";
+            this._commandCollection[1].CommandText = @"SELECT        Apellidos, Caja, Encargado, Nombre, Nro_Empleado, TotalPago, anio, id_encargado, mesIni, totalD, totalH, valorD, valorH
+FROM            vv_NominasEmpleadosMes
+WHERE        (anio >= @anioIni) AND (anio <= @anioFin) AND (mesIni >= @mesIni) AND (mesIni <= @mesFin)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@anio", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 4, 0, "anio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mes", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "mesIni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@anioIni", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 4, 0, "anio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@anioFin", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 4, 0, "anio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mesIni", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "mesIni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mesFin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "mesIni", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20538,19 +20541,31 @@ SELECT Id, id_fruta, Variedad, DeletedAt FROM Frutas_variedades WHERE (Id = @Id)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAnioAndMes(DataSet1.vv_NominasEmpleadosMesDataTable dataTable, global::System.Nullable<decimal> anio, global::System.Nullable<int> mes) {
+        public virtual int FillByFechaRango(DataSet1.vv_NominasEmpleadosMesDataTable dataTable, global::System.Nullable<decimal> anioIni, global::System.Nullable<decimal> anioFin, global::System.Nullable<int> mesIni, global::System.Nullable<int> mesFin) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((anio.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(anio.Value));
+            if ((anioIni.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(anioIni.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((mes.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(mes.Value));
+            if ((anioFin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(anioFin.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((mesIni.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(mesIni.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((mesFin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(mesFin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20563,19 +20578,31 @@ SELECT Id, id_fruta, Variedad, DeletedAt FROM Frutas_variedades WHERE (Id = @Id)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.vv_NominasEmpleadosMesDataTable GetDataByAnioAndMes(global::System.Nullable<decimal> anio, global::System.Nullable<int> mes) {
+        public virtual DataSet1.vv_NominasEmpleadosMesDataTable GetDataByFechaRango(global::System.Nullable<decimal> anioIni, global::System.Nullable<decimal> anioFin, global::System.Nullable<int> mesIni, global::System.Nullable<int> mesFin) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((anio.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(anio.Value));
+            if ((anioIni.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(anioIni.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((mes.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(mes.Value));
+            if ((anioFin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(anioFin.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((mesIni.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(mesIni.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((mesFin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(mesFin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             DataSet1.vv_NominasEmpleadosMesDataTable dataTable = new DataSet1.vv_NominasEmpleadosMesDataTable();
             this.Adapter.Fill(dataTable);

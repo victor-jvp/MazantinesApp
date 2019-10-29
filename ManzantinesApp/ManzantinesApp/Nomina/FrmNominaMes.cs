@@ -40,39 +40,24 @@ namespace ManzantinesApp.Nomina
 
         private void Inicializar()
         {
-            
-            AnioToolStripComboBox.ComboBox.DisplayMember = "Value";
-            AnioToolStripComboBox.ComboBox.ValueMember = "Value";
-            
+            try
+            {
+                this.vv_NominasEmpleadosMesTableAdapter.Fill(this.dataSet1.vv_NominasEmpleadosMes);
 
-            HastaToolStripComboBox.ComboBox.DisplayMember = "Text";
-            HastaToolStripComboBox.ComboBox.ValueMember = "Value";
+                this.DesdeDateTimePicker.Value = new DateTime(DateTime.Now.Year,DateTime.Now.Month,1);
+                this.HastaDateTimePicker.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
 
-            AnioToolStripComboBox.ComboBox.DataSource = Anios.GetAnios(DateTime.Now.Year);
-            HastaToolStripComboBox.ComboBox.DataSource = Meses.GetMeses();
-
-            AnioToolStripComboBox.ComboBox.SelectedValue = DateTime.Now.Year;
-            HastaToolStripComboBox.ComboBox.SelectedValue = DateTime.Now.Month;
-
-            //using (var db = new MazantinesEntities())
-            //{
-            //    vvNominasEmpleadosMesBindingSource.DataSource = ToDataTable(db.vv_NominasEmpleadosMes
-            //        .Where(m => m.mesIni == (int)MesToolStripComboBox.ComboBox.SelectedValue && 
-            //            m.Anio == (int)AnioToolStripComboBox.ComboBox.SelectedValue).ToList());
-            //    NominaDataGridView.DataSource = vvNominasEmpleadosMesBindingSource;
-            //}
-        }
-
-        private void UpdateNominaMes(int anio, int mes)
-        {
-            //using (var db = new MazantinesEntities())
-            //{
-            //    vvNominasEmpleadosMesBindingSource.DataSource = ToDataTable(db.vv_NominasEmpleadosMes
-            //        .Where(m => m.mesIni == (int)MesToolStripComboBox.ComboBox.SelectedValue &&
-            //            m.Anio == (int)AnioToolStripComboBox.ComboBox.SelectedValue).ToList());
-            //    NominaDataGridView.DataSource = vvNominasEmpleadosMesBindingSource;
-            //}
-            this.vv_NominasEmpleadosMesTableAdapter.FillByAnioAndMes(this.dataSet1.vv_NominasEmpleadosMes, anio, mes);
+                this.DesdeDateTimePicker.MaxDate = this.HastaDateTimePicker.Value;
+                this.HastaDateTimePicker.MinDate = this.DesdeDateTimePicker.Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error en Inicializar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         #endregion
@@ -83,29 +68,7 @@ namespace ManzantinesApp.Nomina
 
         private void FrmNominaMes_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.vv_NominasEmpleadosMes' table. You can move, or remove it, as needed.
-            this.vv_NominasEmpleadosMesTableAdapter.Fill(this.dataSet1.vv_NominasEmpleadosMes);
             Inicializar();
-        }
-
-        private void MesToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(AnioToolStripComboBox.ComboBox.SelectedValue != null && HastaToolStripComboBox.ComboBox.SelectedValue != null)
-            {
-                int anio = (int)AnioToolStripComboBox.ComboBox.SelectedValue;
-                int mes = (int)HastaToolStripComboBox.ComboBox.SelectedValue;
-                UpdateNominaMes(anio, mes);
-            }            
-        }
-
-        private void AnioToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (AnioToolStripComboBox.ComboBox.SelectedValue != null && HastaToolStripComboBox.ComboBox.SelectedValue != null)
-            {
-                int anio = (int)AnioToolStripComboBox.ComboBox.SelectedValue;
-                int mes = (int)HastaToolStripComboBox.ComboBox.SelectedValue;
-                UpdateNominaMes(anio, mes);
-            }
         }
 
         private void vistaPreliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,6 +119,36 @@ namespace ManzantinesApp.Nomina
                 MessageBox.Show(ex.Message, "Error en Reporte", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Enabled = true;
+        }
+
+        private void DesdeDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
+        }
+
+        private void HastaDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
+        }
+
+        private void FiltrarDatos()
+        {
+            int anioIni = DesdeDateTimePicker.Value.Year;
+            int anioFin = HastaDateTimePicker.Value.Year;
+            int mesIni = DesdeDateTimePicker.Value.Month;
+            int mesFin = HastaDateTimePicker.Value.Month;
+
+            this.vv_NominasEmpleadosMesTableAdapter.FillByFechaRango(this.dataSet1.vv_NominasEmpleadosMes, anioIni, anioFin, mesIni, mesFin);
+        }
+
+        private void NominaDataGridView_Validated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void HastaDateTimePicker_Validated(object sender, EventArgs e)
+        {
+            
         }
     }
 }
