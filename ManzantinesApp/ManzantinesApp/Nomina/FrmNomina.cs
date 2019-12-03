@@ -471,8 +471,10 @@
                 vv_nominas item = nominas[rowIndex];
                 double totalDias = Convert.ToDouble(item.lunD + item.marD + item.mieD + item.jueD + item.vieD + item.sabD + item.domD);
                 double totalExtra = Convert.ToDouble(item.lunH + item.marH + item.mieH + item.jueH + item.vieH + item.sabH + item.domH);
+                double totalImporte = Convert.ToDouble(item.importe);
                 NominaDataGridView.Rows[rowIndex].Cells["totalD"].Value = totalDias;
                 NominaDataGridView.Rows[rowIndex].Cells["totalH"].Value = totalExtra;
+                NominaDataGridView.Rows[rowIndex].Cells["importe"].Value = totalImporte;
                 LoadTotalesGrid();
                 return;
             }
@@ -482,8 +484,10 @@
             {
                 double totalDias = Convert.ToDouble(item.lunD + item.marD + item.mieD + item.jueD + item.vieD + item.sabD + item.domD);
                 double totalExtra = Convert.ToDouble(item.lunH + item.marH + item.mieH + item.jueH + item.vieH + item.sabH + item.domH);
+                double totalImporte = Convert.ToDouble(item.importe);
                 NominaDataGridView.Rows[i].Cells["totalD"].Value = totalDias;
                 NominaDataGridView.Rows[i].Cells["totalH"].Value = totalExtra;
+                NominaDataGridView.Rows[i].Cells["importe"].Value = totalImporte;
                 i++;
             }
             LoadTotalesGrid();
@@ -626,8 +630,8 @@
                     double vieH = empNomina.Sum(f => (double)f.vieH);
                     double sabH = empNomina.Sum(f => (double)f.sabH);
                     double domH = empNomina.Sum(f => (double)f.domH);
-                    double importe = empNomina.Sum(f => (double)f.importe);
 
+                    double importe = empNomina.Sum(f => (double)f.importe);
                     double valorD = empNomina.Select(f => (double)f.valorD).FirstOrDefault();
                     double valorH = empNomina.Select(f => (double)f.valorH).FirstOrDefault();                    
 
